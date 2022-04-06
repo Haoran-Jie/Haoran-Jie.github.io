@@ -6,7 +6,7 @@
   <link href="https://haoran-jie.github.io/atom.xml" rel="self"/>
   
   <link href="https://haoran-jie.github.io/"/>
-  <updated>2022-04-06T16:23:51.846Z</updated>
+  <updated>2022-04-06T10:26:11.170Z</updated>
   <id>https://haoran-jie.github.io/</id>
   
   <author>
@@ -17,23 +17,119 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://haoran-jie.github.io/2022/04/07/hello-world/"/>
-    <id>https://haoran-jie.github.io/2022/04/07/hello-world/</id>
-    <published>2022-04-06T16:23:51.846Z</published>
-    <updated>2022-04-06T16:23:51.846Z</updated>
+    <title>HTML+CSS: Loading Animation</title>
+    <link href="https://haoran-jie.github.io/2022/04/06/loadingAnimation/"/>
+    <id>https://haoran-jie.github.io/2022/04/06/loadingAnimation/</id>
+    <published>2022-04-06T10:05:16.000Z</published>
+    <updated>2022-04-06T10:26:11.170Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;https://media.giphy.com/media/KcMqhBHGYydbQqf7z1/giphy.gif&quot; alt=&quot;loadingAnimation&quot; style=&quot;zoom:150%;&quot;    &gt;</summary>
+    
+    
+    
+    <category term="WebDevelopment" scheme="https://haoran-jie.github.io/categories/WebDevelopment/"/>
+    
+    <category term="Project" scheme="https://haoran-jie.github.io/categories/WebDevelopment/Project/"/>
+    
+    
+    <category term="css" scheme="https://haoran-jie.github.io/tags/css/"/>
+    
+    <category term="html" scheme="https://haoran-jie.github.io/tags/html/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTML+CSS: spotlight Text Animation</title>
+    <link href="https://haoran-jie.github.io/2022/04/05/Spotlight-Text/"/>
+    <id>https://haoran-jie.github.io/2022/04/05/Spotlight-Text/</id>
+    <published>2022-04-05T11:53:34.000Z</published>
+    <updated>2022-04-06T05:44:25.334Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;https://media.giphy.com/media/r0qmZ6SyKILYYxmyHK/giphy.gif&quot; alt=&quot;gif&quot; style=&quot;zoom:200%;&quot; /&gt;</summary>
+    
+    
+    
+    <category term="WebDevelopment" scheme="https://haoran-jie.github.io/categories/WebDevelopment/"/>
+    
+    <category term="Project" scheme="https://haoran-jie.github.io/categories/WebDevelopment/Project/"/>
+    
+    
+    <category term="css" scheme="https://haoran-jie.github.io/tags/css/"/>
+    
+    <category term="html" scheme="https://haoran-jie.github.io/tags/html/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript_Basics(constantly updated)</title>
+    <link href="https://haoran-jie.github.io/2022/04/05/JavaScript-Basics/"/>
+    <id>https://haoran-jie.github.io/2022/04/05/JavaScript-Basics/</id>
+    <published>2022-04-05T05:25:56.000Z</published>
+    <updated>2022-04-06T03:07:48.287Z</updated>
+    
+    
+    <summary type="html">&lt;p style=&quot;text-align:center;&quot;&gt; A flexible language that powers dynamic websites and apps &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="WebDevelopment" scheme="https://haoran-jie.github.io/categories/WebDevelopment/"/>
+    
+    <category term="JavaScript" scheme="https://haoran-jie.github.io/categories/WebDevelopment/JavaScript/"/>
+    
+    
+    <category term="JavaScript" scheme="https://haoran-jie.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>FlexBox_Notes</title>
+    <link href="https://haoran-jie.github.io/2022/04/04/FlexBox-Notes/"/>
+    <id>https://haoran-jie.github.io/2022/04/04/FlexBox-Notes/</id>
+    <published>2022-04-04T12:08:05.000Z</published>
+    <updated>2022-04-06T03:09:54.041Z</updated>
+    
+    
+    <summary type="html">&lt;p style=&quot;text-align:center;&quot;&gt;Notes of FlexBox container in css and its related properties &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="WebDevelopment" scheme="https://haoran-jie.github.io/categories/WebDevelopment/"/>
+    
+    <category term="CSS" scheme="https://haoran-jie.github.io/categories/WebDevelopment/CSS/"/>
+    
+    
+    <category term="css" scheme="https://haoran-jie.github.io/tags/css/"/>
+    
+    <category term="FlexBox" scheme="https://haoran-jie.github.io/tags/FlexBox/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Start of Blog</title>
+    <link href="https://haoran-jie.github.io/2022/04/03/Start-of-Blog/"/>
+    <id>https://haoran-jie.github.io/2022/04/03/Start-of-Blog/</id>
+    <published>2022-04-03T03:46:10.000Z</published>
+    <updated>2022-04-06T03:09:07.895Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+    <summary type="html">&lt;h3 id=&quot;Inspiration&quot;&gt;&lt;a href=&quot;#Inspiration&quot; class=&quot;headerlink&quot;</summary>
         
       
     
     
     
+    <category term="blogging" scheme="https://haoran-jie.github.io/categories/blogging/"/>
+    
+    <category term="start" scheme="https://haoran-jie.github.io/categories/blogging/start/"/>
+    
+    
+    <category term="Inspiration" scheme="https://haoran-jie.github.io/tags/Inspiration/"/>
     
   </entry>
   
