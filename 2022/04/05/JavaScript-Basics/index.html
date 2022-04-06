@@ -235,49 +235,58 @@
 
       
         <p style="text-align:center;"> A flexible language that powers dynamic websites and apps </p>
-
 <span id="more"></span>
-
-<h3 id="Variables"><a href="#Variables" class="headerlink" title="Variables"></a>Variables</h3><p>Dynamic websites need to remember information to display or change. For that, JavaScript has <strong>variables</strong><br>Like moving boxes, variables have content and names that tell us what’s inside</p>
+<h3 id="Variables"><a class="header-anchor" href="#Variables">¶</a>Variables</h3>
+<p>Dynamic websites need to remember information to display or change. For that, JavaScript has <strong>variables</strong><br>
+Like moving boxes, variables have content and names that tell us what’s inside</p>
 <hr>
-<h4 id="Variable-types"><a href="#Variable-types" class="headerlink" title="Variable types"></a>Variable types</h4><ul>
-<li><strong>number:</strong><ul>
+<h4 id="Variable-types"><a class="header-anchor" href="#Variable-types">¶</a>Variable types</h4>
+<ul>
+<li><strong>number:</strong>
+<ul>
 <li>variable type that stores number</li>
 </ul>
 </li>
-<li><strong>string:</strong><ul>
+<li><strong>string:</strong>
+<ul>
 <li>variable type that stores a series of char</li>
 <li>can be recognized with the two double quotes, between which any symbol can stay</li>
 <li>Eg: <code>&quot;ajjef91239mca dsjfjja03&quot;</code></li>
 </ul>
 </li>
-<li><strong>boolean:</strong><ul>
+<li><strong>boolean:</strong>
+<ul>
 <li>stores the result of comparison</li>
-<li><code>true</code> </li>
+<li><code>true</code></li>
 <li><code>false</code></li>
 </ul>
 </li>
 <li><code>var thisIsAVariable</code></li>
-<li><code>var name=&quot;Samuel&quot;;</code><ul>
+<li><code>var name=&quot;Samuel&quot;;</code>
+<ul>
 <li>variable name - name</li>
-<li>Variable value - “Samuel”<ul>
+<li>Variable value - “Samuel”
+<ul>
 <li>“Samuel” is a string</li>
 </ul>
 </li>
 <li>A statement ends with semicolon <code>;</code></li>
 </ul>
 </li>
-<li><code>var time = 5;</code><ul>
-<li>5 is a number, not a string : since there’s no “ “</li>
+<li><code>var time = 5;</code>
+<ul>
+<li>5 is a number, not a string : since there’s no &quot; &quot;</li>
 </ul>
 </li>
 <li><code>var lighton = true</code></li>
 <li><code>var finishedHW = false</code></li>
 </ul>
 <hr>
-<h4 id="Instruction"><a href="#Instruction" class="headerlink" title="Instruction"></a>Instruction</h4><p>With special instruction <code>console.log()</code>, we tell the computer to display a value in an area called the <strong>console</strong>.</p>
+<h4 id="Instruction"><a class="header-anchor" href="#Instruction">¶</a>Instruction</h4>
+<p>With special instruction <code>console.log()</code>, we tell the computer to display a value in an area called the <strong>console</strong>.</p>
 <ul>
-<li><code>console.log(&quot;Hello World&quot;);</code><br>When we display variables in the console, their values appear instead of their names. If we log <code>name</code> here, it’ll show its value.</li>
+<li><code>console.log(&quot;Hello World&quot;);</code><br>
+When we display variables in the console, their values appear instead of their names. If we log <code>name</code> here, it’ll show its value.</li>
 </ul>
 <p>Arithmetic operations are supported with numbers:</p>
 <ul>
@@ -289,28 +298,35 @@
 <p>joining operator: <code>+</code></p>
 <ul>
 <li>when <code>+</code> is used between two numbers, the result will be their sum</li>
-<li>when <code>+</code> is used between two strings, the result will be the joining of the string<ul>
+<li>when <code>+</code> is used between two strings, the result will be the joining of the string
+<ul>
 <li><code>&quot;name:&quot; + &quot; Samuel&quot;</code> -&gt; <code>&quot;name: Samuel&quot;</code></li>
 </ul>
 </li>
-<li>when <code>+</code> is used between a string and a number, the number will be automatically transformed into a string<ul>
+<li>when <code>+</code> is used between a string and a number, the number will be automatically transformed into a string
+<ul>
 <li><code>&quot;age: &quot; + 8</code> -&gt; <code>&quot;age: 8&quot;</code></li>
 </ul>
 </li>
-<li>when <code>+</code> is used between a string and a boolean, the boolean will be automatically transformed into a string<ul>
+<li>when <code>+</code> is used between a string and a boolean, the boolean will be automatically transformed into a string
+<ul>
 <li><code>&quot;Passed&quot;:  + true</code> -&gt; <code>&quot;passed: true&quot;</code></li>
 </ul>
 </li>
 </ul>
 <hr>
-<h4 id="Using-Variables"><a href="#Using-Variables" class="headerlink" title="Using Variables"></a>Using Variables</h4><p>Variables are called variables because the values they store can change </p>
+<h4 id="Using-Variables"><a class="header-anchor" href="#Using-Variables">¶</a>Using Variables</h4>
+<p>Variables are called variables because the values they store can change</p>
 <p>Use the <code>=</code> sign to change the value in <code>status</code> from <code>&quot;Watching Netflix&quot;</code> to <code>&quot;Playing frisbee&quot;</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var currentStatus = &quot;Watching Netflix&quot;;</span><br><span class="line">currentStatus = &quot;Playing frisbee&quot;;</span><br><span class="line">console.log(currentStatus);</span><br></pre></td></tr></table></figure>
 <hr>
-<h4 id="Comparing-operators"><a href="#Comparing-operators" class="headerlink" title="Comparing operators"></a>Comparing operators</h4><p>All comparison statements returns a boolean value</p>
+<h4 id="Comparing-operators"><a class="header-anchor" href="#Comparing-operators">¶</a>Comparing operators</h4>
+<p>All comparison statements returns a boolean value</p>
 <ul>
-<li><code>===</code><ul>
-<li>this is used to check whether two variables are equal<ul>
+<li><code>===</code>
+<ul>
+<li>this is used to check whether two variables are equal
+<ul>
 <li>variables can be of type <code>string</code> or <code>number</code></li>
 </ul>
 </li>
@@ -318,28 +334,33 @@
 <li><code>&quot;apple&quot;===&quot;apple&quot;</code> returns <code>true</code></li>
 </ul>
 </li>
-<li><code>!==</code><ul>
+<li><code>!==</code>
+<ul>
 <li>this is used to check whether two variables are not equal</li>
 <li><code>1!==2</code> returns <code>true</code></li>
 </ul>
 </li>
-<li><code>&gt;</code><ul>
+<li><code>&gt;</code>
+<ul>
 <li>this is used to check whether a variable is larger than another variable</li>
 <li><code>1&gt;2</code> returns <code>false</code></li>
 </ul>
 </li>
-<li><code>&lt;</code><ul>
+<li><code>&lt;</code>
+<ul>
 <li>this is used to check whether a variable is smaller than another variable</li>
 <li><code>1&lt;2</code> returns <code>true</code></li>
 </ul>
 </li>
-<li><code>&lt;=</code><ul>
+<li><code>&lt;=</code>
+<ul>
 <li>this is used to check whether a variable is smaller or equal than another variable</li>
 <li><code>1&lt;=2</code> returns <code>true</code></li>
 <li><code>1&lt;=1</code> returns <code>true</code></li>
 </ul>
 </li>
-<li><code>&gt;=</code> this is used to check whether a variable is larger or equal than another variable<ul>
+<li><code>&gt;=</code> this is used to check whether a variable is larger or equal than another variable
+<ul>
 <li><code>1&gt;=2</code> returns <code>false</code></li>
 </ul>
 </li>
