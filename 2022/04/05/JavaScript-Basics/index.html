@@ -28,7 +28,7 @@
 <meta property="og:description" content="A flexible language that powers dynamic websites and apps">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-04-05T05:25:56.000Z">
-<meta property="article:modified_time" content="2022-04-06T03:07:48.287Z">
+<meta property="article:modified_time" content="2022-04-09T01:59:17.212Z">
 <meta property="article:author" content="Haoran Jie">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -200,7 +200,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-04-06 11:07:48" itemprop="dateModified" datetime="2022-04-06T11:07:48+08:00">2022-04-06</time>
+                <time title="Modified: 2022-04-09 09:59:17" itemprop="dateModified" datetime="2022-04-09T09:59:17+08:00">2022-04-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -229,14 +229,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2.4k</span>
+              <span>3.5k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>2 mins.</span>
+              <span>3 mins.</span>
             </span>
 
         </div>
@@ -248,7 +248,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p style="text-align:center;"> A flexible language that powers dynamic websites and apps </p>
+        <p style="text-align:center; color:#19547b; font-weight:bold;"> A flexible language that powers dynamic websites and apps </p>
 <span id="more"></span>
 <h3 id="Variables"><a class="header-anchor" href="#Variables">¶</a>Variables</h3>
 <p>Dynamic websites need to remember information to display or change. For that, JavaScript has <strong>variables</strong><br>
@@ -332,7 +332,7 @@ When we display variables in the console, their values appear instead of their n
 <h4 id="Using-Variables"><a class="header-anchor" href="#Using-Variables">¶</a>Using Variables</h4>
 <p>Variables are called variables because the values they store can change</p>
 <p>Use the <code>=</code> sign to change the value in <code>status</code> from <code>&quot;Watching Netflix&quot;</code> to <code>&quot;Playing frisbee&quot;</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var currentStatus = &quot;Watching Netflix&quot;;</span><br><span class="line">currentStatus = &quot;Playing frisbee&quot;;</span><br><span class="line">console.log(currentStatus);</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">var</span> currentStatus = &quot;Watching Netflix&quot;;</span><br><span class="line">currentStatus = &quot;Playing frisbee&quot;;</span><br><span class="line">console<span class="selector-class">.log</span>(currentStatus);</span><br></pre></td></tr></table></figure>
 <hr>
 <h4 id="Comparing-operators"><a class="header-anchor" href="#Comparing-operators">¶</a>Comparing operators</h4>
 <p>All comparison statements returns a boolean value</p>
@@ -378,6 +378,48 @@ When we display variables in the console, their values appear instead of their n
 <li><code>1&gt;=2</code> returns <code>false</code></li>
 </ul>
 </li>
+</ul>
+<h3 id="If-else-statement"><a class="header-anchor" href="#If-else-statement">¶</a>If/else statement</h3>
+<p>How can we write code that adapts to different situations? By using the <strong>if statement</strong>.</p>
+<h4 id="Structure"><a class="header-anchor" href="#Structure">¶</a>Structure:</h4>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(condition)&#123;<span class="comment">//place a boolean value in the bracket</span></span><br><span class="line">   <span class="comment">//statement1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="comment">//statement2</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="title class_">This</span> is equivalent <span class="attr">to</span>:</span><br><span class="line"><span class="keyword">if</span>(condition)&#123;</span><br><span class="line">   <span class="comment">//statement1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(!condition)&#123;<span class="comment">//negating the condition</span></span><br><span class="line">    <span class="comment">//statement2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Properties"><a class="header-anchor" href="#Properties">¶</a>Properties:</h4>
+<ul>
+<li>The if statement runs code only if the boolean it’s relying on is <code>true</code>. It’s like saying, of something is true, then do this.</li>
+</ul>
+<ul>
+<li>We use <code>false</code> instead to skip the code inside the curly braces.</li>
+<li>The <code>else</code> statement doesn’t need its own condition. That’s because it handles the cases where the if’s condition <code>false</code></li>
+</ul>
+<h4 id="Definitions"><a class="header-anchor" href="#Definitions">¶</a>Definitions:</h4>
+<ul>
+<li>
+<p>Values like <code>true</code> that are placed inside the parenthesis are called <strong>conditions.</strong></p>
+<ul>
+<li>These can be:</li>
+<li><code>true</code></li>
+<li><code>false</code></li>
+<li>comparison of variables
+<ul>
+<li><code>a === b</code></li>
+<li><code>a !=== b </code></li>
+<li><code>a &lt; b</code></li>
+<li><code>a &lt;= b</code></li>
+<li><code>a &gt; b</code></li>
+<li><code>a &gt;= b</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Statements relying on conditions are called <strong>conditionals.</strong></p>
+</li>
+</ul>
+<h3 id="Incorporating-else-if"><a class="header-anchor" href="#Incorporating-else-if">¶</a>Incorporating <code>else if</code></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">if</span> (age &lt; <span class="number">16</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;children&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(age &lt; <span class="number">65</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;working population&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;elderly&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Properties-v2"><a class="header-anchor" href="#Properties-v2">¶</a>Properties:</h4>
+<ul>
+<li>As long as they go before the <code>else</code> statement, we can add as many <code>else if</code> statement as we’d like</li>
 </ul>
 
     </div>
@@ -462,7 +504,7 @@ When we display variables in the console, their values appear instead of their n
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Variables"><span class="nav-number">1.</span> <span class="nav-text">Variables</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Variable-types"><span class="nav-number">1.1.</span> <span class="nav-text">Variable types</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Instruction"><span class="nav-number">1.2.</span> <span class="nav-text">Instruction</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Using-Variables"><span class="nav-number">1.3.</span> <span class="nav-text">Using Variables</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Comparing-operators"><span class="nav-number">1.4.</span> <span class="nav-text">Comparing operators</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Variables"><span class="nav-number">1.</span> <span class="nav-text">Variables</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Variable-types"><span class="nav-number">1.1.</span> <span class="nav-text">Variable types</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Instruction"><span class="nav-number">1.2.</span> <span class="nav-text">Instruction</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Using-Variables"><span class="nav-number">1.3.</span> <span class="nav-text">Using Variables</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Comparing-operators"><span class="nav-number">1.4.</span> <span class="nav-text">Comparing operators</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#If-else-statement"><span class="nav-number">2.</span> <span class="nav-text">If&#x2F;else statement</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Structure"><span class="nav-number">2.1.</span> <span class="nav-text">Structure:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Properties"><span class="nav-number">2.2.</span> <span class="nav-text">Properties:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Definitions"><span class="nav-number">2.3.</span> <span class="nav-text">Definitions:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Incorporating-else-if"><span class="nav-number">3.</span> <span class="nav-text">Incorporating else if</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Properties-v2"><span class="nav-number">3.1.</span> <span class="nav-text">Properties:</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -541,12 +583,12 @@ When we display variables in the console, their values appear instead of their n
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">12k</span>
+    <span title="Symbols count total">13k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">11 mins.</span>
+    <span title="Reading time total">12 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
