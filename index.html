@@ -369,6 +369,112 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://haoran-jie.github.io/2022/04/12/Security/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Haoran Jie">
+      <meta itemprop="description" content="17">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Samuel's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/12/Security/" class="post-title-link" itemprop="url">Security</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-04-12 23:31:31 / Modified: 23:38:40" itemprop="dateCreated datePublished" datetime="2022-04-12T23:31:31+08:00">2022-04-12</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>11k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>10 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1>Chapter 17: Security🔒</h1>
+<p><img src="/2022/04/12/Security/security.png" alt></p>
+<hr>
+<h2 id="Encryption"><a class="header-anchor" href="#Encryption">¶</a>Encryption</h2>
+<h3 id="Definitions"><a class="header-anchor" href="#Definitions">¶</a>Definitions:</h3>
+<ul>
+<li><font color="#4a69bd">Plain text: the original data to be transmitted as a message</font></li>
+<li><font color="#4a69bd">Digital certificate: An electronic document from a trusted authority that ensures authentication</font></li>
+<li><font color="#4a69bd">Public key: An encryption method produced by a trusted authority that can be used by anyone</font>
+<ul>
+<li><font color="#4a69bd">Key widely available that can be used to encrypt message that only owner of the private key can decrypt</font></li>
+<li><font color="#4a69bd">Can be used to decrypt a digital signature, thereby confirming the originator of the message </font></li>
+</ul>
+</li>
+<li><font color="#4a69bd">Private key - Key needed to decrypt data that has been encrypted by a public key</font></li>
+<li>
+<ul>
+<li><font color="#4a69bd">Key needed to encrypt data so that it can be decrypted by a public key</font></li>
+</ul>
+</li>
+<li>
+<ul>
+<li><font color="#4a69bd">The key used to asymmetric encryption which is not shared</font></li>
+</ul>
+</li>
+<li><font color="#4a69bd">Encryption: Process of turning plain text into cipher text</font></li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/04/12/Security/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://haoran-jie.github.io/2022/04/09/markdown-tricks/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -400,7 +506,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-04-10 23:15:16" itemprop="dateModified" datetime="2022-04-10T23:15:16+08:00">2022-04-10</time>
+                <time title="Modified: 2022-04-12 23:40:36" itemprop="dateModified" datetime="2022-04-12T23:40:36+08:00">2022-04-12</time>
               </span>
 
           <br>
@@ -409,7 +515,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.1k</span>
+              <span>1.2k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -429,7 +535,7 @@
 
       
           <h2 id="基于HTML-HTML-based"><a class="header-anchor" href="#基于HTML-HTML-based">¶</a>基于HTML: HTML-based</h2>
-<h3 id="改变字体颜色-Text-Color"><a class="header-anchor" href="#改变字体颜色-Text-Color">¶</a>改变字体颜色: Text Color</h3>
+<h3 id="改变字体颜色-Text-Colour"><a class="header-anchor" href="#改变字体颜色-Text-Colour">¶</a>改变字体颜色: Text Colour</h3>
 <h4 id="表示方法-value"><a class="header-anchor" href="#表示方法-value">¶</a>表示方法<code>&lt;value&gt;</code>:</h4>
 <ol>
 <li>十六进制值 如 <code>#f1c40f</code></li>
@@ -437,68 +543,14 @@
 <li>RGBA值 如 <code>RGBA(255,0,0,0.5)</code> 其中最后一个参数为<code>alpha参数</code> 代表不透明度 范围在0-1之间</li>
 <li>颜色的名称 如 <code>blue</code>, <code>lightpink</code></li>
 </ol>
-<h4 id="添加方法"><a class="header-anchor" href="#添加方法">¶</a>添加方法</h4>
-<ul>
-<li>[x] 在任意可以表达文字的html标签 (如<code>&lt;h1&gt;</code> ,<code>&lt;p&gt;</code>) 的开始标签内添加 <code>style=&quot;corlor:&lt;value&gt;&quot; </code>。</li>
-</ul>
-<h4 id="例子"><a class="header-anchor" href="#例子">¶</a>例子</h4>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color:RGB(255,38,79);&quot;</span>&gt;</span>This is a paragraph<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">style</span>=<span class="string">&quot;color:indianred;&quot;</span>&gt;</span>this is a level2 heading<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color:#3867d6&quot;</span>&gt;</span>这个颜色是海军蓝<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span> <span class="attr">style</span>=<span class="string">&quot;color: rgba(17,28,19,0.3)&quot;</span>&gt;</span>设置了0.3不透明度<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<hr>
-<ol>
-<li>
-<p style="color:rgb(255,38,79);">This is a paragraph</p>
-</li>
-<li>
-<h2 style="color:indianred;">this is a level2 heading</h2>
-</li>
-<li>
-<p style="color:#3867d6">这个颜色是海军蓝</p>
-</li>
-<li>
-<h3 style="color: rgba(17,28,250,0.3)">设置了0.3不透明度</h3>
-</li>
-</ol>
-<hr>
-<h3 id="font-style-background-color-lightpink-高光-Highlight-font"><a class="header-anchor" href="#font-style-background-color-lightpink-高光-Highlight-font">¶</a><font style="background-color:lightpink;">高光: Highlight</font></h3>
-<h4 id="添加方法-v2"><a class="header-anchor" href="#添加方法-v2">¶</a>添加方法</h4>
-<h2 id="Non-HTML-based"><a class="header-anchor" href="#Non-HTML-based">¶</a>Non HTML-based</h2>
-<h3 id="脚注-Footnote"><a class="header-anchor" href="#脚注-Footnote">¶</a>脚注: Footnote<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></h3>
-<p>脚注可以在你想添加reference<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>, 想解释一个词或者一句话但又不像占太多地方的时候被使用。</p>
-<h4 id="添加方法-v3"><a class="header-anchor" href="#添加方法-v3">¶</a>添加方法:</h4>
-<ul>
-<li>[x] 在正文中插入 <code>[^1]</code> , 当然这个1可以是任何数字 也可以是词语，比如<code>[^脚注]</code></li>
-<li>[x] 在文章的其他地方插入对应解释<code>[^1]:解释</code>，一般是在文末
-<ul>
-<li>[x] 在列表，表格，以及引用<code>&gt;this is a blockquote</code>中无法添加</li>
-</ul>
-</li>
-</ul>
-<h4 id="实例"><a class="header-anchor" href="#实例">¶</a>实例:</h4>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">To be or not to be, this is a question[^footnote].</span><br><span class="line"></span><br><span class="line">[<span class="symbol">^footnote</span>]: <span class="link">出自莎士比亚，哈姆雷特</span></span><br></pre></td></tr></table></figure>
-<h4 id="效果"><a class="header-anchor" href="#效果">¶</a>效果:</h4>
-<p>To be or not to be, this is a question<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
-<h3 id="高光-Highlight"><a class="header-anchor" href="#高光-Highlight">¶</a>==高光: Highlight==</h3>
-<h4 id="添加方法-v4"><a class="header-anchor" href="#添加方法-v4">¶</a>添加方法:</h4>
-<ul>
-<li>[x] <code>==想要添加高光的文字==</code></li>
-</ul>
-<h4 id="特性"><a class="header-anchor" href="#特性">¶</a>特性:</h4>
-<ul>
-<li>默认是<font color="yellow" style="background-color:grey;" >黄色</font></li>
-</ul>
-<hr>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>footnote allows you to reference, or add additional explanations/details to the word/sentence you selected <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>参考, 引用 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn3" class="footnote-item"><p>出自莎士比亚，哈姆雷特 <a href="#fnref3" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/04/09/markdown-tricks/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -971,7 +1023,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1034,12 +1086,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">14k</span>
+    <span title="Symbols count total">25k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">13 mins.</span>
+    <span title="Reading time total">23 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>

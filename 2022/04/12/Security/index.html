@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/blog.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/blog.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/blog.png">
+  <link rel="mask-icon" href="/images/blog.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Times New Roman:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Playfair Display:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"haoran-jie.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Chapter 17: Security🔒   ¶Encryption ¶Definitions:  Plain text: the original data to be transmitted as a message Digital certificate: An electronic document from a trusted authority that ensures authe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Security">
+<meta property="og:url" content="https://haoran-jie.github.io/2022/04/12/Security/index.html">
+<meta property="og:site_name" content="Samuel&#39;s Blog">
+<meta property="og:description" content="Chapter 17: Security🔒   ¶Encryption ¶Definitions:  Plain text: the original data to be transmitted as a message Digital certificate: An electronic document from a trusted authority that ensures authe">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/04/12/Security/security.png">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/04/12/Security/sec1.png">
+<meta property="article:published_time" content="2022-04-12T15:31:31.000Z">
+<meta property="article:modified_time" content="2022-04-12T15:38:40.031Z">
+<meta property="article:author" content="Haoran Jie">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://haoran-jie.github.io/2022/04/12/Security/security.png">
+
+<link rel="canonical" href="https://haoran-jie.github.io/2022/04/12/Security/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Security | Samuel's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Samuel's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Samuel's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Snippets of life of a programmer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://haoran-jie.github.io/2022/04/12/Security/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Haoran Jie">
+      <meta itemprop="description" content="17">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Samuel's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Security
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-04-12 23:31:31 / Modified: 23:38:40" itemprop="dateCreated datePublished" datetime="2022-04-12T23:31:31+08:00">2022-04-12</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>11k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>10 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1>Chapter 17: Security🔒</h1>
+<p><img src="/2022/04/12/Security/security.png" alt></p>
+<hr>
+<h2 id="Encryption"><a class="header-anchor" href="#Encryption">¶</a>Encryption</h2>
+<h3 id="Definitions"><a class="header-anchor" href="#Definitions">¶</a>Definitions:</h3>
+<ul>
+<li><font color="#4a69bd">Plain text: the original data to be transmitted as a message</font></li>
+<li><font color="#4a69bd">Digital certificate: An electronic document from a trusted authority that ensures authentication</font></li>
+<li><font color="#4a69bd">Public key: An encryption method produced by a trusted authority that can be used by anyone</font>
+<ul>
+<li><font color="#4a69bd">Key widely available that can be used to encrypt message that only owner of the private key can decrypt</font></li>
+<li><font color="#4a69bd">Can be used to decrypt a digital signature, thereby confirming the originator of the message </font></li>
+</ul>
+</li>
+<li><font color="#4a69bd">Private key - Key needed to decrypt data that has been encrypted by a public key</font></li>
+<li>
+<ul>
+<li><font color="#4a69bd">Key needed to encrypt data so that it can be decrypted by a public key</font></li>
+</ul>
+</li>
+<li>
+<ul>
+<li><font color="#4a69bd">The key used to asymmetric encryption which is not shared</font></li>
+</ul>
+</li>
+<li><font color="#4a69bd">Encryption: Process of turning plain text into cipher text</font></li>
+</ul>
+<span id="more"></span> 
+<h3 id="Main-Security-concerns"><a class="header-anchor" href="#Main-Security-concerns">¶</a>Main Security concerns:</h3>
+<ol>
+<li><strong>Confidentiality</strong> is where only the intended recipient should be able to read or decipher the data.</li>
+<li><strong>Authenticity</strong> is the need to identify who sent the data and verify that the source is legitimate.</li>
+<li><strong>Integrity</strong> is that data should reach its destination without any changes.</li>
+<li><strong>Non-repudiation</strong> is that neither the sender nor the recipient should be able to deny that they were part of the data     transmission which just took place.</li>
+</ol>
+<h3 id="Asymmetric-key-cryptography"><a class="header-anchor" href="#Asymmetric-key-cryptography">¶</a>Asymmetric key cryptography</h3>
+<blockquote>
+<p>Encryption that uses public keys and private keys</p>
+</blockquote>
+<ul>
+<li><font color="#4a69bd">Asymmetric encryption uses a matching pair of keys</font></li>
+<li><font color="#4a69bd">A public key (available to everyone)</font>
+<ul>
+<li><font color="#4a69bd">Receiver’s public key used to encrypting the message before it is sent</font></li>
+</ul>
+</li>
+<li><font color="#4a69bd">A private key (only known to the owner of the key)</font>
+<ul>
+<li><font color="#4a69bd">Receiver’s private key to decrypt the message after it has been received </font></li>
+</ul>
+</li>
+</ul>
+<h4 id="u-Benefits-u"><a class="header-anchor" href="#u-Benefits-u">¶</a><u>Benefits</u>:</h4>
+<ul>
+<li><font color="#4a69bd">Increased message security as one key is private</font></li>
+<li><font color="#4a69bd">Allow message authentication</font></li>
+<li><font color="#4a69bd">Allows non-repudiation</font></li>
+<li><font color="#4a69bd">Detects tampering(篡改)</font></li>
+</ul>
+<h3 id="Symmetric-key-cryptography"><a class="header-anchor" href="#Symmetric-key-cryptography">¶</a>Symmetric key cryptography</h3>
+<blockquote>
+<p><font color="#4a69bd">A single key is used for both encryption and decryption</font></p>
+</blockquote>
+<h4 id="u-Drawbacks-u"><a class="header-anchor" href="#u-Drawbacks-u">¶</a><u>Drawbacks</u>:</h4>
+<ul>
+<li><font color="#4a69bd">Key has to be exchanged securely</font></li>
+<li><font color="#4a69bd">Once, compromised, the key can be used to decrypt both sent and received messages</font></li>
+<li><font color="#4a69bd">Cannot ensure non-repudiation</font></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Public key &amp; Private key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><u><strong>Similarity</strong></u></td>
+<td><font color="#4a69bd">- Both used in assymetric encryption </font><br>  <font color="#4a69bd">   - As a pair of key is required</font><br>   <font color="#4a69bd">- One is used to encrypt the data and the other is used to decrypt the data</font><br><font color="#4a69bd">- Both hashing algorithms</font></td>
+</tr>
+<tr>
+<td><u><strong>Difference</strong></u></td>
+<td><font color="#4a69bd">- Private key is only known to the owner of the key pair <br>     - The public key can be distributed to anyone<br> - When message is sent to the owner of the public key, they are encrypted with the public key<br>     - So they could be only decrypted with owner’s private key<br> - Message digest are encrypted with the private key to form a digital signature<br>     - Messages are encrypted with the public key of the receiver </font></td>
+</tr>
+</tbody>
+</table>
+<h3 id="Quantum-Cryptography"><a class="header-anchor" href="#Quantum-Cryptography">¶</a>Quantum Cryptography</h3>
+<h4 id="u-Purpose-u"><a class="header-anchor" href="#u-Purpose-u">¶</a><u>Purpose</u></h4>
+<h4 id="u-Benefits-u-v2"><a class="header-anchor" href="#u-Benefits-u-v2">¶</a><u>Benefits</u>:</h4>
+<ul>
+<li><font color="#4a69bd">Any eavesdropping can be identified</font></li>
+<li><font color="#4a69bd">Integrity of the key once transferred can be guaranteed; cannot copied or decrypt at a later date</font></li>
+<li><font color="#4a69bd">Longer/more secure keys can be exchanged</font></li>
+</ul>
+<h4 id="Drawbacks"><a class="header-anchor" href="#Drawbacks">¶</a>Drawbacks:</h4>
+<ul>
+<li>It requires a dedicated line and a specialist hardware, which can be expensive to implement initially</li>
+<li>It still has a limited range</li>
+<li>It is possible for polarisation of light to be altered while travelling down fibre obtic cables</li>
+<li>Due to the inherent security system generated by quantum cryptography, terrorists and other criminals can use the technology to hide their activities from government law enforces</li>
+</ul>
+<h3 id="Past-paper-questions"><a class="header-anchor" href="#Past-paper-questions">¶</a>Past paper questions</h3>
+<ol>
+<li></li>
+</ol>
+<p><img src="/2022/04/12/Security/sec1.png" alt></p>
+<h2 id="Secure-socket-layer-SSL-and-Transport-layer-security-TLS"><a class="header-anchor" href="#Secure-socket-layer-SSL-and-Transport-layer-security-TLS">¶</a>Secure socket layer(SSL) and Transport layer security(TLS)</h2>
+<h2 id="Digital-Certificate-📃"><a class="header-anchor" href="#Digital-Certificate-📃">¶</a>Digital Certificate 📃</h2>
+<h3 id="u-Purpose-u-v2"><a class="header-anchor" href="#u-Purpose-u-v2">¶</a><u>Purpose</u>:</h3>
+<ul>
+<li><font color="#4a69bd">The SSL &amp; TLS provide communication security over the internet/network</font></li>
+<li><font color="#4a69bd">… they provide encryption</font></li>
+<li><font color="#4a69bd">They enable two parties to identify and authenticate each other</font></li>
+<li><font color="#4a69bd">… and communicate with confidentiality and integrity</font></li>
+</ul>
+<p><u>Situations where the use of SSL/TLS would be appropriate:</u></p>
+<ul>
+<li><font color="#4a69bd">Online banking and all online financial transactions</font></li>
+<li><font color="#4a69bd">Online shopping/commerce</font></li>
+<li><font color="#4a69bd">Sending software to a restricted list of users</font></li>
+<li><font color="#4a69bd">Sending and receiving emails</font></li>
+<li><font color="#4a69bd">Using cloud storage facilities</font></li>
+<li><font color="#4a69bd">Intranet, extranet, and internet</font></li>
+<li><font color="#4a69bd">Using virtual private networks (VPNs)</font></li>
+<li><font color="#4a69bd">Using Voice over Internet Protocol (VOIP) for video and audio chatting over the internet</font></li>
+<li><font color="#4a69bd">Using instant messaging</font></li>
+<li><font color="#4a69bd">Making use of a social networking site</font></li>
+</ul>
+<p><u>Difference between SSL and TLS</u></p>
+<ul>
+<li><font color="#4a69bd">It is possible to extend TLS by adding new authentication methods</font></li>
+<li><font color="#4a69bd">TLS can make use of session caching which improves the overall performance of computer compared to using SSL</font></li>
+<li><font color="#4a69bd">TLS separate handshaking process from record protocol layer</font></li>
+</ul>
+<h3 id="SSL"><a class="header-anchor" href="#SSL">¶</a>SSL</h3>
+<ul>
+<li>Encrypts the data when the user logs onto a website
+<ul>
+<li>Only the client’s computer and the web server are able to make sense of what is being transmitted</li>
+</ul>
+</li>
+<li>Data compression: reducing the amount of data being transmitted</li>
+<li>Data integrity checks</li>
+</ul>
+<h3 id="TLS"><a class="header-anchor" href="#TLS">¶</a>TLS</h3>
+<ol>
+<li><strong>Record layer</strong> can be used with or without encryption; it contains the data being transmitted over the internet</li>
+<li><strong>Handshake protocol</strong> permits the web server and client to authenticate each other and to make use of encryption algorithms (a secure session between the client and server is then established)</li>
+<li><strong>Session caching</strong> avoids the need to utilize computer time during each TLS connection; TLS can either initiate new session or resume existing session; the latter can save considerable computer time</li>
+</ol>
+<ul>
+<li><font color="#4a69bd">A protocol with two layers</font>
+<ul>
+<li><font color="#4a69bd">Handshake and Record layers</font></li>
+</ul>
+</li>
+<li><font color="#4a69bd">A TLS/digital/public key certificate is used for authentication</font></li>
+<li><font color="#4a69bd">Handshake uses asymmetric cryptography</font>
+<ul>
+<li><font color="#4a69bd">To generate agreed paramters</font></li>
+<li><font color="#4a69bd">Establish a shared session key</font></li>
+</ul>
+</li>
+<li><font color="#4a69bd">The shared session key provides symmetric cryptography for sending a receiving data(record layer)</font></li>
+<li><font color="#4a69bd">At the end of the session, all the paramters, keys, etc. are erased</font></li>
+</ul>
+<p><u>Situations where the use of TLS would be appropriate:</u></p>
+<ul>
+<li><font color="#4a69bd">Browser accessing secure websites. eg: bank transaction</font></li>
+<li><font color="#4a69bd">VPNs - Virtual private networks </font></li>
+<li><font color="#4a69bd">VOIP - Voice over Internet Protocols </font></li>
+<li><font color="#4a69bd">Email</font></li>
+</ul>
+<h3 id="Past-paper-questions-v2"><a class="header-anchor" href="#Past-paper-questions-v2">¶</a>Past paper questions</h3>
+<ol>
+<li></li>
+</ol>
+<p><u>Problems that SSL/TLS helps to overcome:</u></p>
+<ul>
+<li>Security: alteration of transmitted message</li>
+<li>Privacy: only intended receiver can view data</li>
+<li>Authentication: trust in other party</li>
+</ul>
+<ol start="2">
+<li></li>
+</ol>
+<p><u>Security parameters agreed during the handshake process:</u></p>
+<ul>
+<li>Which protocol will be used
+<ul>
+<li>There are a number of different versions of the two protocol</li>
+</ul>
+</li>
+<li>Session ID
+<ul>
+<li>Uniquely identifies a related series of message between the client and server</li>
+</ul>
+</li>
+<li>Session type
+<ul>
+<li>Reusable or not</li>
+</ul>
+</li>
+<li>Encryption method
+<ul>
+<li>public/private key to be used</li>
+</ul>
+</li>
+<li>Authentication method
+<ul>
+<li>Use of digital certificates</li>
+</ul>
+</li>
+<li>Compression
+<ul>
+<li>… methods to be used</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li></li>
+</ol>
+<p><u>Explain how SSL/TLS protocols are used when a client-server communication is initiated.</u></p>
+<ul>
+<li>An SSL/TLS connection is initiated by an application</li>
+<li>… which becomes the client</li>
+<li>The application which receives the connection becomes the server</li>
+<li>Every new session begins with a handshake (as defined in the SSL/TLS protocols)</li>
+<li>The client requests the digital certificate from the server // The server sends the digital certificate to the client</li>
+<li>The client verifies the server’s digital certificate</li>
+<li>And the obtains the server’s public key</li>
+<li>The encryption algorithms are agreed</li>
+<li>The symmetric</li>
+<li>… session keys are generated</li>
+</ul>
+<ol start="4">
+<li></li>
+</ol>
+<p><u>The sequence of steps describes what happens when setting up a secure connection using Secure Socket Layer (SSL)</u><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<ul>
+<li>Browser requests that the server identifies itself</li>
+<li>Server sends a copy of its SSL Certificate and its public key</li>
+<li>Browser checks the certificate against a list of trusted certificate authorities</li>
+<li>If the browser trusts the certificate, it creates, encrypts and sends the server a symmetric     session key using a server’s public key</li>
+<li>Server decrypts the symmetric session key using its private key</li>
+<li>Server sends the browser an acknowledgment, encrypted with the session key.</li>
+<li>Server and browser now encrypt all transmitted data with the session key</li>
+</ul>
+<h2 id="Digital-certification"><a class="header-anchor" href="#Digital-certification">¶</a>Digital certification</h2>
+<h3 id="Digital-certificate"><a class="header-anchor" href="#Digital-certificate">¶</a>Digital certificate</h3>
+<blockquote>
+<p>An electrical document used to prove the identity of a website or individual. It contains a public key and information identifying the website owner or individual, issued by a <strong>Certificate Authority (CA)</strong></p>
+</blockquote>
+<p><u><strong>Contains:</strong></u></p>
+<ul>
+<li><font color="#4a69bd">Serial number</font></li>
+<li><font color="#4a69bd">Hashing algorithm</font>
+<ul>
+<li><font color="#4a69bd">To produce the message digest</font></li>
+</ul>
+</li>
+<li><font color="#4a69bd">Public key</font>
+<ul>
+<li><font color="#4a69bd">To decrypt/encrypt data</font></li>
+</ul>
+</li>
+<li><font color="#4a69bd">Dates valid</font></li>
+<li><font color="#4a69bd">Name of organization</font></li>
+<li><font color="#4a69bd">Signature to verify it came from the issuers</font></li>
+<li><font color="#4a69bd">Name of issuer</font></li>
+<li><font color="#4a69bd">Purpose of the public key</font></li>
+<li><font color="#4a69bd">Thumb print algorithm</font></li>
+<li><font color="#4a69bd">CA digital certificate </font></li>
+</ul>
+<p><u>Explain how asymmetric encryption uses the content of the digital certificate to ensure that the message has not been altered during transmission</u></p>
+<ul>
+<li><font color="#4a69bd">A’s message is encrypted using B’s public key</font></li>
+<li><font color="#4a69bd">A’s hashing algorithm is used on the message to produce the message digest</font></li>
+<li><font color="#4a69bd">The message digest is then encrypted with A’s private key to provide a digital signature</font></li>
+<li><font color="#4a69bd">Both the encrypted message and the digital signature is sent</font></li>
+<li><font color="#4a69bd">The message is decrypted with B’s private key</font></li>
+<li><font color="#4a69bd">A’s digital signature is decrypted with A’s public key to obtain the message digest</font></li>
+<li><font color="#4a69bd">A’s hashing algorithm recreates the message digest from the decrypted message</font></li>
+<li><font color="#4a69bd">The two message digests are compared, if they are the same then the message should be authentic / has not been tampered. </font></li>
+</ul>
+<p><u>Explain the process organisation follows to obtain digital certificate</u></p>
+<ul>
+<li><font color="#4a69bd">Appied to an issuing Certificate Authority (CA)</font>
+<ul>
+<li><font color="#4a69bd">With some proof of identity</font></li>
+<li><font color="#4a69bd">Eg: name of organisation, address of organization</font></li>
+<li><font color="#4a69bd">So their identity can be checked by the organisational registration authority</font></li>
+<li><font color="#4a69bd">So that the digital certificate will only be issued to a trusted organization</font></li>
+</ul>
+</li>
+</ul>
+<h3 id="Digital-signature"><a class="header-anchor" href="#Digital-signature">¶</a>Digital signature</h3>
+<blockquote>
+<p>Electronic way of validating the authenticity of digital documents; that is, making sure they have not been tampered with during transmission and also proof that a document was sent by a known user</p>
+</blockquote>
+<h4 id="u-Purpose-u-v3"><a class="header-anchor" href="#u-Purpose-u-v3">¶</a><u>Purpose:</u></h4>
+<ul>
+<li><font color="#4a69bd">To ensure a document is authentic // came from a trusted source</font></li>
+<li><font color="#4a69bd">To ensure a document has not benn altered during transmission</font></li>
+<li><font color="#4a69bd">Non-repudiation</font></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th>Digital certificate &amp; digital signature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>Similarities:</strong></td>
+<td>Both used for authentication <br>Both are unique to the owner/subject  <br>Include / use owner’s public key   <br>Include / make use of hashing algorithm</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Differences:</strong></td>
+<td>Certificate obtained from issuing authority  <br>Signature created from a message   <br>Certificate provides authentication of owner  <br>Signature used to authenticate message that are sent by the owner  <br>Certificate remains unchanged whilst it is valid <br>New signature created for every message  <br>Only certificate provide extra information  <br>Only signature make use of a private key</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Past-paper-questions-v3"><a class="header-anchor" href="#Past-paper-questions-v3">¶</a>Past paper questions</h3>
+<ol>
+<li></li>
+</ol>
+<p><u>Give two uses where the encrypted message digest is advisable:</u></p>
+<ul>
+<li>Financial transaction</li>
+<li>Legal document</li>
+<li>Software distribution</li>
+</ul>
+<ol start="2">
+<li></li>
+</ol>
+<p>A user downloads software from the internet.</p>
+<ol>
+<li>
+<p><u>State what should be part of the download to provide proof that the software is authentic</u></p>
+</li>
+<li>
+<ul>
+<li>Digital signature</li>
+</ul>
+</li>
+<li>
+<p><u>Describe the process for ensuring that the software is both authentic and has not been altered</u></p>
+</li>
+<li>
+<ul>
+<li>
+<p>Software is put through a hashing algorithm to produce a digest</p>
+</li>
+<li>
+<p>The digest is encrypted using the private key to produce a digital signature</p>
+</li>
+<li>
+<p>The software is sent along with the digital signature</p>
+</li>
+<li>
+<p>The receiver is in possession of the sender’s public key</p>
+</li>
+<li>
+<p>The received digital signature is decrypted with sender’s public key to produce the digest</p>
+</li>
+<li>
+<p>The received software is hashed to produce another digest</p>
+</li>
+<li>
+<p>Compare if the two digests are equal</p>
+</li>
+<li>
+<ul>
+<li>If so, then the software is authentic and has not been altered</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Q4 is a more detailed version of Q3 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/04/09/markdown-tricks/" rel="prev" title="那些你该知道的markdown操作">
+      <i class="fa fa-chevron-left"></i> 那些你该知道的markdown操作
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Chapter 17: Security🔒</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Encryption"><span class="nav-number">1.1.</span> <span class="nav-text">Encryption</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Definitions"><span class="nav-number">1.1.1.</span> <span class="nav-text">Definitions:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Main-Security-concerns"><span class="nav-number">1.1.2.</span> <span class="nav-text">Main Security concerns:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Asymmetric-key-cryptography"><span class="nav-number">1.1.3.</span> <span class="nav-text">Asymmetric key cryptography</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u-Benefits-u"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">Benefits:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Symmetric-key-cryptography"><span class="nav-number">1.1.4.</span> <span class="nav-text">Symmetric key cryptography</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u-Drawbacks-u"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">Drawbacks:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Quantum-Cryptography"><span class="nav-number">1.1.5.</span> <span class="nav-text">Quantum Cryptography</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u-Purpose-u"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">Purpose</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u-Benefits-u-v2"><span class="nav-number">1.1.5.2.</span> <span class="nav-text">Benefits:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Drawbacks"><span class="nav-number">1.1.5.3.</span> <span class="nav-text">Drawbacks:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions"><span class="nav-number">1.1.6.</span> <span class="nav-text">Past paper questions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Secure-socket-layer-SSL-and-Transport-layer-security-TLS"><span class="nav-number">1.2.</span> <span class="nav-text">Secure socket layer(SSL) and Transport layer security(TLS)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Digital-Certificate-%F0%9F%93%83"><span class="nav-number">1.3.</span> <span class="nav-text">Digital Certificate 📃</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u-Purpose-u-v2"><span class="nav-number">1.3.1.</span> <span class="nav-text">Purpose:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SSL"><span class="nav-number">1.3.2.</span> <span class="nav-text">SSL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TLS"><span class="nav-number">1.3.3.</span> <span class="nav-text">TLS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions-v2"><span class="nav-number">1.3.4.</span> <span class="nav-text">Past paper questions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Digital-certification"><span class="nav-number">1.4.</span> <span class="nav-text">Digital certification</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Digital-certificate"><span class="nav-number">1.4.1.</span> <span class="nav-text">Digital certificate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Digital-signature"><span class="nav-number">1.4.2.</span> <span class="nav-text">Digital signature</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u-Purpose-u-v3"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">Purpose:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions-v3"><span class="nav-number">1.4.3.</span> <span class="nav-text">Past paper questions</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Haoran Jie"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Haoran Jie</p>
+  <div class="site-description" itemprop="description">17</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Haoran-Jie" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Haoran-Jie" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/profile.php?id=100077991016519" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100077991016519" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/samueljieee/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;samueljieee&#x2F;" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-dog"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Haoran Jie</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">25k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">23 mins.</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
