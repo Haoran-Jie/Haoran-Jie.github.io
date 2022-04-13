@@ -6,7 +6,7 @@
   <link href="https://haoran-jie.github.io/atom.xml" rel="self"/>
   
   <link href="https://haoran-jie.github.io/"/>
-  <updated>2022-04-12T15:38:40.031Z</updated>
+  <updated>2022-04-13T00:53:08.726Z</updated>
   <id>https://haoran-jie.github.io/</id>
   
   <author>
@@ -21,14 +21,14 @@
     <link href="https://haoran-jie.github.io/2022/04/12/Security/"/>
     <id>https://haoran-jie.github.io/2022/04/12/Security/</id>
     <published>2022-04-12T15:31:31.000Z</published>
-    <updated>2022-04-12T15:38:40.031Z</updated>
+    <updated>2022-04-13T00:53:08.726Z</updated>
     
     
     <summary type="html">&lt;h1&gt;Chapter 17: Security🔒&lt;/h1&gt;
 &lt;p&gt;&lt;img src=&quot;/2022/04/12/Security/security.png&quot; alt&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&quot;Encryption&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#Encryption&quot;&gt;¶&lt;/a&gt;Encryption&lt;/h2&gt;
-&lt;h3 id=&quot;Definitions&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#Definitions&quot;&gt;¶&lt;/a&gt;Definitions:&lt;/h3&gt;
+&lt;h3 id=&quot;Definitions-v2&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#Definitions-v2&quot;&gt;¶&lt;/a&gt;Definitions:&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;font color=&quot;#4a69bd&quot;&gt;Plain text: the original data to be transmitted as a message&lt;/font&gt;&lt;/li&gt;
 &lt;li&gt;&lt;font color=&quot;#4a69bd&quot;&gt;Digital certificate: An electronic document from a trusted authority that ensures authentication&lt;/font&gt;&lt;/li&gt;
@@ -54,6 +54,16 @@
     
     
     
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
+    
+    <category term="ALCS" scheme="https://haoran-jie.github.io/categories/Notes/ALCS/"/>
+    
+    
+    <category term="Cryptography" scheme="https://haoran-jie.github.io/tags/Cryptography/"/>
+    
+    <category term="SSL/TLS" scheme="https://haoran-jie.github.io/tags/SSL-TLS/"/>
+    
+    <category term="Digital Certification" scheme="https://haoran-jie.github.io/tags/Digital-Certification/"/>
     
   </entry>
   
@@ -62,7 +72,7 @@
     <link href="https://haoran-jie.github.io/2022/04/09/markdown-tricks/"/>
     <id>https://haoran-jie.github.io/2022/04/09/markdown-tricks/</id>
     <published>2022-04-09T13:35:08.000Z</published>
-    <updated>2022-04-12T15:40:36.627Z</updated>
+    <updated>2022-04-13T00:48:08.988Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;基于HTML-HTML-based&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#基于HTML-HTML-based&quot;&gt;¶&lt;/a&gt;基于HTML: HTML-based&lt;/h2&gt;
@@ -77,6 +87,10 @@
     
     
     
+    <category term="blogging" scheme="https://haoran-jie.github.io/categories/blogging/"/>
+    
+    <category term="start" scheme="https://haoran-jie.github.io/categories/blogging/start/"/>
+    
     
     <category term="Markdown" scheme="https://haoran-jie.github.io/tags/Markdown/"/>
     
@@ -90,7 +104,7 @@
     <updated>2022-04-07T12:19:37.439Z</updated>
     
     
-    <summary type="html">&lt;img src=&quot;https://media.giphy.com/media/RUI6VnZ1hQjWfYlcdz/giphy.gif&quot; alt=&quot;blinking_rhombus&quot; style=&quot;zoom:300%;&quot; &gt;</summary>
+    <summary type="html">&lt;img src=&quot;https://media.giphy.com/media/RUI6VnZ1hQjWfYlcdz/giphy.gif&quot; alt=&quot;blinking_rhombus&quot; style=&quot;zoom:300%;&quot;&gt;</summary>
     
     
     
@@ -113,7 +127,7 @@
     <updated>2022-04-07T12:19:17.009Z</updated>
     
     
-    <summary type="html">&lt;img src=&quot;https://media.giphy.com/media/KcMqhBHGYydbQqf7z1/giphy.gif&quot; alt=&quot;loadingAnimation&quot; style=&quot;zoom:300%;&quot;    &gt;</summary>
+    <summary type="html">&lt;img src=&quot;https://media.giphy.com/media/KcMqhBHGYydbQqf7z1/giphy.gif&quot; alt=&quot;loadingAnimation&quot; style=&quot;zoom:300%;&quot;&gt;</summary>
     
     
     
@@ -136,7 +150,7 @@
     <updated>2022-04-07T12:18:36.441Z</updated>
     
     
-    <summary type="html">&lt;img src=&quot;https://media.giphy.com/media/r0qmZ6SyKILYYxmyHK/giphy.gif&quot; alt=&quot;gif&quot; style=&quot;zoom:1000%;&quot;  class=&quot;full-image&quot;/&gt;</summary>
+    <summary type="html">&lt;img src=&quot;https://media.giphy.com/media/r0qmZ6SyKILYYxmyHK/giphy.gif&quot; alt=&quot;gif&quot; style=&quot;zoom:1000%;&quot; class=&quot;full-image&quot;&gt;</summary>
     
     
     
