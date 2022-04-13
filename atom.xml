@@ -6,7 +6,7 @@
   <link href="https://haoran-jie.github.io/atom.xml" rel="self"/>
   
   <link href="https://haoran-jie.github.io/"/>
-  <updated>2022-04-13T00:53:08.726Z</updated>
+  <updated>2022-04-13T06:14:26.935Z</updated>
   <id>https://haoran-jie.github.io/</id>
   
   <author>
@@ -21,36 +21,12 @@
     <link href="https://haoran-jie.github.io/2022/04/12/Security/"/>
     <id>https://haoran-jie.github.io/2022/04/12/Security/</id>
     <published>2022-04-12T15:31:31.000Z</published>
-    <updated>2022-04-13T00:53:08.726Z</updated>
+    <updated>2022-04-13T06:14:26.935Z</updated>
     
     
     <summary type="html">&lt;h1&gt;Chapter 17: Security🔒&lt;/h1&gt;
 &lt;p&gt;&lt;img src=&quot;/2022/04/12/Security/security.png&quot; alt&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;Encryption&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#Encryption&quot;&gt;¶&lt;/a&gt;Encryption&lt;/h2&gt;
-&lt;h3 id=&quot;Definitions-v2&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#Definitions-v2&quot;&gt;¶&lt;/a&gt;Definitions:&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;font color=&quot;#4a69bd&quot;&gt;Plain text: the original data to be transmitted as a message&lt;/font&gt;&lt;/li&gt;
-&lt;li&gt;&lt;font color=&quot;#4a69bd&quot;&gt;Digital certificate: An electronic document from a trusted authority that ensures authentication&lt;/font&gt;&lt;/li&gt;
-&lt;li&gt;&lt;font color=&quot;#4a69bd&quot;&gt;Public key: An encryption method produced by a trusted authority that can be used by anyone&lt;/font&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;font color=&quot;#4a69bd&quot;&gt;Key widely available that can be used to encrypt message that only owner of the private key can decrypt&lt;/font&gt;&lt;/li&gt;
-&lt;li&gt;&lt;font color=&quot;#4a69bd&quot;&gt;Can be used to decrypt a digital signature, thereby confirming the originator of the message &lt;/font&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;font color=&quot;#4a69bd&quot;&gt;Private key - Key needed to decrypt data that has been encrypted by a public key&lt;/font&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;font color=&quot;#4a69bd&quot;&gt;Key needed to encrypt data so that it can be decrypted by a public key&lt;/font&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;font color=&quot;#4a69bd&quot;&gt;The key used to asymmetric encryption which is not shared&lt;/font&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;font color=&quot;#4a69bd&quot;&gt;Encryption: Process of turning plain text into cipher text&lt;/font&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary>
+&lt;hr&gt;</summary>
     
     
     
