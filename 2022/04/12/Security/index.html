@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://haoran-jie.github.io/2022/04/12/Security/security.png">
 <meta property="og:image" content="https://haoran-jie.github.io/2022/04/12/Security/sec1.png">
 <meta property="article:published_time" content="2022-04-12T15:31:31.000Z">
-<meta property="article:modified_time" content="2022-04-13T06:14:26.935Z">
+<meta property="article:modified_time" content="2022-04-14T02:31:29.664Z">
 <meta property="article:author" content="Haoran Jie">
 <meta property="article:tag" content="Cryptography">
 <meta property="article:tag" content="SSL&#x2F;TLS">
@@ -205,7 +205,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-04-13 14:14:26" itemprop="dateModified" datetime="2022-04-13T14:14:26+08:00">2022-04-13</time>
+                <time title="Modified: 2022-04-14 10:31:29" itemprop="dateModified" datetime="2022-04-14T10:31:29+08:00">2022-04-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -261,6 +261,7 @@
 <h3 id="Definitions"><a class="header-anchor" href="#Definitions">¶</a>Definitions:</h3>
 <ul>
 <li><font color="#4a69bd">Plain text: the original data to be transmitted as a message</font></li>
+<li><font color="#4a69bd">Cipher text: the result of encryption that is transmitted to the recipient</font></li>
 <li><font color="#4a69bd">Digital certificate: An electronic document from a trusted authority that ensures authentication</font></li>
 <li><font color="#4a69bd">Public key: An encryption method produced by a trusted authority that can be used by anyone</font>
 <ul>
@@ -268,21 +269,15 @@
 <li><font color="#4a69bd">Can be used to decrypt a digital signature, thereby confirming the originator of the message </font></li>
 </ul>
 </li>
-<li><font color="#4a69bd">Private key - Key needed to decrypt data that has been encrypted by a public key</font></li>
-<li>
+<li><font color="#4a69bd">Private key - Key needed to decrypt data that has been encrypted by a public key</font>
 <ul>
 <li><font color="#4a69bd">Key needed to encrypt data so that it can be decrypted by a public key</font></li>
-</ul>
-</li>
-<li>
-<ul>
 <li><font color="#4a69bd">The key used to asymmetric encryption which is not shared</font></li>
 </ul>
 </li>
 <li><font color="#4a69bd">Encryption: Process of turning plain text into cipher text</font></li>
 </ul>
-<!-- more --> 
-<h3 id="Main-Security-concerns"><a class="header-anchor" href="#Main-Security-concerns">¶</a>Main Security concerns:</h3>
+<h3 id="Main-Security-concerns"><a class="header-anchor" href="#Main-Security-concerns">¶</a>Main Security concerns:<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></h3>
 <ol>
 <li><strong>Confidentiality</strong> is where only the intended recipient should be able to read or decipher the data.</li>
 <li><strong>Authenticity</strong> is the need to identify who sent the data and verify that the source is legitimate.</li>
@@ -362,7 +357,6 @@
 </ol>
 <p><img src="/2022/04/12/Security/sec1.png" alt></p>
 <h2 id="Secure-socket-layer-SSL-and-Transport-layer-security-TLS"><a class="header-anchor" href="#Secure-socket-layer-SSL-and-Transport-layer-security-TLS">¶</a>Secure socket layer(SSL) and Transport layer security(TLS)</h2>
-<h2 id="Digital-Certificate-📃"><a class="header-anchor" href="#Digital-Certificate-📃">¶</a>Digital Certificate 📃</h2>
 <h3 id="u-Purpose-u-v2"><a class="header-anchor" href="#u-Purpose-u-v2">¶</a><u>Purpose</u>:</h3>
 <ul>
 <li><font color="#4a69bd">The SSL &amp; TLS provide communication security over the internet/network</font></li>
@@ -493,7 +487,7 @@
 <ol start="4">
 <li></li>
 </ol>
-<p><u>The sequence of steps describes what happens when setting up a secure connection using Secure Socket Layer (SSL)</u><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<p><u>The sequence of steps describes what happens when setting up a secure connection using Secure Socket Layer (SSL)</u><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
 <ul>
 <li>Browser requests that the server identifies itself</li>
 <li>Server sends a copy of its SSL Certificate and its public key</li>
@@ -503,7 +497,7 @@
 <li>Server sends the browser an acknowledgment, encrypted with the session key.</li>
 <li>Server and browser now encrypt all transmitted data with the session key</li>
 </ul>
-<h2 id="Digital-certification"><a class="header-anchor" href="#Digital-certification">¶</a>Digital certification</h2>
+<h2 id="Digital-certification📃"><a class="header-anchor" href="#Digital-certification📃">¶</a>Digital certification📃</h2>
 <h3 id="Digital-certificate"><a class="header-anchor" href="#Digital-certificate">¶</a>Digital certificate</h3>
 <blockquote>
 <p>An electrical document used to prove the identity of a website or individual. It contains a public key and information identifying the website owner or individual, issued by a <strong>Certificate Authority (CA)</strong></p>
@@ -551,7 +545,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="Digital-signature"><a class="header-anchor" href="#Digital-signature">¶</a>Digital signature</h3>
+<h3 id="Digital-signature✒️"><a class="header-anchor" href="#Digital-signature✒️">¶</a>Digital signature✒️</h3>
 <blockquote>
 <p>Electronic way of validating the authenticity of digital documents; that is, making sure they have not been tampered with during transmission and also proof that a document was sent by a known user</p>
 </blockquote>
@@ -585,61 +579,51 @@
 </ol>
 <p><u>Give two uses where the encrypted message digest is advisable:</u></p>
 <ul>
-<li>Financial transaction</li>
-<li>Legal document</li>
-<li>Software distribution</li>
+<li><font color="#4a69bd">Financial transaction</font></li>
+<li><font color="#4a69bd">Legal document</font></li>
+<li><font color="#4a69bd">Software distribution</font></li>
 </ul>
 <ol start="2">
 <li></li>
 </ol>
 <p>A user downloads software from the internet.</p>
-<ol>
-<li>
 <p><u>State what should be part of the download to provide proof that the software is authentic</u></p>
-</li>
-<li>
 <ul>
-<li>Digital signature</li>
+<li><font color="#4a69bd">Digital signature</font></li>
 </ul>
-</li>
-<li>
 <p><u>Describe the process for ensuring that the software is both authentic and has not been altered</u></p>
-</li>
-<li>
 <ul>
 <li>
-<p>Software is put through a hashing algorithm to produce a digest</p>
+<p><font color="#4a69bd">Software is put through a hashing algorithm to produce a digest</font></p>
 </li>
 <li>
-<p>The digest is encrypted using the private key to produce a digital signature</p>
+<p><font color="#4a69bd">The digest is encrypted using the private key to produce a digital signature</font></p>
 </li>
 <li>
-<p>The software is sent along with the digital signature</p>
+<p><font color="#4a69bd">The software is sent along with the digital signature</font></p>
 </li>
 <li>
-<p>The receiver is in possession of the sender’s public key</p>
+<p><font color="#4a69bd">The receiver is in possession of the sender’s public key</font></p>
 </li>
 <li>
-<p>The received digital signature is decrypted with sender’s public key to produce the digest</p>
+<p><font color="#4a69bd">The received digital signature is decrypted with sender’s public key to produce the digest</font></p>
 </li>
 <li>
-<p>The received software is hashed to produce another digest</p>
+<p><font color="#4a69bd">The received software is hashed to produce another digest</font></p>
 </li>
 <li>
-<p>Compare if the two digests are equal</p>
+<p><font color="#4a69bd">Compare if the two digests are equal</font></p>
 </li>
 <li>
-<ul>
-<li>If so, then the software is authentic and has not been altered</li>
-</ul>
+<p><font color="#4a69bd">If so, then the software is authentic and has not been altered</font></p>
 </li>
 </ul>
-</li>
-</ol>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>Q4 is a more detailed version of Q3 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+<li id="fn1" class="footnote-item"><p>These four words appears constantly in mark schemes; so just write about them if you have no idea about the question <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Q4 is a more detailed version of Q3 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>
@@ -666,7 +650,10 @@
     <a href="/2022/04/09/markdown-tricks/" rel="prev" title="那些你该知道的markdown操作">
       <i class="fa fa-chevron-left"></i> 那些你该知道的markdown操作
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2022/04/13/AS&AL-CompSci-Note/" rel="next" title="AS-CompSci-Note">
+      AS-CompSci-Note <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -725,7 +712,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Chapter 17: Security🔒</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Encryption"><span class="nav-number">1.1.</span> <span class="nav-text">Encryption</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Definitions"><span class="nav-number">1.1.1.</span> <span class="nav-text">Definitions:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Main-Security-concerns"><span class="nav-number">1.1.2.</span> <span class="nav-text">Main Security concerns:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Asymmetric-key-cryptography"><span class="nav-number">1.1.3.</span> <span class="nav-text">Asymmetric key cryptography</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u-Benefits-u"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">Benefits:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Symmetric-key-cryptography"><span class="nav-number">1.1.4.</span> <span class="nav-text">Symmetric key cryptography</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u-Drawbacks-u"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">Drawbacks:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Quantum-Cryptography"><span class="nav-number">1.1.5.</span> <span class="nav-text">Quantum Cryptography</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u-Purpose-u"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">Purpose</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u-Benefits-u-v2"><span class="nav-number">1.1.5.2.</span> <span class="nav-text">Benefits:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Drawbacks"><span class="nav-number">1.1.5.3.</span> <span class="nav-text">Drawbacks:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions"><span class="nav-number">1.1.6.</span> <span class="nav-text">Past paper questions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Secure-socket-layer-SSL-and-Transport-layer-security-TLS"><span class="nav-number">1.2.</span> <span class="nav-text">Secure socket layer(SSL) and Transport layer security(TLS)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Digital-Certificate-%F0%9F%93%83"><span class="nav-number">1.3.</span> <span class="nav-text">Digital Certificate 📃</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u-Purpose-u-v2"><span class="nav-number">1.3.1.</span> <span class="nav-text">Purpose:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SSL"><span class="nav-number">1.3.2.</span> <span class="nav-text">SSL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TLS"><span class="nav-number">1.3.3.</span> <span class="nav-text">TLS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions-v2"><span class="nav-number">1.3.4.</span> <span class="nav-text">Past paper questions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Digital-certification"><span class="nav-number">1.4.</span> <span class="nav-text">Digital certification</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Digital-certificate"><span class="nav-number">1.4.1.</span> <span class="nav-text">Digital certificate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Digital-signature"><span class="nav-number">1.4.2.</span> <span class="nav-text">Digital signature</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u-Purpose-u-v3"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">Purpose:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions-v3"><span class="nav-number">1.4.3.</span> <span class="nav-text">Past paper questions</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Chapter 17: Security🔒</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Encryption"><span class="nav-number">1.1.</span> <span class="nav-text">Encryption</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Definitions"><span class="nav-number">1.1.1.</span> <span class="nav-text">Definitions:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Main-Security-concerns"><span class="nav-number">1.1.2.</span> <span class="nav-text">Main Security concerns:[1]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Asymmetric-key-cryptography"><span class="nav-number">1.1.3.</span> <span class="nav-text">Asymmetric key cryptography</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u-Benefits-u"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">Benefits:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Symmetric-key-cryptography"><span class="nav-number">1.1.4.</span> <span class="nav-text">Symmetric key cryptography</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u-Drawbacks-u"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">Drawbacks:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Quantum-Cryptography"><span class="nav-number">1.1.5.</span> <span class="nav-text">Quantum Cryptography</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u-Purpose-u"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">Purpose</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u-Benefits-u-v2"><span class="nav-number">1.1.5.2.</span> <span class="nav-text">Benefits:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Drawbacks"><span class="nav-number">1.1.5.3.</span> <span class="nav-text">Drawbacks:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions"><span class="nav-number">1.1.6.</span> <span class="nav-text">Past paper questions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Secure-socket-layer-SSL-and-Transport-layer-security-TLS"><span class="nav-number">1.2.</span> <span class="nav-text">Secure socket layer(SSL) and Transport layer security(TLS)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u-Purpose-u-v2"><span class="nav-number">1.2.1.</span> <span class="nav-text">Purpose:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SSL"><span class="nav-number">1.2.2.</span> <span class="nav-text">SSL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TLS"><span class="nav-number">1.2.3.</span> <span class="nav-text">TLS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions-v2"><span class="nav-number">1.2.4.</span> <span class="nav-text">Past paper questions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Digital-certification%F0%9F%93%83"><span class="nav-number">1.3.</span> <span class="nav-text">Digital certification📃</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Digital-certificate"><span class="nav-number">1.3.1.</span> <span class="nav-text">Digital certificate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Digital-signature%E2%9C%92%EF%B8%8F"><span class="nav-number">1.3.2.</span> <span class="nav-text">Digital signature✒️</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u-Purpose-u-v3"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">Purpose:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions-v3"><span class="nav-number">1.3.3.</span> <span class="nav-text">Past paper questions</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -741,20 +728,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -804,12 +791,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">27k</span>
+    <span title="Symbols count total">29k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">25 mins.</span>
+    <span title="Reading time total">26 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>

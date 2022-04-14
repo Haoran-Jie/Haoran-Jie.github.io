@@ -6,7 +6,7 @@
   <link href="https://haoran-jie.github.io/atom.xml" rel="self"/>
   
   <link href="https://haoran-jie.github.io/"/>
-  <updated>2022-04-13T06:14:26.935Z</updated>
+  <updated>2022-04-13T13:49:26.584Z</updated>
   <id>https://haoran-jie.github.io/</id>
   
   <author>
@@ -17,11 +17,61 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>14-Communication</title>
+    <link href="https://haoran-jie.github.io/2022/04/13/14-Communication/"/>
+    <id>https://haoran-jie.github.io/2022/04/13/14-Communication/</id>
+    <published>2022-04-13T13:24:22.000Z</published>
+    <updated>2022-04-13T13:49:26.584Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;Chapter 14: Communication and Internet technologies&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;/2022/04/13/14-Communication/.%5C14-Communication%5Ccommu.png&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>AS-CompSci-Note</title>
+    <link href="https://haoran-jie.github.io/2022/04/13/AS&amp;AL-CompSci-Note/"/>
+    <id>https://haoran-jie.github.io/2022/04/13/AS&amp;AL-CompSci-Note/</id>
+    <published>2022-04-13T08:45:07.000Z</published>
+    <updated>2022-04-13T09:21:18.866Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 style=&quot;text-align:center; color:#273c75;&quot;&gt;AS/AL  Computer Science Note&lt;/h1&gt;
+&lt;h2 id=&quot;About&quot;&gt;&lt;a class=&quot;header-anchor&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
+    
+    <category term="ASCS" scheme="https://haoran-jie.github.io/categories/Notes/ASCS/"/>
+    
+    
+    <category term="README" scheme="https://haoran-jie.github.io/tags/README/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Security</title>
     <link href="https://haoran-jie.github.io/2022/04/12/Security/"/>
     <id>https://haoran-jie.github.io/2022/04/12/Security/</id>
     <published>2022-04-12T15:31:31.000Z</published>
-    <updated>2022-04-13T06:14:26.935Z</updated>
+    <updated>2022-04-14T02:31:29.664Z</updated>
     
     
     <summary type="html">&lt;h1&gt;Chapter 17: Security🔒&lt;/h1&gt;
@@ -48,11 +98,11 @@
     <link href="https://haoran-jie.github.io/2022/04/09/markdown-tricks/"/>
     <id>https://haoran-jie.github.io/2022/04/09/markdown-tricks/</id>
     <published>2022-04-09T13:35:08.000Z</published>
-    <updated>2022-04-13T00:48:08.988Z</updated>
+    <updated>2022-04-14T00:40:03.763Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;基于HTML-HTML-based&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#基于HTML-HTML-based&quot;&gt;¶&lt;/a&gt;基于HTML: HTML-based&lt;/h2&gt;
-&lt;h3 id=&quot;改变字体颜色-Text-Colour&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#改变字体颜色-Text-Colour&quot;&gt;¶&lt;/a&gt;改变字体颜色: Text Colour&lt;/h3&gt;
+&lt;h3 id=&quot;👉改变字体颜色-Text-Colour&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#👉改变字体颜色-Text-Colour&quot;&gt;¶&lt;/a&gt;👉改变字体颜色: Text Colour&lt;/h3&gt;
 &lt;h4 id=&quot;表示方法-value&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#表示方法-value&quot;&gt;¶&lt;/a&gt;表示方法&lt;code&gt;&amp;lt;value&amp;gt;&lt;/code&gt;:&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;十六进制值 如 &lt;code&gt;#f1c40f&lt;/code&gt;&lt;/li&gt;
@@ -167,10 +217,15 @@
     <link href="https://haoran-jie.github.io/2022/04/04/FlexBox-Notes/"/>
     <id>https://haoran-jie.github.io/2022/04/04/FlexBox-Notes/</id>
     <published>2022-04-04T12:08:05.000Z</published>
-    <updated>2022-04-06T03:09:54.041Z</updated>
+    <updated>2022-04-13T12:46:13.653Z</updated>
     
     
-    <summary type="html">&lt;p style=&quot;text-align:center;&quot;&gt;Notes of FlexBox container in css and its related properties &lt;/p&gt;</summary>
+    <summary type="html">&lt;blockquote class=&quot;blockquote-center&quot;&gt;
+            &lt;i class=&quot;fa fa-quote-left&quot;&gt;&lt;/i&gt;
+            &lt;p&gt;Notes of FlexBox container in css and its related properties&lt;/p&gt;
+
+            &lt;i class=&quot;fa fa-quote-right&quot;&gt;&lt;/i&gt;
+          &lt;/blockquote&gt;</summary>
     
     
     
@@ -190,7 +245,7 @@
     <link href="https://haoran-jie.github.io/2022/04/03/Start-of-Blog/"/>
     <id>https://haoran-jie.github.io/2022/04/03/Start-of-Blog/</id>
     <published>2022-04-03T03:46:10.000Z</published>
-    <updated>2022-04-08T14:19:20.245Z</updated>
+    <updated>2022-04-14T00:35:21.522Z</updated>
     
     
       
