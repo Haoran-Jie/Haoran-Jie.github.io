@@ -6,7 +6,7 @@
   <link href="https://haoran-jie.github.io/atom.xml" rel="self"/>
   
   <link href="https://haoran-jie.github.io/"/>
-  <updated>2022-04-14T09:44:16.392Z</updated>
+  <updated>2022-04-15T03:34:39.352Z</updated>
   <id>https://haoran-jie.github.io/</id>
   
   <author>
@@ -17,15 +17,16 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>14-Communication</title>
+    <title>Chapter 14: Communication and Internet technologies</title>
     <link href="https://haoran-jie.github.io/2022/04/13/14-Communication/"/>
     <id>https://haoran-jie.github.io/2022/04/13/14-Communication/</id>
     <published>2022-04-13T13:24:22.000Z</published>
-    <updated>2022-04-14T09:44:16.392Z</updated>
+    <updated>2022-04-15T03:34:39.352Z</updated>
     
     
     <summary type="html">&lt;h1&gt;Chapter 14: Communication and Internet technologies&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;/2022/04/13/14-Communication/.%5C14-Communication%5Ccommu.png&quot; alt&gt;&lt;/p&gt;</summary>
+&lt;p&gt;&lt;img src=&quot;/2022/04/13/14-Communication/commu.png&quot; alt&gt;&lt;/p&gt;
+&lt;hr&gt;</summary>
     
     
     
@@ -35,19 +36,19 @@
   </entry>
   
   <entry>
-    <title>AS-CompSci-Note</title>
+    <title>IG/AS/AL CompSci-Note</title>
     <link href="https://haoran-jie.github.io/2022/04/13/AS&amp;AL-CompSci-Note/"/>
     <id>https://haoran-jie.github.io/2022/04/13/AS&amp;AL-CompSci-Note/</id>
     <published>2022-04-13T08:45:07.000Z</published>
-    <updated>2022-04-13T09:21:18.866Z</updated>
+    <updated>2022-04-15T02:54:40.581Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 style=&quot;text-align:center; color:#273c75;&quot;&gt;AS/AL  Computer Science Note&lt;/h1&gt;
-&lt;h2 id=&quot;About&quot;&gt;&lt;a class=&quot;header-anchor&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;About&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#About&quot;&gt;¶&lt;/a&gt;About&lt;/h2&gt;
+&lt;h2 id=&quot;Directory&quot;&gt;&lt;a class=&quot;header-anchor&quot;</summary>
         
       
     
@@ -63,11 +64,11 @@
   </entry>
   
   <entry>
-    <title>Security</title>
+    <title>Chapter 17: Security</title>
     <link href="https://haoran-jie.github.io/2022/04/12/Security/"/>
     <id>https://haoran-jie.github.io/2022/04/12/Security/</id>
     <published>2022-04-12T15:31:31.000Z</published>
-    <updated>2022-04-14T02:31:29.664Z</updated>
+    <updated>2022-04-15T03:34:13.483Z</updated>
     
     
     <summary type="html">&lt;h1&gt;Chapter 17: Security🔒&lt;/h1&gt;
@@ -192,7 +193,7 @@
     <link href="https://haoran-jie.github.io/2022/04/05/JavaScript-Basics/"/>
     <id>https://haoran-jie.github.io/2022/04/05/JavaScript-Basics/</id>
     <published>2022-04-05T05:25:56.000Z</published>
-    <updated>2022-04-09T02:05:56.166Z</updated>
+    <updated>2022-04-13T12:27:18.431Z</updated>
     
     
     <summary type="html">&lt;p style=&quot;text-align:center; color:#19547b; font-weight:bold;&quot;&gt; A flexible language that powers dynamic websites and apps &lt;/p&gt;</summary>
