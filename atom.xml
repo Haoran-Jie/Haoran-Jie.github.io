@@ -6,7 +6,7 @@
   <link href="https://haoran-jie.github.io/atom.xml" rel="self"/>
   
   <link href="https://haoran-jie.github.io/"/>
-  <updated>2022-04-18T12:36:52.878Z</updated>
+  <updated>2022-04-18T12:44:38.011Z</updated>
   <id>https://haoran-jie.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://haoran-jie.github.io/2022/04/17/fileHandling/"/>
     <id>https://haoran-jie.github.io/2022/04/17/fileHandling/</id>
     <published>2022-04-17T13:12:00.000Z</published>
-    <updated>2022-04-18T12:36:52.878Z</updated>
+    <updated>2022-04-18T12:44:38.011Z</updated>
     
     
     <summary type="html">&lt;h1&gt;Chapter 20.2: File Processing and Exception Handling&lt;/h1&gt;
@@ -30,21 +30,33 @@
     
     
     
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
+    
+    <category term="ALCS" scheme="https://haoran-jie.github.io/categories/Notes/ALCS/"/>
+    
+    
+    <category term="java" scheme="https://haoran-jie.github.io/tags/java/"/>
     
   </entry>
   
   <entry>
-    <title>practical</title>
+    <title>Practical Notes</title>
     <link href="https://haoran-jie.github.io/2022/04/17/practical/"/>
     <id>https://haoran-jie.github.io/2022/04/17/practical/</id>
     <published>2022-04-17T12:23:10.000Z</published>
-    <updated>2022-04-18T12:38:39.190Z</updated>
+    <updated>2022-04-18T12:44:54.386Z</updated>
     
     
     <summary type="html">&lt;h1&gt;Practical - paper5&lt;/h1&gt;</summary>
     
     
     
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
+    
+    <category term="ALCS" scheme="https://haoran-jie.github.io/categories/Notes/ALCS/"/>
+    
+    
+    <category term="java" scheme="https://haoran-jie.github.io/tags/java/"/>
     
   </entry>
   
