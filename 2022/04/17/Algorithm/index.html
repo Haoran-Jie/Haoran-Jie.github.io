@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://haoran-jie.github.io/2022/04/17/Algorithm/Syllabuspic.png">
 <meta property="article:published_time" content="2022-04-17T03:16:24.000Z">
-<meta property="article:modified_time" content="2022-04-17T04:34:15.581Z">
+<meta property="article:modified_time" content="2022-04-17T12:21:24.387Z">
 <meta property="article:author" content="Haoran Jie">
 <meta property="article:tag" content="Algorithms">
 <meta name="twitter:card" content="summary">
@@ -201,7 +201,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-04-17 11:16:24 / Modified: 12:34:15" itemprop="dateCreated datePublished" datetime="2022-04-17T11:16:24+08:00">2022-04-17</time>
+              <time title="Created: 2022-04-17 11:16:24 / Modified: 20:21:24" itemprop="dateCreated datePublished" datetime="2022-04-17T11:16:24+08:00">2022-04-17</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -257,6 +257,9 @@
 <h3 id="Prerequisite"><a class="header-anchor" href="#Prerequisite">¶</a>Prerequisite:</h3>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="type">int</span>[] mylist1= &#123;<span class="number">12</span>,<span class="number">45</span>,<span class="number">21</span>,<span class="number">22</span>,<span class="number">7</span>,<span class="number">39</span>,<span class="number">88</span>&#125;;</span><br><span class="line"><span class="keyword">static</span> <span class="type">int</span>[] mylist2= &#123;<span class="number">7</span>,<span class="number">12</span>,<span class="number">21</span>,<span class="number">22</span>,<span class="number">39</span>,<span class="number">45</span>,<span class="number">88</span>&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="Linear-search"><a class="header-anchor" href="#Linear-search">¶</a>Linear search</h3>
+<ul>
+<li>[x] 9618 s21 41 Q2</li>
+</ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">linearSearch</span><span class="params">(<span class="type">int</span> item)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;mylist1.length;++i)&#123;<span class="comment">//从头开始一个一个看数组里的`element`是否是正在找的`item`</span></span><br><span class="line">        <span class="keyword">if</span>(item==mylist1[i])&#123;<span class="comment">//如果相等</span></span><br><span class="line">            <span class="keyword">return</span> i;<span class="comment">//返回当前index</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(<span class="string">&quot;item not found&quot;</span>);<span class="comment">//如果找到最后了都没找到 则打印&quot;item not found&quot;</span></span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;<span class="comment">//终止程序并返回一个不是index的数字</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="Binary-search"><a class="header-anchor" href="#Binary-search">¶</a>Binary search</h3>
 <blockquote>
@@ -278,6 +281,9 @@
 <h3 id="Prerequisite-v2"><a class="header-anchor" href="#Prerequisite-v2">¶</a>Prerequisite</h3>
  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] thedata = &#123;<span class="number">34</span>,<span class="number">43</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">25</span>, <span class="number">98</span>, <span class="number">32</span>, <span class="number">43</span>, <span class="number">9</span>, <span class="number">11</span>&#125;;</span><br><span class="line"><span class="type">int</span>[] a=Bubblesort(thedata);</span><br><span class="line"><span class="type">int</span>[] b=insertionsort(thedata);</span><br></pre></td></tr></table></figure>
 <h3 id="Bubble-Sort"><a class="header-anchor" href="#Bubble-Sort">¶</a>Bubble Sort</h3>
+<ul>
+<li>[x] 9618 s21 41 Q2</li>
+</ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span>[] Bubblesort(<span class="type">int</span>[] arr)&#123;</span><br><span class="line">    <span class="type">int</span> top,temp;</span><br><span class="line">    Boolean swap;</span><br><span class="line">    top=arr.length-<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">do</span>&#123;</span><br><span class="line">        swap=<span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;top;++i)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[i]&gt;arr[i+<span class="number">1</span>])&#123;</span><br><span class="line">                temp=arr[i];</span><br><span class="line">                arr[i]=arr[i+<span class="number">1</span>];</span><br><span class="line">                arr[i+<span class="number">1</span>]=temp;</span><br><span class="line">                swap=<span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        top--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(swap &amp;&amp; top&gt;<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="Insertion-Sort"><a class="header-anchor" href="#Insertion-Sort">¶</a>Insertion Sort</h3>
 <p><u>Describe how an insertion sort will sort the data</u></p>
@@ -545,10 +551,13 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/04/13/14-Communication/" rel="prev" title="Chapter 14: Communication and Internet technologies">
+    <a href="/2022/04/13/Communication/" rel="prev" title="Chapter 14: Communication and Internet technologies">
       <i class="fa fa-chevron-left"></i> Chapter 14: Communication and Internet technologies
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2022/04/17/practical/" rel="next" title="practical">
+      practical <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -623,7 +632,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -686,12 +695,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">47k</span>
+    <span title="Symbols count total">56k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">43 mins.</span>
+    <span title="Reading time total">51 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
