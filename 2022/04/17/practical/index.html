@@ -28,7 +28,7 @@
 <meta property="og:description" content="Tips, reminders, and sample codes for paper5">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-04-17T12:23:10.000Z">
-<meta property="article:modified_time" content="2022-04-19T13:05:40.609Z">
+<meta property="article:modified_time" content="2022-04-20T15:16:25.873Z">
 <meta property="article:author" content="Haoran Jie">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -205,7 +205,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-04-19 21:05:40" itemprop="dateModified" datetime="2022-04-19T21:05:40+08:00">2022-04-19</time>
+                <time title="Modified: 2022-04-20 23:16:25" itemprop="dateModified" datetime="2022-04-20T23:16:25+08:00">2022-04-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -241,7 +241,7 @@
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>16 mins.</span>
+              <span>17 mins.</span>
             </span>
 
         </div>
@@ -290,6 +290,12 @@ Q3: OOP with file handling.</p>
 <li><strong>Q1</strong>
 <ul>
 <li><code>Linked list</code></li>
+<li><strong>mark scheme</strong> 错误☠️:
+<ol>
+<li>把class <code>node</code>的 <code>data</code> 和<code>nextNode</code>设置成<code>private</code>后, 在后面<code>addNode</code>方法中却可以直接<code>.data</code>&amp;<code>.nextNode</code>来进行访问。错误原因是因为用<code>private</code>修饰符过后是不能直接访问的 而是需要通过class里面的method来访问, 所以我写了两个getter methods.</li>
+<li><code>addNode</code>方法中 只有array能够传入, <code>startPointer</code>和<code>emptyList</code>需要作为global variable因为他们不能<code>by Reference</code>传入</li>
+</ol>
+</li>
 </ul>
 </li>
 </ul>
@@ -539,7 +545,7 @@ Q3: OOP with file handling.</p>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:06</span>
+    <span title="Reading time total">1:07</span>
 </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
 
