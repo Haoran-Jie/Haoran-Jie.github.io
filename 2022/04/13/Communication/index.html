@@ -28,9 +28,9 @@
 <meta property="og:description" content="Chapter 14: Communication and Internet technologies">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://haoran-jie.github.io/2022/04/13/Communication/commu.png">
-<meta property="og:image" content="https://haoran-jie.github.io/2022/04/13/Communication/.%5C14-Communication%5Cprotocolimp.jpg">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/04/13/Communication/protocolimp.jpg">
 <meta property="article:published_time" content="2022-04-13T13:24:22.000Z">
-<meta property="article:modified_time" content="2022-04-21T11:57:46.687Z">
+<meta property="article:modified_time" content="2022-04-28T06:51:13.787Z">
 <meta property="article:author" content="Haoran Jie">
 <meta property="article:tag" content="Communication">
 <meta name="twitter:card" content="summary">
@@ -208,7 +208,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-04-21 19:57:46" itemprop="dateModified" datetime="2022-04-21T19:57:46+08:00">2022-04-21</time>
+                <time title="Modified: 2022-04-28 14:51:13" itemprop="dateModified" datetime="2022-04-28T14:51:13+08:00">2022-04-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -237,14 +237,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.4k</span>
+              <span>12k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
+              <span>10 mins.</span>
             </span>
 
         </div>
@@ -280,17 +280,31 @@
 <li><font color="#4a69bd">This enables communication/compatibility between devices from different manufacturer/platform</font></li>
 </ul>
 <h3 id="Protocol-implementation"><a class="header-anchor" href="#Protocol-implementation">¶</a>Protocol implementation</h3>
-<p><img src="/2022/04/13/Communication/.%5C14-Communication%5Cprotocolimp.jpg" alt></p>
+<p><img src="/2022/04/13/Communication/protocolimp.jpg" alt></p>
+<h4 id="Protocol-stack"><a class="header-anchor" href="#Protocol-stack">¶</a>Protocol stack</h4>
+<blockquote>
+<p>For a protocol suite the protocols can be viewed as layers within a protocol stack. There are a number of aspects relating to this concept.</p>
+</blockquote>
+<ul>
+<li>Each layer can only accept input from the next higher layer or the next lower layer</li>
+<li>There is a defined interface between adjacent layers which constitutes the only interaction allowed between layers.</li>
+<li>A layer is serviced by the actions of lower layers.</li>
+<li>With the possible exception of the lowest layer the function of a layer is created by installed software</li>
+<li>A layer may comprise sub-layers.</li>
+<li>Any user interaction will take place using protocols associated with the highest level layer in the stack.</li>
+<li>Any direct access to hardware is confined to the lowest layer in the stack.</li>
+</ul>
 <p><u>State how each layer of stack is implemented</u></p>
 <ul>
-<li>Software/module/program/code</li>
+<li><font color="#4a69bd">Software/module/program/code</font></li>
 </ul>
+<h3 id="TCP-IP-protocol-suite"><a class="header-anchor" href="#TCP-IP-protocol-suite">¶</a>TCP/IP protocol suite</h3>
 <p><u>Describe the TCP/IP protocol suite:</u></p>
 <ul>
-<li>A layered model with four layers</li>
-<li>Uses a set of protocols for transmission of data</li>
-<li>Transport control protocol with Internet protocol</li>
-<li>Application layer, transport layer, internet layer, network (access) layer</li>
+<li><font color="#4a69bd">A layered model with four layers</font></li>
+<li><font color="#4a69bd">Uses a set of protocols for transmission of data</font></li>
+<li><font color="#4a69bd">Transport control protocol with Internet protocol</font></li>
+<li><font color="#4a69bd">Application layer, transport layer, internet layer, network (access) layer</font></li>
 </ul>
 <table>
 <thead>
@@ -301,24 +315,191 @@
 </thead>
 <tbody>
 <tr>
-<td>Application layer</td>
-<td><font color="#4a69bd">Handles access to services <br> Define protocol used <br> Manage data exchange</font></td>
+<td><strong>Application layer</strong></td>
+<td><font color="#4a69bd">Handles access to services <br> Define protocol used <br> Manage data exchange</font><br></td>
 </tr>
 <tr>
-<td>Transport layer</td>
-<td><font color="#4a69bd">Handles the forwarding of packets</font></td>
+<td><strong>Transport layer</strong></td>
+<td><font color="#4a69bd">Handles the forwarding of packets</font><br> Where TCP takes place <br>Regulate the network connection<br>Data broken up into packets, then sent to internet layer</td>
 </tr>
 <tr>
-<td>Internet layer</td>
-<td><font color="#4a69bd">Handles the transmission of data<br> Routing<br> IP addressing</font></td>
+<td><strong>Internet layer</strong></td>
+<td><font color="#4a69bd">Handles the transmission of data<br>Routing<br> IP addressing<br><code>—</code><br>Routes the packets around the network<br>Adds to the IP header a source/destination address for each header<br>Encapsulates data into datagram<br>Passes datagram to network access layer<br>Defines the addressing mode: <a target="_blank" rel="noopener" href="https://www.cloudflare.com/en-gb/learning/network-layer/what-is-a-subnet/">subnetting</a>, NAT</font></td>
 </tr>
 <tr>
-<td>Network access layer</td>
-<td><font color="#4a69bd">Handles how data is physically sent</font></td>
+<td><strong>Network (access) layer</strong></td>
+<td><font color="#4a69bd">Handles how data is physically sent</font><br>Encapsulates IP packets into frames for transmission<br>Ensure correct protocol is followed</td>
 </tr>
 </tbody>
 </table>
+<h3 id="Protocols-v2"><a class="header-anchor" href="#Protocols-v2">¶</a>Protocols</h3>
+<table>
+<thead>
+<tr>
+<th><u>Protocol</u></th>
+<th><u>Purpose &amp; Use</u></th>
+<th><u>Description</u></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HTTP</strong>(Hyper text transfer protocol)</td>
+<td><font color="#4a69bd"><code>Purpose</code>:Transfer webpages / hypertext from server to client<br><code>Use</code>: Browsing website</font></td>
+<td><font color="#4a69bd">This is the protocol responsible for correct transfer of files that makes up web pages on the world wide web</font><br>Client/server protocol<br>Define the format of messages sent and received</td>
+</tr>
+<tr>
+<td><strong>SMTP</strong>(Simple mail transfer protocol)</td>
+<td><font color="#4a69bd"><code>purpose</code>: Protocol for sending email<br><code>Use</code>: Used by mail servers to forward email messages</font></td>
+<td>Text-based: if contain image, video, music – then use multipurpose internet mail extension(MIME) protocol<br>Email is transferred from one server to another server<br>Email client sends email to email server</td>
+</tr>
+<tr>
+<td><strong>POP3/4</strong>(Post office protocol)</td>
+<td><font color="#4a69bd"><code>purpose</code>: Mail is held for you by a remote server until you download it<br><code>Use</code>: To receive email</font></td>
+<td>Pull protocols<br>Does not keep the server and client in synchronization; when emails are downloaded by the client, they are then deleted from the server which means it is not further updated.</td>
+</tr>
+<tr>
+<td><strong>IMAP</strong>(internet message access protocol)</td>
+<td><font color="#4a69bd"><code>Purpose</code>: downloading email // storing/organising emails on a remote sever<br><code>Use</code>: To receive email</font></td>
+<td>More recent than POP3/4<br>Keeps the server and client in synchronization; only a copy of the email is downloaded with the original remaining on the server until the client mutually deletes it</td>
+</tr>
+<tr>
+<td><strong>FTP</strong>(file transfer protocol)</td>
+<td><font color="#4a69bd"><code>Purpose</code>: Used for interactive file transfer; <br>To directly transfer data between two computers over the internet<br><code>Use</code>: Upload and download files over the internet</font></td>
+<td><font color="#4a69bd"><u>Anonymous ftp</u>: <br>Allow user to access files<br>User does not need to identify themselves to the server<br><u>ftp commands</u><br>User can send instructions<br>That are carried out on the server<br><u>ftp server</u><br>Central computer<br>Stores files that are to be downloaded</font></td>
+</tr>
+</tbody>
+</table>
+<h4 id="BitTorrent-Protocol"><a class="header-anchor" href="#BitTorrent-Protocol">¶</a>BitTorrent Protocol</h4>
+<p><u><code>Purpose</code></u>: <font color="#4a69bd">Protocol for peer-to-peer file sharing</font></p>
+<p><u><code>Use</code></u>: <font color="#4a69bd">Decentralized distribution of data</font></p>
+<p><u>Properties:</u></p>
+<ul>
+<li><font color="#4a69bd">Based on peer-to-peer networking concept</font></li>
+<li><font color="#4a69bd">Allow fast sharing of files between computers</font></li>
+<li><font color="#4a69bd">Allow many computers to share files</font></li>
+</ul>
+<p><u>Description:</u></p>
+<ol>
+<li>
+<p><font color="#4a69bd">Bit torrent software made available</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">A computer joins a swarm by using this to load a torrent descriptor file</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">A server called tracker keeps record of all the computer in the swarm</font></p>
+<p><font color="#4a69bd">… and shares their IP addresses allow them to be connected</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">One computer of the swarm must have full copy of the file to be downloaded</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">Torrent is split into small files</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">Pieces of torrent are both downloaded and uploaded</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">Rare pieces are given priority in download</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">Once a computer have downloaded a full copy it becomes a seed</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">Leech downloads more than they uploads</font></p>
+</li>
+</ol>
+<p><code>—</code></p>
+<ol>
+<li>Create small file called torrent: contains meta data about the file to be stored</li>
+<li>The actual file is broken up into equal segments known as pieces</li>
+<li>Others first obtains the torrent, then connect to the tracker (A central server that contains data about all computers connected to it)</li>
+<li>As each peer receives a piece of file, they then become the source for that piece of file. Other peers connected to the tracker will therefore know where to find the file they need</li>
+<li>Once the peer has downloaded the file completely and make the file available to the swarm, they become a seed. The more seeds in the swarm, the faster the download process.</li>
+</ol>
+<p><u>Terms:</u></p>
+<ul>
+<li><u>Swarm:</u> <font color="#4a69bd">A group of peers connected together</font>
+<ul>
+<li><font color="#4a69bd">All the connected shared computers</font></li>
+<li><font color="#4a69bd">That have all or other parts of the file to be downloaded</font></li>
+<li><font color="#4a69bd">Share a torrent</font></li>
+</ul>
+</li>
+<li><u>Seed</u>: <font color="#4a69bd">A peer has downloaded a file and has then made it available to others in the swarm</font>
+<ul>
+<li><font color="#4a69bd">Peer computer that has 100% of the file</font></li>
+<li><font color="#4a69bd">It uploading the downloaded content</font></li>
+</ul>
+</li>
+<li><u>Tracker</u>:
+<ul>
+<li><font color="#4a69bd">This is the central server that stores details about other computers that make up the swarm</font></li>
+<li><font color="#4a69bd">It will store details about all the peers uploading/downloading the file</font></li>
+<li><font color="#4a69bd">Allowing the peers to locate each other using the stored IP address</font></li>
+</ul>
+</li>
+<li>Leech - A peer that has negative impact on the swarm by having a poor sharing ratio</li>
+<li>Lurker - A peer that downloads many files but does not make available any new content for the community as a whole</li>
+</ul>
 <h2 id="Circuit-switching-Packet-switching"><a class="header-anchor" href="#Circuit-switching-Packet-switching">¶</a>Circuit switching &amp; Packet switching</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:left">Circuit switching</th>
+<th>Packet Switching</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Features</strong></td>
+<td style="text-align:left"><font color="#4a69bd">1. A dedicated circuit is established at the start of the communication<br>2. Between the sender and the receiver<br>3. All data are transmitted along the same route<br>4. This lasts for the duration of the call<br>5. Then the circuit is removed<br><code>—</code><br>1. Set up for the duration of conversation<br>2. Set up before communication starts <br>3. Maintained throughout the communication<br>4. All data travel down the same route<br>5. Dropped at the end of the conversation<br>6. Complete bandwidth used</font></td>
+<td><font color="#4a69bd">- A circuit does not has to be established at the start of the communication<br>- Data to be sent are divided into packets <br>- That can travel along different routes<br>- From node to node <br>- The packets are reassembled at the correct order at the receiver’s end<br>- Must wait until last packet is received to put data back together<br><code>—</code><br>- A large message is divided up into a group of smaller chunks of same size<br>- The packet has a header and a payload<br>- The header contains a source IP address, destination IP address, and sequence number<br>- Each packet is dispatched independently<br>- And may travel along different routes<br>- The packets may arrive out of order<br>- And are reassembled into the original message at the destination<br>- If packets are missing, a retransmission request is sent</font></td>
+</tr>
+<tr>
+<td><strong>Pros</strong></td>
+<td style="text-align:left"><font color="#4a69bd">- Reduced latency<br>- There are little delay in sending and receiving data once the circuit is established<br>- … because error checking is not required<br>- Circuit made available is dedicated to this communication stream<br><code>—</code><br>- Two way real-time conversation<br>- Better synchronization<br>- Full bandwidth available<br><br></font><u>Explain why company uses circuit switching to make voice calls</u><br><font color="#4a69bd">- A dedicated circuit is established<br>- Can use the whole bandwidth<br>- Two way real-time conversation<br>- No delay as no switching<br>- Data arrive in the order sent</font></td>
+<td><font color="#4a69bd">- Accuracy: allow accurate deliver of messages<br>- Completeness: the missing packets can be easily detected and resend request sent so message arrive complete<br>- Resilience: if the network changes, the the router can detect this and send data another way to ensure it arrives<br>- Paths are also available to others; allow simultaneous use of channel; doesn’t use the whole bandwidth<br>- Better security as packets hashed and sent along different routes<br>- Packets can take the least congested route<br><code>—</code><br>- Packets can be rerouted if there are problems<br>- Packets can take the least congested route<br>- Transmission errors can be detected<br>- Missing/corrupt packets can be resent<br></font><br><u>Explain why company uses packet switching to send and receive other types of data</u><br><font color="#4a69bd">- Asynchronous communication<br>- Allows for error checking<br>- Real time transmission is not required<br>- Smaller amount of data is sent, so able to share bandwidth<br>- Doesn’t matter if data arrives out of order</font></td>
+</tr>
+<tr>
+<td><strong>Cons</strong></td>
+<td style="text-align:left"><font color="#4a69bd">- Bandwidth not available to others<br>- Need extra time before communication to set up the circuit<br>- Alternative route not available without restarting the conversation<br>- Less secure, as easy to intercept data (only one route)<br>- Failure of single route means failure of transmission</font><br>- Not very flexible<br>- Nobody else can use the circuit/channel even when it is idle <br>- The circuit is always there whether or not it is used<br>- If there’s a fault, no alternative<br>- Dedicated channel require greater bandwidth<br>- Time to establish a link can be long</td>
+<td><font color="#4a69bd">- Time delay to correct errors / network problems may introduce errors in packets<br>- Require complex protocol<br>- Unsuitable for real-time transmission application</font><br>- The protocols for packets switching can be more complex than those for circuit switching if a packet is lost<br>- The sender must resend the packet, waste time<br>- Do not work well with real time data stream<br>- The circuit/channel has to share its bandwidth with other packets<br>- There is a delay at the destination while packets are reassembled<br>- Needs large amount of RAM to handle the large amount of data.<br><br><u>State problems that could arise if video conferencing were to use packet switching</u><br><font color="#4a69bd">- Picture and sound not synchronized<br>- Interruptions/video not continuous<br>- Can be degraded by other computing traffic</font></td>
+</tr>
+<tr>
+<td><strong>Applications</strong></td>
+<td style="text-align:left">- Public telephone networks<br>- Private telephone networks<br>- Private data networks<br>- <font color="#4a69bd">Video conferencing / live stream</font></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Questions</strong></td>
+<td style="text-align:left"></td>
+<td><u>The TCP/IP protocol is used to send an email message from one node on a LAN to a node on different LAN. State the steps that take place when the email message is sent and received.</u><br><font color="#4a69bd">- Message is split into packets<br>- Each packet is a fixed size<br>- Each packet is given a header<br>- … including the destination IP address, sequence number<br>- Packets are forwarded from one LAN to another LAN<br>- Packets may take different routes<br>- Missing packets are requested to be resent<br>- Packets are reassembled in order at the destination</font></td>
+</tr>
+</tbody>
+</table>
+<h3 id="Router"><a class="header-anchor" href="#Router">¶</a>Router</h3>
+<p><u>Function of router in packet switching:</u></p>
+<ul>
+<li><font color="#4a69bd">The router examines the packet header</font></li>
+<li><font color="#4a69bd">It reads the IP address of the destination</font></li>
+<li><font color="#4a69bd">A router has access to a routing table</font>
+<ul>
+<li><font color="#4a69bd">Containing information about: eg: available hops/netmask/gateway used</font></li>
+<li><font color="#4a69bd">And the status of the routes along the route</font></li>
+<li><font color="#4a69bd">The router decides the next hop/next route</font></li>
+<li><font color="#4a69bd">And sends the packets to the next hop</font></li>
+</ul>
+</li>
+</ul>
+<p><u>Routing table:</u></p>
+<ul>
+<li><font color="#4a69bd">Network ID // network destination</font></li>
+<li><font color="#4a69bd">Routing data to decide best route</font></li>
+<li><font color="#4a69bd">IP address of next hop/gateway</font></li>
+<li><font color="#4a69bd">Interface</font></li>
+</ul>
 
     </div>
 
@@ -402,7 +583,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Chapter 14: Communication and Internet technologies</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Protocols"><span class="nav-number">1.1.</span> <span class="nav-text">Protocols</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Protocol-implementation"><span class="nav-number">1.1.1.</span> <span class="nav-text">Protocol implementation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Circuit-switching-Packet-switching"><span class="nav-number">1.2.</span> <span class="nav-text">Circuit switching &amp; Packet switching</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Chapter 14: Communication and Internet technologies</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Protocols"><span class="nav-number">1.1.</span> <span class="nav-text">Protocols</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Protocol-implementation"><span class="nav-number">1.1.1.</span> <span class="nav-text">Protocol implementation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Protocol-stack"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">Protocol stack</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP-protocol-suite"><span class="nav-number">1.1.2.</span> <span class="nav-text">TCP&#x2F;IP protocol suite</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Protocols-v2"><span class="nav-number">1.1.3.</span> <span class="nav-text">Protocols</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#BitTorrent-Protocol"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">BitTorrent Protocol</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Circuit-switching-Packet-switching"><span class="nav-number">1.2.</span> <span class="nav-text">Circuit switching &amp; Packet switching</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Router"><span class="nav-number">1.2.1.</span> <span class="nav-text">Router</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -481,12 +662,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">78k</span>
+    <span title="Symbols count total">89k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:11</span>
+    <span title="Reading time total">1:20</span>
 </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
 
