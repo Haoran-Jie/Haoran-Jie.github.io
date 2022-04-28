@@ -6,7 +6,7 @@
   <link href="https://haoran-jie.github.io/atom.xml" rel="self"/>
   
   <link href="https://haoran-jie.github.io/"/>
-  <updated>2022-04-22T00:36:25.685Z</updated>
+  <updated>2022-04-28T12:53:04.550Z</updated>
   <id>https://haoran-jie.github.io/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ai</title>
+    <link href="https://haoran-jie.github.io/2022/04/28/ai/"/>
+    <id>https://haoran-jie.github.io/2022/04/28/ai/</id>
+    <published>2022-04-28T12:44:30.000Z</published>
+    <updated>2022-04-28T12:53:04.550Z</updated>
+    
+    
+    <summary type="html">&lt;h1&gt;Chapter 18: Artificial Intelligence&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;/2022/04/28/ai/ai.png&quot; alt=&quot;aiSyllabus&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>fileorganisation</title>
+    <link href="https://haoran-jie.github.io/2022/04/28/fileorganisation/"/>
+    <id>https://haoran-jie.github.io/2022/04/28/fileorganisation/</id>
+    <published>2022-04-28T12:44:02.000Z</published>
+    <updated>2022-04-28T12:52:59.846Z</updated>
+    
+    
+    <summary type="html">&lt;h1&gt;Chapter 13.2: File organisation and access&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;/2022/04/28/fileorganisation/13.2.png&quot; alt=&quot;13.2_Syllabus&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>userdefineddt</title>
+    <link href="https://haoran-jie.github.io/2022/04/28/userdefineddt/"/>
+    <id>https://haoran-jie.github.io/2022/04/28/userdefineddt/</id>
+    <published>2022-04-28T12:43:25.000Z</published>
+    <updated>2022-04-28T12:52:57.297Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/28/userdefineddt/.%5Cuserdefineddt%5C13.1.png&quot; alt=&quot;13.1&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;</summary>
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Chapter 20.2: File processing and Exception Handling</title>
