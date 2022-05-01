@@ -30,8 +30,9 @@
 <meta property="og:image" content="https://haoran-jie.github.io/2022/04/28/Chapter13.1_User-definedDataTypes/enu2.jpg">
 <meta property="og:image" content="https://haoran-jie.github.io/2022/04/28/Chapter13.1_User-definedDataTypes/enu3.png">
 <meta property="og:image" content="https://haoran-jie.github.io/2022/04/28/Chapter13.1_User-definedDataTypes/Set1.jpg">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/04/28/Chapter13.1_User-definedDataTypes/exampleusd.png">
 <meta property="article:published_time" content="2022-04-28T12:43:25.000Z">
-<meta property="article:modified_time" content="2022-05-01T14:10:14.938Z">
+<meta property="article:modified_time" content="2022-05-01T14:33:52.857Z">
 <meta property="article:author" content="Haoran Jie">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://haoran-jie.github.io/2022/04/28/Chapter13.1_User-definedDataTypes/13.1.png">
@@ -208,7 +209,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-05-01 22:10:14" itemprop="dateModified" datetime="2022-05-01T22:10:14+08:00">2022-05-01</time>
+                <time title="Modified: 2022-05-01 22:33:52" itemprop="dateModified" datetime="2022-05-01T22:33:52+08:00">2022-05-01</time>
               </span>
 
           
@@ -329,7 +330,7 @@
 <li>[x] Define: <code>TYPE &lt;pointer&gt; = ^&lt;Typename&gt;</code></li>
 <li>[x] Declaration: <code>DECLARE pointerVar : &lt;pointer&gt;</code></li>
 <li>[x] Reference: <code>pointerVar &lt;- ^variable</code></li>
-<li>[x] Dereference: <code>^pointerVar</code></li>
+<li>[x] Dereference: <code>pointerVar^</code></li>
 </ul>
 <p><strong>The pointer should be defined as follows:</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">TYPE &lt;pointer&gt; = ^&lt;Typename&gt;</span><br><span class="line">//For example:</span><br><span class="line">TYPE IntPointer = ^INTEGER</span><br><span class="line">DECLARE number: INTEGER</span><br><span class="line">DECLARE numberLocation: IntPointer</span><br><span class="line">numberLocation &lt;- ^number //reference</span><br></pre></td></tr></table></figure>
@@ -393,6 +394,8 @@
 <li>Attributes: Properties/fields of an object</li>
 <li>Methods: Modules attached to objects to allow it to perform certain actions</li>
 </ul>
+<h2 id="Use-of-User-defined-Data-Types"><a class="header-anchor" href="#Use-of-User-defined-Data-Types">¶</a>Use of User-defined Data Types</h2>
+<p><img src="/2022/04/28/Chapter13.1_User-definedDataTypes/exampleusd.png" alt></p>
 
     </div>
 
@@ -473,7 +476,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">👤Chapter 13.1: User-defined Data Types</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Non-composite-Data-Types"><span class="nav-number">1.1.</span> <span class="nav-text">Non-composite Data Types</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Enumerated"><span class="nav-number">1.1.1.</span> <span class="nav-text">Enumerated</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pointer%E2%98%9D%EF%B8%8F"><span class="nav-number">1.1.2.</span> <span class="nav-text">Pointer☝️</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Composite-Data-Types"><span class="nav-number">1.2.</span> <span class="nav-text">Composite Data Types</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Set%F0%9F%94%84"><span class="nav-number">1.2.1.</span> <span class="nav-text">Set🔄</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Supported-operations"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">Supported operations:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Record%E2%8F%BA%EF%B8%8F"><span class="nav-number">1.2.2.</span> <span class="nav-text">Record⏺️</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Class-object%F0%9F%8F%9B%EF%B8%8F"><span class="nav-number">1.2.3.</span> <span class="nav-text">Class&#x2F;object🏛️</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">👤Chapter 13.1: User-defined Data Types</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Non-composite-Data-Types"><span class="nav-number">1.1.</span> <span class="nav-text">Non-composite Data Types</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Enumerated"><span class="nav-number">1.1.1.</span> <span class="nav-text">Enumerated</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pointer%E2%98%9D%EF%B8%8F"><span class="nav-number">1.1.2.</span> <span class="nav-text">Pointer☝️</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Composite-Data-Types"><span class="nav-number">1.2.</span> <span class="nav-text">Composite Data Types</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Set%F0%9F%94%84"><span class="nav-number">1.2.1.</span> <span class="nav-text">Set🔄</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Supported-operations"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">Supported operations:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Record%E2%8F%BA%EF%B8%8F"><span class="nav-number">1.2.2.</span> <span class="nav-text">Record⏺️</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Class-object%F0%9F%8F%9B%EF%B8%8F"><span class="nav-number">1.2.3.</span> <span class="nav-text">Class&#x2F;object🏛️</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Use-of-User-defined-Data-Types"><span class="nav-number">1.3.</span> <span class="nav-text">Use of User-defined Data Types</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -557,7 +560,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:27</span>
+    <span title="Reading time total">1:28</span>
 </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
 
