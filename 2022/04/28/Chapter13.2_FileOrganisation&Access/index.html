@@ -30,8 +30,9 @@
 <meta property="og:image" content="https://haoran-jie.github.io/2022/04/28/Chapter13.2_FileOrganisation&Access/13.2.png">
 <meta property="og:image" content="https://haoran-jie.github.io/2022/04/28/Chapter13.2_FileOrganisation&Access/13.2Drawline.png">
 <meta property="og:image" content="https://haoran-jie.github.io/2022/04/28/Chapter13.2_FileOrganisation&Access/fileogr.png">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/04/28/Chapter13.2_FileOrganisation&Access/hashppq.png">
 <meta property="article:published_time" content="2022-04-28T12:44:02.000Z">
-<meta property="article:modified_time" content="2022-05-01T14:09:35.243Z">
+<meta property="article:modified_time" content="2022-05-02T02:02:23.783Z">
 <meta property="article:author" content="Haoran Jie">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://haoran-jie.github.io/2022/04/28/Chapter13.2_FileOrganisation&Access/13.2.png">
@@ -208,7 +209,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-05-01 22:09:35" itemprop="dateModified" datetime="2022-05-01T22:09:35+08:00">2022-05-01</time>
+                <time title="Modified: 2022-05-02 10:02:23" itemprop="dateModified" datetime="2022-05-02T10:02:23+08:00">2022-05-02</time>
               </span>
 
           
@@ -224,14 +225,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2.3k</span>
+              <span>5.3k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>2 mins.</span>
+              <span>5 mins.</span>
             </span>
 
         </div>
@@ -252,16 +253,32 @@
 <blockquote>
 <p>Method of file organisation in which records of data are physically stored in a file, one after another, <strong>in the order they were added to the file</strong></p>
 </blockquote>
+<p>New records are appended to the end of the file. Serial file organisation is often used for temporary files storing transactions to be made to more permanent files. e.g. storing customer meter reading for gas/electricity before they are used to send the bills to all customers.</p>
 <ul>
-<li><font color="#4a69bd">High hit rate</font></li>
-<li><font color="#4a69bd">Suitable for batch processing</font></li>
-<li><font color="#4a69bd">Order not important</font></li>
-<li><font color="#4a69bd">The records will be accessed one after another</font><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></li>
+<li>
+<p>Each transaction is added to the file in the order of arrival</p>
+</li>
+<li>
+<p>These records will be in chronological order</p>
+</li>
+<li>
+<p><font color="#4a69bd">High hit rate</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">Suitable for batch processing</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">Order not important</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">The records will be accessed one after another</font><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+</li>
 </ul>
 <h3 id="Sequential-file-organisation"><a class="header-anchor" href="#Sequential-file-organisation">¶</a>Sequential file organisation</h3>
 <blockquote>
 <p>Method of file organisation in which records of data are physically stored in a file, one after another, <strong>in a given order</strong></p>
 </blockquote>
+<p>Physically stores records of data in a file, one after another, in a given order. The order is usually based on the key field of the records as this is the unique identifier.</p>
 <ul>
 <li><font color="#4a69bd">High hit rate</font></li>
 <li><font color="#4a69bd">Suitable for batch processing of records</font></li>
@@ -272,6 +289,7 @@
 <p>Method of file organisation in which records of data are physically stored in a file in <strong>any available</strong> position, the position of any record in a field is found by applying a <strong>hash algorithm</strong> on the <strong>key field</strong> of the record/record key.</p>
 </blockquote>
 <ul>
+<li>Records can be added to any empty position</li>
 <li><font color="#4a69bd">Key field is hashed to produce the home location</font></li>
 <li><font color="#4a69bd">If home location is free, insert the data</font></li>
 <li><font color="#4a69bd">Else, use overflow method to find free location to store the data</font></li>
@@ -316,13 +334,47 @@
 </ul>
 <hr>
 <h2 id="File-access"><a class="header-anchor" href="#File-access">¶</a>File access</h2>
+<blockquote>
+<p>Method used to physically find a record in a file</p>
+</blockquote>
 <h3 id="Sequential-access"><a class="header-anchor" href="#Sequential-access">¶</a>Sequential access</h3>
+<blockquote>
+<p>A method of file access in which records are searched one after another from the physical start of the file until the required record is found, or a new record can be added to the file. This method is used for <code>serial</code> and <code>sequential</code> files.</p>
+</blockquote>
+<ul>
+<li>High hit rate</li>
+</ul>
+<p>For a <code>serial</code> file, if a particular record is being searched for, every record needs to be checked until the record is found or the whole file has been searched and that record has not been found. Any new records are appended to the end of the file.</p>
+<p>For a <code>sequential</code>file, if a particular records is being searched for, every records needs to be checked until the record is found or <em>the key filed of the current record being checked is greater than the key field of the record being searched for</em>. The rest of the file does not need to be searched as the records are sorted on ascending key field values.</p>
+<p>Sequential access if efficient when <strong>every</strong> record in the file needs to be processed. e.g. a monthly billing or payroll system.</p>
 <h3 id="Direct-access"><a class="header-anchor" href="#Direct-access">¶</a>Direct access</h3>
+<blockquote>
+<p>A method of file access in which a record can be physically found in a file without reading other records.</p>
+</blockquote>
+<ul>
+<li>Both <code>sequential</code> and <code>random</code> files can use direct access.</li>
+<li>Allow specific records to be found more quickly than using sequential access.</li>
+<li>Low hit rate</li>
+</ul>
+<p>Direct access is required when an <strong>individual</strong> record from a file needs to be processed. e.g. when a single customer record needs to be updated when the customer’s phone number is changed.</p>
+<p>For a <code>sequential</code> file, an index of all the key fields is kept and used to look up the address of the file location where a given record is stored. For large files, searching the index takes less time than searching the whole file.</p>
+<p>For a <code>random access</code> file, a hashing algorithm is used on the key filed to calculate the address of the file location where a given record is stored.</p>
 <h2 id="Hashing-algorithms"><a class="header-anchor" href="#Hashing-algorithms">¶</a>Hashing algorithms</h2>
+<blockquote>
+<p>A mathematical formula used to perform a calculation on the <code>record key</code>. The result of the calculation gives the address where the record should be found. More complex hashing algorithms are used in the encryption of data.</p>
+</blockquote>
+<p>Two ways of dealing with collision:</p>
+<p><code>open hash</code>: the record is stored in the next free space.</p>
+<p><code>close hash</code>: an overflow area is set up and the record is stored in the next free space in the overflow area.</p>
+<h3 id="Past-paper-questions"><a class="header-anchor" href="#Past-paper-questions">¶</a>Past-paper questions</h3>
+<p><img src="/2022/04/28/Chapter13.2_FileOrganisation&Access/hashppq.png" style="zoom:80%;"><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">FUNCTION hash(BookingID: INTEGER) RETURNS INTEGER</span><br><span class="line">	RETURN BookingID%100000 + 3</span><br><span class="line">ENDFUNCTION</span><br></pre></td></tr></table></figure>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
 <li id="fn1" class="footnote-item"><p>Sequential file access <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>9608-s21-q2 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>
@@ -406,7 +458,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Chapter 13.2: File organisation and access</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#File-organisation"><span class="nav-number">1.1.</span> <span class="nav-text">File organisation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Serial-file-organisation"><span class="nav-number">1.1.1.</span> <span class="nav-text">Serial file organisation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sequential-file-organisation"><span class="nav-number">1.1.2.</span> <span class="nav-text">Sequential file organisation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Random-file-organisation"><span class="nav-number">1.1.3.</span> <span class="nav-text">Random file organisation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-Questions"><span class="nav-number">1.1.4.</span> <span class="nav-text">Past-paper Questions:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#File-access"><span class="nav-number">1.2.</span> <span class="nav-text">File access</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Sequential-access"><span class="nav-number">1.2.1.</span> <span class="nav-text">Sequential access</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Direct-access"><span class="nav-number">1.2.2.</span> <span class="nav-text">Direct access</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hashing-algorithms"><span class="nav-number">1.3.</span> <span class="nav-text">Hashing algorithms</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Chapter 13.2: File organisation and access</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#File-organisation"><span class="nav-number">1.1.</span> <span class="nav-text">File organisation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Serial-file-organisation"><span class="nav-number">1.1.1.</span> <span class="nav-text">Serial file organisation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sequential-file-organisation"><span class="nav-number">1.1.2.</span> <span class="nav-text">Sequential file organisation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Random-file-organisation"><span class="nav-number">1.1.3.</span> <span class="nav-text">Random file organisation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-Questions"><span class="nav-number">1.1.4.</span> <span class="nav-text">Past-paper Questions:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#File-access"><span class="nav-number">1.2.</span> <span class="nav-text">File access</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Sequential-access"><span class="nav-number">1.2.1.</span> <span class="nav-text">Sequential access</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Direct-access"><span class="nav-number">1.2.2.</span> <span class="nav-text">Direct access</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hashing-algorithms"><span class="nav-number">1.3.</span> <span class="nav-text">Hashing algorithms</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions"><span class="nav-number">1.3.1.</span> <span class="nav-text">Past-paper questions</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -422,7 +474,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -485,12 +537,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">96k</span>
+    <span title="Symbols count total">99k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:28</span>
+    <span title="Reading time total">1:30</span>
 </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
 

@@ -6,7 +6,7 @@
   <link href="https://haoran-jie.github.io/atom.xml" rel="self"/>
   
   <link href="https://haoran-jie.github.io/"/>
-  <updated>2022-05-01T14:07:47.167Z</updated>
+  <updated>2022-05-02T02:06:10.413Z</updated>
   <id>https://haoran-jie.github.io/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Chapter13.3_Floating-pointNumbersRepresentation</title>
+    <link href="https://haoran-jie.github.io/2022/05/02/Chapter13-3-Floating-pointNumbersRepresentation/"/>
+    <id>https://haoran-jie.github.io/2022/05/02/Chapter13-3-Floating-pointNumbersRepresentation/</id>
+    <published>2022-05-02T02:06:10.000Z</published>
+    <updated>2022-05-02T02:06:10.413Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Chapter 18: Artificial Intelligence</title>
@@ -38,7 +51,7 @@
     <link href="https://haoran-jie.github.io/2022/04/28/Chapter13.2_FileOrganisation&amp;Access/"/>
     <id>https://haoran-jie.github.io/2022/04/28/Chapter13.2_FileOrganisation&amp;Access/</id>
     <published>2022-04-28T12:44:02.000Z</published>
-    <updated>2022-05-01T14:09:35.243Z</updated>
+    <updated>2022-05-02T02:02:23.783Z</updated>
     
     
     <summary type="html">&lt;h1&gt;Chapter 13.2: File organisation and access&lt;/h1&gt;
