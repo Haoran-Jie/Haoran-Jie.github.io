@@ -6,7 +6,7 @@
   <link href="https://haoran-jie.github.io/atom.xml" rel="self"/>
   
   <link href="https://haoran-jie.github.io/"/>
-  <updated>2022-05-02T08:33:48.280Z</updated>
+  <updated>2022-05-02T15:05:23.783Z</updated>
   <id>https://haoran-jie.github.io/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Chapter15.2: Boolean Algebra And Logic Circuits</title>
+    <link href="https://haoran-jie.github.io/2022/05/02/Chapter15.2_BooleanAlgebraAndLogicCircuits/"/>
+    <id>https://haoran-jie.github.io/2022/05/02/Chapter15.2_BooleanAlgebraAndLogicCircuits/</id>
+    <published>2022-05-02T13:57:05.000Z</published>
+    <updated>2022-05-02T15:05:23.783Z</updated>
+    
+    
+    <summary type="html">&lt;h1&gt;Chapter 15.2: Boolean Algebra and Logic Circuits&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;/2022/05/02/Chapter15.2_BooleanAlgebraAndLogicCircuits/Syllabus15.2.png&quot; alt&gt;&lt;/p&gt;
+&lt;hr&gt;</summary>
+    
+    
+    
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
+    
+    <category term="ALCS" scheme="https://haoran-jie.github.io/categories/Notes/ALCS/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Chapter 15.1: Processors, Parallel Processing and Virtual Machines</title>
     <link href="https://haoran-jie.github.io/2022/05/02/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/"/>
     <id>https://haoran-jie.github.io/2022/05/02/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/</id>
     <published>2022-05-02T04:17:24.000Z</published>
-    <updated>2022-05-02T08:33:48.280Z</updated>
+    <updated>2022-05-02T13:51:12.824Z</updated>
     
     
     <summary type="html">&lt;h1&gt;Chapter 15.1: Processors, Parallel Processing and Virtual Machines&lt;/h1&gt;
