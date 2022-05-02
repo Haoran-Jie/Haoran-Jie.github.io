@@ -6,7 +6,7 @@
   <link href="https://haoran-jie.github.io/atom.xml" rel="self"/>
   
   <link href="https://haoran-jie.github.io/"/>
-  <updated>2022-05-02T02:06:10.413Z</updated>
+  <updated>2022-05-02T03:04:49.771Z</updated>
   <id>https://haoran-jie.github.io/</id>
   
   <author>
@@ -17,14 +17,27 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Chapter13.3_Floating-pointNumbersRepresentation</title>
-    <link href="https://haoran-jie.github.io/2022/05/02/Chapter13-3-Floating-pointNumbersRepresentation/"/>
-    <id>https://haoran-jie.github.io/2022/05/02/Chapter13-3-Floating-pointNumbersRepresentation/</id>
+    <title>Chapter13.3: Floating-point numbers,Representation and Manipulation</title>
+    <link href="https://haoran-jie.github.io/2022/05/02/Chapter13.3_Floating-pointNumbersRepresentation/"/>
+    <id>https://haoran-jie.github.io/2022/05/02/Chapter13.3_Floating-pointNumbersRepresentation/</id>
     <published>2022-05-02T02:06:10.000Z</published>
-    <updated>2022-05-02T02:06:10.413Z</updated>
+    <updated>2022-05-02T03:04:49.771Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;Chapter 13.3: Floating-point numbers: representation and manipulation&lt;/h1&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
     
     
     
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
+    
+    <category term="ALCS" scheme="https://haoran-jie.github.io/categories/Notes/ALCS/"/>
     
     
   </entry>
@@ -34,7 +47,7 @@
     <link href="https://haoran-jie.github.io/2022/04/28/Chapter18_ArtificialIntelligence/"/>
     <id>https://haoran-jie.github.io/2022/04/28/Chapter18_ArtificialIntelligence/</id>
     <published>2022-04-28T12:44:30.000Z</published>
-    <updated>2022-05-01T14:07:47.167Z</updated>
+    <updated>2022-05-02T02:08:32.170Z</updated>
     
     
     <summary type="html">&lt;h1&gt;Chapter 18: Artificial Intelligence&lt;/h1&gt;
@@ -42,6 +55,10 @@
 &lt;hr&gt;</summary>
     
     
+    
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
+    
+    <category term="ALCS" scheme="https://haoran-jie.github.io/categories/Notes/ALCS/"/>
     
     
   </entry>
@@ -51,7 +68,7 @@
     <link href="https://haoran-jie.github.io/2022/04/28/Chapter13.2_FileOrganisation&amp;Access/"/>
     <id>https://haoran-jie.github.io/2022/04/28/Chapter13.2_FileOrganisation&amp;Access/</id>
     <published>2022-04-28T12:44:02.000Z</published>
-    <updated>2022-05-02T02:02:23.783Z</updated>
+    <updated>2022-05-02T02:08:21.307Z</updated>
     
     
     <summary type="html">&lt;h1&gt;Chapter 13.2: File organisation and access&lt;/h1&gt;
@@ -59,6 +76,10 @@
 &lt;hr&gt;</summary>
     
     
+    
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
+    
+    <category term="ALCS" scheme="https://haoran-jie.github.io/categories/Notes/ALCS/"/>
     
     
   </entry>
@@ -68,13 +89,17 @@
     <link href="https://haoran-jie.github.io/2022/04/28/Chapter13.1_User-definedDataTypes/"/>
     <id>https://haoran-jie.github.io/2022/04/28/Chapter13.1_User-definedDataTypes/</id>
     <published>2022-04-28T12:43:25.000Z</published>
-    <updated>2022-05-01T14:43:39.711Z</updated>
+    <updated>2022-05-02T02:08:23.785Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/28/Chapter13.1_User-definedDataTypes/13.1.png&quot; alt=&quot;13.1&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;</summary>
     
     
+    
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
+    
+    <category term="ALCS" scheme="https://haoran-jie.github.io/categories/Notes/ALCS/"/>
     
     
   </entry>

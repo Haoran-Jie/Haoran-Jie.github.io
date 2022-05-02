@@ -385,7 +385,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://haoran-jie.github.io/2022/05/02/Chapter13-3-Floating-pointNumbersRepresentation/">
+    <link itemprop="mainEntityOfPage" href="https://haoran-jie.github.io/2022/05/02/Chapter13.3_Floating-pointNumbersRepresentation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -399,7 +399,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/05/02/Chapter13-3-Floating-pointNumbersRepresentation/" class="post-title-link" itemprop="url">Chapter13.3_Floating-pointNumbersRepresentation</a>
+            <a href="/2022/05/02/Chapter13.3_Floating-pointNumbersRepresentation/" class="post-title-link" itemprop="url">Chapter13.3: Floating-point numbers,Representation and Manipulation</a>
         </h2>
 
         <div class="post-meta">
@@ -408,8 +408,22 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2022-05-02 10:06:10" itemprop="dateCreated datePublished" datetime="2022-05-02T10:06:10+08:00">2022-05-02</time>
+              <time title="Created: 2022-05-02 10:06:10 / Modified: 11:04:49" itemprop="dateCreated datePublished" datetime="2022-05-02T10:06:10+08:00">2022-05-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/ALCS/" itemprop="url" rel="index"><span itemprop="name">ALCS</span></a>
+                </span>
             </span>
 
           <br>
@@ -418,14 +432,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>0</span>
+              <span>3.5k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
+              <span>3 mins.</span>
             </span>
 
         </div>
@@ -437,7 +451,109 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <h1>Chapter 13.3: Floating-point numbers: representation and manipulation</h1>
+<p><img src="/2022/05/02/Chapter13.3_Floating-pointNumbersRepresentation/Syllabus13.3.png" alt></p>
+<hr>
+<h2 id="Format"><a class="header-anchor" href="#Format">¶</a>Format</h2>
+<p><u>What are the effect of decreasing the number of bits allocated to Mantissa and increasing the exponent</u></p>
+<ol>
+<li><font color="#4a69bd">Reduction in precision</font>
+<ul>
+<li><font color="#4a69bd">As the number of bits in mantissa has decreased.</font></li>
+</ul>
+</li>
+<li><font color="#4a69bd">Increasing in range</font>
+<ul>
+<li><font color="#4a69bd">As the number of bits in exponent has increased.</font></li>
+</ul>
+</li>
+</ol>
+<p>The denary number <strong>513</strong> cannot be stored accurately as normalised floating-point number in this computer system: (10 bits for mantissa, 6 bits for exponent)</p>
+<p><u>Explain reasons for this:</u></p>
+<ul>
+<li><font color="#4a69bd">Require more than 10 bits/11bits to store; the maximum number that can be stored is 511</font></li>
+<li><font color="#4a69bd">The denary 513 in binary is 1000000001 // Normalised: 0.1000000001</font></li>
+<li><font color="#4a69bd">Results in <strong>overflow</strong></font></li>
+</ul>
+<p><u>Describe an alteration to the way floating-point numbers are stored to enable this number to be stored accurately with the same total number of bits</u>:</p>
+<ul>
+<li><font color="#4a69bd">The number of bits for mantissa must be increased</font></li>
+<li><font color="#4a69bd">11 bits for mantissa and 5 bits for exponent</font></li>
+</ul>
+<hr>
+<img src="/2022/05/02/Chapter13.3_Floating-pointNumbersRepresentation/que1pic.png" style="zoom: 50%;">
+<ul>
+<li><font color="#4a69bd">Exponent too large to fit 4 bits as two’s complement number</font></li>
+<li><font color="#4a69bd">Exponent will turn negative</font></li>
+<li><font color="#4a69bd">… therefore the binary point moves the wrong way</font></li>
+<li><font color="#4a69bd">Value will be approximately +0.029(296875)</font></li>
+</ul>
+<p><u>Explain the trade-off between either using a large number of bits for the mantissa, or a large number of bits for the exponent</u></p>
+<ul>
+<li><font color="#4a69bd">The trade-off is between range and precision</font></li>
+<li><font color="#4a69bd">Any increase in the number of bits for the mantissa means fewer number of bits for the exponent</font></li>
+<li><font color="#4a69bd">More bits used in mantissa would result in better precision</font></li>
+<li><font color="#4a69bd">More bits used in exponent would result in larger range</font></li>
+</ul>
+<h2 id="Conversion"><a class="header-anchor" href="#Conversion">¶</a>Conversion</h2>
+<p><u>Calculate the normalised binary number for <strong>-3.75</strong>. Show your working</u></p>
+<ul>
+<li><font color="#4a69bd">-3.75 = 100.01000 // -4 + 1/4 // -4 + 0.25</font></li>
+<li><font color="#4a69bd">100.01000 becomes 1.0001000 Exponent=+2</font></li>
+<li><font color="#4a69bd">Answer: Mantissa=1.0001000 Exponent=0010</font></li>
+</ul>
+<p><u>Calculate the normalised floating-point representation of <strong>+1.5625</strong> in this system (<strong>12bit-mantissa, 4bit-exponent</strong>). Show your working</u></p>
+<ul>
+<li><font color="#4a69bd">Correct conversion to binary: 01.1001</font></li>
+<li><font color="#4a69bd">Correct calculation of the exponent: 1</font></li>
+<li><font color="#4a69bd">Answer: Mantissa=0110 0100 0000 | Exponent= 0001</font></li>
+</ul>
+<h2 id="Normalisation"><a class="header-anchor" href="#Normalisation">¶</a>Normalisation</h2>
+<p><u>Why binary/floating-point numbers are stored in normalized form</u></p>
+<ul>
+<li><font color="#4a69bd">To store the maximum range of numbers in the minimum number of bits</font></li>
+<li><font color="#4a69bd">Normalisation minimizes the number of leading zeros/ones represented</font></li>
+<li><font color="#4a69bd">Maximizing the number of significant bits // maximizing the number of precision/accuracy with given number of bits</font></li>
+<li><font color="#4a69bd">Enable large/small numbers to be stored with accuracy</font></li>
+<li><font color="#4a69bd">Avoids the possibility that many numbers have multiple representation</font></li>
+<li><code>--</code></li>
+<li><font color="#4a69bd">There will be a unique representation for a number</font></li>
+<li><font color="#4a69bd">The format will ensure it will be represented with greatest possible accuracy</font></li>
+<li><font color="#4a69bd">Multiplication is performed more accurately</font></li>
+</ul>
+<p><u>Problems that can occur when a floating-pointer number is not normalised</u></p>
+<ul>
+<li><font color="#4a69bd">Lost of precision</font></li>
+<li><font color="#4a69bd">Redundant leading zeros in the mantissa</font></li>
+<li><font color="#4a69bd">Lost of the least-significant bits (bits on the right-hand end)</font></li>
+<li><font color="#4a69bd">Multiple representation of a single number</font></li>
+</ul>
+<h2 id="Approximation-Rounding-errors"><a class="header-anchor" href="#Approximation-Rounding-errors">¶</a>Approximation &amp; Rounding errors</h2>
+<p><u>State why some binary representation can lead to rounding errors</u></p>
+<ul>
+<li><font color="#4a69bd">There’s no exact binary conversion for some numbers</font></li>
+<li><font color="#4a69bd">More bits are needed to store the number</font></li>
+</ul>
+<hr>
+<img src="/2022/05/02/Chapter13.3_Floating-pointNumbersRepresentation/hexocode\source\_posts\Chapter13.3_Floating-pointNumbersRepresentation\quepic2.png" style="zoom:80%;">
+<hr>
+<img src="/2022/05/02/Chapter13.3_Floating-pointNumbersRepresentation/hexocode\source\_posts\Chapter13.3_Floating-pointNumbersRepresentation\que3pic.png" style="zoom:50%;">
+<ul>
+<li><font color="#4a69bd">0.2 and 0.4 cannot be represented exactly in binary, there is a rounding error</font></li>
+<li><font color="#4a69bd">0.2 has been represented by a number just greater than 0.2</font></li>
+<li>This is similar for 0.4</li>
+<li><font color="#4a69bd">Therefore, multiplying these two representations together increases the difference</font></li>
+<li><font color="#4a69bd">Difference after calculation is significant enough to be seen</font></li>
+</ul>
+<hr>
+<img src="/2022/05/02/Chapter13.3_Floating-pointNumbersRepresentation/hexocode\source\_posts\Chapter13.3_Floating-pointNumbersRepresentation\que4pic.png" style="zoom:50%;">
+<ul>
+<li>0.1 cannot be represented exactly in binary, there is a rounding error</li>
+<li>0.1 is represented by a value just less than 0.1</li>
+<li>The loop keeps adding this approximate value to the counter</li>
+<li>Until all accumulated small difference become significant enough to be seen</li>
+</ul>
+
       
     </div>
 
@@ -487,8 +603,21 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-05-01 22:07:47" itemprop="dateModified" datetime="2022-05-01T22:07:47+08:00">2022-05-01</time>
+                <time title="Modified: 2022-05-02 10:08:32" itemprop="dateModified" datetime="2022-05-02T10:08:32+08:00">2022-05-02</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/ALCS/" itemprop="url" rel="index"><span itemprop="name">ALCS</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="Symbols count in article">
@@ -575,8 +704,21 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-05-02 10:02:23" itemprop="dateModified" datetime="2022-05-02T10:02:23+08:00">2022-05-02</time>
+                <time title="Modified: 2022-05-02 10:08:21" itemprop="dateModified" datetime="2022-05-02T10:08:21+08:00">2022-05-02</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/ALCS/" itemprop="url" rel="index"><span itemprop="name">ALCS</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="Symbols count in article">
@@ -663,8 +805,21 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-05-01 22:43:39" itemprop="dateModified" datetime="2022-05-01T22:43:39+08:00">2022-05-01</time>
+                <time title="Modified: 2022-05-02 10:08:23" itemprop="dateModified" datetime="2022-05-02T10:08:23+08:00">2022-05-02</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/ALCS/" itemprop="url" rel="index"><span itemprop="name">ALCS</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="Symbols count in article">
@@ -1256,12 +1411,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">99k</span>
+    <span title="Symbols count total">103k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:30</span>
+    <span title="Reading time total">1:33</span>
 </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
 
