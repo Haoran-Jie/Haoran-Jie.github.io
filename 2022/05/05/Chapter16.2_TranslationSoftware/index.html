@@ -20,30 +20,30 @@
     var CONFIG = {"hostname":"haoran-jie.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Chapter 16.2: Translation Software   ¶Interpreter  How an interpreter can executes the program without producing a complete translated version  An interpreter examines source code one statement at a t">
+  <meta name="description" content="Chapter 16.2: Translation Software">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Chapter 16.2: Translation Software">
 <meta property="og:url" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/index.html">
 <meta property="og:site_name" content="Samuel&#39;s Blog">
-<meta property="og:description" content="Chapter 16.2: Translation Software   ¶Interpreter  How an interpreter can executes the program without producing a complete translated version  An interpreter examines source code one statement at a t">
+<meta property="og:description" content="Chapter 16.2: Translation Software">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/syllabus16.2.png">
 <meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/interpreter.jpg">
-<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/hexocode/source/_posts/Chapter16.2_TranslationSoftware/compiler.jpg">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/compiler.jpg">
 <meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/keyword%20table.png">
 <meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/symboltable.png">
-<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/hexocode/source/_posts/Chapter16.2_TranslationSoftware/optimization.jpg">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/optimization.jpg">
 <meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/ppq1.png">
-<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/hexocode/source/_posts/Chapter16.2_TranslationSoftware/drawline.png">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/drawline.png">
 <meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/ppq2.1.png">
 <meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/ppq2.2.png">
 <meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Cppq3.1.png">
-<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/hexocode/source/_posts/Chapter16.2_TranslationSoftware/ppq3.2.png">
-<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Cppq4.1.png">
-<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Cppq4.2.png">
-<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Crpneva.jpg">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/ppq3.2.png">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/ppq4.1.png">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/ppq4.2.png">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/rpneva.jpg">
 <meta property="article:published_time" content="2022-05-05T03:14:19.000Z">
-<meta property="article:modified_time" content="2022-05-05T06:45:56.451Z">
+<meta property="article:modified_time" content="2022-05-05T06:48:40.586Z">
 <meta property="article:author" content="Haoran Jie">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/syllabus16.2.png">
@@ -214,7 +214,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-05-05 11:14:19 / Modified: 14:45:56" itemprop="dateCreated datePublished" datetime="2022-05-05T11:14:19+08:00">2022-05-05</time>
+              <time title="Created: 2022-05-05 11:14:19 / Modified: 14:48:40" itemprop="dateCreated datePublished" datetime="2022-05-05T11:14:19+08:00">2022-05-05</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -265,6 +265,7 @@
         <h1>Chapter 16.2: Translation Software</h1>
 <p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/syllabus16.2.png" alt></p>
 <hr>
+<span id="more"></span>
 <h2 id="Interpreter"><a class="header-anchor" href="#Interpreter">¶</a>Interpreter</h2>
 <img src="/2022/05/05/Chapter16.2_TranslationSoftware/interpreter.jpg" style="zoom:50%;">
 <p><u>How an interpreter can executes the program without producing a complete translated version</u></p>
@@ -283,7 +284,7 @@
 <li>Better diagnostics</li>
 </ul>
 <h2 id="Compiler"><a class="header-anchor" href="#Compiler">¶</a>Compiler</h2>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/hexocode\source\_posts\Chapter16.2_TranslationSoftware\compiler.jpg" style="zoom: 33%;">
+<img src="/2022/05/05/Chapter16.2_TranslationSoftware/compiler.jpg" style="zoom: 33%;">
 <h3 id="Compilation-stages"><a class="header-anchor" href="#Compilation-stages">¶</a>Compilation stages</h3>
 <h4 id="Lexical-analysis"><a class="header-anchor" href="#Lexical-analysis">¶</a>Lexical analysis</h4>
 <ul>
@@ -366,7 +367,7 @@
 </ul>
 </li>
 <li>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/hexocode\source\_posts\Chapter16.2_TranslationSoftware\optimization.jpg" style="zoom: 33%;">
+<img src="/2022/05/05/Chapter16.2_TranslationSoftware/optimization.jpg" style="zoom: 33%;">
 </li>
 </ul>
 <p><u>Why code is optimized:</u></p>
@@ -401,7 +402,7 @@
 <li>Difficult for reverse engineering</li>
 </ul>
 <hr>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/hexocode\source\_posts\Chapter16.2_TranslationSoftware\drawline.png" style="zoom: 67%;">
+<img src="/2022/05/05/Chapter16.2_TranslationSoftware/drawline.png" style="zoom: 67%;">
 <hr>
 <h2 id="BNF-Syntax-diagram"><a class="header-anchor" href="#BNF-Syntax-diagram">¶</a>BNF &amp; Syntax diagram</h2>
 <h3 id="Past-paper-questions-v2"><a class="header-anchor" href="#Past-paper-questions-v2">¶</a>Past-paper questions</h3>
@@ -417,14 +418,14 @@
 </ol>
 <hr>
 <p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Cppq3.1.png" alt></p>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/hexocode\source\_posts\Chapter16.2_TranslationSoftware\ppq3.2.png" style="zoom: 67%;">
+<img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq3.2.png" style="zoom: 67%;">
 <hr>
 <ol start="3">
 <li></li>
 </ol>
 <hr>
-<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Cppq4.1.png" alt></p>
-<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Cppq4.2.png" alt></p>
+<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq4.1.png" alt></p>
+<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq4.2.png" alt></p>
 <hr>
 <h2 id="Reverse-Polish-notation"><a class="header-anchor" href="#Reverse-Polish-notation">¶</a>Reverse Polish notation</h2>
 <blockquote>
@@ -496,7 +497,7 @@
 </li>
 </ol>
 <h3 id="Evaluation-of-RPN"><a class="header-anchor" href="#Evaluation-of-RPN">¶</a>Evaluation of RPN</h3>
-<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Crpneva.jpg" alt></p>
+<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/rpneva.jpg" alt></p>
 <p><a target="_blank" rel="noopener" href="https://www.includehelp.com/c/infix-to-postfix-conversion-using-stack-with-c-program.aspx">Useful resource: Infix To Postfix Conversion Using Stack</a></p>
 
     </div>

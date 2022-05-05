@@ -205,7 +205,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-05-04 10:53:02" itemprop="dateModified" datetime="2022-05-04T10:53:02+08:00">2022-05-04</time>
+                <time title="Modified: 2022-05-05 14:50:30" itemprop="dateModified" datetime="2022-05-05T14:50:30+08:00">2022-05-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -223,7 +223,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>695</span>
+              <span>733</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -253,6 +253,7 @@
     <li><a style="color:#0a3d62;" href="https://haoran-jie.github.io/2022/05/02/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/">Chapter 15.1: Processors, Parallel Processing and Virtual Machines</a></li>
     <li><a style="color:#0a3d62;" href="https://haoran-jie.github.io/2022/05/02/Chapter15.2_BooleanAlgebraAndLogicCircuits/">Chapter15.2: Boolean Algebra And Logic Circuits</a></li>
     <li><a style="color:#0a3d62;" href="https://haoran-jie.github.io/2022/05/03/Chapter16.1_PurposeOfAnOperatingSystem/">Chapter 16.1: Purpose of an operating system</a></li>
+    <li><a style="color:#0a3d62;" href="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/">Chapter 16.2: Translation Software</a></li>
     <li><a style="color:#0a3d62;" href="https://haoran-jie.github.io/2022/04/12/Chapter17_Security/">Chapter 17: Security</a></li>
     <li><a style="color:#0a3d62;" href="https://haoran-jie.github.io/2022/04/28/Chapter18_ArtificialIntelligence/">Chapter 18: Artificial Intelligence</a></li>
     <li><a style="color:#0a3d62;" href="https://haoran-jie.github.io/2022/04/17/Chapter19.1_Algorithms/">Chapter 19.1: Algorithms</a></li>
@@ -414,7 +415,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-05-05 11:14:19 / Modified: 14:45:56" itemprop="dateCreated datePublished" datetime="2022-05-05T11:14:19+08:00">2022-05-05</time>
+              <time title="Created: 2022-05-05 11:14:19 / Modified: 14:48:40" itemprop="dateCreated datePublished" datetime="2022-05-05T11:14:19+08:00">2022-05-05</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -458,240 +459,14 @@
           <h1>Chapter 16.2: Translation Software</h1>
 <p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/syllabus16.2.png" alt></p>
 <hr>
-<h2 id="Interpreter"><a class="header-anchor" href="#Interpreter">¶</a>Interpreter</h2>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/interpreter.jpg" style="zoom:50%;">
-<p><u>How an interpreter can executes the program without producing a complete translated version</u></p>
-<ul>
-<li>An interpreter examines source code one statement at a time</li>
-<li>Check each statement for errors</li>
-<li>If no error is found, the statement is executed</li>
-<li>If an error is found, this is reported and the interpreter halts</li>
-<li>Interpretation is repeated for every iteration in repeated section of code/ in loops</li>
-<li>Interpretation repeats every time the program runs</li>
-</ul>
-<p><u>Why debug with interpreter</u></p>
-<ul>
-<li>Debugging is faster</li>
-<li>Can debug incomplete code</li>
-<li>Better diagnostics</li>
-</ul>
-<h2 id="Compiler"><a class="header-anchor" href="#Compiler">¶</a>Compiler</h2>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/hexocode\source\_posts\Chapter16.2_TranslationSoftware\compiler.jpg" style="zoom: 33%;">
-<h3 id="Compilation-stages"><a class="header-anchor" href="#Compilation-stages">¶</a>Compilation stages</h3>
-<h4 id="Lexical-analysis"><a class="header-anchor" href="#Lexical-analysis">¶</a>Lexical analysis</h4>
-<ul>
-<li>
-<p>All necessary characters not required by the compiler, such as the white space and comments, are removed</p>
-</li>
-<li>
-<p>The white space removed // redundant characters are removed // removal of comments // identification of errors</p>
-</li>
-<li>
-<p>Tokenization</p>
-<ul>
-<li>
-<p>Using a keyword table that contains all the tokens for reserved keywords and symbols</p>
-</li>
-<li>
-<p>Convert the source program into tokens</p>
-</li>
-<li>
-<p><u>Keyword table</u></p>
-<ul>
-<li>The reserved keyword used</li>
-<li>The operator used</li>
-<li>Their matching token</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/keyword table.png" align="middle" style="zoom:50%;">
-<ul>
-<li>Variables, constants, and identifiers added to a symbol table, and are then converted into locations/address
-<ul>
-<li><u>Symbol table</u>
-<ul>
-<li>Identifier name used</li>
-<li>The data type</li>
-<li>Role: e.g. Constant, array, procedure</li>
-<li>Location marker, value of constant</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/symboltable.png" style="zoom:50%;">
-<p><u>Explain how the keywork table and symbol table are used to translate the source code program</u></p>
-<ul>
-<li>Keywords are looked up in the keyword table</li>
-<li>They are represented by tokens</li>
-<li>Identifiers are looked up in the symbol table</li>
-<li>They are converted into location/address</li>
-<li>Used to create a sequence of tokens (for the program)</li>
-</ul>
-<h4 id="Syntax-analysis"><a class="header-anchor" href="#Syntax-analysis">¶</a>Syntax analysis</h4>
-<ul>
-<li>Output from the lexical analysis is checked for grammatical/syntax errors - <code>parsing</code></li>
-<li>The rules for <code>parsing</code> can be set out in Backus-Naur form(BNF) notation</li>
-<li>If errors are found: each statement and the associated error is outputted, but the next stage, code generation, will not be attempted</li>
-<li>If no error is found: passed to the next stage of compilation</li>
-<li><code>--</code></li>
-<li>Construction of a parse tree / parsing</li>
-<li>Checking the table of tokens that the rules of grammar/syntax have been obeyed</li>
-<li>Production of an error report</li>
-</ul>
-<h4 id="Code-generation"><a class="header-anchor" href="#Code-generation">¶</a>Code generation</h4>
-<ul>
-<li>Produces an object program to perform the task defined in the source code</li>
-<li>The object program is in machine-readable form(binary):
-<ul>
-<li>Either in machine code that can be directly executed by the CPU</li>
-<li>Or in intermediate code that is converted into machine code when the program is loaded</li>
-</ul>
-</li>
-</ul>
-<h4 id="Optimization"><a class="header-anchor" href="#Optimization">¶</a>Optimization</h4>
-<ul>
-<li>Performing the task using the <u>minimum amount of resources</u>
-<ul>
-<li>Execution time, storage space, memory, can CPU use.</li>
-</ul>
-</li>
-<li>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/hexocode\source\_posts\Chapter16.2_TranslationSoftware\optimization.jpg" style="zoom: 33%;">
-</li>
-</ul>
-<p><u>Why code is optimized:</u></p>
-<ul>
-<li>Redundant code removed</li>
-<li>Program requires less memory</li>
-<li>Code reorganized to make it more efficient</li>
-<li>Program will complete task in a shorter time</li>
-</ul>
-<p><u>Why optimization is necessary</u></p>
-<ul>
-<li>Optimisation means the code would have fewer instructions</li>
-<li>Optimised code occupies less memory in space</li>
-<li>Fewer instructions reduce the execution time of the program</li>
-</ul>
-<p><u>Benefits</u></p>
-<ul>
-<li>Code has fewer instructions/occupies less memory in space</li>
-<li>Shortens the execution time for the program // time taken to execute whole program decreases</li>
-</ul>
-<h3 id="Past-paper-questions"><a class="header-anchor" href="#Past-paper-questions">¶</a>Past-paper questions</h3>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq1.png" style="zoom: 67%;" align="left">
-<ul>
-<li>Remove the second instances of LDD 436 // remove line 04</li>
-<li>Remove the second instance s of ADD 437 // remove line 05</li>
-<li>The value required is already stored in the accumulator</li>
-</ul>
-<hr>
-<p><u>Why compiled version helps protect the security of the source code</u></p>
-<ul>
-<li>Compiler produces executable version - not readable</li>
-<li>Difficult for reverse engineering</li>
-</ul>
-<hr>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/hexocode\source\_posts\Chapter16.2_TranslationSoftware\drawline.png" style="zoom: 67%;">
-<hr>
-<h2 id="BNF-Syntax-diagram"><a class="header-anchor" href="#BNF-Syntax-diagram">¶</a>BNF &amp; Syntax diagram</h2>
-<h3 id="Past-paper-questions-v2"><a class="header-anchor" href="#Past-paper-questions-v2">¶</a>Past-paper questions</h3>
-<ol>
-<li></li>
-</ol>
-<hr>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq2.1.png" style="zoom: 80%;">
-<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq2.2.png" alt></p>
-<hr>
-<ol start="2">
-<li></li>
-</ol>
-<hr>
-<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Cppq3.1.png" alt></p>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/hexocode\source\_posts\Chapter16.2_TranslationSoftware\ppq3.2.png" style="zoom: 67%;">
-<hr>
-<ol start="3">
-<li></li>
-</ol>
-<hr>
-<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Cppq4.1.png" alt></p>
-<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Cppq4.2.png" alt></p>
-<hr>
-<h2 id="Reverse-Polish-notation"><a class="header-anchor" href="#Reverse-Polish-notation">¶</a>Reverse Polish notation</h2>
-<blockquote>
-<p>Infix notation: operators are in between their operands</p>
-<p>Postfix notation / Reverse Polish notation: Operators are written after operands</p>
-<p>Prefix notation / Polish notation: operators are written before operands</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.cs.man.ac.uk/~pjj/cs212/fix.html">Understanding infix, postfix, and prefix - lecture note from university of manchester</a></p>
-<hr>
-<p><u>Why RPN can be used to evaluate expressions:</u></p>
-<ul>
-<li>Reverse polish notation provides and unambiguous method of representing an expression</li>
-<li>Reading from left to right</li>
-<li>Without need to use bracket</li>
-<li>With no need for rules of precedence</li>
-</ul>
-<p><u>Explain how RPN is used by an interpreter to evaluate expression:</u></p>
-<ul>
-<li>Expressions are always evaluated from left to right</li>
-<li>Each operator uses two previous values on the stack</li>
-<li>Pushing and popping identifiers on a stack</li>
-</ul>
-<p><u>Data structure to evaluate an expression in RPN</u></p>
-<ul>
-<li>Stack
-<ul>
-<li>The operands are popped from the stack in reverse order to how they were pushed</li>
-</ul>
-</li>
-<li>Binary tree
-<ul>
-<li>Allows both infix and postfix to be evaluated (tree traversal)</li>
-</ul>
-</li>
-</ul>
-<p><u>Describe the main steps in the evaluation of a Reverse Polish Notation(RPN) expression using a stack</u></p>
-<ul>
-<li>Working from left to right in the expression</li>
-<li>If element is a number, push that number into stack</li>
-<li>If element is an operator, then pop the first two numbers on the stack</li>
-<li>… perform that operations on these two numbers</li>
-<li>PUSH result back into stack</li>
-<li>END once the last item in the expression has been dealt with</li>
-</ul>
-<p><u>One advantage of the use of RPN is that evaluation of expressions does not require rules of precedence; Explain this statement</u></p>
-<ul>
-<li>Rules of precedence means different operators have different priorities; for example multiplication is done before addition</li>
-<li>In RPN, evaluation of expression is from left to right // operator are used in the sequence in which they were read</li>
-<li>No need for brackets // infix may require brackets</li>
-</ul>
-<p><u>Write the Reverse Polish Notation for the following expressions</u></p>
-<ol>
-<li>
-<p>(A+B)*(C-D)</p>
-<ul>
-<li>AB+</li>
-<li>CD-*</li>
-</ul>
-<p>Full answer: AB+CD-*</p>
-</li>
-<li>
-<p>((-A/B)*4)/(C-D)</p>
-<ul>
-<li>A-</li>
-<li>B/4*</li>
-<li>CD-/</li>
-</ul>
-<p>Full answer: A-B/4*CD-/</p>
-</li>
-</ol>
-<h3 id="Evaluation-of-RPN"><a class="header-anchor" href="#Evaluation-of-RPN">¶</a>Evaluation of RPN</h3>
-<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Crpneva.jpg" alt></p>
-<p><a target="_blank" rel="noopener" href="https://www.includehelp.com/c/infix-to-postfix-conversion-using-stack-with-c-program.aspx">Useful resource: Infix To Postfix Conversion Using Stack</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/05/05/Chapter16.2_TranslationSoftware/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
