@@ -20,17 +20,19 @@
     var CONFIG = {"hostname":"haoran-jie.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="18">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Samuel&#39;s Blog">
-<meta property="og:url" content="https://haoran-jie.github.io/archives/2022/page/2/index.html">
+  <meta name="description" content="Chapter 19.2: Recursion ![image-20220412202834954](C:\Users\Samuel Jie\AppData\Roaming\Typora\typora-user-images\image-20220412202834954.png)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chapter19.2_Recursion">
+<meta property="og:url" content="https://haoran-jie.github.io/2022/05/05/Chapter19.2_Recursion/index.html">
 <meta property="og:site_name" content="Samuel&#39;s Blog">
-<meta property="og:description" content="18">
+<meta property="og:description" content="Chapter 19.2: Recursion ![image-20220412202834954](C:\Users\Samuel Jie\AppData\Roaming\Typora\typora-user-images\image-20220412202834954.png)">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-05-05T07:09:16.000Z">
+<meta property="article:modified_time" content="2022-05-05T07:12:20.630Z">
 <meta property="article:author" content="Haoran Jie">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://haoran-jie.github.io/archives/2022/page/2/">
+<link rel="canonical" href="https://haoran-jie.github.io/2022/05/05/Chapter19.2_Recursion/">
 
 
 <script id="page-configurations">
@@ -38,12 +40,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Archive | Samuel's Blog</title>
+  <title>Chapter19.2_Recursion | Samuel's Blog</title>
   
 
 
@@ -165,234 +167,163 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 22 posts in total. Keep on posting.</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://haoran-jie.github.io/2022/05/05/Chapter19.2_Recursion/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Haoran Jie">
+      <meta itemprop="description" content="18">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Samuel's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Chapter19.2_Recursion
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-05-05 15:09:16 / Modified: 15:12:20" itemprop="dateCreated datePublished" datetime="2022-05-05T15:09:16+08:00">2022-05-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/ALCS/" itemprop="url" rel="index"><span itemprop="name">ALCS</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-04-17T20:23:10+08:00"
-              content="2022-04-17">
-          04-17
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/04/17/practical/" itemprop="url">
-            <span itemprop="name">Practical Notes</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-04-17T11:16:24+08:00"
-              content="2022-04-17">
-          04-17
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/04/17/Chapter19.1_Algorithms/" itemprop="url">
-            <span itemprop="name">Chapter 19.1: Algorithms</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-04-13T21:24:22+08:00"
-              content="2022-04-13">
-          04-13
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/04/13/Chapter14_Communication&InternetTechnologies/" itemprop="url">
-            <span itemprop="name">Chapter 14: Communication and Internet technologies</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-04-13T16:45:07+08:00"
-              content="2022-04-13">
-          04-13
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/04/13/AS&AL-CompSci-Note/" itemprop="url">
-            <span itemprop="name">IG/AS/AL CompSci-Note</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-04-12T23:31:31+08:00"
-              content="2022-04-12">
-          04-12
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/04/12/Chapter17_Security/" itemprop="url">
-            <span itemprop="name">Chapter 17: Security</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-04-09T21:35:08+08:00"
-              content="2022-04-09">
-          04-09
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/04/09/markdown-tricks/" itemprop="url">
-            <span itemprop="name">那些你该知道的markdown操作</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-04-07T19:40:29+08:00"
-              content="2022-04-07">
-          04-07
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/04/07/blinkingRhombus/" itemprop="url">
-            <span itemprop="name">HTML+CSS: Blinking Rhombus</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-04-06T18:05:16+08:00"
-              content="2022-04-06">
-          04-06
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/04/06/loadingAnimation/" itemprop="url">
-            <span itemprop="name">HTML+CSS: Loading Animation</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-04-05T19:53:34+08:00"
-              content="2022-04-05">
-          04-05
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/04/05/Spotlight-Text/" itemprop="url">
-            <span itemprop="name">HTML+CSS: spotlight Text Animation</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-04-05T13:25:56+08:00"
-              content="2022-04-05">
-          04-05
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/04/05/JavaScript-Basics/" itemprop="url">
-            <span itemprop="name">JavaScript_Basics(constantly updated)</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        <h1>Chapter 19.2: Recursion</h1>
+<p>![image-20220412202834954](C:\Users\Samuel Jie\AppData\Roaming\Typora\typora-user-images\image-20220412202834954.png)</p>
+<span id="more"></span>
+<h3 id="u-Essential-features-of-recursion-u"><a class="header-anchor" href="#u-Essential-features-of-recursion-u">¶</a><u>Essential features of recursion:</u></h3>
+<ul>
+<li>
+<p><font color="#4a69bd">It is defined in terms of itself // it calls itself</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">It has a stopping condition</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">It has self-contained subroutine</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">It can return data to its previous call</font></p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><font color="#4a69bd">Must have a base case/ stopping condition</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">Must have a general case</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">… which calls itself recursively // defined in terms of itself</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">… which changes its state and moves towards the base case</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">Unwinding occurs once the base case is reached</font></p>
+</li>
+</ul>
+<p><u>Explain a reason why a stack is a suitable abstract data type(ADT) to implement recursion:</u></p>
+<ul>
+<li><font color="#4a69bd">A stack is a LIFO(last in first out) data structure</font></li>
+<li><font color="#4a69bd">Each recursive call is pushed to the stack</font></li>
+<li><font color="#4a69bd">And is popped when the function ends</font></li>
+<li><font color="#4a69bd">Enable unwinding/back tracking</font></li>
+<li><font color="#4a69bd">… to maintain the required order</font></li>
+</ul>
+<h3 id="u-What-a-compiler-has-to-do-to-translate-recursive-programming-code-u"><a class="header-anchor" href="#u-What-a-compiler-has-to-do-to-translate-recursive-programming-code-u">¶</a><u>What a compiler has to do to translate recursive programming code</u></h3>
+<ul>
+<li><font color="#4a69bd">When the recursive call is made, all values/data are put on</font></li>
+<li><font color="#4a69bd">… the stack</font></li>
+<li><font color="#4a69bd">When the stopping condition/base case is met</font></li>
+<li><font color="#4a69bd">… the algorithm unwinds</font></li>
+<li><font color="#4a69bd">… the last sets of values are taken off the stack (in reverse order)</font></li>
+</ul>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/05/05/Chapter16.2_TranslationSoftware/" rel="prev" title="Chapter 16.2: Translation Software">
+      <i class="fa fa-chevron-left"></i> Chapter 16.2: Translation Software
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
   
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2022/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/archives/2022/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2022/page/3/">3</a><a class="extend next" rel="next" href="/archives/2022/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
+  
+  
 
 
 
@@ -444,6 +375,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Chapter 19.2: Recursion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u-Essential-features-of-recursion-u"><span class="nav-number">1.0.1.</span> <span class="nav-text">Essential features of recursion:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u-What-a-compiler-has-to-do-to-translate-recursive-programming-code-u"><span class="nav-number">1.0.2.</span> <span class="nav-text">What a compiler has to do to translate recursive programming code</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -43,7 +43,7 @@
 <meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/ppq4.2.png">
 <meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/rpneva.jpg">
 <meta property="article:published_time" content="2022-05-05T03:14:19.000Z">
-<meta property="article:modified_time" content="2022-05-05T07:06:01.472Z">
+<meta property="article:modified_time" content="2022-05-05T07:16:28.936Z">
 <meta property="article:author" content="Haoran Jie">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/syllabus16.2.png">
@@ -214,7 +214,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-05-05 11:14:19 / Modified: 15:06:01" itemprop="dateCreated datePublished" datetime="2022-05-05T11:14:19+08:00">2022-05-05</time>
+              <time title="Created: 2022-05-05 11:14:19 / Modified: 15:16:28" itemprop="dateCreated datePublished" datetime="2022-05-05T11:14:19+08:00">2022-05-05</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -270,18 +270,18 @@
 <img src="/2022/05/05/Chapter16.2_TranslationSoftware/interpreter.jpg" style="zoom:50%;">
 <p><u>How an interpreter can executes the program without producing a complete translated version</u></p>
 <ul>
-<li>An interpreter examines source code one statement at a time</li>
-<li>Check each statement for errors</li>
-<li>If no error is found, the statement is executed</li>
-<li>If an error is found, this is reported and the interpreter halts</li>
-<li>Interpretation is repeated for every iteration in repeated section of code/ in loops</li>
-<li>Interpretation repeats every time the program runs</li>
+<li><font color="#4a69bd">An interpreter examines source code one statement at a time</font></li>
+<li><font color="#4a69bd">Check each statement for errors</font></li>
+<li><font color="#4a69bd">If no error is found, the statement is executed</font></li>
+<li><font color="#4a69bd">If an error is found, this is reported and the interpreter halts</font></li>
+<li><font color="#4a69bd">Interpretation is repeated for every iteration in repeated section of code/ in loops</font></li>
+<li><font color="#4a69bd">Interpretation repeats every time the program runs</font></li>
 </ul>
 <p><u>Why debug with interpreter</u></p>
 <ul>
-<li>Debugging is faster</li>
-<li>Can debug incomplete code</li>
-<li>Better diagnostics</li>
+<li><font color="#4a69bd">Debugging is faster</font></li>
+<li><font color="#4a69bd">Can debug incomplete code</font></li>
+<li><font color="#4a69bd">Better diagnostics</font></li>
 </ul>
 <h2 id="Compiler"><a class="header-anchor" href="#Compiler">¶</a>Compiler</h2>
 <img src="/2022/05/05/Chapter16.2_TranslationSoftware/compiler.jpg" style="zoom: 33%;">
@@ -292,7 +292,7 @@
 <p>All necessary characters not required by the compiler, such as the white space and comments, are removed</p>
 </li>
 <li>
-<p>The white space removed // redundant characters are removed // removal of comments // identification of errors</p>
+<p><font color="#4a69bd">The white space removed // redundant characters are removed // removal of comments // identification of errors</font></p>
 </li>
 <li>
 <p>Tokenization</p>
@@ -306,9 +306,9 @@
 <li>
 <p><u>Keyword table</u></p>
 <ul>
-<li>The reserved keyword used</li>
-<li>The operator used</li>
-<li>Their matching token</li>
+<li><font color="#4a69bd">The reserved keyword used</font></li>
+<li><font color="#4a69bd">The operator used</font></li>
+<li><font color="#4a69bd">Their matching token</font></li>
 </ul>
 </li>
 </ul>
@@ -320,10 +320,10 @@
 <ul>
 <li><u>Symbol table</u>
 <ul>
-<li>Identifier name used</li>
-<li>The data type</li>
-<li>Role: e.g. Constant, array, procedure</li>
-<li>Location marker, value of constant</li>
+<li><font color="#4a69bd">Identifier name used </font></li>
+<li><font color="#4a69bd">The data type </font></li>
+<li><font color="#4a69bd">Role: e.g. Constant, array, procedure</font></li>
+<li><font color="#4a69bd">Location marker, value of constant</font></li>
 </ul>
 </li>
 </ul>
@@ -332,11 +332,11 @@
 <img src="/2022/05/05/Chapter16.2_TranslationSoftware/symboltable.png" style="zoom:50%;">
 <p><u>Explain how the keywork table and symbol table are used to translate the source code program</u></p>
 <ul>
-<li>Keywords are looked up in the keyword table</li>
-<li>They are represented by tokens</li>
-<li>Identifiers are looked up in the symbol table</li>
-<li>They are converted into location/address</li>
-<li>Used to create a sequence of tokens (for the program)</li>
+<li><font color="#4a69bd">Keywords are looked up in the keyword table</font></li>
+<li><font color="#4a69bd">They are represented by tokens</font></li>
+<li><font color="#4a69bd">Identifiers are looked up in the symbol table</font></li>
+<li><font color="#4a69bd">They are converted into location/address</font></li>
+<li><font color="#4a69bd">Used to create a sequence of tokens (for the program)</font></li>
 </ul>
 <h4 id="Syntax-analysis"><a class="header-anchor" href="#Syntax-analysis">¶</a>Syntax analysis</h4>
 <ul>
@@ -345,9 +345,9 @@
 <li>If errors are found: each statement and the associated error is outputted, but the next stage, code generation, will not be attempted</li>
 <li>If no error is found: passed to the next stage of compilation</li>
 <li><code>--</code></li>
-<li>Construction of a parse tree / parsing</li>
-<li>Checking the table of tokens that the rules of grammar/syntax have been obeyed</li>
-<li>Production of an error report</li>
+<li><font color="#4a69bd">Construction of a parse tree / parsing</font></li>
+<li><font color="#4a69bd">Checking the table of tokens that the rules of grammar/syntax have been obeyed</font></li>
+<li><font color="#4a69bd">Production of an error report</font></li>
 </ul>
 <h4 id="Code-generation"><a class="header-anchor" href="#Code-generation">¶</a>Code generation</h4>
 <ul>
@@ -363,7 +363,7 @@
 <ul>
 <li>Performing the task using the <u>minimum amount of resources</u>
 <ul>
-<li>Execution time, storage space, memory, can CPU use.</li>
+<li><font color="#4a69bd">Execution time, storage space, memory, can CPU use.</font></li>
 </ul>
 </li>
 <li>
@@ -372,34 +372,34 @@
 </ul>
 <p><u>Why code is optimized:</u></p>
 <ul>
-<li>Redundant code removed</li>
-<li>Program requires less memory</li>
-<li>Code reorganized to make it more efficient</li>
-<li>Program will complete task in a shorter time</li>
+<li><font color="#4a69bd">Redundant code removed</font></li>
+<li><font color="#4a69bd">Program requires less memory</font></li>
+<li><font color="#4a69bd">Code reorganized to make it more efficient</font></li>
+<li><font color="#4a69bd">Program will complete task in a shorter time</font></li>
 </ul>
 <p><u>Why optimization is necessary</u></p>
 <ul>
-<li>Optimisation means the code would have fewer instructions</li>
-<li>Optimised code occupies less memory in space</li>
-<li>Fewer instructions reduce the execution time of the program</li>
+<li><font color="#4a69bd">Optimisation means the code would have fewer instructions</font></li>
+<li><font color="#4a69bd">Optimised code occupies less memory in space</font></li>
+<li><font color="#4a69bd">Fewer instructions reduce the execution time of the program</font></li>
 </ul>
 <p><u>Benefits</u></p>
 <ul>
-<li>Code has fewer instructions/occupies less memory in space</li>
-<li>Shortens the execution time for the program // time taken to execute whole program decreases</li>
+<li><font color="#4a69bd">Code has fewer instructions/occupies less memory in space</font></li>
+<li><font color="#4a69bd">Shortens the execution time for the program // time taken to execute whole program decreases</font></li>
 </ul>
 <h3 id="Past-paper-questions"><a class="header-anchor" href="#Past-paper-questions">¶</a>Past-paper questions</h3>
 <img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq1.png" style="zoom: 67%;">
 <ul>
-<li>Remove the second instances of LDD 436 // remove line 04</li>
-<li>Remove the second instance s of ADD 437 // remove line 05</li>
-<li>The value required is already stored in the accumulator</li>
+<li><font color="#4a69bd">Remove the second instances of LDD 436 // remove line 04</font></li>
+<li><font color="#4a69bd">Remove the second instance s of ADD 437 // remove line 05</font></li>
+<li><font color="#4a69bd">The value required is already stored in the accumulator</font></li>
 </ul>
 <hr>
 <p><u>Why compiled version helps protect the security of the source code</u></p>
 <ul>
-<li>Compiler produces executable version - not readable</li>
-<li>Difficult for reverse engineering</li>
+<li><font color="#4a69bd">Compiler produces executable version - not readable</font></li>
+<li><font color="#4a69bd">Difficult for reverse engineering</font></li>
 </ul>
 <hr>
 <img src="/2022/05/05/Chapter16.2_TranslationSoftware/drawline.png" style="zoom: 67%;">
@@ -437,61 +437,61 @@
 <hr>
 <p><u>Why RPN can be used to evaluate expressions:</u></p>
 <ul>
-<li>Reverse polish notation provides and unambiguous method of representing an expression</li>
-<li>Reading from left to right</li>
-<li>Without need to use bracket</li>
-<li>With no need for rules of precedence</li>
+<li><font color="#4a69bd">Reverse polish notation provides and unambiguous method of representing an expression</font></li>
+<li><font color="#4a69bd">Reading from left to right</font></li>
+<li><font color="#4a69bd">Without need to use bracket</font></li>
+<li><font color="#4a69bd">With no need for rules of precedence</font></li>
 </ul>
 <p><u>Explain how RPN is used by an interpreter to evaluate expression:</u></p>
 <ul>
-<li>Expressions are always evaluated from left to right</li>
-<li>Each operator uses two previous values on the stack</li>
-<li>Pushing and popping identifiers on a stack</li>
+<li><font color="#4a69bd">Expressions are always evaluated from left to right</font></li>
+<li><font color="#4a69bd">Each operator uses two previous values on the stack</font></li>
+<li><font color="#4a69bd">Pushing and popping identifiers on a stack</font></li>
 </ul>
 <p><u>Data structure to evaluate an expression in RPN</u></p>
 <ul>
-<li>Stack
+<li><font color="#4a69bd">Stack</font>
 <ul>
-<li>The operands are popped from the stack in reverse order to how they were pushed</li>
+<li><font color="#4a69bd">The operands are popped from the stack in reverse order to how they were pushed</font></li>
 </ul>
 </li>
-<li>Binary tree
+<li><font color="#4a69bd">Binary tree</font>
 <ul>
-<li>Allows both infix and postfix to be evaluated (tree traversal)</li>
+<li><font color="#4a69bd">Allows both infix and postfix to be evaluated (tree traversal)</font></li>
 </ul>
 </li>
 </ul>
 <p><u>Describe the main steps in the evaluation of a Reverse Polish Notation(RPN) expression using a stack</u></p>
 <ul>
-<li>Working from left to right in the expression</li>
-<li>If element is a number, push that number into stack</li>
-<li>If element is an operator, then pop the first two numbers on the stack</li>
-<li>… perform that operations on these two numbers</li>
-<li>PUSH result back into stack</li>
-<li>END once the last item in the expression has been dealt with</li>
+<li><font color="#4a69bd">Working from left to right in the expression</font></li>
+<li><font color="#4a69bd">If element is a number, push that number into stack</font></li>
+<li><font color="#4a69bd">If element is an operator, then pop the first two numbers on the stack</font></li>
+<li><font color="#4a69bd">… perform that operations on these two numbers</font></li>
+<li><font color="#4a69bd">PUSH result back into stack</font></li>
+<li><font color="#4a69bd">END once the last item in the expression has been dealt with</font></li>
 </ul>
 <p><u>One advantage of the use of RPN is that evaluation of expressions does not require rules of precedence; Explain this statement</u></p>
 <ul>
-<li>Rules of precedence means different operators have different priorities; for example multiplication is done before addition</li>
-<li>In RPN, evaluation of expression is from left to right // operator are used in the sequence in which they were read</li>
-<li>No need for brackets // infix may require brackets</li>
+<li><font color="#4a69bd">Rules of precedence means different operators have different priorities; for example multiplication is done before addition</font></li>
+<li><font color="#4a69bd">In RPN, evaluation of expression is from left to right // operator are used in the sequence in which they were read</font></li>
+<li><font color="#4a69bd">No need for brackets // infix may require brackets</font></li>
 </ul>
 <p><u>Write the Reverse Polish Notation for the following expressions</u></p>
 <ol>
 <li>
 <p>(A+B)*(C-D)</p>
 <ul>
-<li>AB+</li>
-<li>CD-*</li>
+<li><font color="#4a69bd">AB+</font></li>
+<li><font color="#4a69bd">CD-*</font></li>
 </ul>
 <p>Full answer: AB+CD-*</p>
 </li>
 <li>
 <p>((-A/B)*4)/(C-D)</p>
 <ul>
-<li>A-</li>
-<li>B/4*</li>
-<li>CD-/</li>
+<li><font color="#4a69bd">A-</font></li>
+<li><font color="#4a69bd">B/4*</font></li>
+<li><font color="#4a69bd">CD-/</font></li>
 </ul>
 <p>Full answer: A-B/4*CD-/</p>
 </li>
@@ -517,7 +517,10 @@
     <a href="/2022/05/03/Chapter16.1_PurposeOfAnOperatingSystem/" rel="prev" title="Chapter 16.1: Purpose of an operating system">
       <i class="fa fa-chevron-left"></i> Chapter 16.1: Purpose of an operating system
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2022/05/05/Chapter19.2_Recursion/" rel="next" title="Chapter19.2_Recursion">
+      Chapter19.2_Recursion <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -592,7 +595,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -655,12 +658,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">133k</span>
+    <span title="Symbols count total">134k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:01</span>
+    <span title="Reading time total">2:02</span>
 </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
 

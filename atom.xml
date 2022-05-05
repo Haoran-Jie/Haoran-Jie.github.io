@@ -6,7 +6,7 @@
   <link href="https://haoran-jie.github.io/atom.xml" rel="self"/>
   
   <link href="https://haoran-jie.github.io/"/>
-  <updated>2022-05-05T07:06:01.472Z</updated>
+  <updated>2022-05-05T07:12:20.630Z</updated>
   <id>https://haoran-jie.github.io/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Chapter19.2_Recursion</title>
+    <link href="https://haoran-jie.github.io/2022/05/05/Chapter19.2_Recursion/"/>
+    <id>https://haoran-jie.github.io/2022/05/05/Chapter19.2_Recursion/</id>
+    <published>2022-05-05T07:09:16.000Z</published>
+    <updated>2022-05-05T07:12:20.630Z</updated>
+    
+    
+    <summary type="html">&lt;h1&gt;Chapter 19.2: Recursion&lt;/h1&gt;
+&lt;p&gt;![image-20220412202834954](C:\Users\Samuel Jie\AppData\Roaming\Typora\typora-user-images\image-20220412202834954.png)&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
+    
+    <category term="ALCS" scheme="https://haoran-jie.github.io/categories/Notes/ALCS/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Chapter 16.2: Translation Software</title>
     <link href="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/"/>
     <id>https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/</id>
     <published>2022-05-05T03:14:19.000Z</published>
-    <updated>2022-05-05T07:06:01.472Z</updated>
+    <updated>2022-05-05T07:16:28.936Z</updated>
     
     
     <summary type="html">&lt;h1&gt;Chapter 16.2: Translation Software&lt;/h1&gt;
@@ -446,34 +466,6 @@
     
     
     <category term="JavaScript" scheme="https://haoran-jie.github.io/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>FlexBox_Notes</title>
-    <link href="https://haoran-jie.github.io/2022/04/04/FlexBox-Notes/"/>
-    <id>https://haoran-jie.github.io/2022/04/04/FlexBox-Notes/</id>
-    <published>2022-04-04T12:08:05.000Z</published>
-    <updated>2022-04-13T12:46:13.653Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote class=&quot;blockquote-center&quot;&gt;
-            &lt;i class=&quot;fa fa-quote-left&quot;&gt;&lt;/i&gt;
-            &lt;p&gt;Notes of FlexBox container in css and its related properties&lt;/p&gt;
-
-            &lt;i class=&quot;fa fa-quote-right&quot;&gt;&lt;/i&gt;
-          &lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="WebDevelopment" scheme="https://haoran-jie.github.io/categories/WebDevelopment/"/>
-    
-    <category term="CSS" scheme="https://haoran-jie.github.io/categories/WebDevelopment/CSS/"/>
-    
-    
-    <category term="css" scheme="https://haoran-jie.github.io/tags/css/"/>
-    
-    <category term="FlexBox" scheme="https://haoran-jie.github.io/tags/FlexBox/"/>
     
   </entry>
   
