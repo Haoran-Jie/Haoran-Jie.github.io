@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/blog.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/blog.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/blog.png">
+  <link rel="mask-icon" href="/images/blog.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Times New Roman:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Playfair Display:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"haoran-jie.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Chapter 16.2: Translation Software   ¶Interpreter  How an interpreter can executes the program without producing a complete translated version  An interpreter examines source code one statement at a t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chapter 16.2: Translation Software">
+<meta property="og:url" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/index.html">
+<meta property="og:site_name" content="Samuel&#39;s Blog">
+<meta property="og:description" content="Chapter 16.2: Translation Software   ¶Interpreter  How an interpreter can executes the program without producing a complete translated version  An interpreter examines source code one statement at a t">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/syllabus16.2.png">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/interpreter.jpg">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/hexocode/source/_posts/Chapter16.2_TranslationSoftware/compiler.jpg">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/keyword%20table.png">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/symboltable.png">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/hexocode/source/_posts/Chapter16.2_TranslationSoftware/optimization.jpg">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/ppq1.png">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/hexocode/source/_posts/Chapter16.2_TranslationSoftware/drawline.png">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/ppq2.1.png">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/ppq2.2.png">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Cppq3.1.png">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/hexocode/source/_posts/Chapter16.2_TranslationSoftware/ppq3.2.png">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Cppq4.1.png">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Cppq4.2.png">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Crpneva.jpg">
+<meta property="article:published_time" content="2022-05-05T03:14:19.000Z">
+<meta property="article:modified_time" content="2022-05-05T06:45:56.451Z">
+<meta property="article:author" content="Haoran Jie">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/syllabus16.2.png">
+
+<link rel="canonical" href="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Chapter 16.2: Translation Software | Samuel's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Samuel's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Samuel's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Snippets of life of a programmer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-notes">
+
+    <a href="/Notes/" rel="section"><i class="fa fa-book fa-fw"></i>Notes</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Haoran Jie">
+      <meta itemprop="description" content="18">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Samuel's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Chapter 16.2: Translation Software
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-05-05 11:14:19 / Modified: 14:45:56" itemprop="dateCreated datePublished" datetime="2022-05-05T11:14:19+08:00">2022-05-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/ALCS/" itemprop="url" rel="index"><span itemprop="name">ALCS</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>5.4k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>5 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1>Chapter 16.2: Translation Software</h1>
+<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/syllabus16.2.png" alt></p>
+<hr>
+<h2 id="Interpreter"><a class="header-anchor" href="#Interpreter">¶</a>Interpreter</h2>
+<img src="/2022/05/05/Chapter16.2_TranslationSoftware/interpreter.jpg" style="zoom:50%;">
+<p><u>How an interpreter can executes the program without producing a complete translated version</u></p>
+<ul>
+<li>An interpreter examines source code one statement at a time</li>
+<li>Check each statement for errors</li>
+<li>If no error is found, the statement is executed</li>
+<li>If an error is found, this is reported and the interpreter halts</li>
+<li>Interpretation is repeated for every iteration in repeated section of code/ in loops</li>
+<li>Interpretation repeats every time the program runs</li>
+</ul>
+<p><u>Why debug with interpreter</u></p>
+<ul>
+<li>Debugging is faster</li>
+<li>Can debug incomplete code</li>
+<li>Better diagnostics</li>
+</ul>
+<h2 id="Compiler"><a class="header-anchor" href="#Compiler">¶</a>Compiler</h2>
+<img src="/2022/05/05/Chapter16.2_TranslationSoftware/hexocode\source\_posts\Chapter16.2_TranslationSoftware\compiler.jpg" style="zoom: 33%;">
+<h3 id="Compilation-stages"><a class="header-anchor" href="#Compilation-stages">¶</a>Compilation stages</h3>
+<h4 id="Lexical-analysis"><a class="header-anchor" href="#Lexical-analysis">¶</a>Lexical analysis</h4>
+<ul>
+<li>
+<p>All necessary characters not required by the compiler, such as the white space and comments, are removed</p>
+</li>
+<li>
+<p>The white space removed // redundant characters are removed // removal of comments // identification of errors</p>
+</li>
+<li>
+<p>Tokenization</p>
+<ul>
+<li>
+<p>Using a keyword table that contains all the tokens for reserved keywords and symbols</p>
+</li>
+<li>
+<p>Convert the source program into tokens</p>
+</li>
+<li>
+<p><u>Keyword table</u></p>
+<ul>
+<li>The reserved keyword used</li>
+<li>The operator used</li>
+<li>Their matching token</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<img src="/2022/05/05/Chapter16.2_TranslationSoftware/keyword table.png" align="middle" style="zoom:50%;">
+<ul>
+<li>Variables, constants, and identifiers added to a symbol table, and are then converted into locations/address
+<ul>
+<li><u>Symbol table</u>
+<ul>
+<li>Identifier name used</li>
+<li>The data type</li>
+<li>Role: e.g. Constant, array, procedure</li>
+<li>Location marker, value of constant</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<img src="/2022/05/05/Chapter16.2_TranslationSoftware/symboltable.png" style="zoom:50%;">
+<p><u>Explain how the keywork table and symbol table are used to translate the source code program</u></p>
+<ul>
+<li>Keywords are looked up in the keyword table</li>
+<li>They are represented by tokens</li>
+<li>Identifiers are looked up in the symbol table</li>
+<li>They are converted into location/address</li>
+<li>Used to create a sequence of tokens (for the program)</li>
+</ul>
+<h4 id="Syntax-analysis"><a class="header-anchor" href="#Syntax-analysis">¶</a>Syntax analysis</h4>
+<ul>
+<li>Output from the lexical analysis is checked for grammatical/syntax errors - <code>parsing</code></li>
+<li>The rules for <code>parsing</code> can be set out in Backus-Naur form(BNF) notation</li>
+<li>If errors are found: each statement and the associated error is outputted, but the next stage, code generation, will not be attempted</li>
+<li>If no error is found: passed to the next stage of compilation</li>
+<li><code>--</code></li>
+<li>Construction of a parse tree / parsing</li>
+<li>Checking the table of tokens that the rules of grammar/syntax have been obeyed</li>
+<li>Production of an error report</li>
+</ul>
+<h4 id="Code-generation"><a class="header-anchor" href="#Code-generation">¶</a>Code generation</h4>
+<ul>
+<li>Produces an object program to perform the task defined in the source code</li>
+<li>The object program is in machine-readable form(binary):
+<ul>
+<li>Either in machine code that can be directly executed by the CPU</li>
+<li>Or in intermediate code that is converted into machine code when the program is loaded</li>
+</ul>
+</li>
+</ul>
+<h4 id="Optimization"><a class="header-anchor" href="#Optimization">¶</a>Optimization</h4>
+<ul>
+<li>Performing the task using the <u>minimum amount of resources</u>
+<ul>
+<li>Execution time, storage space, memory, can CPU use.</li>
+</ul>
+</li>
+<li>
+<img src="/2022/05/05/Chapter16.2_TranslationSoftware/hexocode\source\_posts\Chapter16.2_TranslationSoftware\optimization.jpg" style="zoom: 33%;">
+</li>
+</ul>
+<p><u>Why code is optimized:</u></p>
+<ul>
+<li>Redundant code removed</li>
+<li>Program requires less memory</li>
+<li>Code reorganized to make it more efficient</li>
+<li>Program will complete task in a shorter time</li>
+</ul>
+<p><u>Why optimization is necessary</u></p>
+<ul>
+<li>Optimisation means the code would have fewer instructions</li>
+<li>Optimised code occupies less memory in space</li>
+<li>Fewer instructions reduce the execution time of the program</li>
+</ul>
+<p><u>Benefits</u></p>
+<ul>
+<li>Code has fewer instructions/occupies less memory in space</li>
+<li>Shortens the execution time for the program // time taken to execute whole program decreases</li>
+</ul>
+<h3 id="Past-paper-questions"><a class="header-anchor" href="#Past-paper-questions">¶</a>Past-paper questions</h3>
+<img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq1.png" style="zoom: 67%;" align="left">
+<ul>
+<li>Remove the second instances of LDD 436 // remove line 04</li>
+<li>Remove the second instance s of ADD 437 // remove line 05</li>
+<li>The value required is already stored in the accumulator</li>
+</ul>
+<hr>
+<p><u>Why compiled version helps protect the security of the source code</u></p>
+<ul>
+<li>Compiler produces executable version - not readable</li>
+<li>Difficult for reverse engineering</li>
+</ul>
+<hr>
+<img src="/2022/05/05/Chapter16.2_TranslationSoftware/hexocode\source\_posts\Chapter16.2_TranslationSoftware\drawline.png" style="zoom: 67%;">
+<hr>
+<h2 id="BNF-Syntax-diagram"><a class="header-anchor" href="#BNF-Syntax-diagram">¶</a>BNF &amp; Syntax diagram</h2>
+<h3 id="Past-paper-questions-v2"><a class="header-anchor" href="#Past-paper-questions-v2">¶</a>Past-paper questions</h3>
+<ol>
+<li></li>
+</ol>
+<hr>
+<img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq2.1.png" style="zoom: 80%;">
+<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq2.2.png" alt></p>
+<hr>
+<ol start="2">
+<li></li>
+</ol>
+<hr>
+<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Cppq3.1.png" alt></p>
+<img src="/2022/05/05/Chapter16.2_TranslationSoftware/hexocode\source\_posts\Chapter16.2_TranslationSoftware\ppq3.2.png" style="zoom: 67%;">
+<hr>
+<ol start="3">
+<li></li>
+</ol>
+<hr>
+<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Cppq4.1.png" alt></p>
+<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Cppq4.2.png" alt></p>
+<hr>
+<h2 id="Reverse-Polish-notation"><a class="header-anchor" href="#Reverse-Polish-notation">¶</a>Reverse Polish notation</h2>
+<blockquote>
+<p>Infix notation: operators are in between their operands</p>
+<p>Postfix notation / Reverse Polish notation: Operators are written after operands</p>
+<p>Prefix notation / Polish notation: operators are written before operands</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cs.man.ac.uk/~pjj/cs212/fix.html">Understanding infix, postfix, and prefix - lecture note from university of manchester</a></p>
+<hr>
+<p><u>Why RPN can be used to evaluate expressions:</u></p>
+<ul>
+<li>Reverse polish notation provides and unambiguous method of representing an expression</li>
+<li>Reading from left to right</li>
+<li>Without need to use bracket</li>
+<li>With no need for rules of precedence</li>
+</ul>
+<p><u>Explain how RPN is used by an interpreter to evaluate expression:</u></p>
+<ul>
+<li>Expressions are always evaluated from left to right</li>
+<li>Each operator uses two previous values on the stack</li>
+<li>Pushing and popping identifiers on a stack</li>
+</ul>
+<p><u>Data structure to evaluate an expression in RPN</u></p>
+<ul>
+<li>Stack
+<ul>
+<li>The operands are popped from the stack in reverse order to how they were pushed</li>
+</ul>
+</li>
+<li>Binary tree
+<ul>
+<li>Allows both infix and postfix to be evaluated (tree traversal)</li>
+</ul>
+</li>
+</ul>
+<p><u>Describe the main steps in the evaluation of a Reverse Polish Notation(RPN) expression using a stack</u></p>
+<ul>
+<li>Working from left to right in the expression</li>
+<li>If element is a number, push that number into stack</li>
+<li>If element is an operator, then pop the first two numbers on the stack</li>
+<li>… perform that operations on these two numbers</li>
+<li>PUSH result back into stack</li>
+<li>END once the last item in the expression has been dealt with</li>
+</ul>
+<p><u>One advantage of the use of RPN is that evaluation of expressions does not require rules of precedence; Explain this statement</u></p>
+<ul>
+<li>Rules of precedence means different operators have different priorities; for example multiplication is done before addition</li>
+<li>In RPN, evaluation of expression is from left to right // operator are used in the sequence in which they were read</li>
+<li>No need for brackets // infix may require brackets</li>
+</ul>
+<p><u>Write the Reverse Polish Notation for the following expressions</u></p>
+<ol>
+<li>
+<p>(A+B)*(C-D)</p>
+<ul>
+<li>AB+</li>
+<li>CD-*</li>
+</ul>
+<p>Full answer: AB+CD-*</p>
+</li>
+<li>
+<p>((-A/B)*4)/(C-D)</p>
+<ul>
+<li>A-</li>
+<li>B/4*</li>
+<li>CD-/</li>
+</ul>
+<p>Full answer: A-B/4*CD-/</p>
+</li>
+</ol>
+<h3 id="Evaluation-of-RPN"><a class="header-anchor" href="#Evaluation-of-RPN">¶</a>Evaluation of RPN</h3>
+<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Crpneva.jpg" alt></p>
+<p><a target="_blank" rel="noopener" href="https://www.includehelp.com/c/infix-to-postfix-conversion-using-stack-with-c-program.aspx">Useful resource: Infix To Postfix Conversion Using Stack</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/05/03/Chapter16.1_PurposeOfAnOperatingSystem/" rel="prev" title="Chapter 16.1: Purpose of an operating system">
+      <i class="fa fa-chevron-left"></i> Chapter 16.1: Purpose of an operating system
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Chapter 16.2: Translation Software</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Interpreter"><span class="nav-number">1.1.</span> <span class="nav-text">Interpreter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compiler"><span class="nav-number">1.2.</span> <span class="nav-text">Compiler</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Compilation-stages"><span class="nav-number">1.2.1.</span> <span class="nav-text">Compilation stages</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Lexical-analysis"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">Lexical analysis</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Syntax-analysis"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">Syntax analysis</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Code-generation"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">Code generation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Optimization"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">Optimization</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions"><span class="nav-number">1.2.2.</span> <span class="nav-text">Past-paper questions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BNF-Syntax-diagram"><span class="nav-number">1.3.</span> <span class="nav-text">BNF &amp; Syntax diagram</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions-v2"><span class="nav-number">1.3.1.</span> <span class="nav-text">Past-paper questions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reverse-Polish-notation"><span class="nav-number">1.4.</span> <span class="nav-text">Reverse Polish notation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Evaluation-of-RPN"><span class="nav-number">1.4.1.</span> <span class="nav-text">Evaluation of RPN</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Haoran Jie"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Haoran Jie</p>
+  <div class="site-description" itemprop="description">18</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Haoran-Jie" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Haoran-Jie" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/profile.php?id=100077991016519" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100077991016519" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/samueljieee/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;samueljieee&#x2F;" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-dog"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Haoran Jie</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">133k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">2:01</span>
+</div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
