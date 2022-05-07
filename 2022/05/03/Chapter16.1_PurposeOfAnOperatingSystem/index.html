@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://haoran-jie.github.io/2022/05/03/Chapter16.1_PurposeOfAnOperatingSystem/interrupt.jpg">
 <meta property="og:image" content="https://haoran-jie.github.io/2022/05/03/Chapter16.1_PurposeOfAnOperatingSystem/segmentation.jpg">
 <meta property="article:published_time" content="2022-05-03T14:41:54.000Z">
-<meta property="article:modified_time" content="2022-05-06T15:11:46.288Z">
+<meta property="article:modified_time" content="2022-05-07T11:53:27.444Z">
 <meta property="article:author" content="Haoran Jie">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://haoran-jie.github.io/2022/05/03/Chapter16.1_PurposeOfAnOperatingSystem/Syllabus16.1.png">
@@ -210,7 +210,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-05-06 23:11:46" itemprop="dateModified" datetime="2022-05-06T23:11:46+08:00">2022-05-06</time>
+                <time title="Modified: 2022-05-07 19:53:27" itemprop="dateModified" datetime="2022-05-07T19:53:27+08:00">2022-05-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -246,7 +246,7 @@
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>13 mins.</span>
+              <span>14 mins.</span>
             </span>
 
         </div>
@@ -332,6 +332,7 @@
 <li>Using graphical interface rather than command line interface</li>
 <li>Using device drivers (simplifies the complexity of the hardware interface)</li>
 <li>Simplifying the saving and retrieving of data from memory and storage device</li>
+<li>Carrying out background utilities, such as virus scanner which the user can “leave it to its own device”</li>
 </ul>
 <h2 id="Process-management"><a class="header-anchor" href="#Process-management">¶</a>Process management</h2>
 <blockquote>
@@ -374,30 +375,22 @@
 </ul>
 <h4 id="Transition-between-state-conditions"><a class="header-anchor" href="#Transition-between-state-conditions">¶</a>Transition between state: conditions</h4>
 <ul>
-<li>
-<p>Ready -&gt; Running</p>
+<li><u>Ready -&gt; Running</u></li>
+<li><font color="#4a69bd">Current process no longer running // processor is available</font>
 <ul>
-<li><font color="#4a69bd">Current process no longer running // processor is available</font></li>
 <li><font color="#4a69bd">Process was at the head of the ready queue // process has the highest priority</font></li>
 </ul>
 </li>
-<li>
-<p>Blocked -&gt; Ready</p>
-</li>
-<li>
-<p><font color="#4a69bd">The only required resource become available // resource/event/IO operation is complete</font></p>
-</li>
-<li>
-<p>Running -&gt; Ready</p>
+<li><u>Blocked -&gt; Ready</u></li>
+<li><font color="#4a69bd">The only required resource become available // resource/event/IO operation is complete</font></li>
+<li><u>Running -&gt; Ready</u>
 <ul>
 <li><font color="#4a69bd">When process is executing it is allocated a time slice </font></li>
+<li><font color="#4a69bd">When the time slice is completed, the process can no longer use the processor even if it is capable of further processing</font></li>
 </ul>
 </li>
-<li>
-<p>Running -&gt; Blocked</p>
-</li>
-<li>
-<p><font color="#4a69bd">Process is executed when it needs to perform IO operation</font></p>
+<li><u>Running -&gt; Blocked</u></li>
+<li><font color="#4a69bd">Process is executed when it needs to perform IO operation</font>
 <ul>
 <li><font color="#4a69bd">Placed in blocked state until the IO operation is complete</font></li>
 </ul>
@@ -518,14 +511,40 @@
 <h2 id="Memory-management"><a class="header-anchor" href="#Memory-management">¶</a>Memory management</h2>
 <h3 id="Paging"><a class="header-anchor" href="#Paging">¶</a><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/paging-in-operating-system/">Paging</a>:</h3>
 <ul>
-<li>Memory is split up into partitions of blocks of fixed size</li>
-<li>Physical memory blocks are known as frames</li>
-<li>Fixed-sized logical memory blocks are known as pages</li>
-<li>A program is allocated a number of pages that is usually just larger than what was actually needed</li>
-<li><code>--</code></li>
-<li><font color="#4a69bd">Page table: the page map table shows the mapping to pages to page frames</font></li>
-<li><font color="#4a69bd">Page: virtual memory divided into blocks of fixed size</font></li>
-<li><font color="#4a69bd">Page frame: the main memory is divided into page frames of same size as page</font></li>
+<li>
+<p>Memory is split up into partitions of blocks of fixed size</p>
+</li>
+<li>
+<p>Physical memory blocks are known as frames</p>
+</li>
+<li>
+<p>Fixed-sized logical memory blocks are known as pages</p>
+</li>
+<li>
+<p>A program is allocated a number of pages that is usually just larger than what was actually needed</p>
+</li>
+<li>
+<p>The logical address stores the page number in the first part of address and the page offset in the remaining part of the address.</p>
+<ul>
+<li>Page number: number of bits required to represent the pages in Logical address space.</li>
+<li>Page offset: Number of bits required to represent a particular <code>word</code> in page.</li>
+</ul>
+<blockquote>
+<p>如果一共有16个<code>pages</code>，每个page的大小是1024<code>words</code> 那么则需要address的前四个bits来表示page number, 后 10个bits 来表示page offset. 这样的话 通过address可以精准定位到某一个<code>page</code>的某一个<code>word</code>. e.g: 01010000000001代表第5个<code>page</code>的第2个<code>word</code>.</p>
+</blockquote>
+</li>
+<li>
+<p><code>--</code></p>
+</li>
+<li>
+<p><font color="#4a69bd">Page table: the page map table shows the mapping to pages to page frames</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">Page: virtual memory divided into blocks of fixed size</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">Page frame: the main memory is divided into page frames of same size as page</font></p>
+</li>
 </ul>
 <p><u>How paging is used to handle virtual memory:</u></p>
 <ul>
@@ -619,12 +638,12 @@
 <h3 id="Disk-thrashing"><a class="header-anchor" href="#Disk-thrashing">¶</a>Disk thrashing</h3>
 <p>The main drawback of using HDD in virtual memory is that as main memory fills, more and more data/pages need to be swapped in and out of virtual memory. This leads to high rate of hard disk read/write head movement. if more time is spent on moving pages in and out of memory than actually doing any processing, then the processing speed of the computer will be reduced. A point can be reached when the execution of a process comes to a halt since the system is so busy paging and in and out of memory; this is known as the thrash point.</p>
 <ul>
-<li>Pages are requested back into RAM as soon as they are moved to the disk</li>
-<li>There is continuous swapping (of the same page)</li>
-<li>No useful processing happens (deadlock)
+<li><font color="#4a69bd">Pages are requested back into RAM as soon as they are moved to the disk</font></li>
+<li><font color="#4a69bd">There is continuous swapping (of the same page)</font></li>
+<li><font color="#4a69bd">No useful processing happens (deadlock)</font>
 <ul>
-<li>Pages that are in RAM and disk are interdependent</li>
-<li>All processing times are used for swapping pages</li>
+<li><font color="#4a69bd">Pages that are in RAM and disk are interdependent</font></li>
+<li><font color="#4a69bd">All processing times are used for swapping pages</font></li>
 </ul>
 </li>
 </ul>
@@ -634,20 +653,16 @@
 <p>Page replacement occurs when a requested page is not in memory. When paging in/out from memory, it is necessary to consider how the computer can decide which page to replace to allow the requested page to be loaded.</p>
 </li>
 <li>
-<p>When a new page is requested but is not in memory, a page fault occurs and the OS replaces one of the existing pages with the new page. How to decide which page to replace is done in a number of different ways, but all methods have the same goal of     minimizing the number of page faults.</p>
+<p>When a new page is requested but is not in memory, a page fault occurs and the OS replaces one of the existing pages with the new page. How to decide which page to replace is done in a number of different ways, but all methods have the same goal of minimizing the number of page faults.</p>
 </li>
 <li>
 <p>A page fault is a type of interrupt raised by hardware. When a running program accesses a page that is mapped into virtual memory address space, but not yet loaded into physical memory, then the hardware needs to raise this page fault     interrupt.</p>
 </li>
 <li>
 <p>Page replacement algorithms:</p>
-</li>
-<li>
 <ul>
 <li>
-<p>First in first out (FIFO)</p>
-</li>
-<li>
+<p><strong>First in first out (FIFO)</strong></p>
 <ul>
 <li>
 <p>The OS keeps track of all the pages in memory using a queue structure</p>
@@ -666,8 +681,6 @@
 </li>
 <li>
 <p><u>Drawbacks:</u></p>
-</li>
-<li>
 <ul>
 <li><font color="#4a69bd">Page in for lengthy period of time may be often accessed</font></li>
 <li><font color="#4a69bd">… so not a good candidate to be removed</font></li>
@@ -676,47 +689,43 @@
 </ul>
 </li>
 <li>
-<p>Optimal page replacement(OPR)</p>
+<p><strong>Optimal page replacement(OPR)</strong></p>
+</li>
+</ul>
 </li>
 <li>
+<p>Optimal page replacement looks forward in time to see which frame it can replace in the event of a page fault.</p>
 <ul>
-<li>Optimal page replacement looks forward in time to see which frame it can replace in the event of a page fault.</li>
 <li>The algorithm is actually impossible to implement; at the time of a page fault, the OS has no way of knowing when each of the pages will be replaced next.</li>
 <li>It tends to get used for comparison studies but has the advantage that it is free of Belady’s Anomaly and also has the fewest page faults.</li>
 </ul>
 </li>
 <li>
-<p>Least recently used page replacement (LRU)</p>
+<p><strong>Least recently used page replacement (LRU)</strong></p>
+<ul>
+<li>
+<p>With least recently used page replacement (LRU), the page which has not been used for the longest time is replaced.</p>
 </li>
 <li>
-<ul>
-<li>With least recently used page replacement (LRU), the page which has not been used for the longest time is replaced.</li>
-<li>To implement this method, it is necessary to maintain a linked list of all pages in memory with the most recently used page at the front and the least recently used page at the rear.</li>
+<p>To implement this method, it is necessary to maintain a linked list of all pages in memory with the most recently used page at the front and the least recently used page at the rear.</p>
+</li>
+<li>
+<p><strong>Least used page replacement</strong></p>
+</li>
 </ul>
 </li>
-<li>
-<p>Least used page replacement</p>
-</li>
-<li>
-<ul>
 <li>
 <p><u>Additional data required</u>: <font color="#4a69bd">Number of times the page has been accessed</font></p>
 </li>
 <li>
 <p><u>Drawbacks</u>:</p>
-</li>
-<li>
 <ul>
 <li><font color="#4a69bd">A page just entered has a low least-used value</font></li>
 <li><font color="#4a69bd">… so likely to be a candidate for immediately being swapped out</font></li>
 </ul>
 </li>
-</ul>
-</li>
 <li>
-<p>Clock page replacement/second-change page replacement</p>
-</li>
-</ul>
+<p><strong>Clock page replacement/second-change page replacement</strong></p>
 </li>
 </ul>
 
@@ -878,7 +887,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">138k</span>
+    <span title="Symbols count total">139k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
