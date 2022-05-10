@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://haoran-jie.github.io/2022/04/13/Chapter14_Communication&InternetTechnologies/commu.png">
 <meta property="og:image" content="https://haoran-jie.github.io/2022/04/13/Chapter14_Communication&InternetTechnologies/protocolimp.jpg">
 <meta property="article:published_time" content="2022-04-13T13:24:22.000Z">
-<meta property="article:modified_time" content="2022-05-02T04:17:38.559Z">
+<meta property="article:modified_time" content="2022-05-10T14:47:42.010Z">
 <meta property="article:author" content="Haoran Jie">
 <meta property="article:tag" content="Communication">
 <meta name="twitter:card" content="summary">
@@ -208,7 +208,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-05-02 12:17:38" itemprop="dateModified" datetime="2022-05-02T12:17:38+08:00">2022-05-02</time>
+                <time title="Modified: 2022-05-10 22:47:42" itemprop="dateModified" datetime="2022-05-10T22:47:42+08:00">2022-05-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -244,7 +244,7 @@
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>10 mins.</span>
+              <span>11 mins.</span>
             </span>
 
         </div>
@@ -324,7 +324,7 @@
 </tr>
 <tr>
 <td><strong>Internet layer</strong></td>
-<td><font color="#4a69bd">Handles the transmission of data<br>Routing<br> IP addressing<br><code>—</code><br>Routes the packets around the network<br>Adds to the IP header a source/destination address for each header<br>Encapsulates data into datagram<br>Passes datagram to network access layer<br>Defines the addressing mode: <a target="_blank" rel="noopener" href="https://www.cloudflare.com/en-gb/learning/network-layer/what-is-a-subnet/">subnetting</a>, NAT</font></td>
+<td><font color="#4a69bd">Handles the transmission of data<br>Routing<br> IP addressing<br><code>--</code><br>Routes the packets around the network<br>Adds to the IP header a source/destination address for each header<br>Encapsulates data into datagram<br>Passes datagram to network access layer<br>Defines the addressing mode: <a target="_blank" rel="noopener" href="https://www.cloudflare.com/en-gb/learning/network-layer/what-is-a-subnet/">subnetting</a>, NAT</font></td>
 </tr>
 <tr>
 <td><strong>Network (access) layer</strong></td>
@@ -461,6 +461,27 @@
 </tr>
 </tbody>
 </table>
+<h3 id="Packet-header"><a class="header-anchor" href="#Packet-header">¶</a>Packet header</h3>
+<p><u>Purpose:</u></p>
+<ul>
+<li><font color="#4a69bd">To store data about the header</font></li>
+<li><font color="#4a69bd">and its routing // to ensure it reaches the correct destination</font></li>
+<li><font color="#4a69bd">to ensure the packet can be correctly constructed</font></li>
+</ul>
+<p><u>Examples:</u></p>
+<ul>
+<li><font color="#4a69bd">IP address of the sender/ receiver</font></li>
+<li><font color="#4a69bd">ID of the packet</font></li>
+<li><font color="#4a69bd">Packet length</font></li>
+<li><font color="#4a69bd">Checksum</font></li>
+<li><font color="#4a69bd">Protocol used</font></li>
+<li><font color="#4a69bd">Synchronization data</font></li>
+<li><font color="#4a69bd">Number of packets the message consists of </font></li>
+<li><font color="#4a69bd">Type of service</font></li>
+<li><font color="#4a69bd">IP version number</font></li>
+<li><font color="#4a69bd">Fragmentation flags</font></li>
+<li><font color="#4a69bd">Fragmentation offsets</font></li>
+</ul>
 <h3 id="Router"><a class="header-anchor" href="#Router">¶</a>Router</h3>
 <p><u>Function of router in packet switching:</u></p>
 <ul>
@@ -565,7 +586,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Chapter 14: Communication and Internet technologies</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Protocols"><span class="nav-number">1.1.</span> <span class="nav-text">Protocols</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Protocol-implementation"><span class="nav-number">1.1.1.</span> <span class="nav-text">Protocol implementation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Protocol-stack"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">Protocol stack</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP-protocol-suite"><span class="nav-number">1.1.2.</span> <span class="nav-text">TCP&#x2F;IP protocol suite</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Protocols-v2"><span class="nav-number">1.1.3.</span> <span class="nav-text">Protocols</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#BitTorrent-Protocol"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">BitTorrent Protocol</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Circuit-switching-Packet-switching"><span class="nav-number">1.2.</span> <span class="nav-text">Circuit switching &amp; Packet switching</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Router"><span class="nav-number">1.2.1.</span> <span class="nav-text">Router</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Chapter 14: Communication and Internet technologies</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Protocols"><span class="nav-number">1.1.</span> <span class="nav-text">Protocols</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Protocol-implementation"><span class="nav-number">1.1.1.</span> <span class="nav-text">Protocol implementation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Protocol-stack"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">Protocol stack</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP-protocol-suite"><span class="nav-number">1.1.2.</span> <span class="nav-text">TCP&#x2F;IP protocol suite</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Protocols-v2"><span class="nav-number">1.1.3.</span> <span class="nav-text">Protocols</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#BitTorrent-Protocol"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">BitTorrent Protocol</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Circuit-switching-Packet-switching"><span class="nav-number">1.2.</span> <span class="nav-text">Circuit switching &amp; Packet switching</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Packet-header"><span class="nav-number">1.2.1.</span> <span class="nav-text">Packet header</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Router"><span class="nav-number">1.2.2.</span> <span class="nav-text">Router</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -644,12 +665,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">139k</span>
+    <span title="Symbols count total">140k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:06</span>
+    <span title="Reading time total">2:07</span>
 </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
 
