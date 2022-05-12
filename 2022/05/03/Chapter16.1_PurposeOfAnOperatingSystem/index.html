@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://haoran-jie.github.io/2022/05/03/Chapter16.1_PurposeOfAnOperatingSystem/interrupt.jpg">
 <meta property="og:image" content="https://haoran-jie.github.io/2022/05/03/Chapter16.1_PurposeOfAnOperatingSystem/segmentation.jpg">
 <meta property="article:published_time" content="2022-05-03T14:41:54.000Z">
-<meta property="article:modified_time" content="2022-05-12T11:32:21.476Z">
+<meta property="article:modified_time" content="2022-05-12T11:50:05.289Z">
 <meta property="article:author" content="Haoran Jie">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://haoran-jie.github.io/2022/05/03/Chapter16.1_PurposeOfAnOperatingSystem/Syllabus16.1.png">
@@ -210,7 +210,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-05-12 19:32:21" itemprop="dateModified" datetime="2022-05-12T19:32:21+08:00">2022-05-12</time>
+                <time title="Modified: 2022-05-12 19:50:05" itemprop="dateModified" datetime="2022-05-12T19:50:05+08:00">2022-05-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -649,16 +649,12 @@
 </ul>
 <h3 id="Page-replacement"><a class="header-anchor" href="#Page-replacement">¶</a>Page replacement</h3>
 <ul>
-<li>
-<p>Page replacement occurs when a requested page is not in memory. When paging in/out from memory, it is necessary to consider how the computer can decide which page to replace to allow the requested page to be loaded.</p>
-</li>
-<li>
-<p>When a new page is requested but is not in memory, a page fault occurs and the OS replaces one of the existing pages with the new page. How to decide which page to replace is done in a number of different ways, but all methods have the same goal of minimizing the number of page faults.</p>
-</li>
-<li>
-<p>A page fault is a type of interrupt raised by hardware. When a running program accesses a page that is mapped into virtual memory address space, but not yet loaded into physical memory, then the hardware needs to raise this page fault     interrupt.</p>
+<li>Page replacement occurs when a requested page is not in memory. When paging in/out from memory, it is necessary to consider how the computer can decide which page to replace to allow the requested page to be loaded.</li>
+<li>When a new page is requested but is not in memory, a page fault occurs and the OS replaces one of the existing pages with the new page. How to decide which page to replace is done in a number of different ways, but all methods have the same goal of minimizing the number of page faults.</li>
+<li>A page fault is a type of interrupt raised by hardware. When a running program accesses a page that is mapped into virtual memory address space, but not yet loaded into physical memory, then the hardware needs to raise this page fault     interrupt.</li>
+</ul>
 <h4 id="Page-replacement-algorithms"><a class="header-anchor" href="#Page-replacement-algorithms">¶</a>Page replacement algorithms:</h4>
-</li>
+<ul>
 <li>
 <p><strong>First in first out (FIFO)</strong></p>
 <ul>
