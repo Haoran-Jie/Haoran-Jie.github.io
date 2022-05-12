@@ -43,7 +43,7 @@
 <meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/ppq4.2.png">
 <meta property="og:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/rpneva.jpg">
 <meta property="article:published_time" content="2022-05-05T03:14:19.000Z">
-<meta property="article:modified_time" content="2022-05-05T07:16:28.936Z">
+<meta property="article:modified_time" content="2022-05-12T11:58:34.124Z">
 <meta property="article:author" content="Haoran Jie">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://haoran-jie.github.io/2022/05/05/Chapter16.2_TranslationSoftware/syllabus16.2.png">
@@ -212,10 +212,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-05-05 11:14:19 / Modified: 15:16:28" itemprop="dateCreated datePublished" datetime="2022-05-05T11:14:19+08:00">2022-05-05</time>
+              <time title="Created: 2022-05-05 11:14:19" itemprop="dateCreated datePublished" datetime="2022-05-05T11:14:19+08:00">2022-05-05</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-05-12 19:58:34" itemprop="dateModified" datetime="2022-05-12T19:58:34+08:00">2022-05-12</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -297,26 +303,20 @@
 <li>
 <p>Tokenization</p>
 <ul>
-<li>
-<p>Using a keyword table that contains all the tokens for reserved keywords and symbols</p>
-</li>
-<li>
-<p>Convert the source program into tokens</p>
-</li>
-<li>
-<p><u>Keyword table</u></p>
+<li>Using a keyword table that contains all the tokens for reserved keywords and symbols</li>
+<li>Convert the source program into tokens</li>
+<li><u>Keyword table</u>
 <ul>
 <li><font color="#4a69bd">The reserved keyword used</font></li>
 <li><font color="#4a69bd">The operator used</font></li>
-<li><font color="#4a69bd">Their matching token</font></li>
+<li><font color="#4a69bd">Their matching token</font><br>
+<img src="/2022/05/05/Chapter16.2_TranslationSoftware/keyword table.png" align="middle" style="zoom:50%;"></li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/keyword table.png" align="middle" style="zoom:50%;">
-<ul>
-<li>Variables, constants, and identifiers added to a symbol table, and are then converted into locations/address
+<li>
+<p>Variables, constants, and identifiers added to a symbol table, and are then converted into locations/address</p>
 <ul>
 <li><u>Symbol table</u>
 <ul>
@@ -388,7 +388,7 @@
 <li><font color="#4a69bd">Code has fewer instructions/occupies less memory in space</font></li>
 <li><font color="#4a69bd">Shortens the execution time for the program // time taken to execute whole program decreases</font></li>
 </ul>
-<h3 id="Past-paper-questions-v6"><a class="header-anchor" href="#Past-paper-questions-v6">¶</a>Past-paper questions</h3>
+<h3 id="Past-paper-questions"><a class="header-anchor" href="#Past-paper-questions">¶</a>Past-paper questions</h3>
 <img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq1.png" style="zoom: 67%;">
 <ul>
 <li><font color="#4a69bd">Remove the second instances of LDD 436 // remove line 04</font></li>
@@ -405,25 +405,22 @@
 <img src="/2022/05/05/Chapter16.2_TranslationSoftware/drawline.png" style="zoom: 67%;">
 <hr>
 <h2 id="BNF-Syntax-diagram"><a class="header-anchor" href="#BNF-Syntax-diagram">¶</a>BNF &amp; Syntax diagram</h2>
-<h3 id="Past-paper-questions-v7"><a class="header-anchor" href="#Past-paper-questions-v7">¶</a>Past-paper questions</h3>
+<h3 id="Past-paper-questions-v2"><a class="header-anchor" href="#Past-paper-questions-v2">¶</a>Past-paper questions</h3>
 <ol>
 <li></li>
 </ol>
-<hr>
 <img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq2.1.png" style="zoom: 80%;">
 <p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq2.2.png" alt></p>
 <hr>
 <ol start="2">
 <li></li>
 </ol>
-<hr>
 <p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Cppq3.1.png" alt></p>
 <img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq3.2.png" style="zoom: 67%;">
 <hr>
 <ol start="3">
 <li></li>
 </ol>
-<hr>
 <p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq4.1.png" alt></p>
 <p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq4.2.png" alt></p>
 <hr>
@@ -433,7 +430,7 @@
 <p>Postfix notation / Reverse Polish notation: Operators are written after operands</p>
 <p>Prefix notation / Polish notation: operators are written before operands</p>
 </blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.cs.man.ac.uk/~pjj/cs212/fix.html">Understanding infix, postfix, and prefix - lecture note from university of manchester</a></p>
+<p>🔗:<a target="_blank" rel="noopener" href="https://www.cs.man.ac.uk/~pjj/cs212/fix.html">Understanding infix, postfix, and prefix - lecture note from university of manchester</a></p>
 <hr>
 <p><u>Why RPN can be used to evaluate expressions:</u></p>
 <ul>
@@ -579,7 +576,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Chapter 16.2: Translation Software</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Interpreter"><span class="nav-number">1.1.</span> <span class="nav-text">Interpreter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compiler"><span class="nav-number">1.2.</span> <span class="nav-text">Compiler</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Compilation-stages"><span class="nav-number">1.2.1.</span> <span class="nav-text">Compilation stages</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Lexical-analysis"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">Lexical analysis</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Syntax-analysis"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">Syntax analysis</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Code-generation"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">Code generation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Optimization"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">Optimization</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions-v6"><span class="nav-number">1.2.2.</span> <span class="nav-text">Past-paper questions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BNF-Syntax-diagram"><span class="nav-number">1.3.</span> <span class="nav-text">BNF &amp; Syntax diagram</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions-v7"><span class="nav-number">1.3.1.</span> <span class="nav-text">Past-paper questions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reverse-Polish-notation"><span class="nav-number">1.4.</span> <span class="nav-text">Reverse Polish notation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Evaluation-of-RPN"><span class="nav-number">1.4.1.</span> <span class="nav-text">Evaluation of RPN</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Chapter 16.2: Translation Software</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Interpreter"><span class="nav-number">1.1.</span> <span class="nav-text">Interpreter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compiler"><span class="nav-number">1.2.</span> <span class="nav-text">Compiler</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Compilation-stages"><span class="nav-number">1.2.1.</span> <span class="nav-text">Compilation stages</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Lexical-analysis"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">Lexical analysis</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Syntax-analysis"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">Syntax analysis</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Code-generation"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">Code generation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Optimization"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">Optimization</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions"><span class="nav-number">1.2.2.</span> <span class="nav-text">Past-paper questions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BNF-Syntax-diagram"><span class="nav-number">1.3.</span> <span class="nav-text">BNF &amp; Syntax diagram</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions-v2"><span class="nav-number">1.3.1.</span> <span class="nav-text">Past-paper questions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reverse-Polish-notation"><span class="nav-number">1.4.</span> <span class="nav-text">Reverse Polish notation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Evaluation-of-RPN"><span class="nav-number">1.4.1.</span> <span class="nav-text">Evaluation of RPN</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
