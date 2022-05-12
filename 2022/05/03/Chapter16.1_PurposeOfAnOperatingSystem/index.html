@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://haoran-jie.github.io/2022/05/03/Chapter16.1_PurposeOfAnOperatingSystem/interrupt.jpg">
 <meta property="og:image" content="https://haoran-jie.github.io/2022/05/03/Chapter16.1_PurposeOfAnOperatingSystem/segmentation.jpg">
 <meta property="article:published_time" content="2022-05-03T14:41:54.000Z">
-<meta property="article:modified_time" content="2022-05-07T11:53:27.444Z">
+<meta property="article:modified_time" content="2022-05-12T11:32:21.476Z">
 <meta property="article:author" content="Haoran Jie">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://haoran-jie.github.io/2022/05/03/Chapter16.1_PurposeOfAnOperatingSystem/Syllabus16.1.png">
@@ -210,7 +210,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-05-07 19:53:27" itemprop="dateModified" datetime="2022-05-07T19:53:27+08:00">2022-05-07</time>
+                <time title="Modified: 2022-05-12 19:32:21" itemprop="dateModified" datetime="2022-05-12T19:32:21+08:00">2022-05-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -548,7 +548,7 @@
 </ul>
 <p><u>How paging is used to handle virtual memory:</u></p>
 <ul>
-<li><font color="#4a69bd">Divide memory/RAM into frames</font></li>
+<li><font color="#4a69bd">Divide main memory/RAM into frames</font></li>
 <li><font color="#4a69bd">Divide virtual memory into blocks of same size called pages</font></li>
 <li><font color="#4a69bd">Frame/pages are a fixed size</font></li>
 <li><font color="#4a69bd">Set up a page (map) table that translates logical to physical address</font></li>
@@ -626,7 +626,7 @@
 <li>If the available RAM is exceeded due to multiple processes running, it is possible to corrupt the data used in some of the program being run</li>
 <li>This can be solved by separately mapping each program’s virtual memory space to RAM and utilizing the hard disk drive/solid state drive if we need more memory. This is the basis behind virtual memory.</li>
 <li>RAM is the physical memory and virtual memory is RAM+swap space on the hard disk</li>
-<li>Virtual memory is usually implemented using in demand paging</li>
+<li>Virtual memory is usually implemented using ‘in demand paging’</li>
 </ul>
 <p><u>State what is meant by virtual memory</u></p>
 <ul>
@@ -636,7 +636,7 @@
 <li><font color="#4a69bd">Data is swapped between RAM and disk</font></li>
 </ul>
 <h3 id="Disk-thrashing"><a class="header-anchor" href="#Disk-thrashing">¶</a>Disk thrashing</h3>
-<p>The main drawback of using HDD in virtual memory is that as main memory fills, more and more data/pages need to be swapped in and out of virtual memory. This leads to high rate of hard disk read/write head movement. if more time is spent on moving pages in and out of memory than actually doing any processing, then the processing speed of the computer will be reduced. A point can be reached when the execution of a process comes to a halt since the system is so busy paging and in and out of memory; this is known as the thrash point.</p>
+<p>The main drawback of using HDD in virtual memory is that as main memory fills, more and more data/pages need to be swapped in and out of virtual memory. This leads to high rate of hard disk read/write head movement. if <strong>more time is spent on moving pages in and out of memory than actually doing any processing</strong>, then the processing speed of the computer will be reduced. A point can be reached when the execution of a process comes to a halt since the system is so busy paging and in and out of memory; this is known as the thrash point.</p>
 <ul>
 <li><font color="#4a69bd">Pages are requested back into RAM as soon as they are moved to the disk</font></li>
 <li><font color="#4a69bd">There is continuous swapping (of the same page)</font></li>
@@ -657,18 +657,14 @@
 </li>
 <li>
 <p>A page fault is a type of interrupt raised by hardware. When a running program accesses a page that is mapped into virtual memory address space, but not yet loaded into physical memory, then the hardware needs to raise this page fault     interrupt.</p>
+<h4 id="Page-replacement-algorithms"><a class="header-anchor" href="#Page-replacement-algorithms">¶</a>Page replacement algorithms:</h4>
 </li>
-<li>
-<p>Page replacement algorithms:</p>
-<ul>
 <li>
 <p><strong>First in first out (FIFO)</strong></p>
 <ul>
-<li>
-<p>The OS keeps track of all the pages in memory using a queue structure</p>
-</li>
-<li>
-<p>The oldest page is at the front of the queue and is the first to be removed when a new page needs to be added</p>
+<li>The OS keeps track of all the pages in memory using a queue structure</li>
+<li>The oldest page is at the front of the queue and is the first to be removed when a new page needs to be added</li>
+</ul>
 </li>
 <li>
 <p>FIFO algorithms don’t consider page usage when replacing pages; a page may be replaced simply       because it arrived earlier than another page</p>
@@ -686,42 +682,34 @@
 <li><font color="#4a69bd">… so not a good candidate to be removed</font></li>
 </ul>
 </li>
-</ul>
-</li>
 <li>
 <p><strong>Optimal page replacement(OPR)</strong></p>
-</li>
-</ul>
-</li>
-<li>
-<p>Optimal page replacement looks forward in time to see which frame it can replace in the event of a page fault.</p>
+<ul>
+<li>Optimal page replacement looks forward in time to see which frame it can replace in the event of a page fault.
 <ul>
 <li>The algorithm is actually impossible to implement; at the time of a page fault, the OS has no way of knowing when each of the pages will be replaced next.</li>
 <li>It tends to get used for comparison studies but has the advantage that it is free of Belady’s Anomaly and also has the fewest page faults.</li>
 </ul>
 </li>
-<li>
-<p><strong>Least recently used page replacement (LRU)</strong></p>
-<ul>
-<li>
-<p>With least recently used page replacement (LRU), the page which has not been used for the longest time is replaced.</p>
-</li>
-<li>
-<p>To implement this method, it is necessary to maintain a linked list of all pages in memory with the most recently used page at the front and the least recently used page at the rear.</p>
-</li>
-<li>
-<p><strong>Least used page replacement</strong></p>
-</li>
 </ul>
 </li>
 <li>
-<p><u>Additional data required</u>: <font color="#4a69bd">Number of times the page has been accessed</font></p>
+<p><strong>Least recently used page replacement (LRU)</strong></p>
+<ul>
+<li>With least recently used page replacement (LRU), the page which has not been used for the longest time is replaced.</li>
+<li>To implement this method, it is necessary to maintain a linked list of all pages in memory with the most recently used page at the front and the least recently used page at the rear.</li>
+</ul>
 </li>
 <li>
-<p><u>Drawbacks</u>:</p>
+<p><strong>Least used page replacement</strong></p>
+<ul>
+<li><u>Additional data required</u>: <font color="#4a69bd">Number of times the page has been accessed</font></li>
+<li><u>Drawbacks</u>:
 <ul>
 <li><font color="#4a69bd">A page just entered has a low least-used value</font></li>
 <li><font color="#4a69bd">… so likely to be a candidate for immediately being swapped out</font></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
@@ -808,7 +796,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Chapter 16.1: Purpose of an operating system</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Operating-system-resource-optimization"><span class="nav-number">1.1.</span> <span class="nav-text">Operating system resource optimization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hide-the-complexity-of-the-hardware"><span class="nav-number">1.2.</span> <span class="nav-text">Hide the complexity of the hardware</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Process-management"><span class="nav-number">1.3.</span> <span class="nav-text">Process management</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u-Process-states-u"><span class="nav-number">1.3.1.</span> <span class="nav-text">Process states</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Description"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Transition-between-state-conditions"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">Transition between state: conditions</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Process-scheduling"><span class="nav-number">1.3.2.</span> <span class="nav-text">Process scheduling</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-Robin"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">Round Robin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Shortest-job-first"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">Shortest job first</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#First-come-first-serve"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">First come first serve</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Shortest-remaining-time"><span class="nav-number">1.3.2.4.</span> <span class="nav-text">Shortest remaining time</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Kernel"><span class="nav-number">1.3.3.</span> <span class="nav-text">Kernel</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Interrupt-handling-OS-kernel"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">Interrupt handling &amp; OS kernel</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Memory-management"><span class="nav-number">1.4.</span> <span class="nav-text">Memory management</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Paging"><span class="nav-number">1.4.1.</span> <span class="nav-text">Paging:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Segmentation"><span class="nav-number">1.4.2.</span> <span class="nav-text">Segmentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Differences-between-paging-and-segmentation"><span class="nav-number">1.4.3.</span> <span class="nav-text">Differences between paging and segmentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Virtual-memory"><span class="nav-number">1.4.4.</span> <span class="nav-text">Virtual memory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Disk-thrashing"><span class="nav-number">1.4.5.</span> <span class="nav-text">Disk thrashing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Page-replacement"><span class="nav-number">1.4.6.</span> <span class="nav-text">Page replacement</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Chapter 16.1: Purpose of an operating system</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Operating-system-resource-optimization"><span class="nav-number">1.1.</span> <span class="nav-text">Operating system resource optimization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hide-the-complexity-of-the-hardware"><span class="nav-number">1.2.</span> <span class="nav-text">Hide the complexity of the hardware</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Process-management"><span class="nav-number">1.3.</span> <span class="nav-text">Process management</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u-Process-states-u"><span class="nav-number">1.3.1.</span> <span class="nav-text">Process states</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Description"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Transition-between-state-conditions"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">Transition between state: conditions</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Process-scheduling"><span class="nav-number">1.3.2.</span> <span class="nav-text">Process scheduling</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-Robin"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">Round Robin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Shortest-job-first"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">Shortest job first</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#First-come-first-serve"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">First come first serve</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Shortest-remaining-time"><span class="nav-number">1.3.2.4.</span> <span class="nav-text">Shortest remaining time</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Kernel"><span class="nav-number">1.3.3.</span> <span class="nav-text">Kernel</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Interrupt-handling-OS-kernel"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">Interrupt handling &amp; OS kernel</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Memory-management"><span class="nav-number">1.4.</span> <span class="nav-text">Memory management</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Paging"><span class="nav-number">1.4.1.</span> <span class="nav-text">Paging:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Segmentation"><span class="nav-number">1.4.2.</span> <span class="nav-text">Segmentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Differences-between-paging-and-segmentation"><span class="nav-number">1.4.3.</span> <span class="nav-text">Differences between paging and segmentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Virtual-memory"><span class="nav-number">1.4.4.</span> <span class="nav-text">Virtual memory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Disk-thrashing"><span class="nav-number">1.4.5.</span> <span class="nav-text">Disk thrashing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Page-replacement"><span class="nav-number">1.4.6.</span> <span class="nav-text">Page replacement</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Page-replacement-algorithms"><span class="nav-number">1.4.6.1.</span> <span class="nav-text">Page replacement algorithms:</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
