@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://haoran-jie.github.io/2022/04/28/Chapter13.2_FileOrganisation&Access/fileogr.png">
 <meta property="og:image" content="https://haoran-jie.github.io/2022/04/28/Chapter13.2_FileOrganisation&Access/hashppq.png">
 <meta property="article:published_time" content="2022-04-28T12:44:02.000Z">
-<meta property="article:modified_time" content="2022-05-10T12:51:20.896Z">
+<meta property="article:modified_time" content="2022-05-18T08:13:35.133Z">
 <meta property="article:author" content="Haoran Jie">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://haoran-jie.github.io/2022/04/28/Chapter13.2_FileOrganisation&Access/13.2.png">
@@ -209,7 +209,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-05-10 20:51:20" itemprop="dateModified" datetime="2022-05-10T20:51:20+08:00">2022-05-10</time>
+                <time title="Modified: 2022-05-18 16:13:35" itemprop="dateModified" datetime="2022-05-18T16:13:35+08:00">2022-05-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -238,7 +238,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>5.3k</span>
+              <span>5.8k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -279,12 +279,13 @@
 <blockquote>
 <p>Method of file organisation in which records of data are physically stored in a file, one after another, <strong>in a given order</strong></p>
 </blockquote>
-<p>Physically stores records of data in a file, one after another, in a given order. The order is usually based on the key field of the records as this is the unique identifier.</p>
+<p>Physically stores records of data in a file, one after another, in a given order. The order is usually based on the <strong>key field</strong> of the records as this is the unique identifier.</p>
 <ul>
 <li><font color="#4a69bd">High hit rate</font></li>
 <li><font color="#4a69bd">Suitable for batch processing of records</font></li>
-<li><font color="#4a69bd">File organised using unique ID called <strong>primary key field</strong></font></li>
+<li><font color="#4a69bd">File organised using unique ID called <strong>key field</strong></font></li>
 </ul>
+<p>The difference between key fields in a file and primary keys in a database table. In the database table the primary key values must all be unique. This is not a requirement for key fields in any type of file. It may be sensible in certain applications to ensure key fields have unique values, but it is not mandatory.</p>
 <h3 id="Random-file-organisation"><a class="header-anchor" href="#Random-file-organisation">¶</a>Random file organisation</h3>
 <blockquote>
 <p>Method of file organisation in which records of data are physically stored in a file in <strong>any available</strong> position, the position of any record in a field is found by applying a <strong>hash algorithm</strong> on the <strong>key field</strong> of the record/record key.</p>
@@ -357,6 +358,7 @@
 </ul>
 <p>Direct access is required when an <strong>individual</strong> record from a file needs to be processed. e.g. when a single customer record needs to be updated when the customer’s phone number is changed.</p>
 <p>For a <code>sequential</code> file, an index of all the key fields is kept and used to look up the address of the file location where a given record is stored. For large files, searching the index takes less time than searching the whole file.</p>
+<p>A separate index file is created which has two fields per record. The first record has the key field value and the second filed has a value for the position of this key field value in the main file.</p>
 <p>For a <code>random access</code> file, a hashing algorithm is used on the key filed to calculate the address of the file location where a given record is stored.</p>
 <h2 id="Hashing-algorithms"><a class="header-anchor" href="#Hashing-algorithms">¶</a>Hashing algorithms</h2>
 <blockquote>
@@ -366,7 +368,10 @@
 <p><code>open hash</code>: the record is stored in the next free space.</p>
 <p><code>close hash</code>: an overflow area is set up and the record is stored in the next free space in the overflow area.</p>
 <h3 id="Past-paper-questions"><a class="header-anchor" href="#Past-paper-questions">¶</a>Past-paper questions</h3>
-<p><img src="/2022/04/28/Chapter13.2_FileOrganisation&Access/hashppq.png" style="zoom:80%;"><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+<ol>
+<li><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup><br>
+<img src="/2022/04/28/Chapter13.2_FileOrganisation&Access/hashppq.png" style="zoom:80%;"></li>
+</ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">FUNCTION hash(BookingID: INTEGER) RETURNS INTEGER</span><br><span class="line">	RETURN BookingID%100000 + 3</span><br><span class="line">ENDFUNCTION</span><br></pre></td></tr></table></figure>
 <hr class="footnotes-sep">
 <section class="footnotes">
@@ -536,12 +541,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">140k</span>
+    <span title="Symbols count total">148k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:07</span>
+    <span title="Reading time total">2:14</span>
 </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
 
