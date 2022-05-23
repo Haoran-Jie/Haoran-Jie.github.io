@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://haoran-jie.github.io/2022/05/03/Chapter16.1_PurposeOfAnOperatingSystem/interrupt.jpg">
 <meta property="og:image" content="https://haoran-jie.github.io/2022/05/03/Chapter16.1_PurposeOfAnOperatingSystem/segmentation.jpg">
 <meta property="article:published_time" content="2022-05-03T14:41:54.000Z">
-<meta property="article:modified_time" content="2022-05-12T11:54:11.786Z">
+<meta property="article:modified_time" content="2022-05-19T23:36:41.094Z">
 <meta property="article:author" content="Haoran Jie">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://haoran-jie.github.io/2022/05/03/Chapter16.1_PurposeOfAnOperatingSystem/Syllabus16.1.png">
@@ -210,7 +210,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-05-12 19:54:11" itemprop="dateModified" datetime="2022-05-12T19:54:11+08:00">2022-05-12</time>
+                <time title="Modified: 2022-05-20 07:36:41" itemprop="dateModified" datetime="2022-05-20T07:36:41+08:00">2022-05-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -239,7 +239,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>15k</span>
+              <span>16k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -338,6 +338,11 @@
 <blockquote>
 <p><font color="#4a69bd">Program: the written code (static)</font></p>
 <p><font color="#4a69bd">Process: a program that has started to be executed (dynamic)</font></p>
+<ul>
+<li>A program which has been placed in the memory</li>
+<li>with a process control block created</li>
+<li>or has at least once entered a running state</li>
+</ul>
 <p><strong>Process control block(PCB)</strong>: a data structure which contains all of the data needed for a process to run; this can be created in memory when data needs to be received during execution time. The PCB will store</p>
 <ul>
 <li>current process state (ready, running, or blocked)</li>
@@ -373,7 +378,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="Transition-between-state-conditions"><a class="header-anchor" href="#Transition-between-state-conditions">¶</a>Transition between state: conditions</h4>
+<h4 id="Transition-between-states-conditions"><a class="header-anchor" href="#Transition-between-states-conditions">¶</a>Transition between states: conditions</h4>
 <ul>
 <li><u>Ready -&gt; Running</u></li>
 <li><font color="#4a69bd">Current process no longer running // processor is available</font>
@@ -437,12 +442,12 @@
 </ul>
 <h3 id="Process-scheduling"><a class="header-anchor" href="#Process-scheduling">¶</a>Process scheduling</h3>
 <blockquote>
-<p>High-level scheduler program controls the selection of a program stored on disk to be moved into main memory.</p>
+<p><strong>High-level scheduler</strong> controls the selection of a program stored on disk to be moved into main memory.</p>
 <ul>
 <li>Decides which processes are loaded from backing store</li>
 <li>Into memory/ready queue</li>
 </ul>
-<p>Low-level scheduler controls when the program installed in the memory has access to the CPU</p>
+<p><strong>Low-level scheduler</strong> controls when the program installed in the memory has access to the CPU</p>
 <ul>
 <li>Decide which process should next get the use of CPU time</li>
 <li>Based on position/priority</li>
@@ -635,6 +640,13 @@
 <li><font color="#4a69bd">Only part of the program/data in use needs to be in RAM</font></li>
 <li><font color="#4a69bd">Data is swapped between RAM and disk</font></li>
 </ul>
+<p><u>Advantages of using virtual memory</u></p>
+<ul>
+<li>Not all pages needs to be in memory at one time</li>
+<li>More than one processes can be in ready state</li>
+<li>… because memory addresses can be mapped</li>
+<li>A process can have an address space larger than that of physical memory</li>
+</ul>
 <h3 id="Disk-thrashing"><a class="header-anchor" href="#Disk-thrashing">¶</a>Disk thrashing</h3>
 <p>The main drawback of using HDD in virtual memory is that as main memory fills, more and more data/pages need to be swapped in and out of virtual memory. This leads to high rate of hard disk read/write head movement. if <strong>more time is spent on moving pages in and out of memory than actually doing any processing</strong>, then the processing speed of the computer will be reduced. A point can be reached when the execution of a process comes to a halt since the system is so busy paging and in and out of memory; this is known as the thrash point.</p>
 <ul>
@@ -792,7 +804,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Chapter 16.1: Purpose of an operating system</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Operating-system-resource-optimization"><span class="nav-number">1.1.</span> <span class="nav-text">Operating system resource optimization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hide-the-complexity-of-the-hardware"><span class="nav-number">1.2.</span> <span class="nav-text">Hide the complexity of the hardware</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Process-management"><span class="nav-number">1.3.</span> <span class="nav-text">Process management</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u-Process-states-u"><span class="nav-number">1.3.1.</span> <span class="nav-text">Process states</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Description"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Transition-between-state-conditions"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">Transition between state: conditions</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Process-scheduling"><span class="nav-number">1.3.2.</span> <span class="nav-text">Process scheduling</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-Robin"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">Round Robin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Shortest-job-first"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">Shortest job first</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#First-come-first-serve"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">First come first serve</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Shortest-remaining-time"><span class="nav-number">1.3.2.4.</span> <span class="nav-text">Shortest remaining time</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Kernel"><span class="nav-number">1.3.3.</span> <span class="nav-text">Kernel</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Interrupt-handling-OS-kernel"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">Interrupt handling &amp; OS kernel</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Memory-management"><span class="nav-number">1.4.</span> <span class="nav-text">Memory management</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Paging"><span class="nav-number">1.4.1.</span> <span class="nav-text">Paging:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Segmentation"><span class="nav-number">1.4.2.</span> <span class="nav-text">Segmentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Differences-between-paging-and-segmentation"><span class="nav-number">1.4.3.</span> <span class="nav-text">Differences between paging and segmentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Virtual-memory"><span class="nav-number">1.4.4.</span> <span class="nav-text">Virtual memory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Disk-thrashing"><span class="nav-number">1.4.5.</span> <span class="nav-text">Disk thrashing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Page-replacement"><span class="nav-number">1.4.6.</span> <span class="nav-text">Page replacement</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Page-replacement-algorithms"><span class="nav-number">1.4.6.1.</span> <span class="nav-text">Page replacement algorithms:</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Chapter 16.1: Purpose of an operating system</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Operating-system-resource-optimization"><span class="nav-number">1.1.</span> <span class="nav-text">Operating system resource optimization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hide-the-complexity-of-the-hardware"><span class="nav-number">1.2.</span> <span class="nav-text">Hide the complexity of the hardware</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Process-management"><span class="nav-number">1.3.</span> <span class="nav-text">Process management</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u-Process-states-u"><span class="nav-number">1.3.1.</span> <span class="nav-text">Process states</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Description"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Transition-between-states-conditions"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">Transition between states: conditions</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Process-scheduling"><span class="nav-number">1.3.2.</span> <span class="nav-text">Process scheduling</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-Robin"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">Round Robin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Shortest-job-first"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">Shortest job first</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#First-come-first-serve"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">First come first serve</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Shortest-remaining-time"><span class="nav-number">1.3.2.4.</span> <span class="nav-text">Shortest remaining time</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Kernel"><span class="nav-number">1.3.3.</span> <span class="nav-text">Kernel</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Interrupt-handling-OS-kernel"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">Interrupt handling &amp; OS kernel</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Memory-management"><span class="nav-number">1.4.</span> <span class="nav-text">Memory management</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Paging"><span class="nav-number">1.4.1.</span> <span class="nav-text">Paging:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Segmentation"><span class="nav-number">1.4.2.</span> <span class="nav-text">Segmentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Differences-between-paging-and-segmentation"><span class="nav-number">1.4.3.</span> <span class="nav-text">Differences between paging and segmentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Virtual-memory"><span class="nav-number">1.4.4.</span> <span class="nav-text">Virtual memory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Disk-thrashing"><span class="nav-number">1.4.5.</span> <span class="nav-text">Disk thrashing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Page-replacement"><span class="nav-number">1.4.6.</span> <span class="nav-text">Page replacement</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Page-replacement-algorithms"><span class="nav-number">1.4.6.1.</span> <span class="nav-text">Page replacement algorithms:</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -871,12 +883,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">148k</span>
+    <span title="Symbols count total">149k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:14</span>
+    <span title="Reading time total">2:15</span>
 </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
 

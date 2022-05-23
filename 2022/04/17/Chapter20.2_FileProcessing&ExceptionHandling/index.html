@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://haoran-jie.github.io/2022/04/17/Chapter20.2_FileProcessing&ExceptionHandling/syllabus.png">
 <meta property="og:image" content="https://haoran-jie.github.io/2022/04/17/Chapter20.2_FileProcessing&ExceptionHandling/exception-hierarchy.png">
 <meta property="article:published_time" content="2022-04-17T13:12:00.000Z">
-<meta property="article:modified_time" content="2022-05-01T14:08:42.814Z">
+<meta property="article:modified_time" content="2022-05-22T11:28:43.383Z">
 <meta property="article:author" content="Haoran Jie">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -208,7 +208,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-05-01 22:08:42" itemprop="dateModified" datetime="2022-05-01T22:08:42+08:00">2022-05-01</time>
+                <time title="Modified: 2022-05-22 19:28:43" itemprop="dateModified" datetime="2022-05-22T19:28:43+08:00">2022-05-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -237,7 +237,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>7.8k</span>
+              <span>8k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -271,7 +271,7 @@
 <p><code>Scanner</code>和其他读入的一个不同点就是他是存在于<code>java.util</code>包下面的 而其他大多数是在<code>java.io</code>包下面。</p>
 <p>有一个好处就是<code>scanner.hasNext</code>可以用来检查文件是否读完</p>
 <p><strong>Declaration/construction</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Scanner</span> <span class="variable">sca1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);<span class="comment">//从console输入</span></span><br><span class="line"><span class="type">Scanner</span> <span class="variable">sca2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(<span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;SamuelJie.txt&quot;</span>));<span class="comment">//can be used to read a file</span></span><br><span class="line"><span class="comment">//then you can carry out other operations</span></span><br><span class="line"><span class="type">int</span> <span class="variable">number</span> <span class="operator">=</span> sca1.nextInt();</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Scanner</span> <span class="variable">sca1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);<span class="comment">//从console输入</span></span><br><span class="line"><span class="type">Scanner</span> <span class="variable">sca2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(<span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;SamuelJie.txt&quot;</span>));<span class="comment">//can be used to read a file</span></span><br><span class="line"><span class="type">Scanner</span> <span class="variable">sca3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(<span class="string">&quot;Samuel is a hardworking boy&quot;</span>);<span class="comment">//can read a string</span></span><br><span class="line"><span class="comment">//then you can carry out other operations</span></span><br><span class="line"><span class="type">int</span> <span class="variable">number</span> <span class="operator">=</span> sca1.nextInt();</span><br></pre></td></tr></table></figure>
 <p><strong>Methods:</strong></p>
 <p>A <code>Scanner</code> breaks its input into tokens using a delimiter pattern, which by default matches whitespace. The resulting tokens may then be converted into values of different types using the various <code>next</code> methods.</p>
 <p>简单来说 被空格、换行符所分割的 每一个部分 都算一个<code>token</code> 比如<code>&quot;1 2 3  Samuel&quot;</code> 中 <code>1</code>，<code>2</code>，<code>3</code>，<code>&quot;Samuel&quot;</code>都算<code>token</code>. <code>1</code> 可以用<code>nextInt()</code> 来读取, <code>&quot;Samuel&quot;</code>可以用 <code>next()</code>来读取。</p>
@@ -298,8 +298,8 @@
 </li>
 </ul>
 <p>⚠️ <a target="_blank" rel="noopener" href="https://www.cnblogs.com/alterwl/p/java-problem-scanner-nosuchelementexception.html">使用scanner中遇到的nosuchfileException</a></p>
-<p>⚠️<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38367575/article/details/120420633">使用scanner中遇到读到空白</a></p>
 <p>⚠️ <a target="_blank" rel="noopener" href="https://blog.csdn.net/guanghuichenshao/article/details/81545450">nextLine和next的区别</a></p>
+<p>⚠️<a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/why-is-scanner-skipping-nextline-after-use-of-other-next-functions/">next-- 与nextline连用时出现读取空白的问题</a></p>
 <hr>
 <h4 id="FileReader"><a class="header-anchor" href="#FileReader">¶</a><code>FileReader</code></h4>
 <blockquote>
@@ -325,6 +325,48 @@
 <p>API: <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/java/io/RandomAccessFile.html">https://docs.oracle.com/javase/8/docs/api/java/io/RandomAccessFile.html</a></p>
 </blockquote>
 <p>Instances of this class support both reading and writing to a random access file. A random access file behaves like a large array of bytes stored in the file system. There is a kind of cursor, or index into the implied array, called the <code>file pointer</code>; input operations read bytes starting at the file pointer and advance the file pointer past the bytes read. If the random access file is created in read/write mode, then output operations are also available; output operations write bytes starting at the file pointer and advance the file pointer past the bytes written. Output operations that write past the current end of the implied array cause the array to be extended. The file pointer can be read by the <code>getFilePointer</code> method and set by the <code>seek</code> method.</p>
+<table>
+<thead>
+<tr>
+<th>Data type</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>byte</code></td>
+<td>1 byte</td>
+</tr>
+<tr>
+<td><code>short</code></td>
+<td>2 bytes</td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td>4 bytes</td>
+</tr>
+<tr>
+<td><code>long</code></td>
+<td>8 bytes</td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td>4 bytes</td>
+</tr>
+<tr>
+<td><code>double</code></td>
+<td>8 bytes</td>
+</tr>
+<tr>
+<td><code>boolean</code></td>
+<td>1 <strong>bit</strong></td>
+</tr>
+<tr>
+<td><code>char</code></td>
+<td>2 bytes</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Declaration/construction</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RandomAccessFile(File file, String mode);</span><br><span class="line">RandomAccessFile(String fileName, String mode);</span><br></pre></td></tr></table></figure>
 <p><strong><code>mode</code></strong></p>
@@ -577,12 +619,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">148k</span>
+    <span title="Symbols count total">149k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:14</span>
+    <span title="Reading time total">2:15</span>
 </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
 

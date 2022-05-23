@@ -33,8 +33,9 @@
 <meta property="og:image" content="https://haoran-jie.github.io/2022/05/02/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/pipeLining.jpg">
 <meta property="og:image" content="https://haoran-jie.github.io/2022/05/02/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq3.png">
 <meta property="og:image" content="https://haoran-jie.github.io/2022/05/02/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq4.png">
+<meta property="og:image" content="https://haoran-jie.github.io/2022/05/02/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/virtualMachine.jpg">
 <meta property="article:published_time" content="2022-05-02T04:17:24.000Z">
-<meta property="article:modified_time" content="2022-05-11T06:22:28.358Z">
+<meta property="article:modified_time" content="2022-05-19T08:47:37.571Z">
 <meta property="article:author" content="Haoran Jie">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://haoran-jie.github.io/2022/05/02/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/Syllabus15.1.png">
@@ -211,7 +212,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-05-11 14:22:28" itemprop="dateModified" datetime="2022-05-11T14:22:28+08:00">2022-05-11</time>
+                <time title="Modified: 2022-05-19 16:47:37" itemprop="dateModified" datetime="2022-05-19T16:47:37+08:00">2022-05-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -240,7 +241,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>7.6k</span>
+              <span>7.7k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -297,8 +298,8 @@
 <td style="text-align:center">Shorter execution time for instructions</td>
 </tr>
 <tr>
-<td style="text-align:center">Decoding of instruction is more complex</td>
-<td style="text-align:center">Makes use of general multipurpose registers</td>
+<td style="text-align:center">Multiple register sets</td>
+<td style="text-align:center">Makes use of general multipurpose registers // fewer registers</td>
 </tr>
 <tr>
 <td style="text-align:center">It is more difficult to make pipelining work</td>
@@ -327,7 +328,7 @@
 <li>Once the processor detects the existence of an interrupt</li>
 <li>To discard all instructions in the pipelining except for the last instruction in the writeback stage</li>
 </ul>
-<h3 id="Past-paper-questions-v2"><a class="header-anchor" href="#Past-paper-questions-v2">¶</a>Past-paper questions</h3>
+<h3 id="Past-paper-questions"><a class="header-anchor" href="#Past-paper-questions">¶</a>Past-paper questions</h3>
 <hr>
 <img src="/2022/05/02/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq1.png" style="zoom: 50%;">
 <hr>
@@ -376,7 +377,7 @@
 <li>Each processor execute different set of instruction</li>
 <li>Each processor operate on different set of data</li>
 </ul>
-<h3 id="Past-paper-questions-v3"><a class="header-anchor" href="#Past-paper-questions-v3">¶</a>Past-paper questions</h3>
+<h3 id="Past-paper-questions-v2"><a class="header-anchor" href="#Past-paper-questions-v2">¶</a>Past-paper questions</h3>
 <img src="/2022/05/02/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq3.png" style="zoom: 50%;">
 <hr>
 <img src="/2022/05/02/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq4.png" style="zoom: 67%;">
@@ -422,6 +423,13 @@
 <ul>
 <li><font color="#4a69bd">Only one separate processor</font></li>
 <li><font color="#4a69bd">Quad core computer system // processing unit shares the same bus</font></li>
+</ul>
+<p><u>Identify different types of parallelism</u></p>
+<ul>
+<li>Instruction</li>
+<li>Processor</li>
+<li>Memory usage</li>
+<li>Computer System</li>
 </ul>
 <h2 id="Virtual-machine"><a class="header-anchor" href="#Virtual-machine">¶</a>Virtual machine</h2>
 <blockquote>
@@ -507,7 +515,8 @@
 <li><font color="#4a69bd">Existing hardware made available to guest OS //  hardware emulation</font></li>
 <li><font color="#4a69bd">Ensure each virtual machine is protected from actions from other virtual machines </font></li>
 </ol>
-<h3 id="Past-paper-questions-v4"><a class="header-anchor" href="#Past-paper-questions-v4">¶</a>Past-paper questions</h3>
+<p><img src="/2022/05/02/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/virtualMachine.jpg" alt></p>
+<h3 id="Past-paper-questions-v3"><a class="header-anchor" href="#Past-paper-questions-v3">¶</a>Past-paper questions</h3>
 <p>A virtual machine is a <font color="#4a69bd"><u>software/program</u></font> that emulate a <font color="#4a69bd"><u>physical/different</u></font> computer system; A virtual machine allow multiple <font color="#4a69bd"><u>guest</u></font> operating system to run on one computer using <font color="#4a69bd"><u>host</u></font> operating system</p>
 <p><u>Describe what happens after the guest operating system has received the data request from the application</u>:</p>
 <ul>
@@ -607,7 +616,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Chapter 15.1: Processors, Parallel Processing and Virtual Machines</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RISC-CISC"><span class="nav-number">1.1.</span> <span class="nav-text">RISC &amp; CISC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Differences-between-RISC-and-CISC"><span class="nav-number">1.1.1.</span> <span class="nav-text">Differences between RISC and CISC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Interrupt-handling-in-pipelining"><span class="nav-number">1.1.2.</span> <span class="nav-text">Interrupt handling in pipelining</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions-v2"><span class="nav-number">1.1.3.</span> <span class="nav-text">Past-paper questions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pipelining-Registers"><span class="nav-number">1.2.</span> <span class="nav-text">Pipelining &amp; Registers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-computer-architectures"><span class="nav-number">1.3.</span> <span class="nav-text">Basic computer architectures</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SISD"><span class="nav-number">1.3.1.</span> <span class="nav-text">SISD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SIMD"><span class="nav-number">1.3.2.</span> <span class="nav-text">SIMD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MISD"><span class="nav-number">1.3.3.</span> <span class="nav-text">MISD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MIMD"><span class="nav-number">1.3.4.</span> <span class="nav-text">MIMD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions-v3"><span class="nav-number">1.3.5.</span> <span class="nav-text">Past-paper questions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Massively-parallel-computers"><span class="nav-number">1.4.</span> <span class="nav-text">Massively parallel computers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Properties"><span class="nav-number">1.4.1.</span> <span class="nav-text">Properties</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-Questions"><span class="nav-number">1.4.2.</span> <span class="nav-text">Past-paper Questions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Virtual-machine"><span class="nav-number">1.5.</span> <span class="nav-text">Virtual machine</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Host-OS"><span class="nav-number">1.5.1.</span> <span class="nav-text">Host OS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Guest-OS"><span class="nav-number">1.5.2.</span> <span class="nav-text">Guest OS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hypervisor"><span class="nav-number">1.5.3.</span> <span class="nav-text">Hypervisor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Benefits"><span class="nav-number">1.5.4.</span> <span class="nav-text">Benefits</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Limitations"><span class="nav-number">1.5.5.</span> <span class="nav-text">Limitations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Role-of-virtual-machine-software"><span class="nav-number">1.5.6.</span> <span class="nav-text">Role of virtual machine software</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions-v4"><span class="nav-number">1.5.7.</span> <span class="nav-text">Past-paper questions</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Chapter 15.1: Processors, Parallel Processing and Virtual Machines</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RISC-CISC"><span class="nav-number">1.1.</span> <span class="nav-text">RISC &amp; CISC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Differences-between-RISC-and-CISC"><span class="nav-number">1.1.1.</span> <span class="nav-text">Differences between RISC and CISC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Interrupt-handling-in-pipelining"><span class="nav-number">1.1.2.</span> <span class="nav-text">Interrupt handling in pipelining</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions"><span class="nav-number">1.1.3.</span> <span class="nav-text">Past-paper questions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pipelining-Registers"><span class="nav-number">1.2.</span> <span class="nav-text">Pipelining &amp; Registers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-computer-architectures"><span class="nav-number">1.3.</span> <span class="nav-text">Basic computer architectures</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SISD"><span class="nav-number">1.3.1.</span> <span class="nav-text">SISD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SIMD"><span class="nav-number">1.3.2.</span> <span class="nav-text">SIMD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MISD"><span class="nav-number">1.3.3.</span> <span class="nav-text">MISD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MIMD"><span class="nav-number">1.3.4.</span> <span class="nav-text">MIMD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions-v2"><span class="nav-number">1.3.5.</span> <span class="nav-text">Past-paper questions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Massively-parallel-computers"><span class="nav-number">1.4.</span> <span class="nav-text">Massively parallel computers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Properties"><span class="nav-number">1.4.1.</span> <span class="nav-text">Properties</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-Questions"><span class="nav-number">1.4.2.</span> <span class="nav-text">Past-paper Questions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Virtual-machine"><span class="nav-number">1.5.</span> <span class="nav-text">Virtual machine</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Host-OS"><span class="nav-number">1.5.1.</span> <span class="nav-text">Host OS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Guest-OS"><span class="nav-number">1.5.2.</span> <span class="nav-text">Guest OS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hypervisor"><span class="nav-number">1.5.3.</span> <span class="nav-text">Hypervisor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Benefits"><span class="nav-number">1.5.4.</span> <span class="nav-text">Benefits</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Limitations"><span class="nav-number">1.5.5.</span> <span class="nav-text">Limitations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Role-of-virtual-machine-software"><span class="nav-number">1.5.6.</span> <span class="nav-text">Role of virtual machine software</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions-v3"><span class="nav-number">1.5.7.</span> <span class="nav-text">Past-paper questions</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -686,12 +695,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">148k</span>
+    <span title="Symbols count total">149k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:14</span>
+    <span title="Reading time total">2:15</span>
 </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
 
