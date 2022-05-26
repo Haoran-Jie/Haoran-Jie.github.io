@@ -34,7 +34,11 @@
 https://majidtahir.com/a-level9618
 <h2 id="✋How-to-contribute"><a class="header-anchor" href="#✋How-to-contribute">¶</a>✋How to contribute</h2>
 <h2 id="👬Contributors"><a class="header-anchor" href="#👬Contributors">¶</a>👬Contributors</h2>
-]]></content>
+<div class="link-grid"><div class="link-grid-container">
+<object class="link-grid-image" data="/images/avatar.gif"></object>
+<p>Katrina Liu</p><p></p>
+<a href></a>
+</div></div>]]></content>
       <categories>
         <category>Notes</category>
       </categories>
@@ -3812,5 +3816,12 @@ Q3: OOP with file handling.</p>
       <tags>
         <tag>java</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>contributors</title>
+    <url>/2022/04/29/contributors/</url>
+    <content><![CDATA[<h1>Contributors</h1>
+<h2 id="🐻Katrina-Liu"><a class="header-anchor" href="#🐻Katrina-Liu">¶</a>🐻Katrina Liu</h2>
+]]></content>
   </entry>
 </search>
