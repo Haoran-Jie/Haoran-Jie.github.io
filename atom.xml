@@ -254,9 +254,11 @@
     
     
     <summary type="html">&lt;blockquote class=&quot;blockquote-center&quot;&gt;
-&lt;p&gt;Tips, reminders, and sample codes for paper5&lt;/p&gt;
+            &lt;i class=&quot;fa fa-quote-left&quot;&gt;&lt;/i&gt;
+            &lt;p&gt;Tips, reminders, and sample codes for paper5&lt;/p&gt;
 
-&lt;/blockquote&gt;</summary>
+            &lt;i class=&quot;fa fa-quote-right&quot;&gt;&lt;/i&gt;
+          &lt;/blockquote&gt;</summary>
     
     
     
