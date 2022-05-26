@@ -215,253 +215,6 @@ https://majidtahir.com/a-level9618
       </categories>
   </entry>
   <entry>
-    <title>Chapter13.3: Floating-point numbers,Representation and Manipulation</title>
-    <url>/2022/05/02/Chapter13.3_Floating-pointNumbersRepresentation/</url>
-    <content><![CDATA[<h1>Chapter 13.3: Floating-point numbers: representation and manipulation</h1>
-<p><img src="/2022/05/02/Chapter13.3_Floating-pointNumbersRepresentation/Syllabus13.3.png" alt></p>
-<hr>
-<span id="more"></span> 
-<h2 id="Format"><a class="header-anchor" href="#Format">¶</a>Format</h2>
-<p><u>What are the effect of decreasing the number of bits allocated to Mantissa and increasing the exponent</u></p>
-<ol>
-<li><font color="#4a69bd">Reduction in precision</font>
-<ul>
-<li><font color="#4a69bd">As the number of bits in mantissa has decreased.</font></li>
-</ul>
-</li>
-<li><font color="#4a69bd">Increasing in range</font>
-<ul>
-<li><font color="#4a69bd">As the number of bits in exponent has increased.</font></li>
-</ul>
-</li>
-</ol>
-<br>
-<p>The denary number <strong>513</strong> cannot be stored accurately as normalised floating-point number in this computer system: (10 bits for mantissa, 6 bits for exponent)</p>
-<p><u>Explain reasons for this:</u></p>
-<ul>
-<li><font color="#4a69bd">Require more than 10 bits/11bits to store; the maximum number that can be stored is 511</font></li>
-<li><font color="#4a69bd">The denary 513 in binary is 1000000001 // Normalised: 0.1000000001</font></li>
-<li><font color="#4a69bd">Results in <strong>overflow</strong></font></li>
-</ul>
-<p><u>Describe an alteration to the way floating-point numbers are stored to enable this number to be stored accurately with the same total number of bits</u>:</p>
-<ul>
-<li><font color="#4a69bd">The number of bits for mantissa must be increased</font></li>
-<li><font color="#4a69bd">11 bits for mantissa and 5 bits for exponent</font></li>
-</ul>
-<hr>
-<img src="/2022/05/02/Chapter13.3_Floating-pointNumbersRepresentation/que1pic.png" style="zoom: 50%;">
-<ul>
-<li><font color="#4a69bd">Exponent too large to fit 4 bits as two’s complement number</font></li>
-<li><font color="#4a69bd">Exponent will turn negative</font></li>
-<li><font color="#4a69bd">… therefore the binary point moves the wrong way</font></li>
-<li><font color="#4a69bd">Value will be approximately +0.029(296875)</font></li>
-</ul>
-<p><u>Explain the trade-off between either using a large number of bits for the mantissa, or a large number of bits for the exponent</u></p>
-<ul>
-<li><font color="#4a69bd">The trade-off is between range and precision</font></li>
-<li><font color="#4a69bd">Any increase in the number of bits for the mantissa means fewer number of bits for the exponent</font></li>
-<li><font color="#4a69bd">More bits used in mantissa would result in better precision</font></li>
-<li><font color="#4a69bd">More bits used in exponent would result in larger range</font></li>
-</ul>
-<h2 id="Conversion"><a class="header-anchor" href="#Conversion">¶</a>Conversion</h2>
-<p><u>Calculate the normalised binary number for <strong>-3.75</strong>. Show your working</u></p>
-<ul>
-<li><font color="#4a69bd">-3.75 = 100.01000 // -4 + 1/4 // -4 + 0.25</font></li>
-<li><font color="#4a69bd">100.01000 becomes 1.0001000 Exponent=+2</font></li>
-<li><font color="#4a69bd">Answer: Mantissa=1.0001000 Exponent=0010</font></li>
-</ul>
-<p><u>Calculate the normalised floating-point representation of <strong>+1.5625</strong> in this system (<strong>12bit-mantissa, 4bit-exponent</strong>). Show your working</u></p>
-<ul>
-<li><font color="#4a69bd">Correct conversion to binary: 01.1001</font></li>
-<li><font color="#4a69bd">Correct calculation of the exponent: 1</font></li>
-<li><font color="#4a69bd">Answer: Mantissa=0110 0100 0000 | Exponent= 0001</font></li>
-</ul>
-<h2 id="Normalisation"><a class="header-anchor" href="#Normalisation">¶</a>Normalisation</h2>
-<p><u>Why binary/floating-point numbers are stored in normalized form</u></p>
-<ul>
-<li><font color="#4a69bd">To store the maximum range of numbers in the minimum number of bits</font></li>
-<li><font color="#4a69bd">Normalisation minimizes the number of leading zeros/ones represented</font></li>
-<li><font color="#4a69bd">Maximizing the number of significant bits // maximizing the number of precision/accuracy with given number of bits</font></li>
-<li><font color="#4a69bd">Enable large/small numbers to be stored with accuracy</font></li>
-<li><font color="#4a69bd">Avoids the possibility that many numbers have multiple representation</font></li>
-<li><code>--</code></li>
-<li><font color="#4a69bd">There will be a unique representation for a number</font></li>
-<li><font color="#4a69bd">The format will ensure it will be represented with greatest possible accuracy</font></li>
-<li><font color="#4a69bd">Multiplication is performed more accurately</font></li>
-</ul>
-<p><u>Problems that can occur when a floating-pointer number is not normalised</u></p>
-<ul>
-<li><font color="#4a69bd">Lost of precision</font></li>
-<li><font color="#4a69bd">Redundant leading zeros in the mantissa</font></li>
-<li><font color="#4a69bd">Lost of the least-significant bits (bits on the right-hand end)</font></li>
-<li><font color="#4a69bd">Multiple representation of a single number</font></li>
-</ul>
-<h2 id="Approximation-Rounding-errors"><a class="header-anchor" href="#Approximation-Rounding-errors">¶</a>Approximation &amp; Rounding errors</h2>
-<p><u>State why some binary representation can lead to rounding errors</u></p>
-<ul>
-<li><font color="#4a69bd">There’s no exact binary conversion for some numbers</font></li>
-<li><font color="#4a69bd">More bits are needed to store the number</font></li>
-</ul>
-<hr>
-<img src="/2022/05/02/Chapter13.3_Floating-pointNumbersRepresentation/quepic2.png" style="zoom:80%;">
-<hr>
-<img src="/2022/05/02/Chapter13.3_Floating-pointNumbersRepresentation/que3pic.png" style="zoom:50%;">
-<ul>
-<li><font color="#4a69bd">0.2 and 0.4 cannot be represented exactly in binary, there is a rounding error</font></li>
-<li><font color="#4a69bd">0.2 has been represented by a number just greater than 0.2</font></li>
-<li>This is similar for 0.4</li>
-<li><font color="#4a69bd">Therefore, multiplying these two representations together increases the difference</font></li>
-<li><font color="#4a69bd">Difference after calculation is significant enough to be seen</font></li>
-</ul>
-<hr>
-<img src="/2022/05/02/Chapter13.3_Floating-pointNumbersRepresentation/que4pic.png" style="zoom:50%;">
-<ul>
-<li>0.1 cannot be represented exactly in binary, there is a rounding error</li>
-<li>0.1 is represented by a value just less than 0.1</li>
-<li>The loop keeps adding this approximate value to the counter</li>
-<li>Until all accumulated small difference become significant enough to be seen</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Notes</category>
-        <category>ALCS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Chapter 13.2: File organisation and access</title>
-    <url>/2022/04/28/Chapter13.2_FileOrganisation&amp;Access/</url>
-    <content><![CDATA[<h1>Chapter 13.2: File organisation and access</h1>
-<p><img src="/2022/04/28/Chapter13.2_FileOrganisation&Access/13.2.png" alt></p>
-<hr>
-<span id="more"></span>
-<h2 id="File-organisation"><a class="header-anchor" href="#File-organisation">¶</a>File organisation</h2>
-<h3 id="Serial-file-organisation"><a class="header-anchor" href="#Serial-file-organisation">¶</a>Serial file organisation</h3>
-<blockquote>
-<p>Method of file organisation in which records of data are physically stored in a file, one after another, <strong>in the order they were added to the file</strong></p>
-</blockquote>
-<p>New records are appended to the end of the file. Serial file organisation is often used for temporary files storing transactions to be made to more permanent files. e.g. storing customer meter reading for gas/electricity before they are used to send the bills to all customers.</p>
-<ul>
-<li>Each transaction is added to the file in the order of arrival</li>
-<li>These records will be in chronological order</li>
-<li><font color="#4a69bd">High hit rate</font></li>
-<li><font color="#4a69bd">Suitable for batch processing</font></li>
-<li><font color="#4a69bd">Order not important</font></li>
-<li><font color="#4a69bd">The records will be accessed one after another</font><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></li>
-</ul>
-<h3 id="Sequential-file-organisation"><a class="header-anchor" href="#Sequential-file-organisation">¶</a>Sequential file organisation</h3>
-<blockquote>
-<p>Method of file organisation in which records of data are physically stored in a file, one after another, <strong>in a given order</strong></p>
-</blockquote>
-<p>Physically stores records of data in a file, one after another, in a given order. The order is usually based on the <strong>key field</strong> of the records as this is the unique identifier.</p>
-<ul>
-<li><font color="#4a69bd">High hit rate</font></li>
-<li><font color="#4a69bd">Suitable for batch processing of records</font></li>
-<li><font color="#4a69bd">File organised using unique ID called <strong>key field</strong></font></li>
-</ul>
-<p>The difference between key fields in a file and primary keys in a database table. In the database table the primary key values must all be unique. This is not a requirement for key fields in any type of file. It may be sensible in certain applications to ensure key fields have unique values, but it is not mandatory.</p>
-<h3 id="Random-file-organisation"><a class="header-anchor" href="#Random-file-organisation">¶</a>Random file organisation</h3>
-<blockquote>
-<p>Method of file organisation in which records of data are physically stored in a file in <strong>any available</strong> position, the position of any record in a field is found by applying a <strong>hash algorithm</strong> on the <strong>key field</strong> of the record/record key.</p>
-</blockquote>
-<ul>
-<li>Records can be added to any empty position</li>
-<li><font color="#4a69bd">Key field is hashed to produce the home location</font></li>
-<li><font color="#4a69bd">If home location is free, insert the data</font></li>
-<li><font color="#4a69bd">Else, use overflow method to find free location to store the data</font></li>
-<li><font color="#4a69bd">If no free location is available, the file is full and data cannot be added/stored</font></li>
-<li><code>--</code></li>
-<li><font color="#4a69bd">Real-time processing</font></li>
-<li><font color="#4a69bd">Fast access to data</font></li>
-<li><font color="#4a69bd">No need to search through records</font></li>
-</ul>
-<h3 id="Past-paper-Questions"><a class="header-anchor" href="#Past-paper-Questions">¶</a>Past-paper Questions:</h3>
-<ol>
-<li><u>Compare Serial and Sequential file organisation:</u></li>
-</ol>
-<ul>
-<li><font color="#4a69bd">In both serial and sequential organisation, Records are added to the file one after another</font></li>
-<li>.<font color="#4a69bd">… and they needs to be accessed one after another</font></li>
-<li><font color="#4a69bd">For serial file organisation, records are added in a chronological order</font></li>
-<li><font color="#4a69bd">For sequential file organisation, records are stored with a given order</font></li>
-<li><font color="#4a69bd">… in the order of the key field</font></li>
-<li><font color="#4a69bd">For serial file organisation, records are added in the next available space // records are appended to the file</font></li>
-<li><font color="#4a69bd">For sequential file organisation, records are inserted into the correct position</font></li>
-</ul>
-<ol start="2">
-<li></li>
-</ol>
-<img src="/2022/04/28/Chapter13.2_FileOrganisation&Access/13.2Drawline.png" style="zoom: 80%;">
-<ol start="3">
-<li></li>
-</ol>
-<p><img src="/2022/04/28/Chapter13.2_FileOrganisation&Access/fileogr.png" alt></p>
-<ol start="4">
-<li></li>
-</ol>
-<p>The programmer decides to store all the data in a file. Initially, data from 27 locations will be stored. More rainfall locations will be added over time and will never exceeds 100. The programmer has to choose between two types of file organisation: serial and sequential.</p>
-<p><u>Give two reasons for choosing Serial file organisation:</u></p>
-<ul>
-<li><font color="#4a69bd">No need to re-sort data every time new data is added</font></li>
-<li><font color="#4a69bd">Only a small file so searching would require little processing</font></li>
-<li><font color="#4a69bd">New records can be easily added</font></li>
-</ul>
-<hr>
-<h2 id="File-access"><a class="header-anchor" href="#File-access">¶</a>File access</h2>
-<blockquote>
-<p>Method used to physically find a record in a file</p>
-</blockquote>
-<h3 id="Sequential-access"><a class="header-anchor" href="#Sequential-access">¶</a>Sequential access</h3>
-<blockquote>
-<p>A method of file access in which records are searched one after another from the physical start of the file until the required record is found, or a new record can be added to the file. This method is used for <code>serial</code> and <code>sequential</code> files.</p>
-</blockquote>
-<ul>
-<li>High hit rate</li>
-</ul>
-<p>For a <code>serial</code> file, if a particular record is being searched for, every record needs to be checked until the record is found or the whole file has been searched and that record has not been found. Any new records are appended to the end of the file.</p>
-<p>For a <code>sequential</code>file, if a particular records is being searched for, every records needs to be checked until the record is found or <em>the key filed of the current record being checked is greater than the key field of the record being searched for</em>. The rest of the file does not need to be searched as the records are sorted on ascending key field values.</p>
-<p>Sequential access if efficient when <strong>every</strong> record in the file needs to be processed. e.g. a monthly billing or payroll system.</p>
-<h3 id="Direct-access"><a class="header-anchor" href="#Direct-access">¶</a>Direct access</h3>
-<blockquote>
-<p>A method of file access in which a record can be physically found in a file without reading other records.</p>
-</blockquote>
-<ul>
-<li>Both <code>sequential</code> and <code>random</code> files can use direct access.</li>
-<li>Allow specific records to be found more quickly than using sequential access.</li>
-<li>Low hit rate</li>
-</ul>
-<p>Direct access is required when an <strong>individual</strong> record from a file needs to be processed. e.g. when a single customer record needs to be updated when the customer’s phone number is changed.</p>
-<p>For a <code>sequential</code> file, an index of all the key fields is kept and used to look up the address of the file location where a given record is stored. For large files, searching the index takes less time than searching the whole file.</p>
-<p>A separate index file is created which has two fields per record. The first record has the key field value and the second filed has a value for the position of this key field value in the main file.</p>
-<p>For a <code>random access</code> file, a hashing algorithm is used on the key filed to calculate the address of the file location where a given record is stored.</p>
-<h2 id="Hashing-algorithms"><a class="header-anchor" href="#Hashing-algorithms">¶</a>Hashing algorithms</h2>
-<blockquote>
-<p>A mathematical formula used to perform a calculation on the <code>record key</code>. The result of the calculation gives the address where the record should be found. More complex hashing algorithms are used in the encryption of data.</p>
-</blockquote>
-<p>Two ways of dealing with collision:</p>
-<p><code>open hash</code>: the record is stored in the next free space.</p>
-<p><code>close hash</code>: an overflow area is set up and the record is stored in the next free space in the overflow area.</p>
-<h3 id="Past-paper-questions-v2"><a class="header-anchor" href="#Past-paper-questions-v2">¶</a>Past-paper questions</h3>
-<ol>
-<li><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup><br>
-<img src="/2022/04/28/Chapter13.2_FileOrganisation&Access/hashppq.png" style="zoom:80%;"></li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">FUNCTION hash(BookingID: INTEGER) RETURNS INTEGER</span><br><span class="line">	RETURN BookingID%100000 + 3</span><br><span class="line">ENDFUNCTION</span><br></pre></td></tr></table></figure>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>Sequential file access <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>9608-s21-q2 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-]]></content>
-      <categories>
-        <category>Notes</category>
-        <category>ALCS</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Chapter 14: Communication and Internet technologies</title>
     <url>/2022/04/13/Chapter14_Communication&amp;InternetTechnologies/</url>
     <content><![CDATA[<h1>Chapter 14: Communication and Internet technologies</h1>
@@ -757,6 +510,253 @@ https://majidtahir.com/a-level9618
       </tags>
   </entry>
   <entry>
+    <title>Chapter13.3: Floating-point numbers,Representation and Manipulation</title>
+    <url>/2022/05/02/Chapter13.3_Floating-pointNumbersRepresentation/</url>
+    <content><![CDATA[<h1>Chapter 13.3: Floating-point numbers: representation and manipulation</h1>
+<p><img src="/2022/05/02/Chapter13.3_Floating-pointNumbersRepresentation/Syllabus13.3.png" alt></p>
+<hr>
+<span id="more"></span> 
+<h2 id="Format"><a class="header-anchor" href="#Format">¶</a>Format</h2>
+<p><u>What are the effect of decreasing the number of bits allocated to Mantissa and increasing the exponent</u></p>
+<ol>
+<li><font color="#4a69bd">Reduction in precision</font>
+<ul>
+<li><font color="#4a69bd">As the number of bits in mantissa has decreased.</font></li>
+</ul>
+</li>
+<li><font color="#4a69bd">Increasing in range</font>
+<ul>
+<li><font color="#4a69bd">As the number of bits in exponent has increased.</font></li>
+</ul>
+</li>
+</ol>
+<br>
+<p>The denary number <strong>513</strong> cannot be stored accurately as normalised floating-point number in this computer system: (10 bits for mantissa, 6 bits for exponent)</p>
+<p><u>Explain reasons for this:</u></p>
+<ul>
+<li><font color="#4a69bd">Require more than 10 bits/11bits to store; the maximum number that can be stored is 511</font></li>
+<li><font color="#4a69bd">The denary 513 in binary is 1000000001 // Normalised: 0.1000000001</font></li>
+<li><font color="#4a69bd">Results in <strong>overflow</strong></font></li>
+</ul>
+<p><u>Describe an alteration to the way floating-point numbers are stored to enable this number to be stored accurately with the same total number of bits</u>:</p>
+<ul>
+<li><font color="#4a69bd">The number of bits for mantissa must be increased</font></li>
+<li><font color="#4a69bd">11 bits for mantissa and 5 bits for exponent</font></li>
+</ul>
+<hr>
+<img src="/2022/05/02/Chapter13.3_Floating-pointNumbersRepresentation/que1pic.png" style="zoom: 50%;">
+<ul>
+<li><font color="#4a69bd">Exponent too large to fit 4 bits as two’s complement number</font></li>
+<li><font color="#4a69bd">Exponent will turn negative</font></li>
+<li><font color="#4a69bd">… therefore the binary point moves the wrong way</font></li>
+<li><font color="#4a69bd">Value will be approximately +0.029(296875)</font></li>
+</ul>
+<p><u>Explain the trade-off between either using a large number of bits for the mantissa, or a large number of bits for the exponent</u></p>
+<ul>
+<li><font color="#4a69bd">The trade-off is between range and precision</font></li>
+<li><font color="#4a69bd">Any increase in the number of bits for the mantissa means fewer number of bits for the exponent</font></li>
+<li><font color="#4a69bd">More bits used in mantissa would result in better precision</font></li>
+<li><font color="#4a69bd">More bits used in exponent would result in larger range</font></li>
+</ul>
+<h2 id="Conversion"><a class="header-anchor" href="#Conversion">¶</a>Conversion</h2>
+<p><u>Calculate the normalised binary number for <strong>-3.75</strong>. Show your working</u></p>
+<ul>
+<li><font color="#4a69bd">-3.75 = 100.01000 // -4 + 1/4 // -4 + 0.25</font></li>
+<li><font color="#4a69bd">100.01000 becomes 1.0001000 Exponent=+2</font></li>
+<li><font color="#4a69bd">Answer: Mantissa=1.0001000 Exponent=0010</font></li>
+</ul>
+<p><u>Calculate the normalised floating-point representation of <strong>+1.5625</strong> in this system (<strong>12bit-mantissa, 4bit-exponent</strong>). Show your working</u></p>
+<ul>
+<li><font color="#4a69bd">Correct conversion to binary: 01.1001</font></li>
+<li><font color="#4a69bd">Correct calculation of the exponent: 1</font></li>
+<li><font color="#4a69bd">Answer: Mantissa=0110 0100 0000 | Exponent= 0001</font></li>
+</ul>
+<h2 id="Normalisation"><a class="header-anchor" href="#Normalisation">¶</a>Normalisation</h2>
+<p><u>Why binary/floating-point numbers are stored in normalized form</u></p>
+<ul>
+<li><font color="#4a69bd">To store the maximum range of numbers in the minimum number of bits</font></li>
+<li><font color="#4a69bd">Normalisation minimizes the number of leading zeros/ones represented</font></li>
+<li><font color="#4a69bd">Maximizing the number of significant bits // maximizing the number of precision/accuracy with given number of bits</font></li>
+<li><font color="#4a69bd">Enable large/small numbers to be stored with accuracy</font></li>
+<li><font color="#4a69bd">Avoids the possibility that many numbers have multiple representation</font></li>
+<li><code>--</code></li>
+<li><font color="#4a69bd">There will be a unique representation for a number</font></li>
+<li><font color="#4a69bd">The format will ensure it will be represented with greatest possible accuracy</font></li>
+<li><font color="#4a69bd">Multiplication is performed more accurately</font></li>
+</ul>
+<p><u>Problems that can occur when a floating-pointer number is not normalised</u></p>
+<ul>
+<li><font color="#4a69bd">Lost of precision</font></li>
+<li><font color="#4a69bd">Redundant leading zeros in the mantissa</font></li>
+<li><font color="#4a69bd">Lost of the least-significant bits (bits on the right-hand end)</font></li>
+<li><font color="#4a69bd">Multiple representation of a single number</font></li>
+</ul>
+<h2 id="Approximation-Rounding-errors"><a class="header-anchor" href="#Approximation-Rounding-errors">¶</a>Approximation &amp; Rounding errors</h2>
+<p><u>State why some binary representation can lead to rounding errors</u></p>
+<ul>
+<li><font color="#4a69bd">There’s no exact binary conversion for some numbers</font></li>
+<li><font color="#4a69bd">More bits are needed to store the number</font></li>
+</ul>
+<hr>
+<img src="/2022/05/02/Chapter13.3_Floating-pointNumbersRepresentation/quepic2.png" style="zoom:80%;">
+<hr>
+<img src="/2022/05/02/Chapter13.3_Floating-pointNumbersRepresentation/que3pic.png" style="zoom:50%;">
+<ul>
+<li><font color="#4a69bd">0.2 and 0.4 cannot be represented exactly in binary, there is a rounding error</font></li>
+<li><font color="#4a69bd">0.2 has been represented by a number just greater than 0.2</font></li>
+<li>This is similar for 0.4</li>
+<li><font color="#4a69bd">Therefore, multiplying these two representations together increases the difference</font></li>
+<li><font color="#4a69bd">Difference after calculation is significant enough to be seen</font></li>
+</ul>
+<hr>
+<img src="/2022/05/02/Chapter13.3_Floating-pointNumbersRepresentation/que4pic.png" style="zoom:50%;">
+<ul>
+<li>0.1 cannot be represented exactly in binary, there is a rounding error</li>
+<li>0.1 is represented by a value just less than 0.1</li>
+<li>The loop keeps adding this approximate value to the counter</li>
+<li>Until all accumulated small difference become significant enough to be seen</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>ALCS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Chapter 13.2: File organisation and access</title>
+    <url>/2022/04/28/Chapter13.2_FileOrganisation&amp;Access/</url>
+    <content><![CDATA[<h1>Chapter 13.2: File organisation and access</h1>
+<p><img src="/2022/04/28/Chapter13.2_FileOrganisation&Access/13.2.png" alt></p>
+<hr>
+<span id="more"></span>
+<h2 id="File-organisation"><a class="header-anchor" href="#File-organisation">¶</a>File organisation</h2>
+<h3 id="Serial-file-organisation"><a class="header-anchor" href="#Serial-file-organisation">¶</a>Serial file organisation</h3>
+<blockquote>
+<p>Method of file organisation in which records of data are physically stored in a file, one after another, <strong>in the order they were added to the file</strong></p>
+</blockquote>
+<p>New records are appended to the end of the file. Serial file organisation is often used for temporary files storing transactions to be made to more permanent files. e.g. storing customer meter reading for gas/electricity before they are used to send the bills to all customers.</p>
+<ul>
+<li>Each transaction is added to the file in the order of arrival</li>
+<li>These records will be in chronological order</li>
+<li><font color="#4a69bd">High hit rate</font></li>
+<li><font color="#4a69bd">Suitable for batch processing</font></li>
+<li><font color="#4a69bd">Order not important</font></li>
+<li><font color="#4a69bd">The records will be accessed one after another</font><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></li>
+</ul>
+<h3 id="Sequential-file-organisation"><a class="header-anchor" href="#Sequential-file-organisation">¶</a>Sequential file organisation</h3>
+<blockquote>
+<p>Method of file organisation in which records of data are physically stored in a file, one after another, <strong>in a given order</strong></p>
+</blockquote>
+<p>Physically stores records of data in a file, one after another, in a given order. The order is usually based on the <strong>key field</strong> of the records as this is the unique identifier.</p>
+<ul>
+<li><font color="#4a69bd">High hit rate</font></li>
+<li><font color="#4a69bd">Suitable for batch processing of records</font></li>
+<li><font color="#4a69bd">File organised using unique ID called <strong>key field</strong></font></li>
+</ul>
+<p>The difference between key fields in a file and primary keys in a database table. In the database table the primary key values must all be unique. This is not a requirement for key fields in any type of file. It may be sensible in certain applications to ensure key fields have unique values, but it is not mandatory.</p>
+<h3 id="Random-file-organisation"><a class="header-anchor" href="#Random-file-organisation">¶</a>Random file organisation</h3>
+<blockquote>
+<p>Method of file organisation in which records of data are physically stored in a file in <strong>any available</strong> position, the position of any record in a field is found by applying a <strong>hash algorithm</strong> on the <strong>key field</strong> of the record/record key.</p>
+</blockquote>
+<ul>
+<li>Records can be added to any empty position</li>
+<li><font color="#4a69bd">Key field is hashed to produce the home location</font></li>
+<li><font color="#4a69bd">If home location is free, insert the data</font></li>
+<li><font color="#4a69bd">Else, use overflow method to find free location to store the data</font></li>
+<li><font color="#4a69bd">If no free location is available, the file is full and data cannot be added/stored</font></li>
+<li><code>--</code></li>
+<li><font color="#4a69bd">Real-time processing</font></li>
+<li><font color="#4a69bd">Fast access to data</font></li>
+<li><font color="#4a69bd">No need to search through records</font></li>
+</ul>
+<h3 id="Past-paper-Questions"><a class="header-anchor" href="#Past-paper-Questions">¶</a>Past-paper Questions:</h3>
+<ol>
+<li><u>Compare Serial and Sequential file organisation:</u></li>
+</ol>
+<ul>
+<li><font color="#4a69bd">In both serial and sequential organisation, Records are added to the file one after another</font></li>
+<li>.<font color="#4a69bd">… and they needs to be accessed one after another</font></li>
+<li><font color="#4a69bd">For serial file organisation, records are added in a chronological order</font></li>
+<li><font color="#4a69bd">For sequential file organisation, records are stored with a given order</font></li>
+<li><font color="#4a69bd">… in the order of the key field</font></li>
+<li><font color="#4a69bd">For serial file organisation, records are added in the next available space // records are appended to the file</font></li>
+<li><font color="#4a69bd">For sequential file organisation, records are inserted into the correct position</font></li>
+</ul>
+<ol start="2">
+<li></li>
+</ol>
+<img src="/2022/04/28/Chapter13.2_FileOrganisation&Access/13.2Drawline.png" style="zoom: 80%;">
+<ol start="3">
+<li></li>
+</ol>
+<p><img src="/2022/04/28/Chapter13.2_FileOrganisation&Access/fileogr.png" alt></p>
+<ol start="4">
+<li></li>
+</ol>
+<p>The programmer decides to store all the data in a file. Initially, data from 27 locations will be stored. More rainfall locations will be added over time and will never exceeds 100. The programmer has to choose between two types of file organisation: serial and sequential.</p>
+<p><u>Give two reasons for choosing Serial file organisation:</u></p>
+<ul>
+<li><font color="#4a69bd">No need to re-sort data every time new data is added</font></li>
+<li><font color="#4a69bd">Only a small file so searching would require little processing</font></li>
+<li><font color="#4a69bd">New records can be easily added</font></li>
+</ul>
+<hr>
+<h2 id="File-access"><a class="header-anchor" href="#File-access">¶</a>File access</h2>
+<blockquote>
+<p>Method used to physically find a record in a file</p>
+</blockquote>
+<h3 id="Sequential-access"><a class="header-anchor" href="#Sequential-access">¶</a>Sequential access</h3>
+<blockquote>
+<p>A method of file access in which records are searched one after another from the physical start of the file until the required record is found, or a new record can be added to the file. This method is used for <code>serial</code> and <code>sequential</code> files.</p>
+</blockquote>
+<ul>
+<li>High hit rate</li>
+</ul>
+<p>For a <code>serial</code> file, if a particular record is being searched for, every record needs to be checked until the record is found or the whole file has been searched and that record has not been found. Any new records are appended to the end of the file.</p>
+<p>For a <code>sequential</code>file, if a particular records is being searched for, every records needs to be checked until the record is found or <em>the key filed of the current record being checked is greater than the key field of the record being searched for</em>. The rest of the file does not need to be searched as the records are sorted on ascending key field values.</p>
+<p>Sequential access if efficient when <strong>every</strong> record in the file needs to be processed. e.g. a monthly billing or payroll system.</p>
+<h3 id="Direct-access"><a class="header-anchor" href="#Direct-access">¶</a>Direct access</h3>
+<blockquote>
+<p>A method of file access in which a record can be physically found in a file without reading other records.</p>
+</blockquote>
+<ul>
+<li>Both <code>sequential</code> and <code>random</code> files can use direct access.</li>
+<li>Allow specific records to be found more quickly than using sequential access.</li>
+<li>Low hit rate</li>
+</ul>
+<p>Direct access is required when an <strong>individual</strong> record from a file needs to be processed. e.g. when a single customer record needs to be updated when the customer’s phone number is changed.</p>
+<p>For a <code>sequential</code> file, an index of all the key fields is kept and used to look up the address of the file location where a given record is stored. For large files, searching the index takes less time than searching the whole file.</p>
+<p>A separate index file is created which has two fields per record. The first record has the key field value and the second filed has a value for the position of this key field value in the main file.</p>
+<p>For a <code>random access</code> file, a hashing algorithm is used on the key filed to calculate the address of the file location where a given record is stored.</p>
+<h2 id="Hashing-algorithms"><a class="header-anchor" href="#Hashing-algorithms">¶</a>Hashing algorithms</h2>
+<blockquote>
+<p>A mathematical formula used to perform a calculation on the <code>record key</code>. The result of the calculation gives the address where the record should be found. More complex hashing algorithms are used in the encryption of data.</p>
+</blockquote>
+<p>Two ways of dealing with collision:</p>
+<p><code>open hash</code>: the record is stored in the next free space.</p>
+<p><code>close hash</code>: an overflow area is set up and the record is stored in the next free space in the overflow area.</p>
+<h3 id="Past-paper-questions-v2"><a class="header-anchor" href="#Past-paper-questions-v2">¶</a>Past-paper questions</h3>
+<ol>
+<li><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup><br>
+<img src="/2022/04/28/Chapter13.2_FileOrganisation&Access/hashppq.png" style="zoom:80%;"></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">FUNCTION hash(BookingID: INTEGER) RETURNS INTEGER</span><br><span class="line">	RETURN BookingID%100000 + 3</span><br><span class="line">ENDFUNCTION</span><br></pre></td></tr></table></figure>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Sequential file access <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>9608-s21-q2 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>ALCS</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Chapter 15.1: Processors, Parallel Processing and Virtual Machines</title>
     <url>/2022/05/02/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/</url>
     <content><![CDATA[<h1>Chapter 15.1: Processors, Parallel Processing and Virtual Machines</h1>
@@ -1042,6 +1042,243 @@ https://majidtahir.com/a-level9618
       </categories>
   </entry>
   <entry>
+    <title>Chapter 16.2: Translation Software</title>
+    <url>/2022/05/05/Chapter16.2_TranslationSoftware/</url>
+    <content><![CDATA[<h1>Chapter 16.2: Translation Software</h1>
+<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/syllabus16.2.png" alt></p>
+<hr>
+<span id="more"></span>
+<h2 id="Interpreter"><a class="header-anchor" href="#Interpreter">¶</a>Interpreter</h2>
+<img src="/2022/05/05/Chapter16.2_TranslationSoftware/interpreter.jpg" style="zoom:50%;">
+<p><u>How an interpreter can executes the program without producing a complete translated version</u></p>
+<ul>
+<li><font color="#4a69bd">An interpreter examines source code one statement at a time</font></li>
+<li><font color="#4a69bd">Check each statement for errors</font></li>
+<li><font color="#4a69bd">If no error is found, the statement is executed</font></li>
+<li><font color="#4a69bd">If an error is found, this is reported and the interpreter halts</font></li>
+<li><font color="#4a69bd">Interpretation is repeated for every iteration in repeated section of code/ in loops</font></li>
+<li><font color="#4a69bd">Interpretation repeats every time the program runs</font></li>
+</ul>
+<p><u>Why debug with interpreter</u></p>
+<ul>
+<li><font color="#4a69bd">Debugging is faster</font></li>
+<li><font color="#4a69bd">Can debug incomplete code</font></li>
+<li><font color="#4a69bd">Better diagnostics</font></li>
+</ul>
+<h2 id="Compiler"><a class="header-anchor" href="#Compiler">¶</a>Compiler</h2>
+<img src="/2022/05/05/Chapter16.2_TranslationSoftware/compiler.jpg" style="zoom: 33%;">
+<h3 id="Compilation-stages"><a class="header-anchor" href="#Compilation-stages">¶</a>Compilation stages</h3>
+<h4 id="Lexical-analysis"><a class="header-anchor" href="#Lexical-analysis">¶</a>Lexical analysis</h4>
+<ul>
+<li>
+<p>All necessary characters not required by the compiler, such as the white space and comments, are removed</p>
+</li>
+<li>
+<p><font color="#4a69bd">The white space removed // redundant characters are removed // removal of comments // identification of errors</font></p>
+</li>
+<li>
+<p>Tokenization</p>
+<ul>
+<li>Using a keyword table that contains all the tokens for reserved keywords and symbols</li>
+<li>Convert the source program into tokens</li>
+<li><u>Keyword table</u>
+<ul>
+<li><font color="#4a69bd">The reserved keyword used</font></li>
+<li><font color="#4a69bd">The operator used</font></li>
+<li><font color="#4a69bd">Their matching token</font><br>
+<img src="/2022/05/05/Chapter16.2_TranslationSoftware/keyword table.png" align="middle" style="zoom:50%;"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Variables, constants, and identifiers added to a symbol table, and are then converted into locations/address</p>
+<ul>
+<li><u>Symbol table</u>
+<ul>
+<li><font color="#4a69bd">Identifier name used </font></li>
+<li><font color="#4a69bd">The data type </font></li>
+<li><font color="#4a69bd">Role: e.g. Constant, array, procedure</font></li>
+<li><font color="#4a69bd">Location marker, value of constant</font></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<img src="/2022/05/05/Chapter16.2_TranslationSoftware/symboltable.png" style="zoom:50%;">
+<p><u>Explain how the keyword table and symbol table are used to translate the source code program</u></p>
+<ul>
+<li><font color="#4a69bd">Keywords are looked up in the keyword table</font></li>
+<li><font color="#4a69bd">They are represented by tokens</font></li>
+<li><font color="#4a69bd">Identifiers are looked up in the symbol table</font></li>
+<li><font color="#4a69bd">They are converted into location/address</font></li>
+<li><font color="#4a69bd">Used to create a sequence of tokens (for the program)</font></li>
+</ul>
+<h4 id="Syntax-analysis"><a class="header-anchor" href="#Syntax-analysis">¶</a>Syntax analysis</h4>
+<ul>
+<li>Output from the lexical analysis is checked for grammatical/syntax errors - <code>parsing</code></li>
+<li>The rules for <code>parsing</code> can be set out in Backus-Naur form(BNF) notation</li>
+<li>If errors are found: each statement and the associated error is outputted, but the next stage, code generation, will not be attempted</li>
+<li>If no error is found: passed to the next stage of compilation</li>
+<li><code>--</code></li>
+<li><font color="#4a69bd">Construction of a parse tree / parsing</font></li>
+<li><font color="#4a69bd">Checking that the rules of grammar/syntax have been obeyed</font></li>
+<li><font color="#4a69bd">Production of an error report</font></li>
+</ul>
+<h4 id="Code-generation"><a class="header-anchor" href="#Code-generation">¶</a>Code generation</h4>
+<ul>
+<li>Produces an object program to perform the task defined in the source code</li>
+<li>The object program is in machine-readable form(binary):
+<ul>
+<li>Either in machine code that can be directly executed by the CPU</li>
+<li>Or in intermediate code that is converted into machine code when the program is loaded</li>
+</ul>
+</li>
+</ul>
+<h4 id="Optimization"><a class="header-anchor" href="#Optimization">¶</a>Optimization</h4>
+<ul>
+<li>Performing the task using the <u>minimum amount of resources</u>
+<ul>
+<li><font color="#4a69bd">Execution time, storage space, memory, and CPU use.</font></li>
+</ul>
+</li>
+<li>
+<img src="/2022/05/05/Chapter16.2_TranslationSoftware/optimization.jpg" style="zoom: 33%;">
+</li>
+</ul>
+<p><u>Why code is optimized:</u></p>
+<ul>
+<li><font color="#4a69bd">Redundant code removed</font></li>
+<li><font color="#4a69bd">Program requires less memory</font></li>
+<li><font color="#4a69bd">Code reorganized to make it more efficient</font></li>
+<li><font color="#4a69bd">Program will complete task in a shorter time</font></li>
+</ul>
+<p><u>Why optimization is necessary</u></p>
+<ul>
+<li><font color="#4a69bd">Optimisation means the code would have fewer instructions</font></li>
+<li><font color="#4a69bd">Optimised code occupies less memory in space</font></li>
+<li><font color="#4a69bd">Fewer instructions reduce the execution time of the program</font></li>
+</ul>
+<p><u>Benefits</u></p>
+<ul>
+<li><font color="#4a69bd">Code has fewer instructions/occupies less memory in space</font></li>
+<li><font color="#4a69bd">Shortens the execution time for the program // time taken to execute whole program decreases</font></li>
+</ul>
+<h3 id="Past-paper-questions-v6"><a class="header-anchor" href="#Past-paper-questions-v6">¶</a>Past-paper questions</h3>
+<img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq1.png" style="zoom: 67%;">
+<ul>
+<li><font color="#4a69bd">Remove the second instances of LDD 436 // remove line 04</font></li>
+<li><font color="#4a69bd">Remove the second instance s of ADD 437 // remove line 05</font></li>
+<li><font color="#4a69bd">The value required is already stored in the accumulator</font></li>
+</ul>
+<hr>
+<p><u>Why compiled version helps protect the security of the source code</u></p>
+<ul>
+<li><font color="#4a69bd">Compiler produces executable version - not readable</font></li>
+<li><font color="#4a69bd">Difficult for reverse engineering</font></li>
+</ul>
+<hr>
+<img src="/2022/05/05/Chapter16.2_TranslationSoftware/drawline.png" style="zoom: 67%;">
+<hr>
+<h2 id="BNF-Syntax-diagram"><a class="header-anchor" href="#BNF-Syntax-diagram">¶</a>BNF &amp; Syntax diagram</h2>
+<h3 id="Past-paper-questions-v7"><a class="header-anchor" href="#Past-paper-questions-v7">¶</a>Past-paper questions</h3>
+<ol>
+<li></li>
+</ol>
+<img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq2.1.png" style="zoom: 80%;">
+<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq2.2.png" alt></p>
+<hr>
+<ol start="2">
+<li></li>
+</ol>
+<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Cppq3.1.png" alt></p>
+<img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq3.2.png" style="zoom: 67%;">
+<hr>
+<ol start="3">
+<li></li>
+</ol>
+<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq4.1.png" alt></p>
+<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq4.2.png" alt></p>
+<hr>
+<h2 id="Reverse-Polish-notation"><a class="header-anchor" href="#Reverse-Polish-notation">¶</a>Reverse Polish notation</h2>
+<blockquote>
+<p>Infix notation: operators are in between their operands</p>
+<p>Postfix notation / Reverse Polish notation: Operators are written after operands</p>
+<p>Prefix notation / Polish notation: operators are written before operands</p>
+</blockquote>
+<p>🔗:<a href="https://www.cs.man.ac.uk/~pjj/cs212/fix.html">Understanding infix, postfix, and prefix - lecture note from university of manchester</a></p>
+<hr>
+<p><u>Why RPN can be used to evaluate expressions:</u></p>
+<ul>
+<li><font color="#4a69bd">Reverse polish notation provides and unambiguous method of representing an expression</font></li>
+<li><font color="#4a69bd">Reading from left to right</font></li>
+<li><font color="#4a69bd">Without need to use bracket</font></li>
+<li><font color="#4a69bd">With no need for rules of precedence</font></li>
+</ul>
+<p><u>Explain how RPN is used by an interpreter to evaluate expression:</u></p>
+<ul>
+<li><font color="#4a69bd">Expressions are always evaluated from left to right</font></li>
+<li><font color="#4a69bd">Each operator uses two previous values on the stack</font></li>
+<li><font color="#4a69bd">Pushing and popping identifiers on a stack</font></li>
+</ul>
+<p><u>Data structure to evaluate an expression in RPN</u></p>
+<ul>
+<li><font color="#4a69bd">Stack</font>
+<ul>
+<li><font color="#4a69bd">The operands are popped from the stack in reverse order to how they were pushed</font></li>
+</ul>
+</li>
+<li><font color="#4a69bd">Binary tree</font>
+<ul>
+<li><font color="#4a69bd">Allows both infix and postfix to be evaluated (tree traversal)</font></li>
+</ul>
+</li>
+</ul>
+<p><u>Describe the main steps in the evaluation of a Reverse Polish Notation(RPN) expression using a stack</u></p>
+<ul>
+<li><font color="#4a69bd">Working from left to right in the expression</font></li>
+<li><font color="#4a69bd">If element is a number, push that number into stack</font></li>
+<li><font color="#4a69bd">If element is an operator, then pop the first two numbers on the stack</font></li>
+<li><font color="#4a69bd">… perform that operations on these two numbers</font></li>
+<li><font color="#4a69bd">PUSH result back into stack</font></li>
+<li><font color="#4a69bd">END once the last item in the expression has been dealt with</font></li>
+</ul>
+<p><u>One advantage of the use of RPN is that evaluation of expressions does not require rules of precedence; Explain this statement</u></p>
+<ul>
+<li><font color="#4a69bd">Rules of precedence means different operators have different priorities; for example multiplication is done before addition</font></li>
+<li><font color="#4a69bd">In RPN, evaluation of expression is from left to right // operator are used in the sequence in which they were read</font></li>
+<li><font color="#4a69bd">No need for brackets // infix may require brackets</font></li>
+</ul>
+<p><u>Write the Reverse Polish Notation for the following expressions</u></p>
+<ol>
+<li>
+<p>(A+B)*(C-D)</p>
+<ul>
+<li><font color="#4a69bd">AB+</font></li>
+<li><font color="#4a69bd">CD-*</font></li>
+</ul>
+<p>Full answer: AB+CD-*</p>
+</li>
+<li>
+<p>((-A/B)*4)/(C-D)</p>
+<ul>
+<li><font color="#4a69bd">A-</font></li>
+<li><font color="#4a69bd">B/4*</font></li>
+<li><font color="#4a69bd">CD-/</font></li>
+</ul>
+<p>Full answer: A-B/4*CD-/</p>
+</li>
+</ol>
+<h3 id="Evaluation-of-RPN"><a class="header-anchor" href="#Evaluation-of-RPN">¶</a>Evaluation of RPN</h3>
+<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/rpneva.jpg" alt></p>
+<p>🔗<a href="https://www.includehelp.com/c/infix-to-postfix-conversion-using-stack-with-c-program.aspx">Infix To Postfix Conversion Using Stack</a></p>
+]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>ALCS</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Chapter15.2: Boolean Algebra And Logic Circuits</title>
     <url>/2022/05/02/Chapter15.2_BooleanAlgebraAndLogicCircuits/</url>
     <content><![CDATA[<h1>Chapter 15.2: Boolean Algebra and Logic Circuits</h1>
@@ -1214,7 +1451,7 @@ https://majidtahir.com/a-level9618
 <img src="/2022/05/02/Chapter15.2_BooleanAlgebraAndLogicCircuits/JKflipflop.jpg" style="zoom: 30%;">
 <img src="/2022/05/02/Chapter15.2_BooleanAlgebraAndLogicCircuits/JKflipfloptruthtable.jpg" style="zoom: 40%;">
 <hr>
-<h3 id="Past-paper-questions-v6"><a class="header-anchor" href="#Past-paper-questions-v6">¶</a>Past-paper questions</h3>
+<h3 id="Past-paper-questions-v8"><a class="header-anchor" href="#Past-paper-questions-v8">¶</a>Past-paper questions</h3>
 <p><u>Why JK flip-flop is an improvement to the SR flip-flop</u></p>
 <ul>
 <li><font color="#4a69bd">The SR flip-flop has an invalid combination of SR which allows Q and not Q to have the same value</font></li>
@@ -1740,6 +1977,69 @@ https://majidtahir.com/a-level9618
       </categories>
   </entry>
   <entry>
+    <title>Chapter 18: Artificial Intelligence</title>
+    <url>/2022/04/28/Chapter18_ArtificialIntelligence/</url>
+    <content><![CDATA[<h1>Chapter 18: Artificial Intelligence</h1>
+<p><img src="/2022/04/28/Chapter18_ArtificialIntelligence/ai.png" alt></p>
+<hr>
+<span id="more"></span>
+<h3 id="Definitions"><a class="header-anchor" href="#Definitions">¶</a>Definitions:</h3>
+<p><u>Supervised Learning:</u></p>
+<ul>
+<li><font color="#4a69bd">Using a large number of tasks with given outcomes to enable a computer program to improve its performance in accomplishing similar tasks</font></li>
+</ul>
+<p><u>Unsupervised learning:</u></p>
+<ul>
+<li><font color="#4a69bd">Using a large number of tasks with unknown outcomes to enable a computer program to improve its performance in accomplishing similar tasks </font></li>
+</ul>
+<p><u>Reinforcement learning:</u></p>
+<ul>
+<li><font color="#4a69bd">Using a large number of tasks with unknwon outcomes and use of feedback to enable a computer program to improve its performance in accomplishing similar tasks</font></li>
+</ul>
+<p>Graph:</p>
+<ul>
+<li>A graph is a collection of nodes or vertices between which there can be edges.</li>
+<li>Each node has a name</li>
+<li>An edge can have an associated label which is a numerical value</li>
+</ul>
+<p><u>The use of graph to aid Artificial Intelligence:</u></p>
+<ul>
+<li><font color="#4a69bd">Artificial neural networks can be represented by graphs</font></li>
+<li><font color="#4a69bd">Graphs provide structure for relationships // graphs provide relationships between nodes</font></li>
+<li><font color="#4a69bd">AI problem can be defined as finding a path in a graph</font></li>
+<li><font color="#4a69bd">Graph may be analysed/injected by a range of algorithms</font>
+<ul>
+<li><font color="#4a69bd">A* / Dijkstra’s algorithm</font></li>
+<li><font color="#4a69bd">used in machine learning</font></li>
+</ul>
+</li>
+<li><font color="#4a69bd">Back propagation of errors / regressions</font></li>
+</ul>
+<p><u>State the reasons for having multiple hidden layers in an artificial neural network</u></p>
+<ul>
+<li><font color="#4a69bd">Enable deep learning to take place</font></li>
+<li><font color="#4a69bd">Where the problem you are trying to solve has a higher level of complexity it requires more layers</font></li>
+<li><font color="#4a69bd">Allow neural network to learn and make decisions on its own</font></li>
+<li><font color="#4a69bd">To improve the accuracy of the result</font></li>
+</ul>
+<p><u>Explain how artificial neural network enable machine learning</u></p>
+<ul>
+<li><font color="#4a69bd">Artifical neural networks are intended to replicate the way human brain work</font></li>
+<li><font color="#4a69bd">Weights / values are assigned for each connection between nodes</font></li>
+<li><font color="#4a69bd">The data are input at the input layer, then passed into the system</font></li>
+<li><font color="#4a69bd">They are analyzed at each subsequent hidden layer where characteristics are extracted / output are calculated</font></li>
+<li><font color="#4a69bd">This process of training / learning is repeated mant times to achieve optimum outputs // reinforcement learning takes place</font></li>
+<li><font color="#4a69bd">Decisions can be made without being specifically programmed</font></li>
+<li><font color="#4a69bd">The output layer provides the result</font></li>
+<li><font color="#4a69bd">Back propagation of errors will be used to correct any errors that have been made </font></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>ALCS</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Chapter 17: Security</title>
     <url>/2022/04/12/Chapter17_Security/</url>
     <content><![CDATA[<h1>Chapter 17: Security🔒</h1>
@@ -1855,7 +2155,7 @@ https://majidtahir.com/a-level9618
 <li>It is possible for polarisation of light to be altered while travelling down fibre obtic cables</li>
 <li>Due to the inherent security system generated by quantum cryptography, terrorists and other criminals can use the technology to hide their activities from government law enforces</li>
 </ul>
-<h3 id="Past-paper-questions-v3"><a class="header-anchor" href="#Past-paper-questions-v3">¶</a>Past paper questions</h3>
+<h3 id="Past-paper-questions-v9"><a class="header-anchor" href="#Past-paper-questions-v9">¶</a>Past paper questions</h3>
 <ol>
 <li></li>
 </ol>
@@ -1938,7 +2238,7 @@ https://majidtahir.com/a-level9618
 <li>… without the possibility that the communication being intercepted or scrutinized by an unauthorized party</li>
 <li>… because sensitive data is being transferred</li>
 </ul>
-<h3 id="Past-paper-questions-v4"><a class="header-anchor" href="#Past-paper-questions-v4">¶</a>Past paper questions</h3>
+<h3 id="Past-paper-questions-v10"><a class="header-anchor" href="#Past-paper-questions-v10">¶</a>Past paper questions</h3>
 <ol>
 <li></li>
 </ol>
@@ -2113,7 +2413,7 @@ https://majidtahir.com/a-level9618
 </tr>
 </tbody>
 </table>
-<h3 id="Past-paper-questions-v5"><a class="header-anchor" href="#Past-paper-questions-v5">¶</a>Past paper questions</h3>
+<h3 id="Past-paper-questions-v11"><a class="header-anchor" href="#Past-paper-questions-v11">¶</a>Past paper questions</h3>
 <ol>
 <li></li>
 </ol>
@@ -2176,519 +2476,6 @@ https://majidtahir.com/a-level9618
         <tag>Cryptography</tag>
         <tag>SSL/TLS</tag>
         <tag>Digital Certification</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Chapter 16.2: Translation Software</title>
-    <url>/2022/05/05/Chapter16.2_TranslationSoftware/</url>
-    <content><![CDATA[<h1>Chapter 16.2: Translation Software</h1>
-<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/syllabus16.2.png" alt></p>
-<hr>
-<span id="more"></span>
-<h2 id="Interpreter"><a class="header-anchor" href="#Interpreter">¶</a>Interpreter</h2>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/interpreter.jpg" style="zoom:50%;">
-<p><u>How an interpreter can executes the program without producing a complete translated version</u></p>
-<ul>
-<li><font color="#4a69bd">An interpreter examines source code one statement at a time</font></li>
-<li><font color="#4a69bd">Check each statement for errors</font></li>
-<li><font color="#4a69bd">If no error is found, the statement is executed</font></li>
-<li><font color="#4a69bd">If an error is found, this is reported and the interpreter halts</font></li>
-<li><font color="#4a69bd">Interpretation is repeated for every iteration in repeated section of code/ in loops</font></li>
-<li><font color="#4a69bd">Interpretation repeats every time the program runs</font></li>
-</ul>
-<p><u>Why debug with interpreter</u></p>
-<ul>
-<li><font color="#4a69bd">Debugging is faster</font></li>
-<li><font color="#4a69bd">Can debug incomplete code</font></li>
-<li><font color="#4a69bd">Better diagnostics</font></li>
-</ul>
-<h2 id="Compiler"><a class="header-anchor" href="#Compiler">¶</a>Compiler</h2>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/compiler.jpg" style="zoom: 33%;">
-<h3 id="Compilation-stages"><a class="header-anchor" href="#Compilation-stages">¶</a>Compilation stages</h3>
-<h4 id="Lexical-analysis"><a class="header-anchor" href="#Lexical-analysis">¶</a>Lexical analysis</h4>
-<ul>
-<li>
-<p>All necessary characters not required by the compiler, such as the white space and comments, are removed</p>
-</li>
-<li>
-<p><font color="#4a69bd">The white space removed // redundant characters are removed // removal of comments // identification of errors</font></p>
-</li>
-<li>
-<p>Tokenization</p>
-<ul>
-<li>Using a keyword table that contains all the tokens for reserved keywords and symbols</li>
-<li>Convert the source program into tokens</li>
-<li><u>Keyword table</u>
-<ul>
-<li><font color="#4a69bd">The reserved keyword used</font></li>
-<li><font color="#4a69bd">The operator used</font></li>
-<li><font color="#4a69bd">Their matching token</font><br>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/keyword table.png" align="middle" style="zoom:50%;"></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>Variables, constants, and identifiers added to a symbol table, and are then converted into locations/address</p>
-<ul>
-<li><u>Symbol table</u>
-<ul>
-<li><font color="#4a69bd">Identifier name used </font></li>
-<li><font color="#4a69bd">The data type </font></li>
-<li><font color="#4a69bd">Role: e.g. Constant, array, procedure</font></li>
-<li><font color="#4a69bd">Location marker, value of constant</font></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/symboltable.png" style="zoom:50%;">
-<p><u>Explain how the keyword table and symbol table are used to translate the source code program</u></p>
-<ul>
-<li><font color="#4a69bd">Keywords are looked up in the keyword table</font></li>
-<li><font color="#4a69bd">They are represented by tokens</font></li>
-<li><font color="#4a69bd">Identifiers are looked up in the symbol table</font></li>
-<li><font color="#4a69bd">They are converted into location/address</font></li>
-<li><font color="#4a69bd">Used to create a sequence of tokens (for the program)</font></li>
-</ul>
-<h4 id="Syntax-analysis"><a class="header-anchor" href="#Syntax-analysis">¶</a>Syntax analysis</h4>
-<ul>
-<li>Output from the lexical analysis is checked for grammatical/syntax errors - <code>parsing</code></li>
-<li>The rules for <code>parsing</code> can be set out in Backus-Naur form(BNF) notation</li>
-<li>If errors are found: each statement and the associated error is outputted, but the next stage, code generation, will not be attempted</li>
-<li>If no error is found: passed to the next stage of compilation</li>
-<li><code>--</code></li>
-<li><font color="#4a69bd">Construction of a parse tree / parsing</font></li>
-<li><font color="#4a69bd">Checking that the rules of grammar/syntax have been obeyed</font></li>
-<li><font color="#4a69bd">Production of an error report</font></li>
-</ul>
-<h4 id="Code-generation"><a class="header-anchor" href="#Code-generation">¶</a>Code generation</h4>
-<ul>
-<li>Produces an object program to perform the task defined in the source code</li>
-<li>The object program is in machine-readable form(binary):
-<ul>
-<li>Either in machine code that can be directly executed by the CPU</li>
-<li>Or in intermediate code that is converted into machine code when the program is loaded</li>
-</ul>
-</li>
-</ul>
-<h4 id="Optimization"><a class="header-anchor" href="#Optimization">¶</a>Optimization</h4>
-<ul>
-<li>Performing the task using the <u>minimum amount of resources</u>
-<ul>
-<li><font color="#4a69bd">Execution time, storage space, memory, and CPU use.</font></li>
-</ul>
-</li>
-<li>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/optimization.jpg" style="zoom: 33%;">
-</li>
-</ul>
-<p><u>Why code is optimized:</u></p>
-<ul>
-<li><font color="#4a69bd">Redundant code removed</font></li>
-<li><font color="#4a69bd">Program requires less memory</font></li>
-<li><font color="#4a69bd">Code reorganized to make it more efficient</font></li>
-<li><font color="#4a69bd">Program will complete task in a shorter time</font></li>
-</ul>
-<p><u>Why optimization is necessary</u></p>
-<ul>
-<li><font color="#4a69bd">Optimisation means the code would have fewer instructions</font></li>
-<li><font color="#4a69bd">Optimised code occupies less memory in space</font></li>
-<li><font color="#4a69bd">Fewer instructions reduce the execution time of the program</font></li>
-</ul>
-<p><u>Benefits</u></p>
-<ul>
-<li><font color="#4a69bd">Code has fewer instructions/occupies less memory in space</font></li>
-<li><font color="#4a69bd">Shortens the execution time for the program // time taken to execute whole program decreases</font></li>
-</ul>
-<h3 id="Past-paper-questions-v10"><a class="header-anchor" href="#Past-paper-questions-v10">¶</a>Past-paper questions</h3>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq1.png" style="zoom: 67%;">
-<ul>
-<li><font color="#4a69bd">Remove the second instances of LDD 436 // remove line 04</font></li>
-<li><font color="#4a69bd">Remove the second instance s of ADD 437 // remove line 05</font></li>
-<li><font color="#4a69bd">The value required is already stored in the accumulator</font></li>
-</ul>
-<hr>
-<p><u>Why compiled version helps protect the security of the source code</u></p>
-<ul>
-<li><font color="#4a69bd">Compiler produces executable version - not readable</font></li>
-<li><font color="#4a69bd">Difficult for reverse engineering</font></li>
-</ul>
-<hr>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/drawline.png" style="zoom: 67%;">
-<hr>
-<h2 id="BNF-Syntax-diagram"><a class="header-anchor" href="#BNF-Syntax-diagram">¶</a>BNF &amp; Syntax diagram</h2>
-<h3 id="Past-paper-questions-v11"><a class="header-anchor" href="#Past-paper-questions-v11">¶</a>Past-paper questions</h3>
-<ol>
-<li></li>
-</ol>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq2.1.png" style="zoom: 80%;">
-<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq2.2.png" alt></p>
-<hr>
-<ol start="2">
-<li></li>
-</ol>
-<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Cppq3.1.png" alt></p>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq3.2.png" style="zoom: 67%;">
-<hr>
-<ol start="3">
-<li></li>
-</ol>
-<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq4.1.png" alt></p>
-<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq4.2.png" alt></p>
-<hr>
-<h2 id="Reverse-Polish-notation"><a class="header-anchor" href="#Reverse-Polish-notation">¶</a>Reverse Polish notation</h2>
-<blockquote>
-<p>Infix notation: operators are in between their operands</p>
-<p>Postfix notation / Reverse Polish notation: Operators are written after operands</p>
-<p>Prefix notation / Polish notation: operators are written before operands</p>
-</blockquote>
-<p>🔗:<a href="https://www.cs.man.ac.uk/~pjj/cs212/fix.html">Understanding infix, postfix, and prefix - lecture note from university of manchester</a></p>
-<hr>
-<p><u>Why RPN can be used to evaluate expressions:</u></p>
-<ul>
-<li><font color="#4a69bd">Reverse polish notation provides and unambiguous method of representing an expression</font></li>
-<li><font color="#4a69bd">Reading from left to right</font></li>
-<li><font color="#4a69bd">Without need to use bracket</font></li>
-<li><font color="#4a69bd">With no need for rules of precedence</font></li>
-</ul>
-<p><u>Explain how RPN is used by an interpreter to evaluate expression:</u></p>
-<ul>
-<li><font color="#4a69bd">Expressions are always evaluated from left to right</font></li>
-<li><font color="#4a69bd">Each operator uses two previous values on the stack</font></li>
-<li><font color="#4a69bd">Pushing and popping identifiers on a stack</font></li>
-</ul>
-<p><u>Data structure to evaluate an expression in RPN</u></p>
-<ul>
-<li><font color="#4a69bd">Stack</font>
-<ul>
-<li><font color="#4a69bd">The operands are popped from the stack in reverse order to how they were pushed</font></li>
-</ul>
-</li>
-<li><font color="#4a69bd">Binary tree</font>
-<ul>
-<li><font color="#4a69bd">Allows both infix and postfix to be evaluated (tree traversal)</font></li>
-</ul>
-</li>
-</ul>
-<p><u>Describe the main steps in the evaluation of a Reverse Polish Notation(RPN) expression using a stack</u></p>
-<ul>
-<li><font color="#4a69bd">Working from left to right in the expression</font></li>
-<li><font color="#4a69bd">If element is a number, push that number into stack</font></li>
-<li><font color="#4a69bd">If element is an operator, then pop the first two numbers on the stack</font></li>
-<li><font color="#4a69bd">… perform that operations on these two numbers</font></li>
-<li><font color="#4a69bd">PUSH result back into stack</font></li>
-<li><font color="#4a69bd">END once the last item in the expression has been dealt with</font></li>
-</ul>
-<p><u>One advantage of the use of RPN is that evaluation of expressions does not require rules of precedence; Explain this statement</u></p>
-<ul>
-<li><font color="#4a69bd">Rules of precedence means different operators have different priorities; for example multiplication is done before addition</font></li>
-<li><font color="#4a69bd">In RPN, evaluation of expression is from left to right // operator are used in the sequence in which they were read</font></li>
-<li><font color="#4a69bd">No need for brackets // infix may require brackets</font></li>
-</ul>
-<p><u>Write the Reverse Polish Notation for the following expressions</u></p>
-<ol>
-<li>
-<p>(A+B)*(C-D)</p>
-<ul>
-<li><font color="#4a69bd">AB+</font></li>
-<li><font color="#4a69bd">CD-*</font></li>
-</ul>
-<p>Full answer: AB+CD-*</p>
-</li>
-<li>
-<p>((-A/B)*4)/(C-D)</p>
-<ul>
-<li><font color="#4a69bd">A-</font></li>
-<li><font color="#4a69bd">B/4*</font></li>
-<li><font color="#4a69bd">CD-/</font></li>
-</ul>
-<p>Full answer: A-B/4*CD-/</p>
-</li>
-</ol>
-<h3 id="Evaluation-of-RPN"><a class="header-anchor" href="#Evaluation-of-RPN">¶</a>Evaluation of RPN</h3>
-<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/rpneva.jpg" alt></p>
-<p>🔗<a href="https://www.includehelp.com/c/infix-to-postfix-conversion-using-stack-with-c-program.aspx">Infix To Postfix Conversion Using Stack</a></p>
-]]></content>
-      <categories>
-        <category>Notes</category>
-        <category>ALCS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Chapter 18: Artificial Intelligence</title>
-    <url>/2022/04/28/Chapter18_ArtificialIntelligence/</url>
-    <content><![CDATA[<h1>Chapter 18: Artificial Intelligence</h1>
-<p><img src="/2022/04/28/Chapter18_ArtificialIntelligence/ai.png" alt></p>
-<hr>
-<span id="more"></span>
-<h3 id="Definitions"><a class="header-anchor" href="#Definitions">¶</a>Definitions:</h3>
-<p><u>Supervised Learning:</u></p>
-<ul>
-<li><font color="#4a69bd">Using a large number of tasks with given outcomes to enable a computer program to improve its performance in accomplishing similar tasks</font></li>
-</ul>
-<p><u>Unsupervised learning:</u></p>
-<ul>
-<li><font color="#4a69bd">Using a large number of tasks with unknown outcomes to enable a computer program to improve its performance in accomplishing similar tasks </font></li>
-</ul>
-<p><u>Reinforcement learning:</u></p>
-<ul>
-<li><font color="#4a69bd">Using a large number of tasks with unknwon outcomes and use of feedback to enable a computer program to improve its performance in accomplishing similar tasks</font></li>
-</ul>
-<p>Graph:</p>
-<ul>
-<li>A graph is a collection of nodes or vertices between which there can be edges.</li>
-<li>Each node has a name</li>
-<li>An edge can have an associated label which is a numerical value</li>
-</ul>
-<p><u>The use of graph to aid Artificial Intelligence:</u></p>
-<ul>
-<li><font color="#4a69bd">Artificial neural networks can be represented by graphs</font></li>
-<li><font color="#4a69bd">Graphs provide structure for relationships // graphs provide relationships between nodes</font></li>
-<li><font color="#4a69bd">AI problem can be defined as finding a path in a graph</font></li>
-<li><font color="#4a69bd">Graph may be analysed/injected by a range of algorithms</font>
-<ul>
-<li><font color="#4a69bd">A* / Dijkstra’s algorithm</font></li>
-<li><font color="#4a69bd">used in machine learning</font></li>
-</ul>
-</li>
-<li><font color="#4a69bd">Back propagation of errors / regressions</font></li>
-</ul>
-<p><u>State the reasons for having multiple hidden layers in an artificial neural network</u></p>
-<ul>
-<li><font color="#4a69bd">Enable deep learning to take place</font></li>
-<li><font color="#4a69bd">Where the problem you are trying to solve has a higher level of complexity it requires more layers</font></li>
-<li><font color="#4a69bd">Allow neural network to learn and make decisions on its own</font></li>
-<li><font color="#4a69bd">To improve the accuracy of the result</font></li>
-</ul>
-<p><u>Explain how artificial neural network enable machine learning</u></p>
-<ul>
-<li><font color="#4a69bd">Artifical neural networks are intended to replicate the way human brain work</font></li>
-<li><font color="#4a69bd">Weights / values are assigned for each connection between nodes</font></li>
-<li><font color="#4a69bd">The data are input at the input layer, then passed into the system</font></li>
-<li><font color="#4a69bd">They are analyzed at each subsequent hidden layer where characteristics are extracted / output are calculated</font></li>
-<li><font color="#4a69bd">This process of training / learning is repeated mant times to achieve optimum outputs // reinforcement learning takes place</font></li>
-<li><font color="#4a69bd">Decisions can be made without being specifically programmed</font></li>
-<li><font color="#4a69bd">The output layer provides the result</font></li>
-<li><font color="#4a69bd">Back propagation of errors will be used to correct any errors that have been made </font></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Notes</category>
-        <category>ALCS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Chapter 20.2: File processing and Exception Handling</title>
-    <url>/2022/04/17/Chapter20.2_FileProcessing&amp;ExceptionHandling/</url>
-    <content><![CDATA[<h1>Chapter 20.2: File Processing and Exception Handling</h1>
-<p><img src="/2022/04/17/Chapter20.2_FileProcessing&ExceptionHandling/syllabus.png" alt></p>
-<hr>
-<span id="more"></span> 
-<h2 id="File-Processing"><a class="header-anchor" href="#File-Processing">¶</a>File Processing</h2>
-<h3 id="Pseudocode"><a class="header-anchor" href="#Pseudocode">¶</a>Pseudocode</h3>
-<h3 id="Program-code"><a class="header-anchor" href="#Program-code">¶</a>Program code</h3>
-<hr>
-<h4 id="Scanner"><a class="header-anchor" href="#Scanner">¶</a><code>Scanner</code></h4>
-<blockquote>
-<p>API: <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html">https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html</a></p>
-</blockquote>
-<p><code>Scanner</code>和其他读入的一个不同点就是他是存在于<code>java.util</code>包下面的 而其他大多数是在<code>java.io</code>包下面。</p>
-<p>有一个好处就是<code>scanner.hasNext</code>可以用来检查文件是否读完</p>
-<p><strong>Declaration/construction</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Scanner</span> <span class="variable">sca1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);<span class="comment">//从console输入</span></span><br><span class="line"><span class="type">Scanner</span> <span class="variable">sca2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(<span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;SamuelJie.txt&quot;</span>));<span class="comment">//can be used to read a file</span></span><br><span class="line"><span class="type">Scanner</span> <span class="variable">sca3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(<span class="string">&quot;Samuel is a hardworking boy&quot;</span>);<span class="comment">//can read a string</span></span><br><span class="line"><span class="comment">//then you can carry out other operations</span></span><br><span class="line"><span class="type">int</span> <span class="variable">number</span> <span class="operator">=</span> sca1.nextInt();</span><br></pre></td></tr></table></figure>
-<p><strong>Methods:</strong></p>
-<p>A <code>Scanner</code> breaks its input into tokens using a delimiter pattern, which by default matches whitespace. The resulting tokens may then be converted into values of different types using the various <code>next</code> methods.</p>
-<p>简单来说 被空格、换行符所分割的 每一个部分 都算一个<code>token</code> 比如<code>&quot;1 2 3  Samuel&quot;</code> 中 <code>1</code>，<code>2</code>，<code>3</code>，<code>&quot;Samuel&quot;</code>都算<code>token</code>. <code>1</code> 可以用<code>nextInt()</code> 来读取, <code>&quot;Samuel&quot;</code>可以用 <code>next()</code>来读取。</p>
-<ul>
-<li><code>hasNext()</code>
-<ul>
-<li>Returns true if this scanner has another token in its input.</li>
-</ul>
-</li>
-<li><code>next()</code>
-<ul>
-<li>Finds and returns the next complete token from this scanner.</li>
-</ul>
-</li>
-<li><code>nextLine()</code>
-<ul>
-<li>Advances this scanner past the current line and returns the input that was skipped.</li>
-</ul>
-</li>
-<li><code>nextInt()</code>
-<ul>
-<li>Scans the next token of the input as an <code>int</code>.</li>
-</ul>
-</li>
-</ul>
-<p>⚠️ <a href="https://www.cnblogs.com/alterwl/p/java-problem-scanner-nosuchelementexception.html">使用scanner中遇到的nosuchfileException</a></p>
-<p>⚠️ <a href="https://blog.csdn.net/guanghuichenshao/article/details/81545450">nextLine和next的区别</a></p>
-<p>⚠️<a href="https://www.geeksforgeeks.org/why-is-scanner-skipping-nextline-after-use-of-other-next-functions/">next-- 与nextline连用时出现读取空白的问题</a></p>
-<hr>
-<h4 id="FileReader"><a class="header-anchor" href="#FileReader">¶</a><code>FileReader</code></h4>
-<blockquote>
-<p>API: <a href="https://docs.oracle.com/javase/8/docs/api/java/io/FileReader.html">https://docs.oracle.com/javase/8/docs/api/java/io/FileReader.html</a></p>
-</blockquote>
-<p>通常在考试中FileReader都是作为创建BufferedReader的一个前置来使用。</p>
-<p><strong>Declaration/construction</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">FileReader(File file);<span class="comment">//can construct with a file</span></span><br><span class="line">FileReader(String Filename);<span class="comment">//can construct with the filename</span></span><br><span class="line"><span class="comment">//for example</span></span><br><span class="line">String fileName=<span class="string">&quot;input.txt&quot;</span>;</span><br><span class="line"><span class="type">FileReader</span> <span class="variable">fr</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileReader</span>(filename);</span><br></pre></td></tr></table></figure>
-<hr>
-<h4 id="BufferedReader"><a class="header-anchor" href="#BufferedReader">¶</a><code>BufferedReader</code></h4>
-<blockquote>
-<p>API: <a href="https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html">https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html</a></p>
-</blockquote>
-<p>Buffered Reader 相对于 传统Reader的好处就是 当读入一个文件的时候 能够先把文件的内容存在Buffer(缓存)里面 然后每次从Buffer里面读取，这样比传统Reader直接从文件里读取更加高效</p>
-<p><strong>Declaration/construction</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">File</span> <span class="variable">fi</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(fileName);</span><br><span class="line"><span class="type">FileReader</span> <span class="variable">fr</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileReader</span>(fi);</span><br><span class="line"><span class="type">BufferedReader</span> <span class="variable">bfr</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(fr);</span><br></pre></td></tr></table></figure>
-<p><strong>Methods(考试会用到的):</strong></p>
-<p><code>readLine()</code>: Reads a line of text. A line is considered to be terminated by any one of a line feed (‘\n’), a carriage return (‘\r’), or a carriage return followed immediately by a linefeed.</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> String <span class="title function_">readLine</span><span class="params">()</span></span><br><span class="line"><span class="comment">//Usage</span></span><br><span class="line"><span class="type">String</span> <span class="variable">dataRead</span> <span class="operator">=</span> bfr.readLine();<span class="comment">//bfr is the BufferedReader declared previously</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h4 id="RandomAccessFile"><a class="header-anchor" href="#RandomAccessFile">¶</a><code>RandomAccessFile</code></h4>
-<blockquote>
-<p>API: <a href="https://docs.oracle.com/javase/8/docs/api/java/io/RandomAccessFile.html">https://docs.oracle.com/javase/8/docs/api/java/io/RandomAccessFile.html</a></p>
-</blockquote>
-<p>Instances of this class support both reading and writing to a random access file. A random access file behaves like a large array of bytes stored in the file system. There is a kind of cursor, or index into the implied array, called the <code>file pointer</code>; input operations read bytes starting at the file pointer and advance the file pointer past the bytes read. If the random access file is created in read/write mode, then output operations are also available; output operations write bytes starting at the file pointer and advance the file pointer past the bytes written. Output operations that write past the current end of the implied array cause the array to be extended. The file pointer can be read by the <code>getFilePointer</code> method and set by the <code>seek</code> method.</p>
-<table>
-<thead>
-<tr>
-<th>Data type</th>
-<th>Size</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>byte</code></td>
-<td>1 byte</td>
-</tr>
-<tr>
-<td><code>short</code></td>
-<td>2 bytes</td>
-</tr>
-<tr>
-<td><code>int</code></td>
-<td>4 bytes</td>
-</tr>
-<tr>
-<td><code>long</code></td>
-<td>8 bytes</td>
-</tr>
-<tr>
-<td><code>float</code></td>
-<td>4 bytes</td>
-</tr>
-<tr>
-<td><code>double</code></td>
-<td>8 bytes</td>
-</tr>
-<tr>
-<td><code>boolean</code></td>
-<td>1 <strong>bit</strong></td>
-</tr>
-<tr>
-<td><code>char</code></td>
-<td>2 bytes</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Declaration/construction</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">RandomAccessFile(File file, String mode);</span><br><span class="line">RandomAccessFile(String fileName, String mode);</span><br></pre></td></tr></table></figure>
-<p><strong><code>mode</code></strong></p>
-<p><code>mode</code>本质上就是读写模式，像是pseudocode 中 OPENFILE <code>&lt;file Name&gt;</code> FOR <code>&lt;File mode&gt;</code>中的 <code>&lt;File mode&gt;</code>一样。</p>
-<ul>
-<li><code>&quot;r&quot;</code> open for read only.</li>
-<li><code>&quot;rw&quot;</code>open for read and write</li>
-</ul>
-<p><strong>Methods(考试会用到的)</strong></p>
-<ul>
-<li><code>read()</code>
-<ul>
-<li>Reads a byte of data from this file.</li>
-</ul>
-</li>
-<li><code>readBoolean()</code>
-<ul>
-<li>Reads a <code>boolean</code> from this file.</li>
-</ul>
-</li>
-<li><code>readByte()</code>
-<ul>
-<li>Reads a signed eight-bit value from this file.</li>
-</ul>
-</li>
-<li><code>readChar()</code>
-<ul>
-<li>Reads a character from this file.</li>
-</ul>
-</li>
-<li><code>readDouble()</code>
-<ul>
-<li>Reads a <code>double</code> from this file.</li>
-</ul>
-</li>
-<li><code>readInt()</code></li>
-<li><code>readUTF()</code></li>
-<li><code>seek(long pos)</code>
-<ul>
-<li>Sets the file-pointer offset, measured from the beginning of this file, at which the next read or write occurs.</li>
-<li>Inputs the number, representing the position that you want the <code>file pointer</code> to be.</li>
-</ul>
-</li>
-<li><code>writeInt(int num)</code></li>
-<li><code>writeChars(String str)</code>
-<ul>
-<li>Writes a string to the file as a sequence of characters.</li>
-</ul>
-</li>
-<li><code>writeDouble(String str)</code>
-<ul>
-<li>Writes a string to the file using <a href="https://docs.oracle.com/javase/8/docs/api/java/io/DataInput.html#modified-utf-8">modified UTF-8</a> encoding in a machine-independent manner.</li>
-</ul>
-</li>
-</ul>
-<p><strong>Example code(from Kamana)</strong>:</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RandomFileDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span><span class="keyword">throws</span> Exception &#123;</span><br><span class="line">		RandomAccessFile raf=<span class="keyword">new</span> <span class="title class_">RandomAccessFile</span>(<span class="string">&quot;file.dat&quot;</span>, <span class="string">&quot;rw&quot;</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;b&#x27;</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;c&#x27;</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;d&#x27;</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;e&#x27;</span>);</span><br><span class="line">		raf.writeUTF(<span class="string">&quot;kamna&quot;</span>);</span><br><span class="line">		raf.writeInt(<span class="number">50</span>);</span><br><span class="line">		raf.writeDouble(<span class="number">50.555</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;f&#x27;</span>);</span><br><span class="line">		raf.close();</span><br><span class="line">		</span><br><span class="line">		RandomAccessFile r=<span class="keyword">new</span> <span class="title class_">RandomAccessFile</span>(<span class="string">&quot;file.dat&quot;</span>, <span class="string">&quot;r&quot;</span>);</span><br><span class="line">		r.seek(<span class="number">29</span>);</span><br><span class="line">		<span class="comment">//System.out.println(r.readChar());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readChar());</span></span><br><span class="line">		<span class="comment">//r.seek(6);</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readChar());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readChar());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readChar());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readUTF());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readInt());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readDouble());</span></span><br><span class="line">		System.out.println(r.readChar());</span><br><span class="line">		r.close();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">randomFileusingArray</span> &#123;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">		<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">		</span><br><span class="line">			<span class="comment">//write the alphabet to a random access file</span></span><br><span class="line">			<span class="type">char</span>[] alphabet = &#123;<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="string">&#x27;G&#x27;</span>, <span class="string">&#x27;H&#x27;</span>, <span class="string">&#x27;I&#x27;</span>, <span class="string">&#x27;J&#x27;</span>,</span><br><span class="line">							   <span class="string">&#x27;K&#x27;</span>, <span class="string">&#x27;L&#x27;</span>, <span class="string">&#x27;M&#x27;</span>, <span class="string">&#x27;N&#x27;</span>, <span class="string">&#x27;O&#x27;</span>, <span class="string">&#x27;P&#x27;</span>, <span class="string">&#x27;Q&#x27;</span>, <span class="string">&#x27;R&#x27;</span>, <span class="string">&#x27;S&#x27;</span>, <span class="string">&#x27;T&#x27;</span>,</span><br><span class="line">							   <span class="string">&#x27;U&#x27;</span>, <span class="string">&#x27;V&#x27;</span>, <span class="string">&#x27;W&#x27;</span>, <span class="string">&#x27;X&#x27;</span>, <span class="string">&#x27;Y&#x27;</span>, <span class="string">&#x27;Z&#x27;</span>&#125;;</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			<span class="type">RandomAccessFile</span> <span class="variable">random</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">RandomAccessFile</span>(<span class="string">&quot;RandomTest.dat&quot;</span>, <span class="string">&quot;rw&quot;</span>);</span><br><span class="line">			</span><br><span class="line">			System.out.println(<span class="string">&quot;Writing alphabet to the file!&quot;</span>);</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; alphabet.length; i++)</span><br><span class="line">				random.writeChar(alphabet[i]);</span><br><span class="line">			</span><br><span class="line">			System.out.println(<span class="string">&quot;Finished writing!&quot;</span>);</span><br><span class="line">			</span><br><span class="line">			random.close();</span><br><span class="line">	</span><br><span class="line">			<span class="comment">//reading characters from the alphabet off the file</span></span><br><span class="line">			<span class="type">RandomAccessFile</span> <span class="variable">rand0m</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">RandomAccessFile</span>(<span class="string">&quot;RandomTest.dat&quot;</span>, <span class="string">&quot;r&quot;</span>);</span><br><span class="line">			</span><br><span class="line">			System.out.println(<span class="string">&quot;Beginning to read!&quot;</span>);</span><br><span class="line">			</span><br><span class="line">			rand0m.seek(<span class="number">8</span>); <span class="comment">// 5th character (E)</span></span><br><span class="line">			System.out.println(rand0m.readChar());</span><br><span class="line">			rand0m.seek(<span class="number">24</span>); <span class="comment">//13th character (M)</span></span><br><span class="line">			System.out.println(rand0m.readChar());</span><br><span class="line">			rand0m.seek(<span class="number">40</span>); <span class="comment">//21st character (U)</span></span><br><span class="line">			System.out.println(rand0m.readChar());</span><br><span class="line">			rand0m.seek(<span class="number">19</span>); <span class="comment">//won&#x27;t read correctly!</span></span><br><span class="line">			System.out.println(rand0m.readChar());</span><br><span class="line">			System.out.println(<span class="string">&quot;Done reading!&quot;</span>);			</span><br><span class="line">			rand0m.close();		</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h4 id="Useful-resources"><a class="header-anchor" href="#Useful-resources">¶</a>Useful resources</h4>
-<ul>
-<li><a href="https://www.jb51.net/article/226835.htm">Scanner和BufferedReader的对比</a></li>
-</ul>
-<h2 id="Exception-Handling"><a class="header-anchor" href="#Exception-Handling">¶</a>Exception Handling</h2>
-<h3 id="Exception-hierarchy"><a class="header-anchor" href="#Exception-hierarchy">¶</a>Exception hierarchy<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></h3>
-<p><img src="/2022/04/17/Chapter20.2_FileProcessing&ExceptionHandling/exception-hierarchy.png" alt="file categories"></p>
-<hr>
-<p><code>Throwable</code> is a derived class of <code>object</code>. <code>Throwable</code> has two subcategories: <code>Error</code> and <code>Exception</code></p>
-<p><code>Error</code>: severe problems occurred that cannot be solved</p>
-<p><code>Exception</code>:  problems that occur when the program is running. It can be captured by <code>try...catch</code></p>
-<h3 id="Capture-the-exception-try-catch"><a class="header-anchor" href="#Capture-the-exception-try-catch">¶</a>Capture the exception: <code>try...catch</code></h3>
-<h3 id="Single-catch"><a class="header-anchor" href="#Single-catch">¶</a>Single catch</h3>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="comment">//Program</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(ExceptionName e)&#123;</span><br><span class="line">    <span class="comment">//What to perform when Exception is detected in the try program</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Multiple-catch"><a class="header-anchor" href="#Multiple-catch">¶</a>Multiple catch</h3>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">   <span class="comment">// 程序代码</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型<span class="number">1</span> 异常的变量名<span class="number">1</span>)&#123;</span><br><span class="line">  <span class="comment">// 程序代码</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型<span class="number">2</span> 异常的变量名<span class="number">2</span>)&#123;</span><br><span class="line">  <span class="comment">// 程序代码</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型<span class="number">3</span> 异常的变量名<span class="number">3</span>)&#123;</span><br><span class="line">  <span class="comment">// 程序代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Finally"><a class="header-anchor" href="#Finally">¶</a>Finally</h3>
-<blockquote>
-<p>The statement that will be executed anyway no matter whether the Exception occur in the try processes</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    process1();</span><br><span class="line">    process2();</span><br><span class="line">&#125;<span class="keyword">catch</span>(IOException e)&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;IO excpetion detected&quot;</span>);</span><br><span class="line">&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;END&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Useful-resources-v2"><a class="header-anchor" href="#Useful-resources-v2">¶</a>Useful resources</h3>
-<ul>
-<li><a href="https://www.liaoxuefeng.com/wiki/1252599548343744/1255943543190176">https://www.liaoxuefeng.com/wiki/1252599548343744/1255943543190176</a></li>
-</ul>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a href="https://www.runoob.com/java/java-exceptions.html">https://www.runoob.com/java/java-exceptions.html</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-]]></content>
-      <categories>
-        <category>Notes</category>
-        <category>ALCS</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
       </tags>
   </entry>
   <entry>
@@ -3205,6 +2992,256 @@ https://majidtahir.com/a-level9618
       </tags>
   </entry>
   <entry>
+    <title>Chapter 20.2: File processing and Exception Handling</title>
+    <url>/2022/04/17/Chapter20.2_FileProcessing&amp;ExceptionHandling/</url>
+    <content><![CDATA[<h1>Chapter 20.2: File Processing and Exception Handling</h1>
+<p><img src="/2022/04/17/Chapter20.2_FileProcessing&ExceptionHandling/syllabus.png" alt></p>
+<hr>
+<span id="more"></span> 
+<h2 id="File-Processing"><a class="header-anchor" href="#File-Processing">¶</a>File Processing</h2>
+<h3 id="Pseudocode"><a class="header-anchor" href="#Pseudocode">¶</a>Pseudocode</h3>
+<h3 id="Program-code"><a class="header-anchor" href="#Program-code">¶</a>Program code</h3>
+<hr>
+<h4 id="Scanner"><a class="header-anchor" href="#Scanner">¶</a><code>Scanner</code></h4>
+<blockquote>
+<p>API: <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html">https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html</a></p>
+</blockquote>
+<p><code>Scanner</code>和其他读入的一个不同点就是他是存在于<code>java.util</code>包下面的 而其他大多数是在<code>java.io</code>包下面。</p>
+<p>有一个好处就是<code>scanner.hasNext</code>可以用来检查文件是否读完</p>
+<p><strong>Declaration/construction</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Scanner</span> <span class="variable">sca1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);<span class="comment">//从console输入</span></span><br><span class="line"><span class="type">Scanner</span> <span class="variable">sca2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(<span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;SamuelJie.txt&quot;</span>));<span class="comment">//can be used to read a file</span></span><br><span class="line"><span class="type">Scanner</span> <span class="variable">sca3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(<span class="string">&quot;Samuel is a hardworking boy&quot;</span>);<span class="comment">//can read a string</span></span><br><span class="line"><span class="comment">//then you can carry out other operations</span></span><br><span class="line"><span class="type">int</span> <span class="variable">number</span> <span class="operator">=</span> sca1.nextInt();</span><br></pre></td></tr></table></figure>
+<p><strong>Methods:</strong></p>
+<p>A <code>Scanner</code> breaks its input into tokens using a delimiter pattern, which by default matches whitespace. The resulting tokens may then be converted into values of different types using the various <code>next</code> methods.</p>
+<p>简单来说 被空格、换行符所分割的 每一个部分 都算一个<code>token</code> 比如<code>&quot;1 2 3  Samuel&quot;</code> 中 <code>1</code>，<code>2</code>，<code>3</code>，<code>&quot;Samuel&quot;</code>都算<code>token</code>. <code>1</code> 可以用<code>nextInt()</code> 来读取, <code>&quot;Samuel&quot;</code>可以用 <code>next()</code>来读取。</p>
+<ul>
+<li><code>hasNext()</code>
+<ul>
+<li>Returns true if this scanner has another token in its input.</li>
+</ul>
+</li>
+<li><code>next()</code>
+<ul>
+<li>Finds and returns the next complete token from this scanner.</li>
+</ul>
+</li>
+<li><code>nextLine()</code>
+<ul>
+<li>Advances this scanner past the current line and returns the input that was skipped.</li>
+</ul>
+</li>
+<li><code>nextInt()</code>
+<ul>
+<li>Scans the next token of the input as an <code>int</code>.</li>
+</ul>
+</li>
+</ul>
+<p>⚠️ <a href="https://www.cnblogs.com/alterwl/p/java-problem-scanner-nosuchelementexception.html">使用scanner中遇到的nosuchfileException</a></p>
+<p>⚠️ <a href="https://blog.csdn.net/guanghuichenshao/article/details/81545450">nextLine和next的区别</a></p>
+<p>⚠️<a href="https://www.geeksforgeeks.org/why-is-scanner-skipping-nextline-after-use-of-other-next-functions/">next-- 与nextline连用时出现读取空白的问题</a></p>
+<hr>
+<h4 id="FileReader"><a class="header-anchor" href="#FileReader">¶</a><code>FileReader</code></h4>
+<blockquote>
+<p>API: <a href="https://docs.oracle.com/javase/8/docs/api/java/io/FileReader.html">https://docs.oracle.com/javase/8/docs/api/java/io/FileReader.html</a></p>
+</blockquote>
+<p>通常在考试中FileReader都是作为创建BufferedReader的一个前置来使用。</p>
+<p><strong>Declaration/construction</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">FileReader(File file);<span class="comment">//can construct with a file</span></span><br><span class="line">FileReader(String Filename);<span class="comment">//can construct with the filename</span></span><br><span class="line"><span class="comment">//for example</span></span><br><span class="line">String fileName=<span class="string">&quot;input.txt&quot;</span>;</span><br><span class="line"><span class="type">FileReader</span> <span class="variable">fr</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileReader</span>(filename);</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="BufferedReader"><a class="header-anchor" href="#BufferedReader">¶</a><code>BufferedReader</code></h4>
+<blockquote>
+<p>API: <a href="https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html">https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html</a></p>
+</blockquote>
+<p>Buffered Reader 相对于 传统Reader的好处就是 当读入一个文件的时候 能够先把文件的内容存在Buffer(缓存)里面 然后每次从Buffer里面读取，这样比传统Reader直接从文件里读取更加高效</p>
+<p><strong>Declaration/construction</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">File</span> <span class="variable">fi</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(fileName);</span><br><span class="line"><span class="type">FileReader</span> <span class="variable">fr</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileReader</span>(fi);</span><br><span class="line"><span class="type">BufferedReader</span> <span class="variable">bfr</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(fr);</span><br></pre></td></tr></table></figure>
+<p><strong>Methods(考试会用到的):</strong></p>
+<p><code>readLine()</code>: Reads a line of text. A line is considered to be terminated by any one of a line feed (‘\n’), a carriage return (‘\r’), or a carriage return followed immediately by a linefeed.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> String <span class="title function_">readLine</span><span class="params">()</span></span><br><span class="line"><span class="comment">//Usage</span></span><br><span class="line"><span class="type">String</span> <span class="variable">dataRead</span> <span class="operator">=</span> bfr.readLine();<span class="comment">//bfr is the BufferedReader declared previously</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="RandomAccessFile"><a class="header-anchor" href="#RandomAccessFile">¶</a><code>RandomAccessFile</code></h4>
+<blockquote>
+<p>API: <a href="https://docs.oracle.com/javase/8/docs/api/java/io/RandomAccessFile.html">https://docs.oracle.com/javase/8/docs/api/java/io/RandomAccessFile.html</a></p>
+</blockquote>
+<p>Instances of this class support both reading and writing to a random access file. A random access file behaves like a large array of bytes stored in the file system. There is a kind of cursor, or index into the implied array, called the <code>file pointer</code>; input operations read bytes starting at the file pointer and advance the file pointer past the bytes read. If the random access file is created in read/write mode, then output operations are also available; output operations write bytes starting at the file pointer and advance the file pointer past the bytes written. Output operations that write past the current end of the implied array cause the array to be extended. The file pointer can be read by the <code>getFilePointer</code> method and set by the <code>seek</code> method.</p>
+<table>
+<thead>
+<tr>
+<th>Data type</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>byte</code></td>
+<td>1 byte</td>
+</tr>
+<tr>
+<td><code>short</code></td>
+<td>2 bytes</td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td>4 bytes</td>
+</tr>
+<tr>
+<td><code>long</code></td>
+<td>8 bytes</td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td>4 bytes</td>
+</tr>
+<tr>
+<td><code>double</code></td>
+<td>8 bytes</td>
+</tr>
+<tr>
+<td><code>boolean</code></td>
+<td>1 <strong>bit</strong></td>
+</tr>
+<tr>
+<td><code>char</code></td>
+<td>2 bytes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Declaration/construction</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">RandomAccessFile(File file, String mode);</span><br><span class="line">RandomAccessFile(String fileName, String mode);</span><br></pre></td></tr></table></figure>
+<p><strong><code>mode</code></strong></p>
+<p><code>mode</code>本质上就是读写模式，像是pseudocode 中 OPENFILE <code>&lt;file Name&gt;</code> FOR <code>&lt;File mode&gt;</code>中的 <code>&lt;File mode&gt;</code>一样。</p>
+<ul>
+<li><code>&quot;r&quot;</code> open for read only.</li>
+<li><code>&quot;rw&quot;</code>open for read and write</li>
+</ul>
+<p><strong>Methods(考试会用到的)</strong></p>
+<ul>
+<li><code>read()</code>
+<ul>
+<li>Reads a byte of data from this file.</li>
+</ul>
+</li>
+<li><code>readBoolean()</code>
+<ul>
+<li>Reads a <code>boolean</code> from this file.</li>
+</ul>
+</li>
+<li><code>readByte()</code>
+<ul>
+<li>Reads a signed eight-bit value from this file.</li>
+</ul>
+</li>
+<li><code>readChar()</code>
+<ul>
+<li>Reads a character from this file.</li>
+</ul>
+</li>
+<li><code>readDouble()</code>
+<ul>
+<li>Reads a <code>double</code> from this file.</li>
+</ul>
+</li>
+<li><code>readInt()</code></li>
+<li><code>readUTF()</code></li>
+<li><code>seek(long pos)</code>
+<ul>
+<li>Sets the file-pointer offset, measured from the beginning of this file, at which the next read or write occurs.</li>
+<li>Inputs the number, representing the position that you want the <code>file pointer</code> to be.</li>
+</ul>
+</li>
+<li><code>writeInt(int num)</code></li>
+<li><code>writeChars(String str)</code>
+<ul>
+<li>Writes a string to the file as a sequence of characters.</li>
+</ul>
+</li>
+<li><code>writeDouble(String str)</code>
+<ul>
+<li>Writes a string to the file using <a href="https://docs.oracle.com/javase/8/docs/api/java/io/DataInput.html#modified-utf-8">modified UTF-8</a> encoding in a machine-independent manner.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example code(from Kamana)</strong>:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RandomFileDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span><span class="keyword">throws</span> Exception &#123;</span><br><span class="line">		RandomAccessFile raf=<span class="keyword">new</span> <span class="title class_">RandomAccessFile</span>(<span class="string">&quot;file.dat&quot;</span>, <span class="string">&quot;rw&quot;</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;b&#x27;</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;c&#x27;</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;d&#x27;</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;e&#x27;</span>);</span><br><span class="line">		raf.writeUTF(<span class="string">&quot;kamna&quot;</span>);</span><br><span class="line">		raf.writeInt(<span class="number">50</span>);</span><br><span class="line">		raf.writeDouble(<span class="number">50.555</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;f&#x27;</span>);</span><br><span class="line">		raf.close();</span><br><span class="line">		</span><br><span class="line">		RandomAccessFile r=<span class="keyword">new</span> <span class="title class_">RandomAccessFile</span>(<span class="string">&quot;file.dat&quot;</span>, <span class="string">&quot;r&quot;</span>);</span><br><span class="line">		r.seek(<span class="number">29</span>);</span><br><span class="line">		<span class="comment">//System.out.println(r.readChar());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readChar());</span></span><br><span class="line">		<span class="comment">//r.seek(6);</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readChar());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readChar());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readChar());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readUTF());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readInt());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readDouble());</span></span><br><span class="line">		System.out.println(r.readChar());</span><br><span class="line">		r.close();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">randomFileusingArray</span> &#123;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">		<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">		</span><br><span class="line">			<span class="comment">//write the alphabet to a random access file</span></span><br><span class="line">			<span class="type">char</span>[] alphabet = &#123;<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="string">&#x27;G&#x27;</span>, <span class="string">&#x27;H&#x27;</span>, <span class="string">&#x27;I&#x27;</span>, <span class="string">&#x27;J&#x27;</span>,</span><br><span class="line">							   <span class="string">&#x27;K&#x27;</span>, <span class="string">&#x27;L&#x27;</span>, <span class="string">&#x27;M&#x27;</span>, <span class="string">&#x27;N&#x27;</span>, <span class="string">&#x27;O&#x27;</span>, <span class="string">&#x27;P&#x27;</span>, <span class="string">&#x27;Q&#x27;</span>, <span class="string">&#x27;R&#x27;</span>, <span class="string">&#x27;S&#x27;</span>, <span class="string">&#x27;T&#x27;</span>,</span><br><span class="line">							   <span class="string">&#x27;U&#x27;</span>, <span class="string">&#x27;V&#x27;</span>, <span class="string">&#x27;W&#x27;</span>, <span class="string">&#x27;X&#x27;</span>, <span class="string">&#x27;Y&#x27;</span>, <span class="string">&#x27;Z&#x27;</span>&#125;;</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			<span class="type">RandomAccessFile</span> <span class="variable">random</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">RandomAccessFile</span>(<span class="string">&quot;RandomTest.dat&quot;</span>, <span class="string">&quot;rw&quot;</span>);</span><br><span class="line">			</span><br><span class="line">			System.out.println(<span class="string">&quot;Writing alphabet to the file!&quot;</span>);</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; alphabet.length; i++)</span><br><span class="line">				random.writeChar(alphabet[i]);</span><br><span class="line">			</span><br><span class="line">			System.out.println(<span class="string">&quot;Finished writing!&quot;</span>);</span><br><span class="line">			</span><br><span class="line">			random.close();</span><br><span class="line">	</span><br><span class="line">			<span class="comment">//reading characters from the alphabet off the file</span></span><br><span class="line">			<span class="type">RandomAccessFile</span> <span class="variable">rand0m</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">RandomAccessFile</span>(<span class="string">&quot;RandomTest.dat&quot;</span>, <span class="string">&quot;r&quot;</span>);</span><br><span class="line">			</span><br><span class="line">			System.out.println(<span class="string">&quot;Beginning to read!&quot;</span>);</span><br><span class="line">			</span><br><span class="line">			rand0m.seek(<span class="number">8</span>); <span class="comment">// 5th character (E)</span></span><br><span class="line">			System.out.println(rand0m.readChar());</span><br><span class="line">			rand0m.seek(<span class="number">24</span>); <span class="comment">//13th character (M)</span></span><br><span class="line">			System.out.println(rand0m.readChar());</span><br><span class="line">			rand0m.seek(<span class="number">40</span>); <span class="comment">//21st character (U)</span></span><br><span class="line">			System.out.println(rand0m.readChar());</span><br><span class="line">			rand0m.seek(<span class="number">19</span>); <span class="comment">//won&#x27;t read correctly!</span></span><br><span class="line">			System.out.println(rand0m.readChar());</span><br><span class="line">			System.out.println(<span class="string">&quot;Done reading!&quot;</span>);			</span><br><span class="line">			rand0m.close();		</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="Useful-resources"><a class="header-anchor" href="#Useful-resources">¶</a>Useful resources</h4>
+<ul>
+<li><a href="https://www.jb51.net/article/226835.htm">Scanner和BufferedReader的对比</a></li>
+</ul>
+<h2 id="Exception-Handling"><a class="header-anchor" href="#Exception-Handling">¶</a>Exception Handling</h2>
+<h3 id="Exception-hierarchy"><a class="header-anchor" href="#Exception-hierarchy">¶</a>Exception hierarchy<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></h3>
+<p><img src="/2022/04/17/Chapter20.2_FileProcessing&ExceptionHandling/exception-hierarchy.png" alt="file categories"></p>
+<hr>
+<p><code>Throwable</code> is a derived class of <code>object</code>. <code>Throwable</code> has two subcategories: <code>Error</code> and <code>Exception</code></p>
+<p><code>Error</code>: severe problems occurred that cannot be solved</p>
+<p><code>Exception</code>:  problems that occur when the program is running. It can be captured by <code>try...catch</code></p>
+<h3 id="Capture-the-exception-try-catch"><a class="header-anchor" href="#Capture-the-exception-try-catch">¶</a>Capture the exception: <code>try...catch</code></h3>
+<h3 id="Single-catch"><a class="header-anchor" href="#Single-catch">¶</a>Single catch</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="comment">//Program</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(ExceptionName e)&#123;</span><br><span class="line">    <span class="comment">//What to perform when Exception is detected in the try program</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Multiple-catch"><a class="header-anchor" href="#Multiple-catch">¶</a>Multiple catch</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">   <span class="comment">// 程序代码</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型<span class="number">1</span> 异常的变量名<span class="number">1</span>)&#123;</span><br><span class="line">  <span class="comment">// 程序代码</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型<span class="number">2</span> 异常的变量名<span class="number">2</span>)&#123;</span><br><span class="line">  <span class="comment">// 程序代码</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型<span class="number">3</span> 异常的变量名<span class="number">3</span>)&#123;</span><br><span class="line">  <span class="comment">// 程序代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Finally"><a class="header-anchor" href="#Finally">¶</a>Finally</h3>
+<blockquote>
+<p>The statement that will be executed anyway no matter whether the Exception occur in the try processes</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    process1();</span><br><span class="line">    process2();</span><br><span class="line">&#125;<span class="keyword">catch</span>(IOException e)&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;IO excpetion detected&quot;</span>);</span><br><span class="line">&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;END&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Useful-resources-v2"><a class="header-anchor" href="#Useful-resources-v2">¶</a>Useful resources</h3>
+<ul>
+<li><a href="https://www.liaoxuefeng.com/wiki/1252599548343744/1255943543190176">https://www.liaoxuefeng.com/wiki/1252599548343744/1255943543190176</a></li>
+</ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://www.runoob.com/java/java-exceptions.html">https://www.runoob.com/java/java-exceptions.html</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>ALCS</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML+CSS: Blinking Rhombus</title>
+    <url>/2022/04/07/blinkingRhombus/</url>
+    <content><![CDATA[<img src="https://media.giphy.com/media/RUI6VnZ1hQjWfYlcdz/giphy.gif" alt="blinking_rhombus" style="zoom:300%;">
+<span id="more"></span> 
+<h2 id="index-html"><a class="header-anchor" href="#index-html">¶</a>index.html</h2>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>菱形加载动画<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;loading&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="style-css"><a class="header-anchor" href="#style-css">¶</a>style.css</h2>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">    <span class="comment">/*place the content at the center, set body as flex container, thus the div element is the flex item*/</span></span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">background</span>:  <span class="built_in">linear-gradient</span>(<span class="number">200deg</span>,<span class="number">#f4efef</span>,<span class="number">#e3eeff</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="comment">/* grid display */</span></span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="comment">/* set the grid to be three columns per row */</span></span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>,<span class="number">1</span>fr);</span><br><span class="line">    <span class="comment">/* set the gap between grid items: both horizontally and vertically gap */</span></span><br><span class="line">    <span class="attribute">gap</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="comment">/* number the items for later use: nth-child() */</span></span><br><span class="line">    <span class="comment">/* counter-reset: number; */</span></span><br><span class="line">    <span class="comment">/* ctrl + shift / */</span></span><br><span class="line">    <span class="comment">/* rotate by 45 degrees */</span></span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">45deg</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line">    <span class="comment">/* user-defined property: grammar is `--` followed by name */</span></span><br><span class="line">    <span class="attr">--c</span>:red;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">var</span>(--c);</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">/* animation  name  duration   easing function  repeat */</span></span><br><span class="line">    <span class="attribute">animation</span>: blinking  <span class="number">2s</span> linear infinite;</span><br><span class="line">    <span class="comment">/* wait for a few sec */</span></span><br><span class="line">    <span class="attribute">animation-delay</span>: <span class="built_in">var</span>(--d);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">    <span class="comment">/* setting increasing number */</span></span><br><span class="line">    <span class="comment">/* counter-increment: number; */</span></span><br><span class="line">    <span class="comment">/*  */</span></span><br><span class="line">    <span class="comment">/* content:counter(number); */</span></span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">7</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#f15a5a</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">4</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">8</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#f0c419</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.2s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">1</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">5</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">9</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#4eba6f</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.4s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">6</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#2d95bf</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.6s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">3</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#955ba5</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.8s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> blinking &#123;</span><br><span class="line">    <span class="number">0%</span>,<span class="number">100%</span>&#123;</span><br><span class="line">        <span class="comment">/* scale(x,y) suggests the change in width and height*/</span></span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">40%</span>,<span class="number">80%</span>&#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>WebDevelopment</category>
+        <category>Project</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>html</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Start of Blog</title>
+    <url>/2022/04/03/Start-of-Blog/</url>
+    <content><![CDATA[<h3 id="Inspiration"><a class="header-anchor" href="#Inspiration">¶</a>Inspiration</h3>
+<p>很多时候感觉缘分就是如此奇妙。最近申请季结束开始研究<code>Github</code>, 因为觉得命令行操作很酷就下载了<code>git</code>, 虽然最终可能<code>Github desktop</code>的用户体验更好一点 当然日常生活中两个都会被用到;</p>
+<p>又是机缘巧合在逛 <u>appstore</u> 的时候看到了<code>mimo</code>。当时只知道这是个教编程的软件，下载后一度被会员制/membership劝退，但最终发现只要使用的仔细认真，答题尽量不错，其实还是可以用的​（✈️ 起飞~）至此便开始了对于Web Development的学习: 从 <code>html</code> 到 <code>css</code> 到 <code>javaScript</code>. 在准备配置自己电脑vscode上的js编程环境的时候，下载的<code>jsnode</code> 搞了近一个小时 东搞搞西搞搞。</p>
+<p>晚上睡觉前刷了刷b站，看到 up主 codesheep 上传的一篇视频 “<strong>如何0基础创建自己的博客</strong>“ 立马就感兴趣住了！说hexo配置的两个前置: <code>git</code> 和 <code>jsnode</code> 的时候 才意识到自己无意中已经给自己铺好了路。</p>
+<p>搜集好教程后 准备第二天直接做起！</p>
+<p>写到这里 我的博客基本配置已经ok啦 以及这就是我的第一篇文章。</p>
+<p>希望以后的我看到这里能回想起当时那个 <font color="#800000">求知、热情、上进</font> 的自己  😏</p>
+]]></content>
+      <categories>
+        <category>blogging</category>
+        <category>start</category>
+      </categories>
+      <tags>
+        <tag>Inspiration</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>FlexBox_Notes</title>
     <url>/2022/04/04/FlexBox-Notes/</url>
     <content><![CDATA[<blockquote class="blockquote-center">
@@ -3284,6 +3321,25 @@ https://majidtahir.com/a-level9618
       <tags>
         <tag>css</tag>
         <tag>FlexBox</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML+CSS: spotlight Text Animation</title>
+    <url>/2022/04/05/Spotlight-Text/</url>
+    <content><![CDATA[<img src="https://media.giphy.com/media/r0qmZ6SyKILYYxmyHK/giphy.gif" alt="gif" style="zoom:1000%;" class="full-image">
+<span id="more"></span>
+<h2 id="index-html-v2"><a class="header-anchor" href="#index-html-v2">¶</a>index.html</h2>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Spotlight on texts<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="style-css-v2"><a class="header-anchor" href="#style-css-v2">¶</a>style.css</h2>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="comment">/* Initialization, cancle the margin and padding of elements */</span></span><br><span class="line">    <span class="attribute">margin</span> : <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#222</span>;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">    <span class="comment">/* capitalize */</span></span><br><span class="line">    <span class="attribute">text-transform</span>: uppercase;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">112px</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 伪元素 */</span></span><br><span class="line"><span class="selector-tag">h1</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line">    <span class="attribute">color</span>: transparent;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to right, <span class="number">#ff59b3</span>, <span class="number">#fe0000</span>, <span class="number">#ffff01</span>, <span class="number">#40d1d2</span>, <span class="number">#8b059f7d</span>);</span><br><span class="line">    <span class="comment">/* change the background so that it fits exactly the text */</span></span><br><span class="line">    <span class="attribute">background-clip</span>: text;</span><br><span class="line">    -webkit-<span class="attribute">background-clip</span>: text;</span><br><span class="line">    <span class="comment">/* clip the element so that it becomes a circle: 100 suggests the diameter, 0%, 50% suggests the position of the center of the circle */</span></span><br><span class="line">    <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">0%</span> <span class="number">50%</span>);</span><br><span class="line">    <span class="comment">/* animation: name, duration, infinite means repeat */</span></span><br><span class="line">    <span class="attribute">animation</span>: light <span class="number">5s</span> infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* define an animation that changes the position of the center of the circle  */</span></span><br><span class="line"><span class="keyword">@keyframes</span> light&#123;</span><br><span class="line">    <span class="number">0%</span>&#123;</span><br><span class="line">        <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">0%</span> <span class="number">50%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">50%</span>&#123;</span><br><span class="line">        <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">100%</span> <span class="number">50%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">100%</span>&#123;</span><br><span class="line">        <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">0%</span> <span class="number">50%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>WebDevelopment</category>
+        <category>Project</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>html</tag>
       </tags>
   </entry>
   <entry>
@@ -3472,15 +3528,21 @@ When we display variables in the console, their values appear instead of their n
       </tags>
   </entry>
   <entry>
-    <title>HTML+CSS: spotlight Text Animation</title>
-    <url>/2022/04/05/Spotlight-Text/</url>
-    <content><![CDATA[<img src="https://media.giphy.com/media/r0qmZ6SyKILYYxmyHK/giphy.gif" alt="gif" style="zoom:1000%;" class="full-image">
+    <title>contributors</title>
+    <url>/2022/04/29/contributors/</url>
+    <content><![CDATA[<h1>Contributors</h1>
+<h2 id="🐻Katrina-Liu"><a class="header-anchor" href="#🐻Katrina-Liu">¶</a>🐻Katrina Liu</h2>
+]]></content>
+  </entry>
+  <entry>
+    <title>HTML+CSS: Loading Animation</title>
+    <url>/2022/04/06/loadingAnimation/</url>
+    <content><![CDATA[<img src="https://media.giphy.com/media/KcMqhBHGYydbQqf7z1/giphy.gif" alt="loadingAnimation" style="zoom:300%;">
 <span id="more"></span>
-<h2 id="index-html"><a class="header-anchor" href="#index-html">¶</a>index.html</h2>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Spotlight on texts<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="style-css"><a class="header-anchor" href="#style-css">¶</a>style.css</h2>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="comment">/* Initialization, cancle the margin and padding of elements */</span></span><br><span class="line">    <span class="attribute">margin</span> : <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#222</span>;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">    <span class="comment">/* capitalize */</span></span><br><span class="line">    <span class="attribute">text-transform</span>: uppercase;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">112px</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 伪元素 */</span></span><br><span class="line"><span class="selector-tag">h1</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line">    <span class="attribute">color</span>: transparent;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to right, <span class="number">#ff59b3</span>, <span class="number">#fe0000</span>, <span class="number">#ffff01</span>, <span class="number">#40d1d2</span>, <span class="number">#8b059f7d</span>);</span><br><span class="line">    <span class="comment">/* change the background so that it fits exactly the text */</span></span><br><span class="line">    <span class="attribute">background-clip</span>: text;</span><br><span class="line">    -webkit-<span class="attribute">background-clip</span>: text;</span><br><span class="line">    <span class="comment">/* clip the element so that it becomes a circle: 100 suggests the diameter, 0%, 50% suggests the position of the center of the circle */</span></span><br><span class="line">    <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">0%</span> <span class="number">50%</span>);</span><br><span class="line">    <span class="comment">/* animation: name, duration, infinite means repeat */</span></span><br><span class="line">    <span class="attribute">animation</span>: light <span class="number">5s</span> infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* define an animation that changes the position of the center of the circle  */</span></span><br><span class="line"><span class="keyword">@keyframes</span> light&#123;</span><br><span class="line">    <span class="number">0%</span>&#123;</span><br><span class="line">        <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">0%</span> <span class="number">50%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">50%</span>&#123;</span><br><span class="line">        <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">100%</span> <span class="number">50%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">100%</span>&#123;</span><br><span class="line">        <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">0%</span> <span class="number">50%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
+<h2 id="index-html-v3"><a class="header-anchor" href="#index-html-v3">¶</a>index.html</h2>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Interesting Loading Animation<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;loading&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>loading..<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="style-css-v3"><a class="header-anchor" href="#style-css-v3">¶</a>style.css</h2>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="comment">/* initialization, defining the margin and padding */</span></span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="comment">/* 100% window height */</span></span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">    <span class="comment">/* gradient background  */</span></span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to bottom, <span class="number">#2b6876</span>, <span class="number">#09203f</span>);</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="comment">/* center at the main axis, which is horizontally */</span></span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="comment">/* center flex items along the cross axis of the current line of the flex container */</span></span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="comment">/* this tells the browser that the sum of padding and margin of the box is 200px */</span></span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">10px</span> solid <span class="number">#63a69f</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">animation</span>: a1 <span class="number">2s</span> linear infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span><span class="selector-pseudo">::after</span>,<span class="selector-class">.loading</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">top</span>: -<span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">10px</span> solid <span class="number">#f2e1ac</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">240deg</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">10px</span> solid <span class="number">#f2836f</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">120deg</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">color</span>: beige;</span><br><span class="line">    <span class="attribute">animation</span>: a2 <span class="number">2s</span> linear infinite;</span><br><span class="line">    <span class="attribute">font-size</span>: larger;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> a1 &#123;</span><br><span class="line">    <span class="selector-tag">to</span>&#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">360deg</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> a2 &#123;</span><br><span class="line">    <span class="selector-tag">to</span>&#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">rotate</span>(-<span class="number">360deg</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>WebDevelopment</category>
         <category>Project</category>
@@ -3488,43 +3550,6 @@ When we display variables in the console, their values appear instead of their n
       <tags>
         <tag>css</tag>
         <tag>html</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HTML+CSS: Blinking Rhombus</title>
-    <url>/2022/04/07/blinkingRhombus/</url>
-    <content><![CDATA[<img src="https://media.giphy.com/media/RUI6VnZ1hQjWfYlcdz/giphy.gif" alt="blinking_rhombus" style="zoom:300%;">
-<span id="more"></span> 
-<h2 id="index-html-v2"><a class="header-anchor" href="#index-html-v2">¶</a>index.html</h2>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>菱形加载动画<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;loading&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="style-css-v2"><a class="header-anchor" href="#style-css-v2">¶</a>style.css</h2>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">    <span class="comment">/*place the content at the center, set body as flex container, thus the div element is the flex item*/</span></span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">background</span>:  <span class="built_in">linear-gradient</span>(<span class="number">200deg</span>,<span class="number">#f4efef</span>,<span class="number">#e3eeff</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="comment">/* grid display */</span></span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="comment">/* set the grid to be three columns per row */</span></span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>,<span class="number">1</span>fr);</span><br><span class="line">    <span class="comment">/* set the gap between grid items: both horizontally and vertically gap */</span></span><br><span class="line">    <span class="attribute">gap</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="comment">/* number the items for later use: nth-child() */</span></span><br><span class="line">    <span class="comment">/* counter-reset: number; */</span></span><br><span class="line">    <span class="comment">/* ctrl + shift / */</span></span><br><span class="line">    <span class="comment">/* rotate by 45 degrees */</span></span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">45deg</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line">    <span class="comment">/* user-defined property: grammar is `--` followed by name */</span></span><br><span class="line">    <span class="attr">--c</span>:red;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">var</span>(--c);</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">/* animation  name  duration   easing function  repeat */</span></span><br><span class="line">    <span class="attribute">animation</span>: blinking  <span class="number">2s</span> linear infinite;</span><br><span class="line">    <span class="comment">/* wait for a few sec */</span></span><br><span class="line">    <span class="attribute">animation-delay</span>: <span class="built_in">var</span>(--d);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">    <span class="comment">/* setting increasing number */</span></span><br><span class="line">    <span class="comment">/* counter-increment: number; */</span></span><br><span class="line">    <span class="comment">/*  */</span></span><br><span class="line">    <span class="comment">/* content:counter(number); */</span></span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">7</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#f15a5a</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">4</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">8</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#f0c419</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.2s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">1</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">5</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">9</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#4eba6f</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.4s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">6</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#2d95bf</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.6s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">3</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#955ba5</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.8s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> blinking &#123;</span><br><span class="line">    <span class="number">0%</span>,<span class="number">100%</span>&#123;</span><br><span class="line">        <span class="comment">/* scale(x,y) suggests the change in width and height*/</span></span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">40%</span>,<span class="number">80%</span>&#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>WebDevelopment</category>
-        <category>Project</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
-        <tag>html</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Start of Blog</title>
-    <url>/2022/04/03/Start-of-Blog/</url>
-    <content><![CDATA[<h3 id="Inspiration"><a class="header-anchor" href="#Inspiration">¶</a>Inspiration</h3>
-<p>很多时候感觉缘分就是如此奇妙。最近申请季结束开始研究<code>Github</code>, 因为觉得命令行操作很酷就下载了<code>git</code>, 虽然最终可能<code>Github desktop</code>的用户体验更好一点 当然日常生活中两个都会被用到;</p>
-<p>又是机缘巧合在逛 <u>appstore</u> 的时候看到了<code>mimo</code>。当时只知道这是个教编程的软件，下载后一度被会员制/membership劝退，但最终发现只要使用的仔细认真，答题尽量不错，其实还是可以用的​（✈️ 起飞~）至此便开始了对于Web Development的学习: 从 <code>html</code> 到 <code>css</code> 到 <code>javaScript</code>. 在准备配置自己电脑vscode上的js编程环境的时候，下载的<code>jsnode</code> 搞了近一个小时 东搞搞西搞搞。</p>
-<p>晚上睡觉前刷了刷b站，看到 up主 codesheep 上传的一篇视频 “<strong>如何0基础创建自己的博客</strong>“ 立马就感兴趣住了！说hexo配置的两个前置: <code>git</code> 和 <code>jsnode</code> 的时候 才意识到自己无意中已经给自己铺好了路。</p>
-<p>搜集好教程后 准备第二天直接做起！</p>
-<p>写到这里 我的博客基本配置已经ok啦 以及这就是我的第一篇文章。</p>
-<p>希望以后的我看到这里能回想起当时那个 <font color="#800000">求知、热情、上进</font> 的自己  😏</p>
-]]></content>
-      <categories>
-        <category>blogging</category>
-        <category>start</category>
-      </categories>
-      <tags>
-        <tag>Inspiration</tag>
       </tags>
   </entry>
   <entry>
@@ -3612,24 +3637,6 @@ When we display variables in the console, their values appear instead of their n
       </categories>
       <tags>
         <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HTML+CSS: Loading Animation</title>
-    <url>/2022/04/06/loadingAnimation/</url>
-    <content><![CDATA[<img src="https://media.giphy.com/media/KcMqhBHGYydbQqf7z1/giphy.gif" alt="loadingAnimation" style="zoom:300%;">
-<span id="more"></span>
-<h2 id="index-html-v3"><a class="header-anchor" href="#index-html-v3">¶</a>index.html</h2>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Interesting Loading Animation<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;loading&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>loading..<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="style-css-v3"><a class="header-anchor" href="#style-css-v3">¶</a>style.css</h2>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="comment">/* initialization, defining the margin and padding */</span></span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="comment">/* 100% window height */</span></span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">    <span class="comment">/* gradient background  */</span></span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to bottom, <span class="number">#2b6876</span>, <span class="number">#09203f</span>);</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="comment">/* center at the main axis, which is horizontally */</span></span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="comment">/* center flex items along the cross axis of the current line of the flex container */</span></span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="comment">/* this tells the browser that the sum of padding and margin of the box is 200px */</span></span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">10px</span> solid <span class="number">#63a69f</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">animation</span>: a1 <span class="number">2s</span> linear infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span><span class="selector-pseudo">::after</span>,<span class="selector-class">.loading</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">top</span>: -<span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">10px</span> solid <span class="number">#f2e1ac</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">240deg</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">10px</span> solid <span class="number">#f2836f</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">120deg</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">color</span>: beige;</span><br><span class="line">    <span class="attribute">animation</span>: a2 <span class="number">2s</span> linear infinite;</span><br><span class="line">    <span class="attribute">font-size</span>: larger;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> a1 &#123;</span><br><span class="line">    <span class="selector-tag">to</span>&#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">360deg</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> a2 &#123;</span><br><span class="line">    <span class="selector-tag">to</span>&#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">rotate</span>(-<span class="number">360deg</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>WebDevelopment</category>
-        <category>Project</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
-        <tag>html</tag>
       </tags>
   </entry>
   <entry>
@@ -3816,12 +3823,5 @@ Q3: OOP with file handling.</p>
       <tags>
         <tag>java</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>contributors</title>
-    <url>/2022/04/29/contributors/</url>
-    <content><![CDATA[<h1>Contributors</h1>
-<h2 id="🐻Katrina-Liu"><a class="header-anchor" href="#🐻Katrina-Liu">¶</a>🐻Katrina Liu</h2>
-]]></content>
   </entry>
 </search>
