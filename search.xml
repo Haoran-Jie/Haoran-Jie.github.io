@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>IG/AS/AL CompSci-Note</title>
-    <url>/2022/04/13/AS&amp;AL-CompSci-Note/</url>
+    <url>/Notes/AS&amp;AL-CompSci-Note/</url>
     <content><![CDATA[<h2 id="⭐About"><a class="header-anchor" href="#⭐About">¶</a>⭐About</h2>
 <h2 id="📑Directory"><a class="header-anchor" href="#📑Directory">¶</a>📑Directory</h2>
 <h3 id="A-Level"><a class="header-anchor" href="#A-Level">¶</a>A Level</h3>
@@ -48,8 +48,8 @@ https://majidtahir.com/a-level9618
   </entry>
   <entry>
     <title>Chapter 13.1: User-defined Data Types</title>
-    <url>/2022/04/28/Chapter13.1_User-definedDataTypes/</url>
-    <content><![CDATA[<p><img src="/2022/04/28/Chapter13.1_User-definedDataTypes/13.1.png" alt></p>
+    <url>/Notes/ALCS/Chapter13.1_User-definedDataTypes/</url>
+    <content><![CDATA[<p><img src="/Notes/ALCS/Chapter13.1_User-definedDataTypes/13.1.png" alt></p>
 <hr>
 <span id="more"></span>
 <h1>👤Chapter 13.1: User-defined Data Types</h1>
@@ -114,11 +114,11 @@ https://majidtahir.com/a-level9618
 <p>This is a data type used to store constant values. It is a list of possible values.</p>
 </blockquote>
 <ul>
-<li><img src="/2022/04/28/Chapter13.1_User-definedDataTypes/enu1.png" alt="enu1"></li>
+<li><img src="/Notes/ALCS/Chapter13.1_User-definedDataTypes/enu1.png" alt="enu1"></li>
 <li>
-<img src="/2022/04/28/Chapter13.1_User-definedDataTypes/enu2.jpg" alt="enu2" style="zoom: 50%;">
+<img src="/Notes/ALCS/Chapter13.1_User-definedDataTypes/enu2.jpg" alt="enu2" style="zoom: 50%;">
 </li>
-<li><img src="/2022/04/28/Chapter13.1_User-definedDataTypes/enu3.png" alt="enu3"></li>
+<li><img src="/Notes/ALCS/Chapter13.1_User-definedDataTypes/enu3.png" alt="enu3"></li>
 </ul>
 <p>⚠️: Enumerated 里面不用加引号<code>''</code> 或双引号<code>&quot;&quot;</code></p>
 <p>⚠️:The values defined in an enumerated data type are ordinal. This mean that enumerated data types have an implied order or values.</p>
@@ -180,7 +180,7 @@ https://majidtahir.com/a-level9618
 <li>Duplicate values are now allowed</li>
 </ul>
 </blockquote>
-<img src="/2022/04/28/Chapter13.1_User-definedDataTypes/Set1.jpg" alt="Set1" style="zoom: 33%;">
+<img src="/Notes/ALCS/Chapter13.1_User-definedDataTypes/Set1.jpg" alt="Set1" style="zoom: 33%;">
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">TYPE letter = SET OF CHAR</span><br><span class="line">DECLARE myname (&#x27;s&#x27;,&#x27;a&#x27;,&#x27;m&#x27;,&#x27;u&#x27;,&#x27;e&#x27;,&#x27;l&#x27;): letter</span><br></pre></td></tr></table></figure>
 <h4 id="Supported-operations"><a class="header-anchor" href="#Supported-operations">¶</a>Supported operations:</h4>
 <ul>
@@ -201,7 +201,7 @@ https://majidtahir.com/a-level9618
 <li>Methods: Modules attached to objects to allow it to perform certain actions</li>
 </ul>
 <h2 id="Use-of-User-defined-Data-Types"><a class="header-anchor" href="#Use-of-User-defined-Data-Types">¶</a>Use of User-defined Data Types</h2>
-<p><img src="/2022/04/28/Chapter13.1_User-definedDataTypes/exampleusd.png" alt></p>
+<p><img src="/Notes/ALCS/Chapter13.1_User-definedDataTypes/exampleusd.png" alt></p>
 <h3 id="Past-paper-questions"><a class="header-anchor" href="#Past-paper-questions">¶</a>Past paper questions</h3>
 <p><u>Write pseudocode to create an enumerated type called <code>Parts</code> to include these parts sold in a computer shop:</u></p>
 <p><em>Monitor, CPU, SSD, HDD, LaserPrinter, Keyboard, Mouse</em></p>
@@ -215,10 +215,542 @@ https://majidtahir.com/a-level9618
       </categories>
   </entry>
   <entry>
+    <title>Chapter 13.2: File organisation and access</title>
+    <url>/Notes/ALCS/Chapter13.2_FileOrganisation&amp;Access/</url>
+    <content><![CDATA[<h1>Chapter 13.2: File organisation and access</h1>
+<p><img src="/Notes/ALCS/Chapter13.2_FileOrganisation&Access/13.2.png" alt></p>
+<hr>
+<span id="more"></span>
+<h2 id="File-organisation"><a class="header-anchor" href="#File-organisation">¶</a>File organisation</h2>
+<h3 id="Serial-file-organisation"><a class="header-anchor" href="#Serial-file-organisation">¶</a>Serial file organisation</h3>
+<blockquote>
+<p>Method of file organisation in which records of data are physically stored in a file, one after another, <strong>in the order they were added to the file</strong></p>
+</blockquote>
+<p>New records are appended to the end of the file. Serial file organisation is often used for temporary files storing transactions to be made to more permanent files. e.g. storing customer meter reading for gas/electricity before they are used to send the bills to all customers.</p>
+<ul>
+<li>Each transaction is added to the file in the order of arrival</li>
+<li>These records will be in chronological order</li>
+<li><font color="#4a69bd">High hit rate</font></li>
+<li><font color="#4a69bd">Suitable for batch processing</font></li>
+<li><font color="#4a69bd">Order not important</font></li>
+<li><font color="#4a69bd">The records will be accessed one after another</font><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></li>
+</ul>
+<h3 id="Sequential-file-organisation"><a class="header-anchor" href="#Sequential-file-organisation">¶</a>Sequential file organisation</h3>
+<blockquote>
+<p>Method of file organisation in which records of data are physically stored in a file, one after another, <strong>in a given order</strong></p>
+</blockquote>
+<p>Physically stores records of data in a file, one after another, in a given order. The order is usually based on the <strong>key field</strong> of the records as this is the unique identifier.</p>
+<ul>
+<li><font color="#4a69bd">High hit rate</font></li>
+<li><font color="#4a69bd">Suitable for batch processing of records</font></li>
+<li><font color="#4a69bd">File organised using unique ID called <strong>key field</strong></font></li>
+</ul>
+<p>The difference between key fields in a file and primary keys in a database table. In the database table the primary key values must all be unique. This is not a requirement for key fields in any type of file. It may be sensible in certain applications to ensure key fields have unique values, but it is not mandatory.</p>
+<h3 id="Random-file-organisation"><a class="header-anchor" href="#Random-file-organisation">¶</a>Random file organisation</h3>
+<blockquote>
+<p>Method of file organisation in which records of data are physically stored in a file in <strong>any available</strong> position, the position of any record in a field is found by applying a <strong>hash algorithm</strong> on the <strong>key field</strong> of the record/record key.</p>
+</blockquote>
+<ul>
+<li>Records can be added to any empty position</li>
+<li><font color="#4a69bd">Key field is hashed to produce the home location</font></li>
+<li><font color="#4a69bd">If home location is free, insert the data</font></li>
+<li><font color="#4a69bd">Else, use overflow method to find free location to store the data</font></li>
+<li><font color="#4a69bd">If no free location is available, the file is full and data cannot be added/stored</font></li>
+<li><code>--</code></li>
+<li><font color="#4a69bd">Real-time processing</font></li>
+<li><font color="#4a69bd">Fast access to data</font></li>
+<li><font color="#4a69bd">No need to search through records</font></li>
+</ul>
+<h3 id="Past-paper-Questions"><a class="header-anchor" href="#Past-paper-Questions">¶</a>Past-paper Questions:</h3>
+<ol>
+<li><u>Compare Serial and Sequential file organisation:</u></li>
+</ol>
+<ul>
+<li><font color="#4a69bd">In both serial and sequential organisation, Records are added to the file one after another</font></li>
+<li>.<font color="#4a69bd">… and they needs to be accessed one after another</font></li>
+<li><font color="#4a69bd">For serial file organisation, records are added in a chronological order</font></li>
+<li><font color="#4a69bd">For sequential file organisation, records are stored with a given order</font></li>
+<li><font color="#4a69bd">… in the order of the key field</font></li>
+<li><font color="#4a69bd">For serial file organisation, records are added in the next available space // records are appended to the file</font></li>
+<li><font color="#4a69bd">For sequential file organisation, records are inserted into the correct position</font></li>
+</ul>
+<ol start="2">
+<li></li>
+</ol>
+<img src="/Notes/ALCS/Chapter13.2_FileOrganisation&Access/13.2Drawline.png" style="zoom: 80%;">
+<ol start="3">
+<li></li>
+</ol>
+<p><img src="/Notes/ALCS/Chapter13.2_FileOrganisation&Access/fileogr.png" alt></p>
+<ol start="4">
+<li></li>
+</ol>
+<p>The programmer decides to store all the data in a file. Initially, data from 27 locations will be stored. More rainfall locations will be added over time and will never exceeds 100. The programmer has to choose between two types of file organisation: serial and sequential.</p>
+<p><u>Give two reasons for choosing Serial file organisation:</u></p>
+<ul>
+<li><font color="#4a69bd">No need to re-sort data every time new data is added</font></li>
+<li><font color="#4a69bd">Only a small file so searching would require little processing</font></li>
+<li><font color="#4a69bd">New records can be easily added</font></li>
+</ul>
+<hr>
+<h2 id="File-access"><a class="header-anchor" href="#File-access">¶</a>File access</h2>
+<blockquote>
+<p>Method used to physically find a record in a file</p>
+</blockquote>
+<h3 id="Sequential-access"><a class="header-anchor" href="#Sequential-access">¶</a>Sequential access</h3>
+<blockquote>
+<p>A method of file access in which records are searched one after another from the physical start of the file until the required record is found, or a new record can be added to the file. This method is used for <code>serial</code> and <code>sequential</code> files.</p>
+</blockquote>
+<ul>
+<li>High hit rate</li>
+</ul>
+<p>For a <code>serial</code> file, if a particular record is being searched for, every record needs to be checked until the record is found or the whole file has been searched and that record has not been found. Any new records are appended to the end of the file.</p>
+<p>For a <code>sequential</code>file, if a particular records is being searched for, every records needs to be checked until the record is found or <em>the key filed of the current record being checked is greater than the key field of the record being searched for</em>. The rest of the file does not need to be searched as the records are sorted on ascending key field values.</p>
+<p>Sequential access if efficient when <strong>every</strong> record in the file needs to be processed. e.g. a monthly billing or payroll system.</p>
+<h3 id="Direct-access"><a class="header-anchor" href="#Direct-access">¶</a>Direct access</h3>
+<blockquote>
+<p>A method of file access in which a record can be physically found in a file without reading other records.</p>
+</blockquote>
+<ul>
+<li>Both <code>sequential</code> and <code>random</code> files can use direct access.</li>
+<li>Allow specific records to be found more quickly than using sequential access.</li>
+<li>Low hit rate</li>
+</ul>
+<p>Direct access is required when an <strong>individual</strong> record from a file needs to be processed. e.g. when a single customer record needs to be updated when the customer’s phone number is changed.</p>
+<p>For a <code>sequential</code> file, an index of all the key fields is kept and used to look up the address of the file location where a given record is stored. For large files, searching the index takes less time than searching the whole file.</p>
+<p>A separate index file is created which has two fields per record. The first record has the key field value and the second filed has a value for the position of this key field value in the main file.</p>
+<p>For a <code>random access</code> file, a hashing algorithm is used on the key filed to calculate the address of the file location where a given record is stored.</p>
+<h2 id="Hashing-algorithms"><a class="header-anchor" href="#Hashing-algorithms">¶</a>Hashing algorithms</h2>
+<blockquote>
+<p>A mathematical formula used to perform a calculation on the <code>record key</code>. The result of the calculation gives the address where the record should be found. More complex hashing algorithms are used in the encryption of data.</p>
+</blockquote>
+<p>Two ways of dealing with collision:</p>
+<p><code>open hash</code>: the record is stored in the next free space.</p>
+<p><code>close hash</code>: an overflow area is set up and the record is stored in the next free space in the overflow area.</p>
+<h3 id="Past-paper-questions-v2"><a class="header-anchor" href="#Past-paper-questions-v2">¶</a>Past-paper questions</h3>
+<ol>
+<li><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup><br>
+<img src="/Notes/ALCS/Chapter13.2_FileOrganisation&Access/hashppq.png" style="zoom:80%;"></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">FUNCTION hash(BookingID: INTEGER) RETURNS INTEGER</span><br><span class="line">	RETURN BookingID%100000 + 3</span><br><span class="line">ENDFUNCTION</span><br></pre></td></tr></table></figure>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Sequential file access <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>9608-s21-q2 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>ALCS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Chapter13.3: Floating-point numbers,Representation and Manipulation</title>
+    <url>/Notes/ALCS/Chapter13.3_Floating-pointNumbersRepresentation/</url>
+    <content><![CDATA[<h1>Chapter 13.3: Floating-point numbers: representation and manipulation</h1>
+<p><img src="/Notes/ALCS/Chapter13.3_Floating-pointNumbersRepresentation/Syllabus13.3.png" alt></p>
+<hr>
+<span id="more"></span> 
+<h2 id="Format"><a class="header-anchor" href="#Format">¶</a>Format</h2>
+<p><u>What are the effect of decreasing the number of bits allocated to Mantissa and increasing the exponent</u></p>
+<ol>
+<li><font color="#4a69bd">Reduction in precision</font>
+<ul>
+<li><font color="#4a69bd">As the number of bits in mantissa has decreased.</font></li>
+</ul>
+</li>
+<li><font color="#4a69bd">Increasing in range</font>
+<ul>
+<li><font color="#4a69bd">As the number of bits in exponent has increased.</font></li>
+</ul>
+</li>
+</ol>
+<br>
+<p>The denary number <strong>513</strong> cannot be stored accurately as normalised floating-point number in this computer system: (10 bits for mantissa, 6 bits for exponent)</p>
+<p><u>Explain reasons for this:</u></p>
+<ul>
+<li><font color="#4a69bd">Require more than 10 bits/11bits to store; the maximum number that can be stored is 511</font></li>
+<li><font color="#4a69bd">The denary 513 in binary is 1000000001 // Normalised: 0.1000000001</font></li>
+<li><font color="#4a69bd">Results in <strong>overflow</strong></font></li>
+</ul>
+<p><u>Describe an alteration to the way floating-point numbers are stored to enable this number to be stored accurately with the same total number of bits</u>:</p>
+<ul>
+<li><font color="#4a69bd">The number of bits for mantissa must be increased</font></li>
+<li><font color="#4a69bd">11 bits for mantissa and 5 bits for exponent</font></li>
+</ul>
+<hr>
+<img src="/Notes/ALCS/Chapter13.3_Floating-pointNumbersRepresentation/que1pic.png" style="zoom: 50%;">
+<ul>
+<li><font color="#4a69bd">Exponent too large to fit 4 bits as two’s complement number</font></li>
+<li><font color="#4a69bd">Exponent will turn negative</font></li>
+<li><font color="#4a69bd">… therefore the binary point moves the wrong way</font></li>
+<li><font color="#4a69bd">Value will be approximately +0.029(296875)</font></li>
+</ul>
+<p><u>Explain the trade-off between either using a large number of bits for the mantissa, or a large number of bits for the exponent</u></p>
+<ul>
+<li><font color="#4a69bd">The trade-off is between range and precision</font></li>
+<li><font color="#4a69bd">Any increase in the number of bits for the mantissa means fewer number of bits for the exponent</font></li>
+<li><font color="#4a69bd">More bits used in mantissa would result in better precision</font></li>
+<li><font color="#4a69bd">More bits used in exponent would result in larger range</font></li>
+</ul>
+<h2 id="Conversion"><a class="header-anchor" href="#Conversion">¶</a>Conversion</h2>
+<p><u>Calculate the normalised binary number for <strong>-3.75</strong>. Show your working</u></p>
+<ul>
+<li><font color="#4a69bd">-3.75 = 100.01000 // -4 + 1/4 // -4 + 0.25</font></li>
+<li><font color="#4a69bd">100.01000 becomes 1.0001000 Exponent=+2</font></li>
+<li><font color="#4a69bd">Answer: Mantissa=1.0001000 Exponent=0010</font></li>
+</ul>
+<p><u>Calculate the normalised floating-point representation of <strong>+1.5625</strong> in this system (<strong>12bit-mantissa, 4bit-exponent</strong>). Show your working</u></p>
+<ul>
+<li><font color="#4a69bd">Correct conversion to binary: 01.1001</font></li>
+<li><font color="#4a69bd">Correct calculation of the exponent: 1</font></li>
+<li><font color="#4a69bd">Answer: Mantissa=0110 0100 0000 | Exponent= 0001</font></li>
+</ul>
+<h2 id="Normalisation"><a class="header-anchor" href="#Normalisation">¶</a>Normalisation</h2>
+<p><u>Why binary/floating-point numbers are stored in normalized form</u></p>
+<ul>
+<li><font color="#4a69bd">To store the maximum range of numbers in the minimum number of bits</font></li>
+<li><font color="#4a69bd">Normalisation minimizes the number of leading zeros/ones represented</font></li>
+<li><font color="#4a69bd">Maximizing the number of significant bits // maximizing the number of precision/accuracy with given number of bits</font></li>
+<li><font color="#4a69bd">Enable large/small numbers to be stored with accuracy</font></li>
+<li><font color="#4a69bd">Avoids the possibility that many numbers have multiple representation</font></li>
+<li><code>--</code></li>
+<li><font color="#4a69bd">There will be a unique representation for a number</font></li>
+<li><font color="#4a69bd">The format will ensure it will be represented with greatest possible accuracy</font></li>
+<li><font color="#4a69bd">Multiplication is performed more accurately</font></li>
+</ul>
+<p><u>Problems that can occur when a floating-pointer number is not normalised</u></p>
+<ul>
+<li><font color="#4a69bd">Lost of precision</font></li>
+<li><font color="#4a69bd">Redundant leading zeros in the mantissa</font></li>
+<li><font color="#4a69bd">Lost of the least-significant bits (bits on the right-hand end)</font></li>
+<li><font color="#4a69bd">Multiple representation of a single number</font></li>
+</ul>
+<h2 id="Approximation-Rounding-errors"><a class="header-anchor" href="#Approximation-Rounding-errors">¶</a>Approximation &amp; Rounding errors</h2>
+<p><u>State why some binary representation can lead to rounding errors</u></p>
+<ul>
+<li><font color="#4a69bd">There’s no exact binary conversion for some numbers</font></li>
+<li><font color="#4a69bd">More bits are needed to store the number</font></li>
+</ul>
+<hr>
+<img src="/Notes/ALCS/Chapter13.3_Floating-pointNumbersRepresentation/quepic2.png" style="zoom:80%;">
+<hr>
+<img src="/Notes/ALCS/Chapter13.3_Floating-pointNumbersRepresentation/que3pic.png" style="zoom:50%;">
+<ul>
+<li><font color="#4a69bd">0.2 and 0.4 cannot be represented exactly in binary, there is a rounding error</font></li>
+<li><font color="#4a69bd">0.2 has been represented by a number just greater than 0.2</font></li>
+<li>This is similar for 0.4</li>
+<li><font color="#4a69bd">Therefore, multiplying these two representations together increases the difference</font></li>
+<li><font color="#4a69bd">Difference after calculation is significant enough to be seen</font></li>
+</ul>
+<hr>
+<img src="/Notes/ALCS/Chapter13.3_Floating-pointNumbersRepresentation/que4pic.png" style="zoom:50%;">
+<ul>
+<li>0.1 cannot be represented exactly in binary, there is a rounding error</li>
+<li>0.1 is represented by a value just less than 0.1</li>
+<li>The loop keeps adding this approximate value to the counter</li>
+<li>Until all accumulated small difference become significant enough to be seen</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>ALCS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Chapter 15.1: Processors, Parallel Processing and Virtual Machines</title>
+    <url>/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/</url>
+    <content><![CDATA[<h1>Chapter 15.1: Processors, Parallel Processing and Virtual Machines</h1>
+<p><img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/Syllabus15.1.png" alt></p>
+<span id="more"></span> 
+<h2 id="RISC-CISC"><a class="header-anchor" href="#RISC-CISC">¶</a>RISC &amp; CISC</h2>
+<blockquote>
+<p><strong>RISC</strong> - reduced instruction set computer</p>
+<p><strong>CISC</strong> - complex instruction set computer</p>
+</blockquote>
+<h3 id="Differences-between-RISC-and-CISC"><a class="header-anchor" href="#Differences-between-RISC-and-CISC">¶</a>Differences between RISC and CISC</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">RISC</th>
+<th style="text-align:center">CISC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Many instruction formats are possible</td>
+<td style="text-align:center">Uses fewer instruction formats</td>
+</tr>
+<tr>
+<td style="text-align:center">There are more addressing modes</td>
+<td style="text-align:center">Uses fewer addressing modes</td>
+</tr>
+<tr>
+<td style="text-align:center">Makes use of multi-cycle instructions</td>
+<td style="text-align:center">Makes use of single-cycle instructions</td>
+</tr>
+<tr>
+<td style="text-align:center">Instructions can be of a variable length</td>
+<td style="text-align:center">Instructions are of a fixed length</td>
+</tr>
+<tr>
+<td style="text-align:center">Longer execution time for instructions</td>
+<td style="text-align:center">Shorter execution time for instructions</td>
+</tr>
+<tr>
+<td style="text-align:center">Multiple register sets</td>
+<td style="text-align:center">Makes use of general multipurpose registers // fewer registers</td>
+</tr>
+<tr>
+<td style="text-align:center">It is more difficult to make pipelining work</td>
+<td style="text-align:center">Easier to make pipelining function correctly</td>
+</tr>
+<tr>
+<td style="text-align:center">The design emphasis is on the hardware</td>
+<td style="text-align:center">The design emphasis is one the software</td>
+</tr>
+<tr>
+<td style="text-align:center">Uses the memory unit to allow complex instructions to be carried out</td>
+<td style="text-align:center">Processor chips require fewer transistors</td>
+</tr>
+<tr>
+<td style="text-align:center">Has a programmable control unit</td>
+<td style="text-align:center">Has hard-wired control unit</td>
+</tr>
+<tr>
+<td style="text-align:center">Make more use of cache and less use of RAM</td>
+<td style="text-align:center">Make more use of RAM</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Interrupt-handling-in-pipelining"><a class="header-anchor" href="#Interrupt-handling-in-pipelining">¶</a>Interrupt handling in pipelining</h3>
+<ul>
+<li>Once the processor detects the existence of an interrupt</li>
+<li>To discard all instructions in the pipelining except for the last instruction in the writeback stage</li>
+</ul>
+<h3 id="Past-paper-questions-v3"><a class="header-anchor" href="#Past-paper-questions-v3">¶</a>Past-paper questions</h3>
+<hr>
+<img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq1.png" style="zoom: 50%;">
+<hr>
+<img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq2.png" style="zoom: 67%;">
+<hr>
+<h2 id="Pipelining-Registers"><a class="header-anchor" href="#Pipelining-Registers">¶</a>Pipelining &amp; Registers</h2>
+<blockquote>
+<p>Allow several instructions to be processed simultaneously without having to wait for the previous instructions to be completed</p>
+</blockquote>
+<ol>
+<li>Instruction Fetch cycle (IF)</li>
+<li>Instruction Decode cycle (ID)</li>
+<li>Operand Fetch cycle (OF)</li>
+<li>Instruction Execution cycle (IE)</li>
+<li>Writeback Result process (WB)</li>
+</ol>
+<p><u>Explain what is meant by pipelining:</u></p>
+<ul>
+<li><font color="#4a69bd">Pipelining is instruction level parallelism</font></li>
+<li><font color="#4a69bd">Execution of an instruction is split into a number of stages</font></li>
+<li><font color="#4a69bd">When the first stage for an instruction is completed, the first page of next instruction can start executing</font></li>
+<li><font color="#4a69bd">Another instruction can start executing before the previous one is finished</font></li>
+<li><font color="#4a69bd">Processing a number of instructions can be concurrent/simultaneous</font></li>
+</ul>
+<img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/pipeLining.jpg" style="zoom:67%;">
+<hr>
+<h2 id="Basic-computer-architectures"><a class="header-anchor" href="#Basic-computer-architectures">¶</a>Basic computer architectures</h2>
+<h3 id="SISD"><a class="header-anchor" href="#SISD">¶</a>SISD</h3>
+<ul>
+<li>There is only one processor</li>
+<li>The processor executes one sets of instructions on one sets of data</li>
+</ul>
+<h3 id="SIMD"><a class="header-anchor" href="#SIMD">¶</a>SIMD</h3>
+<ul>
+<li>The processor has several ALUs // several processors</li>
+<li>Each ALU executes the same set of instructions on different sets of data at the same time</li>
+</ul>
+<h3 id="MISD"><a class="header-anchor" href="#MISD">¶</a>MISD</h3>
+<ul>
+<li>There are several processors</li>
+<li>Each processor executes different set of instruction on the same set of data at the same time</li>
+</ul>
+<h3 id="MIMD"><a class="header-anchor" href="#MIMD">¶</a>MIMD</h3>
+<ul>
+<li>There are several processors</li>
+<li>Each processor execute different set of instruction</li>
+<li>Each processor operate on different set of data</li>
+</ul>
+<h3 id="Past-paper-questions-v4"><a class="header-anchor" href="#Past-paper-questions-v4">¶</a>Past-paper questions</h3>
+<img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq3.png" style="zoom: 50%;">
+<hr>
+<img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq4.png" style="zoom: 67%;">
+<h2 id="Massively-parallel-computers"><a class="header-anchor" href="#Massively-parallel-computers">¶</a>Massively parallel computers</h2>
+<p><u>Describe what is meant by a massively paralleled computer</u></p>
+<ul>
+<li><font color="#4a69bd">Large number of processors</font></li>
+<li><font color="#4a69bd">… Working collaboratively on the same program</font></li>
+<li><font color="#4a69bd">… Working together simultaneously on the same program</font></li>
+<li><font color="#4a69bd">… Communicating via a message interface</font></li>
+</ul>
+<h3 id="Properties"><a class="header-anchor" href="#Properties">¶</a>Properties</h3>
+<ul>
+<li><font color="#4a69bd">A large number of processors</font></li>
+<li><font color="#4a69bd">Collaborative processing // coordinated simultaneous processing</font></li>
+<li><font color="#4a69bd">Network infrastructure</font></li>
+<li><font color="#4a69bd">Communicating using message interface</font></li>
+<li>It is a much faster way to handle large volumes of independent data</li>
+<li>The data used sometimes relies on result of previous operation, therefore such data cannot be handled in parallel</li>
+<li>Datasets require the same processing for it to work</li>
+<li>It overcomes the Von Neumann bottleneck and therefore greatly improves CPU performance</li>
+<li>Parallel processing requires more expensive hardware</li>
+</ul>
+<h3 id="Past-paper-Questions-v2"><a class="header-anchor" href="#Past-paper-Questions-v2">¶</a>Past-paper Questions</h3>
+<p><u>Changes needed for codes in order to run on massively paralleled computer</u></p>
+<ul>
+<li><font color="#4a69bd">Split into blocks of code</font></li>
+<li><font color="#4a69bd">… that can be processed simultaneously</font></li>
+<li><font color="#4a69bd">… instead of sequentially</font></li>
+<li><font color="#4a69bd">Each block is processed by a different processor</font></li>
+<li><font color="#4a69bd">Which allows each of many processors to process the different blocks of code independently</font></li>
+<li><font color="#4a69bd">Requires both parallelism and coordination</font></li>
+</ul>
+<p><u>Explain one of the hardware issues that will be overcome if a massively parallel computer is to function correctly</u></p>
+<ul>
+<li><font color="#4a69bd">Communication between processors is the issue</font></li>
+<li><font color="#4a69bd">Each processor needs a link to other processors</font></li>
+<li><font color="#4a69bd">Many processors require many of these links</font></li>
+<li><font color="#4a69bd">Challenging topology</font></li>
+</ul>
+<p><em>A computer has a single processor that contains four processing units.</em><br>
+<u>Explain why this is not an example of a massively paralleled computer</u>:</p>
+<ul>
+<li><font color="#4a69bd">Only one separate processor</font></li>
+<li><font color="#4a69bd">Quad core computer system // processing unit shares the same bus</font></li>
+</ul>
+<p><u>Identify different types of parallelism</u></p>
+<ul>
+<li>Instruction</li>
+<li>Processor</li>
+<li>Memory usage</li>
+<li>Computer System</li>
+</ul>
+<h2 id="Virtual-machine"><a class="header-anchor" href="#Virtual-machine">¶</a>Virtual machine</h2>
+<blockquote>
+<p><font color="#4a69bd">An emulation of an existing computer/program/operating system. A computer OS running with another computer’s OS.</font></p>
+<p>Using a software to implement a hardware setup</p>
+</blockquote>
+<h3 id="Host-OS"><a class="header-anchor" href="#Host-OS">¶</a>Host OS</h3>
+<ul>
+<li><font color="#4a69bd">The operating system that is actually controlling the physical hardware</font></li>
+<li><font color="#4a69bd">The operating system for the physical hardware</font></li>
+<li><font color="#4a69bd">Guest OS is running under the host OS</font></li>
+</ul>
+<h3 id="Guest-OS"><a class="header-anchor" href="#Guest-OS">¶</a>Guest OS</h3>
+<ul>
+<li><font color="#4a69bd">An operating system running in the virtual machine</font></li>
+<li><font color="#4a69bd">Controls virtual hardware</font></li>
+<li><font color="#4a69bd">OS being emulated</font></li>
+</ul>
+<h3 id="Hypervisor"><a class="header-anchor" href="#Hypervisor">¶</a>Hypervisor</h3>
+<blockquote>
+<p><font color="#4a69bd">Virtual machine software that creates and runs virtual machine</font></p>
+</blockquote>
+<ul>
+<li>Software, not hardware</li>
+<li>Creates/deletes/manages virtual machine</li>
+<li>Translates the instruction used by the guest operating system to that required by the host operating system</li>
+<li>Hardware emulation</li>
+<li>Protects each virtual machine
+<ul>
+<li>So instances can be tested together</li>
+</ul>
+</li>
+</ul>
+<h3 id="Benefits"><a class="header-anchor" href="#Benefits">¶</a>Benefits</h3>
+<ul>
+<li><font color="#4a69bd">Multiple operating systems can exist simultaneously</font></li>
+<li><font color="#4a69bd">… allow for testing using the same hardware</font></li>
+<li><font color="#4a69bd">Only one set of hardware required</font></li>
+<li><font color="#4a69bd">… reduces cost of producing the app</font></li>
+<li><font color="#4a69bd">No need to set up more than one computer</font></li>
+<li><code>--</code></li>
+<li><font color="#4a69bd">Software can be tried on different OS using the same hardware</font></li>
+<li><font color="#4a69bd">No need to purchase all sorts of different software</font></li>
+<li><font color="#4a69bd">Easier to recover if the system issue causes the system to crash</font></li>
+<li><font color="#4a69bd">VM provides protection to other software</font></li>
+<li><code>--</code></li>
+<li><font color="#4a69bd">No need to acquire client hardware for testing</font></li>
+<li><font color="#4a69bd">Reduce set-up time for test system</font></li>
+<li><font color="#4a69bd">Common development system for all developers</font></li>
+<li><code>--</code></li>
+<li>They allow modern systems to use programs that run on obsolete or unsupported platform<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></li>
+<li>They allow platform independent program to run on multiple platforms</li>
+<li>They allow one computer to behave as several computers simultaneously</li>
+<li>They can be easily backed up, copied, and reinstalled.</li>
+</ul>
+<h3 id="Limitations"><a class="header-anchor" href="#Limitations">¶</a>Limitations</h3>
+<ul>
+<li><font color="#4a69bd">Time and effort required for implementation</font></li>
+<li><font color="#4a69bd">Implementation would not offer the same level of performance that would be obtained in a normal system</font></li>
+<li><font color="#4a69bd">Expensive, complex to manage and maintain</font></li>
+<li><font color="#4a69bd">Execution of extra code, processing time increased</font>
+<ul>
+<li><font color="#4a69bd">So cannot accurately test speed for real performance</font></li>
+<li><font color="#4a69bd">Performance is degraded</font></li>
+</ul>
+</li>
+<li><font color="#4a69bd">May not be able to emulate some hardware</font>
+<ul>
+<li><font color="#4a69bd">So that the hardware cannot be tested using virtual machine</font></li>
+</ul>
+</li>
+<li><code>--</code></li>
+<li><font color="#4a69bd">Virtual machine may not be able to emulate some hardware</font></li>
+<li><font color="#4a69bd">Virtual machine cannot directly access some hardware</font></li>
+<li><font color="#4a69bd">Using virtual machine means execution of extra code // processing time increased</font></li>
+<li><font color="#4a69bd">A virtual machine might not be as efficient // performance degraded</font></li>
+<li><font color="#4a69bd">Using a virtual machine increases the maintenance overheads </font></li>
+</ul>
+<h3 id="Role-of-virtual-machine-software"><a class="header-anchor" href="#Role-of-virtual-machine-software">¶</a>Role of virtual machine software</h3>
+<ol>
+<li><font color="#4a69bd">Create/delete virtual machines</font></li>
+<li><font color="#4a69bd">translate instruction used by the guest operating system to that required by the host operating system</font></li>
+<li><font color="#4a69bd">Existing hardware made available to guest OS //  hardware emulation</font></li>
+<li><font color="#4a69bd">Ensure each virtual machine is protected from actions from other virtual machines </font></li>
+</ol>
+<p><img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/virtualMachine.jpg" alt></p>
+<h3 id="Past-paper-questions-v5"><a class="header-anchor" href="#Past-paper-questions-v5">¶</a>Past-paper questions</h3>
+<p>A virtual machine is a <font color="#4a69bd"><u>software/program</u></font> that emulate a <font color="#4a69bd"><u>physical/different</u></font> computer system; A virtual machine allow multiple <font color="#4a69bd"><u>guest</u></font> operating system to run on one computer using <font color="#4a69bd"><u>host</u></font> operating system</p>
+<p><u>Describe what happens after the guest operating system has received the data request from the application</u>:</p>
+<ul>
+<li><font color="#4a69bd">Guest OS handles the request as if it were running on its own physical machine</font></li>
+<li><font color="#4a69bd">Guest OS handles the request as usual </font></li>
+<li><font color="#4a69bd">I/O requests are translated by the virtual machine software</font></li>
+<li><font color="#4a69bd">Into instruction executable by the host OS</font></li>
+<li><font color="#4a69bd">Host OS retrieves the data from the file</font></li>
+<li><font color="#4a69bd">Host OS passes the data into virtual machine software</font></li>
+<li><font color="#4a69bd">The virtual machine passes the data to the guest OS</font></li>
+<li><font color="#4a69bd">Guest OS passes the data to the application </font></li>
+</ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://img1.wsimg.com/blobby/go/9a8687c5-eecd-45f3-821d-7cdfe880b594/downloads/15.1%20Virtual%20Machine%20(MT-L).pdf">https://img1.wsimg.com/blobby/go/9a8687c5-eecd-45f3-821d-7cdfe880b594/downloads/15.1 Virtual Machine (MT-L).pdf</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>ALCS</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Chapter 14: Communication and Internet technologies</title>
-    <url>/2022/04/13/Chapter14_Communication&amp;InternetTechnologies/</url>
+    <url>/Notes/ALCS/Chapter14_Communication&amp;InternetTechnologies/</url>
     <content><![CDATA[<h1>Chapter 14: Communication and Internet technologies</h1>
-<p><img src="/2022/04/13/Chapter14_Communication&InternetTechnologies/commu.png" alt></p>
+<p><img src="/Notes/ALCS/Chapter14_Communication&InternetTechnologies/commu.png" alt></p>
 <hr>
 <span id="more"></span>
 <h2 id="Protocols"><a class="header-anchor" href="#Protocols">¶</a>Protocols</h2>
@@ -510,779 +1042,10 @@ https://majidtahir.com/a-level9618
       </tags>
   </entry>
   <entry>
-    <title>Chapter13.3: Floating-point numbers,Representation and Manipulation</title>
-    <url>/2022/05/02/Chapter13.3_Floating-pointNumbersRepresentation/</url>
-    <content><![CDATA[<h1>Chapter 13.3: Floating-point numbers: representation and manipulation</h1>
-<p><img src="/2022/05/02/Chapter13.3_Floating-pointNumbersRepresentation/Syllabus13.3.png" alt></p>
-<hr>
-<span id="more"></span> 
-<h2 id="Format"><a class="header-anchor" href="#Format">¶</a>Format</h2>
-<p><u>What are the effect of decreasing the number of bits allocated to Mantissa and increasing the exponent</u></p>
-<ol>
-<li><font color="#4a69bd">Reduction in precision</font>
-<ul>
-<li><font color="#4a69bd">As the number of bits in mantissa has decreased.</font></li>
-</ul>
-</li>
-<li><font color="#4a69bd">Increasing in range</font>
-<ul>
-<li><font color="#4a69bd">As the number of bits in exponent has increased.</font></li>
-</ul>
-</li>
-</ol>
-<br>
-<p>The denary number <strong>513</strong> cannot be stored accurately as normalised floating-point number in this computer system: (10 bits for mantissa, 6 bits for exponent)</p>
-<p><u>Explain reasons for this:</u></p>
-<ul>
-<li><font color="#4a69bd">Require more than 10 bits/11bits to store; the maximum number that can be stored is 511</font></li>
-<li><font color="#4a69bd">The denary 513 in binary is 1000000001 // Normalised: 0.1000000001</font></li>
-<li><font color="#4a69bd">Results in <strong>overflow</strong></font></li>
-</ul>
-<p><u>Describe an alteration to the way floating-point numbers are stored to enable this number to be stored accurately with the same total number of bits</u>:</p>
-<ul>
-<li><font color="#4a69bd">The number of bits for mantissa must be increased</font></li>
-<li><font color="#4a69bd">11 bits for mantissa and 5 bits for exponent</font></li>
-</ul>
-<hr>
-<img src="/2022/05/02/Chapter13.3_Floating-pointNumbersRepresentation/que1pic.png" style="zoom: 50%;">
-<ul>
-<li><font color="#4a69bd">Exponent too large to fit 4 bits as two’s complement number</font></li>
-<li><font color="#4a69bd">Exponent will turn negative</font></li>
-<li><font color="#4a69bd">… therefore the binary point moves the wrong way</font></li>
-<li><font color="#4a69bd">Value will be approximately +0.029(296875)</font></li>
-</ul>
-<p><u>Explain the trade-off between either using a large number of bits for the mantissa, or a large number of bits for the exponent</u></p>
-<ul>
-<li><font color="#4a69bd">The trade-off is between range and precision</font></li>
-<li><font color="#4a69bd">Any increase in the number of bits for the mantissa means fewer number of bits for the exponent</font></li>
-<li><font color="#4a69bd">More bits used in mantissa would result in better precision</font></li>
-<li><font color="#4a69bd">More bits used in exponent would result in larger range</font></li>
-</ul>
-<h2 id="Conversion"><a class="header-anchor" href="#Conversion">¶</a>Conversion</h2>
-<p><u>Calculate the normalised binary number for <strong>-3.75</strong>. Show your working</u></p>
-<ul>
-<li><font color="#4a69bd">-3.75 = 100.01000 // -4 + 1/4 // -4 + 0.25</font></li>
-<li><font color="#4a69bd">100.01000 becomes 1.0001000 Exponent=+2</font></li>
-<li><font color="#4a69bd">Answer: Mantissa=1.0001000 Exponent=0010</font></li>
-</ul>
-<p><u>Calculate the normalised floating-point representation of <strong>+1.5625</strong> in this system (<strong>12bit-mantissa, 4bit-exponent</strong>). Show your working</u></p>
-<ul>
-<li><font color="#4a69bd">Correct conversion to binary: 01.1001</font></li>
-<li><font color="#4a69bd">Correct calculation of the exponent: 1</font></li>
-<li><font color="#4a69bd">Answer: Mantissa=0110 0100 0000 | Exponent= 0001</font></li>
-</ul>
-<h2 id="Normalisation"><a class="header-anchor" href="#Normalisation">¶</a>Normalisation</h2>
-<p><u>Why binary/floating-point numbers are stored in normalized form</u></p>
-<ul>
-<li><font color="#4a69bd">To store the maximum range of numbers in the minimum number of bits</font></li>
-<li><font color="#4a69bd">Normalisation minimizes the number of leading zeros/ones represented</font></li>
-<li><font color="#4a69bd">Maximizing the number of significant bits // maximizing the number of precision/accuracy with given number of bits</font></li>
-<li><font color="#4a69bd">Enable large/small numbers to be stored with accuracy</font></li>
-<li><font color="#4a69bd">Avoids the possibility that many numbers have multiple representation</font></li>
-<li><code>--</code></li>
-<li><font color="#4a69bd">There will be a unique representation for a number</font></li>
-<li><font color="#4a69bd">The format will ensure it will be represented with greatest possible accuracy</font></li>
-<li><font color="#4a69bd">Multiplication is performed more accurately</font></li>
-</ul>
-<p><u>Problems that can occur when a floating-pointer number is not normalised</u></p>
-<ul>
-<li><font color="#4a69bd">Lost of precision</font></li>
-<li><font color="#4a69bd">Redundant leading zeros in the mantissa</font></li>
-<li><font color="#4a69bd">Lost of the least-significant bits (bits on the right-hand end)</font></li>
-<li><font color="#4a69bd">Multiple representation of a single number</font></li>
-</ul>
-<h2 id="Approximation-Rounding-errors"><a class="header-anchor" href="#Approximation-Rounding-errors">¶</a>Approximation &amp; Rounding errors</h2>
-<p><u>State why some binary representation can lead to rounding errors</u></p>
-<ul>
-<li><font color="#4a69bd">There’s no exact binary conversion for some numbers</font></li>
-<li><font color="#4a69bd">More bits are needed to store the number</font></li>
-</ul>
-<hr>
-<img src="/2022/05/02/Chapter13.3_Floating-pointNumbersRepresentation/quepic2.png" style="zoom:80%;">
-<hr>
-<img src="/2022/05/02/Chapter13.3_Floating-pointNumbersRepresentation/que3pic.png" style="zoom:50%;">
-<ul>
-<li><font color="#4a69bd">0.2 and 0.4 cannot be represented exactly in binary, there is a rounding error</font></li>
-<li><font color="#4a69bd">0.2 has been represented by a number just greater than 0.2</font></li>
-<li>This is similar for 0.4</li>
-<li><font color="#4a69bd">Therefore, multiplying these two representations together increases the difference</font></li>
-<li><font color="#4a69bd">Difference after calculation is significant enough to be seen</font></li>
-</ul>
-<hr>
-<img src="/2022/05/02/Chapter13.3_Floating-pointNumbersRepresentation/que4pic.png" style="zoom:50%;">
-<ul>
-<li>0.1 cannot be represented exactly in binary, there is a rounding error</li>
-<li>0.1 is represented by a value just less than 0.1</li>
-<li>The loop keeps adding this approximate value to the counter</li>
-<li>Until all accumulated small difference become significant enough to be seen</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Notes</category>
-        <category>ALCS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Chapter 13.2: File organisation and access</title>
-    <url>/2022/04/28/Chapter13.2_FileOrganisation&amp;Access/</url>
-    <content><![CDATA[<h1>Chapter 13.2: File organisation and access</h1>
-<p><img src="/2022/04/28/Chapter13.2_FileOrganisation&Access/13.2.png" alt></p>
-<hr>
-<span id="more"></span>
-<h2 id="File-organisation"><a class="header-anchor" href="#File-organisation">¶</a>File organisation</h2>
-<h3 id="Serial-file-organisation"><a class="header-anchor" href="#Serial-file-organisation">¶</a>Serial file organisation</h3>
-<blockquote>
-<p>Method of file organisation in which records of data are physically stored in a file, one after another, <strong>in the order they were added to the file</strong></p>
-</blockquote>
-<p>New records are appended to the end of the file. Serial file organisation is often used for temporary files storing transactions to be made to more permanent files. e.g. storing customer meter reading for gas/electricity before they are used to send the bills to all customers.</p>
-<ul>
-<li>Each transaction is added to the file in the order of arrival</li>
-<li>These records will be in chronological order</li>
-<li><font color="#4a69bd">High hit rate</font></li>
-<li><font color="#4a69bd">Suitable for batch processing</font></li>
-<li><font color="#4a69bd">Order not important</font></li>
-<li><font color="#4a69bd">The records will be accessed one after another</font><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></li>
-</ul>
-<h3 id="Sequential-file-organisation"><a class="header-anchor" href="#Sequential-file-organisation">¶</a>Sequential file organisation</h3>
-<blockquote>
-<p>Method of file organisation in which records of data are physically stored in a file, one after another, <strong>in a given order</strong></p>
-</blockquote>
-<p>Physically stores records of data in a file, one after another, in a given order. The order is usually based on the <strong>key field</strong> of the records as this is the unique identifier.</p>
-<ul>
-<li><font color="#4a69bd">High hit rate</font></li>
-<li><font color="#4a69bd">Suitable for batch processing of records</font></li>
-<li><font color="#4a69bd">File organised using unique ID called <strong>key field</strong></font></li>
-</ul>
-<p>The difference between key fields in a file and primary keys in a database table. In the database table the primary key values must all be unique. This is not a requirement for key fields in any type of file. It may be sensible in certain applications to ensure key fields have unique values, but it is not mandatory.</p>
-<h3 id="Random-file-organisation"><a class="header-anchor" href="#Random-file-organisation">¶</a>Random file organisation</h3>
-<blockquote>
-<p>Method of file organisation in which records of data are physically stored in a file in <strong>any available</strong> position, the position of any record in a field is found by applying a <strong>hash algorithm</strong> on the <strong>key field</strong> of the record/record key.</p>
-</blockquote>
-<ul>
-<li>Records can be added to any empty position</li>
-<li><font color="#4a69bd">Key field is hashed to produce the home location</font></li>
-<li><font color="#4a69bd">If home location is free, insert the data</font></li>
-<li><font color="#4a69bd">Else, use overflow method to find free location to store the data</font></li>
-<li><font color="#4a69bd">If no free location is available, the file is full and data cannot be added/stored</font></li>
-<li><code>--</code></li>
-<li><font color="#4a69bd">Real-time processing</font></li>
-<li><font color="#4a69bd">Fast access to data</font></li>
-<li><font color="#4a69bd">No need to search through records</font></li>
-</ul>
-<h3 id="Past-paper-Questions"><a class="header-anchor" href="#Past-paper-Questions">¶</a>Past-paper Questions:</h3>
-<ol>
-<li><u>Compare Serial and Sequential file organisation:</u></li>
-</ol>
-<ul>
-<li><font color="#4a69bd">In both serial and sequential organisation, Records are added to the file one after another</font></li>
-<li>.<font color="#4a69bd">… and they needs to be accessed one after another</font></li>
-<li><font color="#4a69bd">For serial file organisation, records are added in a chronological order</font></li>
-<li><font color="#4a69bd">For sequential file organisation, records are stored with a given order</font></li>
-<li><font color="#4a69bd">… in the order of the key field</font></li>
-<li><font color="#4a69bd">For serial file organisation, records are added in the next available space // records are appended to the file</font></li>
-<li><font color="#4a69bd">For sequential file organisation, records are inserted into the correct position</font></li>
-</ul>
-<ol start="2">
-<li></li>
-</ol>
-<img src="/2022/04/28/Chapter13.2_FileOrganisation&Access/13.2Drawline.png" style="zoom: 80%;">
-<ol start="3">
-<li></li>
-</ol>
-<p><img src="/2022/04/28/Chapter13.2_FileOrganisation&Access/fileogr.png" alt></p>
-<ol start="4">
-<li></li>
-</ol>
-<p>The programmer decides to store all the data in a file. Initially, data from 27 locations will be stored. More rainfall locations will be added over time and will never exceeds 100. The programmer has to choose between two types of file organisation: serial and sequential.</p>
-<p><u>Give two reasons for choosing Serial file organisation:</u></p>
-<ul>
-<li><font color="#4a69bd">No need to re-sort data every time new data is added</font></li>
-<li><font color="#4a69bd">Only a small file so searching would require little processing</font></li>
-<li><font color="#4a69bd">New records can be easily added</font></li>
-</ul>
-<hr>
-<h2 id="File-access"><a class="header-anchor" href="#File-access">¶</a>File access</h2>
-<blockquote>
-<p>Method used to physically find a record in a file</p>
-</blockquote>
-<h3 id="Sequential-access"><a class="header-anchor" href="#Sequential-access">¶</a>Sequential access</h3>
-<blockquote>
-<p>A method of file access in which records are searched one after another from the physical start of the file until the required record is found, or a new record can be added to the file. This method is used for <code>serial</code> and <code>sequential</code> files.</p>
-</blockquote>
-<ul>
-<li>High hit rate</li>
-</ul>
-<p>For a <code>serial</code> file, if a particular record is being searched for, every record needs to be checked until the record is found or the whole file has been searched and that record has not been found. Any new records are appended to the end of the file.</p>
-<p>For a <code>sequential</code>file, if a particular records is being searched for, every records needs to be checked until the record is found or <em>the key filed of the current record being checked is greater than the key field of the record being searched for</em>. The rest of the file does not need to be searched as the records are sorted on ascending key field values.</p>
-<p>Sequential access if efficient when <strong>every</strong> record in the file needs to be processed. e.g. a monthly billing or payroll system.</p>
-<h3 id="Direct-access"><a class="header-anchor" href="#Direct-access">¶</a>Direct access</h3>
-<blockquote>
-<p>A method of file access in which a record can be physically found in a file without reading other records.</p>
-</blockquote>
-<ul>
-<li>Both <code>sequential</code> and <code>random</code> files can use direct access.</li>
-<li>Allow specific records to be found more quickly than using sequential access.</li>
-<li>Low hit rate</li>
-</ul>
-<p>Direct access is required when an <strong>individual</strong> record from a file needs to be processed. e.g. when a single customer record needs to be updated when the customer’s phone number is changed.</p>
-<p>For a <code>sequential</code> file, an index of all the key fields is kept and used to look up the address of the file location where a given record is stored. For large files, searching the index takes less time than searching the whole file.</p>
-<p>A separate index file is created which has two fields per record. The first record has the key field value and the second filed has a value for the position of this key field value in the main file.</p>
-<p>For a <code>random access</code> file, a hashing algorithm is used on the key filed to calculate the address of the file location where a given record is stored.</p>
-<h2 id="Hashing-algorithms"><a class="header-anchor" href="#Hashing-algorithms">¶</a>Hashing algorithms</h2>
-<blockquote>
-<p>A mathematical formula used to perform a calculation on the <code>record key</code>. The result of the calculation gives the address where the record should be found. More complex hashing algorithms are used in the encryption of data.</p>
-</blockquote>
-<p>Two ways of dealing with collision:</p>
-<p><code>open hash</code>: the record is stored in the next free space.</p>
-<p><code>close hash</code>: an overflow area is set up and the record is stored in the next free space in the overflow area.</p>
-<h3 id="Past-paper-questions-v2"><a class="header-anchor" href="#Past-paper-questions-v2">¶</a>Past-paper questions</h3>
-<ol>
-<li><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup><br>
-<img src="/2022/04/28/Chapter13.2_FileOrganisation&Access/hashppq.png" style="zoom:80%;"></li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">FUNCTION hash(BookingID: INTEGER) RETURNS INTEGER</span><br><span class="line">	RETURN BookingID%100000 + 3</span><br><span class="line">ENDFUNCTION</span><br></pre></td></tr></table></figure>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>Sequential file access <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>9608-s21-q2 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-]]></content>
-      <categories>
-        <category>Notes</category>
-        <category>ALCS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Chapter 15.1: Processors, Parallel Processing and Virtual Machines</title>
-    <url>/2022/05/02/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/</url>
-    <content><![CDATA[<h1>Chapter 15.1: Processors, Parallel Processing and Virtual Machines</h1>
-<p><img src="/2022/05/02/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/Syllabus15.1.png" alt></p>
-<span id="more"></span> 
-<h2 id="RISC-CISC"><a class="header-anchor" href="#RISC-CISC">¶</a>RISC &amp; CISC</h2>
-<blockquote>
-<p><strong>RISC</strong> - reduced instruction set computer</p>
-<p><strong>CISC</strong> - complex instruction set computer</p>
-</blockquote>
-<h3 id="Differences-between-RISC-and-CISC"><a class="header-anchor" href="#Differences-between-RISC-and-CISC">¶</a>Differences between RISC and CISC</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">RISC</th>
-<th style="text-align:center">CISC</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Many instruction formats are possible</td>
-<td style="text-align:center">Uses fewer instruction formats</td>
-</tr>
-<tr>
-<td style="text-align:center">There are more addressing modes</td>
-<td style="text-align:center">Uses fewer addressing modes</td>
-</tr>
-<tr>
-<td style="text-align:center">Makes use of multi-cycle instructions</td>
-<td style="text-align:center">Makes use of single-cycle instructions</td>
-</tr>
-<tr>
-<td style="text-align:center">Instructions can be of a variable length</td>
-<td style="text-align:center">Instructions are of a fixed length</td>
-</tr>
-<tr>
-<td style="text-align:center">Longer execution time for instructions</td>
-<td style="text-align:center">Shorter execution time for instructions</td>
-</tr>
-<tr>
-<td style="text-align:center">Multiple register sets</td>
-<td style="text-align:center">Makes use of general multipurpose registers // fewer registers</td>
-</tr>
-<tr>
-<td style="text-align:center">It is more difficult to make pipelining work</td>
-<td style="text-align:center">Easier to make pipelining function correctly</td>
-</tr>
-<tr>
-<td style="text-align:center">The design emphasis is on the hardware</td>
-<td style="text-align:center">The design emphasis is one the software</td>
-</tr>
-<tr>
-<td style="text-align:center">Uses the memory unit to allow complex instructions to be carried out</td>
-<td style="text-align:center">Processor chips require fewer transistors</td>
-</tr>
-<tr>
-<td style="text-align:center">Has a programmable control unit</td>
-<td style="text-align:center">Has hard-wired control unit</td>
-</tr>
-<tr>
-<td style="text-align:center">Make more use of cache and less use of RAM</td>
-<td style="text-align:center">Make more use of RAM</td>
-</tr>
-</tbody>
-</table>
-<h3 id="Interrupt-handling-in-pipelining"><a class="header-anchor" href="#Interrupt-handling-in-pipelining">¶</a>Interrupt handling in pipelining</h3>
-<ul>
-<li>Once the processor detects the existence of an interrupt</li>
-<li>To discard all instructions in the pipelining except for the last instruction in the writeback stage</li>
-</ul>
-<h3 id="Past-paper-questions-v3"><a class="header-anchor" href="#Past-paper-questions-v3">¶</a>Past-paper questions</h3>
-<hr>
-<img src="/2022/05/02/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq1.png" style="zoom: 50%;">
-<hr>
-<img src="/2022/05/02/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq2.png" style="zoom: 67%;">
-<hr>
-<h2 id="Pipelining-Registers"><a class="header-anchor" href="#Pipelining-Registers">¶</a>Pipelining &amp; Registers</h2>
-<blockquote>
-<p>Allow several instructions to be processed simultaneously without having to wait for the previous instructions to be completed</p>
-</blockquote>
-<ol>
-<li>Instruction Fetch cycle (IF)</li>
-<li>Instruction Decode cycle (ID)</li>
-<li>Operand Fetch cycle (OF)</li>
-<li>Instruction Execution cycle (IE)</li>
-<li>Writeback Result process (WB)</li>
-</ol>
-<p><u>Explain what is meant by pipelining:</u></p>
-<ul>
-<li><font color="#4a69bd">Pipelining is instruction level parallelism</font></li>
-<li><font color="#4a69bd">Execution of an instruction is split into a number of stages</font></li>
-<li><font color="#4a69bd">When the first stage for an instruction is completed, the first page of next instruction can start executing</font></li>
-<li><font color="#4a69bd">Another instruction can start executing before the previous one is finished</font></li>
-<li><font color="#4a69bd">Processing a number of instructions can be concurrent/simultaneous</font></li>
-</ul>
-<img src="/2022/05/02/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/pipeLining.jpg" style="zoom:67%;">
-<hr>
-<h2 id="Basic-computer-architectures"><a class="header-anchor" href="#Basic-computer-architectures">¶</a>Basic computer architectures</h2>
-<h3 id="SISD"><a class="header-anchor" href="#SISD">¶</a>SISD</h3>
-<ul>
-<li>There is only one processor</li>
-<li>The processor executes one sets of instructions on one sets of data</li>
-</ul>
-<h3 id="SIMD"><a class="header-anchor" href="#SIMD">¶</a>SIMD</h3>
-<ul>
-<li>The processor has several ALUs // several processors</li>
-<li>Each ALU executes the same set of instructions on different sets of data at the same time</li>
-</ul>
-<h3 id="MISD"><a class="header-anchor" href="#MISD">¶</a>MISD</h3>
-<ul>
-<li>There are several processors</li>
-<li>Each processor executes different set of instruction on the same set of data at the same time</li>
-</ul>
-<h3 id="MIMD"><a class="header-anchor" href="#MIMD">¶</a>MIMD</h3>
-<ul>
-<li>There are several processors</li>
-<li>Each processor execute different set of instruction</li>
-<li>Each processor operate on different set of data</li>
-</ul>
-<h3 id="Past-paper-questions-v4"><a class="header-anchor" href="#Past-paper-questions-v4">¶</a>Past-paper questions</h3>
-<img src="/2022/05/02/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq3.png" style="zoom: 50%;">
-<hr>
-<img src="/2022/05/02/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq4.png" style="zoom: 67%;">
-<h2 id="Massively-parallel-computers"><a class="header-anchor" href="#Massively-parallel-computers">¶</a>Massively parallel computers</h2>
-<p><u>Describe what is meant by a massively paralleled computer</u></p>
-<ul>
-<li><font color="#4a69bd">Large number of processors</font></li>
-<li><font color="#4a69bd">… Working collaboratively on the same program</font></li>
-<li><font color="#4a69bd">… Working together simultaneously on the same program</font></li>
-<li><font color="#4a69bd">… Communicating via a message interface</font></li>
-</ul>
-<h3 id="Properties"><a class="header-anchor" href="#Properties">¶</a>Properties</h3>
-<ul>
-<li><font color="#4a69bd">A large number of processors</font></li>
-<li><font color="#4a69bd">Collaborative processing // coordinated simultaneous processing</font></li>
-<li><font color="#4a69bd">Network infrastructure</font></li>
-<li><font color="#4a69bd">Communicating using message interface</font></li>
-<li>It is a much faster way to handle large volumes of independent data</li>
-<li>The data used sometimes relies on result of previous operation, therefore such data cannot be handled in parallel</li>
-<li>Datasets require the same processing for it to work</li>
-<li>It overcomes the Von Neumann bottleneck and therefore greatly improves CPU performance</li>
-<li>Parallel processing requires more expensive hardware</li>
-</ul>
-<h3 id="Past-paper-Questions-v2"><a class="header-anchor" href="#Past-paper-Questions-v2">¶</a>Past-paper Questions</h3>
-<p><u>Changes needed for codes in order to run on massively paralleled computer</u></p>
-<ul>
-<li><font color="#4a69bd">Split into blocks of code</font></li>
-<li><font color="#4a69bd">… that can be processed simultaneously</font></li>
-<li><font color="#4a69bd">… instead of sequentially</font></li>
-<li><font color="#4a69bd">Each block is processed by a different processor</font></li>
-<li><font color="#4a69bd">Which allows each of many processors to process the different blocks of code independently</font></li>
-<li><font color="#4a69bd">Requires both parallelism and coordination</font></li>
-</ul>
-<p><u>Explain one of the hardware issues that will be overcome if a massively parallel computer is to function correctly</u></p>
-<ul>
-<li><font color="#4a69bd">Communication between processors is the issue</font></li>
-<li><font color="#4a69bd">Each processor needs a link to other processors</font></li>
-<li><font color="#4a69bd">Many processors require many of these links</font></li>
-<li><font color="#4a69bd">Challenging topology</font></li>
-</ul>
-<p><em>A computer has a single processor that contains four processing units.</em><br>
-<u>Explain why this is not an example of a massively paralleled computer</u>:</p>
-<ul>
-<li><font color="#4a69bd">Only one separate processor</font></li>
-<li><font color="#4a69bd">Quad core computer system // processing unit shares the same bus</font></li>
-</ul>
-<p><u>Identify different types of parallelism</u></p>
-<ul>
-<li>Instruction</li>
-<li>Processor</li>
-<li>Memory usage</li>
-<li>Computer System</li>
-</ul>
-<h2 id="Virtual-machine"><a class="header-anchor" href="#Virtual-machine">¶</a>Virtual machine</h2>
-<blockquote>
-<p><font color="#4a69bd">An emulation of an existing computer/program/operating system. A computer OS running with another computer’s OS.</font></p>
-<p>Using a software to implement a hardware setup</p>
-</blockquote>
-<h3 id="Host-OS"><a class="header-anchor" href="#Host-OS">¶</a>Host OS</h3>
-<ul>
-<li><font color="#4a69bd">The operating system that is actually controlling the physical hardware</font></li>
-<li><font color="#4a69bd">The operating system for the physical hardware</font></li>
-<li><font color="#4a69bd">Guest OS is running under the host OS</font></li>
-</ul>
-<h3 id="Guest-OS"><a class="header-anchor" href="#Guest-OS">¶</a>Guest OS</h3>
-<ul>
-<li><font color="#4a69bd">An operating system running in the virtual machine</font></li>
-<li><font color="#4a69bd">Controls virtual hardware</font></li>
-<li><font color="#4a69bd">OS being emulated</font></li>
-</ul>
-<h3 id="Hypervisor"><a class="header-anchor" href="#Hypervisor">¶</a>Hypervisor</h3>
-<blockquote>
-<p><font color="#4a69bd">Virtual machine software that creates and runs virtual machine</font></p>
-</blockquote>
-<ul>
-<li>Software, not hardware</li>
-<li>Creates/deletes/manages virtual machine</li>
-<li>Translates the instruction used by the guest operating system to that required by the host operating system</li>
-<li>Hardware emulation</li>
-<li>Protects each virtual machine
-<ul>
-<li>So instances can be tested together</li>
-</ul>
-</li>
-</ul>
-<h3 id="Benefits"><a class="header-anchor" href="#Benefits">¶</a>Benefits</h3>
-<ul>
-<li><font color="#4a69bd">Multiple operating systems can exist simultaneously</font></li>
-<li><font color="#4a69bd">… allow for testing using the same hardware</font></li>
-<li><font color="#4a69bd">Only one set of hardware required</font></li>
-<li><font color="#4a69bd">… reduces cost of producing the app</font></li>
-<li><font color="#4a69bd">No need to set up more than one computer</font></li>
-<li><code>--</code></li>
-<li><font color="#4a69bd">Software can be tried on different OS using the same hardware</font></li>
-<li><font color="#4a69bd">No need to purchase all sorts of different software</font></li>
-<li><font color="#4a69bd">Easier to recover if the system issue causes the system to crash</font></li>
-<li><font color="#4a69bd">VM provides protection to other software</font></li>
-<li><code>--</code></li>
-<li><font color="#4a69bd">No need to acquire client hardware for testing</font></li>
-<li><font color="#4a69bd">Reduce set-up time for test system</font></li>
-<li><font color="#4a69bd">Common development system for all developers</font></li>
-<li><code>--</code></li>
-<li>They allow modern systems to use programs that run on obsolete or unsupported platform<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></li>
-<li>They allow platform independent program to run on multiple platforms</li>
-<li>They allow one computer to behave as several computers simultaneously</li>
-<li>They can be easily backed up, copied, and reinstalled.</li>
-</ul>
-<h3 id="Limitations"><a class="header-anchor" href="#Limitations">¶</a>Limitations</h3>
-<ul>
-<li><font color="#4a69bd">Time and effort required for implementation</font></li>
-<li><font color="#4a69bd">Implementation would not offer the same level of performance that would be obtained in a normal system</font></li>
-<li><font color="#4a69bd">Expensive, complex to manage and maintain</font></li>
-<li><font color="#4a69bd">Execution of extra code, processing time increased</font>
-<ul>
-<li><font color="#4a69bd">So cannot accurately test speed for real performance</font></li>
-<li><font color="#4a69bd">Performance is degraded</font></li>
-</ul>
-</li>
-<li><font color="#4a69bd">May not be able to emulate some hardware</font>
-<ul>
-<li><font color="#4a69bd">So that the hardware cannot be tested using virtual machine</font></li>
-</ul>
-</li>
-<li><code>--</code></li>
-<li><font color="#4a69bd">Virtual machine may not be able to emulate some hardware</font></li>
-<li><font color="#4a69bd">Virtual machine cannot directly access some hardware</font></li>
-<li><font color="#4a69bd">Using virtual machine means execution of extra code // processing time increased</font></li>
-<li><font color="#4a69bd">A virtual machine might not be as efficient // performance degraded</font></li>
-<li><font color="#4a69bd">Using a virtual machine increases the maintenance overheads </font></li>
-</ul>
-<h3 id="Role-of-virtual-machine-software"><a class="header-anchor" href="#Role-of-virtual-machine-software">¶</a>Role of virtual machine software</h3>
-<ol>
-<li><font color="#4a69bd">Create/delete virtual machines</font></li>
-<li><font color="#4a69bd">translate instruction used by the guest operating system to that required by the host operating system</font></li>
-<li><font color="#4a69bd">Existing hardware made available to guest OS //  hardware emulation</font></li>
-<li><font color="#4a69bd">Ensure each virtual machine is protected from actions from other virtual machines </font></li>
-</ol>
-<p><img src="/2022/05/02/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/virtualMachine.jpg" alt></p>
-<h3 id="Past-paper-questions-v5"><a class="header-anchor" href="#Past-paper-questions-v5">¶</a>Past-paper questions</h3>
-<p>A virtual machine is a <font color="#4a69bd"><u>software/program</u></font> that emulate a <font color="#4a69bd"><u>physical/different</u></font> computer system; A virtual machine allow multiple <font color="#4a69bd"><u>guest</u></font> operating system to run on one computer using <font color="#4a69bd"><u>host</u></font> operating system</p>
-<p><u>Describe what happens after the guest operating system has received the data request from the application</u>:</p>
-<ul>
-<li><font color="#4a69bd">Guest OS handles the request as if it were running on its own physical machine</font></li>
-<li><font color="#4a69bd">Guest OS handles the request as usual </font></li>
-<li><font color="#4a69bd">I/O requests are translated by the virtual machine software</font></li>
-<li><font color="#4a69bd">Into instruction executable by the host OS</font></li>
-<li><font color="#4a69bd">Host OS retrieves the data from the file</font></li>
-<li><font color="#4a69bd">Host OS passes the data into virtual machine software</font></li>
-<li><font color="#4a69bd">The virtual machine passes the data to the guest OS</font></li>
-<li><font color="#4a69bd">Guest OS passes the data to the application </font></li>
-</ul>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a href="https://img1.wsimg.com/blobby/go/9a8687c5-eecd-45f3-821d-7cdfe880b594/downloads/15.1%20Virtual%20Machine%20(MT-L).pdf">https://img1.wsimg.com/blobby/go/9a8687c5-eecd-45f3-821d-7cdfe880b594/downloads/15.1 Virtual Machine (MT-L).pdf</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-]]></content>
-      <categories>
-        <category>Notes</category>
-        <category>ALCS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Chapter 16.2: Translation Software</title>
-    <url>/2022/05/05/Chapter16.2_TranslationSoftware/</url>
-    <content><![CDATA[<h1>Chapter 16.2: Translation Software</h1>
-<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/syllabus16.2.png" alt></p>
-<hr>
-<span id="more"></span>
-<h2 id="Interpreter"><a class="header-anchor" href="#Interpreter">¶</a>Interpreter</h2>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/interpreter.jpg" style="zoom:50%;">
-<p><u>How an interpreter can executes the program without producing a complete translated version</u></p>
-<ul>
-<li><font color="#4a69bd">An interpreter examines source code one statement at a time</font></li>
-<li><font color="#4a69bd">Check each statement for errors</font></li>
-<li><font color="#4a69bd">If no error is found, the statement is executed</font></li>
-<li><font color="#4a69bd">If an error is found, this is reported and the interpreter halts</font></li>
-<li><font color="#4a69bd">Interpretation is repeated for every iteration in repeated section of code/ in loops</font></li>
-<li><font color="#4a69bd">Interpretation repeats every time the program runs</font></li>
-</ul>
-<p><u>Why debug with interpreter</u></p>
-<ul>
-<li><font color="#4a69bd">Debugging is faster</font></li>
-<li><font color="#4a69bd">Can debug incomplete code</font></li>
-<li><font color="#4a69bd">Better diagnostics</font></li>
-</ul>
-<h2 id="Compiler"><a class="header-anchor" href="#Compiler">¶</a>Compiler</h2>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/compiler.jpg" style="zoom: 33%;">
-<h3 id="Compilation-stages"><a class="header-anchor" href="#Compilation-stages">¶</a>Compilation stages</h3>
-<h4 id="Lexical-analysis"><a class="header-anchor" href="#Lexical-analysis">¶</a>Lexical analysis</h4>
-<ul>
-<li>
-<p>All necessary characters not required by the compiler, such as the white space and comments, are removed</p>
-</li>
-<li>
-<p><font color="#4a69bd">The white space removed // redundant characters are removed // removal of comments // identification of errors</font></p>
-</li>
-<li>
-<p>Tokenization</p>
-<ul>
-<li>Using a keyword table that contains all the tokens for reserved keywords and symbols</li>
-<li>Convert the source program into tokens</li>
-<li><u>Keyword table</u>
-<ul>
-<li><font color="#4a69bd">The reserved keyword used</font></li>
-<li><font color="#4a69bd">The operator used</font></li>
-<li><font color="#4a69bd">Their matching token</font><br>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/keyword table.png" align="middle" style="zoom:50%;"></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>Variables, constants, and identifiers added to a symbol table, and are then converted into locations/address</p>
-<ul>
-<li><u>Symbol table</u>
-<ul>
-<li><font color="#4a69bd">Identifier name used </font></li>
-<li><font color="#4a69bd">The data type </font></li>
-<li><font color="#4a69bd">Role: e.g. Constant, array, procedure</font></li>
-<li><font color="#4a69bd">Location marker, value of constant</font></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/symboltable.png" style="zoom:50%;">
-<p><u>Explain how the keyword table and symbol table are used to translate the source code program</u></p>
-<ul>
-<li><font color="#4a69bd">Keywords are looked up in the keyword table</font></li>
-<li><font color="#4a69bd">They are represented by tokens</font></li>
-<li><font color="#4a69bd">Identifiers are looked up in the symbol table</font></li>
-<li><font color="#4a69bd">They are converted into location/address</font></li>
-<li><font color="#4a69bd">Used to create a sequence of tokens (for the program)</font></li>
-</ul>
-<h4 id="Syntax-analysis"><a class="header-anchor" href="#Syntax-analysis">¶</a>Syntax analysis</h4>
-<ul>
-<li>Output from the lexical analysis is checked for grammatical/syntax errors - <code>parsing</code></li>
-<li>The rules for <code>parsing</code> can be set out in Backus-Naur form(BNF) notation</li>
-<li>If errors are found: each statement and the associated error is outputted, but the next stage, code generation, will not be attempted</li>
-<li>If no error is found: passed to the next stage of compilation</li>
-<li><code>--</code></li>
-<li><font color="#4a69bd">Construction of a parse tree / parsing</font></li>
-<li><font color="#4a69bd">Checking that the rules of grammar/syntax have been obeyed</font></li>
-<li><font color="#4a69bd">Production of an error report</font></li>
-</ul>
-<h4 id="Code-generation"><a class="header-anchor" href="#Code-generation">¶</a>Code generation</h4>
-<ul>
-<li>Produces an object program to perform the task defined in the source code</li>
-<li>The object program is in machine-readable form(binary):
-<ul>
-<li>Either in machine code that can be directly executed by the CPU</li>
-<li>Or in intermediate code that is converted into machine code when the program is loaded</li>
-</ul>
-</li>
-</ul>
-<h4 id="Optimization"><a class="header-anchor" href="#Optimization">¶</a>Optimization</h4>
-<ul>
-<li>Performing the task using the <u>minimum amount of resources</u>
-<ul>
-<li><font color="#4a69bd">Execution time, storage space, memory, and CPU use.</font></li>
-</ul>
-</li>
-<li>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/optimization.jpg" style="zoom: 33%;">
-</li>
-</ul>
-<p><u>Why code is optimized:</u></p>
-<ul>
-<li><font color="#4a69bd">Redundant code removed</font></li>
-<li><font color="#4a69bd">Program requires less memory</font></li>
-<li><font color="#4a69bd">Code reorganized to make it more efficient</font></li>
-<li><font color="#4a69bd">Program will complete task in a shorter time</font></li>
-</ul>
-<p><u>Why optimization is necessary</u></p>
-<ul>
-<li><font color="#4a69bd">Optimisation means the code would have fewer instructions</font></li>
-<li><font color="#4a69bd">Optimised code occupies less memory in space</font></li>
-<li><font color="#4a69bd">Fewer instructions reduce the execution time of the program</font></li>
-</ul>
-<p><u>Benefits</u></p>
-<ul>
-<li><font color="#4a69bd">Code has fewer instructions/occupies less memory in space</font></li>
-<li><font color="#4a69bd">Shortens the execution time for the program // time taken to execute whole program decreases</font></li>
-</ul>
-<h3 id="Past-paper-questions-v6"><a class="header-anchor" href="#Past-paper-questions-v6">¶</a>Past-paper questions</h3>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq1.png" style="zoom: 67%;">
-<ul>
-<li><font color="#4a69bd">Remove the second instances of LDD 436 // remove line 04</font></li>
-<li><font color="#4a69bd">Remove the second instance s of ADD 437 // remove line 05</font></li>
-<li><font color="#4a69bd">The value required is already stored in the accumulator</font></li>
-</ul>
-<hr>
-<p><u>Why compiled version helps protect the security of the source code</u></p>
-<ul>
-<li><font color="#4a69bd">Compiler produces executable version - not readable</font></li>
-<li><font color="#4a69bd">Difficult for reverse engineering</font></li>
-</ul>
-<hr>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/drawline.png" style="zoom: 67%;">
-<hr>
-<h2 id="BNF-Syntax-diagram"><a class="header-anchor" href="#BNF-Syntax-diagram">¶</a>BNF &amp; Syntax diagram</h2>
-<h3 id="Past-paper-questions-v7"><a class="header-anchor" href="#Past-paper-questions-v7">¶</a>Past-paper questions</h3>
-<ol>
-<li></li>
-</ol>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq2.1.png" style="zoom: 80%;">
-<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq2.2.png" alt></p>
-<hr>
-<ol start="2">
-<li></li>
-</ol>
-<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Cppq3.1.png" alt></p>
-<img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq3.2.png" style="zoom: 67%;">
-<hr>
-<ol start="3">
-<li></li>
-</ol>
-<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq4.1.png" alt></p>
-<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/ppq4.2.png" alt></p>
-<hr>
-<h2 id="Reverse-Polish-notation"><a class="header-anchor" href="#Reverse-Polish-notation">¶</a>Reverse Polish notation</h2>
-<blockquote>
-<p>Infix notation: operators are in between their operands</p>
-<p>Postfix notation / Reverse Polish notation: Operators are written after operands</p>
-<p>Prefix notation / Polish notation: operators are written before operands</p>
-</blockquote>
-<p>🔗:<a href="https://www.cs.man.ac.uk/~pjj/cs212/fix.html">Understanding infix, postfix, and prefix - lecture note from university of manchester</a></p>
-<hr>
-<p><u>Why RPN can be used to evaluate expressions:</u></p>
-<ul>
-<li><font color="#4a69bd">Reverse polish notation provides and unambiguous method of representing an expression</font></li>
-<li><font color="#4a69bd">Reading from left to right</font></li>
-<li><font color="#4a69bd">Without need to use bracket</font></li>
-<li><font color="#4a69bd">With no need for rules of precedence</font></li>
-</ul>
-<p><u>Explain how RPN is used by an interpreter to evaluate expression:</u></p>
-<ul>
-<li><font color="#4a69bd">Expressions are always evaluated from left to right</font></li>
-<li><font color="#4a69bd">Each operator uses two previous values on the stack</font></li>
-<li><font color="#4a69bd">Pushing and popping identifiers on a stack</font></li>
-</ul>
-<p><u>Data structure to evaluate an expression in RPN</u></p>
-<ul>
-<li><font color="#4a69bd">Stack</font>
-<ul>
-<li><font color="#4a69bd">The operands are popped from the stack in reverse order to how they were pushed</font></li>
-</ul>
-</li>
-<li><font color="#4a69bd">Binary tree</font>
-<ul>
-<li><font color="#4a69bd">Allows both infix and postfix to be evaluated (tree traversal)</font></li>
-</ul>
-</li>
-</ul>
-<p><u>Describe the main steps in the evaluation of a Reverse Polish Notation(RPN) expression using a stack</u></p>
-<ul>
-<li><font color="#4a69bd">Working from left to right in the expression</font></li>
-<li><font color="#4a69bd">If element is a number, push that number into stack</font></li>
-<li><font color="#4a69bd">If element is an operator, then pop the first two numbers on the stack</font></li>
-<li><font color="#4a69bd">… perform that operations on these two numbers</font></li>
-<li><font color="#4a69bd">PUSH result back into stack</font></li>
-<li><font color="#4a69bd">END once the last item in the expression has been dealt with</font></li>
-</ul>
-<p><u>One advantage of the use of RPN is that evaluation of expressions does not require rules of precedence; Explain this statement</u></p>
-<ul>
-<li><font color="#4a69bd">Rules of precedence means different operators have different priorities; for example multiplication is done before addition</font></li>
-<li><font color="#4a69bd">In RPN, evaluation of expression is from left to right // operator are used in the sequence in which they were read</font></li>
-<li><font color="#4a69bd">No need for brackets // infix may require brackets</font></li>
-</ul>
-<p><u>Write the Reverse Polish Notation for the following expressions</u></p>
-<ol>
-<li>
-<p>(A+B)*(C-D)</p>
-<ul>
-<li><font color="#4a69bd">AB+</font></li>
-<li><font color="#4a69bd">CD-*</font></li>
-</ul>
-<p>Full answer: AB+CD-*</p>
-</li>
-<li>
-<p>((-A/B)*4)/(C-D)</p>
-<ul>
-<li><font color="#4a69bd">A-</font></li>
-<li><font color="#4a69bd">B/4*</font></li>
-<li><font color="#4a69bd">CD-/</font></li>
-</ul>
-<p>Full answer: A-B/4*CD-/</p>
-</li>
-</ol>
-<h3 id="Evaluation-of-RPN"><a class="header-anchor" href="#Evaluation-of-RPN">¶</a>Evaluation of RPN</h3>
-<p><img src="/2022/05/05/Chapter16.2_TranslationSoftware/rpneva.jpg" alt></p>
-<p>🔗<a href="https://www.includehelp.com/c/infix-to-postfix-conversion-using-stack-with-c-program.aspx">Infix To Postfix Conversion Using Stack</a></p>
-]]></content>
-      <categories>
-        <category>Notes</category>
-        <category>ALCS</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Chapter15.2: Boolean Algebra And Logic Circuits</title>
-    <url>/2022/05/02/Chapter15.2_BooleanAlgebraAndLogicCircuits/</url>
+    <url>/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/</url>
     <content><![CDATA[<h1>Chapter 15.2: Boolean Algebra and Logic Circuits</h1>
-<p><img src="/2022/05/02/Chapter15.2_BooleanAlgebraAndLogicCircuits/Syllabus15.2.png" alt></p>
+<p><img src="/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/Syllabus15.2.png" alt></p>
 <hr>
 <span id="more"></span>
 <h2 id="Adders➕"><a class="header-anchor" href="#Adders➕">¶</a>Adders➕</h2>
@@ -1337,7 +1100,7 @@ https://majidtahir.com/a-level9618
 </tbody>
 </table>
 <hr>
-<p><img src="/2022/05/02/Chapter15.2_BooleanAlgebraAndLogicCircuits/halfAdder.jpg" alt="Half-adder"></p>
+<p><img src="/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/halfAdder.jpg" alt="Half-adder"></p>
 <hr>
 <h3 id="Full-adder"><a class="header-anchor" href="#Full-adder">¶</a>Full adder</h3>
 <blockquote>
@@ -1420,7 +1183,7 @@ https://majidtahir.com/a-level9618
 </tbody>
 </table>
 <hr>
-<p><img src="/2022/05/02/Chapter15.2_BooleanAlgebraAndLogicCircuits/fullAdder.jpg" alt></p>
+<p><img src="/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/fullAdder.jpg" alt></p>
 <hr>
 <h2 id="Flip-flop"><a class="header-anchor" href="#Flip-flop">¶</a>Flip-flop</h2>
 <h3 id="SR-Flip-flop"><a class="header-anchor" href="#SR-Flip-flop">¶</a>SR Flip-flop</h3>
@@ -1430,13 +1193,13 @@ https://majidtahir.com/a-level9618
 <p>The properties of SR flip-flop explained why it can be used as a storage device for 1 bit and therefore could be used as a component in RAM because a value is stored but can be altered.</p>
 <p>The alternative NAND gate circuit for the SR flip-flop has a similar structure but the labelling is different. The important difference is that setting is achieved when S=0 &amp; R=1 and resetting with R=0 and S=1.</p>
 <h4 id="NOR-gates-implementation"><a class="header-anchor" href="#NOR-gates-implementation">¶</a>NOR gates implementation</h4>
-<img src="/2022/05/02/Chapter15.2_BooleanAlgebraAndLogicCircuits/SRflipflop.jpg" style="zoom: 25%;">
-<img src="/2022/05/02/Chapter15.2_BooleanAlgebraAndLogicCircuits/truthTableSR.jpg" style="zoom: 25%;">
-<img src="/2022/05/02/Chapter15.2_BooleanAlgebraAndLogicCircuits/truthTableSR2.jpg" style="zoom: 50%;">
+<img src="/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/SRflipflop.jpg" style="zoom: 25%;">
+<img src="/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/truthTableSR.jpg" style="zoom: 25%;">
+<img src="/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/truthTableSR2.jpg" style="zoom: 50%;">
 <hr>
 <h4 id="NAND-gate-implementation"><a class="header-anchor" href="#NAND-gate-implementation">¶</a>NAND gate implementation</h4>
-<img src="/2022/05/02/Chapter15.2_BooleanAlgebraAndLogicCircuits/SRnand.png" style="zoom: 67%;">
-<img src="/2022/05/02/Chapter15.2_BooleanAlgebraAndLogicCircuits/SRnandtruth.png" style="zoom:50%;">
+<img src="/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/SRnand.png" style="zoom: 67%;">
+<img src="/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/SRnandtruth.png" style="zoom:50%;">
 <p><u>Why is the final row a problem?</u></p>
 <ul>
 <li><font color="#4a69bd">Q and not Q have the same value</font></li>
@@ -1448,10 +1211,10 @@ https://majidtahir.com/a-level9618
 <blockquote>
 <p>In addition to the possibility of entering an invalid state there is also the potential for a circuit to arrive in an uncertain state if inputs do not arrive quite at the same time. In order to prevent this, a circuit may include a clock pulse input to give a better chance of synchronising inputs. The JK flip-flop is an example.</p>
 </blockquote>
-<img src="/2022/05/02/Chapter15.2_BooleanAlgebraAndLogicCircuits/JKflipflop.jpg" style="zoom: 30%;">
-<img src="/2022/05/02/Chapter15.2_BooleanAlgebraAndLogicCircuits/JKflipfloptruthtable.jpg" style="zoom: 40%;">
+<img src="/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/JKflipflop.jpg" style="zoom: 30%;">
+<img src="/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/JKflipfloptruthtable.jpg" style="zoom: 40%;">
 <hr>
-<h3 id="Past-paper-questions-v8"><a class="header-anchor" href="#Past-paper-questions-v8">¶</a>Past-paper questions</h3>
+<h3 id="Past-paper-questions-v6"><a class="header-anchor" href="#Past-paper-questions-v6">¶</a>Past-paper questions</h3>
 <p><u>Why JK flip-flop is an improvement to the SR flip-flop</u></p>
 <ul>
 <li><font color="#4a69bd">The SR flip-flop has an invalid combination of SR which allows Q and not Q to have the same value</font></li>
@@ -1487,13 +1250,13 @@ https://majidtahir.com/a-level9618
 </li>
 <li><font color="#4a69bd">JK flip-flop has a clock pulse to synchronize input</font></li>
 </ul>
-<p><img src="/2022/05/02/Chapter15.2_BooleanAlgebraAndLogicCircuits/fillblank.png" alt></p>
+<p><img src="/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/fillblank.png" alt></p>
 <hr>
 <h2 id="Boolean-Algebra"><a class="header-anchor" href="#Boolean-Algebra">¶</a>Boolean Algebra</h2>
-<img src="/2022/05/02/Chapter15.2_BooleanAlgebraAndLogicCircuits/booleanAlgebra.jpg" style="zoom:70%;">
+<img src="/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/booleanAlgebra.jpg" style="zoom:70%;">
 <h2 id="K-map"><a class="header-anchor" href="#K-map">¶</a>K-map</h2>
 <h3 id="Grey-code"><a class="header-anchor" href="#Grey-code">¶</a>Grey code</h3>
-<img src="/2022/05/02/Chapter15.2_BooleanAlgebraAndLogicCircuits/greycode.png" style="zoom:150%;">
+<img src="/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/greycode.png" style="zoom:150%;">
 <p>🔗<a href="https://en.wikipedia.org/wiki/Gray_code">https://en.wikipedia.org/wiki/Gray_code</a></p>
 ]]></content>
       <categories>
@@ -1503,9 +1266,9 @@ https://majidtahir.com/a-level9618
   </entry>
   <entry>
     <title>Chapter 16.1: Purpose of an operating system</title>
-    <url>/2022/05/03/Chapter16.1_PurposeOfAnOperatingSystem/</url>
+    <url>/Notes/ALCS/Chapter16.1_PurposeOfAnOperatingSystem/</url>
     <content><![CDATA[<h1>Chapter 16.1: Purpose of an operating system</h1>
-<p><img src="/2022/05/03/Chapter16.1_PurposeOfAnOperatingSystem/Syllabus16.1.png" alt></p>
+<p><img src="/Notes/ALCS/Chapter16.1_PurposeOfAnOperatingSystem/Syllabus16.1.png" alt></p>
 <hr>
 <span id="more"></span>
 <h2 id="Operating-system-resource-optimization"><a class="header-anchor" href="#Operating-system-resource-optimization">¶</a>Operating system resource optimization</h2>
@@ -1567,7 +1330,7 @@ https://majidtahir.com/a-level9618
 </ul>
 </li>
 <li>
-<img src="/2022/05/03/Chapter16.1_PurposeOfAnOperatingSystem/DMA.jpg" style="zoom: 33%;">
+<img src="/Notes/ALCS/Chapter16.1_PurposeOfAnOperatingSystem/DMA.jpg" style="zoom: 33%;">
 </li>
 </ul>
 </li>
@@ -1647,7 +1410,7 @@ https://majidtahir.com/a-level9618
 </ul>
 </li>
 </ul>
-<img src="/2022/05/03/Chapter16.1_PurposeOfAnOperatingSystem/ProcessStates.jpg" style="zoom:50%;">
+<img src="/Notes/ALCS/Chapter16.1_PurposeOfAnOperatingSystem/ProcessStates.jpg" style="zoom:50%;">
 <p>The transition between the states shown in Figure 20.05 can be described as follows</p>
 <ul>
 <li>A new process arrives in memory and a PCB is created; it changes to the ready state.</li>
@@ -1747,7 +1510,7 @@ https://majidtahir.com/a-level9618
 <li>The kernel will save the state of the interrupt process on the kernel stack</li>
 <li>The process state will be restored once the interrupting task is services.</li>
 </ol>
-<img src="/2022/05/03/Chapter16.1_PurposeOfAnOperatingSystem/interrupt.jpg" style="zoom: 67%;"> 
+<img src="/Notes/ALCS/Chapter16.1_PurposeOfAnOperatingSystem/interrupt.jpg" style="zoom: 67%;"> 
 <p><u>Describe the sequence of steps which would be carried out by the interrupt handler software when an interrupt is received and serviced</u></p>
 <ul>
 <li><font color="#4a69bd">Identify the source of interrupt</font></li>
@@ -1828,7 +1591,7 @@ https://majidtahir.com/a-level9618
 </ul>
 </li>
 </ul>
-<img src="/2022/05/03/Chapter16.1_PurposeOfAnOperatingSystem/segmentation.jpg" style="zoom:50%;">
+<img src="/Notes/ALCS/Chapter16.1_PurposeOfAnOperatingSystem/segmentation.jpg" style="zoom:50%;">
 <h3 id="Differences-between-paging-and-segmentation"><a class="header-anchor" href="#Differences-between-paging-and-segmentation">¶</a>Differences between paging and segmentation</h3>
 <table>
 <thead>
@@ -1977,62 +1740,236 @@ https://majidtahir.com/a-level9618
       </categories>
   </entry>
   <entry>
-    <title>Chapter 18: Artificial Intelligence</title>
-    <url>/2022/04/28/Chapter18_ArtificialIntelligence/</url>
-    <content><![CDATA[<h1>Chapter 18: Artificial Intelligence</h1>
-<p><img src="/2022/04/28/Chapter18_ArtificialIntelligence/ai.png" alt></p>
+    <title>Chapter 16.2: Translation Software</title>
+    <url>/Notes/ALCS/Chapter16.2_TranslationSoftware/</url>
+    <content><![CDATA[<h1>Chapter 16.2: Translation Software</h1>
+<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/syllabus16.2.png" alt></p>
 <hr>
 <span id="more"></span>
-<h3 id="Definitions"><a class="header-anchor" href="#Definitions">¶</a>Definitions:</h3>
-<p><u>Supervised Learning:</u></p>
+<h2 id="Interpreter"><a class="header-anchor" href="#Interpreter">¶</a>Interpreter</h2>
+<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/interpreter.jpg" style="zoom:50%;">
+<p><u>How an interpreter can executes the program without producing a complete translated version</u></p>
 <ul>
-<li><font color="#4a69bd">Using a large number of tasks with given outcomes to enable a computer program to improve its performance in accomplishing similar tasks</font></li>
+<li><font color="#4a69bd">An interpreter examines source code one statement at a time</font></li>
+<li><font color="#4a69bd">Check each statement for errors</font></li>
+<li><font color="#4a69bd">If no error is found, the statement is executed</font></li>
+<li><font color="#4a69bd">If an error is found, this is reported and the interpreter halts</font></li>
+<li><font color="#4a69bd">Interpretation is repeated for every iteration in repeated section of code/ in loops</font></li>
+<li><font color="#4a69bd">Interpretation repeats every time the program runs</font></li>
 </ul>
-<p><u>Unsupervised learning:</u></p>
+<p><u>Why debug with interpreter</u></p>
 <ul>
-<li><font color="#4a69bd">Using a large number of tasks with unknown outcomes to enable a computer program to improve its performance in accomplishing similar tasks </font></li>
+<li><font color="#4a69bd">Debugging is faster</font></li>
+<li><font color="#4a69bd">Can debug incomplete code</font></li>
+<li><font color="#4a69bd">Better diagnostics</font></li>
 </ul>
-<p><u>Reinforcement learning:</u></p>
+<h2 id="Compiler"><a class="header-anchor" href="#Compiler">¶</a>Compiler</h2>
+<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/compiler.jpg" style="zoom: 33%;">
+<h3 id="Compilation-stages"><a class="header-anchor" href="#Compilation-stages">¶</a>Compilation stages</h3>
+<h4 id="Lexical-analysis"><a class="header-anchor" href="#Lexical-analysis">¶</a>Lexical analysis</h4>
 <ul>
-<li><font color="#4a69bd">Using a large number of tasks with unknwon outcomes and use of feedback to enable a computer program to improve its performance in accomplishing similar tasks</font></li>
-</ul>
-<p>Graph:</p>
+<li>
+<p>All necessary characters not required by the compiler, such as the white space and comments, are removed</p>
+</li>
+<li>
+<p><font color="#4a69bd">The white space removed // redundant characters are removed // removal of comments // identification of errors</font></p>
+</li>
+<li>
+<p>Tokenization</p>
 <ul>
-<li>A graph is a collection of nodes or vertices between which there can be edges.</li>
-<li>Each node has a name</li>
-<li>An edge can have an associated label which is a numerical value</li>
-</ul>
-<p><u>The use of graph to aid Artificial Intelligence:</u></p>
+<li>Using a keyword table that contains all the tokens for reserved keywords and symbols</li>
+<li>Convert the source program into tokens</li>
+<li><u>Keyword table</u>
 <ul>
-<li><font color="#4a69bd">Artificial neural networks can be represented by graphs</font></li>
-<li><font color="#4a69bd">Graphs provide structure for relationships // graphs provide relationships between nodes</font></li>
-<li><font color="#4a69bd">AI problem can be defined as finding a path in a graph</font></li>
-<li><font color="#4a69bd">Graph may be analysed/injected by a range of algorithms</font>
-<ul>
-<li><font color="#4a69bd">A* / Dijkstra’s algorithm</font></li>
-<li><font color="#4a69bd">used in machine learning</font></li>
+<li><font color="#4a69bd">The reserved keyword used</font></li>
+<li><font color="#4a69bd">The operator used</font></li>
+<li><font color="#4a69bd">Their matching token</font><br>
+<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/keyword table.png" align="middle" style="zoom:50%;"></li>
 </ul>
 </li>
-<li><font color="#4a69bd">Back propagation of errors / regressions</font></li>
 </ul>
-<p><u>State the reasons for having multiple hidden layers in an artificial neural network</u></p>
+</li>
+<li>
+<p>Variables, constants, and identifiers added to a symbol table, and are then converted into locations/address</p>
 <ul>
-<li><font color="#4a69bd">Enable deep learning to take place</font></li>
-<li><font color="#4a69bd">Where the problem you are trying to solve has a higher level of complexity it requires more layers</font></li>
-<li><font color="#4a69bd">Allow neural network to learn and make decisions on its own</font></li>
-<li><font color="#4a69bd">To improve the accuracy of the result</font></li>
-</ul>
-<p><u>Explain how artificial neural network enable machine learning</u></p>
+<li><u>Symbol table</u>
 <ul>
-<li><font color="#4a69bd">Artifical neural networks are intended to replicate the way human brain work</font></li>
-<li><font color="#4a69bd">Weights / values are assigned for each connection between nodes</font></li>
-<li><font color="#4a69bd">The data are input at the input layer, then passed into the system</font></li>
-<li><font color="#4a69bd">They are analyzed at each subsequent hidden layer where characteristics are extracted / output are calculated</font></li>
-<li><font color="#4a69bd">This process of training / learning is repeated mant times to achieve optimum outputs // reinforcement learning takes place</font></li>
-<li><font color="#4a69bd">Decisions can be made without being specifically programmed</font></li>
-<li><font color="#4a69bd">The output layer provides the result</font></li>
-<li><font color="#4a69bd">Back propagation of errors will be used to correct any errors that have been made </font></li>
+<li><font color="#4a69bd">Identifier name used </font></li>
+<li><font color="#4a69bd">The data type </font></li>
+<li><font color="#4a69bd">Role: e.g. Constant, array, procedure</font></li>
+<li><font color="#4a69bd">Location marker, value of constant</font></li>
 </ul>
+</li>
+</ul>
+</li>
+</ul>
+<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/symboltable.png" style="zoom:50%;">
+<p><u>Explain how the keyword table and symbol table are used to translate the source code program</u></p>
+<ul>
+<li><font color="#4a69bd">Keywords are looked up in the keyword table</font></li>
+<li><font color="#4a69bd">They are represented by tokens</font></li>
+<li><font color="#4a69bd">Identifiers are looked up in the symbol table</font></li>
+<li><font color="#4a69bd">They are converted into location/address</font></li>
+<li><font color="#4a69bd">Used to create a sequence of tokens (for the program)</font></li>
+</ul>
+<h4 id="Syntax-analysis"><a class="header-anchor" href="#Syntax-analysis">¶</a>Syntax analysis</h4>
+<ul>
+<li>Output from the lexical analysis is checked for grammatical/syntax errors - <code>parsing</code></li>
+<li>The rules for <code>parsing</code> can be set out in Backus-Naur form(BNF) notation</li>
+<li>If errors are found: each statement and the associated error is outputted, but the next stage, code generation, will not be attempted</li>
+<li>If no error is found: passed to the next stage of compilation</li>
+<li><code>--</code></li>
+<li><font color="#4a69bd">Construction of a parse tree / parsing</font></li>
+<li><font color="#4a69bd">Checking that the rules of grammar/syntax have been obeyed</font></li>
+<li><font color="#4a69bd">Production of an error report</font></li>
+</ul>
+<h4 id="Code-generation"><a class="header-anchor" href="#Code-generation">¶</a>Code generation</h4>
+<ul>
+<li>Produces an object program to perform the task defined in the source code</li>
+<li>The object program is in machine-readable form(binary):
+<ul>
+<li>Either in machine code that can be directly executed by the CPU</li>
+<li>Or in intermediate code that is converted into machine code when the program is loaded</li>
+</ul>
+</li>
+</ul>
+<h4 id="Optimization"><a class="header-anchor" href="#Optimization">¶</a>Optimization</h4>
+<ul>
+<li>Performing the task using the <u>minimum amount of resources</u>
+<ul>
+<li><font color="#4a69bd">Execution time, storage space, memory, and CPU use.</font></li>
+</ul>
+</li>
+<li>
+<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/optimization.jpg" style="zoom: 33%;">
+</li>
+</ul>
+<p><u>Why code is optimized:</u></p>
+<ul>
+<li><font color="#4a69bd">Redundant code removed</font></li>
+<li><font color="#4a69bd">Program requires less memory</font></li>
+<li><font color="#4a69bd">Code reorganized to make it more efficient</font></li>
+<li><font color="#4a69bd">Program will complete task in a shorter time</font></li>
+</ul>
+<p><u>Why optimization is necessary</u></p>
+<ul>
+<li><font color="#4a69bd">Optimisation means the code would have fewer instructions</font></li>
+<li><font color="#4a69bd">Optimised code occupies less memory in space</font></li>
+<li><font color="#4a69bd">Fewer instructions reduce the execution time of the program</font></li>
+</ul>
+<p><u>Benefits</u></p>
+<ul>
+<li><font color="#4a69bd">Code has fewer instructions/occupies less memory in space</font></li>
+<li><font color="#4a69bd">Shortens the execution time for the program // time taken to execute whole program decreases</font></li>
+</ul>
+<h3 id="Past-paper-questions-v7"><a class="header-anchor" href="#Past-paper-questions-v7">¶</a>Past-paper questions</h3>
+<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq1.png" style="zoom: 67%;">
+<ul>
+<li><font color="#4a69bd">Remove the second instances of LDD 436 // remove line 04</font></li>
+<li><font color="#4a69bd">Remove the second instance s of ADD 437 // remove line 05</font></li>
+<li><font color="#4a69bd">The value required is already stored in the accumulator</font></li>
+</ul>
+<hr>
+<p><u>Why compiled version helps protect the security of the source code</u></p>
+<ul>
+<li><font color="#4a69bd">Compiler produces executable version - not readable</font></li>
+<li><font color="#4a69bd">Difficult for reverse engineering</font></li>
+</ul>
+<hr>
+<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/drawline.png" style="zoom: 67%;">
+<hr>
+<h2 id="BNF-Syntax-diagram"><a class="header-anchor" href="#BNF-Syntax-diagram">¶</a>BNF &amp; Syntax diagram</h2>
+<h3 id="Past-paper-questions-v8"><a class="header-anchor" href="#Past-paper-questions-v8">¶</a>Past-paper questions</h3>
+<ol>
+<li></li>
+</ol>
+<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq2.1.png" style="zoom: 80%;">
+<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq2.2.png" alt></p>
+<hr>
+<ol start="2">
+<li></li>
+</ol>
+<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Cppq3.1.png" alt></p>
+<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq3.2.png" style="zoom: 67%;">
+<hr>
+<ol start="3">
+<li></li>
+</ol>
+<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq4.1.png" alt></p>
+<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq4.2.png" alt></p>
+<hr>
+<h2 id="Reverse-Polish-notation"><a class="header-anchor" href="#Reverse-Polish-notation">¶</a>Reverse Polish notation</h2>
+<blockquote>
+<p>Infix notation: operators are in between their operands</p>
+<p>Postfix notation / Reverse Polish notation: Operators are written after operands</p>
+<p>Prefix notation / Polish notation: operators are written before operands</p>
+</blockquote>
+<p>🔗:<a href="https://www.cs.man.ac.uk/~pjj/cs212/fix.html">Understanding infix, postfix, and prefix - lecture note from university of manchester</a></p>
+<hr>
+<p><u>Why RPN can be used to evaluate expressions:</u></p>
+<ul>
+<li><font color="#4a69bd">Reverse polish notation provides and unambiguous method of representing an expression</font></li>
+<li><font color="#4a69bd">Reading from left to right</font></li>
+<li><font color="#4a69bd">Without need to use bracket</font></li>
+<li><font color="#4a69bd">With no need for rules of precedence</font></li>
+</ul>
+<p><u>Explain how RPN is used by an interpreter to evaluate expression:</u></p>
+<ul>
+<li><font color="#4a69bd">Expressions are always evaluated from left to right</font></li>
+<li><font color="#4a69bd">Each operator uses two previous values on the stack</font></li>
+<li><font color="#4a69bd">Pushing and popping identifiers on a stack</font></li>
+</ul>
+<p><u>Data structure to evaluate an expression in RPN</u></p>
+<ul>
+<li><font color="#4a69bd">Stack</font>
+<ul>
+<li><font color="#4a69bd">The operands are popped from the stack in reverse order to how they were pushed</font></li>
+</ul>
+</li>
+<li><font color="#4a69bd">Binary tree</font>
+<ul>
+<li><font color="#4a69bd">Allows both infix and postfix to be evaluated (tree traversal)</font></li>
+</ul>
+</li>
+</ul>
+<p><u>Describe the main steps in the evaluation of a Reverse Polish Notation(RPN) expression using a stack</u></p>
+<ul>
+<li><font color="#4a69bd">Working from left to right in the expression</font></li>
+<li><font color="#4a69bd">If element is a number, push that number into stack</font></li>
+<li><font color="#4a69bd">If element is an operator, then pop the first two numbers on the stack</font></li>
+<li><font color="#4a69bd">… perform that operations on these two numbers</font></li>
+<li><font color="#4a69bd">PUSH result back into stack</font></li>
+<li><font color="#4a69bd">END once the last item in the expression has been dealt with</font></li>
+</ul>
+<p><u>One advantage of the use of RPN is that evaluation of expressions does not require rules of precedence; Explain this statement</u></p>
+<ul>
+<li><font color="#4a69bd">Rules of precedence means different operators have different priorities; for example multiplication is done before addition</font></li>
+<li><font color="#4a69bd">In RPN, evaluation of expression is from left to right // operator are used in the sequence in which they were read</font></li>
+<li><font color="#4a69bd">No need for brackets // infix may require brackets</font></li>
+</ul>
+<p><u>Write the Reverse Polish Notation for the following expressions</u></p>
+<ol>
+<li>
+<p>(A+B)*(C-D)</p>
+<ul>
+<li><font color="#4a69bd">AB+</font></li>
+<li><font color="#4a69bd">CD-*</font></li>
+</ul>
+<p>Full answer: AB+CD-*</p>
+</li>
+<li>
+<p>((-A/B)*4)/(C-D)</p>
+<ul>
+<li><font color="#4a69bd">A-</font></li>
+<li><font color="#4a69bd">B/4*</font></li>
+<li><font color="#4a69bd">CD-/</font></li>
+</ul>
+<p>Full answer: A-B/4*CD-/</p>
+</li>
+</ol>
+<h3 id="Evaluation-of-RPN"><a class="header-anchor" href="#Evaluation-of-RPN">¶</a>Evaluation of RPN</h3>
+<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/rpneva.jpg" alt></p>
+<p>🔗<a href="https://www.includehelp.com/c/infix-to-postfix-conversion-using-stack-with-c-program.aspx">Infix To Postfix Conversion Using Stack</a></p>
 ]]></content>
       <categories>
         <category>Notes</category>
@@ -2041,9 +1978,9 @@ https://majidtahir.com/a-level9618
   </entry>
   <entry>
     <title>Chapter 17: Security</title>
-    <url>/2022/04/12/Chapter17_Security/</url>
+    <url>/Notes/ALCS/Chapter17_Security/</url>
     <content><![CDATA[<h1>Chapter 17: Security🔒</h1>
-<p><img src="/2022/04/12/Chapter17_Security/security.png" alt></p>
+<p><img src="/Notes/ALCS/Chapter17_Security/security.png" alt></p>
 <hr>
 <span id="more"></span>
 <h2 id="Encryption"><a class="header-anchor" href="#Encryption">¶</a>Encryption</h2>
@@ -2159,7 +2096,7 @@ https://majidtahir.com/a-level9618
 <ol>
 <li></li>
 </ol>
-<p><img src="/2022/04/12/Chapter17_Security/sec1.png" alt></p>
+<p><img src="/Notes/ALCS/Chapter17_Security/sec1.png" alt></p>
 <h2 id="Secure-socket-layer-SSL-and-Transport-layer-security-TLS"><a class="header-anchor" href="#Secure-socket-layer-SSL-and-Transport-layer-security-TLS">¶</a>Secure socket layer(SSL) and Transport layer security(TLS)</h2>
 <h3 id="u-Purpose-u-v2"><a class="header-anchor" href="#u-Purpose-u-v2">¶</a><u>Purpose</u>:</h3>
 <ul>
@@ -2371,8 +2308,8 @@ https://majidtahir.com/a-level9618
 <li><font color="#4a69bd">A’s hashing algorithm recreates the message digest from the decrypted message</font></li>
 <li><font color="#4a69bd">The two message digests are compared, if they are the same then the message should be authentic / has not been tampered. </font></li>
 </ul>
-<img src="/2022/04/12/Chapter17_Security/digitalSignature.jpg" style="zoom:50%;">
-<p>​                                 <img src="/2022/04/12/Chapter17_Security/compa.jpg" style="zoom:45%;"></p>
+<img src="/Notes/ALCS/Chapter17_Security/digitalSignature.jpg" style="zoom:50%;">
+<p>​                                 <img src="/Notes/ALCS/Chapter17_Security/compa.jpg" style="zoom:45%;"></p>
 <hr>
 <p><u>Explain the process organisation follows to obtain digital certificate</u></p>
 <ul>
@@ -2479,158 +2416,62 @@ https://majidtahir.com/a-level9618
       </tags>
   </entry>
   <entry>
-    <title>Chapter20.1: Programming Paradigms</title>
-    <url>/2022/05/06/Chapter20.1_ProgrammingParadigm/</url>
-    <content><![CDATA[<h1>Chapter20.1: Programming paradigms</h1>
-<p><img src="/2022/05/06/Chapter20.1_ProgrammingParadigm/syllabus20.1.png" alt></p>
+    <title>Chapter 18: Artificial Intelligence</title>
+    <url>/Notes/ALCS/Chapter18_ArtificialIntelligence/</url>
+    <content><![CDATA[<h1>Chapter 18: Artificial Intelligence</h1>
+<p><img src="/Notes/ALCS/Chapter18_ArtificialIntelligence/ai.png" alt></p>
+<hr>
 <span id="more"></span>
-<hr>
-<blockquote>
-<p><strong>Programming paradigms</strong>: <font color="#4a69bd">A programming style/classification // characteristics/features that programming language has/uses</font></p>
-</blockquote>
-<h2 id="Low-level"><a class="header-anchor" href="#Low-level">¶</a>Low-level</h2>
-<table>
-<thead>
-<tr>
-<th>Modes of addressing</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Immediate</td>
-<td>The operand is the data being used</td>
-</tr>
-<tr>
-<td>Direct</td>
-<td>The operand is the address of the data being used</td>
-</tr>
-<tr>
-<td>Indirect</td>
-<td>The content stored in the content of the operand is the data being used</td>
-</tr>
-<tr>
-<td>Relative</td>
-<td>The address of data being used is the current address add to the operand</td>
-</tr>
-<tr>
-<td>Indexed</td>
-<td>The address of the data being used is the content of the operand added to the content of index register</td>
-</tr>
-</tbody>
-</table>
-<p><img src="/2022/05/06/Chapter20.1_ProgrammingParadigm/assembly.png" alt></p>
-<hr>
-<h2 id="Imperative"><a class="header-anchor" href="#Imperative">¶</a>Imperative</h2>
-<p><u>Describe what is meant by imperative programming paradigm</u></p>
+<h3 id="Definitions"><a class="header-anchor" href="#Definitions">¶</a>Definitions:</h3>
+<p><u>Supervised Learning:</u></p>
 <ul>
-<li><font color="#4a69bd">A sequence of steps that changes the state of the program</font></li>
-<li><font color="#4a69bd">The steps are in the order they should be carried out</font></li>
-<li><font color="#4a69bd">e.g. procedural programming/language</font></li>
-<li><font color="#4a69bd">Groups code into self-contained blocks // spilt the program into modules</font></li>
-<li><font color="#4a69bd">… which are subroutines</font></li>
-<li><code>--</code></li>
-<li><font color="#4a69bd">Imperative languages use variables</font></li>
-<li><font color="#4a69bd">… which are changed using assignment statement</font></li>
-<li><font color="#4a69bd">… they rely on a method of repetition/iteration</font></li>
-<li><font color="#4a69bd">Statement provide a sequence of commands for the computer to perform</font></li>
-<li><font color="#4a69bd">… in the order written</font></li>
-<li><font color="#4a69bd">… each line of code changes something in the program run</font></li>
+<li><font color="#4a69bd">Using a large number of tasks with given outcomes to enable a computer program to improve its performance in accomplishing similar tasks</font></li>
 </ul>
-<h2 id="Object-Oriented-Programming"><a class="header-anchor" href="#Object-Oriented-Programming">¶</a>Object Oriented Programming</h2>
-<blockquote>
-<p><font color="#4a69bd">A programming methodology that uses self-contained objects, which contain programming statements(methods) and data, and which communicate with each other</font></p>
-</blockquote>
-<p><u>Explain what is meant by Object Oriented programming</u></p>
+<p><u>Unsupervised learning:</u></p>
 <ul>
-<li><font color="#4a69bd">Create classes</font></li>
-<li><font color="#4a69bd">… as a blueprint for an object // objects are instances of classes</font></li>
-<li><font color="#4a69bd">… that have properties/attributes and methods</font></li>
-<li><font color="#4a69bd">… that can be private to the class // properties that can be only accessed by the class’s methods // encapsulation</font></li>
-<li><font color="#4a69bd">Subclass can inherit from superclass (child and parent)</font></li>
-<li><font color="#4a69bd">A subclass can inherit the methods and properties from the superclass</font></li>
-<li><font color="#4a69bd">A subclass can change the methods from the superclass // subclass can use polymorphism</font></li>
-<li><font color="#4a69bd">Objects can interact with each other</font></li>
+<li><font color="#4a69bd">Using a large number of tasks with unknown outcomes to enable a computer program to improve its performance in accomplishing similar tasks </font></li>
 </ul>
-<p><u>Explain the difference between a class and an object</u><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<p><u>Reinforcement learning:</u></p>
 <ul>
-<li><font color="#4a69bd">A class is the blueprint/design/template (from which the object are later created)</font></li>
-<li><font color="#4a69bd">A class consists of properties/attributes and methods/procedures/functions</font></li>
-<li><font color="#4a69bd">An object is an instance of a class</font></li>
-<li><font color="#4a69bd">An object must be based on a class definition</font></li>
-<li><font color="#4a69bd">Many objects can exists for the same class</font></li>
+<li><font color="#4a69bd">Using a large number of tasks with unknwon outcomes and use of feedback to enable a computer program to improve its performance in accomplishing similar tasks</font></li>
 </ul>
-<h4 id="Objects"><a class="header-anchor" href="#Objects">¶</a>Objects:</h4>
-<blockquote>
-<p>An instance of a class that is self-contained and includes data and methods</p>
+<p>Graph:</p>
 <ul>
-<li>Many instances can exists for the same class</li>
-<li>Must be based on the class definition</li>
+<li>A graph is a collection of nodes or vertices between which there can be edges.</li>
+<li>Each node has a name</li>
+<li>An edge can have an associated label which is a numerical value</li>
 </ul>
-</blockquote>
-<h4 id="Properties-v2"><a class="header-anchor" href="#Properties-v2">¶</a>Properties</h4>
-<blockquote>
-<p>Data and methods within an object that perform a named action</p>
-</blockquote>
-<h4 id="Methods"><a class="header-anchor" href="#Methods">¶</a>Methods</h4>
-<blockquote>
-<p>A programmed procedure that is defined as part of a class</p>
-</blockquote>
-<h4 id="Classes"><a class="header-anchor" href="#Classes">¶</a>Classes</h4>
-<blockquote>
-<p>A template/blueprint defining the methods and data of a certain type of object</p>
-</blockquote>
-<h4 id="Inheritance"><a class="header-anchor" href="#Inheritance">¶</a>Inheritance</h4>
-<blockquote>
-<p>Process in which the methods and data from one class, a superclass or base class is copied to another class, a derived class/subclass</p>
-</blockquote>
-<h4 id="Polymorphism"><a class="header-anchor" href="#Polymorphism">¶</a>Polymorphism</h4>
-<blockquote>
-<p>Feature of OOP that allows a method to be defined more than once in a class, so it can be used in different situations</p>
-</blockquote>
-<h4 id="Containment-aggregation"><a class="header-anchor" href="#Containment-aggregation">¶</a>Containment(aggregation)</h4>
-<blockquote>
-<p>Defines a <code>one-way</code> relationship / <code>has-a</code> relationship between two classes. In aggregation, the objects can exists independently with each other. <sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
-</blockquote>
-<h4 id="Encapsulation"><a class="header-anchor" href="#Encapsulation">¶</a>Encapsulation</h4>
-<blockquote>
-<p>Process of putting data and methods together as a single unit, a class</p>
-</blockquote>
-<h4 id="Getter"><a class="header-anchor" href="#Getter">¶</a>Getter</h4>
-<blockquote>
-<p>A method that gets the value of a property</p>
-</blockquote>
-<h4 id="Setters"><a class="header-anchor" href="#Setters">¶</a>Setters</h4>
-<blockquote>
-<p>A method used to control changes to a variable</p>
-</blockquote>
-<h4 id="Instances"><a class="header-anchor" href="#Instances">¶</a>Instances</h4>
-<blockquote>
-<p>An occurrence of an object during the execution of a program</p>
-</blockquote>
-<h2 id="Declarative"><a class="header-anchor" href="#Declarative">¶</a>Declarative</h2>
-<blockquote>
-<p>Program that specify the desired result rather than how to get it</p>
-</blockquote>
+<p><u>The use of graph to aid Artificial Intelligence:</u></p>
 <ul>
-<li><font color="#4a69bd">Instruct a program of what is needed to done instead of how to do it</font></li>
-<li><font color="#4a69bd">… using facts and rules</font></li>
-<li><font color="#4a69bd">… using queries to satisfy goals</font></li>
-<li><font color="#4a69bd">Can be logical or functional</font></li>
-<li><font color="#4a69bd">Logical - states a program as a set of logical relations</font></li>
-<li><font color="#4a69bd">Functional - constructed by applying functions to arguments / uses a mathematical style</font></li>
+<li><font color="#4a69bd">Artificial neural networks can be represented by graphs</font></li>
+<li><font color="#4a69bd">Graphs provide structure for relationships // graphs provide relationships between nodes</font></li>
+<li><font color="#4a69bd">AI problem can be defined as finding a path in a graph</font></li>
+<li><font color="#4a69bd">Graph may be analysed/injected by a range of algorithms</font>
+<ul>
+<li><font color="#4a69bd">A* / Dijkstra’s algorithm</font></li>
+<li><font color="#4a69bd">used in machine learning</font></li>
 </ul>
-<hr>
-<p><img src="/2022/05/06/Chapter20.1_ProgrammingParadigm/drawline.png" alt></p>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>9691 w13 32 q4 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn2" class="footnote-item"><p><a href="https://isaaccomputerscience.org/concepts/prog_oop_aggregation_composition">https://isaaccomputerscience.org/concepts/prog_oop_aggregation_composition</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
+<li><font color="#4a69bd">Back propagation of errors / regressions</font></li>
+</ul>
+<p><u>State the reasons for having multiple hidden layers in an artificial neural network</u></p>
+<ul>
+<li><font color="#4a69bd">Enable deep learning to take place</font></li>
+<li><font color="#4a69bd">Where the problem you are trying to solve has a higher level of complexity it requires more layers</font></li>
+<li><font color="#4a69bd">Allow neural network to learn and make decisions on its own</font></li>
+<li><font color="#4a69bd">To improve the accuracy of the result</font></li>
+</ul>
+<p><u>Explain how artificial neural network enable machine learning</u></p>
+<ul>
+<li><font color="#4a69bd">Artifical neural networks are intended to replicate the way human brain work</font></li>
+<li><font color="#4a69bd">Weights / values are assigned for each connection between nodes</font></li>
+<li><font color="#4a69bd">The data are input at the input layer, then passed into the system</font></li>
+<li><font color="#4a69bd">They are analyzed at each subsequent hidden layer where characteristics are extracted / output are calculated</font></li>
+<li><font color="#4a69bd">This process of training / learning is repeated mant times to achieve optimum outputs // reinforcement learning takes place</font></li>
+<li><font color="#4a69bd">Decisions can be made without being specifically programmed</font></li>
+<li><font color="#4a69bd">The output layer provides the result</font></li>
+<li><font color="#4a69bd">Back propagation of errors will be used to correct any errors that have been made </font></li>
+</ul>
 ]]></content>
       <categories>
         <category>Notes</category>
@@ -2639,9 +2480,9 @@ https://majidtahir.com/a-level9618
   </entry>
   <entry>
     <title>Chapter19.2: Recursion</title>
-    <url>/2022/05/05/Chapter19.2_Recursion/</url>
+    <url>/Notes/ALCS/Chapter19.2_Recursion/</url>
     <content><![CDATA[<h1>Chapter 19.2: Recursion</h1>
-<p><img src="/2022/05/05/Chapter19.2_Recursion/syllabus19.2.png" alt></p>
+<p><img src="/Notes/ALCS/Chapter19.2_Recursion/syllabus19.2.png" alt></p>
 <span id="more"></span>
 <h3 id="u-Essential-features-of-recursion-u"><a class="header-anchor" href="#u-Essential-features-of-recursion-u">¶</a><u>Essential features of recursion:</u></h3>
 <ul>
@@ -2680,9 +2521,9 @@ https://majidtahir.com/a-level9618
   </entry>
   <entry>
     <title>Chapter 19.1: Algorithms</title>
-    <url>/2022/04/17/Chapter19.1_Algorithms/</url>
+    <url>/Notes/ALCS/Chapter19.1_Algorithms/</url>
     <content><![CDATA[<h1>Chapter 19.1: Algorithms</h1>
-<p><img src="/2022/04/17/Chapter19.1_Algorithms/Syllabuspic.png" alt></p>
+<p><img src="/Notes/ALCS/Chapter19.1_Algorithms/Syllabuspic.png" alt></p>
 <hr>
 <span id="more"></span> 
 <h2 id="Search"><a class="header-anchor" href="#Search">¶</a>Search</h2>
@@ -2993,9 +2834,9 @@ https://majidtahir.com/a-level9618
   </entry>
   <entry>
     <title>Chapter 20.2: File processing and Exception Handling</title>
-    <url>/2022/04/17/Chapter20.2_FileProcessing&amp;ExceptionHandling/</url>
+    <url>/Notes/ALCS/Chapter20.2_FileProcessing&amp;ExceptionHandling/</url>
     <content><![CDATA[<h1>Chapter 20.2: File Processing and Exception Handling</h1>
-<p><img src="/2022/04/17/Chapter20.2_FileProcessing&ExceptionHandling/syllabus.png" alt></p>
+<p><img src="/Notes/ALCS/Chapter20.2_FileProcessing&ExceptionHandling/syllabus.png" alt></p>
 <hr>
 <span id="more"></span> 
 <h2 id="File-Processing"><a class="header-anchor" href="#File-Processing">¶</a>File Processing</h2>
@@ -3169,7 +3010,7 @@ https://majidtahir.com/a-level9618
 </ul>
 <h2 id="Exception-Handling"><a class="header-anchor" href="#Exception-Handling">¶</a>Exception Handling</h2>
 <h3 id="Exception-hierarchy"><a class="header-anchor" href="#Exception-hierarchy">¶</a>Exception hierarchy<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></h3>
-<p><img src="/2022/04/17/Chapter20.2_FileProcessing&ExceptionHandling/exception-hierarchy.png" alt="file categories"></p>
+<p><img src="/Notes/ALCS/Chapter20.2_FileProcessing&ExceptionHandling/exception-hierarchy.png" alt="file categories"></p>
 <hr>
 <p><code>Throwable</code> is a derived class of <code>object</code>. <code>Throwable</code> has two subcategories: <code>Error</code> and <code>Exception</code></p>
 <p><code>Error</code>: severe problems occurred that cannot be solved</p>
@@ -3205,45 +3046,167 @@ https://majidtahir.com/a-level9618
       </tags>
   </entry>
   <entry>
-    <title>HTML+CSS: Blinking Rhombus</title>
-    <url>/2022/04/07/blinkingRhombus/</url>
-    <content><![CDATA[<img src="https://media.giphy.com/media/RUI6VnZ1hQjWfYlcdz/giphy.gif" alt="blinking_rhombus" style="zoom:300%;">
-<span id="more"></span> 
-<h2 id="index-html"><a class="header-anchor" href="#index-html">¶</a>index.html</h2>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>菱形加载动画<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;loading&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="style-css"><a class="header-anchor" href="#style-css">¶</a>style.css</h2>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">    <span class="comment">/*place the content at the center, set body as flex container, thus the div element is the flex item*/</span></span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">background</span>:  <span class="built_in">linear-gradient</span>(<span class="number">200deg</span>,<span class="number">#f4efef</span>,<span class="number">#e3eeff</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="comment">/* grid display */</span></span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="comment">/* set the grid to be three columns per row */</span></span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>,<span class="number">1</span>fr);</span><br><span class="line">    <span class="comment">/* set the gap between grid items: both horizontally and vertically gap */</span></span><br><span class="line">    <span class="attribute">gap</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="comment">/* number the items for later use: nth-child() */</span></span><br><span class="line">    <span class="comment">/* counter-reset: number; */</span></span><br><span class="line">    <span class="comment">/* ctrl + shift / */</span></span><br><span class="line">    <span class="comment">/* rotate by 45 degrees */</span></span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">45deg</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line">    <span class="comment">/* user-defined property: grammar is `--` followed by name */</span></span><br><span class="line">    <span class="attr">--c</span>:red;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">var</span>(--c);</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">/* animation  name  duration   easing function  repeat */</span></span><br><span class="line">    <span class="attribute">animation</span>: blinking  <span class="number">2s</span> linear infinite;</span><br><span class="line">    <span class="comment">/* wait for a few sec */</span></span><br><span class="line">    <span class="attribute">animation-delay</span>: <span class="built_in">var</span>(--d);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">    <span class="comment">/* setting increasing number */</span></span><br><span class="line">    <span class="comment">/* counter-increment: number; */</span></span><br><span class="line">    <span class="comment">/*  */</span></span><br><span class="line">    <span class="comment">/* content:counter(number); */</span></span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">7</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#f15a5a</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">4</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">8</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#f0c419</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.2s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">1</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">5</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">9</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#4eba6f</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.4s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">6</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#2d95bf</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.6s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">3</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#955ba5</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.8s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> blinking &#123;</span><br><span class="line">    <span class="number">0%</span>,<span class="number">100%</span>&#123;</span><br><span class="line">        <span class="comment">/* scale(x,y) suggests the change in width and height*/</span></span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">40%</span>,<span class="number">80%</span>&#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>WebDevelopment</category>
-        <category>Project</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
-        <tag>html</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Start of Blog</title>
-    <url>/2022/04/03/Start-of-Blog/</url>
-    <content><![CDATA[<h3 id="Inspiration"><a class="header-anchor" href="#Inspiration">¶</a>Inspiration</h3>
-<p>很多时候感觉缘分就是如此奇妙。最近申请季结束开始研究<code>Github</code>, 因为觉得命令行操作很酷就下载了<code>git</code>, 虽然最终可能<code>Github desktop</code>的用户体验更好一点 当然日常生活中两个都会被用到;</p>
-<p>又是机缘巧合在逛 <u>appstore</u> 的时候看到了<code>mimo</code>。当时只知道这是个教编程的软件，下载后一度被会员制/membership劝退，但最终发现只要使用的仔细认真，答题尽量不错，其实还是可以用的​（✈️ 起飞~）至此便开始了对于Web Development的学习: 从 <code>html</code> 到 <code>css</code> 到 <code>javaScript</code>. 在准备配置自己电脑vscode上的js编程环境的时候，下载的<code>jsnode</code> 搞了近一个小时 东搞搞西搞搞。</p>
-<p>晚上睡觉前刷了刷b站，看到 up主 codesheep 上传的一篇视频 “<strong>如何0基础创建自己的博客</strong>“ 立马就感兴趣住了！说hexo配置的两个前置: <code>git</code> 和 <code>jsnode</code> 的时候 才意识到自己无意中已经给自己铺好了路。</p>
-<p>搜集好教程后 准备第二天直接做起！</p>
-<p>写到这里 我的博客基本配置已经ok啦 以及这就是我的第一篇文章。</p>
-<p>希望以后的我看到这里能回想起当时那个 <font color="#800000">求知、热情、上进</font> 的自己  😏</p>
+    <title>Chapter20.1: Programming Paradigms</title>
+    <url>/Notes/ALCS/Chapter20.1_ProgrammingParadigm/</url>
+    <content><![CDATA[<h1>Chapter20.1: Programming paradigms</h1>
+<p><img src="/Notes/ALCS/Chapter20.1_ProgrammingParadigm/syllabus20.1.png" alt></p>
+<span id="more"></span>
+<hr>
+<blockquote>
+<p><strong>Programming paradigms</strong>: <font color="#4a69bd">A programming style/classification // characteristics/features that programming language has/uses</font></p>
+</blockquote>
+<h2 id="Low-level"><a class="header-anchor" href="#Low-level">¶</a>Low-level</h2>
+<table>
+<thead>
+<tr>
+<th>Modes of addressing</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Immediate</td>
+<td>The operand is the data being used</td>
+</tr>
+<tr>
+<td>Direct</td>
+<td>The operand is the address of the data being used</td>
+</tr>
+<tr>
+<td>Indirect</td>
+<td>The content stored in the content of the operand is the data being used</td>
+</tr>
+<tr>
+<td>Relative</td>
+<td>The address of data being used is the current address add to the operand</td>
+</tr>
+<tr>
+<td>Indexed</td>
+<td>The address of the data being used is the content of the operand added to the content of index register</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/Notes/ALCS/Chapter20.1_ProgrammingParadigm/assembly.png" alt></p>
+<hr>
+<h2 id="Imperative"><a class="header-anchor" href="#Imperative">¶</a>Imperative</h2>
+<p><u>Describe what is meant by imperative programming paradigm</u></p>
+<ul>
+<li><font color="#4a69bd">A sequence of steps that changes the state of the program</font></li>
+<li><font color="#4a69bd">The steps are in the order they should be carried out</font></li>
+<li><font color="#4a69bd">e.g. procedural programming/language</font></li>
+<li><font color="#4a69bd">Groups code into self-contained blocks // spilt the program into modules</font></li>
+<li><font color="#4a69bd">… which are subroutines</font></li>
+<li><code>--</code></li>
+<li><font color="#4a69bd">Imperative languages use variables</font></li>
+<li><font color="#4a69bd">… which are changed using assignment statement</font></li>
+<li><font color="#4a69bd">… they rely on a method of repetition/iteration</font></li>
+<li><font color="#4a69bd">Statement provide a sequence of commands for the computer to perform</font></li>
+<li><font color="#4a69bd">… in the order written</font></li>
+<li><font color="#4a69bd">… each line of code changes something in the program run</font></li>
+</ul>
+<h2 id="Object-Oriented-Programming"><a class="header-anchor" href="#Object-Oriented-Programming">¶</a>Object Oriented Programming</h2>
+<blockquote>
+<p><font color="#4a69bd">A programming methodology that uses self-contained objects, which contain programming statements(methods) and data, and which communicate with each other</font></p>
+</blockquote>
+<p><u>Explain what is meant by Object Oriented programming</u></p>
+<ul>
+<li><font color="#4a69bd">Create classes</font></li>
+<li><font color="#4a69bd">… as a blueprint for an object // objects are instances of classes</font></li>
+<li><font color="#4a69bd">… that have properties/attributes and methods</font></li>
+<li><font color="#4a69bd">… that can be private to the class // properties that can be only accessed by the class’s methods // encapsulation</font></li>
+<li><font color="#4a69bd">Subclass can inherit from superclass (child and parent)</font></li>
+<li><font color="#4a69bd">A subclass can inherit the methods and properties from the superclass</font></li>
+<li><font color="#4a69bd">A subclass can change the methods from the superclass // subclass can use polymorphism</font></li>
+<li><font color="#4a69bd">Objects can interact with each other</font></li>
+</ul>
+<p><u>Explain the difference between a class and an object</u><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<ul>
+<li><font color="#4a69bd">A class is the blueprint/design/template (from which the object are later created)</font></li>
+<li><font color="#4a69bd">A class consists of properties/attributes and methods/procedures/functions</font></li>
+<li><font color="#4a69bd">An object is an instance of a class</font></li>
+<li><font color="#4a69bd">An object must be based on a class definition</font></li>
+<li><font color="#4a69bd">Many objects can exists for the same class</font></li>
+</ul>
+<h4 id="Objects"><a class="header-anchor" href="#Objects">¶</a>Objects:</h4>
+<blockquote>
+<p>An instance of a class that is self-contained and includes data and methods</p>
+<ul>
+<li>Many instances can exists for the same class</li>
+<li>Must be based on the class definition</li>
+</ul>
+</blockquote>
+<h4 id="Properties-v2"><a class="header-anchor" href="#Properties-v2">¶</a>Properties</h4>
+<blockquote>
+<p>Data and methods within an object that perform a named action</p>
+</blockquote>
+<h4 id="Methods"><a class="header-anchor" href="#Methods">¶</a>Methods</h4>
+<blockquote>
+<p>A programmed procedure that is defined as part of a class</p>
+</blockquote>
+<h4 id="Classes"><a class="header-anchor" href="#Classes">¶</a>Classes</h4>
+<blockquote>
+<p>A template/blueprint defining the methods and data of a certain type of object</p>
+</blockquote>
+<h4 id="Inheritance"><a class="header-anchor" href="#Inheritance">¶</a>Inheritance</h4>
+<blockquote>
+<p>Process in which the methods and data from one class, a superclass or base class is copied to another class, a derived class/subclass</p>
+</blockquote>
+<h4 id="Polymorphism"><a class="header-anchor" href="#Polymorphism">¶</a>Polymorphism</h4>
+<blockquote>
+<p>Feature of OOP that allows a method to be defined more than once in a class, so it can be used in different situations</p>
+</blockquote>
+<h4 id="Containment-aggregation"><a class="header-anchor" href="#Containment-aggregation">¶</a>Containment(aggregation)</h4>
+<blockquote>
+<p>Defines a <code>one-way</code> relationship / <code>has-a</code> relationship between two classes. In aggregation, the objects can exists independently with each other. <sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+</blockquote>
+<h4 id="Encapsulation"><a class="header-anchor" href="#Encapsulation">¶</a>Encapsulation</h4>
+<blockquote>
+<p>Process of putting data and methods together as a single unit, a class</p>
+</blockquote>
+<h4 id="Getter"><a class="header-anchor" href="#Getter">¶</a>Getter</h4>
+<blockquote>
+<p>A method that gets the value of a property</p>
+</blockquote>
+<h4 id="Setters"><a class="header-anchor" href="#Setters">¶</a>Setters</h4>
+<blockquote>
+<p>A method used to control changes to a variable</p>
+</blockquote>
+<h4 id="Instances"><a class="header-anchor" href="#Instances">¶</a>Instances</h4>
+<blockquote>
+<p>An occurrence of an object during the execution of a program</p>
+</blockquote>
+<h2 id="Declarative"><a class="header-anchor" href="#Declarative">¶</a>Declarative</h2>
+<blockquote>
+<p>Program that specify the desired result rather than how to get it</p>
+</blockquote>
+<ul>
+<li><font color="#4a69bd">Instruct a program of what is needed to done instead of how to do it</font></li>
+<li><font color="#4a69bd">… using facts and rules</font></li>
+<li><font color="#4a69bd">… using queries to satisfy goals</font></li>
+<li><font color="#4a69bd">Can be logical or functional</font></li>
+<li><font color="#4a69bd">Logical - states a program as a set of logical relations</font></li>
+<li><font color="#4a69bd">Functional - constructed by applying functions to arguments / uses a mathematical style</font></li>
+</ul>
+<hr>
+<p><img src="/Notes/ALCS/Chapter20.1_ProgrammingParadigm/drawline.png" alt></p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>9691 w13 32 q4 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://isaaccomputerscience.org/concepts/prog_oop_aggregation_composition">https://isaaccomputerscience.org/concepts/prog_oop_aggregation_composition</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 ]]></content>
       <categories>
-        <category>blogging</category>
-        <category>start</category>
+        <category>Notes</category>
+        <category>ALCS</category>
       </categories>
-      <tags>
-        <tag>Inspiration</tag>
-      </tags>
   </entry>
   <entry>
     <title>FlexBox_Notes</title>
-    <url>/2022/04/04/FlexBox-Notes/</url>
+    <url>/WebDevelopment/CSS/FlexBox-Notes/</url>
     <content><![CDATA[<blockquote class="blockquote-center">
 <p>Notes of FlexBox container in css and its related properties</p>
 
@@ -3324,27 +3287,8 @@ https://majidtahir.com/a-level9618
       </tags>
   </entry>
   <entry>
-    <title>HTML+CSS: spotlight Text Animation</title>
-    <url>/2022/04/05/Spotlight-Text/</url>
-    <content><![CDATA[<img src="https://media.giphy.com/media/r0qmZ6SyKILYYxmyHK/giphy.gif" alt="gif" style="zoom:1000%;" class="full-image">
-<span id="more"></span>
-<h2 id="index-html-v2"><a class="header-anchor" href="#index-html-v2">¶</a>index.html</h2>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Spotlight on texts<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="style-css-v2"><a class="header-anchor" href="#style-css-v2">¶</a>style.css</h2>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="comment">/* Initialization, cancle the margin and padding of elements */</span></span><br><span class="line">    <span class="attribute">margin</span> : <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#222</span>;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">    <span class="comment">/* capitalize */</span></span><br><span class="line">    <span class="attribute">text-transform</span>: uppercase;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">112px</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 伪元素 */</span></span><br><span class="line"><span class="selector-tag">h1</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line">    <span class="attribute">color</span>: transparent;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to right, <span class="number">#ff59b3</span>, <span class="number">#fe0000</span>, <span class="number">#ffff01</span>, <span class="number">#40d1d2</span>, <span class="number">#8b059f7d</span>);</span><br><span class="line">    <span class="comment">/* change the background so that it fits exactly the text */</span></span><br><span class="line">    <span class="attribute">background-clip</span>: text;</span><br><span class="line">    -webkit-<span class="attribute">background-clip</span>: text;</span><br><span class="line">    <span class="comment">/* clip the element so that it becomes a circle: 100 suggests the diameter, 0%, 50% suggests the position of the center of the circle */</span></span><br><span class="line">    <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">0%</span> <span class="number">50%</span>);</span><br><span class="line">    <span class="comment">/* animation: name, duration, infinite means repeat */</span></span><br><span class="line">    <span class="attribute">animation</span>: light <span class="number">5s</span> infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* define an animation that changes the position of the center of the circle  */</span></span><br><span class="line"><span class="keyword">@keyframes</span> light&#123;</span><br><span class="line">    <span class="number">0%</span>&#123;</span><br><span class="line">        <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">0%</span> <span class="number">50%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">50%</span>&#123;</span><br><span class="line">        <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">100%</span> <span class="number">50%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">100%</span>&#123;</span><br><span class="line">        <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">0%</span> <span class="number">50%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>WebDevelopment</category>
-        <category>Project</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
-        <tag>html</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JavaScript_Basics(constantly updated)</title>
-    <url>/2022/04/05/JavaScript-Basics/</url>
+    <url>/WebDevelopment/JavaScript/JavaScript-Basics/</url>
     <content><![CDATA[<p style="text-align:center; color:#19547b; font-weight:bold;"> A flexible language that powers dynamic websites and apps </p>
 <span id="more"></span>
 <h3 id="Variables"><a class="header-anchor" href="#Variables">¶</a>Variables</h3>
@@ -3529,17 +3473,73 @@ When we display variables in the console, their values appear instead of their n
   </entry>
   <entry>
     <title>Contributors</title>
-    <url>/2022/04/29/contributors/</url>
+    <url>/uncategorized/Contributors/</url>
     <content><![CDATA[<h1>Contributors</h1>
 <h2 id="🐻Katrina-Liu"><a class="header-anchor" href="#🐻Katrina-Liu">¶</a>🐻Katrina Liu</h2>
-<div class="note info"><p><strong>Determined &amp; offered suggestions on</strong> themes and style of page</p>
+<div class="note info"><p><strong>Determined &amp; offered suggestions on</strong> <mark class="label primary">themes</mark> and style of page</p>
 <p><strong>Participated</strong>: <code>Beta</code> test</p>
 </div>
 ]]></content>
   </entry>
   <entry>
+    <title>Start of Blog</title>
+    <url>/blogging/start/Start-of-Blog/</url>
+    <content><![CDATA[<h3 id="Inspiration"><a class="header-anchor" href="#Inspiration">¶</a>Inspiration</h3>
+<p>很多时候感觉缘分就是如此奇妙。最近申请季结束开始研究<code>Github</code>, 因为觉得命令行操作很酷就下载了<code>git</code>, 虽然最终可能<code>Github desktop</code>的用户体验更好一点 当然日常生活中两个都会被用到;</p>
+<p>又是机缘巧合在逛 <u>appstore</u> 的时候看到了<code>mimo</code>。当时只知道这是个教编程的软件，下载后一度被会员制/membership劝退，但最终发现只要使用的仔细认真，答题尽量不错，其实还是可以用的​（✈️ 起飞~）至此便开始了对于Web Development的学习: 从 <code>html</code> 到 <code>css</code> 到 <code>javaScript</code>. 在准备配置自己电脑vscode上的js编程环境的时候，下载的<code>jsnode</code> 搞了近一个小时 东搞搞西搞搞。</p>
+<p>晚上睡觉前刷了刷b站，看到 up主 codesheep 上传的一篇视频 “<strong>如何0基础创建自己的博客</strong>“ 立马就感兴趣住了！说hexo配置的两个前置: <code>git</code> 和 <code>jsnode</code> 的时候 才意识到自己无意中已经给自己铺好了路。</p>
+<p>搜集好教程后 准备第二天直接做起！</p>
+<p>写到这里 我的博客基本配置已经ok啦 以及这就是我的第一篇文章。</p>
+<p>希望以后的我看到这里能回想起当时那个 <font color="#800000">求知、热情、上进</font> 的自己  😏</p>
+]]></content>
+      <categories>
+        <category>blogging</category>
+        <category>start</category>
+      </categories>
+      <tags>
+        <tag>Inspiration</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML+CSS: Blinking Rhombus</title>
+    <url>/WebDevelopment/Project/blinkingRhombus/</url>
+    <content><![CDATA[<img src="https://media.giphy.com/media/RUI6VnZ1hQjWfYlcdz/giphy.gif" alt="blinking_rhombus" style="zoom:300%;">
+<span id="more"></span> 
+<h2 id="index-html"><a class="header-anchor" href="#index-html">¶</a>index.html</h2>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>菱形加载动画<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;loading&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="style-css"><a class="header-anchor" href="#style-css">¶</a>style.css</h2>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">    <span class="comment">/*place the content at the center, set body as flex container, thus the div element is the flex item*/</span></span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">background</span>:  <span class="built_in">linear-gradient</span>(<span class="number">200deg</span>,<span class="number">#f4efef</span>,<span class="number">#e3eeff</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="comment">/* grid display */</span></span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="comment">/* set the grid to be three columns per row */</span></span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>,<span class="number">1</span>fr);</span><br><span class="line">    <span class="comment">/* set the gap between grid items: both horizontally and vertically gap */</span></span><br><span class="line">    <span class="attribute">gap</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="comment">/* number the items for later use: nth-child() */</span></span><br><span class="line">    <span class="comment">/* counter-reset: number; */</span></span><br><span class="line">    <span class="comment">/* ctrl + shift / */</span></span><br><span class="line">    <span class="comment">/* rotate by 45 degrees */</span></span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">45deg</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line">    <span class="comment">/* user-defined property: grammar is `--` followed by name */</span></span><br><span class="line">    <span class="attr">--c</span>:red;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">var</span>(--c);</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">/* animation  name  duration   easing function  repeat */</span></span><br><span class="line">    <span class="attribute">animation</span>: blinking  <span class="number">2s</span> linear infinite;</span><br><span class="line">    <span class="comment">/* wait for a few sec */</span></span><br><span class="line">    <span class="attribute">animation-delay</span>: <span class="built_in">var</span>(--d);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">    <span class="comment">/* setting increasing number */</span></span><br><span class="line">    <span class="comment">/* counter-increment: number; */</span></span><br><span class="line">    <span class="comment">/*  */</span></span><br><span class="line">    <span class="comment">/* content:counter(number); */</span></span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">7</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#f15a5a</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">4</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">8</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#f0c419</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.2s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">1</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">5</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">9</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#4eba6f</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.4s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">6</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#2d95bf</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.6s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">3</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#955ba5</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.8s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> blinking &#123;</span><br><span class="line">    <span class="number">0%</span>,<span class="number">100%</span>&#123;</span><br><span class="line">        <span class="comment">/* scale(x,y) suggests the change in width and height*/</span></span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">40%</span>,<span class="number">80%</span>&#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>WebDevelopment</category>
+        <category>Project</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>html</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML+CSS: spotlight Text Animation</title>
+    <url>/WebDevelopment/Project/Spotlight-Text/</url>
+    <content><![CDATA[<img src="https://media.giphy.com/media/r0qmZ6SyKILYYxmyHK/giphy.gif" alt="gif" style="zoom:1000%;" class="full-image">
+<span id="more"></span>
+<h2 id="index-html-v2"><a class="header-anchor" href="#index-html-v2">¶</a>index.html</h2>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Spotlight on texts<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="style-css-v2"><a class="header-anchor" href="#style-css-v2">¶</a>style.css</h2>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="comment">/* Initialization, cancle the margin and padding of elements */</span></span><br><span class="line">    <span class="attribute">margin</span> : <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#222</span>;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">    <span class="comment">/* capitalize */</span></span><br><span class="line">    <span class="attribute">text-transform</span>: uppercase;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">112px</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 伪元素 */</span></span><br><span class="line"><span class="selector-tag">h1</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line">    <span class="attribute">color</span>: transparent;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to right, <span class="number">#ff59b3</span>, <span class="number">#fe0000</span>, <span class="number">#ffff01</span>, <span class="number">#40d1d2</span>, <span class="number">#8b059f7d</span>);</span><br><span class="line">    <span class="comment">/* change the background so that it fits exactly the text */</span></span><br><span class="line">    <span class="attribute">background-clip</span>: text;</span><br><span class="line">    -webkit-<span class="attribute">background-clip</span>: text;</span><br><span class="line">    <span class="comment">/* clip the element so that it becomes a circle: 100 suggests the diameter, 0%, 50% suggests the position of the center of the circle */</span></span><br><span class="line">    <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">0%</span> <span class="number">50%</span>);</span><br><span class="line">    <span class="comment">/* animation: name, duration, infinite means repeat */</span></span><br><span class="line">    <span class="attribute">animation</span>: light <span class="number">5s</span> infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* define an animation that changes the position of the center of the circle  */</span></span><br><span class="line"><span class="keyword">@keyframes</span> light&#123;</span><br><span class="line">    <span class="number">0%</span>&#123;</span><br><span class="line">        <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">0%</span> <span class="number">50%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">50%</span>&#123;</span><br><span class="line">        <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">100%</span> <span class="number">50%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">100%</span>&#123;</span><br><span class="line">        <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">0%</span> <span class="number">50%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>WebDevelopment</category>
+        <category>Project</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>html</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HTML+CSS: Loading Animation</title>
-    <url>/2022/04/06/loadingAnimation/</url>
+    <url>/WebDevelopment/Project/loadingAnimation/</url>
     <content><![CDATA[<img src="https://media.giphy.com/media/KcMqhBHGYydbQqf7z1/giphy.gif" alt="loadingAnimation" style="zoom:300%;">
 <span id="more"></span>
 <h2 id="index-html-v3"><a class="header-anchor" href="#index-html-v3">¶</a>index.html</h2>
@@ -3557,7 +3557,7 @@ When we display variables in the console, their values appear instead of their n
   </entry>
   <entry>
     <title>那些你该知道的markdown操作</title>
-    <url>/2022/04/09/markdown-tricks/</url>
+    <url>/blogging/start/markdown-tricks/</url>
     <content><![CDATA[<h2 id="基于HTML-HTML-based"><a class="header-anchor" href="#基于HTML-HTML-based">¶</a>基于HTML: HTML-based</h2>
 <h3 id="👉改变字体颜色-Text-Colour"><a class="header-anchor" href="#👉改变字体颜色-Text-Colour">¶</a>👉改变字体颜色: Text Colour</h3>
 <h4 id="表示方法-value"><a class="header-anchor" href="#表示方法-value">¶</a>表示方法<code>&lt;value&gt;</code>:</h4>
@@ -3644,7 +3644,7 @@ When we display variables in the console, their values appear instead of their n
   </entry>
   <entry>
     <title>Paper4:Practical Notes</title>
-    <url>/2022/04/17/practical/</url>
+    <url>/Notes/ALCS/practical/</url>
     <content><![CDATA[<blockquote class="blockquote-center">
 <p>Tips, reminders, and sample codes for paper5</p>
 
