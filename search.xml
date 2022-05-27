@@ -217,140 +217,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Chapter 13.2: File organisation and access</title>
-    <url>/Notes/ALCS/Chapter13.2_FileOrganisation&amp;Access/</url>
-    <content><![CDATA[<h1>Chapter 13.2: File organisation and access</h1>
-<p><img src="/Notes/ALCS/Chapter13.2_FileOrganisation&Access/13.2.png" alt></p>
-<hr>
-<span id="more"></span>
-<h2 id="File-organisation"><a class="header-anchor" href="#File-organisation">¶</a>File organisation</h2>
-<h3 id="Serial-file-organisation"><a class="header-anchor" href="#Serial-file-organisation">¶</a>Serial file organisation</h3>
-<blockquote>
-<p>Method of file organisation in which records of data are physically stored in a file, one after another, <strong>in the order they were added to the file</strong></p>
-</blockquote>
-<p>New records are appended to the end of the file. Serial file organisation is often used for temporary files storing transactions to be made to more permanent files. e.g. storing customer meter reading for gas/electricity before they are used to send the bills to all customers.</p>
-<ul>
-<li>Each transaction is added to the file in the order of arrival</li>
-<li>These records will be in chronological order</li>
-<li><font color="#4a69bd">High hit rate</font></li>
-<li><font color="#4a69bd">Suitable for batch processing</font></li>
-<li><font color="#4a69bd">Order not important</font></li>
-<li><font color="#4a69bd">The records will be accessed one after another</font><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></li>
-</ul>
-<h3 id="Sequential-file-organisation"><a class="header-anchor" href="#Sequential-file-organisation">¶</a>Sequential file organisation</h3>
-<blockquote>
-<p>Method of file organisation in which records of data are physically stored in a file, one after another, <strong>in a given order</strong></p>
-</blockquote>
-<p>Physically stores records of data in a file, one after another, in a given order. The order is usually based on the <strong>key field</strong> of the records as this is the unique identifier.</p>
-<ul>
-<li><font color="#4a69bd">High hit rate</font></li>
-<li><font color="#4a69bd">Suitable for batch processing of records</font></li>
-<li><font color="#4a69bd">File organised using unique ID called <strong>key field</strong></font></li>
-</ul>
-<p>The difference between key fields in a file and primary keys in a database table. In the database table the primary key values must all be unique. This is not a requirement for key fields in any type of file. It may be sensible in certain applications to ensure key fields have unique values, but it is not mandatory.</p>
-<h3 id="Random-file-organisation"><a class="header-anchor" href="#Random-file-organisation">¶</a>Random file organisation</h3>
-<blockquote>
-<p>Method of file organisation in which records of data are physically stored in a file in <strong>any available</strong> position, the position of any record in a field is found by applying a <strong>hash algorithm</strong> on the <strong>key field</strong> of the record/record key.</p>
-</blockquote>
-<ul>
-<li>Records can be added to any empty position</li>
-<li><font color="#4a69bd">Key field is hashed to produce the home location</font></li>
-<li><font color="#4a69bd">If home location is free, insert the data</font></li>
-<li><font color="#4a69bd">Else, use overflow method to find free location to store the data</font></li>
-<li><font color="#4a69bd">If no free location is available, the file is full and data cannot be added/stored</font></li>
-<li><code>--</code></li>
-<li><font color="#4a69bd">Real-time processing</font></li>
-<li><font color="#4a69bd">Fast access to data</font></li>
-<li><font color="#4a69bd">No need to search through records</font></li>
-</ul>
-<h3 id="Past-paper-Questions"><a class="header-anchor" href="#Past-paper-Questions">¶</a>Past-paper Questions:</h3>
-<ol>
-<li><u>Compare Serial and Sequential file organisation:</u></li>
-</ol>
-<ul>
-<li><font color="#4a69bd">In both serial and sequential organisation, Records are added to the file one after another</font></li>
-<li>.<font color="#4a69bd">… and they needs to be accessed one after another</font></li>
-<li><font color="#4a69bd">For serial file organisation, records are added in a chronological order</font></li>
-<li><font color="#4a69bd">For sequential file organisation, records are stored with a given order</font></li>
-<li><font color="#4a69bd">… in the order of the key field</font></li>
-<li><font color="#4a69bd">For serial file organisation, records are added in the next available space // records are appended to the file</font></li>
-<li><font color="#4a69bd">For sequential file organisation, records are inserted into the correct position</font></li>
-</ul>
-<ol start="2">
-<li></li>
-</ol>
-<img src="/Notes/ALCS/Chapter13.2_FileOrganisation&Access/13.2Drawline.png" style="zoom: 80%;">
-<ol start="3">
-<li></li>
-</ol>
-<p><img src="/Notes/ALCS/Chapter13.2_FileOrganisation&Access/fileogr.png" alt></p>
-<ol start="4">
-<li></li>
-</ol>
-<p>The programmer decides to store all the data in a file. Initially, data from 27 locations will be stored. More rainfall locations will be added over time and will never exceeds 100. The programmer has to choose between two types of file organisation: serial and sequential.</p>
-<p><u>Give two reasons for choosing Serial file organisation:</u></p>
-<ul>
-<li><font color="#4a69bd">No need to re-sort data every time new data is added</font></li>
-<li><font color="#4a69bd">Only a small file so searching would require little processing</font></li>
-<li><font color="#4a69bd">New records can be easily added</font></li>
-</ul>
-<hr>
-<h2 id="File-access"><a class="header-anchor" href="#File-access">¶</a>File access</h2>
-<blockquote>
-<p>Method used to physically find a record in a file</p>
-</blockquote>
-<h3 id="Sequential-access"><a class="header-anchor" href="#Sequential-access">¶</a>Sequential access</h3>
-<blockquote>
-<p>A method of file access in which records are searched one after another from the physical start of the file until the required record is found, or a new record can be added to the file. This method is used for <code>serial</code> and <code>sequential</code> files.</p>
-</blockquote>
-<ul>
-<li>High hit rate</li>
-</ul>
-<p>For a <code>serial</code> file, if a particular record is being searched for, every record needs to be checked until the record is found or the whole file has been searched and that record has not been found. Any new records are appended to the end of the file.</p>
-<p>For a <code>sequential</code>file, if a particular records is being searched for, every records needs to be checked until the record is found or <em>the key filed of the current record being checked is greater than the key field of the record being searched for</em>. The rest of the file does not need to be searched as the records are sorted on ascending key field values.</p>
-<p>Sequential access if efficient when <strong>every</strong> record in the file needs to be processed. e.g. a monthly billing or payroll system.</p>
-<h3 id="Direct-access"><a class="header-anchor" href="#Direct-access">¶</a>Direct access</h3>
-<blockquote>
-<p>A method of file access in which a record can be physically found in a file without reading other records.</p>
-</blockquote>
-<ul>
-<li>Both <code>sequential</code> and <code>random</code> files can use direct access.</li>
-<li>Allow specific records to be found more quickly than using sequential access.</li>
-<li>Low hit rate</li>
-</ul>
-<p>Direct access is required when an <strong>individual</strong> record from a file needs to be processed. e.g. when a single customer record needs to be updated when the customer’s phone number is changed.</p>
-<p>For a <code>sequential</code> file, an index of all the key fields is kept and used to look up the address of the file location where a given record is stored. For large files, searching the index takes less time than searching the whole file.</p>
-<p>A separate index file is created which has two fields per record. The first record has the key field value and the second filed has a value for the position of this key field value in the main file.</p>
-<p>For a <code>random access</code> file, a hashing algorithm is used on the key filed to calculate the address of the file location where a given record is stored.</p>
-<h2 id="Hashing-algorithms"><a class="header-anchor" href="#Hashing-algorithms">¶</a>Hashing algorithms</h2>
-<blockquote>
-<p>A mathematical formula used to perform a calculation on the <code>record key</code>. The result of the calculation gives the address where the record should be found. More complex hashing algorithms are used in the encryption of data.</p>
-</blockquote>
-<p>Two ways of dealing with collision:</p>
-<p><code>open hash</code>: the record is stored in the next free space.</p>
-<p><code>close hash</code>: an overflow area is set up and the record is stored in the next free space in the overflow area.</p>
-<h3 id="Past-paper-questions-v2"><a class="header-anchor" href="#Past-paper-questions-v2">¶</a>Past-paper questions</h3>
-<ol>
-<li><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup><br>
-<img src="/Notes/ALCS/Chapter13.2_FileOrganisation&Access/hashppq.png" style="zoom:80%;"></li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">FUNCTION hash(BookingID: INTEGER) RETURNS INTEGER</span><br><span class="line">	RETURN BookingID%100000 + 3</span><br><span class="line">ENDFUNCTION</span><br></pre></td></tr></table></figure>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>Sequential file access <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>9608-s21-q2 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-]]></content>
-      <categories>
-        <category>Notes</category>
-        <category>ALCS</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Chapter13.3: Floating-point numbers,Representation and Manipulation</title>
     <url>/Notes/ALCS/Chapter13.3_Floating-pointNumbersRepresentation/</url>
     <content><![CDATA[<h1>Chapter 13.3: Floating-point numbers: representation and manipulation</h1>
@@ -457,586 +323,6 @@
 <li>The loop keeps adding this approximate value to the counter</li>
 <li>Until all accumulated small difference become significant enough to be seen</li>
 </ul>
-]]></content>
-      <categories>
-        <category>Notes</category>
-        <category>ALCS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Chapter 14: Communication and Internet technologies</title>
-    <url>/Notes/ALCS/Chapter14_Communication&amp;InternetTechnologies/</url>
-    <content><![CDATA[<h1>Chapter 14: Communication and Internet technologies</h1>
-<p><img src="/Notes/ALCS/Chapter14_Communication&InternetTechnologies/commu.png" alt></p>
-<hr>
-<span id="more"></span>
-<h2 id="Protocols"><a class="header-anchor" href="#Protocols">¶</a>Protocols</h2>
-<blockquote>
-<p><font color="#4a69bd">A set of rules governing communication across a network - the rules agreed by both the sender and the recipient</font></p>
-</blockquote>
-<p><u>Communication protocol <strong>definition</strong>:</u></p>
-<ul>
-<li><font color="#4a69bd">Sets of rules</font></li>
-<li><font color="#4a69bd">for successful transmission and receipt of data</font></li>
-</ul>
-<p><u>Why communication protocol is necessary:</u></p>
-<ul>
-<li><font color="#4a69bd">All data is sent and received using the same <strong>rules</strong> and <strong>format</strong></font></li>
-<li><font color="#4a69bd">Allows communication between devices operating on <strong>different platforms</strong></font></li>
-<li><font color="#4a69bd">The communication is independent of the <strong>software</strong> and <strong>hardware</strong> used</font></li>
-<li><code>--</code></li>
-<li><font color="#4a69bd">Provide a set of standards for transmission of data</font></li>
-<li><font color="#4a69bd">… that gives a known/accepted set of rules for transmitting and receiving of data</font></li>
-<li><font color="#4a69bd">This enables communication/compatibility between devices from different manufacturer/platform</font></li>
-</ul>
-<h3 id="Protocol-implementation"><a class="header-anchor" href="#Protocol-implementation">¶</a>Protocol implementation<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Application layer</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><strong>Transport layer</strong></td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>Internet layer</strong></td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>Network (access) layer</strong></td>
-</tr>
-</tbody>
-</table>
-<h4 id="Protocol-stack"><a class="header-anchor" href="#Protocol-stack">¶</a>Protocol stack</h4>
-<blockquote>
-<p>For a protocol suite the protocols can be viewed as layers within a protocol stack. There are a number of aspects relating to this concept.</p>
-</blockquote>
-<ul>
-<li>Each layer can only accept input from the next higher layer or the next lower layer</li>
-<li>There is a defined interface between adjacent layers which constitutes the only interaction allowed between layers.</li>
-<li>A layer is serviced by the actions of lower layers.</li>
-<li>With the possible exception of the lowest layer the function of a layer is created by installed software</li>
-<li>A layer may comprise sub-layers.</li>
-<li>Any user interaction will take place using protocols associated with the highest level layer in the stack.</li>
-<li>Any direct access to hardware is confined to the lowest layer in the stack.</li>
-</ul>
-<p><u>State how each layer of stack is implemented</u></p>
-<ul>
-<li><font color="#4a69bd">Software/module/program/code</font></li>
-</ul>
-<h3 id="TCP-IP-protocol-suite"><a class="header-anchor" href="#TCP-IP-protocol-suite">¶</a>TCP/IP protocol suite</h3>
-<p><u>Describe the TCP/IP protocol suite:</u></p>
-<ul>
-<li><font color="#4a69bd">A layered model with four layers</font></li>
-<li><font color="#4a69bd">Uses a set of protocols for transmission of data</font></li>
-<li><font color="#4a69bd">Transport control protocol with Internet protocol</font></li>
-<li><font color="#4a69bd">Application layer, transport layer, internet layer, network (access) layer</font></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th><u>Layer</u>:</th>
-<th><u>Description</u>:</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Application layer</strong></td>
-<td><font color="#4a69bd">Handles access to services <br> Define protocol used <br> Manage data exchange</font><br></td>
-</tr>
-<tr>
-<td><strong>Transport layer</strong></td>
-<td><font color="#4a69bd">Handles the forwarding of packets</font><br> Where TCP takes place <br>Regulate the network connection<br>Data broken up into packets, then sent to internet layer</td>
-</tr>
-<tr>
-<td><strong>Internet layer</strong></td>
-<td><font color="#4a69bd">Handles the transmission of data<br>Routing<br> IP addressing<br><code>--</code><br>Routes the packets around the network<br>Adds to the IP header a source/destination address for each header<br>Encapsulates data into datagram<br>Passes datagram to network access layer<br>Defines the addressing mode: <a href="https://www.cloudflare.com/en-gb/learning/network-layer/what-is-a-subnet/">subnetting</a>, NAT</font></td>
-</tr>
-<tr>
-<td><strong>Network (access) layer</strong></td>
-<td><font color="#4a69bd">Handles how data is physically sent</font><br>Encapsulates IP packets into frames for transmission<br>Ensure correct protocol is followed</td>
-</tr>
-</tbody>
-</table>
-<h3 id="Protocols-v2"><a class="header-anchor" href="#Protocols-v2">¶</a>Protocols</h3>
-<table>
-<thead>
-<tr>
-<th><u>Protocol</u></th>
-<th><u>Purpose &amp; Use</u></th>
-<th><u>Description</u></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>HTTP</strong>(Hyper text transfer protocol)</td>
-<td><font color="#4a69bd"><code>Purpose</code>:Transfer webpages / hypertext from server to client<br><code>Use</code>: Browsing website</font></td>
-<td><font color="#4a69bd">This is the protocol responsible for correct transfer of files that makes up web pages on the world wide web</font><br>Client/server protocol<br>Define the format of messages sent and received</td>
-</tr>
-<tr>
-<td><strong>SMTP</strong>(Simple mail transfer protocol)</td>
-<td><font color="#4a69bd"><code>purpose</code>: Protocol for sending email<br><code>Use</code>: Used by mail servers to forward email messages to another mail sever <br>Email client sends email to email server</font></td>
-<td>Text-based: if contain image, video, music – then use multipurpose internet mail extension(MIME) protocol<br>Email is transferred from one server to another server<br>Email client sends email to email server</td>
-</tr>
-<tr>
-<td><strong>POP3/4</strong>(Post office protocol)</td>
-<td><font color="#4a69bd"><code>purpose</code>: Mail is held for you by a remote server until you download it // download email<br><code>Use</code>: To receive email</font></td>
-<td>Pull protocols<br>Does not keep the server and client in synchronization; when emails are downloaded by the client, they are then deleted from the server which means it is not further updated.</td>
-</tr>
-<tr>
-<td><strong>IMAP</strong>(internet message access protocol)</td>
-<td><font color="#4a69bd"><code>Purpose</code>: downloading email // storing/organising emails on a remote server<br><code>Use</code>: To receive email</font></td>
-<td>More recent than POP3/4<br>Keeps the server and client in synchronization; only a copy of the email is downloaded with the original remaining on the server until the client mutually deletes it</td>
-</tr>
-<tr>
-<td><strong>FTP</strong>(file transfer protocol)</td>
-<td><font color="#4a69bd"><code>Purpose</code>: Used for interactive file transfer; <br>To directly transfer data between two computers over the internet<br><code>Use</code>: Upload and download files over the internet</font></td>
-<td><font color="#4a69bd"><u>Anonymous ftp</u>: <br>Allow user to access files<br>User does not need to identify themselves to the server<br><u>ftp commands</u><br>User can send instructions<br>That are carried out on the server<br><u>ftp server</u><br>Central computer<br>Stores files that are to be downloaded</font></td>
-</tr>
-</tbody>
-</table>
-<h4 id="BitTorrent-Protocol"><a class="header-anchor" href="#BitTorrent-Protocol">¶</a>BitTorrent Protocol</h4>
-<p><u><code>Purpose</code></u>: <font color="#4a69bd">Protocol for peer-to-peer file sharing</font></p>
-<p><u><code>Use</code></u>: <font color="#4a69bd">Decentralized distribution of data</font></p>
-<p><u>Properties:</u></p>
-<ul>
-<li><font color="#4a69bd">Based on peer-to-peer networking concept</font></li>
-<li><font color="#4a69bd">Allow fast sharing of files between computers</font></li>
-<li><font color="#4a69bd">Allow many computers to share files</font></li>
-</ul>
-<p><u>Description:</u></p>
-<ol>
-<li><font color="#4a69bd">Bit torrent software made available</font></li>
-<li><font color="#4a69bd">A computer joins a swarm by using this to load a torrent descriptor file</font></li>
-<li><font color="#4a69bd">A server called tracker keeps record of all the computer in the swarm</font><br>
-<font color="#4a69bd">… and shares their IP addresses allow them to be connected</font></li>
-<li><font color="#4a69bd">One computer of the swarm must have full copy of the file to be downloaded</font></li>
-<li><font color="#4a69bd">Torrent is split into small files</font></li>
-<li><font color="#4a69bd">Pieces of torrent are both downloaded and uploaded</font></li>
-<li><font color="#4a69bd">Rare pieces are given priority in download</font></li>
-<li><font color="#4a69bd">Once a computer have downloaded a full copy it becomes a seed</font></li>
-<li><font color="#4a69bd">Leech downloads more than they uploads</font></li>
-</ol>
-<p><code>—</code></p>
-<ol>
-<li>Create small file called torrent: contains meta data about the file to be stored</li>
-<li>The actual file is broken up into equal segments known as pieces</li>
-<li>Others first obtains the torrent, then connect to the tracker (A central server that contains data about all computers connected to it)</li>
-<li>As each peer receives a piece of file, they then become the source for that piece of file. Other peers connected to the tracker will therefore know where to find the file they need</li>
-<li>Once the peer has downloaded the file completely and make the file available to the swarm, they become a seed. The more seeds in the swarm, the faster the download process.</li>
-</ol>
-<p><u>Terms:</u></p>
-<ul>
-<li><u>Swarm:</u> <font color="#4a69bd">A group of peers connected together</font>
-<ul>
-<li><font color="#4a69bd">All the connected shared computers</font></li>
-<li><font color="#4a69bd">That have all or other parts of the file to be downloaded</font></li>
-<li><font color="#4a69bd">Share a torrent</font></li>
-</ul>
-</li>
-<li><u>Seed</u>: <font color="#4a69bd">A peer has downloaded a file and has then made it available to others in the swarm</font>
-<ul>
-<li><font color="#4a69bd">Peer computer that has 100% of the file</font></li>
-<li><font color="#4a69bd">It uploading the downloaded content</font></li>
-</ul>
-</li>
-<li><u>Tracker</u>:
-<ul>
-<li><font color="#4a69bd">This is the central server that stores details about other computers that make up the swarm</font></li>
-<li><font color="#4a69bd">It will store details about all the peers uploading/downloading the file</font></li>
-<li><font color="#4a69bd">Allowing the peers to locate each other using the stored IP address</font></li>
-<li><font color="#BDC581">It will share information on request from members in the swarm</font></li>
-<li><font color="#BDC581">It will provide information on which members in the swarm have copies of which files or which part of files</font></li>
-</ul>
-</li>
-<li>Leech - A peer that has negative impact on the swarm by having a poor sharing ratio</li>
-<li>Lurker - A peer that downloads many files but does not make available any new content for the community as a whole</li>
-</ul>
-<h2 id="Circuit-switching-Packet-switching"><a class="header-anchor" href="#Circuit-switching-Packet-switching">¶</a>Circuit switching &amp; Packet switching</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th style="text-align:left">Circuit switching</th>
-<th>Packet Switching</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Features</strong></td>
-<td style="text-align:left"><font color="#4a69bd">1. A dedicated circuit is established at the start of the communication<br>2. Between the sender and the receiver<br>3. All data are transmitted along the same route<br>4. This lasts for the duration of the call<br>5. Then the circuit is removed<br><code>—</code><br>1. Set up for the duration of conversation<br>2. Set up before communication starts <br>3. Maintained throughout the communication<br>4. All data travel down the same route<br>5. Dropped at the end of the conversation<br>6. Complete bandwidth used</font></td>
-<td><font color="#4a69bd">- A circuit does not has to be established at the start of the communication<br>- Data to be sent are divided into packets <br>- That can travel along different routes<br>- From node to node <br>- The packets are reassembled at the correct order at the receiver’s end<br>- Must wait until last packet is received to put data back together<br><code>—</code><br>- A large message is divided up into a group of smaller chunks of same size<br>- The packet has a header and a payload<br>- The header contains a source IP address, destination IP address, and sequence number<br>- Each packet is dispatched independently<br>- And may travel along different routes<br>- The packets may arrive out of order<br>- And are reassembled into the original message at the destination<br>- If packets are missing, a retransmission request is sent</font></td>
-</tr>
-<tr>
-<td><strong>Pros</strong></td>
-<td style="text-align:left"><font color="#4a69bd">- Reduced latency<br>- There are little delay in sending and receiving data once the circuit is established<br>- … because error checking is not required<br>- Circuit made available is dedicated to this communication stream<br><code>—</code><br>- Two way real-time conversation<br>- Better synchronization<br>- Full bandwidth available<br><br></font><u>Explain why company uses circuit switching to make voice calls</u><br><font color="#4a69bd">- A dedicated circuit is established<br>- Can use the whole bandwidth<br>- Two way real-time conversation<br>- No delay as no switching<br>- Data arrive in the order sent</font></td>
-<td><font color="#4a69bd">- Accuracy: allow accurate deliver of messages<br>- Completeness: the missing packets can be easily detected and resend request sent so message arrive complete<br>- Resilience: if the network changes, the the router can detect this and send data another way to ensure it arrives<br>- Paths are also available to others; allow simultaneous use of channel; doesn’t use the whole bandwidth<br>- Better security as packets hashed and sent along different routes<br>- Packets can take the least congested route<br><code>—</code><br>- Packets can be rerouted if there are problems<br>- Packets can take the least congested route<br>- Transmission errors can be detected<br>- Missing/corrupt packets can be resent<br></font><br><u>Explain why company uses packet switching to send and receive other types of data</u><br><font color="#4a69bd">- Asynchronous communication<br>- Allows for error checking<br>- Real time transmission is not required<br>- Smaller amount of data is sent, so able to share bandwidth<br>- Doesn’t matter if data arrives out of order</font></td>
-</tr>
-<tr>
-<td><strong>Cons</strong></td>
-<td style="text-align:left"><font color="#4a69bd">- Bandwidth not available to others<br>- Need extra time before communication to set up the circuit<br>- Alternative route not available without restarting the conversation<br>- Less secure, as easy to intercept data (only one route)<br>- Failure of single route means failure of transmission</font><br>- Not very flexible<br>- Nobody else can use the circuit/channel even when it is idle <br>- The circuit is always there whether or not it is used<br>- If there’s a fault, no alternative<br>- Dedicated channel require greater bandwidth<br>- Time to establish a link can be long</td>
-<td><font color="#4a69bd">- Time delay to correct errors / network problems may introduce errors in packets<br>- Require complex protocol<br>- Unsuitable for real-time transmission application</font><br>- <code>--</code><br>- <font color="#4a69bd">packets can be dropped/delayed<br></font>- The protocols for packets switching can be more complex than those for circuit switching if a packet is lost<br>- The sender must resend the packet, waste time<br>- Do not work well with real time data stream<br>- The circuit/channel has to share its bandwidth with other packets<br>- There is a delay at the destination while packets are reassembled<br>- Needs large amount of RAM to handle the large amount of data.<br><br><u>State problems that could arise if video conferencing were to use packet switching</u><br><font color="#4a69bd">- Picture and sound not synchronized<br>- Interruptions/video not continuous<br>- Can be degraded by other computing traffic</font></td>
-</tr>
-<tr>
-<td><strong>Applications</strong></td>
-<td style="text-align:left">- Public telephone networks<br>- Private telephone networks<br>- Private data networks<br>- <font color="#4a69bd">Video conferencing / live stream</font></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Questions</strong></td>
-<td style="text-align:left"></td>
-<td><u>The TCP/IP protocol is used to send an email message from one node on a LAN to a node on different LAN. State the steps that take place when the email message is sent and received.</u><br><font color="#4a69bd">- Message is split into packets<br>- Each packet is a fixed size<br>- Each packet is given a header<br>- … including the destination IP address, sequence number<br>- Packets are forwarded from one LAN to another LAN<br>- Packets may take different routes<br>- Missing packets are requested to be resent<br>- Packets are reassembled in order at the destination</font></td>
-</tr>
-</tbody>
-</table>
-<h3 id="Packet-header"><a class="header-anchor" href="#Packet-header">¶</a>Packet header</h3>
-<p><u>Purpose:</u></p>
-<ul>
-<li><font color="#4a69bd">To store data about the header</font></li>
-<li><font color="#4a69bd">and its routing // to ensure it reaches the correct destination</font></li>
-<li><font color="#4a69bd">to ensure the packet can be correctly constructed</font></li>
-</ul>
-<p><u>Examples:</u></p>
-<ul>
-<li><font color="#4a69bd">IP address of the sender/ receiver</font></li>
-<li><font color="#4a69bd">ID of the packet</font></li>
-<li><font color="#4a69bd">Packet length</font></li>
-<li><font color="#4a69bd">Checksum</font></li>
-<li><font color="#4a69bd">Protocol used</font></li>
-<li><font color="#4a69bd">Synchronization data</font></li>
-<li><font color="#4a69bd">Number of packets the message consists of </font></li>
-<li><font color="#4a69bd">Type of service</font></li>
-<li><font color="#4a69bd">IP version number</font></li>
-<li><font color="#4a69bd">Fragmentation flags</font></li>
-<li><font color="#4a69bd">Fragmentation offsets</font></li>
-</ul>
-<h3 id="Router"><a class="header-anchor" href="#Router">¶</a>Router</h3>
-<p><u>Function of router in packet switching:</u></p>
-<ul>
-<li><font color="#4a69bd">The router examines the packet header</font></li>
-<li><font color="#4a69bd">It reads the IP address of the destination</font></li>
-<li><font color="#4a69bd">A router has access to a routing table</font>
-<ul>
-<li><font color="#4a69bd">Containing information about: eg: available hops/netmask/gateway used</font></li>
-<li><font color="#4a69bd">And the status of the routes along the route</font></li>
-<li><font color="#4a69bd">The router decides the next hop/next route</font></li>
-<li><font color="#4a69bd">And sends the packets to the next hop</font></li>
-</ul>
-</li>
-</ul>
-<p><u>Routing table:</u></p>
-<ul>
-<li><font color="#4a69bd">Network ID // network destination</font></li>
-<li><font color="#4a69bd">Routing data to decide best route</font></li>
-<li><font color="#4a69bd">IP address of next hop/gateway</font></li>
-<li><font color="#4a69bd">Interface</font></li>
-</ul>
-<p><u>Explain the role of routers in sending an email from one email server to another</u></p>
-<ul>
-<li><font color="#BDC581">A router is a node in the Internet </font></li>
-<li><font color="#BDC581">A router will receive a packet that is in the process of transmission</font></li>
-<li><font color="#BDC581">A router has data stored regarding the routers that are within its vicinity</font></li>
-<li><font color="#BDC581">A router can access this data to make a choice of which router to send the packet to next</font></li>
-<li><font color="#BDC581">The destination IP address in the packet also guides this choice</font></li>
-<li><font color="#BDC581">Some of the data stored relates to the amount of traffic using a particular network link</font></li>
-<li><font color="#BDC581">Different packets heading to the same destination will not necessarily be directed along the same link  from the router.</font></li>
-</ul>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>There are lots of different names for each layer, but this is from 2022 specimen paper, making it more authentic. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-]]></content>
-      <categories>
-        <category>Notes</category>
-        <category>ALCS</category>
-      </categories>
-      <tags>
-        <tag>Communication</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Chapter 15.1: Processors, Parallel Processing and Virtual Machines</title>
-    <url>/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/</url>
-    <content><![CDATA[<h1>Chapter 15.1: Processors, Parallel Processing and Virtual Machines</h1>
-<p><img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/Syllabus15.1.png" alt></p>
-<span id="more"></span> 
-<h2 id="RISC-CISC"><a class="header-anchor" href="#RISC-CISC">¶</a>RISC &amp; CISC</h2>
-<blockquote>
-<p><strong>RISC</strong> - reduced instruction set computer</p>
-<p><strong>CISC</strong> - complex instruction set computer</p>
-</blockquote>
-<h3 id="Differences-between-RISC-and-CISC"><a class="header-anchor" href="#Differences-between-RISC-and-CISC">¶</a>Differences between RISC and CISC</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">RISC</th>
-<th style="text-align:center">CISC</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Many instruction formats are possible</td>
-<td style="text-align:center">Uses fewer instruction formats</td>
-</tr>
-<tr>
-<td style="text-align:center">There are more addressing modes</td>
-<td style="text-align:center">Uses fewer addressing modes</td>
-</tr>
-<tr>
-<td style="text-align:center">Makes use of multi-cycle instructions</td>
-<td style="text-align:center">Makes use of single-cycle instructions</td>
-</tr>
-<tr>
-<td style="text-align:center">Instructions can be of a variable length</td>
-<td style="text-align:center">Instructions are of a fixed length</td>
-</tr>
-<tr>
-<td style="text-align:center">Longer execution time for instructions</td>
-<td style="text-align:center">Shorter execution time for instructions</td>
-</tr>
-<tr>
-<td style="text-align:center">Multiple register sets</td>
-<td style="text-align:center">Makes use of general multipurpose registers // fewer registers</td>
-</tr>
-<tr>
-<td style="text-align:center">It is more difficult to make pipelining work</td>
-<td style="text-align:center">Easier to make pipelining function correctly</td>
-</tr>
-<tr>
-<td style="text-align:center">The design emphasis is on the hardware</td>
-<td style="text-align:center">The design emphasis is one the software</td>
-</tr>
-<tr>
-<td style="text-align:center">Uses the memory unit to allow complex instructions to be carried out</td>
-<td style="text-align:center">Processor chips require fewer transistors</td>
-</tr>
-<tr>
-<td style="text-align:center">Has a programmable control unit</td>
-<td style="text-align:center">Has hard-wired control unit</td>
-</tr>
-<tr>
-<td style="text-align:center">Make more use of cache and less use of RAM</td>
-<td style="text-align:center">Make more use of RAM</td>
-</tr>
-</tbody>
-</table>
-<h3 id="Interrupt-handling-in-pipelining"><a class="header-anchor" href="#Interrupt-handling-in-pipelining">¶</a>Interrupt handling in pipelining</h3>
-<ul>
-<li>Once the processor detects the existence of an interrupt</li>
-<li>To discard all instructions in the pipelining except for the last instruction in the writeback stage</li>
-</ul>
-<h3 id="Past-paper-questions-v3"><a class="header-anchor" href="#Past-paper-questions-v3">¶</a>Past-paper questions</h3>
-<hr>
-<img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq1.png" style="zoom: 50%;">
-<hr>
-<img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq2.png" style="zoom: 67%;">
-<hr>
-<h2 id="Pipelining-Registers"><a class="header-anchor" href="#Pipelining-Registers">¶</a>Pipelining &amp; Registers</h2>
-<blockquote>
-<p>Allow several instructions to be processed simultaneously without having to wait for the previous instructions to be completed</p>
-</blockquote>
-<ol>
-<li>Instruction Fetch cycle (IF)</li>
-<li>Instruction Decode cycle (ID)</li>
-<li>Operand Fetch cycle (OF)</li>
-<li>Instruction Execution cycle (IE)</li>
-<li>Writeback Result process (WB)</li>
-</ol>
-<p><u>Explain what is meant by pipelining:</u></p>
-<ul>
-<li><font color="#4a69bd">Pipelining is instruction level parallelism</font></li>
-<li><font color="#4a69bd">Execution of an instruction is split into a number of stages</font></li>
-<li><font color="#4a69bd">When the first stage for an instruction is completed, the first page of next instruction can start executing</font></li>
-<li><font color="#4a69bd">Another instruction can start executing before the previous one is finished</font></li>
-<li><font color="#4a69bd">Processing a number of instructions can be concurrent/simultaneous</font></li>
-</ul>
-<img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/pipeLining.jpg" style="zoom:67%;">
-<hr>
-<h2 id="Basic-computer-architectures"><a class="header-anchor" href="#Basic-computer-architectures">¶</a>Basic computer architectures</h2>
-<h3 id="SISD"><a class="header-anchor" href="#SISD">¶</a>SISD</h3>
-<ul>
-<li>There is only one processor</li>
-<li>The processor executes one sets of instructions on one sets of data</li>
-</ul>
-<h3 id="SIMD"><a class="header-anchor" href="#SIMD">¶</a>SIMD</h3>
-<ul>
-<li>The processor has several ALUs // several processors</li>
-<li>Each ALU executes the same set of instructions on different sets of data at the same time</li>
-</ul>
-<h3 id="MISD"><a class="header-anchor" href="#MISD">¶</a>MISD</h3>
-<ul>
-<li>There are several processors</li>
-<li>Each processor executes different set of instruction on the same set of data at the same time</li>
-</ul>
-<h3 id="MIMD"><a class="header-anchor" href="#MIMD">¶</a>MIMD</h3>
-<ul>
-<li>There are several processors</li>
-<li>Each processor execute different set of instruction</li>
-<li>Each processor operate on different set of data</li>
-</ul>
-<h3 id="Past-paper-questions-v4"><a class="header-anchor" href="#Past-paper-questions-v4">¶</a>Past-paper questions</h3>
-<img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq3.png" style="zoom: 50%;">
-<hr>
-<img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq4.png" style="zoom: 67%;">
-<h2 id="Massively-parallel-computers"><a class="header-anchor" href="#Massively-parallel-computers">¶</a>Massively parallel computers</h2>
-<p><u>Describe what is meant by a massively paralleled computer</u></p>
-<ul>
-<li><font color="#4a69bd">Large number of processors</font></li>
-<li><font color="#4a69bd">… Working collaboratively on the same program</font></li>
-<li><font color="#4a69bd">… Working together simultaneously on the same program</font></li>
-<li><font color="#4a69bd">… Communicating via a message interface</font></li>
-</ul>
-<h3 id="Properties"><a class="header-anchor" href="#Properties">¶</a>Properties</h3>
-<ul>
-<li><font color="#4a69bd">A large number of processors</font></li>
-<li><font color="#4a69bd">Collaborative processing // coordinated simultaneous processing</font></li>
-<li><font color="#4a69bd">Network infrastructure</font></li>
-<li><font color="#4a69bd">Communicating using message interface</font></li>
-<li>It is a much faster way to handle large volumes of independent data</li>
-<li>The data used sometimes relies on result of previous operation, therefore such data cannot be handled in parallel</li>
-<li>Datasets require the same processing for it to work</li>
-<li>It overcomes the Von Neumann bottleneck and therefore greatly improves CPU performance</li>
-<li>Parallel processing requires more expensive hardware</li>
-</ul>
-<h3 id="Past-paper-Questions-v2"><a class="header-anchor" href="#Past-paper-Questions-v2">¶</a>Past-paper Questions</h3>
-<p><u>Changes needed for codes in order to run on massively paralleled computer</u></p>
-<ul>
-<li><font color="#4a69bd">Split into blocks of code</font></li>
-<li><font color="#4a69bd">… that can be processed simultaneously</font></li>
-<li><font color="#4a69bd">… instead of sequentially</font></li>
-<li><font color="#4a69bd">Each block is processed by a different processor</font></li>
-<li><font color="#4a69bd">Which allows each of many processors to process the different blocks of code independently</font></li>
-<li><font color="#4a69bd">Requires both parallelism and coordination</font></li>
-</ul>
-<p><u>Explain one of the hardware issues that will be overcome if a massively parallel computer is to function correctly</u></p>
-<ul>
-<li><font color="#4a69bd">Communication between processors is the issue</font></li>
-<li><font color="#4a69bd">Each processor needs a link to other processors</font></li>
-<li><font color="#4a69bd">Many processors require many of these links</font></li>
-<li><font color="#4a69bd">Challenging topology</font></li>
-</ul>
-<p><em>A computer has a single processor that contains four processing units.</em><br>
-<u>Explain why this is not an example of a massively paralleled computer</u>:</p>
-<ul>
-<li><font color="#4a69bd">Only one separate processor</font></li>
-<li><font color="#4a69bd">Quad core computer system // processing unit shares the same bus</font></li>
-</ul>
-<p><u>Identify different types of parallelism</u></p>
-<ul>
-<li>Instruction</li>
-<li>Processor</li>
-<li>Memory usage</li>
-<li>Computer System</li>
-</ul>
-<h2 id="Virtual-machine"><a class="header-anchor" href="#Virtual-machine">¶</a>Virtual machine</h2>
-<blockquote>
-<p><font color="#4a69bd">An emulation of an existing computer/program/operating system. A computer OS running with another computer’s OS.</font></p>
-<p>Using a software to implement a hardware setup</p>
-</blockquote>
-<h3 id="Host-OS"><a class="header-anchor" href="#Host-OS">¶</a>Host OS</h3>
-<ul>
-<li><font color="#4a69bd">The operating system that is actually controlling the physical hardware</font></li>
-<li><font color="#4a69bd">The operating system for the physical hardware</font></li>
-<li><font color="#4a69bd">Guest OS is running under the host OS</font></li>
-</ul>
-<h3 id="Guest-OS"><a class="header-anchor" href="#Guest-OS">¶</a>Guest OS</h3>
-<ul>
-<li><font color="#4a69bd">An operating system running in the virtual machine</font></li>
-<li><font color="#4a69bd">Controls virtual hardware</font></li>
-<li><font color="#4a69bd">OS being emulated</font></li>
-</ul>
-<h3 id="Hypervisor"><a class="header-anchor" href="#Hypervisor">¶</a>Hypervisor</h3>
-<blockquote>
-<p><font color="#4a69bd">Virtual machine software that creates and runs virtual machine</font></p>
-</blockquote>
-<ul>
-<li>Software, not hardware</li>
-<li>Creates/deletes/manages virtual machine</li>
-<li>Translates the instruction used by the guest operating system to that required by the host operating system</li>
-<li>Hardware emulation</li>
-<li>Protects each virtual machine
-<ul>
-<li>So instances can be tested together</li>
-</ul>
-</li>
-</ul>
-<h3 id="Benefits"><a class="header-anchor" href="#Benefits">¶</a>Benefits</h3>
-<ul>
-<li><font color="#4a69bd">Multiple operating systems can exist simultaneously</font></li>
-<li><font color="#4a69bd">… allow for testing using the same hardware</font></li>
-<li><font color="#4a69bd">Only one set of hardware required</font></li>
-<li><font color="#4a69bd">… reduces cost of producing the app</font></li>
-<li><font color="#4a69bd">No need to set up more than one computer</font></li>
-<li><code>--</code></li>
-<li><font color="#4a69bd">Software can be tried on different OS using the same hardware</font></li>
-<li><font color="#4a69bd">No need to purchase all sorts of different software</font></li>
-<li><font color="#4a69bd">Easier to recover if the system issue causes the system to crash</font></li>
-<li><font color="#4a69bd">VM provides protection to other software</font></li>
-<li><code>--</code></li>
-<li><font color="#4a69bd">No need to acquire client hardware for testing</font></li>
-<li><font color="#4a69bd">Reduce set-up time for test system</font></li>
-<li><font color="#4a69bd">Common development system for all developers</font></li>
-<li><code>--</code></li>
-<li>They allow modern systems to use programs that run on obsolete or unsupported platform<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></li>
-<li>They allow platform independent program to run on multiple platforms</li>
-<li>They allow one computer to behave as several computers simultaneously</li>
-<li>They can be easily backed up, copied, and reinstalled.</li>
-</ul>
-<h3 id="Limitations"><a class="header-anchor" href="#Limitations">¶</a>Limitations</h3>
-<ul>
-<li><font color="#4a69bd">Time and effort required for implementation</font></li>
-<li><font color="#4a69bd">Implementation would not offer the same level of performance that would be obtained in a normal system</font></li>
-<li><font color="#4a69bd">Expensive, complex to manage and maintain</font></li>
-<li><font color="#4a69bd">Execution of extra code, processing time increased</font>
-<ul>
-<li><font color="#4a69bd">So cannot accurately test speed for real performance</font></li>
-<li><font color="#4a69bd">Performance is degraded</font></li>
-</ul>
-</li>
-<li><font color="#4a69bd">May not be able to emulate some hardware</font>
-<ul>
-<li><font color="#4a69bd">So that the hardware cannot be tested using virtual machine</font></li>
-</ul>
-</li>
-<li><code>--</code></li>
-<li><font color="#4a69bd">Virtual machine may not be able to emulate some hardware</font></li>
-<li><font color="#4a69bd">Virtual machine cannot directly access some hardware</font></li>
-<li><font color="#4a69bd">Using virtual machine means execution of extra code // processing time increased</font></li>
-<li><font color="#4a69bd">A virtual machine might not be as efficient // performance degraded</font></li>
-<li><font color="#4a69bd">Using a virtual machine increases the maintenance overheads </font></li>
-</ul>
-<h3 id="Role-of-virtual-machine-software"><a class="header-anchor" href="#Role-of-virtual-machine-software">¶</a>Role of virtual machine software</h3>
-<ol>
-<li><font color="#4a69bd">Create/delete virtual machines</font></li>
-<li><font color="#4a69bd">translate instruction used by the guest operating system to that required by the host operating system</font></li>
-<li><font color="#4a69bd">Existing hardware made available to guest OS //  hardware emulation</font></li>
-<li><font color="#4a69bd">Ensure each virtual machine is protected from actions from other virtual machines </font></li>
-</ol>
-<p><img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/virtualMachine.jpg" alt></p>
-<h3 id="Past-paper-questions-v5"><a class="header-anchor" href="#Past-paper-questions-v5">¶</a>Past-paper questions</h3>
-<p>A virtual machine is a <font color="#4a69bd"><u>software/program</u></font> that emulate a <font color="#4a69bd"><u>physical/different</u></font> computer system; A virtual machine allow multiple <font color="#4a69bd"><u>guest</u></font> operating system to run on one computer using <font color="#4a69bd"><u>host</u></font> operating system</p>
-<p><u>Describe what happens after the guest operating system has received the data request from the application</u>:</p>
-<ul>
-<li><font color="#4a69bd">Guest OS handles the request as if it were running on its own physical machine</font></li>
-<li><font color="#4a69bd">Guest OS handles the request as usual </font></li>
-<li><font color="#4a69bd">I/O requests are translated by the virtual machine software</font></li>
-<li><font color="#4a69bd">Into instruction executable by the host OS</font></li>
-<li><font color="#4a69bd">Host OS retrieves the data from the file</font></li>
-<li><font color="#4a69bd">Host OS passes the data into virtual machine software</font></li>
-<li><font color="#4a69bd">The virtual machine passes the data to the guest OS</font></li>
-<li><font color="#4a69bd">Guest OS passes the data to the application </font></li>
-</ul>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a href="https://img1.wsimg.com/blobby/go/9a8687c5-eecd-45f3-821d-7cdfe880b594/downloads/15.1%20Virtual%20Machine%20(MT-L).pdf">https://img1.wsimg.com/blobby/go/9a8687c5-eecd-45f3-821d-7cdfe880b594/downloads/15.1 Virtual Machine (MT-L).pdf</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
 ]]></content>
       <categories>
         <category>Notes</category>
@@ -2994,219 +2280,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Chapter 20.2: File processing and Exception Handling</title>
-    <url>/Notes/ALCS/Chapter20.2_FileProcessing&amp;ExceptionHandling/</url>
-    <content><![CDATA[<h1>Chapter 20.2: File Processing and Exception Handling</h1>
-<p><img src="/Notes/ALCS/Chapter20.2_FileProcessing&ExceptionHandling/syllabus.png" alt></p>
-<hr>
-<span id="more"></span> 
-<h2 id="File-Processing"><a class="header-anchor" href="#File-Processing">¶</a>File Processing</h2>
-<h3 id="Pseudocode"><a class="header-anchor" href="#Pseudocode">¶</a>Pseudocode</h3>
-<h3 id="Program-code"><a class="header-anchor" href="#Program-code">¶</a>Program code</h3>
-<hr>
-<h4 id="Scanner"><a class="header-anchor" href="#Scanner">¶</a><code>Scanner</code></h4>
-<blockquote>
-<p>API: <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html">https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html</a></p>
-</blockquote>
-<p><code>Scanner</code>和其他读入的一个不同点就是他是存在于<code>java.util</code>包下面的 而其他大多数是在<code>java.io</code>包下面。</p>
-<p>有一个好处就是<code>scanner.hasNext</code>可以用来检查文件是否读完</p>
-<p><strong>Declaration/construction</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Scanner</span> <span class="variable">sca1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);<span class="comment">//从console输入</span></span><br><span class="line"><span class="type">Scanner</span> <span class="variable">sca2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(<span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;SamuelJie.txt&quot;</span>));<span class="comment">//can be used to read a file</span></span><br><span class="line"><span class="type">Scanner</span> <span class="variable">sca3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(<span class="string">&quot;Samuel is a hardworking boy&quot;</span>);<span class="comment">//can read a string</span></span><br><span class="line"><span class="comment">//then you can carry out other operations</span></span><br><span class="line"><span class="type">int</span> <span class="variable">number</span> <span class="operator">=</span> sca1.nextInt();</span><br></pre></td></tr></table></figure>
-<p><strong>Methods:</strong></p>
-<p>A <code>Scanner</code> breaks its input into tokens using a delimiter pattern, which by default matches whitespace. The resulting tokens may then be converted into values of different types using the various <code>next</code> methods.</p>
-<p>简单来说 被空格、换行符所分割的 每一个部分 都算一个<code>token</code> 比如<code>&quot;1 2 3  Samuel&quot;</code> 中 <code>1</code>，<code>2</code>，<code>3</code>，<code>&quot;Samuel&quot;</code>都算<code>token</code>. <code>1</code> 可以用<code>nextInt()</code> 来读取, <code>&quot;Samuel&quot;</code>可以用 <code>next()</code>来读取。</p>
-<ul>
-<li><code>hasNext()</code>
-<ul>
-<li>Returns true if this scanner has another token in its input.</li>
-</ul>
-</li>
-<li><code>next()</code>
-<ul>
-<li>Finds and returns the next complete token from this scanner.</li>
-</ul>
-</li>
-<li><code>nextLine()</code>
-<ul>
-<li>Advances this scanner past the current line and returns the input that was skipped.</li>
-</ul>
-</li>
-<li><code>nextInt()</code>
-<ul>
-<li>Scans the next token of the input as an <code>int</code>.</li>
-</ul>
-</li>
-</ul>
-<p>⚠️ <a href="https://www.cnblogs.com/alterwl/p/java-problem-scanner-nosuchelementexception.html">使用scanner中遇到的nosuchfileException</a></p>
-<p>⚠️ <a href="https://blog.csdn.net/guanghuichenshao/article/details/81545450">nextLine和next的区别</a></p>
-<p>⚠️<a href="https://www.geeksforgeeks.org/why-is-scanner-skipping-nextline-after-use-of-other-next-functions/">next-- 与nextline连用时出现读取空白的问题</a></p>
-<hr>
-<h4 id="FileReader"><a class="header-anchor" href="#FileReader">¶</a><code>FileReader</code></h4>
-<blockquote>
-<p>API: <a href="https://docs.oracle.com/javase/8/docs/api/java/io/FileReader.html">https://docs.oracle.com/javase/8/docs/api/java/io/FileReader.html</a></p>
-</blockquote>
-<p>通常在考试中FileReader都是作为创建BufferedReader的一个前置来使用。</p>
-<p><strong>Declaration/construction</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">FileReader(File file);<span class="comment">//can construct with a file</span></span><br><span class="line">FileReader(String Filename);<span class="comment">//can construct with the filename</span></span><br><span class="line"><span class="comment">//for example</span></span><br><span class="line">String fileName=<span class="string">&quot;input.txt&quot;</span>;</span><br><span class="line"><span class="type">FileReader</span> <span class="variable">fr</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileReader</span>(filename);</span><br></pre></td></tr></table></figure>
-<hr>
-<h4 id="BufferedReader"><a class="header-anchor" href="#BufferedReader">¶</a><code>BufferedReader</code></h4>
-<blockquote>
-<p>API: <a href="https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html">https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html</a></p>
-</blockquote>
-<p>Buffered Reader 相对于 传统Reader的好处就是 当读入一个文件的时候 能够先把文件的内容存在Buffer(缓存)里面 然后每次从Buffer里面读取，这样比传统Reader直接从文件里读取更加高效</p>
-<p><strong>Declaration/construction</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">File</span> <span class="variable">fi</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(fileName);</span><br><span class="line"><span class="type">FileReader</span> <span class="variable">fr</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileReader</span>(fi);</span><br><span class="line"><span class="type">BufferedReader</span> <span class="variable">bfr</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(fr);</span><br></pre></td></tr></table></figure>
-<p><strong>Methods(考试会用到的):</strong></p>
-<p><code>readLine()</code>: Reads a line of text. A line is considered to be terminated by any one of a line feed (‘\n’), a carriage return (‘\r’), or a carriage return followed immediately by a linefeed.</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> String <span class="title function_">readLine</span><span class="params">()</span></span><br><span class="line"><span class="comment">//Usage</span></span><br><span class="line"><span class="type">String</span> <span class="variable">dataRead</span> <span class="operator">=</span> bfr.readLine();<span class="comment">//bfr is the BufferedReader declared previously</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h4 id="RandomAccessFile"><a class="header-anchor" href="#RandomAccessFile">¶</a><code>RandomAccessFile</code></h4>
-<blockquote>
-<p>API: <a href="https://docs.oracle.com/javase/8/docs/api/java/io/RandomAccessFile.html">https://docs.oracle.com/javase/8/docs/api/java/io/RandomAccessFile.html</a></p>
-</blockquote>
-<p>Instances of this class support both reading and writing to a random access file. A random access file behaves like a large array of bytes stored in the file system. There is a kind of cursor, or index into the implied array, called the <code>file pointer</code>; input operations read bytes starting at the file pointer and advance the file pointer past the bytes read. If the random access file is created in read/write mode, then output operations are also available; output operations write bytes starting at the file pointer and advance the file pointer past the bytes written. Output operations that write past the current end of the implied array cause the array to be extended. The file pointer can be read by the <code>getFilePointer</code> method and set by the <code>seek</code> method.</p>
-<table>
-<thead>
-<tr>
-<th>Data type</th>
-<th>Size</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>byte</code></td>
-<td>1 byte</td>
-</tr>
-<tr>
-<td><code>short</code></td>
-<td>2 bytes</td>
-</tr>
-<tr>
-<td><code>int</code></td>
-<td>4 bytes</td>
-</tr>
-<tr>
-<td><code>long</code></td>
-<td>8 bytes</td>
-</tr>
-<tr>
-<td><code>float</code></td>
-<td>4 bytes</td>
-</tr>
-<tr>
-<td><code>double</code></td>
-<td>8 bytes</td>
-</tr>
-<tr>
-<td><code>boolean</code></td>
-<td>1 <strong>bit</strong></td>
-</tr>
-<tr>
-<td><code>char</code></td>
-<td>2 bytes</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Declaration/construction</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">RandomAccessFile(File file, String mode);</span><br><span class="line">RandomAccessFile(String fileName, String mode);</span><br></pre></td></tr></table></figure>
-<p><strong><code>mode</code></strong></p>
-<p><code>mode</code>本质上就是读写模式，像是pseudocode 中 OPENFILE <code>&lt;file Name&gt;</code> FOR <code>&lt;File mode&gt;</code>中的 <code>&lt;File mode&gt;</code>一样。</p>
-<ul>
-<li><code>&quot;r&quot;</code> open for read only.</li>
-<li><code>&quot;rw&quot;</code>open for read and write</li>
-</ul>
-<p><strong>Methods(考试会用到的)</strong></p>
-<ul>
-<li><code>read()</code>
-<ul>
-<li>Reads a byte of data from this file.</li>
-</ul>
-</li>
-<li><code>readBoolean()</code>
-<ul>
-<li>Reads a <code>boolean</code> from this file.</li>
-</ul>
-</li>
-<li><code>readByte()</code>
-<ul>
-<li>Reads a signed eight-bit value from this file.</li>
-</ul>
-</li>
-<li><code>readChar()</code>
-<ul>
-<li>Reads a character from this file.</li>
-</ul>
-</li>
-<li><code>readDouble()</code>
-<ul>
-<li>Reads a <code>double</code> from this file.</li>
-</ul>
-</li>
-<li><code>readInt()</code></li>
-<li><code>readUTF()</code></li>
-<li><code>seek(long pos)</code>
-<ul>
-<li>Sets the file-pointer offset, measured from the beginning of this file, at which the next read or write occurs.</li>
-<li>Inputs the number, representing the position that you want the <code>file pointer</code> to be.</li>
-</ul>
-</li>
-<li><code>writeInt(int num)</code></li>
-<li><code>writeChars(String str)</code>
-<ul>
-<li>Writes a string to the file as a sequence of characters.</li>
-</ul>
-</li>
-<li><code>writeDouble(String str)</code>
-<ul>
-<li>Writes a string to the file using <a href="https://docs.oracle.com/javase/8/docs/api/java/io/DataInput.html#modified-utf-8">modified UTF-8</a> encoding in a machine-independent manner.</li>
-</ul>
-</li>
-</ul>
-<p><strong>Example code(from Kamana)</strong>:</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RandomFileDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span><span class="keyword">throws</span> Exception &#123;</span><br><span class="line">		RandomAccessFile raf=<span class="keyword">new</span> <span class="title class_">RandomAccessFile</span>(<span class="string">&quot;file.dat&quot;</span>, <span class="string">&quot;rw&quot;</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;b&#x27;</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;c&#x27;</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;d&#x27;</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;e&#x27;</span>);</span><br><span class="line">		raf.writeUTF(<span class="string">&quot;kamna&quot;</span>);</span><br><span class="line">		raf.writeInt(<span class="number">50</span>);</span><br><span class="line">		raf.writeDouble(<span class="number">50.555</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;f&#x27;</span>);</span><br><span class="line">		raf.close();</span><br><span class="line">		</span><br><span class="line">		RandomAccessFile r=<span class="keyword">new</span> <span class="title class_">RandomAccessFile</span>(<span class="string">&quot;file.dat&quot;</span>, <span class="string">&quot;r&quot;</span>);</span><br><span class="line">		r.seek(<span class="number">29</span>);</span><br><span class="line">		<span class="comment">//System.out.println(r.readChar());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readChar());</span></span><br><span class="line">		<span class="comment">//r.seek(6);</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readChar());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readChar());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readChar());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readUTF());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readInt());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readDouble());</span></span><br><span class="line">		System.out.println(r.readChar());</span><br><span class="line">		r.close();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">randomFileusingArray</span> &#123;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">		<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">		</span><br><span class="line">			<span class="comment">//write the alphabet to a random access file</span></span><br><span class="line">			<span class="type">char</span>[] alphabet = &#123;<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="string">&#x27;G&#x27;</span>, <span class="string">&#x27;H&#x27;</span>, <span class="string">&#x27;I&#x27;</span>, <span class="string">&#x27;J&#x27;</span>,</span><br><span class="line">							   <span class="string">&#x27;K&#x27;</span>, <span class="string">&#x27;L&#x27;</span>, <span class="string">&#x27;M&#x27;</span>, <span class="string">&#x27;N&#x27;</span>, <span class="string">&#x27;O&#x27;</span>, <span class="string">&#x27;P&#x27;</span>, <span class="string">&#x27;Q&#x27;</span>, <span class="string">&#x27;R&#x27;</span>, <span class="string">&#x27;S&#x27;</span>, <span class="string">&#x27;T&#x27;</span>,</span><br><span class="line">							   <span class="string">&#x27;U&#x27;</span>, <span class="string">&#x27;V&#x27;</span>, <span class="string">&#x27;W&#x27;</span>, <span class="string">&#x27;X&#x27;</span>, <span class="string">&#x27;Y&#x27;</span>, <span class="string">&#x27;Z&#x27;</span>&#125;;</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			<span class="type">RandomAccessFile</span> <span class="variable">random</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">RandomAccessFile</span>(<span class="string">&quot;RandomTest.dat&quot;</span>, <span class="string">&quot;rw&quot;</span>);</span><br><span class="line">			</span><br><span class="line">			System.out.println(<span class="string">&quot;Writing alphabet to the file!&quot;</span>);</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; alphabet.length; i++)</span><br><span class="line">				random.writeChar(alphabet[i]);</span><br><span class="line">			</span><br><span class="line">			System.out.println(<span class="string">&quot;Finished writing!&quot;</span>);</span><br><span class="line">			</span><br><span class="line">			random.close();</span><br><span class="line">	</span><br><span class="line">			<span class="comment">//reading characters from the alphabet off the file</span></span><br><span class="line">			<span class="type">RandomAccessFile</span> <span class="variable">rand0m</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">RandomAccessFile</span>(<span class="string">&quot;RandomTest.dat&quot;</span>, <span class="string">&quot;r&quot;</span>);</span><br><span class="line">			</span><br><span class="line">			System.out.println(<span class="string">&quot;Beginning to read!&quot;</span>);</span><br><span class="line">			</span><br><span class="line">			rand0m.seek(<span class="number">8</span>); <span class="comment">// 5th character (E)</span></span><br><span class="line">			System.out.println(rand0m.readChar());</span><br><span class="line">			rand0m.seek(<span class="number">24</span>); <span class="comment">//13th character (M)</span></span><br><span class="line">			System.out.println(rand0m.readChar());</span><br><span class="line">			rand0m.seek(<span class="number">40</span>); <span class="comment">//21st character (U)</span></span><br><span class="line">			System.out.println(rand0m.readChar());</span><br><span class="line">			rand0m.seek(<span class="number">19</span>); <span class="comment">//won&#x27;t read correctly!</span></span><br><span class="line">			System.out.println(rand0m.readChar());</span><br><span class="line">			System.out.println(<span class="string">&quot;Done reading!&quot;</span>);			</span><br><span class="line">			rand0m.close();		</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h4 id="Useful-resources"><a class="header-anchor" href="#Useful-resources">¶</a>Useful resources</h4>
-<ul>
-<li><a href="https://www.jb51.net/article/226835.htm">Scanner和BufferedReader的对比</a></li>
-</ul>
-<h2 id="Exception-Handling"><a class="header-anchor" href="#Exception-Handling">¶</a>Exception Handling</h2>
-<h3 id="Exception-hierarchy"><a class="header-anchor" href="#Exception-hierarchy">¶</a>Exception hierarchy<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></h3>
-<p><img src="/Notes/ALCS/Chapter20.2_FileProcessing&ExceptionHandling/exception-hierarchy.png" alt="file categories"></p>
-<hr>
-<p><code>Throwable</code> is a derived class of <code>object</code>. <code>Throwable</code> has two subcategories: <code>Error</code> and <code>Exception</code></p>
-<p><code>Error</code>: severe problems occurred that cannot be solved</p>
-<p><code>Exception</code>:  problems that occur when the program is running. It can be captured by <code>try...catch</code></p>
-<h3 id="Capture-the-exception-try-catch"><a class="header-anchor" href="#Capture-the-exception-try-catch">¶</a>Capture the exception: <code>try...catch</code></h3>
-<h3 id="Single-catch"><a class="header-anchor" href="#Single-catch">¶</a>Single catch</h3>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="comment">//Program</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(ExceptionName e)&#123;</span><br><span class="line">    <span class="comment">//What to perform when Exception is detected in the try program</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Multiple-catch"><a class="header-anchor" href="#Multiple-catch">¶</a>Multiple catch</h3>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">   <span class="comment">// 程序代码</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型<span class="number">1</span> 异常的变量名<span class="number">1</span>)&#123;</span><br><span class="line">  <span class="comment">// 程序代码</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型<span class="number">2</span> 异常的变量名<span class="number">2</span>)&#123;</span><br><span class="line">  <span class="comment">// 程序代码</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型<span class="number">3</span> 异常的变量名<span class="number">3</span>)&#123;</span><br><span class="line">  <span class="comment">// 程序代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Finally"><a class="header-anchor" href="#Finally">¶</a>Finally</h3>
-<blockquote>
-<p>The statement that will be executed anyway no matter whether the Exception occur in the try processes</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    process1();</span><br><span class="line">    process2();</span><br><span class="line">&#125;<span class="keyword">catch</span>(IOException e)&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;IO excpetion detected&quot;</span>);</span><br><span class="line">&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;END&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Useful-resources-v2"><a class="header-anchor" href="#Useful-resources-v2">¶</a>Useful resources</h3>
-<ul>
-<li><a href="https://www.liaoxuefeng.com/wiki/1252599548343744/1255943543190176">https://www.liaoxuefeng.com/wiki/1252599548343744/1255943543190176</a></li>
-</ul>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a href="https://www.runoob.com/java/java-exceptions.html">https://www.runoob.com/java/java-exceptions.html</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-]]></content>
-      <categories>
-        <category>Notes</category>
-        <category>ALCS</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>FlexBox_Notes</title>
     <url>/WebDevelopment/CSS/FlexBox-Notes/</url>
     <content><![CDATA[<blockquote class="blockquote-center">
@@ -3820,6 +2893,638 @@ Q3: OOP with file handling.</p>
 </li>
 </ul>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">papei_9608_s18_41_Q5</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="type">Scenery</span> <span class="variable">GiftBox</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scenery</span>(<span class="number">150</span>, <span class="number">150</span>, <span class="number">50</span>, <span class="number">75</span>, <span class="string">&quot;box.png&quot;</span>, <span class="literal">true</span>, <span class="number">50</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">GameElement</span>&#123;</span><br><span class="line">	<span class="keyword">private</span> Integer PositionX;</span><br><span class="line">	<span class="keyword">private</span> Integer PositionY;</span><br><span class="line">	<span class="keyword">private</span> Integer Width;</span><br><span class="line">	<span class="keyword">private</span> Integer Height;</span><br><span class="line">	<span class="keyword">private</span> String ImageFilename;</span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">GameElement</span><span class="params">(Integer Posx, Integer PosY, Integer Wid, Integer Hei, String imgfn)</span> &#123;</span><br><span class="line">		<span class="built_in">this</span>.PositionX=Posx;</span><br><span class="line">		<span class="built_in">this</span>.PositionY=PosY;</span><br><span class="line">		<span class="built_in">this</span>.Width=Wid;</span><br><span class="line">		<span class="built_in">this</span>.Height=Hei;</span><br><span class="line">		<span class="built_in">this</span>.ImageFilename=imgfn;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> String <span class="title function_">GetDetails</span><span class="params">()</span> &#123;</span><br><span class="line">		String message=<span class="string">&quot;PositionX: &quot;</span>+<span class="built_in">this</span>.PositionX+<span class="string">&quot; PositionY: &quot;</span>+<span class="built_in">this</span>.PositionY+<span class="string">&quot; Width: &quot;</span>+<span class="built_in">this</span>.Width+<span class="string">&quot; Height: &quot;</span>+<span class="built_in">this</span>.Height+<span class="string">&quot; ImageFileName: &quot;</span>+<span class="built_in">this</span>.ImageFilename;</span><br><span class="line">		<span class="keyword">return</span> message;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Scenery</span> <span class="keyword">extends</span> <span class="title class_">GameElement</span>&#123;</span><br><span class="line">	<span class="keyword">private</span> Boolean CauseDamage;</span><br><span class="line">	<span class="keyword">private</span> Integer DamagePoints;</span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">Scenery</span><span class="params">(Integer Posx, Integer PosY, Integer Wid, Integer Hei, String imgfn, Boolean Caus,Integer DamaP)</span> &#123;</span><br><span class="line">		<span class="built_in">super</span>(Posx, PosY, Wid, Hei, imgfn);</span><br><span class="line">		<span class="built_in">this</span>.CauseDamage=Caus;</span><br><span class="line">		<span class="built_in">this</span>.DamagePoints=DamaP;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> Integer <span class="title function_">GiveDamagePoints</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">if</span>(<span class="built_in">this</span>.CauseDamage) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="built_in">this</span>.DamagePoints;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> String <span class="title function_">GetScenery</span><span class="params">()</span> &#123;</span><br><span class="line">		String message=<span class="built_in">super</span>.GetDetails()+<span class="string">&quot; CauseDamage: &quot;</span>+<span class="built_in">this</span>.CauseDamage+<span class="string">&quot; DamagedPoints: &quot;</span>+<span class="built_in">this</span>.DamagePoints;</span><br><span class="line">		<span class="keyword">return</span> message;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>ALCS</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Chapter 13.2: File organisation and access</title>
+    <url>/Notes/ALCS/Chapter13.2_FileOrganisationAndAccess/</url>
+    <content><![CDATA[<h1>Chapter 13.2: File organisation and access</h1>
+<p><img src="/Notes/ALCS/Chapter13.2_FileOrganisationAndAccess/13.2.png" alt></p>
+<hr>
+<span id="more"></span>
+<h2 id="File-organisation"><a class="header-anchor" href="#File-organisation">¶</a>File organisation</h2>
+<h3 id="Serial-file-organisation"><a class="header-anchor" href="#Serial-file-organisation">¶</a>Serial file organisation</h3>
+<blockquote>
+<p>Method of file organisation in which records of data are physically stored in a file, one after another, <strong>in the order they were added to the file</strong></p>
+</blockquote>
+<p>New records are appended to the end of the file. Serial file organisation is often used for temporary files storing transactions to be made to more permanent files. e.g. storing customer meter reading for gas/electricity before they are used to send the bills to all customers.</p>
+<ul>
+<li>Each transaction is added to the file in the order of arrival</li>
+<li>These records will be in chronological order</li>
+<li><font color="#4a69bd">High hit rate</font></li>
+<li><font color="#4a69bd">Suitable for batch processing</font></li>
+<li><font color="#4a69bd">Order not important</font></li>
+<li><font color="#4a69bd">The records will be accessed one after another</font><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></li>
+</ul>
+<h3 id="Sequential-file-organisation"><a class="header-anchor" href="#Sequential-file-organisation">¶</a>Sequential file organisation</h3>
+<blockquote>
+<p>Method of file organisation in which records of data are physically stored in a file, one after another, <strong>in a given order</strong></p>
+</blockquote>
+<p>Physically stores records of data in a file, one after another, in a given order. The order is usually based on the <strong>key field</strong> of the records as this is the unique identifier.</p>
+<ul>
+<li><font color="#4a69bd">High hit rate</font></li>
+<li><font color="#4a69bd">Suitable for batch processing of records</font></li>
+<li><font color="#4a69bd">File organised using unique ID called <strong>key field</strong></font></li>
+</ul>
+<p>The difference between key fields in a file and primary keys in a database table. In the database table the primary key values must all be unique. This is not a requirement for key fields in any type of file. It may be sensible in certain applications to ensure key fields have unique values, but it is not mandatory.</p>
+<h3 id="Random-file-organisation"><a class="header-anchor" href="#Random-file-organisation">¶</a>Random file organisation</h3>
+<blockquote>
+<p>Method of file organisation in which records of data are physically stored in a file in <strong>any available</strong> position, the position of any record in a field is found by applying a <strong>hash algorithm</strong> on the <strong>key field</strong> of the record/record key.</p>
+</blockquote>
+<ul>
+<li>Records can be added to any empty position</li>
+<li><font color="#4a69bd">Key field is hashed to produce the home location</font></li>
+<li><font color="#4a69bd">If home location is free, insert the data</font></li>
+<li><font color="#4a69bd">Else, use overflow method to find free location to store the data</font></li>
+<li><font color="#4a69bd">If no free location is available, the file is full and data cannot be added/stored</font></li>
+<li><code>--</code></li>
+<li><font color="#4a69bd">Real-time processing</font></li>
+<li><font color="#4a69bd">Fast access to data</font></li>
+<li><font color="#4a69bd">No need to search through records</font></li>
+</ul>
+<h3 id="Past-paper-Questions"><a class="header-anchor" href="#Past-paper-Questions">¶</a>Past-paper Questions:</h3>
+<ol>
+<li><u>Compare Serial and Sequential file organisation:</u></li>
+</ol>
+<ul>
+<li><font color="#4a69bd">In both serial and sequential organisation, Records are added to the file one after another</font></li>
+<li>.<font color="#4a69bd">… and they needs to be accessed one after another</font></li>
+<li><font color="#4a69bd">For serial file organisation, records are added in a chronological order</font></li>
+<li><font color="#4a69bd">For sequential file organisation, records are stored with a given order</font></li>
+<li><font color="#4a69bd">… in the order of the key field</font></li>
+<li><font color="#4a69bd">For serial file organisation, records are added in the next available space // records are appended to the file</font></li>
+<li><font color="#4a69bd">For sequential file organisation, records are inserted into the correct position</font></li>
+</ul>
+<ol start="2">
+<li></li>
+</ol>
+<img src="/Notes/ALCS/Chapter13.2_FileOrganisationAndAccess/13.2Drawline.png" style="zoom: 80%;">
+<ol start="3">
+<li></li>
+</ol>
+<p><img src="/Notes/ALCS/Chapter13.2_FileOrganisationAndAccess/fileogr.png" alt></p>
+<ol start="4">
+<li></li>
+</ol>
+<p>The programmer decides to store all the data in a file. Initially, data from 27 locations will be stored. More rainfall locations will be added over time and will never exceeds 100. The programmer has to choose between two types of file organisation: serial and sequential.</p>
+<p><u>Give two reasons for choosing Serial file organisation:</u></p>
+<ul>
+<li><font color="#4a69bd">No need to re-sort data every time new data is added</font></li>
+<li><font color="#4a69bd">Only a small file so searching would require little processing</font></li>
+<li><font color="#4a69bd">New records can be easily added</font></li>
+</ul>
+<hr>
+<h2 id="File-access"><a class="header-anchor" href="#File-access">¶</a>File access</h2>
+<blockquote>
+<p>Method used to physically find a record in a file</p>
+</blockquote>
+<h3 id="Sequential-access"><a class="header-anchor" href="#Sequential-access">¶</a>Sequential access</h3>
+<blockquote>
+<p>A method of file access in which records are searched one after another from the physical start of the file until the required record is found, or a new record can be added to the file. This method is used for <code>serial</code> and <code>sequential</code> files.</p>
+</blockquote>
+<ul>
+<li>High hit rate</li>
+</ul>
+<p>For a <code>serial</code> file, if a particular record is being searched for, every record needs to be checked until the record is found or the whole file has been searched and that record has not been found. Any new records are appended to the end of the file.</p>
+<p>For a <code>sequential</code>file, if a particular records is being searched for, every records needs to be checked until the record is found or <em>the key filed of the current record being checked is greater than the key field of the record being searched for</em>. The rest of the file does not need to be searched as the records are sorted on ascending key field values.</p>
+<p>Sequential access if efficient when <strong>every</strong> record in the file needs to be processed. e.g. a monthly billing or payroll system.</p>
+<h3 id="Direct-access"><a class="header-anchor" href="#Direct-access">¶</a>Direct access</h3>
+<blockquote>
+<p>A method of file access in which a record can be physically found in a file without reading other records.</p>
+</blockquote>
+<ul>
+<li>Both <code>sequential</code> and <code>random</code> files can use direct access.</li>
+<li>Allow specific records to be found more quickly than using sequential access.</li>
+<li>Low hit rate</li>
+</ul>
+<p>Direct access is required when an <strong>individual</strong> record from a file needs to be processed. e.g. when a single customer record needs to be updated when the customer’s phone number is changed.</p>
+<p>For a <code>sequential</code> file, an index of all the key fields is kept and used to look up the address of the file location where a given record is stored. For large files, searching the index takes less time than searching the whole file.</p>
+<p>A separate index file is created which has two fields per record. The first record has the key field value and the second filed has a value for the position of this key field value in the main file.</p>
+<p>For a <code>random access</code> file, a hashing algorithm is used on the key filed to calculate the address of the file location where a given record is stored.</p>
+<h2 id="Hashing-algorithms"><a class="header-anchor" href="#Hashing-algorithms">¶</a>Hashing algorithms</h2>
+<blockquote>
+<p>A mathematical formula used to perform a calculation on the <code>record key</code>. The result of the calculation gives the address where the record should be found. More complex hashing algorithms are used in the encryption of data.</p>
+</blockquote>
+<p>Two ways of dealing with collision:</p>
+<p><code>open hash</code>: the record is stored in the next free space.</p>
+<p><code>close hash</code>: an overflow area is set up and the record is stored in the next free space in the overflow area.</p>
+<h3 id="Past-paper-questions"><a class="header-anchor" href="#Past-paper-questions">¶</a>Past-paper questions</h3>
+<ol>
+<li><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup><br>
+<img src="/Notes/ALCS/Chapter13.2_FileOrganisationAndAccess/hashppq.png" style="zoom:80%;"></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">FUNCTION hash(BookingID: INTEGER) RETURNS INTEGER</span><br><span class="line">	RETURN BookingID%100000 + 3</span><br><span class="line">ENDFUNCTION</span><br></pre></td></tr></table></figure>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Sequential file access <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>9608-s21-q2 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>ALCS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Chapter 15.1: Processors, Parallel Processing and Virtual Machines</title>
+    <url>/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingAndVirturalMachines/</url>
+    <content><![CDATA[<h1>Chapter 15.1: Processors, Parallel Processing and Virtual Machines</h1>
+<p><img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingAndVirturalMachines/Syllabus15.1.png" alt></p>
+<span id="more"></span> 
+<h2 id="RISC-CISC"><a class="header-anchor" href="#RISC-CISC">¶</a>RISC &amp; CISC</h2>
+<blockquote>
+<p><strong>RISC</strong> - reduced instruction set computer</p>
+<p><strong>CISC</strong> - complex instruction set computer</p>
+</blockquote>
+<h3 id="Differences-between-RISC-and-CISC"><a class="header-anchor" href="#Differences-between-RISC-and-CISC">¶</a>Differences between RISC and CISC</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">RISC</th>
+<th style="text-align:center">CISC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Many instruction formats are possible</td>
+<td style="text-align:center">Uses fewer instruction formats</td>
+</tr>
+<tr>
+<td style="text-align:center">There are more addressing modes</td>
+<td style="text-align:center">Uses fewer addressing modes</td>
+</tr>
+<tr>
+<td style="text-align:center">Makes use of multi-cycle instructions</td>
+<td style="text-align:center">Makes use of single-cycle instructions</td>
+</tr>
+<tr>
+<td style="text-align:center">Instructions can be of a variable length</td>
+<td style="text-align:center">Instructions are of a fixed length</td>
+</tr>
+<tr>
+<td style="text-align:center">Longer execution time for instructions</td>
+<td style="text-align:center">Shorter execution time for instructions</td>
+</tr>
+<tr>
+<td style="text-align:center">Multiple register sets</td>
+<td style="text-align:center">Makes use of general multipurpose registers // fewer registers</td>
+</tr>
+<tr>
+<td style="text-align:center">It is more difficult to make pipelining work</td>
+<td style="text-align:center">Easier to make pipelining function correctly</td>
+</tr>
+<tr>
+<td style="text-align:center">The design emphasis is on the hardware</td>
+<td style="text-align:center">The design emphasis is one the software</td>
+</tr>
+<tr>
+<td style="text-align:center">Uses the memory unit to allow complex instructions to be carried out</td>
+<td style="text-align:center">Processor chips require fewer transistors</td>
+</tr>
+<tr>
+<td style="text-align:center">Has a programmable control unit</td>
+<td style="text-align:center">Has hard-wired control unit</td>
+</tr>
+<tr>
+<td style="text-align:center">Make more use of cache and less use of RAM</td>
+<td style="text-align:center">Make more use of RAM</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Interrupt-handling-in-pipelining"><a class="header-anchor" href="#Interrupt-handling-in-pipelining">¶</a>Interrupt handling in pipelining</h3>
+<ul>
+<li>Once the processor detects the existence of an interrupt</li>
+<li>To discard all instructions in the pipelining except for the last instruction in the writeback stage</li>
+</ul>
+<h3 id="Past-paper-questions-v2"><a class="header-anchor" href="#Past-paper-questions-v2">¶</a>Past-paper questions</h3>
+<hr>
+<img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingAndVirturalMachines/ppq1.png" style="zoom: 50%;">
+<hr>
+<img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingAndVirturalMachines/ppq2.png" style="zoom: 67%;">
+<hr>
+<h2 id="Pipelining-Registers"><a class="header-anchor" href="#Pipelining-Registers">¶</a>Pipelining &amp; Registers</h2>
+<blockquote>
+<p>Allow several instructions to be processed simultaneously without having to wait for the previous instructions to be completed</p>
+</blockquote>
+<ol>
+<li>Instruction Fetch cycle (IF)</li>
+<li>Instruction Decode cycle (ID)</li>
+<li>Operand Fetch cycle (OF)</li>
+<li>Instruction Execution cycle (IE)</li>
+<li>Writeback Result process (WB)</li>
+</ol>
+<p><u>Explain what is meant by pipelining:</u></p>
+<ul>
+<li><font color="#4a69bd">Pipelining is instruction level parallelism</font></li>
+<li><font color="#4a69bd">Execution of an instruction is split into a number of stages</font></li>
+<li><font color="#4a69bd">When the first stage for an instruction is completed, the first page of next instruction can start executing</font></li>
+<li><font color="#4a69bd">Another instruction can start executing before the previous one is finished</font></li>
+<li><font color="#4a69bd">Processing a number of instructions can be concurrent/simultaneous</font></li>
+</ul>
+<img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingAndVirturalMachines/pipeLining.jpg" style="zoom:67%;">
+<hr>
+<h2 id="Basic-computer-architectures"><a class="header-anchor" href="#Basic-computer-architectures">¶</a>Basic computer architectures</h2>
+<h3 id="SISD"><a class="header-anchor" href="#SISD">¶</a>SISD</h3>
+<ul>
+<li>There is only one processor</li>
+<li>The processor executes one sets of instructions on one sets of data</li>
+</ul>
+<h3 id="SIMD"><a class="header-anchor" href="#SIMD">¶</a>SIMD</h3>
+<ul>
+<li>The processor has several ALUs // several processors</li>
+<li>Each ALU executes the same set of instructions on different sets of data at the same time</li>
+</ul>
+<h3 id="MISD"><a class="header-anchor" href="#MISD">¶</a>MISD</h3>
+<ul>
+<li>There are several processors</li>
+<li>Each processor executes different set of instruction on the same set of data at the same time</li>
+</ul>
+<h3 id="MIMD"><a class="header-anchor" href="#MIMD">¶</a>MIMD</h3>
+<ul>
+<li>There are several processors</li>
+<li>Each processor execute different set of instruction</li>
+<li>Each processor operate on different set of data</li>
+</ul>
+<h3 id="Past-paper-questions-v3"><a class="header-anchor" href="#Past-paper-questions-v3">¶</a>Past-paper questions</h3>
+<img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingAndVirturalMachines/ppq3.png" style="zoom: 50%;">
+<hr>
+<img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingAndVirturalMachines/ppq4.png" style="zoom: 67%;">
+<h2 id="Massively-parallel-computers"><a class="header-anchor" href="#Massively-parallel-computers">¶</a>Massively parallel computers</h2>
+<p><u>Describe what is meant by a massively paralleled computer</u></p>
+<ul>
+<li><font color="#4a69bd">Large number of processors</font></li>
+<li><font color="#4a69bd">… Working collaboratively on the same program</font></li>
+<li><font color="#4a69bd">… Working together simultaneously on the same program</font></li>
+<li><font color="#4a69bd">… Communicating via a message interface</font></li>
+</ul>
+<h3 id="Properties"><a class="header-anchor" href="#Properties">¶</a>Properties</h3>
+<ul>
+<li><font color="#4a69bd">A large number of processors</font></li>
+<li><font color="#4a69bd">Collaborative processing // coordinated simultaneous processing</font></li>
+<li><font color="#4a69bd">Network infrastructure</font></li>
+<li><font color="#4a69bd">Communicating using message interface</font></li>
+<li>It is a much faster way to handle large volumes of independent data</li>
+<li>The data used sometimes relies on result of previous operation, therefore such data cannot be handled in parallel</li>
+<li>Datasets require the same processing for it to work</li>
+<li>It overcomes the Von Neumann bottleneck and therefore greatly improves CPU performance</li>
+<li>Parallel processing requires more expensive hardware</li>
+</ul>
+<h3 id="Past-paper-Questions-v2"><a class="header-anchor" href="#Past-paper-Questions-v2">¶</a>Past-paper Questions</h3>
+<p><u>Changes needed for codes in order to run on massively paralleled computer</u></p>
+<ul>
+<li><font color="#4a69bd">Split into blocks of code</font></li>
+<li><font color="#4a69bd">… that can be processed simultaneously</font></li>
+<li><font color="#4a69bd">… instead of sequentially</font></li>
+<li><font color="#4a69bd">Each block is processed by a different processor</font></li>
+<li><font color="#4a69bd">Which allows each of many processors to process the different blocks of code independently</font></li>
+<li><font color="#4a69bd">Requires both parallelism and coordination</font></li>
+</ul>
+<p><u>Explain one of the hardware issues that will be overcome if a massively parallel computer is to function correctly</u></p>
+<ul>
+<li><font color="#4a69bd">Communication between processors is the issue</font></li>
+<li><font color="#4a69bd">Each processor needs a link to other processors</font></li>
+<li><font color="#4a69bd">Many processors require many of these links</font></li>
+<li><font color="#4a69bd">Challenging topology</font></li>
+</ul>
+<p><em>A computer has a single processor that contains four processing units.</em><br>
+<u>Explain why this is not an example of a massively paralleled computer</u>:</p>
+<ul>
+<li><font color="#4a69bd">Only one separate processor</font></li>
+<li><font color="#4a69bd">Quad core computer system // processing unit shares the same bus</font></li>
+</ul>
+<p><u>Identify different types of parallelism</u></p>
+<ul>
+<li>Instruction</li>
+<li>Processor</li>
+<li>Memory usage</li>
+<li>Computer System</li>
+</ul>
+<h2 id="Virtual-machine"><a class="header-anchor" href="#Virtual-machine">¶</a>Virtual machine</h2>
+<blockquote>
+<p><font color="#4a69bd">An emulation of an existing computer/program/operating system. A computer OS running with another computer’s OS.</font></p>
+<p>Using a software to implement a hardware setup</p>
+</blockquote>
+<h3 id="Host-OS"><a class="header-anchor" href="#Host-OS">¶</a>Host OS</h3>
+<ul>
+<li><font color="#4a69bd">The operating system that is actually controlling the physical hardware</font></li>
+<li><font color="#4a69bd">The operating system for the physical hardware</font></li>
+<li><font color="#4a69bd">Guest OS is running under the host OS</font></li>
+</ul>
+<h3 id="Guest-OS"><a class="header-anchor" href="#Guest-OS">¶</a>Guest OS</h3>
+<ul>
+<li><font color="#4a69bd">An operating system running in the virtual machine</font></li>
+<li><font color="#4a69bd">Controls virtual hardware</font></li>
+<li><font color="#4a69bd">OS being emulated</font></li>
+</ul>
+<h3 id="Hypervisor"><a class="header-anchor" href="#Hypervisor">¶</a>Hypervisor</h3>
+<blockquote>
+<p><font color="#4a69bd">Virtual machine software that creates and runs virtual machine</font></p>
+</blockquote>
+<ul>
+<li>Software, not hardware</li>
+<li>Creates/deletes/manages virtual machine</li>
+<li>Translates the instruction used by the guest operating system to that required by the host operating system</li>
+<li>Hardware emulation</li>
+<li>Protects each virtual machine
+<ul>
+<li>So instances can be tested together</li>
+</ul>
+</li>
+</ul>
+<h3 id="Benefits"><a class="header-anchor" href="#Benefits">¶</a>Benefits</h3>
+<ul>
+<li><font color="#4a69bd">Multiple operating systems can exist simultaneously</font></li>
+<li><font color="#4a69bd">… allow for testing using the same hardware</font></li>
+<li><font color="#4a69bd">Only one set of hardware required</font></li>
+<li><font color="#4a69bd">… reduces cost of producing the app</font></li>
+<li><font color="#4a69bd">No need to set up more than one computer</font></li>
+<li><code>--</code></li>
+<li><font color="#4a69bd">Software can be tried on different OS using the same hardware</font></li>
+<li><font color="#4a69bd">No need to purchase all sorts of different software</font></li>
+<li><font color="#4a69bd">Easier to recover if the system issue causes the system to crash</font></li>
+<li><font color="#4a69bd">VM provides protection to other software</font></li>
+<li><code>--</code></li>
+<li><font color="#4a69bd">No need to acquire client hardware for testing</font></li>
+<li><font color="#4a69bd">Reduce set-up time for test system</font></li>
+<li><font color="#4a69bd">Common development system for all developers</font></li>
+<li><code>--</code></li>
+<li>They allow modern systems to use programs that run on obsolete or unsupported platform<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></li>
+<li>They allow platform independent program to run on multiple platforms</li>
+<li>They allow one computer to behave as several computers simultaneously</li>
+<li>They can be easily backed up, copied, and reinstalled.</li>
+</ul>
+<h3 id="Limitations"><a class="header-anchor" href="#Limitations">¶</a>Limitations</h3>
+<ul>
+<li><font color="#4a69bd">Time and effort required for implementation</font></li>
+<li><font color="#4a69bd">Implementation would not offer the same level of performance that would be obtained in a normal system</font></li>
+<li><font color="#4a69bd">Expensive, complex to manage and maintain</font></li>
+<li><font color="#4a69bd">Execution of extra code, processing time increased</font>
+<ul>
+<li><font color="#4a69bd">So cannot accurately test speed for real performance</font></li>
+<li><font color="#4a69bd">Performance is degraded</font></li>
+</ul>
+</li>
+<li><font color="#4a69bd">May not be able to emulate some hardware</font>
+<ul>
+<li><font color="#4a69bd">So that the hardware cannot be tested using virtual machine</font></li>
+</ul>
+</li>
+<li><code>--</code></li>
+<li><font color="#4a69bd">Virtual machine may not be able to emulate some hardware</font></li>
+<li><font color="#4a69bd">Virtual machine cannot directly access some hardware</font></li>
+<li><font color="#4a69bd">Using virtual machine means execution of extra code // processing time increased</font></li>
+<li><font color="#4a69bd">A virtual machine might not be as efficient // performance degraded</font></li>
+<li><font color="#4a69bd">Using a virtual machine increases the maintenance overheads </font></li>
+</ul>
+<h3 id="Role-of-virtual-machine-software"><a class="header-anchor" href="#Role-of-virtual-machine-software">¶</a>Role of virtual machine software</h3>
+<ol>
+<li><font color="#4a69bd">Create/delete virtual machines</font></li>
+<li><font color="#4a69bd">translate instruction used by the guest operating system to that required by the host operating system</font></li>
+<li><font color="#4a69bd">Existing hardware made available to guest OS //  hardware emulation</font></li>
+<li><font color="#4a69bd">Ensure each virtual machine is protected from actions from other virtual machines </font></li>
+</ol>
+<p><img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingAndVirturalMachines/virtualMachine.jpg" alt></p>
+<h3 id="Past-paper-questions-v4"><a class="header-anchor" href="#Past-paper-questions-v4">¶</a>Past-paper questions</h3>
+<p>A virtual machine is a <font color="#4a69bd"><u>software/program</u></font> that emulate a <font color="#4a69bd"><u>physical/different</u></font> computer system; A virtual machine allow multiple <font color="#4a69bd"><u>guest</u></font> operating system to run on one computer using <font color="#4a69bd"><u>host</u></font> operating system</p>
+<p><u>Describe what happens after the guest operating system has received the data request from the application</u>:</p>
+<ul>
+<li><font color="#4a69bd">Guest OS handles the request as if it were running on its own physical machine</font></li>
+<li><font color="#4a69bd">Guest OS handles the request as usual </font></li>
+<li><font color="#4a69bd">I/O requests are translated by the virtual machine software</font></li>
+<li><font color="#4a69bd">Into instruction executable by the host OS</font></li>
+<li><font color="#4a69bd">Host OS retrieves the data from the file</font></li>
+<li><font color="#4a69bd">Host OS passes the data into virtual machine software</font></li>
+<li><font color="#4a69bd">The virtual machine passes the data to the guest OS</font></li>
+<li><font color="#4a69bd">Guest OS passes the data to the application </font></li>
+</ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://img1.wsimg.com/blobby/go/9a8687c5-eecd-45f3-821d-7cdfe880b594/downloads/15.1%20Virtual%20Machine%20(MT-L).pdf">https://img1.wsimg.com/blobby/go/9a8687c5-eecd-45f3-821d-7cdfe880b594/downloads/15.1 Virtual Machine (MT-L).pdf</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>ALCS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Chapter 20.2: File processing and Exception Handling</title>
+    <url>/Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/</url>
+    <content><![CDATA[<h1>Chapter 20.2: File Processing and Exception Handling</h1>
+<p><img src="/Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/syllabus.png" alt></p>
+<hr>
+<span id="more"></span> 
+<h2 id="File-Processing"><a class="header-anchor" href="#File-Processing">¶</a>File Processing</h2>
+<h3 id="Pseudocode"><a class="header-anchor" href="#Pseudocode">¶</a>Pseudocode</h3>
+<h3 id="Program-code"><a class="header-anchor" href="#Program-code">¶</a>Program code</h3>
+<hr>
+<h4 id="Scanner"><a class="header-anchor" href="#Scanner">¶</a><code>Scanner</code></h4>
+<blockquote>
+<p>API: <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html">https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html</a></p>
+</blockquote>
+<p><code>Scanner</code>和其他读入的一个不同点就是他是存在于<code>java.util</code>包下面的 而其他大多数是在<code>java.io</code>包下面。</p>
+<p>有一个好处就是<code>scanner.hasNext</code>可以用来检查文件是否读完</p>
+<p><strong>Declaration/construction</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Scanner</span> <span class="variable">sca1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);<span class="comment">//从console输入</span></span><br><span class="line"><span class="type">Scanner</span> <span class="variable">sca2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(<span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;SamuelJie.txt&quot;</span>));<span class="comment">//can be used to read a file</span></span><br><span class="line"><span class="type">Scanner</span> <span class="variable">sca3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(<span class="string">&quot;Samuel is a hardworking boy&quot;</span>);<span class="comment">//can read a string</span></span><br><span class="line"><span class="comment">//then you can carry out other operations</span></span><br><span class="line"><span class="type">int</span> <span class="variable">number</span> <span class="operator">=</span> sca1.nextInt();</span><br></pre></td></tr></table></figure>
+<p><strong>Methods:</strong></p>
+<p>A <code>Scanner</code> breaks its input into tokens using a delimiter pattern, which by default matches whitespace. The resulting tokens may then be converted into values of different types using the various <code>next</code> methods.</p>
+<p>简单来说 被空格、换行符所分割的 每一个部分 都算一个<code>token</code> 比如<code>&quot;1 2 3  Samuel&quot;</code> 中 <code>1</code>，<code>2</code>，<code>3</code>，<code>&quot;Samuel&quot;</code>都算<code>token</code>. <code>1</code> 可以用<code>nextInt()</code> 来读取, <code>&quot;Samuel&quot;</code>可以用 <code>next()</code>来读取。</p>
+<ul>
+<li><code>hasNext()</code>
+<ul>
+<li>Returns true if this scanner has another token in its input.</li>
+</ul>
+</li>
+<li><code>next()</code>
+<ul>
+<li>Finds and returns the next complete token from this scanner.</li>
+</ul>
+</li>
+<li><code>nextLine()</code>
+<ul>
+<li>Advances this scanner past the current line and returns the input that was skipped.</li>
+</ul>
+</li>
+<li><code>nextInt()</code>
+<ul>
+<li>Scans the next token of the input as an <code>int</code>.</li>
+</ul>
+</li>
+</ul>
+<p>⚠️ <a href="https://www.cnblogs.com/alterwl/p/java-problem-scanner-nosuchelementexception.html">使用scanner中遇到的nosuchfileException</a></p>
+<p>⚠️ <a href="https://blog.csdn.net/guanghuichenshao/article/details/81545450">nextLine和next的区别</a></p>
+<p>⚠️<a href="https://www.geeksforgeeks.org/why-is-scanner-skipping-nextline-after-use-of-other-next-functions/">next-- 与nextline连用时出现读取空白的问题</a></p>
+<hr>
+<h4 id="FileReader"><a class="header-anchor" href="#FileReader">¶</a><code>FileReader</code></h4>
+<blockquote>
+<p>API: <a href="https://docs.oracle.com/javase/8/docs/api/java/io/FileReader.html">https://docs.oracle.com/javase/8/docs/api/java/io/FileReader.html</a></p>
+</blockquote>
+<p>通常在考试中FileReader都是作为创建BufferedReader的一个前置来使用。</p>
+<p><strong>Declaration/construction</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">FileReader(File file);<span class="comment">//can construct with a file</span></span><br><span class="line">FileReader(String Filename);<span class="comment">//can construct with the filename</span></span><br><span class="line"><span class="comment">//for example</span></span><br><span class="line">String fileName=<span class="string">&quot;input.txt&quot;</span>;</span><br><span class="line"><span class="type">FileReader</span> <span class="variable">fr</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileReader</span>(filename);</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="BufferedReader"><a class="header-anchor" href="#BufferedReader">¶</a><code>BufferedReader</code></h4>
+<blockquote>
+<p>API: <a href="https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html">https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html</a></p>
+</blockquote>
+<p>Buffered Reader 相对于 传统Reader的好处就是 当读入一个文件的时候 能够先把文件的内容存在Buffer(缓存)里面 然后每次从Buffer里面读取，这样比传统Reader直接从文件里读取更加高效</p>
+<p><strong>Declaration/construction</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">File</span> <span class="variable">fi</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(fileName);</span><br><span class="line"><span class="type">FileReader</span> <span class="variable">fr</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileReader</span>(fi);</span><br><span class="line"><span class="type">BufferedReader</span> <span class="variable">bfr</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(fr);</span><br></pre></td></tr></table></figure>
+<p><strong>Methods(考试会用到的):</strong></p>
+<p><code>readLine()</code>: Reads a line of text. A line is considered to be terminated by any one of a line feed (‘\n’), a carriage return (‘\r’), or a carriage return followed immediately by a linefeed.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> String <span class="title function_">readLine</span><span class="params">()</span></span><br><span class="line"><span class="comment">//Usage</span></span><br><span class="line"><span class="type">String</span> <span class="variable">dataRead</span> <span class="operator">=</span> bfr.readLine();<span class="comment">//bfr is the BufferedReader declared previously</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="RandomAccessFile"><a class="header-anchor" href="#RandomAccessFile">¶</a><code>RandomAccessFile</code></h4>
+<blockquote>
+<p>API: <a href="https://docs.oracle.com/javase/8/docs/api/java/io/RandomAccessFile.html">https://docs.oracle.com/javase/8/docs/api/java/io/RandomAccessFile.html</a></p>
+</blockquote>
+<p>Instances of this class support both reading and writing to a random access file. A random access file behaves like a large array of bytes stored in the file system. There is a kind of cursor, or index into the implied array, called the <code>file pointer</code>; input operations read bytes starting at the file pointer and advance the file pointer past the bytes read. If the random access file is created in read/write mode, then output operations are also available; output operations write bytes starting at the file pointer and advance the file pointer past the bytes written. Output operations that write past the current end of the implied array cause the array to be extended. The file pointer can be read by the <code>getFilePointer</code> method and set by the <code>seek</code> method.</p>
+<table>
+<thead>
+<tr>
+<th>Data type</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>byte</code></td>
+<td>1 byte</td>
+</tr>
+<tr>
+<td><code>short</code></td>
+<td>2 bytes</td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td>4 bytes</td>
+</tr>
+<tr>
+<td><code>long</code></td>
+<td>8 bytes</td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td>4 bytes</td>
+</tr>
+<tr>
+<td><code>double</code></td>
+<td>8 bytes</td>
+</tr>
+<tr>
+<td><code>boolean</code></td>
+<td>1 <strong>bit</strong></td>
+</tr>
+<tr>
+<td><code>char</code></td>
+<td>2 bytes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Declaration/construction</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">RandomAccessFile(File file, String mode);</span><br><span class="line">RandomAccessFile(String fileName, String mode);</span><br></pre></td></tr></table></figure>
+<p><strong><code>mode</code></strong></p>
+<p><code>mode</code>本质上就是读写模式，像是pseudocode 中 OPENFILE <code>&lt;file Name&gt;</code> FOR <code>&lt;File mode&gt;</code>中的 <code>&lt;File mode&gt;</code>一样。</p>
+<ul>
+<li><code>&quot;r&quot;</code> open for read only.</li>
+<li><code>&quot;rw&quot;</code>open for read and write</li>
+</ul>
+<p><strong>Methods(考试会用到的)</strong></p>
+<ul>
+<li><code>read()</code>
+<ul>
+<li>Reads a byte of data from this file.</li>
+</ul>
+</li>
+<li><code>readBoolean()</code>
+<ul>
+<li>Reads a <code>boolean</code> from this file.</li>
+</ul>
+</li>
+<li><code>readByte()</code>
+<ul>
+<li>Reads a signed eight-bit value from this file.</li>
+</ul>
+</li>
+<li><code>readChar()</code>
+<ul>
+<li>Reads a character from this file.</li>
+</ul>
+</li>
+<li><code>readDouble()</code>
+<ul>
+<li>Reads a <code>double</code> from this file.</li>
+</ul>
+</li>
+<li><code>readInt()</code></li>
+<li><code>readUTF()</code></li>
+<li><code>seek(long pos)</code>
+<ul>
+<li>Sets the file-pointer offset, measured from the beginning of this file, at which the next read or write occurs.</li>
+<li>Inputs the number, representing the position that you want the <code>file pointer</code> to be.</li>
+</ul>
+</li>
+<li><code>writeInt(int num)</code></li>
+<li><code>writeChars(String str)</code>
+<ul>
+<li>Writes a string to the file as a sequence of characters.</li>
+</ul>
+</li>
+<li><code>writeDouble(String str)</code>
+<ul>
+<li>Writes a string to the file using <a href="https://docs.oracle.com/javase/8/docs/api/java/io/DataInput.html#modified-utf-8">modified UTF-8</a> encoding in a machine-independent manner.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example code(from Kamana)</strong>:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RandomFileDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span><span class="keyword">throws</span> Exception &#123;</span><br><span class="line">		RandomAccessFile raf=<span class="keyword">new</span> <span class="title class_">RandomAccessFile</span>(<span class="string">&quot;file.dat&quot;</span>, <span class="string">&quot;rw&quot;</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;b&#x27;</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;c&#x27;</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;d&#x27;</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;e&#x27;</span>);</span><br><span class="line">		raf.writeUTF(<span class="string">&quot;kamna&quot;</span>);</span><br><span class="line">		raf.writeInt(<span class="number">50</span>);</span><br><span class="line">		raf.writeDouble(<span class="number">50.555</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;f&#x27;</span>);</span><br><span class="line">		raf.close();</span><br><span class="line">		</span><br><span class="line">		RandomAccessFile r=<span class="keyword">new</span> <span class="title class_">RandomAccessFile</span>(<span class="string">&quot;file.dat&quot;</span>, <span class="string">&quot;r&quot;</span>);</span><br><span class="line">		r.seek(<span class="number">29</span>);</span><br><span class="line">		<span class="comment">//System.out.println(r.readChar());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readChar());</span></span><br><span class="line">		<span class="comment">//r.seek(6);</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readChar());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readChar());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readChar());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readUTF());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readInt());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readDouble());</span></span><br><span class="line">		System.out.println(r.readChar());</span><br><span class="line">		r.close();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">randomFileusingArray</span> &#123;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">		<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">		</span><br><span class="line">			<span class="comment">//write the alphabet to a random access file</span></span><br><span class="line">			<span class="type">char</span>[] alphabet = &#123;<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="string">&#x27;G&#x27;</span>, <span class="string">&#x27;H&#x27;</span>, <span class="string">&#x27;I&#x27;</span>, <span class="string">&#x27;J&#x27;</span>,</span><br><span class="line">							   <span class="string">&#x27;K&#x27;</span>, <span class="string">&#x27;L&#x27;</span>, <span class="string">&#x27;M&#x27;</span>, <span class="string">&#x27;N&#x27;</span>, <span class="string">&#x27;O&#x27;</span>, <span class="string">&#x27;P&#x27;</span>, <span class="string">&#x27;Q&#x27;</span>, <span class="string">&#x27;R&#x27;</span>, <span class="string">&#x27;S&#x27;</span>, <span class="string">&#x27;T&#x27;</span>,</span><br><span class="line">							   <span class="string">&#x27;U&#x27;</span>, <span class="string">&#x27;V&#x27;</span>, <span class="string">&#x27;W&#x27;</span>, <span class="string">&#x27;X&#x27;</span>, <span class="string">&#x27;Y&#x27;</span>, <span class="string">&#x27;Z&#x27;</span>&#125;;</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			<span class="type">RandomAccessFile</span> <span class="variable">random</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">RandomAccessFile</span>(<span class="string">&quot;RandomTest.dat&quot;</span>, <span class="string">&quot;rw&quot;</span>);</span><br><span class="line">			</span><br><span class="line">			System.out.println(<span class="string">&quot;Writing alphabet to the file!&quot;</span>);</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; alphabet.length; i++)</span><br><span class="line">				random.writeChar(alphabet[i]);</span><br><span class="line">			</span><br><span class="line">			System.out.println(<span class="string">&quot;Finished writing!&quot;</span>);</span><br><span class="line">			</span><br><span class="line">			random.close();</span><br><span class="line">	</span><br><span class="line">			<span class="comment">//reading characters from the alphabet off the file</span></span><br><span class="line">			<span class="type">RandomAccessFile</span> <span class="variable">rand0m</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">RandomAccessFile</span>(<span class="string">&quot;RandomTest.dat&quot;</span>, <span class="string">&quot;r&quot;</span>);</span><br><span class="line">			</span><br><span class="line">			System.out.println(<span class="string">&quot;Beginning to read!&quot;</span>);</span><br><span class="line">			</span><br><span class="line">			rand0m.seek(<span class="number">8</span>); <span class="comment">// 5th character (E)</span></span><br><span class="line">			System.out.println(rand0m.readChar());</span><br><span class="line">			rand0m.seek(<span class="number">24</span>); <span class="comment">//13th character (M)</span></span><br><span class="line">			System.out.println(rand0m.readChar());</span><br><span class="line">			rand0m.seek(<span class="number">40</span>); <span class="comment">//21st character (U)</span></span><br><span class="line">			System.out.println(rand0m.readChar());</span><br><span class="line">			rand0m.seek(<span class="number">19</span>); <span class="comment">//won&#x27;t read correctly!</span></span><br><span class="line">			System.out.println(rand0m.readChar());</span><br><span class="line">			System.out.println(<span class="string">&quot;Done reading!&quot;</span>);			</span><br><span class="line">			rand0m.close();		</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="Useful-resources"><a class="header-anchor" href="#Useful-resources">¶</a>Useful resources</h4>
+<ul>
+<li><a href="https://www.jb51.net/article/226835.htm">Scanner和BufferedReader的对比</a></li>
+</ul>
+<h2 id="Exception-Handling"><a class="header-anchor" href="#Exception-Handling">¶</a>Exception Handling</h2>
+<h3 id="Exception-hierarchy"><a class="header-anchor" href="#Exception-hierarchy">¶</a>Exception hierarchy<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></h3>
+<p><img src="/Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/exception-hierarchy.png" alt="file categories"></p>
+<hr>
+<p><code>Throwable</code> is a derived class of <code>object</code>. <code>Throwable</code> has two subcategories: <code>Error</code> and <code>Exception</code></p>
+<p><code>Error</code>: severe problems occurred that cannot be solved</p>
+<p><code>Exception</code>:  problems that occur when the program is running. It can be captured by <code>try...catch</code></p>
+<h3 id="Capture-the-exception-try-catch"><a class="header-anchor" href="#Capture-the-exception-try-catch">¶</a>Capture the exception: <code>try...catch</code></h3>
+<h3 id="Single-catch"><a class="header-anchor" href="#Single-catch">¶</a>Single catch</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="comment">//Program</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(ExceptionName e)&#123;</span><br><span class="line">    <span class="comment">//What to perform when Exception is detected in the try program</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Multiple-catch"><a class="header-anchor" href="#Multiple-catch">¶</a>Multiple catch</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">   <span class="comment">// 程序代码</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型<span class="number">1</span> 异常的变量名<span class="number">1</span>)&#123;</span><br><span class="line">  <span class="comment">// 程序代码</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型<span class="number">2</span> 异常的变量名<span class="number">2</span>)&#123;</span><br><span class="line">  <span class="comment">// 程序代码</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型<span class="number">3</span> 异常的变量名<span class="number">3</span>)&#123;</span><br><span class="line">  <span class="comment">// 程序代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Finally"><a class="header-anchor" href="#Finally">¶</a>Finally</h3>
+<blockquote>
+<p>The statement that will be executed anyway no matter whether the Exception occur in the try processes</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    process1();</span><br><span class="line">    process2();</span><br><span class="line">&#125;<span class="keyword">catch</span>(IOException e)&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;IO excpetion detected&quot;</span>);</span><br><span class="line">&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;END&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Useful-resources-v2"><a class="header-anchor" href="#Useful-resources-v2">¶</a>Useful resources</h3>
+<ul>
+<li><a href="https://www.liaoxuefeng.com/wiki/1252599548343744/1255943543190176">https://www.liaoxuefeng.com/wiki/1252599548343744/1255943543190176</a></li>
+</ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://www.runoob.com/java/java-exceptions.html">https://www.runoob.com/java/java-exceptions.html</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 ]]></content>
       <categories>
         <category>Notes</category>

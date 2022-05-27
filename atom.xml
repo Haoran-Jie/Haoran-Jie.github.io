@@ -121,14 +121,14 @@
   
   <entry>
     <title>Chapter 15.1: Processors, Parallel Processing and Virtual Machines</title>
-    <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/"/>
-    <id>https://haoran-jie.github.io/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/</id>
+    <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingAndVirturalMachines/"/>
+    <id>https://haoran-jie.github.io/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingAndVirturalMachines/</id>
     <published>2022-05-02T04:17:24.000Z</published>
     <updated>2022-05-19T08:47:37.571Z</updated>
     
     
     <summary type="html">&lt;h1&gt;Chapter 15.1: Processors, Parallel Processing and Virtual Machines&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/Syllabus15.1.png&quot; alt&gt;&lt;/p&gt;</summary>
+&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingAndVirturalMachines/Syllabus15.1.png&quot; alt&gt;&lt;/p&gt;</summary>
     
     
     
@@ -206,14 +206,14 @@
   
   <entry>
     <title>Chapter 13.2: File organisation and access</title>
-    <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter13.2_FileOrganisation&amp;Access/"/>
-    <id>https://haoran-jie.github.io/Notes/ALCS/Chapter13.2_FileOrganisation&amp;Access/</id>
+    <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter13.2_FileOrganisationAndAccess/"/>
+    <id>https://haoran-jie.github.io/Notes/ALCS/Chapter13.2_FileOrganisationAndAccess/</id>
     <published>2022-04-28T12:44:02.000Z</published>
     <updated>2022-05-26T07:50:21.699Z</updated>
     
     
     <summary type="html">&lt;h1&gt;Chapter 13.2: File organisation and access&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter13.2_FileOrganisation&amp;Access/13.2.png&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter13.2_FileOrganisationAndAccess/13.2.png&quot; alt&gt;&lt;/p&gt;
 &lt;hr&gt;</summary>
     
     
@@ -247,14 +247,14 @@
   
   <entry>
     <title>Chapter 20.2: File processing and Exception Handling</title>
-    <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter20.2_FileProcessing&amp;ExceptionHandling/"/>
-    <id>https://haoran-jie.github.io/Notes/ALCS/Chapter20.2_FileProcessing&amp;ExceptionHandling/</id>
+    <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/"/>
+    <id>https://haoran-jie.github.io/Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/</id>
     <published>2022-04-17T13:12:00.000Z</published>
     <updated>2022-05-22T11:28:43.383Z</updated>
     
     
     <summary type="html">&lt;h1&gt;Chapter 20.2: File Processing and Exception Handling&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter20.2_FileProcessing&amp;ExceptionHandling/syllabus.png&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/syllabus.png&quot; alt&gt;&lt;/p&gt;
 &lt;hr&gt;</summary>
     
     
@@ -312,29 +312,6 @@
     
     
     <category term="Algorithms" scheme="https://haoran-jie.github.io/tags/Algorithms/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Chapter 14: Communication and Internet technologies</title>
-    <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter14_Communication&amp;InternetTechnologies/"/>
-    <id>https://haoran-jie.github.io/Notes/ALCS/Chapter14_Communication&amp;InternetTechnologies/</id>
-    <published>2022-04-13T13:24:22.000Z</published>
-    <updated>2022-05-26T07:50:17.743Z</updated>
-    
-    
-    <summary type="html">&lt;h1&gt;Chapter 14: Communication and Internet technologies&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter14_Communication&amp;InternetTechnologies/commu.png&quot; alt&gt;&lt;/p&gt;
-&lt;hr&gt;</summary>
-    
-    
-    
-    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
-    
-    <category term="ALCS" scheme="https://haoran-jie.github.io/categories/Notes/ALCS/"/>
-    
-    
-    <category term="Communication" scheme="https://haoran-jie.github.io/tags/Communication/"/>
     
   </entry>
   
@@ -452,6 +429,29 @@
     
     
     <summary type="html">&lt;img src=&quot;https://media.giphy.com/media/KcMqhBHGYydbQqf7z1/giphy.gif&quot; alt=&quot;loadingAnimation&quot; style=&quot;zoom:300%;&quot;&gt;</summary>
+    
+    
+    
+    <category term="WebDevelopment" scheme="https://haoran-jie.github.io/categories/WebDevelopment/"/>
+    
+    <category term="Project" scheme="https://haoran-jie.github.io/categories/WebDevelopment/Project/"/>
+    
+    
+    <category term="css" scheme="https://haoran-jie.github.io/tags/css/"/>
+    
+    <category term="html" scheme="https://haoran-jie.github.io/tags/html/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTML+CSS: spotlight Text Animation</title>
+    <link href="https://haoran-jie.github.io/WebDevelopment/Project/Spotlight-Text/"/>
+    <id>https://haoran-jie.github.io/WebDevelopment/Project/Spotlight-Text/</id>
+    <published>2022-04-05T11:53:34.000Z</published>
+    <updated>2022-04-07T12:18:36.441Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;https://media.giphy.com/media/r0qmZ6SyKILYYxmyHK/giphy.gif&quot; alt=&quot;gif&quot; style=&quot;zoom:1000%;&quot; class=&quot;full-image&quot;&gt;</summary>
     
     
     
