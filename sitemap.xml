@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://haoran-jie.github.io/Notes/AS&AL-CompSci-Note/</loc>
+    <loc>https://haoran-jie.github.io/Notes/ASAL-CompSci-Note/</loc>
     
     <lastmod>2022-05-27</lastmod>
     
@@ -270,6 +270,13 @@
   </url>
   
   <url>
+    <loc>https://haoran-jie.github.io/tags/Communication/</loc>
+    <lastmod>2022-05-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://haoran-jie.github.io/tags/Cryptography/</loc>
     <lastmod>2022-05-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -326,13 +333,6 @@
   </url>
   
   <url>
-    <loc>https://haoran-jie.github.io/tags/html/</loc>
-    <lastmod>2022-05-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://haoran-jie.github.io/tags/Inspiration/</loc>
     <lastmod>2022-05-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -340,14 +340,14 @@
   </url>
   
   <url>
-    <loc>https://haoran-jie.github.io/tags/Markdown/</loc>
+    <loc>https://haoran-jie.github.io/tags/html/</loc>
     <lastmod>2022-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://haoran-jie.github.io/tags/Communication/</loc>
+    <loc>https://haoran-jie.github.io/tags/Markdown/</loc>
     <lastmod>2022-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -384,14 +384,14 @@
   </url>
   
   <url>
-    <loc>https://haoran-jie.github.io/categories/WebDevelopment/CSS/</loc>
+    <loc>https://haoran-jie.github.io/categories/WebDevelopment/Project/</loc>
     <lastmod>2022-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://haoran-jie.github.io/categories/WebDevelopment/Project/</loc>
+    <loc>https://haoran-jie.github.io/categories/WebDevelopment/CSS/</loc>
     <lastmod>2022-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
