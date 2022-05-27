@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://haoran-jie.github.io/Notes/index.html</loc>
+    
+    <lastmod>2022-05-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://haoran-jie.github.io/Notes/AS&AL-CompSci-Note/</loc>
+    
+    <lastmod>2022-05-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://haoran-jie.github.io/Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/</loc>
     
     <lastmod>2022-05-27</lastmod>
@@ -21,24 +39,6 @@
   
   <url>
     <loc>https://haoran-jie.github.io/Notes/ALCS/Chapter14_CommunicationAndInternetTechnologies/</loc>
-    
-    <lastmod>2022-05-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://haoran-jie.github.io/Notes/AS&AL-CompSci-Note/</loc>
-    
-    <lastmod>2022-05-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://haoran-jie.github.io/Notes/index.html</loc>
     
     <lastmod>2022-05-27</lastmod>
     
