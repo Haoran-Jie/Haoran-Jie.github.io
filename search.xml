@@ -29,8 +29,8 @@
 <details>
     <summary style="font-weight:bold;">CIE 官方文件</summary>
     <ul>
-        <li><a target="_blank" style="color:#0a3d62;" href="https://haoran-jie.github.io/file/ASCS-notedSyllabus.pdf">AS_Syllabus-注释版</a></li>
-        <li><a target="_blank" style="color:#0a3d62;" href="https://haoran-jie.github.io/file/9618_Pseudocode_Guide.pdf">9618 Pseudocode Guide</a></li>
+        <li><a target="_blank" style="color:#70a1ff;" href="https://haoran-jie.github.io/file/ASCS-notedSyllabus.pdf">AS_Syllabus-注释版</a></li>
+        <li><a target="_blank" style="color:#70a1ff;" href="https://haoran-jie.github.io/file/9618_Pseudocode_Guide.pdf">9618 Pseudocode Guide</a></li>
     </ul>
 </details>
 <h2 id="✋How-to-contribute"><a class="header-anchor" href="#✋How-to-contribute">¶</a>✋How to contribute</h2>
@@ -116,11 +116,11 @@
 <p>This is a data type used to store constant values. It is a list of possible values.</p>
 </blockquote>
 <ul>
-<li><img src="/Notes/ALCS/Chapter13.1_User-definedDataTypes/enu1.png" alt="enu1"></li>
+<li><img src="/Notes/ALCS/Chapter13.1_User-definedDataTypes/enu1.png" alt="Enumerated: pseudocode guide"></li>
 <li>
 <img src="/Notes/ALCS/Chapter13.1_User-definedDataTypes/enu2.jpg" alt="enu2" style="zoom: 50%;">
 </li>
-<li><img src="/Notes/ALCS/Chapter13.1_User-definedDataTypes/enu3.png" alt="enu3"></li>
+<li><img src="/Notes/ALCS/Chapter13.1_User-definedDataTypes/enu3.png" alt="from pastpaper"></li>
 </ul>
 <p>⚠️: Enumerated 里面不用加引号<code>''</code> 或双引号<code>&quot;&quot;</code></p>
 <p>⚠️:The values defined in an enumerated data type are ordinal. This mean that enumerated data types have an implied order or values.</p>
@@ -203,7 +203,7 @@
 <li>Methods: Modules attached to objects to allow it to perform certain actions</li>
 </ul>
 <h2 id="Use-of-User-defined-Data-Types"><a class="header-anchor" href="#Use-of-User-defined-Data-Types">¶</a>Use of User-defined Data Types</h2>
-<p><img src="/Notes/ALCS/Chapter13.1_User-definedDataTypes/exampleusd.png" alt></p>
+<p><img src="/Notes/ALCS/Chapter13.1_User-definedDataTypes/exampleusd.png" alt="pseudocode guide code example"></p>
 <h3 id="Past-paper-questions"><a class="header-anchor" href="#Past-paper-questions">¶</a>Past paper questions</h3>
 <p><u>Write pseudocode to create an enumerated type called <code>Parts</code> to include these parts sold in a computer shop:</u></p>
 <p><em>Monitor, CPU, SSD, HDD, LaserPrinter, Keyboard, Mouse</em></p>

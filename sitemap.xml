@@ -2,9 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://haoran-jie.github.io/Notes/index.html</loc>
+    <loc>https://haoran-jie.github.io/Notes/ALCS/Chapter13.1_User-definedDataTypes/</loc>
     
-    <lastmod>2022-05-27</lastmod>
+    <lastmod>2022-05-28</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -12,6 +12,15 @@
   
   <url>
     <loc>https://haoran-jie.github.io/Notes/ASAL-CompSci-Note/</loc>
+    
+    <lastmod>2022-05-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://haoran-jie.github.io/Notes/index.html</loc>
     
     <lastmod>2022-05-27</lastmod>
     
@@ -48,15 +57,6 @@
   
   <url>
     <loc>https://haoran-jie.github.io/uncategorized/Contributors/</loc>
-    
-    <lastmod>2022-05-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://haoran-jie.github.io/Notes/ALCS/Chapter13.1_User-definedDataTypes/</loc>
     
     <lastmod>2022-05-26</lastmod>
     
