@@ -3299,236 +3299,13 @@
       </tags>
   </entry>
   <entry>
-    <title>JavaScript_Basics(constantly updated)</title>
-    <url>/WebDevelopment/JavaScript/JavaScript-Basics/</url>
-    <content><![CDATA[<p style="text-align:center; color:#19547b; font-weight:bold;"> A flexible language that powers dynamic websites and apps </p>
-<span id="more"></span>
-<h3 id="Variables"><a class="header-anchor" href="#Variables">¶</a>Variables</h3>
-<p>Dynamic websites need to remember information to display or change. For that, JavaScript has <strong>variables</strong><br>
-Like moving boxes, variables have content and names that tell us what’s inside</p>
-<hr>
-<h4 id="Variable-types"><a class="header-anchor" href="#Variable-types">¶</a>Variable types</h4>
-<ul>
-<li><strong>number:</strong>
-<ul>
-<li>variable type that stores number</li>
-</ul>
-</li>
-<li><strong>string:</strong>
-<ul>
-<li>variable type that stores a series of char</li>
-<li>can be recognized with the two double quotes, between which any symbol can stay</li>
-<li>Eg: <code>&quot;ajjef91239mca dsjfjja03&quot;</code></li>
-</ul>
-</li>
-<li><strong>boolean:</strong>
-<ul>
-<li>stores the result of comparison</li>
-<li><code>true</code></li>
-<li><code>false</code></li>
-</ul>
-</li>
-<li><code>var thisIsAVariable</code></li>
-<li><code>var name=&quot;Samuel&quot;;</code>
-<ul>
-<li>variable name - name</li>
-<li>Variable value - “Samuel”
-<ul>
-<li>“Samuel” is a string</li>
-</ul>
-</li>
-<li>A statement ends with semicolon <code>;</code></li>
-</ul>
-</li>
-<li><code>var time = 5;</code>
-<ul>
-<li>5 is a number, not a string : since there’s no &quot; &quot;</li>
-</ul>
-</li>
-<li><code>var lighton = true</code></li>
-<li><code>var finishedHW = false</code></li>
-</ul>
-<hr>
-<h4 id="Instruction"><a class="header-anchor" href="#Instruction">¶</a>Instruction</h4>
-<p>With special instruction <code>console.log()</code>, we tell the computer to display a value in an area called the <strong>console</strong>.</p>
-<ul>
-<li><code>console.log(&quot;Hello World&quot;);</code><br>
-When we display variables in the console, their values appear instead of their names. If we log <code>name</code> here, it’ll show its value.</li>
-</ul>
-<p>Arithmetic operations are supported with numbers:</p>
-<ul>
-<li><code>+</code> plus</li>
-<li><code>-</code> minus</li>
-<li><code>*</code> multiply</li>
-<li><code>/</code> divides</li>
-</ul>
-<p>joining operator: <code>+</code></p>
-<ul>
-<li>when <code>+</code> is used between two numbers, the result will be their sum</li>
-<li>when <code>+</code> is used between two strings, the result will be the joining of the string
-<ul>
-<li><code>&quot;name:&quot; + &quot; Samuel&quot;</code> -&gt; <code>&quot;name: Samuel&quot;</code></li>
-</ul>
-</li>
-<li>when <code>+</code> is used between a string and a number, the number will be automatically transformed into a string
-<ul>
-<li><code>&quot;age: &quot; + 8</code> -&gt; <code>&quot;age: 8&quot;</code></li>
-</ul>
-</li>
-<li>when <code>+</code> is used between a string and a boolean, the boolean will be automatically transformed into a string
-<ul>
-<li><code>&quot;Passed&quot;:  + true</code> -&gt; <code>&quot;passed: true&quot;</code></li>
-</ul>
-</li>
-</ul>
-<hr>
-<h4 id="Using-Variables"><a class="header-anchor" href="#Using-Variables">¶</a>Using Variables</h4>
-<p>Variables are called variables because the values they store can change</p>
-<p>Use the <code>=</code> sign to change the value in <code>status</code> from <code>&quot;Watching Netflix&quot;</code> to <code>&quot;Playing frisbee&quot;</code></p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">var</span> currentStatus = &quot;Watching Netflix&quot;;</span><br><span class="line">currentStatus = &quot;Playing frisbee&quot;;</span><br><span class="line">console<span class="selector-class">.log</span>(currentStatus);</span><br></pre></td></tr></table></figure>
-<hr>
-<h4 id="Comparing-operators"><a class="header-anchor" href="#Comparing-operators">¶</a>Comparing operators</h4>
-<p>All comparison statements returns a boolean value</p>
-<ul>
-<li><code>===</code>
-<ul>
-<li>this is used to check whether two variables are equal
-<ul>
-<li>variables can be of type <code>string</code> or <code>number</code></li>
-</ul>
-</li>
-<li><code>1===2</code> returns <code>false</code></li>
-<li><code>&quot;apple&quot;===&quot;apple&quot;</code> returns <code>true</code></li>
-</ul>
-</li>
-<li><code>!==</code>
-<ul>
-<li>this is used to check whether two variables are not equal</li>
-<li><code>1!==2</code> returns <code>true</code></li>
-</ul>
-</li>
-<li><code>&gt;</code>
-<ul>
-<li>this is used to check whether a variable is larger than another variable</li>
-<li><code>1&gt;2</code> returns <code>false</code></li>
-</ul>
-</li>
-<li><code>&lt;</code>
-<ul>
-<li>this is used to check whether a variable is smaller than another variable</li>
-<li><code>1&lt;2</code> returns <code>true</code></li>
-</ul>
-</li>
-<li><code>&lt;=</code>
-<ul>
-<li>this is used to check whether a variable is smaller or equal than another variable</li>
-<li><code>1&lt;=2</code> returns <code>true</code></li>
-<li><code>1&lt;=1</code> returns <code>true</code></li>
-</ul>
-</li>
-<li><code>&gt;=</code> this is used to check whether a variable is larger or equal than another variable
-<ul>
-<li><code>1&gt;=2</code> returns <code>false</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="If-else-statement"><a class="header-anchor" href="#If-else-statement">¶</a>If/else statement</h3>
-<p>How can we write code that adapts to different situations? By using the <strong>if statement</strong>.</p>
-<h4 id="Structure"><a class="header-anchor" href="#Structure">¶</a>Structure:</h4>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(condition)&#123;<span class="comment">//place a boolean value in the bracket</span></span><br><span class="line">   <span class="comment">//statement1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="comment">//statement2</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="title class_">This</span> is equivalent <span class="attr">to</span>:</span><br><span class="line"><span class="keyword">if</span>(condition)&#123;</span><br><span class="line">   <span class="comment">//statement1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(!condition)&#123;<span class="comment">//negating the condition</span></span><br><span class="line">    <span class="comment">//statement2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="Properties-v3"><a class="header-anchor" href="#Properties-v3">¶</a>Properties:</h4>
-<ul>
-<li>The if statement runs code only if the boolean it’s relying on is <code>true</code>. It’s like saying, of something is true, then do this.</li>
-</ul>
-<ul>
-<li>We use <code>false</code> instead to skip the code inside the curly braces.</li>
-<li>The <code>else</code> statement doesn’t need its own condition. That’s because it handles the cases where the if’s condition <code>false</code></li>
-</ul>
-<h4 id="Definitions-v2"><a class="header-anchor" href="#Definitions-v2">¶</a>Definitions:</h4>
-<ul>
-<li>
-<p>Values like <code>true</code> that are placed inside the parenthesis are called <strong>conditions.</strong></p>
-<ul>
-<li>These can be:</li>
-<li><code>true</code></li>
-<li><code>false</code></li>
-<li>comparison of variables
-<ul>
-<li><code>a === b</code></li>
-<li><code>a !=== b </code></li>
-<li><code>a &lt; b</code></li>
-<li><code>a &lt;= b</code></li>
-<li><code>a &gt; b</code></li>
-<li><code>a &gt;= b</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>Statements relying on conditions are called <strong>conditionals.</strong></p>
-</li>
-</ul>
-<h3 id="Incorporating-else-if"><a class="header-anchor" href="#Incorporating-else-if">¶</a>Incorporating <code>else if</code></h3>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">if</span> (age &lt; <span class="number">16</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;children&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(age &lt; <span class="number">65</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;working population&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;elderly&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="Properties-v4"><a class="header-anchor" href="#Properties-v4">¶</a>Properties:</h4>
-<ul>
-<li>As long as they go before the <code>else</code> statement, we can add as many <code>else if</code> statement as we’d like</li>
-</ul>
-]]></content>
-      <categories>
-        <category>WebDevelopment</category>
-        <category>JavaScript</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HTML+CSS: spotlight Text Animation</title>
-    <url>/WebDevelopment/Project/Spotlight-Text/</url>
-    <content><![CDATA[<img src="https://media.giphy.com/media/r0qmZ6SyKILYYxmyHK/giphy.gif" alt="gif" style="zoom:1000%;" class="full-image">
-<span id="more"></span>
-<h2 id="index-html"><a class="header-anchor" href="#index-html">¶</a>index.html</h2>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Spotlight on texts<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="style-css"><a class="header-anchor" href="#style-css">¶</a>style.css</h2>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="comment">/* Initialization, cancle the margin and padding of elements */</span></span><br><span class="line">    <span class="attribute">margin</span> : <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#222</span>;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">    <span class="comment">/* capitalize */</span></span><br><span class="line">    <span class="attribute">text-transform</span>: uppercase;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">112px</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 伪元素 */</span></span><br><span class="line"><span class="selector-tag">h1</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line">    <span class="attribute">color</span>: transparent;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to right, <span class="number">#ff59b3</span>, <span class="number">#fe0000</span>, <span class="number">#ffff01</span>, <span class="number">#40d1d2</span>, <span class="number">#8b059f7d</span>);</span><br><span class="line">    <span class="comment">/* change the background so that it fits exactly the text */</span></span><br><span class="line">    <span class="attribute">background-clip</span>: text;</span><br><span class="line">    -webkit-<span class="attribute">background-clip</span>: text;</span><br><span class="line">    <span class="comment">/* clip the element so that it becomes a circle: 100 suggests the diameter, 0%, 50% suggests the position of the center of the circle */</span></span><br><span class="line">    <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">0%</span> <span class="number">50%</span>);</span><br><span class="line">    <span class="comment">/* animation: name, duration, infinite means repeat */</span></span><br><span class="line">    <span class="attribute">animation</span>: light <span class="number">5s</span> infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* define an animation that changes the position of the center of the circle  */</span></span><br><span class="line"><span class="keyword">@keyframes</span> light&#123;</span><br><span class="line">    <span class="number">0%</span>&#123;</span><br><span class="line">        <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">0%</span> <span class="number">50%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">50%</span>&#123;</span><br><span class="line">        <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">100%</span> <span class="number">50%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">100%</span>&#123;</span><br><span class="line">        <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">0%</span> <span class="number">50%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>WebDevelopment</category>
-        <category>Project</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
-        <tag>html</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Start of Blog</title>
-    <url>/blogging/start/Start-of-Blog/</url>
-    <content><![CDATA[<h3 id="Inspiration"><a class="header-anchor" href="#Inspiration">¶</a>Inspiration</h3>
-<p>很多时候感觉缘分就是如此奇妙。最近申请季结束开始研究<code>Github</code>, 因为觉得命令行操作很酷就下载了<code>git</code>, 虽然最终可能<code>Github desktop</code>的用户体验更好一点 当然日常生活中两个都会被用到;</p>
-<p>又是机缘巧合在逛 <u>appstore</u> 的时候看到了<code>mimo</code>。当时只知道这是个教编程的软件，下载后一度被会员制/membership劝退，但最终发现只要使用的仔细认真，答题尽量不错，其实还是可以用的​（✈️ 起飞~）至此便开始了对于Web Development的学习: 从 <code>html</code> 到 <code>css</code> 到 <code>javaScript</code>. 在准备配置自己电脑vscode上的js编程环境的时候，下载的<code>jsnode</code> 搞了近一个小时 东搞搞西搞搞。</p>
-<p>晚上睡觉前刷了刷b站，看到 up主 codesheep 上传的一篇视频 “<strong>如何0基础创建自己的博客</strong>“ 立马就感兴趣住了！说hexo配置的两个前置: <code>git</code> 和 <code>jsnode</code> 的时候 才意识到自己无意中已经给自己铺好了路。</p>
-<p>搜集好教程后 准备第二天直接做起！</p>
-<p>写到这里 我的博客基本配置已经ok啦 以及这就是我的第一篇文章。</p>
-<p>希望以后的我看到这里能回想起当时那个 <font color="#800000">求知、热情、上进</font> 的自己  😏</p>
-]]></content>
-      <categories>
-        <category>blogging</category>
-        <category>start</category>
-      </categories>
-      <tags>
-        <tag>Inspiration</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>HTML+CSS: Blinking Rhombus</title>
     <url>/WebDevelopment/Project/blinkingRhombus/</url>
     <content><![CDATA[<img src="https://media.giphy.com/media/RUI6VnZ1hQjWfYlcdz/giphy.gif" alt="blinking_rhombus" style="zoom:300%;">
 <span id="more"></span> 
-<h2 id="index-html-v2"><a class="header-anchor" href="#index-html-v2">¶</a>index.html</h2>
+<h2 id="index-html"><a class="header-anchor" href="#index-html">¶</a>index.html</h2>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>菱形加载动画<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;loading&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="style-css-v2"><a class="header-anchor" href="#style-css-v2">¶</a>style.css</h2>
+<h2 id="style-css"><a class="header-anchor" href="#style-css">¶</a>style.css</h2>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">    <span class="comment">/*place the content at the center, set body as flex container, thus the div element is the flex item*/</span></span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">background</span>:  <span class="built_in">linear-gradient</span>(<span class="number">200deg</span>,<span class="number">#f4efef</span>,<span class="number">#e3eeff</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="comment">/* grid display */</span></span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="comment">/* set the grid to be three columns per row */</span></span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>,<span class="number">1</span>fr);</span><br><span class="line">    <span class="comment">/* set the gap between grid items: both horizontally and vertically gap */</span></span><br><span class="line">    <span class="attribute">gap</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="comment">/* number the items for later use: nth-child() */</span></span><br><span class="line">    <span class="comment">/* counter-reset: number; */</span></span><br><span class="line">    <span class="comment">/* ctrl + shift / */</span></span><br><span class="line">    <span class="comment">/* rotate by 45 degrees */</span></span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">45deg</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line">    <span class="comment">/* user-defined property: grammar is `--` followed by name */</span></span><br><span class="line">    <span class="attr">--c</span>:red;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">var</span>(--c);</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">/* animation  name  duration   easing function  repeat */</span></span><br><span class="line">    <span class="attribute">animation</span>: blinking  <span class="number">2s</span> linear infinite;</span><br><span class="line">    <span class="comment">/* wait for a few sec */</span></span><br><span class="line">    <span class="attribute">animation-delay</span>: <span class="built_in">var</span>(--d);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">    <span class="comment">/* setting increasing number */</span></span><br><span class="line">    <span class="comment">/* counter-increment: number; */</span></span><br><span class="line">    <span class="comment">/*  */</span></span><br><span class="line">    <span class="comment">/* content:counter(number); */</span></span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">7</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#f15a5a</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">4</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">8</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#f0c419</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.2s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">1</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">5</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">9</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#4eba6f</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.4s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">6</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#2d95bf</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.6s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">3</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#955ba5</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.8s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> blinking &#123;</span><br><span class="line">    <span class="number">0%</span>,<span class="number">100%</span>&#123;</span><br><span class="line">        <span class="comment">/* scale(x,y) suggests the change in width and height*/</span></span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">40%</span>,<span class="number">80%</span>&#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>WebDevelopment</category>
@@ -3544,10 +3321,29 @@ When we display variables in the console, their values appear instead of their n
     <url>/WebDevelopment/Project/loadingAnimation/</url>
     <content><![CDATA[<img src="https://media.giphy.com/media/KcMqhBHGYydbQqf7z1/giphy.gif" alt="loadingAnimation" style="zoom:300%;">
 <span id="more"></span>
-<h2 id="index-html-v3"><a class="header-anchor" href="#index-html-v3">¶</a>index.html</h2>
+<h2 id="index-html-v2"><a class="header-anchor" href="#index-html-v2">¶</a>index.html</h2>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Interesting Loading Animation<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;loading&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>loading..<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="style-css-v3"><a class="header-anchor" href="#style-css-v3">¶</a>style.css</h2>
+<h2 id="style-css-v2"><a class="header-anchor" href="#style-css-v2">¶</a>style.css</h2>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="comment">/* initialization, defining the margin and padding */</span></span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="comment">/* 100% window height */</span></span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">    <span class="comment">/* gradient background  */</span></span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to bottom, <span class="number">#2b6876</span>, <span class="number">#09203f</span>);</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="comment">/* center at the main axis, which is horizontally */</span></span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="comment">/* center flex items along the cross axis of the current line of the flex container */</span></span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="comment">/* this tells the browser that the sum of padding and margin of the box is 200px */</span></span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">10px</span> solid <span class="number">#63a69f</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">animation</span>: a1 <span class="number">2s</span> linear infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span><span class="selector-pseudo">::after</span>,<span class="selector-class">.loading</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">top</span>: -<span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">10px</span> solid <span class="number">#f2e1ac</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">240deg</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">10px</span> solid <span class="number">#f2836f</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">120deg</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">color</span>: beige;</span><br><span class="line">    <span class="attribute">animation</span>: a2 <span class="number">2s</span> linear infinite;</span><br><span class="line">    <span class="attribute">font-size</span>: larger;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> a1 &#123;</span><br><span class="line">    <span class="selector-tag">to</span>&#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">360deg</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> a2 &#123;</span><br><span class="line">    <span class="selector-tag">to</span>&#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">rotate</span>(-<span class="number">360deg</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>WebDevelopment</category>
+        <category>Project</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>html</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML+CSS: spotlight Text Animation</title>
+    <url>/WebDevelopment/Project/Spotlight-Text/</url>
+    <content><![CDATA[<img src="https://media.giphy.com/media/r0qmZ6SyKILYYxmyHK/giphy.gif" alt="gif" style="zoom:1000%;" class="full-image">
+<span id="more"></span>
+<h2 id="index-html-v3"><a class="header-anchor" href="#index-html-v3">¶</a>index.html</h2>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Spotlight on texts<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="style-css-v3"><a class="header-anchor" href="#style-css-v3">¶</a>style.css</h2>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="comment">/* Initialization, cancle the margin and padding of elements */</span></span><br><span class="line">    <span class="attribute">margin</span> : <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#222</span>;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">    <span class="comment">/* capitalize */</span></span><br><span class="line">    <span class="attribute">text-transform</span>: uppercase;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">112px</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 伪元素 */</span></span><br><span class="line"><span class="selector-tag">h1</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line">    <span class="attribute">color</span>: transparent;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to right, <span class="number">#ff59b3</span>, <span class="number">#fe0000</span>, <span class="number">#ffff01</span>, <span class="number">#40d1d2</span>, <span class="number">#8b059f7d</span>);</span><br><span class="line">    <span class="comment">/* change the background so that it fits exactly the text */</span></span><br><span class="line">    <span class="attribute">background-clip</span>: text;</span><br><span class="line">    -webkit-<span class="attribute">background-clip</span>: text;</span><br><span class="line">    <span class="comment">/* clip the element so that it becomes a circle: 100 suggests the diameter, 0%, 50% suggests the position of the center of the circle */</span></span><br><span class="line">    <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">0%</span> <span class="number">50%</span>);</span><br><span class="line">    <span class="comment">/* animation: name, duration, infinite means repeat */</span></span><br><span class="line">    <span class="attribute">animation</span>: light <span class="number">5s</span> infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* define an animation that changes the position of the center of the circle  */</span></span><br><span class="line"><span class="keyword">@keyframes</span> light&#123;</span><br><span class="line">    <span class="number">0%</span>&#123;</span><br><span class="line">        <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">0%</span> <span class="number">50%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">50%</span>&#123;</span><br><span class="line">        <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">100%</span> <span class="number">50%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">100%</span>&#123;</span><br><span class="line">        <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">0%</span> <span class="number">50%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
       <categories>
         <category>WebDevelopment</category>
         <category>Project</category>
@@ -3827,6 +3623,210 @@ Q3: OOP with file handling.</p>
       </categories>
       <tags>
         <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript_Basics(constantly updated)</title>
+    <url>/WebDevelopment/JavaScript/JavaScript-Basics/</url>
+    <content><![CDATA[<p style="text-align:center; color:#19547b; font-weight:bold;"> A flexible language that powers dynamic websites and apps </p>
+<span id="more"></span>
+<h3 id="Variables"><a class="header-anchor" href="#Variables">¶</a>Variables</h3>
+<p>Dynamic websites need to remember information to display or change. For that, JavaScript has <strong>variables</strong><br>
+Like moving boxes, variables have content and names that tell us what’s inside</p>
+<hr>
+<h4 id="Variable-types"><a class="header-anchor" href="#Variable-types">¶</a>Variable types</h4>
+<ul>
+<li><strong>number:</strong>
+<ul>
+<li>variable type that stores number</li>
+</ul>
+</li>
+<li><strong>string:</strong>
+<ul>
+<li>variable type that stores a series of char</li>
+<li>can be recognized with the two double quotes, between which any symbol can stay</li>
+<li>Eg: <code>&quot;ajjef91239mca dsjfjja03&quot;</code></li>
+</ul>
+</li>
+<li><strong>boolean:</strong>
+<ul>
+<li>stores the result of comparison</li>
+<li><code>true</code></li>
+<li><code>false</code></li>
+</ul>
+</li>
+<li><code>var thisIsAVariable</code></li>
+<li><code>var name=&quot;Samuel&quot;;</code>
+<ul>
+<li>variable name - name</li>
+<li>Variable value - “Samuel”
+<ul>
+<li>“Samuel” is a string</li>
+</ul>
+</li>
+<li>A statement ends with semicolon <code>;</code></li>
+</ul>
+</li>
+<li><code>var time = 5;</code>
+<ul>
+<li>5 is a number, not a string : since there’s no &quot; &quot;</li>
+</ul>
+</li>
+<li><code>var lighton = true</code></li>
+<li><code>var finishedHW = false</code></li>
+</ul>
+<hr>
+<h4 id="Instruction"><a class="header-anchor" href="#Instruction">¶</a>Instruction</h4>
+<p>With special instruction <code>console.log()</code>, we tell the computer to display a value in an area called the <strong>console</strong>.</p>
+<ul>
+<li><code>console.log(&quot;Hello World&quot;);</code><br>
+When we display variables in the console, their values appear instead of their names. If we log <code>name</code> here, it’ll show its value.</li>
+</ul>
+<p>Arithmetic operations are supported with numbers:</p>
+<ul>
+<li><code>+</code> plus</li>
+<li><code>-</code> minus</li>
+<li><code>*</code> multiply</li>
+<li><code>/</code> divides</li>
+</ul>
+<p>joining operator: <code>+</code></p>
+<ul>
+<li>when <code>+</code> is used between two numbers, the result will be their sum</li>
+<li>when <code>+</code> is used between two strings, the result will be the joining of the string
+<ul>
+<li><code>&quot;name:&quot; + &quot; Samuel&quot;</code> -&gt; <code>&quot;name: Samuel&quot;</code></li>
+</ul>
+</li>
+<li>when <code>+</code> is used between a string and a number, the number will be automatically transformed into a string
+<ul>
+<li><code>&quot;age: &quot; + 8</code> -&gt; <code>&quot;age: 8&quot;</code></li>
+</ul>
+</li>
+<li>when <code>+</code> is used between a string and a boolean, the boolean will be automatically transformed into a string
+<ul>
+<li><code>&quot;Passed&quot;:  + true</code> -&gt; <code>&quot;passed: true&quot;</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="Using-Variables"><a class="header-anchor" href="#Using-Variables">¶</a>Using Variables</h4>
+<p>Variables are called variables because the values they store can change</p>
+<p>Use the <code>=</code> sign to change the value in <code>status</code> from <code>&quot;Watching Netflix&quot;</code> to <code>&quot;Playing frisbee&quot;</code></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">var</span> currentStatus = &quot;Watching Netflix&quot;;</span><br><span class="line">currentStatus = &quot;Playing frisbee&quot;;</span><br><span class="line">console<span class="selector-class">.log</span>(currentStatus);</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="Comparing-operators"><a class="header-anchor" href="#Comparing-operators">¶</a>Comparing operators</h4>
+<p>All comparison statements returns a boolean value</p>
+<ul>
+<li><code>===</code>
+<ul>
+<li>this is used to check whether two variables are equal
+<ul>
+<li>variables can be of type <code>string</code> or <code>number</code></li>
+</ul>
+</li>
+<li><code>1===2</code> returns <code>false</code></li>
+<li><code>&quot;apple&quot;===&quot;apple&quot;</code> returns <code>true</code></li>
+</ul>
+</li>
+<li><code>!==</code>
+<ul>
+<li>this is used to check whether two variables are not equal</li>
+<li><code>1!==2</code> returns <code>true</code></li>
+</ul>
+</li>
+<li><code>&gt;</code>
+<ul>
+<li>this is used to check whether a variable is larger than another variable</li>
+<li><code>1&gt;2</code> returns <code>false</code></li>
+</ul>
+</li>
+<li><code>&lt;</code>
+<ul>
+<li>this is used to check whether a variable is smaller than another variable</li>
+<li><code>1&lt;2</code> returns <code>true</code></li>
+</ul>
+</li>
+<li><code>&lt;=</code>
+<ul>
+<li>this is used to check whether a variable is smaller or equal than another variable</li>
+<li><code>1&lt;=2</code> returns <code>true</code></li>
+<li><code>1&lt;=1</code> returns <code>true</code></li>
+</ul>
+</li>
+<li><code>&gt;=</code> this is used to check whether a variable is larger or equal than another variable
+<ul>
+<li><code>1&gt;=2</code> returns <code>false</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="If-else-statement"><a class="header-anchor" href="#If-else-statement">¶</a>If/else statement</h3>
+<p>How can we write code that adapts to different situations? By using the <strong>if statement</strong>.</p>
+<h4 id="Structure"><a class="header-anchor" href="#Structure">¶</a>Structure:</h4>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(condition)&#123;<span class="comment">//place a boolean value in the bracket</span></span><br><span class="line">   <span class="comment">//statement1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="comment">//statement2</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="title class_">This</span> is equivalent <span class="attr">to</span>:</span><br><span class="line"><span class="keyword">if</span>(condition)&#123;</span><br><span class="line">   <span class="comment">//statement1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(!condition)&#123;<span class="comment">//negating the condition</span></span><br><span class="line">    <span class="comment">//statement2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Properties-v3"><a class="header-anchor" href="#Properties-v3">¶</a>Properties:</h4>
+<ul>
+<li>The if statement runs code only if the boolean it’s relying on is <code>true</code>. It’s like saying, of something is true, then do this.</li>
+</ul>
+<ul>
+<li>We use <code>false</code> instead to skip the code inside the curly braces.</li>
+<li>The <code>else</code> statement doesn’t need its own condition. That’s because it handles the cases where the if’s condition <code>false</code></li>
+</ul>
+<h4 id="Definitions-v2"><a class="header-anchor" href="#Definitions-v2">¶</a>Definitions:</h4>
+<ul>
+<li>
+<p>Values like <code>true</code> that are placed inside the parenthesis are called <strong>conditions.</strong></p>
+<ul>
+<li>These can be:</li>
+<li><code>true</code></li>
+<li><code>false</code></li>
+<li>comparison of variables
+<ul>
+<li><code>a === b</code></li>
+<li><code>a !=== b </code></li>
+<li><code>a &lt; b</code></li>
+<li><code>a &lt;= b</code></li>
+<li><code>a &gt; b</code></li>
+<li><code>a &gt;= b</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Statements relying on conditions are called <strong>conditionals.</strong></p>
+</li>
+</ul>
+<h3 id="Incorporating-else-if"><a class="header-anchor" href="#Incorporating-else-if">¶</a>Incorporating <code>else if</code></h3>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">if</span> (age &lt; <span class="number">16</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;children&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(age &lt; <span class="number">65</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;working population&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;elderly&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Properties-v4"><a class="header-anchor" href="#Properties-v4">¶</a>Properties:</h4>
+<ul>
+<li>As long as they go before the <code>else</code> statement, we can add as many <code>else if</code> statement as we’d like</li>
+</ul>
+]]></content>
+      <categories>
+        <category>WebDevelopment</category>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Start of Blog</title>
+    <url>/blogging/start/Start-of-Blog/</url>
+    <content><![CDATA[<h3 id="Inspiration"><a class="header-anchor" href="#Inspiration">¶</a>Inspiration</h3>
+<p>很多时候感觉缘分就是如此奇妙。最近申请季结束开始研究<code>Github</code>, 因为觉得命令行操作很酷就下载了<code>git</code>, 虽然最终可能<code>Github desktop</code>的用户体验更好一点 当然日常生活中两个都会被用到;</p>
+<p>又是机缘巧合在逛 <u>appstore</u> 的时候看到了<code>mimo</code>。当时只知道这是个教编程的软件，下载后一度被会员制/membership劝退，但最终发现只要使用的仔细认真，答题尽量不错，其实还是可以用的​（✈️ 起飞~）至此便开始了对于Web Development的学习: 从 <code>html</code> 到 <code>css</code> 到 <code>javaScript</code>. 在准备配置自己电脑vscode上的js编程环境的时候，下载的<code>jsnode</code> 搞了近一个小时 东搞搞西搞搞。</p>
+<p>晚上睡觉前刷了刷b站，看到 up主 codesheep 上传的一篇视频 “<strong>如何0基础创建自己的博客</strong>“ 立马就感兴趣住了！说hexo配置的两个前置: <code>git</code> 和 <code>jsnode</code> 的时候 才意识到自己无意中已经给自己铺好了路。</p>
+<p>搜集好教程后 准备第二天直接做起！</p>
+<p>写到这里 我的博客基本配置已经ok啦 以及这就是我的第一篇文章。</p>
+<p>希望以后的我看到这里能回想起当时那个 <font color="#800000">求知、热情、上进</font> 的自己  😏</p>
+]]></content>
+      <categories>
+        <category>blogging</category>
+        <category>start</category>
+      </categories>
+      <tags>
+        <tag>Inspiration</tag>
       </tags>
   </entry>
 </search>
