@@ -841,7 +841,7 @@
 <li>Once the processor detects the existence of an interrupt</li>
 <li>To discard all instructions in the pipelining except for the last instruction in the writeback stage</li>
 </ul>
-<h3 id="Past-paper-questions-v3"><a class="header-anchor" href="#Past-paper-questions-v3">¶</a>Past-paper questions</h3>
+<h3 id="Past-paper-questions"><a class="header-anchor" href="#Past-paper-questions">¶</a>Past-paper questions</h3>
 <hr>
 <img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingAndVirturalMachines/ppq1.png" style="zoom: 50%;">
 <hr>
@@ -890,7 +890,7 @@
 <li>Each processor execute different set of instruction</li>
 <li>Each processor operate on different set of data</li>
 </ul>
-<h3 id="Past-paper-questions-v4"><a class="header-anchor" href="#Past-paper-questions-v4">¶</a>Past-paper questions</h3>
+<h3 id="Past-paper-questions-v2"><a class="header-anchor" href="#Past-paper-questions-v2">¶</a>Past-paper questions</h3>
 <img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingAndVirturalMachines/ppq3.png" style="zoom: 50%;">
 <hr>
 <img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingAndVirturalMachines/ppq4.png" style="zoom: 67%;">
@@ -914,7 +914,7 @@
 <li>It overcomes the Von Neumann bottleneck and therefore greatly improves CPU performance</li>
 <li>Parallel processing requires more expensive hardware</li>
 </ul>
-<h3 id="Past-paper-Questions-v2"><a class="header-anchor" href="#Past-paper-Questions-v2">¶</a>Past-paper Questions</h3>
+<h3 id="Past-paper-Questions"><a class="header-anchor" href="#Past-paper-Questions">¶</a>Past-paper Questions</h3>
 <p><u>Changes needed for codes in order to run on massively paralleled computer</u></p>
 <ul>
 <li><font color="#4a69bd">Split into blocks of code</font></li>
@@ -1029,7 +1029,7 @@
 <li><font color="#4a69bd">Ensure each virtual machine is protected from actions from other virtual machines </font></li>
 </ol>
 <p><img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingAndVirturalMachines/virtualMachine.jpg" alt></p>
-<h3 id="Past-paper-questions-v5"><a class="header-anchor" href="#Past-paper-questions-v5">¶</a>Past-paper questions</h3>
+<h3 id="Past-paper-questions-v3"><a class="header-anchor" href="#Past-paper-questions-v3">¶</a>Past-paper questions</h3>
 <p>A virtual machine is a <font color="#4a69bd"><u>software/program</u></font> that emulate a <font color="#4a69bd"><u>physical/different</u></font> computer system; A virtual machine allow multiple <font color="#4a69bd"><u>guest</u></font> operating system to run on one computer using <font color="#4a69bd"><u>host</u></font> operating system</p>
 <p><u>Describe what happens after the guest operating system has received the data request from the application</u>:</p>
 <ul>

@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://haoran-jie.github.io/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingAndVirturalMachines/</loc>
+    
+    <lastmod>2022-05-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://haoran-jie.github.io/Notes/ASAL-CompSci-Note/</loc>
     
     <lastmod>2022-05-29</lastmod>
@@ -138,15 +147,6 @@
   
   <url>
     <loc>https://haoran-jie.github.io/Notes/ALCS/Chapter20.1_ProgrammingParadigm/</loc>
-    
-    <lastmod>2022-05-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://haoran-jie.github.io/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingAndVirturalMachines/</loc>
     
     <lastmod>2022-05-19</lastmod>
     
