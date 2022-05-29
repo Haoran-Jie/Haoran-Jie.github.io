@@ -5,10 +5,12 @@
     <url>/Notes/ASAL-CompSci-Note/</url>
     <content><![CDATA[<h2 id="⭐Get-Started"><a class="header-anchor" href="#⭐Get-Started">¶</a>⭐Get Started</h2>
 <div class="note info"><h4 id="Note-Format"><a class="header-anchor" href="#Note-Format">¶</a>Note Format:</h4>
-<ul>
-<li><u>Underlined words</u> : Past-paper question</li>
-<li><font color="#4a69bd">Words in blue</font>: Mark-scheme answers</li>
-</ul>
+<ol>
+<li><code>past-paper questions</code> are <u>underlined</u></li>
+<li><code>Mark-scheme answers</code> are coloured <font color="#4a69bd">blue</font></li>
+<li><code>Emphasized words</code> are <strong>bold</strong></li>
+</ol>
+<img src="/Notes/ASAL-CompSci-Note/Example.png" alt="Example" style="zoom: 33%;">
 </div>
 <h2 id="📑Directory"><a class="header-anchor" href="#📑Directory">¶</a>📑Directory</h2>
 <div class="tabs" id="notes"><ul class="nav-tabs"><li class="tab active"><a href="#notes-1">A-Level</a></li><li class="tab"><a href="#notes-2">AS-Level</a></li><li class="tab"><a href="#notes-3">IGCSE</a></li></ul><div class="tab-content"><div class="tab-pane active" id="notes-1"><h3 id="A-Level"><a class="header-anchor" href="#A-Level">¶</a>A-Level</h3>
@@ -66,11 +68,11 @@
 <li><font color="#4a69bd">To create new data type (from existing data types)</font></li>
 <li><font color="#4a69bd">To allow data types not available in a programming language to be constructed // To extend the flexibility of programming language</font></li>
 </ul>
-<p><u>Why user-defined data types are necessary:</u></p>
+<p><u>Why user-defined data types are <strong>necessary</strong>:</u></p>
 <ul>
 <li><font color="#4a69bd">No suitable data type is provided by the language used</font></li>
 <li><font color="#4a69bd">The programmer needs to specify a new data type</font></li>
-<li><font color="#4a69bd">… that meets the requirement of the application </font></li>
+<li><font color="#4a69bd">… that meets the <strong>requirement</strong> of the application </font></li>
 </ul>
 <p><u>State what is meant by user-defined data types:</u></p>
 <ul>
