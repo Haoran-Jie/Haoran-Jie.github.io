@@ -772,9 +772,9 @@
   </entry>
   <entry>
     <title>Chapter 15.1: Processors, Parallel Processing and Virtual Machines</title>
-    <url>/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingAndVirturalMachines/</url>
+    <url>/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/</url>
     <content><![CDATA[<h1>Chapter 15.1: Processors, Parallel Processing and Virtual Machines</h1>
-<p><img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingAndVirturalMachines/Syllabus15.1.png" alt></p>
+<p><img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/Syllabus15.1.png" alt></p>
 <span id="more"></span> 
 <h2 id="RISC-CISC"><a class="header-anchor" href="#RISC-CISC">¶</a>RISC &amp; CISC</h2>
 <blockquote>
@@ -843,9 +843,9 @@
 </ul>
 <h3 id="Past-paper-questions-v3"><a class="header-anchor" href="#Past-paper-questions-v3">¶</a>Past-paper questions</h3>
 <hr>
-<img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingAndVirturalMachines/ppq1.png" style="zoom: 50%;">
+<img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq1.png" style="zoom: 50%;">
 <hr>
-<img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingAndVirturalMachines/ppq2.png" style="zoom: 67%;">
+<img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq2.png" style="zoom: 67%;">
 <hr>
 <h2 id="Pipelining-Registers"><a class="header-anchor" href="#Pipelining-Registers">¶</a>Pipelining &amp; Registers</h2>
 <blockquote>
@@ -866,7 +866,7 @@
 <li><font color="#4a69bd">Another instruction can start executing before the previous one is finished</font></li>
 <li><font color="#4a69bd">Processing a number of instructions can be concurrent/simultaneous</font></li>
 </ul>
-<img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingAndVirturalMachines/pipeLining.jpg" style="zoom:67%;">
+<img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/pipeLining.jpg" style="zoom:67%;">
 <hr>
 <h2 id="Basic-computer-architectures"><a class="header-anchor" href="#Basic-computer-architectures">¶</a>Basic computer architectures</h2>
 <h3 id="SISD"><a class="header-anchor" href="#SISD">¶</a>SISD</h3>
@@ -891,9 +891,9 @@
 <li>Each processor operate on different set of data</li>
 </ul>
 <h3 id="Past-paper-questions-v4"><a class="header-anchor" href="#Past-paper-questions-v4">¶</a>Past-paper questions</h3>
-<img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingAndVirturalMachines/ppq3.png" style="zoom: 50%;">
+<img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq3.png" style="zoom: 50%;">
 <hr>
-<img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingAndVirturalMachines/ppq4.png" style="zoom: 67%;">
+<img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq4.png" style="zoom: 67%;">
 <h2 id="Massively-parallel-computers"><a class="header-anchor" href="#Massively-parallel-computers">¶</a>Massively parallel computers</h2>
 <p><u>Describe what is meant by a massively paralleled computer</u></p>
 <ul>
@@ -1028,7 +1028,7 @@
 <li><font color="#4a69bd">Existing hardware made available to guest OS //  hardware emulation</font></li>
 <li><font color="#4a69bd">Ensure each virtual machine is protected from actions from other virtual machines </font></li>
 </ol>
-<p><img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingAndVirturalMachines/virtualMachine.jpg" alt></p>
+<p><img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/virtualMachine.jpg" alt></p>
 <h3 id="Past-paper-questions-v5"><a class="header-anchor" href="#Past-paper-questions-v5">¶</a>Past-paper questions</h3>
 <p>A virtual machine is a <font color="#4a69bd"><u>software/program</u></font> that emulate a <font color="#4a69bd"><u>physical/different</u></font> computer system; A virtual machine allow multiple <font color="#4a69bd"><u>guest</u></font> operating system to run on one computer using <font color="#4a69bd"><u>host</u></font> operating system</p>
 <p><u>Describe what happens after the guest operating system has received the data request from the application</u>:</p>
@@ -1754,243 +1754,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Chapter 16.2: Translation Software</title>
-    <url>/Notes/ALCS/Chapter16.2_TranslationSoftware/</url>
-    <content><![CDATA[<h1>Chapter 16.2: Translation Software</h1>
-<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/syllabus16.2.png" alt></p>
-<hr>
-<span id="more"></span>
-<h2 id="Interpreter"><a class="header-anchor" href="#Interpreter">¶</a>Interpreter</h2>
-<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/interpreter.jpg" style="zoom:50%;">
-<p><u>How an interpreter can executes the program without producing a complete translated version</u></p>
-<ul>
-<li><font color="#4a69bd">An interpreter examines source code one statement at a time</font></li>
-<li><font color="#4a69bd">Check each statement for errors</font></li>
-<li><font color="#4a69bd">If no error is found, the statement is executed</font></li>
-<li><font color="#4a69bd">If an error is found, this is reported and the interpreter halts</font></li>
-<li><font color="#4a69bd">Interpretation is repeated for every iteration in repeated section of code/ in loops</font></li>
-<li><font color="#4a69bd">Interpretation repeats every time the program runs</font></li>
-</ul>
-<p><u>Why debug with interpreter</u></p>
-<ul>
-<li><font color="#4a69bd">Debugging is faster</font></li>
-<li><font color="#4a69bd">Can debug incomplete code</font></li>
-<li><font color="#4a69bd">Better diagnostics</font></li>
-</ul>
-<h2 id="Compiler"><a class="header-anchor" href="#Compiler">¶</a>Compiler</h2>
-<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/compiler.jpg" style="zoom: 33%;">
-<h3 id="Compilation-stages"><a class="header-anchor" href="#Compilation-stages">¶</a>Compilation stages</h3>
-<h4 id="Lexical-analysis"><a class="header-anchor" href="#Lexical-analysis">¶</a>Lexical analysis</h4>
-<ul>
-<li>
-<p>All necessary characters not required by the compiler, such as the white space and comments, are removed</p>
-</li>
-<li>
-<p><font color="#4a69bd">The white space removed // redundant characters are removed // removal of comments // identification of errors</font></p>
-</li>
-<li>
-<p>Tokenization</p>
-<ul>
-<li>Using a keyword table that contains all the tokens for reserved keywords and symbols</li>
-<li>Convert the source program into tokens</li>
-<li><u>Keyword table</u>
-<ul>
-<li><font color="#4a69bd">The reserved keyword used</font></li>
-<li><font color="#4a69bd">The operator used</font></li>
-<li><font color="#4a69bd">Their matching token</font><br>
-<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/keyword table.png" align="middle" style="zoom:50%;"></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>Variables, constants, and identifiers added to a symbol table, and are then converted into locations/address</p>
-<ul>
-<li><u>Symbol table</u>
-<ul>
-<li><font color="#4a69bd">Identifier name used </font></li>
-<li><font color="#4a69bd">The data type </font></li>
-<li><font color="#4a69bd">Role: e.g. Constant, array, procedure</font></li>
-<li><font color="#4a69bd">Location marker, value of constant</font></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/symboltable.png" style="zoom:50%;">
-<p><u>Explain how the keyword table and symbol table are used to translate the source code program</u></p>
-<ul>
-<li><font color="#4a69bd">Keywords are looked up in the keyword table</font></li>
-<li><font color="#4a69bd">They are represented by tokens</font></li>
-<li><font color="#4a69bd">Identifiers are looked up in the symbol table</font></li>
-<li><font color="#4a69bd">They are converted into location/address</font></li>
-<li><font color="#4a69bd">Used to create a sequence of tokens (for the program)</font></li>
-</ul>
-<h4 id="Syntax-analysis"><a class="header-anchor" href="#Syntax-analysis">¶</a>Syntax analysis</h4>
-<ul>
-<li>Output from the lexical analysis is checked for grammatical/syntax errors - <code>parsing</code></li>
-<li>The rules for <code>parsing</code> can be set out in Backus-Naur form(BNF) notation</li>
-<li>If errors are found: each statement and the associated error is outputted, but the next stage, code generation, will not be attempted</li>
-<li>If no error is found: passed to the next stage of compilation</li>
-<li><code>--</code></li>
-<li><font color="#4a69bd">Construction of a parse tree / parsing</font></li>
-<li><font color="#4a69bd">Checking that the rules of grammar/syntax have been obeyed</font></li>
-<li><font color="#4a69bd">Production of an error report</font></li>
-</ul>
-<h4 id="Code-generation"><a class="header-anchor" href="#Code-generation">¶</a>Code generation</h4>
-<ul>
-<li>Produces an object program to perform the task defined in the source code</li>
-<li>The object program is in machine-readable form(binary):
-<ul>
-<li>Either in machine code that can be directly executed by the CPU</li>
-<li>Or in intermediate code that is converted into machine code when the program is loaded</li>
-</ul>
-</li>
-</ul>
-<h4 id="Optimization"><a class="header-anchor" href="#Optimization">¶</a>Optimization</h4>
-<ul>
-<li>Performing the task using the <u>minimum amount of resources</u>
-<ul>
-<li><font color="#4a69bd">Execution time, storage space, memory, and CPU use.</font></li>
-</ul>
-</li>
-<li>
-<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/optimization.jpg" style="zoom: 33%;">
-</li>
-</ul>
-<p><u>Why code is optimized:</u></p>
-<ul>
-<li><font color="#4a69bd">Redundant code removed</font></li>
-<li><font color="#4a69bd">Program requires less memory</font></li>
-<li><font color="#4a69bd">Code reorganized to make it more efficient</font></li>
-<li><font color="#4a69bd">Program will complete task in a shorter time</font></li>
-</ul>
-<p><u>Why optimization is necessary</u></p>
-<ul>
-<li><font color="#4a69bd">Optimisation means the code would have fewer instructions</font></li>
-<li><font color="#4a69bd">Optimised code occupies less memory in space</font></li>
-<li><font color="#4a69bd">Fewer instructions reduce the execution time of the program</font></li>
-</ul>
-<p><u>Benefits</u></p>
-<ul>
-<li><font color="#4a69bd">Code has fewer instructions/occupies less memory in space</font></li>
-<li><font color="#4a69bd">Shortens the execution time for the program // time taken to execute whole program decreases</font></li>
-</ul>
-<h3 id="Past-paper-questions-v7"><a class="header-anchor" href="#Past-paper-questions-v7">¶</a>Past-paper questions</h3>
-<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq1.png" style="zoom: 67%;">
-<ul>
-<li><font color="#4a69bd">Remove the second instances of LDD 436 // remove line 04</font></li>
-<li><font color="#4a69bd">Remove the second instance s of ADD 437 // remove line 05</font></li>
-<li><font color="#4a69bd">The value required is already stored in the accumulator</font></li>
-</ul>
-<hr>
-<p><u>Why compiled version helps protect the security of the source code</u></p>
-<ul>
-<li><font color="#4a69bd">Compiler produces executable version - not readable</font></li>
-<li><font color="#4a69bd">Difficult for reverse engineering</font></li>
-</ul>
-<hr>
-<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/drawline.png" style="zoom: 67%;">
-<hr>
-<h2 id="BNF-Syntax-diagram"><a class="header-anchor" href="#BNF-Syntax-diagram">¶</a>BNF &amp; Syntax diagram</h2>
-<h3 id="Past-paper-questions-v8"><a class="header-anchor" href="#Past-paper-questions-v8">¶</a>Past-paper questions</h3>
-<ol>
-<li></li>
-</ol>
-<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq2.1.png" style="zoom: 80%;">
-<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq2.2.png" alt></p>
-<hr>
-<ol start="2">
-<li></li>
-</ol>
-<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Cppq3.1.png" alt></p>
-<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq3.2.png" style="zoom: 67%;">
-<hr>
-<ol start="3">
-<li></li>
-</ol>
-<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq4.1.png" alt></p>
-<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq4.2.png" alt></p>
-<hr>
-<h2 id="Reverse-Polish-notation"><a class="header-anchor" href="#Reverse-Polish-notation">¶</a>Reverse Polish notation</h2>
-<blockquote>
-<p>Infix notation: operators are in between their operands</p>
-<p>Postfix notation / Reverse Polish notation: Operators are written after operands</p>
-<p>Prefix notation / Polish notation: operators are written before operands</p>
-</blockquote>
-<p>🔗:<a href="https://www.cs.man.ac.uk/~pjj/cs212/fix.html">Understanding infix, postfix, and prefix - lecture note from university of manchester</a></p>
-<hr>
-<p><u>Why RPN can be used to evaluate expressions:</u></p>
-<ul>
-<li><font color="#4a69bd">Reverse polish notation provides and unambiguous method of representing an expression</font></li>
-<li><font color="#4a69bd">Reading from left to right</font></li>
-<li><font color="#4a69bd">Without need to use bracket</font></li>
-<li><font color="#4a69bd">With no need for rules of precedence</font></li>
-</ul>
-<p><u>Explain how RPN is used by an interpreter to evaluate expression:</u></p>
-<ul>
-<li><font color="#4a69bd">Expressions are always evaluated from left to right</font></li>
-<li><font color="#4a69bd">Each operator uses two previous values on the stack</font></li>
-<li><font color="#4a69bd">Pushing and popping identifiers on a stack</font></li>
-</ul>
-<p><u>Data structure to evaluate an expression in RPN</u></p>
-<ul>
-<li><font color="#4a69bd">Stack</font>
-<ul>
-<li><font color="#4a69bd">The operands are popped from the stack in reverse order to how they were pushed</font></li>
-</ul>
-</li>
-<li><font color="#4a69bd">Binary tree</font>
-<ul>
-<li><font color="#4a69bd">Allows both infix and postfix to be evaluated (tree traversal)</font></li>
-</ul>
-</li>
-</ul>
-<p><u>Describe the main steps in the evaluation of a Reverse Polish Notation(RPN) expression using a stack</u></p>
-<ul>
-<li><font color="#4a69bd">Working from left to right in the expression</font></li>
-<li><font color="#4a69bd">If element is a number, push that number into stack</font></li>
-<li><font color="#4a69bd">If element is an operator, then pop the first two numbers on the stack</font></li>
-<li><font color="#4a69bd">… perform that operations on these two numbers</font></li>
-<li><font color="#4a69bd">PUSH result back into stack</font></li>
-<li><font color="#4a69bd">END once the last item in the expression has been dealt with</font></li>
-</ul>
-<p><u>One advantage of the use of RPN is that evaluation of expressions does not require rules of precedence; Explain this statement</u></p>
-<ul>
-<li><font color="#4a69bd">Rules of precedence means different operators have different priorities; for example multiplication is done before addition</font></li>
-<li><font color="#4a69bd">In RPN, evaluation of expression is from left to right // operator are used in the sequence in which they were read</font></li>
-<li><font color="#4a69bd">No need for brackets // infix may require brackets</font></li>
-</ul>
-<p><u>Write the Reverse Polish Notation for the following expressions</u></p>
-<ol>
-<li>
-<p>(A+B)*(C-D)</p>
-<ul>
-<li><font color="#4a69bd">AB+</font></li>
-<li><font color="#4a69bd">CD-*</font></li>
-</ul>
-<p>Full answer: AB+CD-*</p>
-</li>
-<li>
-<p>((-A/B)*4)/(C-D)</p>
-<ul>
-<li><font color="#4a69bd">A-</font></li>
-<li><font color="#4a69bd">B/4*</font></li>
-<li><font color="#4a69bd">CD-/</font></li>
-</ul>
-<p>Full answer: A-B/4*CD-/</p>
-</li>
-</ol>
-<h3 id="Evaluation-of-RPN"><a class="header-anchor" href="#Evaluation-of-RPN">¶</a>Evaluation of RPN</h3>
-<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/rpneva.jpg" alt></p>
-<p>🔗<a href="https://www.includehelp.com/c/infix-to-postfix-conversion-using-stack-with-c-program.aspx">Infix To Postfix Conversion Using Stack</a></p>
-]]></content>
-      <categories>
-        <category>Notes</category>
-        <category>ALCS</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Chapter 17: Security</title>
     <url>/Notes/ALCS/Chapter17_Security/</url>
     <content><![CDATA[<h1>Chapter 17: Security🔒</h1>
@@ -2106,7 +1869,7 @@
 <li>It is possible for polarisation of light to be altered while travelling down fibre obtic cables</li>
 <li>Due to the inherent security system generated by quantum cryptography, terrorists and other criminals can use the technology to hide their activities from government law enforces</li>
 </ul>
-<h3 id="Past-paper-questions-v9"><a class="header-anchor" href="#Past-paper-questions-v9">¶</a>Past paper questions</h3>
+<h3 id="Past-paper-questions-v7"><a class="header-anchor" href="#Past-paper-questions-v7">¶</a>Past paper questions</h3>
 <ol>
 <li></li>
 </ol>
@@ -2189,7 +1952,7 @@
 <li>… without the possibility that the communication being intercepted or scrutinized by an unauthorized party</li>
 <li>… because sensitive data is being transferred</li>
 </ul>
-<h3 id="Past-paper-questions-v10"><a class="header-anchor" href="#Past-paper-questions-v10">¶</a>Past paper questions</h3>
+<h3 id="Past-paper-questions-v8"><a class="header-anchor" href="#Past-paper-questions-v8">¶</a>Past paper questions</h3>
 <ol>
 <li></li>
 </ol>
@@ -2364,7 +2127,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="Past-paper-questions-v11"><a class="header-anchor" href="#Past-paper-questions-v11">¶</a>Past paper questions</h3>
+<h3 id="Past-paper-questions-v9"><a class="header-anchor" href="#Past-paper-questions-v9">¶</a>Past paper questions</h3>
 <ol>
 <li></li>
 </ol>
@@ -2428,6 +2191,243 @@
         <tag>SSL/TLS</tag>
         <tag>Digital Certification</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Chapter 16.2: Translation Software</title>
+    <url>/Notes/ALCS/Chapter16.2_TranslationSoftware/</url>
+    <content><![CDATA[<h1>Chapter 16.2: Translation Software</h1>
+<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/syllabus16.2.png" alt></p>
+<hr>
+<span id="more"></span>
+<h2 id="Interpreter"><a class="header-anchor" href="#Interpreter">¶</a>Interpreter</h2>
+<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/interpreter.jpg" style="zoom:50%;">
+<p><u>How an interpreter can executes the program without producing a complete translated version</u></p>
+<ul>
+<li><font color="#4a69bd">An interpreter examines source code one statement at a time</font></li>
+<li><font color="#4a69bd">Check each statement for errors</font></li>
+<li><font color="#4a69bd">If no error is found, the statement is executed</font></li>
+<li><font color="#4a69bd">If an error is found, this is reported and the interpreter halts</font></li>
+<li><font color="#4a69bd">Interpretation is repeated for every iteration in repeated section of code/ in loops</font></li>
+<li><font color="#4a69bd">Interpretation repeats every time the program runs</font></li>
+</ul>
+<p><u>Why debug with interpreter</u></p>
+<ul>
+<li><font color="#4a69bd">Debugging is faster</font></li>
+<li><font color="#4a69bd">Can debug incomplete code</font></li>
+<li><font color="#4a69bd">Better diagnostics</font></li>
+</ul>
+<h2 id="Compiler"><a class="header-anchor" href="#Compiler">¶</a>Compiler</h2>
+<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/compiler.jpg" style="zoom: 33%;">
+<h3 id="Compilation-stages"><a class="header-anchor" href="#Compilation-stages">¶</a>Compilation stages</h3>
+<h4 id="Lexical-analysis"><a class="header-anchor" href="#Lexical-analysis">¶</a>Lexical analysis</h4>
+<ul>
+<li>
+<p>All necessary characters not required by the compiler, such as the white space and comments, are removed</p>
+</li>
+<li>
+<p><font color="#4a69bd">The white space removed // redundant characters are removed // removal of comments // identification of errors</font></p>
+</li>
+<li>
+<p>Tokenization</p>
+<ul>
+<li>Using a keyword table that contains all the tokens for reserved keywords and symbols</li>
+<li>Convert the source program into tokens</li>
+<li><u>Keyword table</u>
+<ul>
+<li><font color="#4a69bd">The reserved keyword used</font></li>
+<li><font color="#4a69bd">The operator used</font></li>
+<li><font color="#4a69bd">Their matching token</font><br>
+<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/keyword table.png" align="middle" style="zoom:50%;"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Variables, constants, and identifiers added to a symbol table, and are then converted into locations/address</p>
+<ul>
+<li><u>Symbol table</u>
+<ul>
+<li><font color="#4a69bd">Identifier name used </font></li>
+<li><font color="#4a69bd">The data type </font></li>
+<li><font color="#4a69bd">Role: e.g. Constant, array, procedure</font></li>
+<li><font color="#4a69bd">Location marker, value of constant</font></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/symboltable.png" style="zoom:50%;">
+<p><u>Explain how the keyword table and symbol table are used to translate the source code program</u></p>
+<ul>
+<li><font color="#4a69bd">Keywords are looked up in the keyword table</font></li>
+<li><font color="#4a69bd">They are represented by tokens</font></li>
+<li><font color="#4a69bd">Identifiers are looked up in the symbol table</font></li>
+<li><font color="#4a69bd">They are converted into location/address</font></li>
+<li><font color="#4a69bd">Used to create a sequence of tokens (for the program)</font></li>
+</ul>
+<h4 id="Syntax-analysis"><a class="header-anchor" href="#Syntax-analysis">¶</a>Syntax analysis</h4>
+<ul>
+<li>Output from the lexical analysis is checked for grammatical/syntax errors - <code>parsing</code></li>
+<li>The rules for <code>parsing</code> can be set out in Backus-Naur form(BNF) notation</li>
+<li>If errors are found: each statement and the associated error is outputted, but the next stage, code generation, will not be attempted</li>
+<li>If no error is found: passed to the next stage of compilation</li>
+<li><code>--</code></li>
+<li><font color="#4a69bd">Construction of a parse tree / parsing</font></li>
+<li><font color="#4a69bd">Checking that the rules of grammar/syntax have been obeyed</font></li>
+<li><font color="#4a69bd">Production of an error report</font></li>
+</ul>
+<h4 id="Code-generation"><a class="header-anchor" href="#Code-generation">¶</a>Code generation</h4>
+<ul>
+<li>Produces an object program to perform the task defined in the source code</li>
+<li>The object program is in machine-readable form(binary):
+<ul>
+<li>Either in machine code that can be directly executed by the CPU</li>
+<li>Or in intermediate code that is converted into machine code when the program is loaded</li>
+</ul>
+</li>
+</ul>
+<h4 id="Optimization"><a class="header-anchor" href="#Optimization">¶</a>Optimization</h4>
+<ul>
+<li>Performing the task using the <u>minimum amount of resources</u>
+<ul>
+<li><font color="#4a69bd">Execution time, storage space, memory, and CPU use.</font></li>
+</ul>
+</li>
+<li>
+<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/optimization.jpg" style="zoom: 33%;">
+</li>
+</ul>
+<p><u>Why code is optimized:</u></p>
+<ul>
+<li><font color="#4a69bd">Redundant code removed</font></li>
+<li><font color="#4a69bd">Program requires less memory</font></li>
+<li><font color="#4a69bd">Code reorganized to make it more efficient</font></li>
+<li><font color="#4a69bd">Program will complete task in a shorter time</font></li>
+</ul>
+<p><u>Why optimization is necessary</u></p>
+<ul>
+<li><font color="#4a69bd">Optimisation means the code would have fewer instructions</font></li>
+<li><font color="#4a69bd">Optimised code occupies less memory in space</font></li>
+<li><font color="#4a69bd">Fewer instructions reduce the execution time of the program</font></li>
+</ul>
+<p><u>Benefits</u></p>
+<ul>
+<li><font color="#4a69bd">Code has fewer instructions/occupies less memory in space</font></li>
+<li><font color="#4a69bd">Shortens the execution time for the program // time taken to execute whole program decreases</font></li>
+</ul>
+<h3 id="Past-paper-questions-v10"><a class="header-anchor" href="#Past-paper-questions-v10">¶</a>Past-paper questions</h3>
+<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq1.png" style="zoom: 67%;">
+<ul>
+<li><font color="#4a69bd">Remove the second instances of LDD 436 // remove line 04</font></li>
+<li><font color="#4a69bd">Remove the second instance s of ADD 437 // remove line 05</font></li>
+<li><font color="#4a69bd">The value required is already stored in the accumulator</font></li>
+</ul>
+<hr>
+<p><u>Why compiled version helps protect the security of the source code</u></p>
+<ul>
+<li><font color="#4a69bd">Compiler produces executable version - not readable</font></li>
+<li><font color="#4a69bd">Difficult for reverse engineering</font></li>
+</ul>
+<hr>
+<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/drawline.png" style="zoom: 67%;">
+<hr>
+<h2 id="BNF-Syntax-diagram"><a class="header-anchor" href="#BNF-Syntax-diagram">¶</a>BNF &amp; Syntax diagram</h2>
+<h3 id="Past-paper-questions-v11"><a class="header-anchor" href="#Past-paper-questions-v11">¶</a>Past-paper questions</h3>
+<ol>
+<li></li>
+</ol>
+<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq2.1.png" style="zoom: 80%;">
+<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq2.2.png" alt></p>
+<hr>
+<ol start="2">
+<li></li>
+</ol>
+<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Cppq3.1.png" alt></p>
+<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq3.2.png" style="zoom: 67%;">
+<hr>
+<ol start="3">
+<li></li>
+</ol>
+<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq4.1.png" alt></p>
+<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq4.2.png" alt></p>
+<hr>
+<h2 id="Reverse-Polish-notation"><a class="header-anchor" href="#Reverse-Polish-notation">¶</a>Reverse Polish notation</h2>
+<blockquote>
+<p>Infix notation: operators are in between their operands</p>
+<p>Postfix notation / Reverse Polish notation: Operators are written after operands</p>
+<p>Prefix notation / Polish notation: operators are written before operands</p>
+</blockquote>
+<p>🔗:<a href="https://www.cs.man.ac.uk/~pjj/cs212/fix.html">Understanding infix, postfix, and prefix - lecture note from university of manchester</a></p>
+<hr>
+<p><u>Why RPN can be used to evaluate expressions:</u></p>
+<ul>
+<li><font color="#4a69bd">Reverse polish notation provides and unambiguous method of representing an expression</font></li>
+<li><font color="#4a69bd">Reading from left to right</font></li>
+<li><font color="#4a69bd">Without need to use bracket</font></li>
+<li><font color="#4a69bd">With no need for rules of precedence</font></li>
+</ul>
+<p><u>Explain how RPN is used by an interpreter to evaluate expression:</u></p>
+<ul>
+<li><font color="#4a69bd">Expressions are always evaluated from left to right</font></li>
+<li><font color="#4a69bd">Each operator uses two previous values on the stack</font></li>
+<li><font color="#4a69bd">Pushing and popping identifiers on a stack</font></li>
+</ul>
+<p><u>Data structure to evaluate an expression in RPN</u></p>
+<ul>
+<li><font color="#4a69bd">Stack</font>
+<ul>
+<li><font color="#4a69bd">The operands are popped from the stack in reverse order to how they were pushed</font></li>
+</ul>
+</li>
+<li><font color="#4a69bd">Binary tree</font>
+<ul>
+<li><font color="#4a69bd">Allows both infix and postfix to be evaluated (tree traversal)</font></li>
+</ul>
+</li>
+</ul>
+<p><u>Describe the main steps in the evaluation of a Reverse Polish Notation(RPN) expression using a stack</u></p>
+<ul>
+<li><font color="#4a69bd">Working from left to right in the expression</font></li>
+<li><font color="#4a69bd">If element is a number, push that number into stack</font></li>
+<li><font color="#4a69bd">If element is an operator, then pop the first two numbers on the stack</font></li>
+<li><font color="#4a69bd">… perform that operations on these two numbers</font></li>
+<li><font color="#4a69bd">PUSH result back into stack</font></li>
+<li><font color="#4a69bd">END once the last item in the expression has been dealt with</font></li>
+</ul>
+<p><u>One advantage of the use of RPN is that evaluation of expressions does not require rules of precedence; Explain this statement</u></p>
+<ul>
+<li><font color="#4a69bd">Rules of precedence means different operators have different priorities; for example multiplication is done before addition</font></li>
+<li><font color="#4a69bd">In RPN, evaluation of expression is from left to right // operator are used in the sequence in which they were read</font></li>
+<li><font color="#4a69bd">No need for brackets // infix may require brackets</font></li>
+</ul>
+<p><u>Write the Reverse Polish Notation for the following expressions</u></p>
+<ol>
+<li>
+<p>(A+B)*(C-D)</p>
+<ul>
+<li><font color="#4a69bd">AB+</font></li>
+<li><font color="#4a69bd">CD-*</font></li>
+</ul>
+<p>Full answer: AB+CD-*</p>
+</li>
+<li>
+<p>((-A/B)*4)/(C-D)</p>
+<ul>
+<li><font color="#4a69bd">A-</font></li>
+<li><font color="#4a69bd">B/4*</font></li>
+<li><font color="#4a69bd">CD-/</font></li>
+</ul>
+<p>Full answer: A-B/4*CD-/</p>
+</li>
+</ol>
+<h3 id="Evaluation-of-RPN"><a class="header-anchor" href="#Evaluation-of-RPN">¶</a>Evaluation of RPN</h3>
+<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/rpneva.jpg" alt></p>
+<p>🔗<a href="https://www.includehelp.com/c/infix-to-postfix-conversion-using-stack-with-c-program.aspx">Infix To Postfix Conversion Using Stack</a></p>
+]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>ALCS</category>
+      </categories>
   </entry>
   <entry>
     <title>Chapter 18: Artificial Intelligence</title>
@@ -3219,20 +3219,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Contributors</title>
-    <url>/uncategorized/Contributors/</url>
-    <content><![CDATA[<h1>Contributors</h1>
-<h2 id="🐻Katrina-Liu"><a class="header-anchor" href="#🐻Katrina-Liu">¶</a>🐻Katrina Liu</h2>
-<div class="note info"><p><strong>Determined &amp; offered suggestions on</strong> <mark class="label primary">themes</mark> and <mark class="label primary">style</mark> of page</p>
-<p><strong>Participated</strong>: <code>Beta</code> test</p>
-<p><strong>Contributed to:</strong></p>
-<ul>
-<li><a href="https://haoran-jie.github.io/#Note-Format">Note format</a></li>
-</ul>
-</div>
-]]></content>
-  </entry>
-  <entry>
     <title>FlexBox_Notes</title>
     <url>/WebDevelopment/CSS/FlexBox-Notes/</url>
     <content><![CDATA[<blockquote class="blockquote-center">
@@ -3313,6 +3299,20 @@
         <tag>css</tag>
         <tag>FlexBox</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Contributors</title>
+    <url>/uncategorized/Contributors/</url>
+    <content><![CDATA[<h1>Contributors</h1>
+<h2 id="🐻Katrina-Liu"><a class="header-anchor" href="#🐻Katrina-Liu">¶</a>🐻Katrina Liu</h2>
+<div class="note info"><p><strong>Determined &amp; offered suggestions on</strong> <mark class="label primary">themes</mark> and <mark class="label primary">style</mark> of page</p>
+<p><strong>Participated</strong>: <code>Beta</code> test</p>
+<p><strong>Contributed to:</strong></p>
+<ul>
+<li><a href="https://haoran-jie.github.io/#Note-Format">Note format</a></li>
+</ul>
+</div>
+]]></content>
   </entry>
   <entry>
     <title>JavaScript_Basics(constantly updated)</title>
@@ -3538,31 +3538,13 @@ When we display variables in the console, their values appear instead of their n
       </tags>
   </entry>
   <entry>
-    <title>HTML+CSS: Blinking Rhombus</title>
-    <url>/WebDevelopment/Project/blinkingRhombus/</url>
-    <content><![CDATA[<img src="https://media.giphy.com/media/RUI6VnZ1hQjWfYlcdz/giphy.gif" alt="blinking_rhombus" style="zoom:300%;">
-<span id="more"></span> 
-<h2 id="index-html-v2"><a class="header-anchor" href="#index-html-v2">¶</a>index.html</h2>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>菱形加载动画<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;loading&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="style-css-v2"><a class="header-anchor" href="#style-css-v2">¶</a>style.css</h2>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">    <span class="comment">/*place the content at the center, set body as flex container, thus the div element is the flex item*/</span></span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">background</span>:  <span class="built_in">linear-gradient</span>(<span class="number">200deg</span>,<span class="number">#f4efef</span>,<span class="number">#e3eeff</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="comment">/* grid display */</span></span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="comment">/* set the grid to be three columns per row */</span></span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>,<span class="number">1</span>fr);</span><br><span class="line">    <span class="comment">/* set the gap between grid items: both horizontally and vertically gap */</span></span><br><span class="line">    <span class="attribute">gap</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="comment">/* number the items for later use: nth-child() */</span></span><br><span class="line">    <span class="comment">/* counter-reset: number; */</span></span><br><span class="line">    <span class="comment">/* ctrl + shift / */</span></span><br><span class="line">    <span class="comment">/* rotate by 45 degrees */</span></span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">45deg</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line">    <span class="comment">/* user-defined property: grammar is `--` followed by name */</span></span><br><span class="line">    <span class="attr">--c</span>:red;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">var</span>(--c);</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">/* animation  name  duration   easing function  repeat */</span></span><br><span class="line">    <span class="attribute">animation</span>: blinking  <span class="number">2s</span> linear infinite;</span><br><span class="line">    <span class="comment">/* wait for a few sec */</span></span><br><span class="line">    <span class="attribute">animation-delay</span>: <span class="built_in">var</span>(--d);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">    <span class="comment">/* setting increasing number */</span></span><br><span class="line">    <span class="comment">/* counter-increment: number; */</span></span><br><span class="line">    <span class="comment">/*  */</span></span><br><span class="line">    <span class="comment">/* content:counter(number); */</span></span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">7</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#f15a5a</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">4</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">8</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#f0c419</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.2s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">1</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">5</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">9</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#4eba6f</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.4s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">6</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#2d95bf</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.6s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">3</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#955ba5</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.8s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> blinking &#123;</span><br><span class="line">    <span class="number">0%</span>,<span class="number">100%</span>&#123;</span><br><span class="line">        <span class="comment">/* scale(x,y) suggests the change in width and height*/</span></span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">40%</span>,<span class="number">80%</span>&#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>WebDevelopment</category>
-        <category>Project</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
-        <tag>html</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>HTML+CSS: Loading Animation</title>
     <url>/WebDevelopment/Project/loadingAnimation/</url>
     <content><![CDATA[<img src="https://media.giphy.com/media/KcMqhBHGYydbQqf7z1/giphy.gif" alt="loadingAnimation" style="zoom:300%;">
 <span id="more"></span>
-<h2 id="index-html-v3"><a class="header-anchor" href="#index-html-v3">¶</a>index.html</h2>
+<h2 id="index-html-v2"><a class="header-anchor" href="#index-html-v2">¶</a>index.html</h2>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Interesting Loading Animation<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;loading&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>loading..<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="style-css-v3"><a class="header-anchor" href="#style-css-v3">¶</a>style.css</h2>
+<h2 id="style-css-v2"><a class="header-anchor" href="#style-css-v2">¶</a>style.css</h2>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="comment">/* initialization, defining the margin and padding */</span></span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="comment">/* 100% window height */</span></span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">    <span class="comment">/* gradient background  */</span></span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to bottom, <span class="number">#2b6876</span>, <span class="number">#09203f</span>);</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="comment">/* center at the main axis, which is horizontally */</span></span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="comment">/* center flex items along the cross axis of the current line of the flex container */</span></span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="comment">/* this tells the browser that the sum of padding and margin of the box is 200px */</span></span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">10px</span> solid <span class="number">#63a69f</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">animation</span>: a1 <span class="number">2s</span> linear infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span><span class="selector-pseudo">::after</span>,<span class="selector-class">.loading</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">top</span>: -<span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">10px</span> solid <span class="number">#f2e1ac</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">240deg</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">10px</span> solid <span class="number">#f2836f</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">120deg</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">color</span>: beige;</span><br><span class="line">    <span class="attribute">animation</span>: a2 <span class="number">2s</span> linear infinite;</span><br><span class="line">    <span class="attribute">font-size</span>: larger;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> a1 &#123;</span><br><span class="line">    <span class="selector-tag">to</span>&#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">360deg</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> a2 &#123;</span><br><span class="line">    <span class="selector-tag">to</span>&#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">rotate</span>(-<span class="number">360deg</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>WebDevelopment</category>
@@ -3658,6 +3640,24 @@ When we display variables in the console, their values appear instead of their n
       </categories>
       <tags>
         <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML+CSS: Blinking Rhombus</title>
+    <url>/WebDevelopment/Project/blinkingRhombus/</url>
+    <content><![CDATA[<img src="https://media.giphy.com/media/RUI6VnZ1hQjWfYlcdz/giphy.gif" alt="blinking_rhombus" style="zoom:300%;">
+<span id="more"></span> 
+<h2 id="index-html-v3"><a class="header-anchor" href="#index-html-v3">¶</a>index.html</h2>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>菱形加载动画<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;loading&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="style-css-v3"><a class="header-anchor" href="#style-css-v3">¶</a>style.css</h2>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">    <span class="comment">/*place the content at the center, set body as flex container, thus the div element is the flex item*/</span></span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">background</span>:  <span class="built_in">linear-gradient</span>(<span class="number">200deg</span>,<span class="number">#f4efef</span>,<span class="number">#e3eeff</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="comment">/* grid display */</span></span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="comment">/* set the grid to be three columns per row */</span></span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>,<span class="number">1</span>fr);</span><br><span class="line">    <span class="comment">/* set the gap between grid items: both horizontally and vertically gap */</span></span><br><span class="line">    <span class="attribute">gap</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="comment">/* number the items for later use: nth-child() */</span></span><br><span class="line">    <span class="comment">/* counter-reset: number; */</span></span><br><span class="line">    <span class="comment">/* ctrl + shift / */</span></span><br><span class="line">    <span class="comment">/* rotate by 45 degrees */</span></span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">45deg</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line">    <span class="comment">/* user-defined property: grammar is `--` followed by name */</span></span><br><span class="line">    <span class="attr">--c</span>:red;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">var</span>(--c);</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">/* animation  name  duration   easing function  repeat */</span></span><br><span class="line">    <span class="attribute">animation</span>: blinking  <span class="number">2s</span> linear infinite;</span><br><span class="line">    <span class="comment">/* wait for a few sec */</span></span><br><span class="line">    <span class="attribute">animation-delay</span>: <span class="built_in">var</span>(--d);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">    <span class="comment">/* setting increasing number */</span></span><br><span class="line">    <span class="comment">/* counter-increment: number; */</span></span><br><span class="line">    <span class="comment">/*  */</span></span><br><span class="line">    <span class="comment">/* content:counter(number); */</span></span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">7</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#f15a5a</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">4</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">8</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#f0c419</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.2s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">1</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">5</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">9</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#4eba6f</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.4s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">6</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#2d95bf</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.6s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">3</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#955ba5</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.8s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> blinking &#123;</span><br><span class="line">    <span class="number">0%</span>,<span class="number">100%</span>&#123;</span><br><span class="line">        <span class="comment">/* scale(x,y) suggests the change in width and height*/</span></span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">40%</span>,<span class="number">80%</span>&#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>WebDevelopment</category>
+        <category>Project</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>html</tag>
       </tags>
   </entry>
   <entry>
