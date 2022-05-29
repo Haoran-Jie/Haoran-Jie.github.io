@@ -39,6 +39,7 @@
     <ul>
         <li><a target="_blank" style="color:#70a1ff;" href="https://haoran-jie.github.io/file/ASCS-notedSyllabus.pdf">AS_Syllabus-注释版</a></li>
         <li><a target="_blank" style="color:#70a1ff;" href="https://haoran-jie.github.io/file/9618_Pseudocode_Guide.pdf">9618 Pseudocode Guide</a></li>
+        <div class="pdf-container" data-target="https://haoran-jie.github.io/file/9618_Pseudocode_Guide.pdf" data-height="500px"></div>
     </ul>
 </details>
 <h2 id="✋How-to-contribute"><a class="header-anchor" href="#✋How-to-contribute">¶</a>✋How to contribute</h2>
@@ -3223,7 +3224,7 @@
 <p><strong>Participated</strong>: <code>Beta</code> test</p>
 <p><strong>Contributed to:</strong></p>
 <ul>
-<li><a href="https://haoran-jie.github.io/baidusitemap.xml">Note format</a></li>
+<li><a href="https://haoran-jie.github.io/#Note-Format">Note format</a></li>
 </ul>
 </div>
 ]]></content>
