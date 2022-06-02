@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://haoran-jie.github.io/blogging/start/Start-of-Blog/</loc>
+    <lastmod>2022-06-02</lastmod>
+  </url>
+  <url>
     <loc>https://haoran-jie.github.io/WebDevelopment/CSS/FlexBox-Notes/</loc>
     <lastmod>2022-05-30</lastmod>
   </url>
@@ -83,10 +87,6 @@
   <url>
     <loc>https://haoran-jie.github.io/WebDevelopment/Project/blinkingRhombus/</loc>
     <lastmod>2022-04-15</lastmod>
-  </url>
-  <url>
-    <loc>https://haoran-jie.github.io/blogging/start/Start-of-Blog/</loc>
-    <lastmod>2022-04-14</lastmod>
   </url>
   <url>
     <loc>https://haoran-jie.github.io/WebDevelopment/Project/loadingAnimation/</loc>

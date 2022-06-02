@@ -3540,12 +3540,12 @@ When we display variables in the console, their values appear instead of their n
     <title>Start of Blog</title>
     <url>/blogging/start/Start-of-Blog/</url>
     <content><![CDATA[<h3 id="Inspiration"><a class="header-anchor" href="#Inspiration">¶</a>Inspiration</h3>
-<p>很多时候感觉缘分就是如此奇妙。最近申请季结束开始研究<code>Github</code>, 因为觉得命令行操作很酷就下载了<code>git</code>, 虽然最终可能<code>Github desktop</code>的用户体验更好一点 当然日常生活中两个都会被用到;</p>
+<p>很多时候感觉缘分就是如此奇妙。最近申请季结束开始研究<code>Github</code>（<s>是有点晚了哈</s>), 因为觉得命令行操作很酷就下载了<code>git</code>(谁不想了解这个世界上最先进的分布式管理系统呢), 虽然最终可能<code>Github desktop</code>的用户体验更好一点 当然日常生活中两个都会被用到;</p>
 <p>又是机缘巧合在逛 <u>appstore</u> 的时候看到了<code>mimo</code>。当时只知道这是个教编程的软件，下载后一度被会员制/membership劝退，但最终发现只要使用的仔细认真，答题尽量不错，其实还是可以用的​（✈️ 起飞~）至此便开始了对于Web Development的学习: 从 <code>html</code> 到 <code>css</code> 到 <code>javaScript</code>. 在准备配置自己电脑vscode上的js编程环境的时候，下载的<code>jsnode</code> 搞了近一个小时 东搞搞西搞搞。</p>
 <p>晚上睡觉前刷了刷b站，看到 up主 codesheep 上传的一篇视频 “<strong>如何0基础创建自己的博客</strong>“ 立马就感兴趣住了！说hexo配置的两个前置: <code>git</code> 和 <code>jsnode</code> 的时候 才意识到自己无意中已经给自己铺好了路。</p>
 <p>搜集好教程后 准备第二天直接做起！</p>
 <p>写到这里 我的博客基本配置已经ok啦 以及这就是我的第一篇文章。</p>
-<p>希望以后的我看到这里能回想起当时那个 <font color="#800000">求知、热情、上进</font> 的自己  😏</p>
+<p>希望以后的我看到这里能回想起当时那个 <mark class="label primary">求知、热情、上进</mark>的自己  😏</p>
 ]]></content>
       <categories>
         <category>blogging</category>
