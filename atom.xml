@@ -6,7 +6,7 @@
   <link href="https://haoran-jie.github.io/atom.xml" rel="self"/>
   
   <link href="https://haoran-jie.github.io/"/>
-  <updated>2022-05-19T15:09:41.834Z</updated>
+  <updated>2022-06-04T07:30:49.915Z</updated>
   <id>https://haoran-jie.github.io/</id>
   
   <author>
@@ -21,11 +21,10 @@
     <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter20.1_ProgrammingParadigm/"/>
     <id>https://haoran-jie.github.io/Notes/ALCS/Chapter20.1_ProgrammingParadigm/</id>
     <published>2022-05-06T05:10:58.000Z</published>
-    <updated>2022-05-19T15:09:41.834Z</updated>
+    <updated>2022-06-04T07:30:49.915Z</updated>
     
     
-    <summary type="html">&lt;h1&gt;Chapter20.1: Programming paradigms&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter20.1_ProgrammingParadigm/syllabus20.1.png&quot; alt&gt;&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter20.1_ProgrammingParadigm/syllabus20.1.png&quot; alt&gt;&lt;/p&gt;</summary>
     
     
     
@@ -41,11 +40,10 @@
     <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter19.2_Recursion/"/>
     <id>https://haoran-jie.github.io/Notes/ALCS/Chapter19.2_Recursion/</id>
     <published>2022-05-05T07:09:16.000Z</published>
-    <updated>2022-05-26T07:50:00.972Z</updated>
+    <updated>2022-06-04T07:30:45.478Z</updated>
     
     
-    <summary type="html">&lt;h1&gt;Chapter 19.2: Recursion&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter19.2_Recursion/syllabus19.2.png&quot; alt&gt;&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter19.2_Recursion/syllabus19.2.png&quot; alt&gt;&lt;/p&gt;</summary>
     
     
     
@@ -61,11 +59,10 @@
     <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter16.2_TranslationSoftware/"/>
     <id>https://haoran-jie.github.io/Notes/ALCS/Chapter16.2_TranslationSoftware/</id>
     <published>2022-05-05T03:14:19.000Z</published>
-    <updated>2022-05-19T23:27:41.114Z</updated>
+    <updated>2022-06-04T07:30:27.035Z</updated>
     
     
-    <summary type="html">&lt;h1&gt;Chapter 16.2: Translation Software&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter16.2_TranslationSoftware/syllabus16.2.png&quot; alt&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter16.2_TranslationSoftware/syllabus16.2.png&quot; alt&gt;&lt;/p&gt;
 &lt;hr&gt;</summary>
     
     
@@ -82,11 +79,10 @@
     <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter16.1_PurposeOfAnOperatingSystem/"/>
     <id>https://haoran-jie.github.io/Notes/ALCS/Chapter16.1_PurposeOfAnOperatingSystem/</id>
     <published>2022-05-03T14:41:54.000Z</published>
-    <updated>2022-05-19T23:36:41.094Z</updated>
+    <updated>2022-06-04T07:30:22.038Z</updated>
     
     
-    <summary type="html">&lt;h1&gt;Chapter 16.1: Purpose of an operating system&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter16.1_PurposeOfAnOperatingSystem/Syllabus16.1.png&quot; alt&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter16.1_PurposeOfAnOperatingSystem/Syllabus16.1.png&quot; alt&gt;&lt;/p&gt;
 &lt;hr&gt;</summary>
     
     
@@ -103,11 +99,10 @@
     <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/"/>
     <id>https://haoran-jie.github.io/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/</id>
     <published>2022-05-02T13:57:05.000Z</published>
-    <updated>2022-05-12T13:18:42.617Z</updated>
+    <updated>2022-06-04T07:30:17.384Z</updated>
     
     
-    <summary type="html">&lt;h1&gt;Chapter 15.2: Boolean Algebra and Logic Circuits&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/Syllabus15.2.png&quot; alt&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/Syllabus15.2.png&quot; alt&gt;&lt;/p&gt;
 &lt;hr&gt;</summary>
     
     
@@ -124,11 +119,10 @@
     <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/"/>
     <id>https://haoran-jie.github.io/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/</id>
     <published>2022-05-02T04:17:24.000Z</published>
-    <updated>2022-05-29T08:43:24.379Z</updated>
+    <updated>2022-06-04T07:30:08.228Z</updated>
     
     
-    <summary type="html">&lt;h1&gt;Chapter 15.1: Processors, Parallel Processing and Virtual Machines&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/Syllabus15.1.png&quot; alt&gt;&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/Syllabus15.1.png&quot; alt&gt;&lt;/p&gt;</summary>
     
     
     
@@ -144,11 +138,10 @@
     <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter13.3_Floating-pointNumbersRepresentation/"/>
     <id>https://haoran-jie.github.io/Notes/ALCS/Chapter13.3_Floating-pointNumbersRepresentation/</id>
     <published>2022-05-02T02:06:10.000Z</published>
-    <updated>2022-05-28T04:34:43.441Z</updated>
+    <updated>2022-06-04T07:29:58.493Z</updated>
     
     
-    <summary type="html">&lt;h1&gt;Chapter 13.3: Floating-point numbers: representation and manipulation&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter13.3_Floating-pointNumbersRepresentation/Syllabus13.3.png&quot; alt&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter13.3_Floating-pointNumbersRepresentation/Syllabus13.3.png&quot; alt&gt;&lt;/p&gt;
 &lt;hr&gt;</summary>
     
     
@@ -188,11 +181,10 @@
     <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter18_ArtificialIntelligence/"/>
     <id>https://haoran-jie.github.io/Notes/ALCS/Chapter18_ArtificialIntelligence/</id>
     <published>2022-04-28T12:44:30.000Z</published>
-    <updated>2022-05-29T08:20:26.534Z</updated>
+    <updated>2022-06-04T07:30:37.680Z</updated>
     
     
-    <summary type="html">&lt;h1&gt;Chapter 18: Artificial Intelligence&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter18_ArtificialIntelligence/ai.png&quot; alt&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter18_ArtificialIntelligence/ai.png&quot; alt&gt;&lt;/p&gt;
 &lt;hr&gt;</summary>
     
     
@@ -209,11 +201,10 @@
     <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter13.2_FileOrganisationAndAccess/"/>
     <id>https://haoran-jie.github.io/Notes/ALCS/Chapter13.2_FileOrganisationAndAccess/</id>
     <published>2022-04-28T12:44:02.000Z</published>
-    <updated>2022-05-28T04:34:45.270Z</updated>
+    <updated>2022-06-04T07:29:53.698Z</updated>
     
     
-    <summary type="html">&lt;h1&gt;Chapter 13.2: File organisation and access&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter13.2_FileOrganisationAndAccess/13.2.png&quot; alt&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter13.2_FileOrganisationAndAccess/13.2.png&quot; alt&gt;&lt;/p&gt;
 &lt;hr&gt;</summary>
     
     
@@ -230,7 +221,7 @@
     <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter13.1_User-definedDataTypes/"/>
     <id>https://haoran-jie.github.io/Notes/ALCS/Chapter13.1_User-definedDataTypes/</id>
     <published>2022-04-28T12:43:25.000Z</published>
-    <updated>2022-05-30T13:55:09.857Z</updated>
+    <updated>2022-06-04T07:29:37.809Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter13.1_User-definedDataTypes/13.1.png&quot; alt=&quot;Syllabus&quot;&gt;&lt;/p&gt;
@@ -250,11 +241,10 @@
     <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/"/>
     <id>https://haoran-jie.github.io/Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/</id>
     <published>2022-04-17T13:12:00.000Z</published>
-    <updated>2022-05-27T13:24:33.892Z</updated>
+    <updated>2022-06-04T07:30:55.504Z</updated>
     
     
-    <summary type="html">&lt;h1&gt;Chapter 20.2: File Processing and Exception Handling&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/syllabus.png&quot; alt&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/syllabus.png&quot; alt&gt;&lt;/p&gt;
 &lt;hr&gt;</summary>
     
     
@@ -297,11 +287,10 @@
     <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter19.1_Algorithms/"/>
     <id>https://haoran-jie.github.io/Notes/ALCS/Chapter19.1_Algorithms/</id>
     <published>2022-04-17T03:16:24.000Z</published>
-    <updated>2022-05-23T12:58:58.029Z</updated>
+    <updated>2022-06-04T07:30:41.633Z</updated>
     
     
-    <summary type="html">&lt;h1&gt;Chapter 19.1: Algorithms&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter19.1_Algorithms/Syllabuspic.png&quot; alt&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter19.1_Algorithms/Syllabuspic.png&quot; alt&gt;&lt;/p&gt;
 &lt;hr&gt;</summary>
     
     
@@ -320,11 +309,10 @@
     <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter14_CommunicationAndInternetTechnologies/"/>
     <id>https://haoran-jie.github.io/Notes/ALCS/Chapter14_CommunicationAndInternetTechnologies/</id>
     <published>2022-04-13T13:24:22.000Z</published>
-    <updated>2022-05-27T13:22:36.080Z</updated>
+    <updated>2022-06-04T07:30:03.423Z</updated>
     
     
-    <summary type="html">&lt;h1&gt;Chapter 14: Communication and Internet technologies&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter14_CommunicationAndInternetTechnologies/commu.png&quot; alt&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter14_CommunicationAndInternetTechnologies/commu.png&quot; alt&gt;&lt;/p&gt;
 &lt;hr&gt;</summary>
     
     
@@ -369,11 +357,10 @@
     <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter17_Security/"/>
     <id>https://haoran-jie.github.io/Notes/ALCS/Chapter17_Security/</id>
     <published>2022-04-12T15:31:31.000Z</published>
-    <updated>2022-05-26T07:50:09.223Z</updated>
+    <updated>2022-06-04T07:30:33.556Z</updated>
     
     
-    <summary type="html">&lt;h1&gt;Chapter 17: Security🔒&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter17_Security/security.png&quot; alt&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter17_Security/security.png&quot; alt&gt;&lt;/p&gt;
 &lt;hr&gt;</summary>
     
     

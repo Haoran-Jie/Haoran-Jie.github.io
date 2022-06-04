@@ -66,7 +66,6 @@
     <content><![CDATA[<p><img src="/Notes/ALCS/Chapter13.1_User-definedDataTypes/13.1.png" alt="Syllabus"></p>
 <hr>
 <span id="more"></span>
-<h1>Chapter 13.1: User-defined Data Types</h1>
 <p><u>Purpose of user-defined data types:</u></p>
 <ul>
 <li><font color="#4a69bd">To create new data type (from existing data types)</font></li>
@@ -231,8 +230,7 @@
   <entry>
     <title>Chapter13.3: Floating-point numbers,Representation and Manipulation</title>
     <url>/Notes/ALCS/Chapter13.3_Floating-pointNumbersRepresentation/</url>
-    <content><![CDATA[<h1>Chapter 13.3: Floating-point numbers: representation and manipulation</h1>
-<p><img src="/Notes/ALCS/Chapter13.3_Floating-pointNumbersRepresentation/Syllabus13.3.png" alt></p>
+    <content><![CDATA[<p><img src="/Notes/ALCS/Chapter13.3_Floating-pointNumbersRepresentation/Syllabus13.3.png" alt></p>
 <hr>
 <span id="more"></span> 
 <h2 id="Format"><a class="header-anchor" href="#Format">¶</a>Format</h2>
@@ -344,8 +342,7 @@
   <entry>
     <title>Chapter 14: Communication and Internet technologies</title>
     <url>/Notes/ALCS/Chapter14_CommunicationAndInternetTechnologies/</url>
-    <content><![CDATA[<h1>Chapter 14: Communication and Internet technologies</h1>
-<p><img src="/Notes/ALCS/Chapter14_CommunicationAndInternetTechnologies/commu.png" alt></p>
+    <content><![CDATA[<p><img src="/Notes/ALCS/Chapter14_CommunicationAndInternetTechnologies/commu.png" alt></p>
 <hr>
 <span id="more"></span>
 <h2 id="Protocols"><a class="header-anchor" href="#Protocols">¶</a>Protocols</h2>
@@ -639,8 +636,7 @@
   <entry>
     <title>Chapter 13.2: File organisation and access</title>
     <url>/Notes/ALCS/Chapter13.2_FileOrganisationAndAccess/</url>
-    <content><![CDATA[<h1>Chapter 13.2: File organisation and access</h1>
-<p><img src="/Notes/ALCS/Chapter13.2_FileOrganisationAndAccess/13.2.png" alt></p>
+    <content><![CDATA[<p><img src="/Notes/ALCS/Chapter13.2_FileOrganisationAndAccess/13.2.png" alt></p>
 <hr>
 <span id="more"></span>
 <h2 id="File-organisation"><a class="header-anchor" href="#File-organisation">¶</a>File organisation</h2>
@@ -773,8 +769,7 @@
   <entry>
     <title>Chapter 15.1: Processors, Parallel Processing and Virtual Machines</title>
     <url>/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/</url>
-    <content><![CDATA[<h1>Chapter 15.1: Processors, Parallel Processing and Virtual Machines</h1>
-<p><img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/Syllabus15.1.png" alt></p>
+    <content><![CDATA[<p><img src="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/Syllabus15.1.png" alt></p>
 <span id="more"></span> 
 <h2 id="RISC-CISC"><a class="header-anchor" href="#RISC-CISC">¶</a>RISC &amp; CISC</h2>
 <blockquote>
@@ -1058,8 +1053,7 @@
   <entry>
     <title>Chapter15.2: Boolean Algebra And Logic Circuits</title>
     <url>/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/</url>
-    <content><![CDATA[<h1>Chapter 15.2: Boolean Algebra and Logic Circuits</h1>
-<p><img src="/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/Syllabus15.2.png" alt></p>
+    <content><![CDATA[<p><img src="/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/Syllabus15.2.png" alt></p>
 <hr>
 <span id="more"></span>
 <h2 id="Adders➕"><a class="header-anchor" href="#Adders➕">¶</a>Adders➕</h2>
@@ -1281,8 +1275,7 @@
   <entry>
     <title>Chapter 16.1: Purpose of an operating system</title>
     <url>/Notes/ALCS/Chapter16.1_PurposeOfAnOperatingSystem/</url>
-    <content><![CDATA[<h1>Chapter 16.1: Purpose of an operating system</h1>
-<p><img src="/Notes/ALCS/Chapter16.1_PurposeOfAnOperatingSystem/Syllabus16.1.png" alt></p>
+    <content><![CDATA[<p><img src="/Notes/ALCS/Chapter16.1_PurposeOfAnOperatingSystem/Syllabus16.1.png" alt></p>
 <hr>
 <span id="more"></span>
 <h2 id="Operating-system-resource-optimization"><a class="header-anchor" href="#Operating-system-resource-optimization">¶</a>Operating system resource optimization</h2>
@@ -1756,8 +1749,7 @@
   <entry>
     <title>Chapter 16.2: Translation Software</title>
     <url>/Notes/ALCS/Chapter16.2_TranslationSoftware/</url>
-    <content><![CDATA[<h1>Chapter 16.2: Translation Software</h1>
-<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/syllabus16.2.png" alt></p>
+    <content><![CDATA[<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/syllabus16.2.png" alt></p>
 <hr>
 <span id="more"></span>
 <h2 id="Interpreter"><a class="header-anchor" href="#Interpreter">¶</a>Interpreter</h2>
@@ -1993,8 +1985,7 @@
   <entry>
     <title>Chapter 18: Artificial Intelligence</title>
     <url>/Notes/ALCS/Chapter18_ArtificialIntelligence/</url>
-    <content><![CDATA[<h1>Chapter 18: Artificial Intelligence</h1>
-<p><img src="/Notes/ALCS/Chapter18_ArtificialIntelligence/ai.png" alt></p>
+    <content><![CDATA[<p><img src="/Notes/ALCS/Chapter18_ArtificialIntelligence/ai.png" alt></p>
 <hr>
 <span id="more"></span>
 <h3 id="Definitions"><a class="header-anchor" href="#Definitions">¶</a>Definitions:</h3>
@@ -2056,8 +2047,7 @@
   <entry>
     <title>Chapter 17: Security</title>
     <url>/Notes/ALCS/Chapter17_Security/</url>
-    <content><![CDATA[<h1>Chapter 17: Security🔒</h1>
-<p><img src="/Notes/ALCS/Chapter17_Security/security.png" alt></p>
+    <content><![CDATA[<p><img src="/Notes/ALCS/Chapter17_Security/security.png" alt></p>
 <hr>
 <span id="more"></span>
 <h2 id="Encryption"><a class="header-anchor" href="#Encryption">¶</a>Encryption</h2>
@@ -2495,8 +2485,7 @@
   <entry>
     <title>Chapter19.2: Recursion</title>
     <url>/Notes/ALCS/Chapter19.2_Recursion/</url>
-    <content><![CDATA[<h1>Chapter 19.2: Recursion</h1>
-<p><img src="/Notes/ALCS/Chapter19.2_Recursion/syllabus19.2.png" alt></p>
+    <content><![CDATA[<p><img src="/Notes/ALCS/Chapter19.2_Recursion/syllabus19.2.png" alt></p>
 <span id="more"></span>
 <h3 id="u-Essential-features-of-recursion-u"><a class="header-anchor" href="#u-Essential-features-of-recursion-u">¶</a><u>Essential features of recursion:</u></h3>
 <ul>
@@ -2536,8 +2525,7 @@
   <entry>
     <title>Chapter 19.1: Algorithms</title>
     <url>/Notes/ALCS/Chapter19.1_Algorithms/</url>
-    <content><![CDATA[<h1>Chapter 19.1: Algorithms</h1>
-<p><img src="/Notes/ALCS/Chapter19.1_Algorithms/Syllabuspic.png" alt></p>
+    <content><![CDATA[<p><img src="/Notes/ALCS/Chapter19.1_Algorithms/Syllabuspic.png" alt></p>
 <hr>
 <span id="more"></span> 
 <h2 id="Search"><a class="header-anchor" href="#Search">¶</a>Search</h2>
@@ -2849,8 +2837,7 @@
   <entry>
     <title>Chapter20.1: Programming Paradigms</title>
     <url>/Notes/ALCS/Chapter20.1_ProgrammingParadigm/</url>
-    <content><![CDATA[<h1>Chapter20.1: Programming paradigms</h1>
-<p><img src="/Notes/ALCS/Chapter20.1_ProgrammingParadigm/syllabus20.1.png" alt></p>
+    <content><![CDATA[<p><img src="/Notes/ALCS/Chapter20.1_ProgrammingParadigm/syllabus20.1.png" alt></p>
 <span id="more"></span>
 <hr>
 <blockquote>
@@ -3008,8 +2995,7 @@
   <entry>
     <title>Chapter 20.2: File processing and Exception Handling</title>
     <url>/Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/</url>
-    <content><![CDATA[<h1>Chapter 20.2: File Processing and Exception Handling</h1>
-<p><img src="/Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/syllabus.png" alt></p>
+    <content><![CDATA[<p><img src="/Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/syllabus.png" alt></p>
 <hr>
 <span id="more"></span> 
 <h2 id="File-Processing"><a class="header-anchor" href="#File-Processing">¶</a>File Processing</h2>
@@ -3418,7 +3404,7 @@ When we display variables in the console, their values appear instead of their n
       </tags>
   </entry>
   <entry>
-    <title>HTML+CSS: spotlight Text Animation</title>
+    <title></title>
     <url>/WebDevelopment/Project/Spotlight-Text/</url>
     <content><![CDATA[<img src="https://media.giphy.com/media/r0qmZ6SyKILYYxmyHK/giphy.gif" alt="gif" style="zoom:1000%;" class="full-image">
 <span id="more"></span>
