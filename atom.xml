@@ -6,7 +6,7 @@
   <link href="https://haoran-jie.github.io/atom.xml" rel="self"/>
   
   <link href="https://haoran-jie.github.io/"/>
-  <updated>2022-06-04T07:30:49.915Z</updated>
+  <updated>2022-06-19T11:02:13.074Z</updated>
   <id>https://haoran-jie.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LaTeX Personal CheatSheet</title>
+    <link href="https://haoran-jie.github.io/Mathematics/tools/LaTeX-Personal-CheatSheet/"/>
+    <id>https://haoran-jie.github.io/Mathematics/tools/LaTeX-Personal-CheatSheet/</id>
+    <published>2022-06-14T06:53:20.000Z</published>
+    <updated>2022-06-19T11:02:13.074Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;code&gt;\limits_a^b&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$\int\limits_a^b {1\over</summary>
+        
+      
+    
+    
+    
+    <category term="Mathematics" scheme="https://haoran-jie.github.io/categories/Mathematics/"/>
+    
+    <category term="tools" scheme="https://haoran-jie.github.io/categories/Mathematics/tools/"/>
+    
+    
+    <category term="LaTeX" scheme="https://haoran-jie.github.io/tags/LaTeX/"/>
+    
+  </entry>
   
   <entry>
     <title>Chapter20.1: Programming Paradigms</title>
@@ -241,7 +269,7 @@
     <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/"/>
     <id>https://haoran-jie.github.io/Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/</id>
     <published>2022-04-17T13:12:00.000Z</published>
-    <updated>2022-06-04T07:30:55.504Z</updated>
+    <updated>2022-06-15T14:28:28.743Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/syllabus.png&quot; alt&gt;&lt;/p&gt;
@@ -331,7 +359,7 @@
     <link href="https://haoran-jie.github.io/Notes/ASAL-CompSci-Note/"/>
     <id>https://haoran-jie.github.io/Notes/ASAL-CompSci-Note/</id>
     <published>2022-04-13T08:45:07.000Z</published>
-    <updated>2022-05-29T08:26:58.881Z</updated>
+    <updated>2022-06-14T07:54:29.162Z</updated>
     
     
       
@@ -383,7 +411,7 @@
     <link href="https://haoran-jie.github.io/blogging/start/markdown-tricks/"/>
     <id>https://haoran-jie.github.io/blogging/start/markdown-tricks/</id>
     <published>2022-04-09T13:35:08.000Z</published>
-    <updated>2022-04-22T02:14:32.260Z</updated>
+    <updated>2022-06-24T15:46:33.681Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;基于HTML-HTML-based&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#基于HTML-HTML-based&quot;&gt;¶&lt;/a&gt;基于HTML: HTML-based&lt;/h2&gt;
@@ -416,29 +444,6 @@
     
     
     <summary type="html">&lt;img src=&quot;https://media.giphy.com/media/RUI6VnZ1hQjWfYlcdz/giphy.gif&quot; alt=&quot;blinking_rhombus&quot; style=&quot;zoom:300%;&quot;&gt;</summary>
-    
-    
-    
-    <category term="WebDevelopment" scheme="https://haoran-jie.github.io/categories/WebDevelopment/"/>
-    
-    <category term="Project" scheme="https://haoran-jie.github.io/categories/WebDevelopment/Project/"/>
-    
-    
-    <category term="css" scheme="https://haoran-jie.github.io/tags/css/"/>
-    
-    <category term="html" scheme="https://haoran-jie.github.io/tags/html/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HTML+CSS: Loading Animation</title>
-    <link href="https://haoran-jie.github.io/WebDevelopment/Project/loadingAnimation/"/>
-    <id>https://haoran-jie.github.io/WebDevelopment/Project/loadingAnimation/</id>
-    <published>2022-04-06T10:05:16.000Z</published>
-    <updated>2022-04-07T12:19:17.009Z</updated>
-    
-    
-    <summary type="html">&lt;img src=&quot;https://media.giphy.com/media/KcMqhBHGYydbQqf7z1/giphy.gif&quot; alt=&quot;loadingAnimation&quot; style=&quot;zoom:300%;&quot;&gt;</summary>
     
     
     

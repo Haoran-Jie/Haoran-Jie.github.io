@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://haoran-jie.github.io/WebDevelopment/Project/Spotlight-Text/</loc>
-    <lastmod>2022-06-04</lastmod>
+    <loc>https://haoran-jie.github.io/blogging/start/markdown-tricks/</loc>
+    <lastmod>2022-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://haoran-jie.github.io/Mathematics/tools/LaTeX-Personal-CheatSheet/</loc>
+    <lastmod>2022-06-19</lastmod>
   </url>
   <url>
     <loc>https://haoran-jie.github.io/Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/</loc>
+    <lastmod>2022-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://haoran-jie.github.io/Notes/ASAL-CompSci-Note/</loc>
+    <lastmod>2022-06-14</lastmod>
+  </url>
+  <url>
+    <loc>https://haoran-jie.github.io/WebDevelopment/Project/Spotlight-Text/</loc>
     <lastmod>2022-06-04</lastmod>
   </url>
   <url>
@@ -73,20 +85,12 @@
     <lastmod>2022-05-30</lastmod>
   </url>
   <url>
-    <loc>https://haoran-jie.github.io/Notes/ASAL-CompSci-Note/</loc>
-    <lastmod>2022-05-29</lastmod>
-  </url>
-  <url>
     <loc>https://haoran-jie.github.io/uncategorized/Contributors/</loc>
     <lastmod>2022-05-29</lastmod>
   </url>
   <url>
     <loc>https://haoran-jie.github.io/Notes/ALCS/practical/</loc>
     <lastmod>2022-05-23</lastmod>
-  </url>
-  <url>
-    <loc>https://haoran-jie.github.io/blogging/start/markdown-tricks/</loc>
-    <lastmod>2022-04-22</lastmod>
   </url>
   <url>
     <loc>https://haoran-jie.github.io/WebDevelopment/Project/blinkingRhombus/</loc>
