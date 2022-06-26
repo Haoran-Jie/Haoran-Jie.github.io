@@ -45,7 +45,7 @@
         </details>
     </ul>
 </details>
-## :raised_hand:How to contribute
+<h2 id="✋How-to-contribute"><a class="header-anchor" href="#✋How-to-contribute">¶</a>✋How to contribute</h2>
 <h2 id="👬Contributors"><a class="header-anchor" href="#👬Contributors">¶</a>👬Contributors</h2>
 <div class="link-grid"><div class="link-grid-container">
 <object class="link-grid-image" data="/images/K.png"></object>
@@ -3518,19 +3518,45 @@ When we display variables in the console, their values appear instead of their n
   <entry>
     <title>LaTeX Personal CheatSheet</title>
     <url>/Mathematics/tools/LaTeX-Personal-CheatSheet/</url>
-    <content><![CDATA[<p><code>\limits_a^b</code></p>
-<p>$\int\limits_a^b {1\over 1+x^2}dx$</p>
-<table>
+    <content><![CDATA[<table>
 <thead>
 <tr>
-<th>Formulae</th>
+<th>Key formulae</th>
+<th>Explanation</th>
+<th>Example formulae</th>
 <th>Representation</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td><code>\limit_a^b</code></td>
+<td>Setting limits for the integral</td>
 <td><code>$\int\limits_a^b &#123;1\over 1+x^2&#125;dx$</code></td>
 <td>$\int\limits_a^b {1\over 1+x^2}dx$</td>
+</tr>
+<tr>
+<td><code>\\</code></td>
+<td>start a new line</td>
+<td><code>$1=1\\2=2$</code></td>
+<td>$1=1\2=2$</td>
+</tr>
+<tr>
+<td><code>\frac&#123;a&#125;&#123;b&#125;</code></td>
+<td>Fraction</td>
+<td><code>$\frac&#123;-b\pm \sqrt&#123;b^2-4ac&#125;&#125;&#123;2a&#125;$</code></td>
+<td>$\frac{-b\pm \sqrt{b^2-4ac}}{2a}$</td>
+</tr>
+<tr>
+<td><code>\times</code></td>
+<td>The multiplication sign</td>
+<td><code>$a \times b$</code></td>
+<td>$a \times b$</td>
+</tr>
+<tr>
+<td><code>\div</code></td>
+<td>The division sign</td>
+<td><code>$a \div b$</code></td>
+<td>$a \div b$</td>
 </tr>
 </tbody>
 </table>

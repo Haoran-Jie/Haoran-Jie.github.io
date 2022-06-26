@@ -6,7 +6,7 @@
   <link href="https://haoran-jie.github.io/atom.xml" rel="self"/>
   
   <link href="https://haoran-jie.github.io/"/>
-  <updated>2022-06-19T11:02:13.074Z</updated>
+  <updated>2022-06-26T10:43:27.549Z</updated>
   <id>https://haoran-jie.github.io/</id>
   
   <author>
@@ -21,15 +21,19 @@
     <link href="https://haoran-jie.github.io/Mathematics/tools/LaTeX-Personal-CheatSheet/"/>
     <id>https://haoran-jie.github.io/Mathematics/tools/LaTeX-Personal-CheatSheet/</id>
     <published>2022-06-14T06:53:20.000Z</published>
-    <updated>2022-06-19T11:02:13.074Z</updated>
+    <updated>2022-06-26T10:43:27.549Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;&lt;code&gt;\limits_a^b&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;$\int\limits_a^b {1\over</summary>
+    <summary type="html">&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Key formulae&lt;/th&gt;
+&lt;th&gt;Explanation&lt;/th&gt;
+&lt;th&gt;Example</summary>
         
       
     
@@ -359,7 +363,7 @@
     <link href="https://haoran-jie.github.io/Notes/ASAL-CompSci-Note/"/>
     <id>https://haoran-jie.github.io/Notes/ASAL-CompSci-Note/</id>
     <published>2022-04-13T08:45:07.000Z</published>
-    <updated>2022-06-14T07:54:29.162Z</updated>
+    <updated>2022-06-26T15:17:44.672Z</updated>
     
     
       
