@@ -6,7 +6,7 @@
   <link href="https://haoran-jie.github.io/atom.xml" rel="self"/>
   
   <link href="https://haoran-jie.github.io/"/>
-  <updated>2022-06-26T10:43:27.549Z</updated>
+  <updated>2022-07-08T09:11:53.352Z</updated>
   <id>https://haoran-jie.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Monte Carlo simulation| 蒙特卡洛模拟</title>
+    <link href="https://haoran-jie.github.io/WhatandwhY/Monte-Carlo-%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B/"/>
+    <id>https://haoran-jie.github.io/WhatandwhY/Monte-Carlo-%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B/</id>
+    <published>2022-07-07T02:26:59.000Z</published>
+    <updated>2022-07-08T09:11:53.352Z</updated>
+    
+    
+    <summary type="html">&lt;div class=&quot;note info no-icon&quot;&gt;&lt;h4 id=&quot;引言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#引言&quot;&gt;¶&lt;/a&gt;引言&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;翻译自 《The New Turing Omnimbus》Chapter 4 Paragraph 1&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;为了了解组成现代世界的许多系统，我们越来越多转向计算机模拟。系统，无论是非人为的或者人工的，总是有许多部分有着复杂的行为，使得唯一可行的的模拟这种行为的方法为假设它是&lt;code&gt;随机的&lt;/code&gt;. 显而易见的是，咱们可以利用更简单的，符合统计学定律的部分替代这些系统中复杂的部分。&lt;/p&gt;
+&lt;p&gt;举个例子，如果我们想要模拟一场两边实力平均的排球比赛，我们可以通过抛硬币的方法来建立一个简单的模型：如果一个队伍正在发球，抛硬币的结果属于是不利于他们的那一面，则另一个队伍加一分且轮到他们发球；否则，这个发球队伍加一分并且继续发球。这个抛硬币的过程让我们想起了一个简单的打赌方式 ——&lt;mark class=&quot;label primary&quot;&gt;蒙特卡洛&lt;/mark&gt;&lt;/p&gt;
+&lt;/div&gt;</summary>
+    
+    
+    
+    <category term="WhatandwhY" scheme="https://haoran-jie.github.io/categories/WhatandwhY/"/>
+    
+    
+    <category term="Statistics" scheme="https://haoran-jie.github.io/tags/Statistics/"/>
+    
+  </entry>
+  
+  <entry>
     <title>LaTeX Personal CheatSheet</title>
     <link href="https://haoran-jie.github.io/Mathematics/tools/LaTeX-Personal-CheatSheet/"/>
     <id>https://haoran-jie.github.io/Mathematics/tools/LaTeX-Personal-CheatSheet/</id>
     <published>2022-06-14T06:53:20.000Z</published>
-    <updated>2022-06-26T10:43:27.549Z</updated>
+    <updated>2022-07-07T02:21:21.892Z</updated>
     
     
       
@@ -436,29 +461,6 @@
     
     
     <category term="Markdown" scheme="https://haoran-jie.github.io/tags/Markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HTML+CSS: Blinking Rhombus</title>
-    <link href="https://haoran-jie.github.io/WebDevelopment/Project/blinkingRhombus/"/>
-    <id>https://haoran-jie.github.io/WebDevelopment/Project/blinkingRhombus/</id>
-    <published>2022-04-07T11:40:29.000Z</published>
-    <updated>2022-04-15T02:52:04.638Z</updated>
-    
-    
-    <summary type="html">&lt;img src=&quot;https://media.giphy.com/media/RUI6VnZ1hQjWfYlcdz/giphy.gif&quot; alt=&quot;blinking_rhombus&quot; style=&quot;zoom:300%;&quot;&gt;</summary>
-    
-    
-    
-    <category term="WebDevelopment" scheme="https://haoran-jie.github.io/categories/WebDevelopment/"/>
-    
-    <category term="Project" scheme="https://haoran-jie.github.io/categories/WebDevelopment/Project/"/>
-    
-    
-    <category term="css" scheme="https://haoran-jie.github.io/tags/css/"/>
-    
-    <category term="html" scheme="https://haoran-jie.github.io/tags/html/"/>
     
   </entry>
   
