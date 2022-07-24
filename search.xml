@@ -3,8 +3,8 @@
   <entry>
     <title>IG/AS/AL CompSci-Note</title>
     <url>/Notes/ASAL-CompSci-Note/</url>
-    <content><![CDATA[<h2 id="⭐Get-Started"><a class="header-anchor" href="#⭐Get-Started">¶</a>⭐Get Started</h2>
-<div class="note info"><h4 id="Note-Format"><a class="header-anchor" href="#Note-Format">¶</a>Note Format:</h4>
+    <content><![CDATA[<h2 id="⭐Get-Started-v2"><a class="header-anchor" href="#⭐Get-Started-v2">¶</a>⭐Get Started</h2>
+<div class="note info"><h4 id="Note-Format-v2"><a class="header-anchor" href="#Note-Format-v2">¶</a>Note Format:</h4>
 <ol>
 <li><code>past-paper questions</code> are <u>underlined</u></li>
 <li><code>Mark-scheme answers</code> are coloured <font color="#4a69bd">blue</font></li>
@@ -12,8 +12,8 @@
 </ol>
 <img src="/Notes/ASAL-CompSci-Note/Example.png" alt="Example" style="zoom: 33%;">
 </div>
-<h2 id="📑Directory"><a class="header-anchor" href="#📑Directory">¶</a>📑Directory</h2>
-<div class="tabs" id="notes"><ul class="nav-tabs"><li class="tab active"><a href="#notes-1">A-Level</a></li><li class="tab"><a href="#notes-2">AS-Level</a></li><li class="tab"><a href="#notes-3">IGCSE</a></li></ul><div class="tab-content"><div class="tab-pane active" id="notes-1"><h3 id="A-Level"><a class="header-anchor" href="#A-Level">¶</a>A-Level</h3>
+<h2 id="📑Directory-v2"><a class="header-anchor" href="#📑Directory-v2">¶</a>📑Directory</h2>
+<div class="tabs" id="notes"><ul class="nav-tabs"><li class="tab active"><a href="#notes-1">A-Level</a></li><li class="tab"><a href="#notes-2">AS-Level</a></li><li class="tab"><a href="#notes-3">IGCSE</a></li></ul><div class="tab-content"><div class="tab-pane active" id="notes-1"><h3 id="A-Level-v2"><a class="header-anchor" href="#A-Level-v2">¶</a>A-Level</h3>
 <ul>
     <li><a style="color:#70a1ff;" href="/Notes/ALCS/Chapter13.1_User-definedDataTypes/">Chapter 13.1: User-defined Data Types</a></li>
     <li><a style="color:#70a1ff;" href="/Notes/ALCS/Chapter13.2_FileOrganisationAndAccess/">Chapter 13.2: File organisation and access</a></li>
@@ -33,7 +33,7 @@
 </ul></div><div class="tab-pane" id="notes-2"><div class="note default"><p>To be released soon😎</p>
 </div></div><div class="tab-pane" id="notes-3"><div class="note default"><p>To be released soon🐼</p>
 </div></div></div></div>
-<h2 id="💡Resources"><a class="header-anchor" href="#💡Resources">¶</a>💡Resources</h2>
+<h2 id="💡Resources-v2"><a class="header-anchor" href="#💡Resources-v2">¶</a>💡Resources</h2>
 <details>
     <summary style="font-weight:bold;">CIE official documents</summary>
     <ul>
@@ -45,8 +45,8 @@
         </details>
     </ul>
 </details>
-<h2 id="✋How-to-contribute"><a class="header-anchor" href="#✋How-to-contribute">¶</a>✋How to contribute</h2>
-<h2 id="👬Contributors"><a class="header-anchor" href="#👬Contributors">¶</a>👬Contributors</h2>
+<h2 id="✋How-to-contribute-v2"><a class="header-anchor" href="#✋How-to-contribute-v2">¶</a>✋How to contribute</h2>
+<h2 id="👬Contributors-v2"><a class="header-anchor" href="#👬Contributors-v2">¶</a>👬Contributors</h2>
 <div class="link-grid"><div class="link-grid-container">
 <object class="link-grid-image" data="/images/K.png"></object>
 <p>Katrina Liu</p><p>Economist</p>

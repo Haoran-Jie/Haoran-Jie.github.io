@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://haoran-jie.github.io/WhatandwhY/index.html</loc>
+    
+    <lastmod>2022-07-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://haoran-jie.github.io/Notes/ASAL-CompSci-Note/</loc>
+    
+    <lastmod>2022-07-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://haoran-jie.github.io/WhatandwhY/Monte-Carlo-%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B/</loc>
     
     <lastmod>2022-07-24</lastmod>
@@ -14,24 +32,6 @@
     <loc>https://haoran-jie.github.io/Mathematics/tools/LaTeX-Personal-CheatSheet/</loc>
     
     <lastmod>2022-07-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://haoran-jie.github.io/Notes/ASAL-CompSci-Note/</loc>
-    
-    <lastmod>2022-06-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://haoran-jie.github.io/WhatandwhY/index.html</loc>
-    
-    <lastmod>2022-06-26</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
