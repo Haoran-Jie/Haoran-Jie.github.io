@@ -264,7 +264,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-07-07 10:21:21" itemprop="dateModified" datetime="2022-07-07T10:21:21+08:00">2022-07-07</time>
+      <time title="Modified: 2022-07-21 21:21:10" itemprop="dateModified" datetime="2022-07-21T21:21:10+08:00">2022-07-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -308,7 +308,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>412</span>
+      <span>692</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -337,7 +337,7 @@
 </thead>
 <tbody>
 <tr>
-<td><code>\limit_a^b</code></td>
+<td><code>\limits_a^b</code></td>
 <td>Setting limits for the integral</td>
 <td><code>$\int\limits_a^b &#123;1\over 1+x^2&#125;dx$</code></td>
 <td>$\int\limits_a^b {1\over 1+x^2}dx$</td>
@@ -365,6 +365,24 @@
 <td>The division sign</td>
 <td><code>$a \div b$</code></td>
 <td>$a \div b$</td>
+</tr>
+<tr>
+<td><code>\text&#123;&#125;</code></td>
+<td>Allows for text with space</td>
+<td><code>$\text&#123;Hello World!&#125;$</code></td>
+<td>$\text{Hello World!}$</td>
+</tr>
+<tr>
+<td><code>\hat&#123;&#125;</code></td>
+<td>The hat accent</td>
+<td><code>$\hat&#123;y&#125;$</code></td>
+<td>$\hat{y}$</td>
+</tr>
+<tr>
+<td><code>\partial&#123;&#125;</code></td>
+<td>The partial derivative sign</td>
+<td><code>$\frac&#123;\partial&#125;&#123;\partial \theta_j&#125;$</code></td>
+<td>$\frac{\partial}{\partial \theta_j}$</td>
 </tr>
 </tbody>
 </table>
@@ -421,18 +439,18 @@
 
 
       <div class="comment-button-group">
-          <a class="btn comment-button gitalk">gitalk</a>
           <a class="btn comment-button disqus">disqus</a>
+          <a class="btn comment-button gitalk">gitalk</a>
       </div>
-        <div class="comment-position gitalk">
-          <div class="comments gitalk-container"></div>
-        </div>
         <div class="comment-position disqus">
           
   <div class="comments" id="disqus_thread">
     <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
+        </div>
+        <div class="comment-position gitalk">
+          <div class="comments gitalk-container"></div>
         </div><script data-pjax src="/js/comments-buttons.js"></script>
 </div>
   </main>
@@ -519,12 +537,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.2.0/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
   <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://haoran-jie.github.io/Mathematics/tools/LaTeX-Personal-CheatSheet/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"samuels-blog-5","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
 <script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Haoran-Jie","repo":"GItalkComments","client_id":"a78520e4a91db64c6ead","client_secret":"80a445f6a6f80fcd44fea523269b55c10ba59002","admin_user":"Haoran-Jie","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"4c250dc23a2c4deda7ee9cbe694c7d8b"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
-<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"samuels-blog-5","count":true,"i18n":{"disqus":"disqus"}}</script>
-<script src="/js/third-party/comments/disqus.js"></script>
 
 </body>
 </html>
