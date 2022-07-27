@@ -6,7 +6,7 @@
   <link href="https://haoran-jie.github.io/atom.xml" rel="self"/>
   
   <link href="https://haoran-jie.github.io/"/>
-  <updated>2022-07-24T12:56:54.440Z</updated>
+  <updated>2022-07-27T11:23:24.123Z</updated>
   <id>https://haoran-jie.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Deep Learning Recipe</title>
+    <link href="https://haoran-jie.github.io/uncategorized/Deep-Learning-Recipe/"/>
+    <id>https://haoran-jie.github.io/uncategorized/Deep-Learning-Recipe/</id>
+    <published>2022-07-27T11:12:31.000Z</published>
+    <updated>2022-07-27T11:23:24.123Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;High-bias-and-Variance&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#High-bias-and-Variance&quot;&gt;¶&lt;/a&gt;High bias and Variance&lt;/h2&gt;
+&lt;h3 id=&quot;High-Bias&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#High-Bias&quot;&gt;¶&lt;/a&gt;High Bias&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Underfitting the training set&lt;/li&gt;
+&lt;li&gt;Training set performance similar to development set performance&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;High-variance&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#High-variance&quot;&gt;¶&lt;/a&gt;High variance&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Overfitting the training set&lt;/li&gt;
+&lt;li&gt;Training set performance superior than development set performance&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="Machine Learning" scheme="https://haoran-jie.github.io/tags/Machine-Learning/"/>
+    
+  </entry>
   
   <entry>
     <title>Monte Carlo simulation| 蒙特卡洛模拟</title>
@@ -432,35 +459,6 @@
     <category term="SSL/TLS" scheme="https://haoran-jie.github.io/tags/SSL-TLS/"/>
     
     <category term="Digital Certification" scheme="https://haoran-jie.github.io/tags/Digital-Certification/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>那些你该知道的markdown操作</title>
-    <link href="https://haoran-jie.github.io/blogging/start/markdown-tricks/"/>
-    <id>https://haoran-jie.github.io/blogging/start/markdown-tricks/</id>
-    <published>2022-04-09T13:35:08.000Z</published>
-    <updated>2022-06-24T15:46:33.681Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;基于HTML-HTML-based&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#基于HTML-HTML-based&quot;&gt;¶&lt;/a&gt;基于HTML: HTML-based&lt;/h2&gt;
-&lt;h3 id=&quot;👉改变字体颜色-Text-Colour&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#👉改变字体颜色-Text-Colour&quot;&gt;¶&lt;/a&gt;👉改变字体颜色: Text Colour&lt;/h3&gt;
-&lt;h4 id=&quot;表示方法-value&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#表示方法-value&quot;&gt;¶&lt;/a&gt;表示方法&lt;code&gt;&amp;lt;value&amp;gt;&lt;/code&gt;:&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;十六进制值 如 &lt;code&gt;#f1c40f&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;RGB值 如 &lt;code&gt;RGB(255,254,253)&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;RGBA值 如 &lt;code&gt;RGBA(255,0,0,0.5)&lt;/code&gt; 其中最后一个参数为&lt;code&gt;alpha参数&lt;/code&gt; 代表不透明度 范围在0-1之间&lt;/li&gt;
-&lt;li&gt;颜色的名称 如 &lt;code&gt;blue&lt;/code&gt;, &lt;code&gt;lightpink&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;</summary>
-    
-    
-    
-    <category term="blogging" scheme="https://haoran-jie.github.io/categories/blogging/"/>
-    
-    <category term="start" scheme="https://haoran-jie.github.io/categories/blogging/start/"/>
-    
-    
-    <category term="Markdown" scheme="https://haoran-jie.github.io/tags/Markdown/"/>
     
   </entry>
   

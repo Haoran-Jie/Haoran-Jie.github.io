@@ -4006,4 +4006,60 @@ Q3: OOP with file handling.</p>
         <tag>java</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Deep Learning Recipe</title>
+    <url>/uncategorized/Deep-Learning-Recipe/</url>
+    <content><![CDATA[<h2 id="High-bias-and-Variance"><a class="header-anchor" href="#High-bias-and-Variance">¶</a>High bias and Variance</h2>
+<h3 id="High-Bias"><a class="header-anchor" href="#High-Bias">¶</a>High Bias</h3>
+<ul>
+<li>Underfitting the training set</li>
+<li>Training set performance similar to development set performance</li>
+</ul>
+<h3 id="High-variance"><a class="header-anchor" href="#High-variance">¶</a>High variance</h3>
+<ul>
+<li>Overfitting the training set</li>
+<li>Training set performance superior than development set performance</li>
+</ul>
+<span id="more"></span>
+<h3 id="Examples"><a class="header-anchor" href="#Examples">¶</a>Examples</h3>
+<blockquote>
+<p>Assume that the Bayes error is nearly 0%</p>
+</blockquote>
+<ol>
+<li>Training set error 1%; development set error 11%
+<ul>
+<li><code>High variance</code></li>
+</ul>
+</li>
+<li>Training set error 15%; development set error 16%
+<ul>
+<li><code>High bias</code></li>
+</ul>
+</li>
+<li>Training set error 0.5%; development set error 0.5%
+<ul>
+<li><code>Low variance</code> &amp; <code>Low bias</code></li>
+</ul>
+</li>
+<li>Training set error 15%; development set error 30%
+<ul>
+<li><code>High variance</code> &amp; <code>High bias</code></li>
+<li>e.g. fit 的这条线 一部分是linear 的 一部分过分curvy</li>
+</ul>
+</li>
+</ol>
+<h2 id="General-process"><a class="header-anchor" href="#General-process">¶</a>General process</h2>
+<pre><code class="highlight mermaid">graph LR
+A[High Bias?] --&gt;|Y| B(Bigger network)
+A --&gt; |Y| C(Train longer)
+A --&gt; |Y| D(Use more advanced optimzation algoorithm)
+E[High Variance?] --&gt;|Y| F(Regularlization)
+E --&gt;|Y| G(Use more data)</code></pre>
+<h4 id="In-conclusion"><a class="header-anchor" href="#In-conclusion">¶</a>In conclusion</h4>
+<p>以前其实是有那么个东西 叫做 bias-variance trade-off 的指的是variance 和 bias 之间的 inverse relation。 Low variance 和 low bias 很难共存。但随着大数据时代的来袭，我们有更多的渠道去收集更多的数据(比如爬虫) 导致修复其中一个问题并不会导致另外一个问题变得更糟糕。</p>
+]]></content>
+      <tags>
+        <tag>Machine Learning</tag>
+      </tags>
+  </entry>
 </search>
