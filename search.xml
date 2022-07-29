@@ -14,7 +14,7 @@
 <li><code>Mark-scheme answers</code> are coloured <font color="#4a69bd">blue</font></li>
 <li><code>Emphasized words</code> are <strong>bold</strong></li>
 </ol>
-<img src="/Notes/ASAL-CompSci-Note/hexocode\source\_posts\ASAL-CompSci-Note\Example.png" alt="Example" style="zoom: 33%;">
+<img src="/Notes/ASAL-CompSci-Note/Example.png" alt="Example" style="zoom: 33%;">
 </div>
 <h2 id="📑Directory"><a class="header-anchor" href="#📑Directory">¶</a>📑Directory</h2>
 <div class="tabs" id="notes"><ul class="nav-tabs"><li class="tab active"><a href="#notes-1">A-Level</a></li><li class="tab"><a href="#notes-2">AS-Level</a></li><li class="tab"><a href="#notes-3">IGCSE</a></li></ul><div class="tab-content"><div class="tab-pane active" id="notes-1"><h3 id="A-Level"><a class="header-anchor" href="#A-Level">¶</a>A Level</h3>
@@ -244,118 +244,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Chapter13.3: Floating-point numbers,Representation and Manipulation</title>
-    <url>/Notes/ALCS/Chapter13.3_Floating-pointNumbersRepresentation/</url>
-    <content><![CDATA[<p><img src="/Notes/ALCS/Chapter13.3_Floating-pointNumbersRepresentation/Syllabus13.3.png" alt></p>
-<hr>
-<span id="more"></span> 
-<h2 id="Format"><a class="header-anchor" href="#Format">¶</a>Format</h2>
-<p><u>What are the effect of decreasing the number of bits allocated to Mantissa and increasing the exponent</u></p>
-<ol>
-<li><font color="#4a69bd">Reduction in precision</font>
-<ul>
-<li><font color="#4a69bd">As the number of bits in mantissa has decreased.</font></li>
-</ul>
-</li>
-<li><font color="#4a69bd">Increasing in range</font>
-<ul>
-<li><font color="#4a69bd">As the number of bits in exponent has increased.</font></li>
-</ul>
-</li>
-</ol>
-<br>
-<p>The denary number <strong>513</strong> cannot be stored accurately as normalised floating-point number in this computer system: (10 bits for mantissa, 6 bits for exponent)</p>
-<p><u>Explain reasons for this:</u></p>
-<ul>
-<li><font color="#4a69bd">Require more than 10 bits/11bits to store; the maximum number that can be stored is 511</font></li>
-<li><font color="#4a69bd">The denary 513 in binary is 1000000001 // Normalised: 0.1000000001</font></li>
-<li><font color="#4a69bd">Results in <strong>overflow</strong></font></li>
-</ul>
-<p><u>Describe an alteration to the way floating-point numbers are stored to enable this number to be stored accurately with the same total number of bits</u>:</p>
-<ul>
-<li><font color="#4a69bd">The number of bits for mantissa must be increased</font></li>
-<li><font color="#4a69bd">11 bits for mantissa and 5 bits for exponent</font></li>
-</ul>
-<hr>
-<img src="/Notes/ALCS/Chapter13.3_Floating-pointNumbersRepresentation/que1pic.png" style="zoom: 50%;">
-<ul>
-<li><font color="#4a69bd">Exponent too large to fit 4 bits as two’s complement number</font></li>
-<li><font color="#4a69bd">Exponent will turn negative</font></li>
-<li><font color="#4a69bd">… therefore the binary point moves the wrong way</font></li>
-<li><font color="#4a69bd">Value will be approximately +0.029(296875)</font></li>
-</ul>
-<p><u>Explain the trade-off between either using a large number of bits for the mantissa, or a large number of bits for the exponent</u></p>
-<ul>
-<li><font color="#4a69bd">The trade-off is between range and precision</font></li>
-<li><font color="#4a69bd">Any increase in the number of bits for the mantissa means fewer number of bits for the exponent</font></li>
-<li><font color="#4a69bd">More bits used in mantissa would result in better precision</font></li>
-<li><font color="#4a69bd">More bits used in exponent would result in larger range</font></li>
-</ul>
-<h2 id="Conversion"><a class="header-anchor" href="#Conversion">¶</a>Conversion</h2>
-<p><u>Calculate the normalised binary number for <strong>-3.75</strong>. Show your working</u></p>
-<ul>
-<li><font color="#4a69bd">-3.75 = 100.01000 // -4 + 1/4 // -4 + 0.25</font></li>
-<li><font color="#4a69bd">100.01000 becomes 1.0001000 Exponent=+2</font></li>
-<li><font color="#4a69bd">Answer: Mantissa=1.0001000 Exponent=0010</font></li>
-</ul>
-<p><u>Calculate the normalised floating-point representation of <strong>+1.5625</strong> in this system (<strong>12bit-mantissa, 4bit-exponent</strong>). Show your working</u></p>
-<ul>
-<li><font color="#4a69bd">Correct conversion to binary: 01.1001</font></li>
-<li><font color="#4a69bd">Correct calculation of the exponent: 1</font></li>
-<li><font color="#4a69bd">Answer: Mantissa=0110 0100 0000 | Exponent= 0001</font></li>
-</ul>
-<h2 id="Normalisation"><a class="header-anchor" href="#Normalisation">¶</a>Normalisation</h2>
-<p><u>Why binary/floating-point numbers are stored in normalized form</u></p>
-<ul>
-<li><font color="#4a69bd">To store the maximum range of numbers in the minimum number of bits</font></li>
-<li><font color="#4a69bd">Normalisation minimizes the number of leading zeros/ones represented</font></li>
-<li><font color="#4a69bd">Maximizing the number of significant bits // maximizing the number of precision/accuracy with given number of bits</font></li>
-<li><font color="#4a69bd">Enable large/small numbers to be stored with accuracy</font></li>
-<li><font color="#4a69bd">Avoids the possibility that many numbers have multiple representation</font></li>
-<li><code>--</code></li>
-<li><font color="#4a69bd">There will be a unique representation for a number</font></li>
-<li><font color="#4a69bd">The format will ensure it will be represented with greatest possible accuracy</font></li>
-<li><font color="#4a69bd">Multiplication is performed more accurately</font></li>
-</ul>
-<p><u>Problems that can occur when a floating-pointer number is not normalised</u></p>
-<ul>
-<li><font color="#4a69bd">Lost of precision</font></li>
-<li><font color="#4a69bd">Redundant leading zeros in the mantissa</font></li>
-<li><font color="#4a69bd">Lost of the least-significant bits (bits on the right-hand end)</font></li>
-<li><font color="#4a69bd">Multiple representation of a single number</font></li>
-</ul>
-<h2 id="Approximation-Rounding-errors"><a class="header-anchor" href="#Approximation-Rounding-errors">¶</a>Approximation &amp; Rounding errors</h2>
-<p><u>State why some binary representation can lead to rounding errors</u></p>
-<ul>
-<li><font color="#4a69bd">There’s no exact binary conversion for some numbers</font></li>
-<li><font color="#4a69bd">More bits are needed to store the number</font></li>
-</ul>
-<hr>
-<img src="/Notes/ALCS/Chapter13.3_Floating-pointNumbersRepresentation/quepic2.png" style="zoom:80%;">
-<hr>
-<img src="/Notes/ALCS/Chapter13.3_Floating-pointNumbersRepresentation/que3pic.png" style="zoom:50%;">
-<ul>
-<li><font color="#4a69bd">0.2 and 0.4 cannot be represented exactly in binary, there is a rounding error</font></li>
-<li><font color="#4a69bd">0.2 has been represented by a number just greater than 0.2</font></li>
-<li>This is similar for 0.4</li>
-<li><font color="#4a69bd">Therefore, multiplying these two representations together increases the difference</font></li>
-<li><font color="#4a69bd">Difference after calculation is significant enough to be seen</font></li>
-</ul>
-<hr>
-<img src="/Notes/ALCS/Chapter13.3_Floating-pointNumbersRepresentation/que4pic.png" style="zoom:50%;">
-<ul>
-<li>0.1 cannot be represented exactly in binary, there is a rounding error</li>
-<li>0.1 is represented by a value just less than 0.1</li>
-<li>The loop keeps adding this approximate value to the counter</li>
-<li>Until all accumulated small difference become significant enough to be seen</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Notes</category>
-        <category>ALCS</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Chapter 13.2: File organisation and access</title>
     <url>/Notes/ALCS/Chapter13.2_FileOrganisationAndAccess/</url>
     <content><![CDATA[<p><img src="/Notes/ALCS/Chapter13.2_FileOrganisationAndAccess/13.2.png" alt></p>
@@ -482,6 +370,118 @@
 </li>
 </ol>
 </section>
+]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>ALCS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Chapter13.3: Floating-point numbers,Representation and Manipulation</title>
+    <url>/Notes/ALCS/Chapter13.3_Floating-pointNumbersRepresentation/</url>
+    <content><![CDATA[<p><img src="/Notes/ALCS/Chapter13.3_Floating-pointNumbersRepresentation/Syllabus13.3.png" alt></p>
+<hr>
+<span id="more"></span> 
+<h2 id="Format"><a class="header-anchor" href="#Format">¶</a>Format</h2>
+<p><u>What are the effect of decreasing the number of bits allocated to Mantissa and increasing the exponent</u></p>
+<ol>
+<li><font color="#4a69bd">Reduction in precision</font>
+<ul>
+<li><font color="#4a69bd">As the number of bits in mantissa has decreased.</font></li>
+</ul>
+</li>
+<li><font color="#4a69bd">Increasing in range</font>
+<ul>
+<li><font color="#4a69bd">As the number of bits in exponent has increased.</font></li>
+</ul>
+</li>
+</ol>
+<br>
+<p>The denary number <strong>513</strong> cannot be stored accurately as normalised floating-point number in this computer system: (10 bits for mantissa, 6 bits for exponent)</p>
+<p><u>Explain reasons for this:</u></p>
+<ul>
+<li><font color="#4a69bd">Require more than 10 bits/11bits to store; the maximum number that can be stored is 511</font></li>
+<li><font color="#4a69bd">The denary 513 in binary is 1000000001 // Normalised: 0.1000000001</font></li>
+<li><font color="#4a69bd">Results in <strong>overflow</strong></font></li>
+</ul>
+<p><u>Describe an alteration to the way floating-point numbers are stored to enable this number to be stored accurately with the same total number of bits</u>:</p>
+<ul>
+<li><font color="#4a69bd">The number of bits for mantissa must be increased</font></li>
+<li><font color="#4a69bd">11 bits for mantissa and 5 bits for exponent</font></li>
+</ul>
+<hr>
+<img src="/Notes/ALCS/Chapter13.3_Floating-pointNumbersRepresentation/que1pic.png" style="zoom: 50%;">
+<ul>
+<li><font color="#4a69bd">Exponent too large to fit 4 bits as two’s complement number</font></li>
+<li><font color="#4a69bd">Exponent will turn negative</font></li>
+<li><font color="#4a69bd">… therefore the binary point moves the wrong way</font></li>
+<li><font color="#4a69bd">Value will be approximately +0.029(296875)</font></li>
+</ul>
+<p><u>Explain the trade-off between either using a large number of bits for the mantissa, or a large number of bits for the exponent</u></p>
+<ul>
+<li><font color="#4a69bd">The trade-off is between range and precision</font></li>
+<li><font color="#4a69bd">Any increase in the number of bits for the mantissa means fewer number of bits for the exponent</font></li>
+<li><font color="#4a69bd">More bits used in mantissa would result in better precision</font></li>
+<li><font color="#4a69bd">More bits used in exponent would result in larger range</font></li>
+</ul>
+<h2 id="Conversion"><a class="header-anchor" href="#Conversion">¶</a>Conversion</h2>
+<p><u>Calculate the normalised binary number for <strong>-3.75</strong>. Show your working</u></p>
+<ul>
+<li><font color="#4a69bd">-3.75 = 100.01000 // -4 + 1/4 // -4 + 0.25</font></li>
+<li><font color="#4a69bd">100.01000 becomes 1.0001000 Exponent=+2</font></li>
+<li><font color="#4a69bd">Answer: Mantissa=1.0001000 Exponent=0010</font></li>
+</ul>
+<p><u>Calculate the normalised floating-point representation of <strong>+1.5625</strong> in this system (<strong>12bit-mantissa, 4bit-exponent</strong>). Show your working</u></p>
+<ul>
+<li><font color="#4a69bd">Correct conversion to binary: 01.1001</font></li>
+<li><font color="#4a69bd">Correct calculation of the exponent: 1</font></li>
+<li><font color="#4a69bd">Answer: Mantissa=0110 0100 0000 | Exponent= 0001</font></li>
+</ul>
+<h2 id="Normalisation"><a class="header-anchor" href="#Normalisation">¶</a>Normalisation</h2>
+<p><u>Why binary/floating-point numbers are stored in normalized form</u></p>
+<ul>
+<li><font color="#4a69bd">To store the maximum range of numbers in the minimum number of bits</font></li>
+<li><font color="#4a69bd">Normalisation minimizes the number of leading zeros/ones represented</font></li>
+<li><font color="#4a69bd">Maximizing the number of significant bits // maximizing the number of precision/accuracy with given number of bits</font></li>
+<li><font color="#4a69bd">Enable large/small numbers to be stored with accuracy</font></li>
+<li><font color="#4a69bd">Avoids the possibility that many numbers have multiple representation</font></li>
+<li><code>--</code></li>
+<li><font color="#4a69bd">There will be a unique representation for a number</font></li>
+<li><font color="#4a69bd">The format will ensure it will be represented with greatest possible accuracy</font></li>
+<li><font color="#4a69bd">Multiplication is performed more accurately</font></li>
+</ul>
+<p><u>Problems that can occur when a floating-pointer number is not normalised</u></p>
+<ul>
+<li><font color="#4a69bd">Lost of precision</font></li>
+<li><font color="#4a69bd">Redundant leading zeros in the mantissa</font></li>
+<li><font color="#4a69bd">Lost of the least-significant bits (bits on the right-hand end)</font></li>
+<li><font color="#4a69bd">Multiple representation of a single number</font></li>
+</ul>
+<h2 id="Approximation-Rounding-errors"><a class="header-anchor" href="#Approximation-Rounding-errors">¶</a>Approximation &amp; Rounding errors</h2>
+<p><u>State why some binary representation can lead to rounding errors</u></p>
+<ul>
+<li><font color="#4a69bd">There’s no exact binary conversion for some numbers</font></li>
+<li><font color="#4a69bd">More bits are needed to store the number</font></li>
+</ul>
+<hr>
+<img src="/Notes/ALCS/Chapter13.3_Floating-pointNumbersRepresentation/quepic2.png" style="zoom:80%;">
+<hr>
+<img src="/Notes/ALCS/Chapter13.3_Floating-pointNumbersRepresentation/que3pic.png" style="zoom:50%;">
+<ul>
+<li><font color="#4a69bd">0.2 and 0.4 cannot be represented exactly in binary, there is a rounding error</font></li>
+<li><font color="#4a69bd">0.2 has been represented by a number just greater than 0.2</font></li>
+<li>This is similar for 0.4</li>
+<li><font color="#4a69bd">Therefore, multiplying these two representations together increases the difference</font></li>
+<li><font color="#4a69bd">Difference after calculation is significant enough to be seen</font></li>
+</ul>
+<hr>
+<img src="/Notes/ALCS/Chapter13.3_Floating-pointNumbersRepresentation/que4pic.png" style="zoom:50%;">
+<ul>
+<li>0.1 cannot be represented exactly in binary, there is a rounding error</li>
+<li>0.1 is represented by a value just less than 0.1</li>
+<li>The loop keeps adding this approximate value to the counter</li>
+<li>Until all accumulated small difference become significant enough to be seen</li>
+</ul>
 ]]></content>
       <categories>
         <category>Notes</category>
@@ -1763,6 +1763,242 @@
       </categories>
   </entry>
   <entry>
+    <title>Chapter 16.2: Translation Software</title>
+    <url>/Notes/ALCS/Chapter16.2_TranslationSoftware/</url>
+    <content><![CDATA[<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/syllabus16.2.png" alt></p>
+<hr>
+<span id="more"></span>
+<h2 id="Interpreter"><a class="header-anchor" href="#Interpreter">¶</a>Interpreter</h2>
+<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/interpreter.jpg" style="zoom:50%;">
+<p><u>How an interpreter can executes the program without producing a complete translated version</u></p>
+<ul>
+<li><font color="#4a69bd">An interpreter examines source code one statement at a time</font></li>
+<li><font color="#4a69bd">Check each statement for errors</font></li>
+<li><font color="#4a69bd">If no error is found, the statement is executed</font></li>
+<li><font color="#4a69bd">If an error is found, this is reported and the interpreter halts</font></li>
+<li><font color="#4a69bd">Interpretation is repeated for every iteration in repeated section of code/ in loops</font></li>
+<li><font color="#4a69bd">Interpretation repeats every time the program runs</font></li>
+</ul>
+<p><u>Why debug with interpreter</u></p>
+<ul>
+<li><font color="#4a69bd">Debugging is faster</font></li>
+<li><font color="#4a69bd">Can debug incomplete code</font></li>
+<li><font color="#4a69bd">Better diagnostics</font></li>
+</ul>
+<h2 id="Compiler"><a class="header-anchor" href="#Compiler">¶</a>Compiler</h2>
+<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/compiler.jpg" style="zoom: 33%;">
+<h3 id="Compilation-stages"><a class="header-anchor" href="#Compilation-stages">¶</a>Compilation stages</h3>
+<h4 id="Lexical-analysis"><a class="header-anchor" href="#Lexical-analysis">¶</a>Lexical analysis</h4>
+<ul>
+<li>
+<p>All necessary characters not required by the compiler, such as the white space and comments, are removed</p>
+</li>
+<li>
+<p><font color="#4a69bd">The white space removed // redundant characters are removed // removal of comments // identification of errors</font></p>
+</li>
+<li>
+<p>Tokenization</p>
+<ul>
+<li>Using a keyword table that contains all the tokens for reserved keywords and symbols</li>
+<li>Convert the source program into tokens</li>
+<li><u>Keyword table</u>
+<ul>
+<li><font color="#4a69bd">The reserved keyword used</font></li>
+<li><font color="#4a69bd">The operator used</font></li>
+<li><font color="#4a69bd">Their matching token</font><br>
+<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/keyword table.png" align="middle" style="zoom:50%;"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Variables, constants, and identifiers added to a symbol table, and are then converted into locations/address</p>
+<ul>
+<li><u>Symbol table</u>
+<ul>
+<li><font color="#4a69bd">Identifier name used </font></li>
+<li><font color="#4a69bd">The data type </font></li>
+<li><font color="#4a69bd">Role: e.g. Constant, array, procedure</font></li>
+<li><font color="#4a69bd">Location marker, value of constant</font></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/symboltable.png" style="zoom:50%;">
+<p><u>Explain how the keyword table and symbol table are used to translate the source code program</u></p>
+<ul>
+<li><font color="#4a69bd">Keywords are looked up in the keyword table</font></li>
+<li><font color="#4a69bd">They are represented by tokens</font></li>
+<li><font color="#4a69bd">Identifiers are looked up in the symbol table</font></li>
+<li><font color="#4a69bd">They are converted into location/address</font></li>
+<li><font color="#4a69bd">Used to create a sequence of tokens (for the program)</font></li>
+</ul>
+<h4 id="Syntax-analysis"><a class="header-anchor" href="#Syntax-analysis">¶</a>Syntax analysis</h4>
+<ul>
+<li>Output from the lexical analysis is checked for grammatical/syntax errors - <code>parsing</code></li>
+<li>The rules for <code>parsing</code> can be set out in Backus-Naur form(BNF) notation</li>
+<li>If errors are found: each statement and the associated error is outputted, but the next stage, code generation, will not be attempted</li>
+<li>If no error is found: passed to the next stage of compilation</li>
+<li><code>--</code></li>
+<li><font color="#4a69bd">Construction of a parse tree / parsing</font></li>
+<li><font color="#4a69bd">Checking that the rules of grammar/syntax have been obeyed</font></li>
+<li><font color="#4a69bd">Production of an error report</font></li>
+</ul>
+<h4 id="Code-generation"><a class="header-anchor" href="#Code-generation">¶</a>Code generation</h4>
+<ul>
+<li>Produces an object program to perform the task defined in the source code</li>
+<li>The object program is in machine-readable form(binary):
+<ul>
+<li>Either in machine code that can be directly executed by the CPU</li>
+<li>Or in intermediate code that is converted into machine code when the program is loaded</li>
+</ul>
+</li>
+</ul>
+<h4 id="Optimization"><a class="header-anchor" href="#Optimization">¶</a>Optimization</h4>
+<ul>
+<li>Performing the task using the <u>minimum amount of resources</u>
+<ul>
+<li><font color="#4a69bd">Execution time, storage space, memory, and CPU use.</font></li>
+</ul>
+</li>
+<li>
+<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/optimization.jpg" style="zoom: 33%;">
+</li>
+</ul>
+<p><u>Why code is optimized:</u></p>
+<ul>
+<li><font color="#4a69bd">Redundant code removed</font></li>
+<li><font color="#4a69bd">Program requires less memory</font></li>
+<li><font color="#4a69bd">Code reorganized to make it more efficient</font></li>
+<li><font color="#4a69bd">Program will complete task in a shorter time</font></li>
+</ul>
+<p><u>Why optimization is necessary</u></p>
+<ul>
+<li><font color="#4a69bd">Optimisation means the code would have fewer instructions</font></li>
+<li><font color="#4a69bd">Optimised code occupies less memory in space</font></li>
+<li><font color="#4a69bd">Fewer instructions reduce the execution time of the program</font></li>
+</ul>
+<p><u>Benefits</u></p>
+<ul>
+<li><font color="#4a69bd">Code has fewer instructions/occupies less memory in space</font></li>
+<li><font color="#4a69bd">Shortens the execution time for the program // time taken to execute whole program decreases</font></li>
+</ul>
+<h3 id="Past-paper-questions-v7"><a class="header-anchor" href="#Past-paper-questions-v7">¶</a>Past-paper questions</h3>
+<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq1.png" style="zoom: 67%;">
+<ul>
+<li><font color="#4a69bd">Remove the second instances of LDD 436 // remove line 04</font></li>
+<li><font color="#4a69bd">Remove the second instance s of ADD 437 // remove line 05</font></li>
+<li><font color="#4a69bd">The value required is already stored in the accumulator</font></li>
+</ul>
+<hr>
+<p><u>Why compiled version helps protect the security of the source code</u></p>
+<ul>
+<li><font color="#4a69bd">Compiler produces executable version - not readable</font></li>
+<li><font color="#4a69bd">Difficult for reverse engineering</font></li>
+</ul>
+<hr>
+<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/drawline.png" style="zoom: 67%;">
+<hr>
+<h2 id="BNF-Syntax-diagram"><a class="header-anchor" href="#BNF-Syntax-diagram">¶</a>BNF &amp; Syntax diagram</h2>
+<h3 id="Past-paper-questions-v8"><a class="header-anchor" href="#Past-paper-questions-v8">¶</a>Past-paper questions</h3>
+<ol>
+<li></li>
+</ol>
+<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq2.1.png" style="zoom: 80%;">
+<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq2.2.png" alt></p>
+<hr>
+<ol start="2">
+<li></li>
+</ol>
+<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Cppq3.1.png" alt></p>
+<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq3.2.png" style="zoom: 67%;">
+<hr>
+<ol start="3">
+<li></li>
+</ol>
+<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq4.1.png" alt></p>
+<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq4.2.png" alt></p>
+<hr>
+<h2 id="Reverse-Polish-notation"><a class="header-anchor" href="#Reverse-Polish-notation">¶</a>Reverse Polish notation</h2>
+<blockquote>
+<p>Infix notation: operators are in between their operands</p>
+<p>Postfix notation / Reverse Polish notation: Operators are written after operands</p>
+<p>Prefix notation / Polish notation: operators are written before operands</p>
+</blockquote>
+<p>🔗:<a href="https://www.cs.man.ac.uk/~pjj/cs212/fix.html">Understanding infix, postfix, and prefix - lecture note from university of manchester</a></p>
+<hr>
+<p><u>Why RPN can be used to evaluate expressions:</u></p>
+<ul>
+<li><font color="#4a69bd">Reverse polish notation provides and unambiguous method of representing an expression</font></li>
+<li><font color="#4a69bd">Reading from left to right</font></li>
+<li><font color="#4a69bd">Without need to use bracket</font></li>
+<li><font color="#4a69bd">With no need for rules of precedence</font></li>
+</ul>
+<p><u>Explain how RPN is used by an interpreter to evaluate expression:</u></p>
+<ul>
+<li><font color="#4a69bd">Expressions are always evaluated from left to right</font></li>
+<li><font color="#4a69bd">Each operator uses two previous values on the stack</font></li>
+<li><font color="#4a69bd">Pushing and popping identifiers on a stack</font></li>
+</ul>
+<p><u>Data structure to evaluate an expression in RPN</u></p>
+<ul>
+<li><font color="#4a69bd">Stack</font>
+<ul>
+<li><font color="#4a69bd">The operands are popped from the stack in reverse order to how they were pushed</font></li>
+</ul>
+</li>
+<li><font color="#4a69bd">Binary tree</font>
+<ul>
+<li><font color="#4a69bd">Allows both infix and postfix to be evaluated (tree traversal)</font></li>
+</ul>
+</li>
+</ul>
+<p><u>Describe the main steps in the evaluation of a Reverse Polish Notation(RPN) expression using a stack</u></p>
+<ul>
+<li><font color="#4a69bd">Working from left to right in the expression</font></li>
+<li><font color="#4a69bd">If element is a number, push that number into stack</font></li>
+<li><font color="#4a69bd">If element is an operator, then pop the first two numbers on the stack</font></li>
+<li><font color="#4a69bd">… perform that operations on these two numbers</font></li>
+<li><font color="#4a69bd">PUSH result back into stack</font></li>
+<li><font color="#4a69bd">END once the last item in the expression has been dealt with</font></li>
+</ul>
+<p><u>One advantage of the use of RPN is that evaluation of expressions does not require rules of precedence; Explain this statement</u></p>
+<ul>
+<li><font color="#4a69bd">Rules of precedence means different operators have different priorities; for example multiplication is done before addition</font></li>
+<li><font color="#4a69bd">In RPN, evaluation of expression is from left to right // operator are used in the sequence in which they were read</font></li>
+<li><font color="#4a69bd">No need for brackets // infix may require brackets</font></li>
+</ul>
+<p><u>Write the Reverse Polish Notation for the following expressions</u></p>
+<ol>
+<li>
+<p>(A+B)*(C-D)</p>
+<ul>
+<li><font color="#4a69bd">AB+</font></li>
+<li><font color="#4a69bd">CD-*</font></li>
+</ul>
+<p>Full answer: AB+CD-*</p>
+</li>
+<li>
+<p>((-A/B)*4)/(C-D)</p>
+<ul>
+<li><font color="#4a69bd">A-</font></li>
+<li><font color="#4a69bd">B/4*</font></li>
+<li><font color="#4a69bd">CD-/</font></li>
+</ul>
+<p>Full answer: A-B/4*CD-/</p>
+</li>
+</ol>
+<h3 id="Evaluation-of-RPN"><a class="header-anchor" href="#Evaluation-of-RPN">¶</a>Evaluation of RPN</h3>
+<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/rpneva.jpg" alt></p>
+<p>🔗<a href="https://www.includehelp.com/c/infix-to-postfix-conversion-using-stack-with-c-program.aspx">Infix To Postfix Conversion Using Stack</a></p>
+]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>ALCS</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Chapter 17: Security</title>
     <url>/Notes/ALCS/Chapter17_Security/</url>
     <content><![CDATA[<p><img src="/Notes/ALCS/Chapter17_Security/security.png" alt></p>
@@ -1877,7 +2113,7 @@
 <li>It is possible for polarisation of light to be altered while travelling down fibre obtic cables</li>
 <li>Due to the inherent security system generated by quantum cryptography, terrorists and other criminals can use the technology to hide their activities from government law enforces</li>
 </ul>
-<h3 id="Past-paper-questions-v7"><a class="header-anchor" href="#Past-paper-questions-v7">¶</a>Past paper questions</h3>
+<h3 id="Past-paper-questions-v9"><a class="header-anchor" href="#Past-paper-questions-v9">¶</a>Past paper questions</h3>
 <ol>
 <li></li>
 </ol>
@@ -1960,7 +2196,7 @@
 <li>… without the possibility that the communication being intercepted or scrutinized by an unauthorized party</li>
 <li>… because sensitive data is being transferred</li>
 </ul>
-<h3 id="Past-paper-questions-v8"><a class="header-anchor" href="#Past-paper-questions-v8">¶</a>Past paper questions</h3>
+<h3 id="Past-paper-questions-v10"><a class="header-anchor" href="#Past-paper-questions-v10">¶</a>Past paper questions</h3>
 <ol>
 <li></li>
 </ol>
@@ -2135,7 +2371,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="Past-paper-questions-v9"><a class="header-anchor" href="#Past-paper-questions-v9">¶</a>Past paper questions</h3>
+<h3 id="Past-paper-questions-v11"><a class="header-anchor" href="#Past-paper-questions-v11">¶</a>Past paper questions</h3>
 <ol>
 <li></li>
 </ol>
@@ -2199,282 +2435,6 @@
         <tag>SSL/TLS</tag>
         <tag>Digital Certification</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Chapter 16.2: Translation Software</title>
-    <url>/Notes/ALCS/Chapter16.2_TranslationSoftware/</url>
-    <content><![CDATA[<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/syllabus16.2.png" alt></p>
-<hr>
-<span id="more"></span>
-<h2 id="Interpreter"><a class="header-anchor" href="#Interpreter">¶</a>Interpreter</h2>
-<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/interpreter.jpg" style="zoom:50%;">
-<p><u>How an interpreter can executes the program without producing a complete translated version</u></p>
-<ul>
-<li><font color="#4a69bd">An interpreter examines source code one statement at a time</font></li>
-<li><font color="#4a69bd">Check each statement for errors</font></li>
-<li><font color="#4a69bd">If no error is found, the statement is executed</font></li>
-<li><font color="#4a69bd">If an error is found, this is reported and the interpreter halts</font></li>
-<li><font color="#4a69bd">Interpretation is repeated for every iteration in repeated section of code/ in loops</font></li>
-<li><font color="#4a69bd">Interpretation repeats every time the program runs</font></li>
-</ul>
-<p><u>Why debug with interpreter</u></p>
-<ul>
-<li><font color="#4a69bd">Debugging is faster</font></li>
-<li><font color="#4a69bd">Can debug incomplete code</font></li>
-<li><font color="#4a69bd">Better diagnostics</font></li>
-</ul>
-<h2 id="Compiler"><a class="header-anchor" href="#Compiler">¶</a>Compiler</h2>
-<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/compiler.jpg" style="zoom: 33%;">
-<h3 id="Compilation-stages"><a class="header-anchor" href="#Compilation-stages">¶</a>Compilation stages</h3>
-<h4 id="Lexical-analysis"><a class="header-anchor" href="#Lexical-analysis">¶</a>Lexical analysis</h4>
-<ul>
-<li>
-<p>All necessary characters not required by the compiler, such as the white space and comments, are removed</p>
-</li>
-<li>
-<p><font color="#4a69bd">The white space removed // redundant characters are removed // removal of comments // identification of errors</font></p>
-</li>
-<li>
-<p>Tokenization</p>
-<ul>
-<li>Using a keyword table that contains all the tokens for reserved keywords and symbols</li>
-<li>Convert the source program into tokens</li>
-<li><u>Keyword table</u>
-<ul>
-<li><font color="#4a69bd">The reserved keyword used</font></li>
-<li><font color="#4a69bd">The operator used</font></li>
-<li><font color="#4a69bd">Their matching token</font><br>
-<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/keyword table.png" align="middle" style="zoom:50%;"></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>Variables, constants, and identifiers added to a symbol table, and are then converted into locations/address</p>
-<ul>
-<li><u>Symbol table</u>
-<ul>
-<li><font color="#4a69bd">Identifier name used </font></li>
-<li><font color="#4a69bd">The data type </font></li>
-<li><font color="#4a69bd">Role: e.g. Constant, array, procedure</font></li>
-<li><font color="#4a69bd">Location marker, value of constant</font></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/symboltable.png" style="zoom:50%;">
-<p><u>Explain how the keyword table and symbol table are used to translate the source code program</u></p>
-<ul>
-<li><font color="#4a69bd">Keywords are looked up in the keyword table</font></li>
-<li><font color="#4a69bd">They are represented by tokens</font></li>
-<li><font color="#4a69bd">Identifiers are looked up in the symbol table</font></li>
-<li><font color="#4a69bd">They are converted into location/address</font></li>
-<li><font color="#4a69bd">Used to create a sequence of tokens (for the program)</font></li>
-</ul>
-<h4 id="Syntax-analysis"><a class="header-anchor" href="#Syntax-analysis">¶</a>Syntax analysis</h4>
-<ul>
-<li>Output from the lexical analysis is checked for grammatical/syntax errors - <code>parsing</code></li>
-<li>The rules for <code>parsing</code> can be set out in Backus-Naur form(BNF) notation</li>
-<li>If errors are found: each statement and the associated error is outputted, but the next stage, code generation, will not be attempted</li>
-<li>If no error is found: passed to the next stage of compilation</li>
-<li><code>--</code></li>
-<li><font color="#4a69bd">Construction of a parse tree / parsing</font></li>
-<li><font color="#4a69bd">Checking that the rules of grammar/syntax have been obeyed</font></li>
-<li><font color="#4a69bd">Production of an error report</font></li>
-</ul>
-<h4 id="Code-generation"><a class="header-anchor" href="#Code-generation">¶</a>Code generation</h4>
-<ul>
-<li>Produces an object program to perform the task defined in the source code</li>
-<li>The object program is in machine-readable form(binary):
-<ul>
-<li>Either in machine code that can be directly executed by the CPU</li>
-<li>Or in intermediate code that is converted into machine code when the program is loaded</li>
-</ul>
-</li>
-</ul>
-<h4 id="Optimization"><a class="header-anchor" href="#Optimization">¶</a>Optimization</h4>
-<ul>
-<li>Performing the task using the <u>minimum amount of resources</u>
-<ul>
-<li><font color="#4a69bd">Execution time, storage space, memory, and CPU use.</font></li>
-</ul>
-</li>
-<li>
-<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/optimization.jpg" style="zoom: 33%;">
-</li>
-</ul>
-<p><u>Why code is optimized:</u></p>
-<ul>
-<li><font color="#4a69bd">Redundant code removed</font></li>
-<li><font color="#4a69bd">Program requires less memory</font></li>
-<li><font color="#4a69bd">Code reorganized to make it more efficient</font></li>
-<li><font color="#4a69bd">Program will complete task in a shorter time</font></li>
-</ul>
-<p><u>Why optimization is necessary</u></p>
-<ul>
-<li><font color="#4a69bd">Optimisation means the code would have fewer instructions</font></li>
-<li><font color="#4a69bd">Optimised code occupies less memory in space</font></li>
-<li><font color="#4a69bd">Fewer instructions reduce the execution time of the program</font></li>
-</ul>
-<p><u>Benefits</u></p>
-<ul>
-<li><font color="#4a69bd">Code has fewer instructions/occupies less memory in space</font></li>
-<li><font color="#4a69bd">Shortens the execution time for the program // time taken to execute whole program decreases</font></li>
-</ul>
-<h3 id="Past-paper-questions-v10"><a class="header-anchor" href="#Past-paper-questions-v10">¶</a>Past-paper questions</h3>
-<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq1.png" style="zoom: 67%;">
-<ul>
-<li><font color="#4a69bd">Remove the second instances of LDD 436 // remove line 04</font></li>
-<li><font color="#4a69bd">Remove the second instance s of ADD 437 // remove line 05</font></li>
-<li><font color="#4a69bd">The value required is already stored in the accumulator</font></li>
-</ul>
-<hr>
-<p><u>Why compiled version helps protect the security of the source code</u></p>
-<ul>
-<li><font color="#4a69bd">Compiler produces executable version - not readable</font></li>
-<li><font color="#4a69bd">Difficult for reverse engineering</font></li>
-</ul>
-<hr>
-<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/drawline.png" style="zoom: 67%;">
-<hr>
-<h2 id="BNF-Syntax-diagram"><a class="header-anchor" href="#BNF-Syntax-diagram">¶</a>BNF &amp; Syntax diagram</h2>
-<h3 id="Past-paper-questions-v11"><a class="header-anchor" href="#Past-paper-questions-v11">¶</a>Past-paper questions</h3>
-<ol>
-<li></li>
-</ol>
-<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq2.1.png" style="zoom: 80%;">
-<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq2.2.png" alt></p>
-<hr>
-<ol start="2">
-<li></li>
-</ol>
-<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/F:%5Chexocode%5Csource_posts%5CChapter16.2_TranslationSoftware%5Cppq3.1.png" alt></p>
-<img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq3.2.png" style="zoom: 67%;">
-<hr>
-<ol start="3">
-<li></li>
-</ol>
-<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq4.1.png" alt></p>
-<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/ppq4.2.png" alt></p>
-<hr>
-<h2 id="Reverse-Polish-notation"><a class="header-anchor" href="#Reverse-Polish-notation">¶</a>Reverse Polish notation</h2>
-<blockquote>
-<p>Infix notation: operators are in between their operands</p>
-<p>Postfix notation / Reverse Polish notation: Operators are written after operands</p>
-<p>Prefix notation / Polish notation: operators are written before operands</p>
-</blockquote>
-<p>🔗:<a href="https://www.cs.man.ac.uk/~pjj/cs212/fix.html">Understanding infix, postfix, and prefix - lecture note from university of manchester</a></p>
-<hr>
-<p><u>Why RPN can be used to evaluate expressions:</u></p>
-<ul>
-<li><font color="#4a69bd">Reverse polish notation provides and unambiguous method of representing an expression</font></li>
-<li><font color="#4a69bd">Reading from left to right</font></li>
-<li><font color="#4a69bd">Without need to use bracket</font></li>
-<li><font color="#4a69bd">With no need for rules of precedence</font></li>
-</ul>
-<p><u>Explain how RPN is used by an interpreter to evaluate expression:</u></p>
-<ul>
-<li><font color="#4a69bd">Expressions are always evaluated from left to right</font></li>
-<li><font color="#4a69bd">Each operator uses two previous values on the stack</font></li>
-<li><font color="#4a69bd">Pushing and popping identifiers on a stack</font></li>
-</ul>
-<p><u>Data structure to evaluate an expression in RPN</u></p>
-<ul>
-<li><font color="#4a69bd">Stack</font>
-<ul>
-<li><font color="#4a69bd">The operands are popped from the stack in reverse order to how they were pushed</font></li>
-</ul>
-</li>
-<li><font color="#4a69bd">Binary tree</font>
-<ul>
-<li><font color="#4a69bd">Allows both infix and postfix to be evaluated (tree traversal)</font></li>
-</ul>
-</li>
-</ul>
-<p><u>Describe the main steps in the evaluation of a Reverse Polish Notation(RPN) expression using a stack</u></p>
-<ul>
-<li><font color="#4a69bd">Working from left to right in the expression</font></li>
-<li><font color="#4a69bd">If element is a number, push that number into stack</font></li>
-<li><font color="#4a69bd">If element is an operator, then pop the first two numbers on the stack</font></li>
-<li><font color="#4a69bd">… perform that operations on these two numbers</font></li>
-<li><font color="#4a69bd">PUSH result back into stack</font></li>
-<li><font color="#4a69bd">END once the last item in the expression has been dealt with</font></li>
-</ul>
-<p><u>One advantage of the use of RPN is that evaluation of expressions does not require rules of precedence; Explain this statement</u></p>
-<ul>
-<li><font color="#4a69bd">Rules of precedence means different operators have different priorities; for example multiplication is done before addition</font></li>
-<li><font color="#4a69bd">In RPN, evaluation of expression is from left to right // operator are used in the sequence in which they were read</font></li>
-<li><font color="#4a69bd">No need for brackets // infix may require brackets</font></li>
-</ul>
-<p><u>Write the Reverse Polish Notation for the following expressions</u></p>
-<ol>
-<li>
-<p>(A+B)*(C-D)</p>
-<ul>
-<li><font color="#4a69bd">AB+</font></li>
-<li><font color="#4a69bd">CD-*</font></li>
-</ul>
-<p>Full answer: AB+CD-*</p>
-</li>
-<li>
-<p>((-A/B)*4)/(C-D)</p>
-<ul>
-<li><font color="#4a69bd">A-</font></li>
-<li><font color="#4a69bd">B/4*</font></li>
-<li><font color="#4a69bd">CD-/</font></li>
-</ul>
-<p>Full answer: A-B/4*CD-/</p>
-</li>
-</ol>
-<h3 id="Evaluation-of-RPN"><a class="header-anchor" href="#Evaluation-of-RPN">¶</a>Evaluation of RPN</h3>
-<p><img src="/Notes/ALCS/Chapter16.2_TranslationSoftware/rpneva.jpg" alt></p>
-<p>🔗<a href="https://www.includehelp.com/c/infix-to-postfix-conversion-using-stack-with-c-program.aspx">Infix To Postfix Conversion Using Stack</a></p>
-]]></content>
-      <categories>
-        <category>Notes</category>
-        <category>ALCS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Chapter19.2: Recursion</title>
-    <url>/Notes/ALCS/Chapter19.2_Recursion/</url>
-    <content><![CDATA[<p><img src="/Notes/ALCS/Chapter19.2_Recursion/syllabus19.2.png" alt></p>
-<span id="more"></span>
-<h3 id="u-Essential-features-of-recursion-u"><a class="header-anchor" href="#u-Essential-features-of-recursion-u">¶</a><u>Essential features of recursion:</u></h3>
-<ul>
-<li><font color="#4a69bd">It is defined in terms of itself // it calls itself</font></li>
-<li><font color="#4a69bd">It has a stopping condition</font></li>
-<li><font color="#4a69bd">It has self-contained subroutine</font></li>
-<li><font color="#4a69bd">It can return data to its previous call</font></li>
-<li><code>--</code></li>
-<li><font color="#4a69bd">Must have a base case/ stopping condition</font></li>
-<li><font color="#4a69bd">Must have a general case</font></li>
-<li><font color="#4a69bd">… which calls itself recursively // defined in terms of itself</font></li>
-<li><font color="#4a69bd">… which changes its state and moves towards the base case</font></li>
-<li><font color="#4a69bd">Unwinding occurs once the base case is reached</font></li>
-</ul>
-<p><u>Explain a reason why a stack is a suitable abstract data type(ADT) to implement recursion:</u></p>
-<ul>
-<li><font color="#4a69bd">A stack is a LIFO(last in first out) data structure</font></li>
-<li><font color="#4a69bd">Each recursive call is pushed to the stack</font></li>
-<li><font color="#4a69bd">And is popped when the function ends</font></li>
-<li><font color="#4a69bd">Enable unwinding/back tracking</font></li>
-<li><font color="#4a69bd">… to maintain the required order</font></li>
-</ul>
-<h3 id="u-What-a-compiler-has-to-do-to-translate-recursive-programming-code-u"><a class="header-anchor" href="#u-What-a-compiler-has-to-do-to-translate-recursive-programming-code-u">¶</a><u>What a compiler has to do to translate recursive programming code</u></h3>
-<ul>
-<li><font color="#4a69bd">When the recursive call is made, all values/data are put on</font></li>
-<li><font color="#4a69bd">… the stack</font></li>
-<li><font color="#4a69bd">When the stopping condition/base case is met</font></li>
-<li><font color="#4a69bd">… the algorithm unwinds</font></li>
-<li><font color="#4a69bd">… the last sets of values are taken off the stack (in reverse order)</font></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Notes</category>
-        <category>ALCS</category>
-      </categories>
   </entry>
   <entry>
     <title>Chapter 18: Artificial Intelligence</title>
@@ -2851,6 +2811,204 @@
       </tags>
   </entry>
   <entry>
+    <title>Chapter19.2: Recursion</title>
+    <url>/Notes/ALCS/Chapter19.2_Recursion/</url>
+    <content><![CDATA[<p><img src="/Notes/ALCS/Chapter19.2_Recursion/syllabus19.2.png" alt></p>
+<span id="more"></span>
+<h3 id="u-Essential-features-of-recursion-u"><a class="header-anchor" href="#u-Essential-features-of-recursion-u">¶</a><u>Essential features of recursion:</u></h3>
+<ul>
+<li><font color="#4a69bd">It is defined in terms of itself // it calls itself</font></li>
+<li><font color="#4a69bd">It has a stopping condition</font></li>
+<li><font color="#4a69bd">It has self-contained subroutine</font></li>
+<li><font color="#4a69bd">It can return data to its previous call</font></li>
+<li><code>--</code></li>
+<li><font color="#4a69bd">Must have a base case/ stopping condition</font></li>
+<li><font color="#4a69bd">Must have a general case</font></li>
+<li><font color="#4a69bd">… which calls itself recursively // defined in terms of itself</font></li>
+<li><font color="#4a69bd">… which changes its state and moves towards the base case</font></li>
+<li><font color="#4a69bd">Unwinding occurs once the base case is reached</font></li>
+</ul>
+<p><u>Explain a reason why a stack is a suitable abstract data type(ADT) to implement recursion:</u></p>
+<ul>
+<li><font color="#4a69bd">A stack is a LIFO(last in first out) data structure</font></li>
+<li><font color="#4a69bd">Each recursive call is pushed to the stack</font></li>
+<li><font color="#4a69bd">And is popped when the function ends</font></li>
+<li><font color="#4a69bd">Enable unwinding/back tracking</font></li>
+<li><font color="#4a69bd">… to maintain the required order</font></li>
+</ul>
+<h3 id="u-What-a-compiler-has-to-do-to-translate-recursive-programming-code-u"><a class="header-anchor" href="#u-What-a-compiler-has-to-do-to-translate-recursive-programming-code-u">¶</a><u>What a compiler has to do to translate recursive programming code</u></h3>
+<ul>
+<li><font color="#4a69bd">When the recursive call is made, all values/data are put on</font></li>
+<li><font color="#4a69bd">… the stack</font></li>
+<li><font color="#4a69bd">When the stopping condition/base case is met</font></li>
+<li><font color="#4a69bd">… the algorithm unwinds</font></li>
+<li><font color="#4a69bd">… the last sets of values are taken off the stack (in reverse order)</font></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>ALCS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Chapter20.1: Programming Paradigms</title>
+    <url>/Notes/ALCS/Chapter20.1_ProgrammingParadigm/</url>
+    <content><![CDATA[<p><img src="/Notes/ALCS/Chapter20.1_ProgrammingParadigm/syllabus20.1.png" alt></p>
+<span id="more"></span>
+<hr>
+<blockquote>
+<p><strong>Programming paradigms</strong>: <font color="#4a69bd">A programming style/classification // characteristics/features that programming language has/uses</font></p>
+</blockquote>
+<h2 id="Low-level"><a class="header-anchor" href="#Low-level">¶</a>Low-level</h2>
+<table>
+<thead>
+<tr>
+<th>Modes of addressing</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Immediate</td>
+<td>The operand is the data being used</td>
+</tr>
+<tr>
+<td>Direct</td>
+<td>The operand is the address of the data being used</td>
+</tr>
+<tr>
+<td>Indirect</td>
+<td>The content stored in the content of the operand is the data being used</td>
+</tr>
+<tr>
+<td>Relative</td>
+<td>The address of data being used is the current address add to the operand</td>
+</tr>
+<tr>
+<td>Indexed</td>
+<td>The address of the data being used is the content of the operand added to the content of index register</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/Notes/ALCS/Chapter20.1_ProgrammingParadigm/assembly.png" alt></p>
+<hr>
+<h2 id="Imperative"><a class="header-anchor" href="#Imperative">¶</a>Imperative</h2>
+<p><u>Describe what is meant by imperative programming paradigm</u></p>
+<ul>
+<li><font color="#4a69bd">A sequence of steps that changes the state of the program</font></li>
+<li><font color="#4a69bd">The steps are in the order they should be carried out</font></li>
+<li><font color="#4a69bd">e.g. procedural programming/language</font></li>
+<li><font color="#4a69bd">Groups code into self-contained blocks // spilt the program into modules</font></li>
+<li><font color="#4a69bd">… which are subroutines</font></li>
+<li><code>--</code></li>
+<li><font color="#4a69bd">Imperative languages use variables</font></li>
+<li><font color="#4a69bd">… which are changed using assignment statement</font></li>
+<li><font color="#4a69bd">… they rely on a method of repetition/iteration</font></li>
+<li><font color="#4a69bd">Statement provide a sequence of commands for the computer to perform</font></li>
+<li><font color="#4a69bd">… in the order written</font></li>
+<li><font color="#4a69bd">… each line of code changes something in the program run</font></li>
+</ul>
+<h2 id="Object-Oriented-Programming"><a class="header-anchor" href="#Object-Oriented-Programming">¶</a>Object Oriented Programming</h2>
+<blockquote>
+<p><font color="#4a69bd">A programming methodology that uses self-contained objects, which contain programming statements(methods) and data, and which communicate with each other</font></p>
+</blockquote>
+<p><u>Explain what is meant by Object Oriented programming</u></p>
+<ul>
+<li><font color="#4a69bd">Create classes</font></li>
+<li><font color="#4a69bd">… as a blueprint for an object // objects are instances of classes</font></li>
+<li><font color="#4a69bd">… that have properties/attributes and methods</font></li>
+<li><font color="#4a69bd">… that can be private to the class // properties that can be only accessed by the class’s methods // encapsulation</font></li>
+<li><font color="#4a69bd">Subclass can inherit from superclass (child and parent)</font></li>
+<li><font color="#4a69bd">A subclass can inherit the methods and properties from the superclass</font></li>
+<li><font color="#4a69bd">A subclass can change the methods from the superclass // subclass can use polymorphism</font></li>
+<li><font color="#4a69bd">Objects can interact with each other</font></li>
+</ul>
+<p><u>Explain the difference between a class and an object</u><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<ul>
+<li><font color="#4a69bd">A class is the blueprint/design/template (from which the object are later created)</font></li>
+<li><font color="#4a69bd">A class consists of properties/attributes and methods/procedures/functions</font></li>
+<li><font color="#4a69bd">An object is an instance of a class</font></li>
+<li><font color="#4a69bd">An object must be based on a class definition</font></li>
+<li><font color="#4a69bd">Many objects can exists for the same class</font></li>
+</ul>
+<h4 id="Objects"><a class="header-anchor" href="#Objects">¶</a>Objects:</h4>
+<blockquote>
+<p>An instance of a class that is self-contained and includes data and methods</p>
+<ul>
+<li>Many instances can exists for the same class</li>
+<li>Must be based on the class definition</li>
+</ul>
+</blockquote>
+<h4 id="Properties-v2"><a class="header-anchor" href="#Properties-v2">¶</a>Properties</h4>
+<blockquote>
+<p>Data and methods within an object that perform a named action</p>
+</blockquote>
+<h4 id="Methods"><a class="header-anchor" href="#Methods">¶</a>Methods</h4>
+<blockquote>
+<p>A programmed procedure that is defined as part of a class</p>
+</blockquote>
+<h4 id="Classes"><a class="header-anchor" href="#Classes">¶</a>Classes</h4>
+<blockquote>
+<p>A template/blueprint defining the methods and data of a certain type of object</p>
+</blockquote>
+<h4 id="Inheritance"><a class="header-anchor" href="#Inheritance">¶</a>Inheritance</h4>
+<blockquote>
+<p>Process in which the methods and data from one class, a superclass or base class is copied to another class, a derived class/subclass</p>
+</blockquote>
+<h4 id="Polymorphism"><a class="header-anchor" href="#Polymorphism">¶</a>Polymorphism</h4>
+<blockquote>
+<p>Feature of OOP that allows a method to be defined more than once in a class, so it can be used in different situations</p>
+</blockquote>
+<h4 id="Containment-aggregation"><a class="header-anchor" href="#Containment-aggregation">¶</a>Containment(aggregation)</h4>
+<blockquote>
+<p>Defines a <code>one-way</code> relationship / <code>has-a</code> relationship between two classes. In aggregation, the objects can exists independently with each other. <sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+</blockquote>
+<h4 id="Encapsulation"><a class="header-anchor" href="#Encapsulation">¶</a>Encapsulation</h4>
+<blockquote>
+<p>Process of putting data and methods together as a single unit, a class</p>
+</blockquote>
+<h4 id="Getter"><a class="header-anchor" href="#Getter">¶</a>Getter</h4>
+<blockquote>
+<p>A method that gets the value of a property</p>
+</blockquote>
+<h4 id="Setters"><a class="header-anchor" href="#Setters">¶</a>Setters</h4>
+<blockquote>
+<p>A method used to control changes to a variable</p>
+</blockquote>
+<h4 id="Instances"><a class="header-anchor" href="#Instances">¶</a>Instances</h4>
+<blockquote>
+<p>An occurrence of an object during the execution of a program</p>
+</blockquote>
+<h2 id="Declarative"><a class="header-anchor" href="#Declarative">¶</a>Declarative</h2>
+<blockquote>
+<p>Program that specify the desired result rather than how to get it</p>
+</blockquote>
+<ul>
+<li><font color="#4a69bd">Instruct a program of what is needed to done instead of how to do it</font></li>
+<li><font color="#4a69bd">… using facts and rules</font></li>
+<li><font color="#4a69bd">… using queries to satisfy goals</font></li>
+<li><font color="#4a69bd">Can be logical or functional</font></li>
+<li><font color="#4a69bd">Logical - states a program as a set of logical relations</font></li>
+<li><font color="#4a69bd">Functional - constructed by applying functions to arguments / uses a mathematical style</font></li>
+</ul>
+<hr>
+<p><img src="/Notes/ALCS/Chapter20.1_ProgrammingParadigm/drawline.png" alt></p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>9691 w13 32 q4 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://isaaccomputerscience.org/concepts/prog_oop_aggregation_composition">https://isaaccomputerscience.org/concepts/prog_oop_aggregation_composition</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>ALCS</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Chapter 20.2: File processing and Exception Handling</title>
     <url>/Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/</url>
     <content><![CDATA[<p><img src="/Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/syllabus.png" alt></p>
@@ -3096,7 +3254,7 @@
     <title>Contributors</title>
     <url>/uncategorized/Contributors/</url>
     <content><![CDATA[<h1>Contributors</h1>
-<h2 id="🐻Katrina-Liu"><a class="header-anchor" href="#🐻Katrina-Liu">¶</a>🐻Katrina Liu</h2>
+<h2 id="🐻Katrina-Liu"><a class="header-anchor" href="#🐻Katrina-Liu">¶</a>🐻<a href="https://katrinaliu.blog/">Katrina Liu</a></h2>
 <div class="note info"><p><strong>Determined &amp; offered suggestions on</strong> <mark class="label primary">themes</mark> and <mark class="label primary">style</mark> of page</p>
 <p><strong>Participated</strong>: <code>Beta</code> test</p>
 <p><strong>Contributed to:</strong></p>
@@ -3107,162 +3265,60 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Chapter20.1: Programming Paradigms</title>
-    <url>/Notes/ALCS/Chapter20.1_ProgrammingParadigm/</url>
-    <content><![CDATA[<p><img src="/Notes/ALCS/Chapter20.1_ProgrammingParadigm/syllabus20.1.png" alt></p>
+    <title>Deep Learning Recipe</title>
+    <url>/uncategorized/Deep-Learning-Recipe/</url>
+    <content><![CDATA[<h2 id="High-bias-and-Variance"><a class="header-anchor" href="#High-bias-and-Variance">¶</a>High bias and Variance</h2>
+<h3 id="High-Bias"><a class="header-anchor" href="#High-Bias">¶</a>High Bias</h3>
+<ul>
+<li>Underfitting the training set</li>
+<li>Training set performance similar to development set performance</li>
+</ul>
+<h3 id="High-variance"><a class="header-anchor" href="#High-variance">¶</a>High variance</h3>
+<ul>
+<li>Overfitting the training set</li>
+<li>Training set performance superior than development set performance</li>
+</ul>
 <span id="more"></span>
-<hr>
+<h3 id="Examples"><a class="header-anchor" href="#Examples">¶</a>Examples</h3>
 <blockquote>
-<p><strong>Programming paradigms</strong>: <font color="#4a69bd">A programming style/classification // characteristics/features that programming language has/uses</font></p>
+<p>Assume that the Bayes error is nearly 0%</p>
 </blockquote>
-<h2 id="Low-level"><a class="header-anchor" href="#Low-level">¶</a>Low-level</h2>
-<table>
-<thead>
-<tr>
-<th>Modes of addressing</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Immediate</td>
-<td>The operand is the data being used</td>
-</tr>
-<tr>
-<td>Direct</td>
-<td>The operand is the address of the data being used</td>
-</tr>
-<tr>
-<td>Indirect</td>
-<td>The content stored in the content of the operand is the data being used</td>
-</tr>
-<tr>
-<td>Relative</td>
-<td>The address of data being used is the current address add to the operand</td>
-</tr>
-<tr>
-<td>Indexed</td>
-<td>The address of the data being used is the content of the operand added to the content of index register</td>
-</tr>
-</tbody>
-</table>
-<p><img src="/Notes/ALCS/Chapter20.1_ProgrammingParadigm/assembly.png" alt></p>
-<hr>
-<h2 id="Imperative"><a class="header-anchor" href="#Imperative">¶</a>Imperative</h2>
-<p><u>Describe what is meant by imperative programming paradigm</u></p>
+<ol>
+<li>Training set error 1%; development set error 11%
 <ul>
-<li><font color="#4a69bd">A sequence of steps that changes the state of the program</font></li>
-<li><font color="#4a69bd">The steps are in the order they should be carried out</font></li>
-<li><font color="#4a69bd">e.g. procedural programming/language</font></li>
-<li><font color="#4a69bd">Groups code into self-contained blocks // spilt the program into modules</font></li>
-<li><font color="#4a69bd">… which are subroutines</font></li>
-<li><code>--</code></li>
-<li><font color="#4a69bd">Imperative languages use variables</font></li>
-<li><font color="#4a69bd">… which are changed using assignment statement</font></li>
-<li><font color="#4a69bd">… they rely on a method of repetition/iteration</font></li>
-<li><font color="#4a69bd">Statement provide a sequence of commands for the computer to perform</font></li>
-<li><font color="#4a69bd">… in the order written</font></li>
-<li><font color="#4a69bd">… each line of code changes something in the program run</font></li>
+<li><code>High variance</code></li>
 </ul>
-<h2 id="Object-Oriented-Programming"><a class="header-anchor" href="#Object-Oriented-Programming">¶</a>Object Oriented Programming</h2>
-<blockquote>
-<p><font color="#4a69bd">A programming methodology that uses self-contained objects, which contain programming statements(methods) and data, and which communicate with each other</font></p>
-</blockquote>
-<p><u>Explain what is meant by Object Oriented programming</u></p>
-<ul>
-<li><font color="#4a69bd">Create classes</font></li>
-<li><font color="#4a69bd">… as a blueprint for an object // objects are instances of classes</font></li>
-<li><font color="#4a69bd">… that have properties/attributes and methods</font></li>
-<li><font color="#4a69bd">… that can be private to the class // properties that can be only accessed by the class’s methods // encapsulation</font></li>
-<li><font color="#4a69bd">Subclass can inherit from superclass (child and parent)</font></li>
-<li><font color="#4a69bd">A subclass can inherit the methods and properties from the superclass</font></li>
-<li><font color="#4a69bd">A subclass can change the methods from the superclass // subclass can use polymorphism</font></li>
-<li><font color="#4a69bd">Objects can interact with each other</font></li>
-</ul>
-<p><u>Explain the difference between a class and an object</u><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
-<ul>
-<li><font color="#4a69bd">A class is the blueprint/design/template (from which the object are later created)</font></li>
-<li><font color="#4a69bd">A class consists of properties/attributes and methods/procedures/functions</font></li>
-<li><font color="#4a69bd">An object is an instance of a class</font></li>
-<li><font color="#4a69bd">An object must be based on a class definition</font></li>
-<li><font color="#4a69bd">Many objects can exists for the same class</font></li>
-</ul>
-<h4 id="Objects"><a class="header-anchor" href="#Objects">¶</a>Objects:</h4>
-<blockquote>
-<p>An instance of a class that is self-contained and includes data and methods</p>
-<ul>
-<li>Many instances can exists for the same class</li>
-<li>Must be based on the class definition</li>
-</ul>
-</blockquote>
-<h4 id="Properties-v2"><a class="header-anchor" href="#Properties-v2">¶</a>Properties</h4>
-<blockquote>
-<p>Data and methods within an object that perform a named action</p>
-</blockquote>
-<h4 id="Methods"><a class="header-anchor" href="#Methods">¶</a>Methods</h4>
-<blockquote>
-<p>A programmed procedure that is defined as part of a class</p>
-</blockquote>
-<h4 id="Classes"><a class="header-anchor" href="#Classes">¶</a>Classes</h4>
-<blockquote>
-<p>A template/blueprint defining the methods and data of a certain type of object</p>
-</blockquote>
-<h4 id="Inheritance"><a class="header-anchor" href="#Inheritance">¶</a>Inheritance</h4>
-<blockquote>
-<p>Process in which the methods and data from one class, a superclass or base class is copied to another class, a derived class/subclass</p>
-</blockquote>
-<h4 id="Polymorphism"><a class="header-anchor" href="#Polymorphism">¶</a>Polymorphism</h4>
-<blockquote>
-<p>Feature of OOP that allows a method to be defined more than once in a class, so it can be used in different situations</p>
-</blockquote>
-<h4 id="Containment-aggregation"><a class="header-anchor" href="#Containment-aggregation">¶</a>Containment(aggregation)</h4>
-<blockquote>
-<p>Defines a <code>one-way</code> relationship / <code>has-a</code> relationship between two classes. In aggregation, the objects can exists independently with each other. <sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
-</blockquote>
-<h4 id="Encapsulation"><a class="header-anchor" href="#Encapsulation">¶</a>Encapsulation</h4>
-<blockquote>
-<p>Process of putting data and methods together as a single unit, a class</p>
-</blockquote>
-<h4 id="Getter"><a class="header-anchor" href="#Getter">¶</a>Getter</h4>
-<blockquote>
-<p>A method that gets the value of a property</p>
-</blockquote>
-<h4 id="Setters"><a class="header-anchor" href="#Setters">¶</a>Setters</h4>
-<blockquote>
-<p>A method used to control changes to a variable</p>
-</blockquote>
-<h4 id="Instances"><a class="header-anchor" href="#Instances">¶</a>Instances</h4>
-<blockquote>
-<p>An occurrence of an object during the execution of a program</p>
-</blockquote>
-<h2 id="Declarative"><a class="header-anchor" href="#Declarative">¶</a>Declarative</h2>
-<blockquote>
-<p>Program that specify the desired result rather than how to get it</p>
-</blockquote>
-<ul>
-<li><font color="#4a69bd">Instruct a program of what is needed to done instead of how to do it</font></li>
-<li><font color="#4a69bd">… using facts and rules</font></li>
-<li><font color="#4a69bd">… using queries to satisfy goals</font></li>
-<li><font color="#4a69bd">Can be logical or functional</font></li>
-<li><font color="#4a69bd">Logical - states a program as a set of logical relations</font></li>
-<li><font color="#4a69bd">Functional - constructed by applying functions to arguments / uses a mathematical style</font></li>
-</ul>
-<hr>
-<p><img src="/Notes/ALCS/Chapter20.1_ProgrammingParadigm/drawline.png" alt></p>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>9691 w13 32 q4 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn2" class="footnote-item"><p><a href="https://isaaccomputerscience.org/concepts/prog_oop_aggregation_composition">https://isaaccomputerscience.org/concepts/prog_oop_aggregation_composition</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+<li>Training set error 15%; development set error 16%
+<ul>
+<li><code>High bias</code></li>
+</ul>
+</li>
+<li>Training set error 0.5%; development set error 0.5%
+<ul>
+<li><code>Low variance</code> &amp; <code>Low bias</code></li>
+</ul>
+</li>
+<li>Training set error 15%; development set error 30%
+<ul>
+<li><code>High variance</code> &amp; <code>High bias</code></li>
+<li>e.g. fit 的这条线 一部分是linear 的 一部分过分curvy</li>
+</ul>
 </li>
 </ol>
-</section>
+<h2 id="General-process"><a class="header-anchor" href="#General-process">¶</a>General process</h2>
+<pre><code class="highlight mermaid">graph LR
+A[High Bias?] --&gt;|Y| B(Bigger network)
+A --&gt; |Y| C(Train longer)
+A --&gt; |Y| D(Use more advanced optimzation algoorithm)
+E[High Variance?] --&gt;|Y| F(Regularlization)
+E --&gt;|Y| G(Use more data)</code></pre>
+<h4 id="In-conclusion"><a class="header-anchor" href="#In-conclusion">¶</a>In conclusion</h4>
+<p>以前其实是有那么个东西 叫做 bias-variance trade-off 的指的是variance 和 bias 之间的 inverse relation。 Low variance 和 low bias 很难共存。但随着大数据时代的来袭，我们有更多的渠道去收集更多的数据(比如爬虫) 导致修复其中一个问题并不会导致另外一个问题变得更糟糕。</p>
 ]]></content>
-      <categories>
-        <category>Notes</category>
-        <category>ALCS</category>
-      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+      </tags>
   </entry>
   <entry>
     <title>FlexBox Notes</title>
@@ -3604,62 +3660,6 @@ When we display variables in the console, their values appear instead of their n
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/WebDevelopment/Project/Spotlight-Text/</url>
-    <content><![CDATA[<img src="https://media.giphy.com/media/r0qmZ6SyKILYYxmyHK/giphy.gif" alt="gif" style="zoom:1000%;" class="full-image">
-<span id="more"></span>
-<h2 id="index-html"><a class="header-anchor" href="#index-html">¶</a>index.html</h2>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Spotlight on texts<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="style-css"><a class="header-anchor" href="#style-css">¶</a>style.css</h2>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="comment">/* Initialization, cancle the margin and padding of elements */</span></span><br><span class="line">    <span class="attribute">margin</span> : <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#222</span>;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">    <span class="comment">/* capitalize */</span></span><br><span class="line">    <span class="attribute">text-transform</span>: uppercase;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">112px</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 伪元素 */</span></span><br><span class="line"><span class="selector-tag">h1</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line">    <span class="attribute">color</span>: transparent;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to right, <span class="number">#ff59b3</span>, <span class="number">#fe0000</span>, <span class="number">#ffff01</span>, <span class="number">#40d1d2</span>, <span class="number">#8b059f7d</span>);</span><br><span class="line">    <span class="comment">/* change the background so that it fits exactly the text */</span></span><br><span class="line">    <span class="attribute">background-clip</span>: text;</span><br><span class="line">    -webkit-<span class="attribute">background-clip</span>: text;</span><br><span class="line">    <span class="comment">/* clip the element so that it becomes a circle: 100 suggests the diameter, 0%, 50% suggests the position of the center of the circle */</span></span><br><span class="line">    <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">0%</span> <span class="number">50%</span>);</span><br><span class="line">    <span class="comment">/* animation: name, duration, infinite means repeat */</span></span><br><span class="line">    <span class="attribute">animation</span>: light <span class="number">5s</span> infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* define an animation that changes the position of the center of the circle  */</span></span><br><span class="line"><span class="keyword">@keyframes</span> light&#123;</span><br><span class="line">    <span class="number">0%</span>&#123;</span><br><span class="line">        <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">0%</span> <span class="number">50%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">50%</span>&#123;</span><br><span class="line">        <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">100%</span> <span class="number">50%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">100%</span>&#123;</span><br><span class="line">        <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">0%</span> <span class="number">50%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>WebDevelopment</category>
-        <category>Project</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
-        <tag>html</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Start of Blog</title>
-    <url>/blogging/start/Start-of-Blog/</url>
-    <content><![CDATA[<h3 id="Inspiration"><a class="header-anchor" href="#Inspiration">¶</a>Inspiration</h3>
-<p>很多时候感觉缘分就是如此奇妙。最近申请季结束开始研究<code>Github</code>（<s>是有点晚了哈</s>), 因为觉得命令行操作很酷就下载了<code>git</code>(谁不想了解这个世界上最先进的分布式管理系统呢), 虽然最终可能<code>Github desktop</code>的用户体验更好一点 当然日常生活中两个都会被用到;</p>
-<p>又是机缘巧合在逛 <u>appstore</u> 的时候看到了<code>mimo</code>。当时只知道这是个教编程的软件，下载后一度被会员制/membership劝退，但最终发现只要使用的仔细认真，答题尽量不错，其实还是可以用的​（✈️ 起飞~）至此便开始了对于Web Development的学习: 从 <code>html</code> 到 <code>css</code> 到 <code>javaScript</code>. 在准备配置自己电脑vscode上的js编程环境的时候，下载的<code>jsnode</code> 搞了近一个小时 东搞搞西搞搞。</p>
-<p>晚上睡觉前刷了刷b站，看到 up主 codesheep 上传的一篇视频 “<strong>如何0基础创建自己的博客</strong>“ 立马就感兴趣住了！说hexo配置的两个前置: <code>git</code> 和 <code>jsnode</code> 的时候 才意识到自己无意中已经给自己铺好了路。</p>
-<p>搜集好教程后 准备第二天直接做起！</p>
-<p>写到这里 我的博客基本配置已经ok啦 以及这就是我的第一篇文章。</p>
-<p>希望以后的我看到这里能回想起当时那个 <mark class="label primary">求知、热情、上进</mark>的自己  😏</p>
-]]></content>
-      <categories>
-        <category>blogging</category>
-        <category>start</category>
-      </categories>
-      <tags>
-        <tag>Inspiration</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HTML+CSS: Loading Animation</title>
-    <url>/WebDevelopment/Project/loadingAnimation/</url>
-    <content><![CDATA[<img src="https://media.giphy.com/media/KcMqhBHGYydbQqf7z1/giphy.gif" alt="loadingAnimation" style="zoom:300%;">
-<span id="more"></span>
-<h2 id="index-html-v2"><a class="header-anchor" href="#index-html-v2">¶</a>index.html</h2>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Interesting Loading Animation<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;loading&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>loading..<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="style-css-v2"><a class="header-anchor" href="#style-css-v2">¶</a>style.css</h2>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="comment">/* initialization, defining the margin and padding */</span></span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="comment">/* 100% window height */</span></span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">    <span class="comment">/* gradient background  */</span></span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to bottom, <span class="number">#2b6876</span>, <span class="number">#09203f</span>);</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="comment">/* center at the main axis, which is horizontally */</span></span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="comment">/* center flex items along the cross axis of the current line of the flex container */</span></span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="comment">/* this tells the browser that the sum of padding and margin of the box is 200px */</span></span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">10px</span> solid <span class="number">#63a69f</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">animation</span>: a1 <span class="number">2s</span> linear infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span><span class="selector-pseudo">::after</span>,<span class="selector-class">.loading</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">top</span>: -<span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">10px</span> solid <span class="number">#f2e1ac</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">240deg</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">10px</span> solid <span class="number">#f2836f</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">120deg</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">color</span>: beige;</span><br><span class="line">    <span class="attribute">animation</span>: a2 <span class="number">2s</span> linear infinite;</span><br><span class="line">    <span class="attribute">font-size</span>: larger;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> a1 &#123;</span><br><span class="line">    <span class="selector-tag">to</span>&#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">360deg</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> a2 &#123;</span><br><span class="line">    <span class="selector-tag">to</span>&#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">rotate</span>(-<span class="number">360deg</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>WebDevelopment</category>
-        <category>Project</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
-        <tag>html</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Monte Carlo simulation| 蒙特卡洛模拟</title>
     <url>/WhatandwhY/Monte-Carlo-%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B/</url>
     <content><![CDATA[<div class="note info no-icon"><h4 id="引言"><a class="header-anchor" href="#引言">¶</a>引言</h4>
@@ -3709,6 +3709,80 @@ When we display variables in the console, their values appear instead of their n
       </categories>
       <tags>
         <tag>Statistics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/WebDevelopment/Project/Spotlight-Text/</url>
+    <content><![CDATA[<img src="https://media.giphy.com/media/r0qmZ6SyKILYYxmyHK/giphy.gif" alt="gif" style="zoom:1000%;" class="full-image">
+<span id="more"></span>
+<h2 id="index-html"><a class="header-anchor" href="#index-html">¶</a>index.html</h2>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Spotlight on texts<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="style-css"><a class="header-anchor" href="#style-css">¶</a>style.css</h2>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="comment">/* Initialization, cancle the margin and padding of elements */</span></span><br><span class="line">    <span class="attribute">margin</span> : <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#222</span>;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">    <span class="comment">/* capitalize */</span></span><br><span class="line">    <span class="attribute">text-transform</span>: uppercase;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">112px</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 伪元素 */</span></span><br><span class="line"><span class="selector-tag">h1</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line">    <span class="attribute">color</span>: transparent;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to right, <span class="number">#ff59b3</span>, <span class="number">#fe0000</span>, <span class="number">#ffff01</span>, <span class="number">#40d1d2</span>, <span class="number">#8b059f7d</span>);</span><br><span class="line">    <span class="comment">/* change the background so that it fits exactly the text */</span></span><br><span class="line">    <span class="attribute">background-clip</span>: text;</span><br><span class="line">    -webkit-<span class="attribute">background-clip</span>: text;</span><br><span class="line">    <span class="comment">/* clip the element so that it becomes a circle: 100 suggests the diameter, 0%, 50% suggests the position of the center of the circle */</span></span><br><span class="line">    <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">0%</span> <span class="number">50%</span>);</span><br><span class="line">    <span class="comment">/* animation: name, duration, infinite means repeat */</span></span><br><span class="line">    <span class="attribute">animation</span>: light <span class="number">5s</span> infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* define an animation that changes the position of the center of the circle  */</span></span><br><span class="line"><span class="keyword">@keyframes</span> light&#123;</span><br><span class="line">    <span class="number">0%</span>&#123;</span><br><span class="line">        <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">0%</span> <span class="number">50%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">50%</span>&#123;</span><br><span class="line">        <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">100%</span> <span class="number">50%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">100%</span>&#123;</span><br><span class="line">        <span class="attribute">clip-path</span>: <span class="built_in">circle</span>(<span class="number">100px</span> at <span class="number">0%</span> <span class="number">50%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>WebDevelopment</category>
+        <category>Project</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>html</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Start of Blog</title>
+    <url>/blogging/start/Start-of-Blog/</url>
+    <content><![CDATA[<h3 id="Inspiration"><a class="header-anchor" href="#Inspiration">¶</a>Inspiration</h3>
+<p>很多时候感觉缘分就是如此奇妙。最近申请季结束开始研究<code>Github</code>（<s>是有点晚了哈</s>), 因为觉得命令行操作很酷就下载了<code>git</code>(谁不想了解这个世界上最先进的分布式管理系统呢), 虽然最终可能<code>Github desktop</code>的用户体验更好一点 当然日常生活中两个都会被用到;</p>
+<p>又是机缘巧合在逛 <u>appstore</u> 的时候看到了<code>mimo</code>。当时只知道这是个教编程的软件，下载后一度被会员制/membership劝退，但最终发现只要使用的仔细认真，答题尽量不错，其实还是可以用的​（✈️ 起飞~）至此便开始了对于Web Development的学习: 从 <code>html</code> 到 <code>css</code> 到 <code>javaScript</code>. 在准备配置自己电脑vscode上的js编程环境的时候，下载的<code>jsnode</code> 搞了近一个小时 东搞搞西搞搞。</p>
+<p>晚上睡觉前刷了刷b站，看到 up主 codesheep 上传的一篇视频 “<strong>如何0基础创建自己的博客</strong>“ 立马就感兴趣住了！说hexo配置的两个前置: <code>git</code> 和 <code>jsnode</code> 的时候 才意识到自己无意中已经给自己铺好了路。</p>
+<p>搜集好教程后 准备第二天直接做起！</p>
+<p>写到这里 我的博客基本配置已经ok啦 以及这就是我的第一篇文章。</p>
+<p>希望以后的我看到这里能回想起当时那个 <mark class="label primary">求知、热情、上进</mark>的自己  😏</p>
+]]></content>
+      <categories>
+        <category>blogging</category>
+        <category>start</category>
+      </categories>
+      <tags>
+        <tag>Inspiration</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML+CSS: Blinking Rhombus</title>
+    <url>/WebDevelopment/Project/blinkingRhombus/</url>
+    <content><![CDATA[<img src="https://media.giphy.com/media/RUI6VnZ1hQjWfYlcdz/giphy.gif" alt="blinking_rhombus" style="zoom:300%;">
+<span id="more"></span> 
+<h2 id="index-html-v2"><a class="header-anchor" href="#index-html-v2">¶</a>index.html</h2>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>菱形加载动画<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;loading&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="style-css-v2"><a class="header-anchor" href="#style-css-v2">¶</a>style.css</h2>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">    <span class="comment">/*place the content at the center, set body as flex container, thus the div element is the flex item*/</span></span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">background</span>:  <span class="built_in">linear-gradient</span>(<span class="number">200deg</span>,<span class="number">#f4efef</span>,<span class="number">#e3eeff</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="comment">/* grid display */</span></span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="comment">/* set the grid to be three columns per row */</span></span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>,<span class="number">1</span>fr);</span><br><span class="line">    <span class="comment">/* set the gap between grid items: both horizontally and vertically gap */</span></span><br><span class="line">    <span class="attribute">gap</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="comment">/* number the items for later use: nth-child() */</span></span><br><span class="line">    <span class="comment">/* counter-reset: number; */</span></span><br><span class="line">    <span class="comment">/* ctrl + shift / */</span></span><br><span class="line">    <span class="comment">/* rotate by 45 degrees */</span></span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">45deg</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line">    <span class="comment">/* user-defined property: grammar is `--` followed by name */</span></span><br><span class="line">    <span class="attr">--c</span>:red;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">var</span>(--c);</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">/* animation  name  duration   easing function  repeat */</span></span><br><span class="line">    <span class="attribute">animation</span>: blinking  <span class="number">2s</span> linear infinite;</span><br><span class="line">    <span class="comment">/* wait for a few sec */</span></span><br><span class="line">    <span class="attribute">animation-delay</span>: <span class="built_in">var</span>(--d);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">    <span class="comment">/* setting increasing number */</span></span><br><span class="line">    <span class="comment">/* counter-increment: number; */</span></span><br><span class="line">    <span class="comment">/*  */</span></span><br><span class="line">    <span class="comment">/* content:counter(number); */</span></span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">7</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#f15a5a</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">4</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">8</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#f0c419</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.2s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">1</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">5</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">9</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#4eba6f</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.4s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">6</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#2d95bf</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.6s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">3</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#955ba5</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.8s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> blinking &#123;</span><br><span class="line">    <span class="number">0%</span>,<span class="number">100%</span>&#123;</span><br><span class="line">        <span class="comment">/* scale(x,y) suggests the change in width and height*/</span></span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">40%</span>,<span class="number">80%</span>&#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>WebDevelopment</category>
+        <category>Project</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>html</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML+CSS: Loading Animation</title>
+    <url>/WebDevelopment/Project/loadingAnimation/</url>
+    <content><![CDATA[<img src="https://media.giphy.com/media/KcMqhBHGYydbQqf7z1/giphy.gif" alt="loadingAnimation" style="zoom:300%;">
+<span id="more"></span>
+<h2 id="index-html-v3"><a class="header-anchor" href="#index-html-v3">¶</a>index.html</h2>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Interesting Loading Animation<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;loading&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>loading..<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="style-css-v3"><a class="header-anchor" href="#style-css-v3">¶</a>style.css</h2>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="comment">/* initialization, defining the margin and padding */</span></span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="comment">/* 100% window height */</span></span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">    <span class="comment">/* gradient background  */</span></span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to bottom, <span class="number">#2b6876</span>, <span class="number">#09203f</span>);</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="comment">/* center at the main axis, which is horizontally */</span></span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="comment">/* center flex items along the cross axis of the current line of the flex container */</span></span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="comment">/* this tells the browser that the sum of padding and margin of the box is 200px */</span></span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">10px</span> solid <span class="number">#63a69f</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">animation</span>: a1 <span class="number">2s</span> linear infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span><span class="selector-pseudo">::after</span>,<span class="selector-class">.loading</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">top</span>: -<span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">10px</span> solid <span class="number">#f2e1ac</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">240deg</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">10px</span> solid <span class="number">#f2836f</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">120deg</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">color</span>: beige;</span><br><span class="line">    <span class="attribute">animation</span>: a2 <span class="number">2s</span> linear infinite;</span><br><span class="line">    <span class="attribute">font-size</span>: larger;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> a1 &#123;</span><br><span class="line">    <span class="selector-tag">to</span>&#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">360deg</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> a2 &#123;</span><br><span class="line">    <span class="selector-tag">to</span>&#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">rotate</span>(-<span class="number">360deg</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>WebDevelopment</category>
+        <category>Project</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>html</tag>
       </tags>
   </entry>
   <entry>
@@ -3817,24 +3891,6 @@ When we display variables in the console, their values appear instead of their n
       </categories>
       <tags>
         <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HTML+CSS: Blinking Rhombus</title>
-    <url>/WebDevelopment/Project/blinkingRhombus/</url>
-    <content><![CDATA[<img src="https://media.giphy.com/media/RUI6VnZ1hQjWfYlcdz/giphy.gif" alt="blinking_rhombus" style="zoom:300%;">
-<span id="more"></span> 
-<h2 id="index-html-v3"><a class="header-anchor" href="#index-html-v3">¶</a>index.html</h2>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>菱形加载动画<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;loading&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="style-css-v3"><a class="header-anchor" href="#style-css-v3">¶</a>style.css</h2>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">    <span class="comment">/*place the content at the center, set body as flex container, thus the div element is the flex item*/</span></span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">background</span>:  <span class="built_in">linear-gradient</span>(<span class="number">200deg</span>,<span class="number">#f4efef</span>,<span class="number">#e3eeff</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="comment">/* grid display */</span></span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="comment">/* set the grid to be three columns per row */</span></span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>,<span class="number">1</span>fr);</span><br><span class="line">    <span class="comment">/* set the gap between grid items: both horizontally and vertically gap */</span></span><br><span class="line">    <span class="attribute">gap</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="comment">/* number the items for later use: nth-child() */</span></span><br><span class="line">    <span class="comment">/* counter-reset: number; */</span></span><br><span class="line">    <span class="comment">/* ctrl + shift / */</span></span><br><span class="line">    <span class="comment">/* rotate by 45 degrees */</span></span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">45deg</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line">    <span class="comment">/* user-defined property: grammar is `--` followed by name */</span></span><br><span class="line">    <span class="attr">--c</span>:red;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">var</span>(--c);</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">/* animation  name  duration   easing function  repeat */</span></span><br><span class="line">    <span class="attribute">animation</span>: blinking  <span class="number">2s</span> linear infinite;</span><br><span class="line">    <span class="comment">/* wait for a few sec */</span></span><br><span class="line">    <span class="attribute">animation-delay</span>: <span class="built_in">var</span>(--d);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">    <span class="comment">/* setting increasing number */</span></span><br><span class="line">    <span class="comment">/* counter-increment: number; */</span></span><br><span class="line">    <span class="comment">/*  */</span></span><br><span class="line">    <span class="comment">/* content:counter(number); */</span></span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">7</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#f15a5a</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">4</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">8</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#f0c419</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.2s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">1</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">5</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">9</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#4eba6f</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.4s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>),</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">6</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#2d95bf</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.6s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">3</span>)&#123;</span><br><span class="line">    <span class="attr">--c</span>:<span class="number">#955ba5</span>;</span><br><span class="line">    <span class="attr">--d</span>:<span class="number">0.8s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> blinking &#123;</span><br><span class="line">    <span class="number">0%</span>,<span class="number">100%</span>&#123;</span><br><span class="line">        <span class="comment">/* scale(x,y) suggests the change in width and height*/</span></span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">40%</span>,<span class="number">80%</span>&#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>WebDevelopment</category>
-        <category>Project</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
-        <tag>html</tag>
       </tags>
   </entry>
   <entry>
@@ -4020,62 +4076,6 @@ Q3: OOP with file handling.</p>
       </categories>
       <tags>
         <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Deep Learning Recipe</title>
-    <url>/uncategorized/Deep-Learning-Recipe/</url>
-    <content><![CDATA[<h2 id="High-bias-and-Variance"><a class="header-anchor" href="#High-bias-and-Variance">¶</a>High bias and Variance</h2>
-<h3 id="High-Bias"><a class="header-anchor" href="#High-Bias">¶</a>High Bias</h3>
-<ul>
-<li>Underfitting the training set</li>
-<li>Training set performance similar to development set performance</li>
-</ul>
-<h3 id="High-variance"><a class="header-anchor" href="#High-variance">¶</a>High variance</h3>
-<ul>
-<li>Overfitting the training set</li>
-<li>Training set performance superior than development set performance</li>
-</ul>
-<span id="more"></span>
-<h3 id="Examples"><a class="header-anchor" href="#Examples">¶</a>Examples</h3>
-<blockquote>
-<p>Assume that the Bayes error is nearly 0%</p>
-</blockquote>
-<ol>
-<li>Training set error 1%; development set error 11%
-<ul>
-<li><code>High variance</code></li>
-</ul>
-</li>
-<li>Training set error 15%; development set error 16%
-<ul>
-<li><code>High bias</code></li>
-</ul>
-</li>
-<li>Training set error 0.5%; development set error 0.5%
-<ul>
-<li><code>Low variance</code> &amp; <code>Low bias</code></li>
-</ul>
-</li>
-<li>Training set error 15%; development set error 30%
-<ul>
-<li><code>High variance</code> &amp; <code>High bias</code></li>
-<li>e.g. fit 的这条线 一部分是linear 的 一部分过分curvy</li>
-</ul>
-</li>
-</ol>
-<h2 id="General-process"><a class="header-anchor" href="#General-process">¶</a>General process</h2>
-<pre><code class="highlight mermaid">graph LR
-A[High Bias?] --&gt;|Y| B(Bigger network)
-A --&gt; |Y| C(Train longer)
-A --&gt; |Y| D(Use more advanced optimzation algoorithm)
-E[High Variance?] --&gt;|Y| F(Regularlization)
-E --&gt;|Y| G(Use more data)</code></pre>
-<h4 id="In-conclusion"><a class="header-anchor" href="#In-conclusion">¶</a>In conclusion</h4>
-<p>以前其实是有那么个东西 叫做 bias-variance trade-off 的指的是variance 和 bias 之间的 inverse relation。 Low variance 和 low bias 很难共存。但随着大数据时代的来袭，我们有更多的渠道去收集更多的数据(比如爬虫) 导致修复其中一个问题并不会导致另外一个问题变得更糟糕。</p>
-]]></content>
-      <tags>
-        <tag>Machine Learning</tag>
       </tags>
   </entry>
 </search>
