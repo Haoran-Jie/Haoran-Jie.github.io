@@ -4227,32 +4227,18 @@ Q3: OOP with file handling.</p>
 </ul>
 <p><u>Increasing sampling resolution:</u></p>
 <ul>
-<li>
-<p><font color="#4a69bd">More bits used to represent one sample</font></p>
-</li>
-<li>
-<p><font color="#4a69bd">Larger file size</font></p>
+<li><font color="#4a69bd">More bits used to represent one sample</font></li>
+<li><font color="#4a69bd">Larger file size</font>
 <ul>
-<li>
-<p><font color="#4a69bd">Takes longer to transmit/download the file</font></p>
-</li>
-<li>
-<p><font color="#4a69bd">Requires greater processing power </font></p>
-</li>
+<li><font color="#4a69bd">Takes longer to transmit/download the file</font></li>
+<li><font color="#4a69bd">Requires greater processing power </font></li>
 </ul>
 </li>
-<li>
-<p><font color="#4a69bd">More accurate representation of sound</font></p>
+<li><font color="#4a69bd">More accurate representation of sound</font>
 <ul>
-<li>
-<p><font color="#4a69bd">Less sound distortion</font></p>
-</li>
-<li>
-<p><font color="#4a69bd">Larger dynamic range </font></p>
-</li>
-<li>
-<p><font color="#4a69bd">Better sound quality</font></p>
-</li>
+<li><font color="#4a69bd">Less sound distortion</font></li>
+<li><font color="#4a69bd">Larger dynamic range </font></li>
+<li><font color="#4a69bd">Better sound quality</font></li>
 </ul>
 </li>
 </ul>
