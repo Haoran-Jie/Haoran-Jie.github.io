@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>https://haoran-jie.github.io/Notes/index.html</loc>
+    
+    <lastmod>2022-07-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://haoran-jie.github.io/uncategorized/Contributors/</loc>
     
     <lastmod>2022-07-29</lastmod>
@@ -21,15 +30,6 @@
   
   <url>
     <loc>https://haoran-jie.github.io/Notes/ASAL-CompSci-Note/</loc>
-    
-    <lastmod>2022-07-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://haoran-jie.github.io/Notes/index.html</loc>
     
     <lastmod>2022-07-29</lastmod>
     

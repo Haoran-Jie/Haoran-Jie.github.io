@@ -4263,47 +4263,23 @@ Q3: OOP with file handling.</p>
 </ul>
 <p><u><strong>Sampling resolution:</strong></u></p>
 <ul>
-<li>
-<p><font color="#4a69bd">Resolution is the number of distinct value able to encode/represent each sample</font></p>
-</li>
-<li>
-<p><font color="#4a69bd">Specified the number of bits used to store each sample</font></p>
-</li>
-<li>
-<p><font color="#4a69bd">Also called bit depth</font></p>
-</li>
-<li>
-<p><font color="#4a69bd">The higher the sampling resolution, the lower the quantization error</font></p>
-</li>
-<li>
-<p><font color="#4a69bd">The higher the sampling, the less sound distortion.</font></p>
-</li>
-<li>
-<p><font color="#4a69bd">Usually 8 bits, 16 bits, 24 bits or 32 bits. </font></p>
-</li>
-<li>
-<p><strong>Benefits:</strong></p>
+<li><font color="#4a69bd">Resolution is the number of distinct value able to encode/represent each sample</font></li>
+<li><font color="#4a69bd">Specified the number of bits used to store each sample</font></li>
+<li><font color="#4a69bd">Also called bit depth</font></li>
+<li><font color="#4a69bd">The higher the sampling resolution, the lower the quantization error</font></li>
+<li><font color="#4a69bd">The higher the sampling, the less sound distortion.</font></li>
+<li><font color="#4a69bd">Usually 8 bits, 16 bits, 24 bits or 32 bits. </font></li>
+<li><strong>Benefits:</strong>
 <ul>
-<li>
-<p><font color="#4a69bd">Allows for larger dynamic ranges</font></p>
-</li>
-<li>
-<p><font color="#4a69bd">More accurate representation/ sound quality</font></p>
-</li>
+<li><font color="#4a69bd">Allows for larger dynamic ranges</font></li>
+<li><font color="#4a69bd">More accurate representation/ sound quality</font></li>
 </ul>
 </li>
-<li>
-<p><strong>Drawbacks:</strong></p>
+<li><strong>Drawbacks:</strong>
 <ul>
-<li>
-<p><font color="#4a69bd">Bigger files / larger memory</font></p>
-</li>
-<li>
-<p><font color="#4a69bd">Takes longer to transmit/download</font></p>
-</li>
-<li>
-<p><font color="#4a69bd">Greater processing power needed</font></p>
-</li>
+<li><font color="#4a69bd">Bigger files / larger memory</font></li>
+<li><font color="#4a69bd">Takes longer to transmit/download</font></li>
+<li><font color="#4a69bd">Greater processing power needed</font></li>
 </ul>
 </li>
 </ul>
