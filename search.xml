@@ -4079,4 +4079,323 @@ Q3: OOP with file handling.</p>
         <tag>java</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Chapter1_InformationRepresentation</title>
+    <url>/Notes/ASCS/Chapter1-InformationRepresentation/</url>
+    <content><![CDATA[<img src="/Notes/ASCS/Chapter1-InformationRepresentation/syllabus-1.png" alt="DataRepresentation" style="zoom: 67%;">
+<span id="more"></span>
+<h2 id="Data-Representation"><a class="header-anchor" href="#Data-Representation">¶</a>Data Representation</h2>
+<h3 id="Prefixes"><a class="header-anchor" href="#Prefixes">¶</a>Prefixes</h3>
+<table>
+<thead>
+<tr>
+<th>Binary prefix name</th>
+<th>symbol</th>
+<th>value</th>
+<th>Decimal prefix name</th>
+<th>symbol</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kibi</td>
+<td>Ki</td>
+<td>$2^{10}$</td>
+<td>Kilo</td>
+<td>k</td>
+<td>$10^3$</td>
+</tr>
+<tr>
+<td>Mebi</td>
+<td>Mi</td>
+<td>$2^{20}$</td>
+<td>Mega</td>
+<td>M</td>
+<td>$10^6$</td>
+</tr>
+<tr>
+<td>Gibi</td>
+<td>Gi</td>
+<td>$2^{30}$</td>
+<td>Giga</td>
+<td>G</td>
+<td>$10^9$</td>
+</tr>
+<tr>
+<td>Tebi</td>
+<td>Ti</td>
+<td>$2^{40}$</td>
+<td>Tera</td>
+<td>T</td>
+<td>$10^{12}$</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Overflow</strong>: the result of carrying out a calculation which produces a value too large for the computer’s allocated word size</p>
+</blockquote>
+<h3 id="Applications"><a class="header-anchor" href="#Applications">¶</a>Applications</h3>
+<p><u>Application of hexadecimal system</u></p>
+<ul>
+<li><font color="#4a69bd">Memory dumps</font>
+<ul>
+<li><font color="#4a69bd">Memory contents are output to printer or monitor</font></li>
+</ul>
+</li>
+<li><font color="#4a69bd">MAC address</font></li>
+<li><font color="#4a69bd">Error message </font></li>
+<li><font color="#4a69bd">IP address </font></li>
+<li><font color="#4a69bd">Unicode</font></li>
+<li><font color="#4a69bd">Colour in HTML</font></li>
+</ul>
+<p><u>Application of Binary Coded Decimal (BCD)</u></p>
+<ul>
+<li><font color="#4a69bd">Calculator</font></li>
+<li><font color="#4a69bd">Clock</font></li>
+</ul>
+<h3 id="Character-sets"><a class="header-anchor" href="#Character-sets">¶</a>Character sets</h3>
+<p><strong><u>Character set:</u></strong></p>
+<ul>
+<li><font color="#4a69bd">The symbols that computer uses</font></li>
+<li><font color="#4a69bd">A list of characters recognized by computer software and hardware</font></li>
+<li><font color="#4a69bd">Each character has a character code</font></li>
+<li><font color="#4a69bd">The binary code for each character in the string is stored in sequence</font></li>
+</ul>
+<p><strong><u>Disadvantage of ASCII:</u></strong></p>
+<ul>
+<li><font color="#4a69bd">Only 256 characters can be represented</font></li>
+<li><font color="#4a69bd">Uses values 0 to 127/256</font></li>
+<li><font color="#4a69bd">Many characters in other languages cannot be represented</font></li>
+<li><font color="#4a69bd">The extended ASCII the characters from 128 to 255 may be coded differently in different system. </font></li>
+</ul>
+<p><strong><u>UNICODE</u></strong>:</p>
+<ul>
+<li><font color="#4a69bd">UNICODE has greater range of characters than ASCII</font></li>
+<li><font color="#4a69bd">UNICODE represents most written language in the world, while ASCII does not; used for English only</font></li>
+<li><font color="#4a69bd">ASCII uses 7-8 bits per character, whereas UNICODE uses up to 4 bytes per character</font></li>
+<li><font color="#4a69bd">UNICODE is standardized while ASCII is not</font></li>
+</ul>
+<hr>
+<p><img src="/Notes/ASCS/Chapter1-InformationRepresentation/Syllabus-2" alt="Multimedia"></p>
+<h2 id="Multimedia"><a class="header-anchor" href="#Multimedia">¶</a>Multimedia</h2>
+<h3 id="Graphics"><a class="header-anchor" href="#Graphics">¶</a>Graphics</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Bitmap</th>
+<th>Vector  graphic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Definitions</strong></td>
+<td>· Made up of pixels (picture elements) <br>· Stored in a two-dimensional matrix of pixels <br>· Each pixel has a colour<br>· Stored as binary number<br>· The number of bits used to represent a pixel is called colour depth</td>
+<td>· A series of geometric shapes<br>· Drawing object<br>· Exact dimension is not stored Stored coordinates<br>· Contains a drawing list<br>· Commands/formulae for creating each individual object<br>· Property for that object Eg: colour, thickness</td>
+</tr>
+<tr>
+<td><strong>Properties</strong></td>
+<td>· Takes up more memory<br>· Enlarging the bitmap can means that the image is pixelated<br>· Can be compressed with significant reduction in file size<br>· Suitable for photographs/scanned image<br>· Uses less processing power<br>· Individual elements of a bitmap cannot be grouped<br>· It is possible to change/edit each pixel to change the design</td>
+<td>· Made up of geometric shapes which require definition/attributes<br>· Stores a set of instructions about how to draw the shape<br>· Takes up less memory<br>· Vector graphic image can be enlarged without being pixelated<br>· Do not compress well<br>· Suitable for geometric shape<br>· Individual elements of a vector graphic can be grouped<br>· Vector graphics need to be ‘rasterised’ in order to display or print.<br>· Image is redrawn with small adjustment<br>· It is necessary to change each of the geometric shape to alter the design</td>
+</tr>
+<tr>
+<td><strong>Available formats</strong></td>
+<td><code>.jpeg</code>, <code>.bmp</code>, <code>.png</code></td>
+<td><code>.svg</code> , <code>.cgm</code>, <code>.odg</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Defined in XML text files which, therefore, allows them to be compressed.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Pixel</strong>: smallest picture element which can be drawn</p>
+<p><strong>Screen resolution</strong>: the number of pixels which can be view horizontally and vertically</p>
+<p><strong>Image resolution</strong>: the number of pixels that make up an image</p>
+<p><strong>Resolution</strong>: the number of pixels per column and per row</p>
+<p><strong>Pixel density</strong>: number of pixels per square centimetre.</p>
+</blockquote>
+<h3 id="Sound"><a class="header-anchor" href="#Sound">¶</a>Sound</h3>
+<p><u>Sampling analogue sound:</u></p>
+<ul>
+<li><font color="#4a69bd">Amplitude measured</font></li>
+<li><font color="#4a69bd">At regular time interval</font></li>
+<li><font color="#4a69bd">The value of sample is recorded as binary number. </font></li>
+</ul>
+<p><u>Increasing sampling resolution:</u></p>
+<ul>
+<li>
+<p><font color="#4a69bd">More bits used to represent one sample</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">Larger file size</font></p>
+<ul>
+<li>
+<p><font color="#4a69bd">Takes longer to transmit/download the file</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">Requires greater processing power </font></p>
+</li>
+</ul>
+</li>
+<li>
+<p><font color="#4a69bd">More accurate representation of sound</font></p>
+<ul>
+<li>
+<p><font color="#4a69bd">Less sound distortion</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">Larger dynamic range </font></p>
+</li>
+<li>
+<p><font color="#4a69bd">Better sound quality</font></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><u>Decrease sample rate:</u></p>
+<ul>
+<li><font color="#4a69bd">Fewer samples per unit time</font></li>
+<li><font color="#4a69bd">File size will reduce</font></li>
+<li><font color="#4a69bd">Larger gaps/ space between samples // greater quantization errors</font></li>
+<li><font color="#4a69bd">Sound accuracy will reduce. </font></li>
+</ul>
+<blockquote>
+<p><strong><u>Sampling:</u></strong></p>
+<ul>
+<li><font color="#4a69bd">amplitude of sound wave taken at different points in time.</font></li>
+<li><font color="#4a69bd">Measurement the value of the analogue signal at regular time interval.</font></li>
+</ul>
+<p><strong><u>Sampling rate:</u></strong></p>
+<ul>
+<li><font color="#4a69bd">Number of time that the amplitude of (analogue) sound wave is taken</font></li>
+<li><font color="#4a69bd">Per unit time</font></li>
+<li><font color="#4a69bd">Higher sampling rate results in more accurate digital representation.</font></li>
+</ul>
+<p><u><strong>Sampling resolution:</strong></u></p>
+<ul>
+<li>
+<p><font color="#4a69bd">Resolution is the number of distinct value able to encode/represent each sample</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">Specified the number of bits used to store each sample</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">Also called bit depth</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">The higher the sampling resolution, the lower the quantization error</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">The higher the sampling, the less sound distortion.</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">Usually 8 bits, 16 bits, 24 bits or 32 bits. </font></p>
+</li>
+<li>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>
+<p><font color="#4a69bd">Allows for larger dynamic ranges</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">More accurate representation/ sound quality</font></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Drawbacks:</strong></p>
+<ul>
+<li>
+<p><font color="#4a69bd">Bigger files / larger memory</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">Takes longer to transmit/download</font></p>
+</li>
+<li>
+<p><font color="#4a69bd">Greater processing power needed</font></p>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><u>Sound editing software:</u></p>
+<ul>
+<li><font color="#4a69bd">Edit start time, stop time and duration of any sound/time</font></li>
+<li><font color="#4a69bd">Extract/delete/save part of a clip</font></li>
+<li><font color="#4a69bd">Frequency, amplitude, pitch alteration</font></li>
+<li><font color="#4a69bd">Conversion between different audio file formats</font></li>
+<li><font color="#4a69bd">Use of filters</font></li>
+<li><font color="#4a69bd">Mix/merge multiple sound sources</font></li>
+</ul>
+<p><u>Sound edit:</u></p>
+<ul>
+<li><font color="#4a69bd">Fading</font>
+<ul>
+<li><font color="#4a69bd">Change a volume of a section of sound for it to get louder.</font></li>
+</ul>
+</li>
+<li><font color="#4a69bd">Removing sound element</font>
+<ul>
+<li><font color="#4a69bd">Delete sections of the sound wave.</font></li>
+</ul>
+</li>
+<li><font color="#4a69bd">Copy</font>
+<ul>
+<li><font color="#4a69bd">Repeat elements of the sound wave.</font></li>
+</ul>
+</li>
+</ul>
+<p><u>Sound:</u></p>
+<ul>
+<li><font color="#4a69bd">Analogue value</font></li>
+<li><font color="#4a69bd">Use ADC (analogue digital converter)</font></li>
+<li><font color="#4a69bd">To convert to digital value</font></li>
+</ul>
+<p><img src="/Notes/ASCS/Chapter1-InformationRepresentation/sylllabus3" alt="Compression"></p>
+<hr>
+<p><u><strong>Lossy data compression:</strong></u></p>
+<ul>
+<li><font color="#4a69bd">Lossy may result in lost of detail compared to the original file</font></li>
+<li><font color="#4a69bd">Lossy compression make decision about what parts of the file are important and not important. </font></li>
+<li><font color="#4a69bd">Certain parts of the music can be eliminated without significantly degrading the listener’s     experience.</font></li>
+<li><font color="#4a69bd">Discards softer sounds if two sounds played together.</font></li>
+<li><font color="#4a69bd">Perceptual music shaping: only keeps sound that human ear can hear</font></li>
+<li><font color="#4a69bd">Reduce to about 10% </font></li>
+<li><font color="#4a69bd">E.g: mp3, jpeg</font></li>
+</ul>
+<p><u>Method1: Reduce the colour depth</u></p>
+<ul>
+<li><font color="#4a69bd">Reduce the number of bits per colour</font></li>
+<li><font color="#4a69bd">Each pixel has fewer bits</font></li>
+</ul>
+<p><u>Method2: Reduce the resolution</u></p>
+<ul>
+<li><font color="#4a69bd">Fewer pixels per unit measurement</font></li>
+<li><font color="#4a69bd">Fewer pixels are stored.</font></li>
+</ul>
+<p><u>Lossless data compression:</u></p>
+<ul>
+<li><font color="#4a69bd">Lose none of the original detail</font></li>
+<li><font color="#4a69bd">Based on some form of replacement: Run line Encoding</font></li>
+<li><font color="#4a69bd">Maximum compression to about 50%.</font></li>
+</ul>
+<p><u>RLE(Run line encoding):</u></p>
+<ul>
+<li><font color="#4a69bd">Lossless method of compression</font></li>
+<li><font color="#4a69bd">Reduces the size of a string of adjacent, identical characters</font></li>
+<li><font color="#4a69bd">The repeating string is encoded into two values</font></li>
+<li><font color="#4a69bd">One value represent the number of characters in the run</font></li>
+<li><font color="#4a69bd">The other value is the code of the character in the run</font></li>
+<li><font color="#4a69bd">The run value and run count combination may be preceded by a control character</font></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>ASCS</category>
+      </categories>
+  </entry>
 </search>

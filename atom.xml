@@ -6,7 +6,7 @@
   <link href="https://haoran-jie.github.io/atom.xml" rel="self"/>
   
   <link href="https://haoran-jie.github.io/"/>
-  <updated>2022-07-27T11:23:24.123Z</updated>
+  <updated>2022-07-30T10:46:17.996Z</updated>
   <id>https://haoran-jie.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Chapter1_InformationRepresentation</title>
+    <link href="https://haoran-jie.github.io/Notes/ASCS/Chapter1-InformationRepresentation/"/>
+    <id>https://haoran-jie.github.io/Notes/ASCS/Chapter1-InformationRepresentation/</id>
+    <published>2022-07-30T07:07:10.000Z</published>
+    <updated>2022-07-30T10:46:17.996Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;/Notes/ASCS/Chapter1-InformationRepresentation/syllabus-1.png&quot; alt=&quot;DataRepresentation&quot; style=&quot;zoom: 67%;&quot;&gt;</summary>
+    
+    
+    
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
+    
+    <category term="ASCS" scheme="https://haoran-jie.github.io/categories/Notes/ASCS/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Deep Learning Recipe</title>
@@ -428,32 +447,6 @@
     
     
     <category term="README" scheme="https://haoran-jie.github.io/tags/README/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Chapter 17: Security</title>
-    <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter17_Security/"/>
-    <id>https://haoran-jie.github.io/Notes/ALCS/Chapter17_Security/</id>
-    <published>2022-04-12T15:31:31.000Z</published>
-    <updated>2022-06-04T07:30:33.556Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/Notes/ALCS/Chapter17_Security/security.png&quot; alt&gt;&lt;/p&gt;
-&lt;hr&gt;</summary>
-    
-    
-    
-    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
-    
-    <category term="ALCS" scheme="https://haoran-jie.github.io/categories/Notes/ALCS/"/>
-    
-    
-    <category term="Cryptography" scheme="https://haoran-jie.github.io/tags/Cryptography/"/>
-    
-    <category term="SSL/TLS" scheme="https://haoran-jie.github.io/tags/SSL-TLS/"/>
-    
-    <category term="Digital Certification" scheme="https://haoran-jie.github.io/tags/Digital-Certification/"/>
     
   </entry>
   
