@@ -4319,6 +4319,7 @@ Q3: OOP with file handling.</p>
 </ul>
 <p><img src="/Notes/ASCS/Chapter1-InformationRepresentation/sylllabus3" alt="Compression"></p>
 <hr>
+<h2 id="Compression"><a class="header-anchor" href="#Compression">¶</a>Compression</h2>
 <p><u><strong>Lossy data compression:</strong></u></p>
 <ul>
 <li><font color="#4a69bd">Lossy may result in lost of detail compared to the original file</font></li>
@@ -4354,6 +4355,11 @@ Q3: OOP with file handling.</p>
 <li><font color="#4a69bd">The other value is the code of the character in the run</font></li>
 <li><font color="#4a69bd">The run value and run count combination may be preceded by a control character</font></li>
 </ul>
+<h3 id="🔗Recommended-article-s"><a class="header-anchor" href="#🔗Recommended-article-s">¶</a>🔗Recommended article(s)</h3>
+<p><a href="https://siipo.la/blog/whats-the-best-lossless-image-format-comparing-png-webp-avif-and-jpeg-xl">What’s the best lossless image format? Comparing PNG, WebP, AVIF, and JPEG XL</a></p>
+<blockquote>
+<p>The author first introduced concepts of lossy and lossless compression. Then explained the different image type supported for lossless compression. Finally, the article compares between the effectiveness between different image types’ lossless compression. The article gives quite a deep understanding and is interesting to read.</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>Notes</category>
