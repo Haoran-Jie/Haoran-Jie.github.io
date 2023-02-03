@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#2c3e50" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#2c3e50">
+  <meta name="google-site-verification" content="ONgpvg7NlakSEl6IcZ4-nCCQleKums7GuOYvOS4zXCQ">
+  <meta name="msvalidate.01" content="5331505606E7903BD6FA7D5C7D0FE6DB">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"haoran-jie.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":30,"offset":15},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#546de5","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":true,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+
+
+<link rel="canonical" href="https://haoran-jie.github.io/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://haoran-jie.github.io/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/","path":"Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/","title":"Chapter15.2: Boolean Algebra And Logic Circuits"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Chapter15.2: Boolean Algebra And Logic Circuits | Samuel's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V501S4L4ZZ"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-V501S4L4ZZ","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+  <script async src="//assets.growingio.com/2.1/gio.js"></script>
+  <script class="next-config" data-name="growingio_analytics" type="application/json">"b544ba838d823365"</script>
+  <script src="/js/third-party/analytics/growingio.js"></script>
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Samuel's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Snippets of life of a programmer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">16</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">12</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">30</span></a></li><li class="menu-item menu-item-notes"><a href="/Notes/" rel="section"><i class="fa fa-book fa-fw"></i>Notes</a></li><li class="menu-item menu-item--what&why系列文章"><a href="/WhatandwhY/" rel="section"><i class="fa-solid fa-clipboard-question fa-fw"></i> What&whY系列文章</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Adders-heavy-plus-sign"><span class="nav-number">1.</span> <span class="nav-text">Adders:heavy_plus_sign:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Half-adder"><span class="nav-number">1.1.</span> <span class="nav-text">Half adder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Full-adder"><span class="nav-number">1.2.</span> <span class="nav-text">Full adder</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Flip-flop"><span class="nav-number">2.</span> <span class="nav-text">Flip-flop</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SR-Flip-flop"><span class="nav-number">2.1.</span> <span class="nav-text">SR Flip-flop</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#NOR-gates-implementation"><span class="nav-number">2.1.1.</span> <span class="nav-text">NOR gates implementation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NAND-gate-implementation"><span class="nav-number">2.1.2.</span> <span class="nav-text">NAND gate implementation</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JK-Flip-flop"><span class="nav-number">2.2.</span> <span class="nav-text">JK Flip-flop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions"><span class="nav-number">2.3.</span> <span class="nav-text">Past-paper questions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Boolean-Algebra"><span class="nav-number">3.</span> <span class="nav-text">Boolean Algebra</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#K-map"><span class="nav-number">4.</span> <span class="nav-text">K-map</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Grey-code"><span class="nav-number">4.1.</span> <span class="nav-text">Grey code</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Haoran Jie"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Haoran Jie</p>
+  <div class="site-description" itemprop="description">18</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Haoran-Jie" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Haoran-Jie" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:samueljie1@gmail.com" title="E-Mail → mailto:samueljie1@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/samueljieee/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;samueljieee&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://haoran-jie.github.io/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Haoran Jie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Samuel's Blog">
+      <meta itemprop="description" content="18">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Chapter15.2: Boolean Algebra And Logic Circuits | Samuel's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Chapter15.2: Boolean Algebra And Logic Circuits
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-05-02 21:57:05" itemprop="dateCreated datePublished" datetime="2022-05-02T21:57:05+01:00">2022-05-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-06-04 08:30:17" itemprop="dateModified" datetime="2022-06-04T08:30:17+01:00">2022-06-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/ALCS/" itemprop="url" rel="index"><span itemprop="name">ALCS</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img src="/./Chapter15.2_BooleanAlgebraAndLogicCircuits/Syllabus15.2.png"></p>
+<hr>
+<span id="more"></span>
+
+<h2 id="Adders-heavy-plus-sign"><a href="#Adders-heavy-plus-sign" class="headerlink" title="Adders:heavy_plus_sign:"></a>Adders:heavy_plus_sign:</h2><h3 id="Half-adder"><a href="#Half-adder" class="headerlink" title="Half adder"></a>Half adder</h3><blockquote>
+<p>Carries out binary addition on 2 bits generating two outputs</p>
+</blockquote>
+<ul>
+<li>The sum bit <code>S</code></li>
+<li>The carry bit <code>C</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th></th>
+<th>Output</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A</td>
+<td>B</td>
+<td>S</td>
+<td>C</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<hr>
+<p><img src="/./Chapter15.2_BooleanAlgebraAndLogicCircuits/halfAdder.jpg" alt="Half-adder"></p>
+<hr>
+<h3 id="Full-adder"><a href="#Full-adder" class="headerlink" title="Full adder"></a>Full adder</h3><blockquote>
+<p>The half adder is unable to deal with the addition of several binary bits (e.g. an 8-bit byte). To enable this, we have considered the full adder circuit</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Inputs</th>
+<th></th>
+<th></th>
+<th>Outputs</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A</td>
+<td>B</td>
+<td>C<del>in</del></td>
+<td>S</td>
+<td>C<del>out</del></td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<hr>
+<p><img src="/./Chapter15.2_BooleanAlgebraAndLogicCircuits/fullAdder.jpg"></p>
+<hr>
+<h2 id="Flip-flop"><a href="#Flip-flop" class="headerlink" title="Flip-flop"></a>Flip-flop</h2><h3 id="SR-Flip-flop"><a href="#SR-Flip-flop" class="headerlink" title="SR Flip-flop"></a>SR Flip-flop</h3><blockquote>
+<p>The SR flip-flop or <code>latch</code> is a simple example of a sequential circuit. It can be constructed with two NAND gates or two NOR gates.</p>
+</blockquote>
+<p>The properties of SR flip-flop explained why it can be used as a storage device for 1 bit and therefore could be used as a component in RAM because a value is stored but can be altered. </p>
+<p>The alternative NAND gate circuit for the SR flip-flop has a similar structure but the labelling is different. The important difference is that setting is achieved when S&#x3D;0 &amp; R&#x3D;1 and resetting with R&#x3D;0 and S&#x3D;1. </p>
+<h4 id="NOR-gates-implementation"><a href="#NOR-gates-implementation" class="headerlink" title="NOR gates implementation"></a>NOR gates implementation</h4><img src="./Chapter15.2_BooleanAlgebraAndLogicCircuits/SRflipflop.jpg" style="zoom: 25%;" />
+
+<img src="./Chapter15.2_BooleanAlgebraAndLogicCircuits/truthTableSR.jpg" style="zoom: 25%;" />
+
+<img src="./Chapter15.2_BooleanAlgebraAndLogicCircuits/truthTableSR2.jpg" style="zoom: 50%;" />
+
+<hr>
+<h4 id="NAND-gate-implementation"><a href="#NAND-gate-implementation" class="headerlink" title="NAND gate implementation"></a>NAND gate implementation</h4><img src="./Chapter15.2_BooleanAlgebraAndLogicCircuits/SRnand.png" style="zoom: 67%;" />
+
+<img src="./Chapter15.2_BooleanAlgebraAndLogicCircuits/SRnandtruth.png" style="zoom:50%;" />
+
+<p><u>Why is the final row a problem?</u></p>
+<ul>
+<li><font color=#4a69bd>Q and not Q have the same value</font></li>
+<li><font color=#4a69bd>Q and not Q should be the complement to each other</font></li>
+<li><font color=#4a69bd>Flip-flop becomes unstable</font></li>
+</ul>
+<hr>
+<h3 id="JK-Flip-flop"><a href="#JK-Flip-flop" class="headerlink" title="JK Flip-flop"></a>JK Flip-flop</h3><blockquote>
+<p>In addition to the possibility of entering an invalid state there is also the potential for a circuit to arrive in an uncertain state if inputs do not arrive quite at the same time. In order to prevent this, a circuit may include a clock pulse input to give a better chance of synchronising inputs. The JK flip-flop is an example.</p>
+</blockquote>
+<img src="./Chapter15.2_BooleanAlgebraAndLogicCircuits/JKflipflop.jpg" style="zoom: 30%;" />
+
+
+
+<img src="./Chapter15.2_BooleanAlgebraAndLogicCircuits/JKflipfloptruthtable.jpg" style="zoom: 40%;"/>
+
+<hr>
+<h3 id="Past-paper-questions"><a href="#Past-paper-questions" class="headerlink" title="Past-paper questions"></a>Past-paper questions</h3><p><u>Why JK flip-flop is an improvement to the SR flip-flop</u></p>
+<ul>
+<li><font color=#4a69bd>The SR flip-flop has an invalid combination of SR which allows Q and not Q to have the same value</font></li>
+<li><font color=#4a69bd>The JK flip-flop does not allow Q and not Q to have the same value</font></li>
+</ul>
+<p><u>Advantages of JK flip-flop</u></p>
+<ul>
+<li><font color=#4a69bd>All four possibilities are valid</font></li>
+<li><font color=#4a69bd>The 1-1 combination changes to output to logical complement</font></li>
+<li><font color=#4a69bd>Unstable state avoided</font></li>
+<li><font color=#4a69bd>Invalid state cannot occur</font></li>
+</ul>
+<p><u>Explain the role of flip-flop in a computer</u></p>
+<ul>
+<li><font color=#4a69bd>A flip flop can be stored either a 1 or 0</font></li>
+<li><font color=#4a69bd>Computers use bits to store data</font></li>
+<li><font color=#4a69bd>Flip flop can therefore be used to store bits</font></li>
+<li><font color=#4a69bd>Memory can be created from flip-flop</font></li>
+</ul>
+<p><u>Describe the role of flip-flop in a computer</u>:</p>
+<ul>
+<li><font color=#4a69bd>Circuit &#x2F; electrical components(construction)</font></li>
+<li><font color=#4a69bd>With two states</font></li>
+<li><font color=#4a69bd>Used for data storage elements &#x2F;&#x2F; memory</font></li>
+<li><font color=#4a69bd>… to store 1 bit of data</font></li>
+</ul>
+<p><u>Difference between SR flip-flop and JK flip-flop</u></p>
+<ul>
+<li><font color=#4a69bd>SR flip-flop has a undefined&#x2F;invalid&#x2F;intermediate state &#x2F;&#x2F; JK flip-flop is stable</font><ul>
+<li><font color=#4a69bd>for a SR flip-flop constructed using two NOR gates, when S&#x3D;1 and R&#x3D;1. The Q and not Q will be both 0. This is invalid since Q and not Q should be the logical complement to each other.</font></li>
+</ul>
+</li>
+<li><font color=#4a69bd>JK flip-flop has a clock pulse to synchronize input</font></li>
+</ul>
+<p><img src="/./Chapter15.2_BooleanAlgebraAndLogicCircuits/fillblank.png"></p>
+<hr>
+<h2 id="Boolean-Algebra"><a href="#Boolean-Algebra" class="headerlink" title="Boolean Algebra"></a>Boolean Algebra</h2><img src="./Chapter15.2_BooleanAlgebraAndLogicCircuits/booleanAlgebra.jpg" style="zoom:70%;" />
+
+<h2 id="K-map"><a href="#K-map" class="headerlink" title="K-map"></a>K-map</h2><h3 id="Grey-code"><a href="#Grey-code" class="headerlink" title="Grey code"></a>Grey code</h3><img src="./Chapter15.2_BooleanAlgebraAndLogicCircuits/greycode.png" style="zoom:150%;" />
+
+<p>:link:<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Gray_code">https://en.wikipedia.org/wiki/Gray_code</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Haoran Jie
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://haoran-jie.github.io/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/" title="Chapter15.2: Boolean Algebra And Logic Circuits">https://haoran-jie.github.io/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/" rel="prev" title="Chapter 15.1: Processors, Parallel Processing and Virtual Machines">
+                  <i class="fa fa-chevron-left"></i> Chapter 15.1: Processors, Parallel Processing and Virtual Machines
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Notes/ALCS/Chapter16.1_PurposeOfAnOperatingSystem/" rel="next" title="Chapter 16.1: Purpose of an operating system">
+                  Chapter 16.1: Purpose of an operating system <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="comment-button-group">
+          <a class="btn comment-button disqus">disqus</a>
+          <a class="btn comment-button gitalk">gitalk</a>
+      </div>
+        <div class="comment-position disqus">
+          
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+        </div>
+        <div class="comment-position gitalk">
+          <div class="comments gitalk-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa-solid fa-terminal"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Haoran Jie</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.3.0/mermaid.min.js","integrity":"sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://haoran-jie.github.io/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"samuels-blog-5","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Haoran-Jie","repo":"GItalkComments","client_id":"a78520e4a91db64c6ead","client_secret":"80a445f6a6f80fcd44fea523269b55c10ba59002","admin_user":"Haoran-Jie","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"d110612d9f85a0a7ca8b58d0f2e45d17"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

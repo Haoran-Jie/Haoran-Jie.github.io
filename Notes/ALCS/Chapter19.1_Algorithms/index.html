@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#2c3e50" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#2c3e50">
+  <meta name="google-site-verification" content="ONgpvg7NlakSEl6IcZ4-nCCQleKums7GuOYvOS4zXCQ">
+  <meta name="msvalidate.01" content="5331505606E7903BD6FA7D5C7D0FE6DB">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"haoran-jie.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":30,"offset":15},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#546de5","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":true,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+
+
+<link rel="canonical" href="https://haoran-jie.github.io/Notes/ALCS/Chapter19.1_Algorithms/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://haoran-jie.github.io/Notes/ALCS/Chapter19.1_Algorithms/","path":"Notes/ALCS/Chapter19.1_Algorithms/","title":"Chapter 19.1: Algorithms"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Chapter 19.1: Algorithms | Samuel's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V501S4L4ZZ"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-V501S4L4ZZ","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+  <script async src="//assets.growingio.com/2.1/gio.js"></script>
+  <script class="next-config" data-name="growingio_analytics" type="application/json">"b544ba838d823365"</script>
+  <script src="/js/third-party/analytics/growingio.js"></script>
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Samuel's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Snippets of life of a programmer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">16</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">12</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">30</span></a></li><li class="menu-item menu-item-notes"><a href="/Notes/" rel="section"><i class="fa fa-book fa-fw"></i>Notes</a></li><li class="menu-item menu-item--what&why系列文章"><a href="/WhatandwhY/" rel="section"><i class="fa-solid fa-clipboard-question fa-fw"></i> What&whY系列文章</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Search"><span class="nav-number">1.</span> <span class="nav-text">Search</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Prerequisite"><span class="nav-number">1.1.</span> <span class="nav-text">Prerequisite:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linear-search"><span class="nav-number">1.2.</span> <span class="nav-text">Linear search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Binary-search"><span class="nav-number">1.3.</span> <span class="nav-text">Binary search</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Running"><span class="nav-number">1.3.1.</span> <span class="nav-text">Running:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Result"><span class="nav-number">1.3.2.</span> <span class="nav-text">Result:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sort"><span class="nav-number">2.</span> <span class="nav-text">Sort</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Prerequisite-1"><span class="nav-number">2.1.</span> <span class="nav-text">Prerequisite</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bubble-Sort"><span class="nav-number">2.2.</span> <span class="nav-text">Bubble Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Insertion-Sort"><span class="nav-number">2.3.</span> <span class="nav-text">Insertion Sort</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract-Data-Types"><span class="nav-number">3.</span> <span class="nav-text">Abstract Data Types</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Stack"><span class="nav-number">3.1.</span> <span class="nav-text">Stack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Queue"><span class="nav-number">3.2.</span> <span class="nav-text">Queue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linked-List"><span class="nav-number">3.3.</span> <span class="nav-text">Linked List</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Initialization"><span class="nav-number">3.3.1.</span> <span class="nav-text">Initialization</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Insert"><span class="nav-number">3.3.2.</span> <span class="nav-text">Insert</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Delete"><span class="nav-number">3.3.3.</span> <span class="nav-text">Delete</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Find"><span class="nav-number">3.3.4.</span> <span class="nav-text">Find</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Binary-tree"><span class="nav-number">3.4.</span> <span class="nav-text">Binary tree</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Initialization-1"><span class="nav-number">3.4.1.</span> <span class="nav-text">Initialization</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Insert-1"><span class="nav-number">3.4.2.</span> <span class="nav-text">Insert</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Search-mag"><span class="nav-number">3.4.3.</span> <span class="nav-text">Search:mag:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Traversal"><span class="nav-number">3.4.4.</span> <span class="nav-text">Traversal</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Past-paper-questions"><span class="nav-number">4.</span> <span class="nav-text">Past paper questions</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Haoran Jie"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Haoran Jie</p>
+  <div class="site-description" itemprop="description">18</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Haoran-Jie" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Haoran-Jie" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:samueljie1@gmail.com" title="E-Mail → mailto:samueljie1@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/samueljieee/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;samueljieee&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://haoran-jie.github.io/Notes/ALCS/Chapter19.1_Algorithms/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Haoran Jie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Samuel's Blog">
+      <meta itemprop="description" content="18">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Chapter 19.1: Algorithms | Samuel's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Chapter 19.1: Algorithms
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-04-17 11:16:24" itemprop="dateCreated datePublished" datetime="2022-04-17T11:16:24+01:00">2022-04-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-06-04 08:30:41" itemprop="dateModified" datetime="2022-06-04T08:30:41+01:00">2022-06-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/ALCS/" itemprop="url" rel="index"><span itemprop="name">ALCS</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/Notes/ALCS/Chapter19.1_Algorithms/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Notes/ALCS/Chapter19.1_Algorithms/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img src="/./Chapter19.1_Algorithms/Syllabuspic.png"></p>
+<hr>
+<span id="more"></span> 
+
+<h2 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h2><h3 id="Prerequisite"><a href="#Prerequisite" class="headerlink" title="Prerequisite:"></a>Prerequisite:</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="type">int</span>[] mylist1= &#123;<span class="number">12</span>,<span class="number">45</span>,<span class="number">21</span>,<span class="number">22</span>,<span class="number">7</span>,<span class="number">39</span>,<span class="number">88</span>&#125;;</span><br><span class="line"><span class="keyword">static</span> <span class="type">int</span>[] mylist2= &#123;<span class="number">7</span>,<span class="number">12</span>,<span class="number">21</span>,<span class="number">22</span>,<span class="number">39</span>,<span class="number">45</span>,<span class="number">88</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Linear-search"><a href="#Linear-search" class="headerlink" title="Linear search"></a>Linear search</h3><ul>
+<li><input checked="" disabled="" type="checkbox"> 9618 s21 41 Q2</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">linearSearch</span><span class="params">(<span class="type">int</span> item)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;mylist1.length;++i)&#123;<span class="comment">//从头开始一个一个看数组里的`element`是否是正在找的`item`</span></span><br><span class="line">        <span class="keyword">if</span>(item==mylist1[i])&#123;<span class="comment">//如果相等</span></span><br><span class="line">            <span class="keyword">return</span> i;<span class="comment">//返回当前index</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(<span class="string">&quot;item not found&quot;</span>);<span class="comment">//如果找到最后了都没找到 则打印&quot;item not found&quot;</span></span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;<span class="comment">//终止程序并返回一个不是index的数字</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">FUNCTION LinearSearch(item:INTEGER, arr: ARRAY[1:10] OF INTEGER) RETURNS INTEGER</span><br><span class="line">	FOR i &lt;- 1 TO 10 </span><br><span class="line">		IF arr[i] = item</span><br><span class="line">			THEN</span><br><span class="line">				OUTPUT &quot;Item found&quot;</span><br><span class="line">				RETURN i</span><br><span class="line">		ENDIF</span><br><span class="line">	NEXT i</span><br><span class="line">	OUTPUT &quot;Item not found&quot;</span><br><span class="line">	RETURN -1</span><br><span class="line">ENDFUNCTION	</span><br></pre></td></tr></table></figure>
+
+<h3 id="Binary-search"><a href="#Binary-search" class="headerlink" title="Binary search"></a>Binary search</h3><blockquote>
+<p>二分查找 可以用递归Recursion实现 也可以用循环iteration实现</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">binarySearch</span><span class="params">(<span class="type">int</span> item)</span>&#123;<span class="comment">//the item to be searched</span></span><br><span class="line">    <span class="type">int</span> lwb=<span class="number">0</span>,upb=<span class="number">7</span>;<span class="comment">//lowerbound和upperbound的初始化</span></span><br><span class="line">    <span class="type">int</span> mid;</span><br><span class="line">    Boolean found=<span class="literal">false</span>;<span class="comment">//初始化</span></span><br><span class="line">    <span class="keyword">while</span>(!found &amp;&amp; lwb&lt;=upb)&#123;<span class="comment">//还没找到且范围正常</span></span><br><span class="line">        mid=(lwb+upb)/<span class="number">2</span>;<span class="comment">//算出区间中值 然后对比区间中间的element和寻找的element的大小</span></span><br><span class="line">        <span class="keyword">if</span>(mylist2[mid]==item)&#123;<span class="comment">//如果刚好找到 则fouund=true, 终止循环</span></span><br><span class="line">            found=<span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(mylist2[mid]&lt;item)&#123;<span class="comment">//如果要找的item比区间中值大 则lwb变成mid+1</span></span><br><span class="line">            lwb=mid+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            upb=mid-<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(found)&#123;</span><br><span class="line">        <span class="keyword">return</span> mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;item not found&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">recursiveBinarySearch</span><span class="params">(<span class="type">int</span>[] bsarr, <span class="type">int</span> lwb, <span class="type">int</span> upb, <span class="type">int</span> snum)</span>&#123;<span class="comment">//snum: the number to be searched; bsarr: array for binary search</span></span><br><span class="line">    <span class="type">int</span> mid=(upb-lwb)/<span class="number">2</span>+lwb;</span><br><span class="line">    <span class="keyword">if</span>(lwb&gt;upb)&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;not found&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(bsarr[mid]==snum)&#123;</span><br><span class="line">        <span class="keyword">return</span> mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(bsarr[mid]&lt;snum)&#123;</span><br><span class="line">        <span class="keyword">return</span> recursiveBinarySearch(bsarr, mid+<span class="number">1</span>, upb, snum);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> recursiveBinarySearch(bsarr, lwb, mid-<span class="number">1</span>, snum);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">FUNCTION binarySearch(item:INTEGER, arr: ARRAY[1:10] OF INTEGER)</span><br><span class="line">	DECLARE upb: INTEGER</span><br><span class="line">	DECLARE lwb: INTEGER</span><br><span class="line">	DECLARE mid: INTEGER</span><br><span class="line">	upb &lt;- 10</span><br><span class="line">	lwb &lt;- 1</span><br><span class="line">	WHILE lwb&lt;upb</span><br><span class="line">		mid&lt;-(upb+lwb)/2 // mid &lt;- (upb-lwb)/2+lwb</span><br><span class="line">		IF arr[mid]=item</span><br><span class="line">			THEN</span><br><span class="line">				OUTPUT &quot;found&quot;</span><br><span class="line">				RETURN mid</span><br><span class="line">			ELSE </span><br><span class="line">				IF arr[mid]&lt;item</span><br><span class="line">					THEN</span><br><span class="line">						lwb=mid+1</span><br><span class="line">					ELSE</span><br><span class="line">						upb=mid-1</span><br><span class="line">				ENDIF</span><br><span class="line">		ENDIF</span><br><span class="line">	ENDWHILE</span><br><span class="line">OUTPUT &quot;not found&quot;</span><br><span class="line">RETURN -1</span><br></pre></td></tr></table></figure>
+
+<h4 id="Running"><a href="#Running" class="headerlink" title="Running:"></a>Running:</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="string">&quot;binary search:&quot;</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;Position of 7 in mylist2: &quot;</span>+ binarySearch(<span class="number">7</span>));</span><br><span class="line">System.out.println(<span class="string">&quot;Position of -2 in mylist2: &quot;</span>);</span><br><span class="line">binarySearch(-<span class="number">2</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;linear search:&quot;</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;Position of 22 in mylist1: &quot;</span>+linearSearch(<span class="number">22</span>));</span><br><span class="line">System.out.println(<span class="string">&quot;Position of -2 in mylist1: &quot;</span>);</span><br><span class="line">linearSearch(-<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="Result"><a href="#Result" class="headerlink" title="Result:"></a>Result:</h4><figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">binary search:</span><br><span class="line">Position of 7 in mylist2: 0</span><br><span class="line">Position of -2 in mylist2:</span><br><span class="line">item not found</span><br><span class="line">linear search:</span><br><span class="line">Position of 22 in mylist1: 3</span><br><span class="line">Position of -2 in mylist1:</span><br><span class="line">item not found</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Sort"><a href="#Sort" class="headerlink" title="Sort"></a>Sort</h2><p><u>Factors that may affect the performance of a sorting algorithms:</u></p>
+<ul>
+<li><font color=#4a69bd>The initial order of data</font></li>
+<li><font color=#4a69bd>The number of data items to be sorted</font></li>
+<li><font color=#4a69bd>The efficiency of the sorting algorithm</font></li>
+</ul>
+<h3 id="Prerequisite-1"><a href="#Prerequisite-1" class="headerlink" title="Prerequisite"></a>Prerequisite</h3> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] thedata = &#123;<span class="number">34</span>,<span class="number">43</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">25</span>, <span class="number">98</span>, <span class="number">32</span>, <span class="number">43</span>, <span class="number">9</span>, <span class="number">11</span>&#125;;</span><br><span class="line"><span class="type">int</span>[] a=Bubblesort(thedata);</span><br><span class="line"><span class="type">int</span>[] b=insertionsort(thedata);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Bubble-Sort"><a href="#Bubble-Sort" class="headerlink" title="Bubble Sort"></a>Bubble Sort</h3><ul>
+<li><input checked="" disabled="" type="checkbox"> 9618 s21 41 Q2</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span>[] Bubblesort(<span class="type">int</span>[] arr)&#123;</span><br><span class="line">    <span class="type">int</span> top,temp;</span><br><span class="line">    Boolean swap;</span><br><span class="line">    top=arr.length-<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">do</span>&#123;</span><br><span class="line">        swap=<span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;top;++i)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[i]&gt;arr[i+<span class="number">1</span>])&#123;</span><br><span class="line">                temp=arr[i];</span><br><span class="line">                arr[i]=arr[i+<span class="number">1</span>];</span><br><span class="line">                arr[i+<span class="number">1</span>]=temp;</span><br><span class="line">                swap=<span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        top--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(swap &amp;&amp; top&gt;<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">FUNCTION BubbleSort(arr : ARRAY [1:10] OF INTEGER) RETURNS ARRAY [1:10] OF INTEGER</span><br><span class="line">	DECLARE top : INTEGER</span><br><span class="line">	DECLARE tmp : INTEGER</span><br><span class="line">	DECLARE swap : BOOLEAN</span><br><span class="line">	top=9</span><br><span class="line">	REPEAT</span><br><span class="line">		swap=FALSE</span><br><span class="line">		FOR i &lt;- 1 TO top</span><br><span class="line">			IF arr[i]&gt;arr[i+1] </span><br><span class="line">				THEN</span><br><span class="line">					tmp&lt;-arr[i]</span><br><span class="line">					arr[i]=arr[i+1]</span><br><span class="line">					arr[i+1]=tmp</span><br><span class="line">					swap&lt;-TRUE</span><br><span class="line">			ENDIF</span><br><span class="line">		NEXT i</span><br><span class="line">		top &lt;- top -1</span><br><span class="line">	UNTIL NOT swap AND top&lt;1</span><br><span class="line">	RETURN arr</span><br><span class="line">ENDFUNCTION</span><br></pre></td></tr></table></figure>
+
+<h3 id="Insertion-Sort"><a href="#Insertion-Sort" class="headerlink" title="Insertion Sort"></a>Insertion Sort</h3><p><u>Describe how an insertion sort will sort the data</u></p>
+<ul>
+<li><font color=#4a69bd>Set the first element to be the sorted list</font></li>
+<li><font color=#4a69bd>Store the next element in a temporary variable &#x2F;&#x2F; store the value to be sorted in a temporary variable</font></li>
+<li><font color=#4a69bd>… Compare this next element to each element in the sorted list</font></li>
+<li><font color=#4a69bd>Move the elements that are greater than it one space to the right and insert the temporary variable&#x2F;&#x2F; swap the element down until in the correct position</font></li>
+<li><font color=#4a69bd>Loop through all items from 2nd to end of array</font></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span>[] insertionsort1(<span class="type">int</span>[] arr)&#123;</span><br><span class="line">    <span class="type">int</span> lwb=<span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> upb=arr.length-<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=lwb+<span class="number">1</span>;i&lt;=upb;++i)&#123;</span><br><span class="line">        <span class="type">int</span> key=arr[i];</span><br><span class="line">        <span class="type">int</span> place=i-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(arr[place]&gt;key)&#123;</span><br><span class="line">            <span class="keyword">while</span>(place&gt;=lwb &amp;&amp; arr[place]&gt;arr[place+<span class="number">1</span>])&#123;</span><br><span class="line">                <span class="type">int</span> tmp=arr[place+<span class="number">1</span>];</span><br><span class="line">                arr[place+<span class="number">1</span>]=arr[place];</span><br><span class="line">                arr[place]=tmp;</span><br><span class="line">                place--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span>[] insertionsort2(<span class="type">int</span>[] arr)&#123;<span class="comment">// this is more preferrable and more efficienct compared to insertionsort1</span></span><br><span class="line">    <span class="type">int</span> lwb=<span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> upb=arr.length-<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=lwb+<span class="number">1</span>;i&lt;=upb;++i)&#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">key</span> <span class="operator">=</span> arr[i];</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(arr[j]&gt;key &amp;&amp; j&gt;=lwb)&#123;</span><br><span class="line">            arr[j+<span class="number">1</span>]=arr[j];</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        arr[j+<span class="number">1</span>]=key;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">FUNCTION insertionSort (arr : ARRAY[1:10] OF INTEGER) RETURNS ARRAY[1:10] OF INTEGER</span><br><span class="line">	DECLARE key : INTEGER</span><br><span class="line">	DECLARE place:INTEGER</span><br><span class="line">	FOR i &lt; 2 TO 10</span><br><span class="line">		key &lt;- arr[i]</span><br><span class="line">		place &lt;- i-1</span><br><span class="line">		WHILE arr[place-1] &gt; arr[place] &amp;&amp; place&gt;1</span><br><span class="line">			arr[place]=arr[place-1]</span><br><span class="line">			place &lt;- place -1</span><br><span class="line">		ENDWHILE</span><br><span class="line">		arr[place+1]&lt;-key</span><br><span class="line">	NEXT i</span><br><span class="line">	RETURN arr</span><br><span class="line">ENDFUNCTION</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Abstract-Data-Types"><a href="#Abstract-Data-Types" class="headerlink" title="Abstract Data Types"></a>Abstract Data Types</h2><h3 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h3><ul>
+<li>Insert</li>
+<li>Delete</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">stack</span>&#123;</span><br><span class="line">    <span class="type">int</span>[] sta;</span><br><span class="line">    <span class="type">int</span> basepointer=<span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> toppointer=-<span class="number">1</span>;<span class="comment">//初始化为-1 代表stack为空的情况</span></span><br><span class="line">    <span class="type">int</span> item;</span><br><span class="line">    <span class="type">int</span> size;<span class="comment">//最大容量</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">stack</span><span class="params">(<span class="type">int</span> si)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.sta= <span class="keyword">new</span> <span class="title class_">int</span>[si];</span><br><span class="line">        <span class="built_in">this</span>.size=si;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">pop</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(toppointer==-<span class="number">1</span>)&#123;<span class="comment">//也可以写成 if(toppointer==basepointer-1)</span></span><br><span class="line">            System.out.println(<span class="string">&quot;stack is empty, cannot pop&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            item=sta[toppointer];</span><br><span class="line">            toppointer--;</span><br><span class="line">            <span class="keyword">return</span> item;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">push</span><span class="params">(<span class="type">int</span> item)</span>&#123;<span class="comment">//添加item进入stack</span></span><br><span class="line">        <span class="keyword">if</span>(toppointer==size-<span class="number">1</span>)&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;stack is full, cannot push&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            sta[++toppointer]=item;</span><br><span class="line">            <span class="comment">//也可以写成: toppointer=toppointer+1;</span></span><br><span class="line">            <span class="comment">//           stack[toppointer]=item;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isEmpty</span><span class="params">()</span>&#123;<span class="comment">//大概率不会考</span></span><br><span class="line">        <span class="keyword">if</span>(toppointer==-<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//return (toppointer==-1)? true: false;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">peek</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">this</span>.isEmpty())&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;stack is empty&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> sta[toppointer];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h3><ul>
+<li>Insert</li>
+<li>Delete</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">queue</span>&#123;</span><br><span class="line">    <span class="type">int</span>[] que= <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">10</span>];</span><br><span class="line">    <span class="type">int</span> front=<span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> rear=-<span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> queueFull=<span class="number">10</span>;<span class="comment">//store the maximum size of the queue</span></span><br><span class="line">    <span class="type">int</span> queueLength=<span class="number">0</span>;<span class="comment">// store the current size of the queue</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">enqueue</span><span class="params">(<span class="type">int</span> item)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(queueLength&lt;queueFull)&#123;</span><br><span class="line">            <span class="keyword">if</span>(rear&lt;queueFull-<span class="number">1</span>)&#123;</span><br><span class="line">                rear++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                rear=<span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            queueLength=queueLength+<span class="number">1</span>; </span><br><span class="line">            que[rear]=item;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;queue is full, cannot enqueue&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">dequeue</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(queueLength==<span class="number">0</span>)&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Queue is empty, cannot dequeue&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="type">int</span> item=que[front];</span><br><span class="line">            <span class="keyword">if</span>(front==queueFull-<span class="number">1</span>)&#123;</span><br><span class="line">                front=<span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                front=front+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            queueLength--;</span><br><span class="line">            <span class="keyword">return</span> item;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Linked-List"><a href="#Linked-List" class="headerlink" title="Linked List"></a>Linked List</h3><ul>
+<li>Insert</li>
+<li>Delete</li>
+<li>Find</li>
+</ul>
+<h4 id="Initialization"><a href="#Initialization" class="headerlink" title="Initialization"></a>Initialization</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">CONSTANT nullPointer=-1</span><br><span class="line">TYPE node</span><br><span class="line">	DECLARE data:STRING</span><br><span class="line">	DECLARE nextPointer:INTEGER</span><br><span class="line">ENDTYPE</span><br><span class="line">DECLARE startPointer,freePointer:INTEGER</span><br><span class="line">DECLARE list : ARRAY[0:N] OF node</span><br><span class="line">PROCEDURE Initialization</span><br><span class="line">	startPointer &lt;- -1</span><br><span class="line">	freePointer &lt;- 0</span><br><span class="line">	FOR i &lt;- 0 TO N-1</span><br><span class="line">		list[i].nextPointer&lt;-i+1</span><br><span class="line">	NEXT i</span><br><span class="line">	list[N].nextPointer&lt;-nullPointer</span><br><span class="line">ENDPROCEDURE</span><br></pre></td></tr></table></figure>
+
+<h4 id="Insert"><a href="#Insert" class="headerlink" title="Insert"></a>Insert</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">insert</span><span class="params">(String value)</span> &#123;<span class="comment">//根据大小插入 这里对比的是String的字典序</span></span><br><span class="line">    <span class="keyword">if</span> (freepointer != nullPointer) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">newNodePtr</span> <span class="operator">=</span> freepointer;</span><br><span class="line">        list[newNodePtr].data = value;</span><br><span class="line">        freepointer = list[freepointer].pointer;</span><br><span class="line">        <span class="type">int</span> <span class="variable">previousPtr</span> <span class="operator">=</span> nullPointer;</span><br><span class="line">        <span class="type">int</span> <span class="variable">thisPtr</span> <span class="operator">=</span> startpointer;</span><br><span class="line">        <span class="keyword">while</span>((thisPtr != nullPointer) &amp;&amp; (value.compareTo(list[thisPtr].data) &gt; <span class="number">0</span>))&#123;<span class="comment">//如果value比thisptr的data大</span></span><br><span class="line">            previousPtr = thisPtr;</span><br><span class="line">            thisPtr = list[thisPtr].pointer;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//最终 value会比previousptr的大，比thisptr的小</span></span><br><span class="line">        <span class="keyword">if</span> (previousPtr == nullPointer) &#123; <span class="comment">// insert at the start of the node</span></span><br><span class="line">            list[newNodePtr].pointer = startpointer;</span><br><span class="line">            startpointer = newNodePtr;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            list[newNodePtr].pointer = list[previousPtr].pointer;</span><br><span class="line">            list[previousPtr].pointer = newNodePtr;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;no space&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">insertAtend</span><span class="params">(String value)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(freepointer!=nullPointer)&#123;</span><br><span class="line">        <span class="type">int</span> newNodeptr=freepointer;</span><br><span class="line">        list[newNodeptr].data=value;</span><br><span class="line">        freepointer=list[freepointer].pointer;</span><br><span class="line">        <span class="type">int</span> prevPointer=nullPointer;</span><br><span class="line">        <span class="type">int</span> thisptr=startpointer;</span><br><span class="line">        <span class="keyword">while</span>(thisptr!=nullPointer)&#123;</span><br><span class="line">            prevPointer=thisptr;</span><br><span class="line">            thisptr=list[thisptr].pointer;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(prevPointer==nullPointer)&#123;</span><br><span class="line">            startpointer=newNodeptr;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            list[prevPointer].pointer=newNodeptr;</span><br><span class="line">        &#125;</span><br><span class="line">        list[newNodeptr].pointer=nullPointer;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">PROCEDURE insert(item:STRING)</span><br><span class="line">	DECLARE newPointer,prevPointer,thisPointer:INTEGER</span><br><span class="line">	IF freePointer&lt;&gt;nullPointer</span><br><span class="line">		THEN</span><br><span class="line">			newPointer&lt;-freePointer</span><br><span class="line">			freePointer&lt;-list[freePointer].nextPointer</span><br><span class="line">			list[newPointer].data&lt;-item</span><br><span class="line">			prevPointer&lt;-nullPointer</span><br><span class="line">			thisPointer&lt;-startPointer</span><br><span class="line">			WHILE thisPointer&lt;&gt;nullPointer</span><br><span class="line">				prevPointer&lt;-thisPointer</span><br><span class="line">				thisPointer&lt;-list[thisPointer].nextPointer</span><br><span class="line">			ENDWHILE</span><br><span class="line">			IF prevPointer=nullPointer</span><br><span class="line">				THEN</span><br><span class="line">					startPointer&lt;-newPointer</span><br><span class="line">				ELSE</span><br><span class="line">					list[prevPointer].nextPointer&lt;-newPointer</span><br><span class="line">			ENDIF</span><br><span class="line">			list[newPointer].nextPointer&lt;-nullPointer</span><br><span class="line">	ENDIF</span><br><span class="line">ENDPROCEDURE</span><br></pre></td></tr></table></figure>
+
+<h4 id="Delete"><a href="#Delete" class="headerlink" title="Delete"></a>Delete</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">deleteNode</span><span class="params">(String data)</span>&#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">thisPtr</span> <span class="operator">=</span> startpointer;</span><br><span class="line">    <span class="type">int</span> <span class="variable">previousPtr</span> <span class="operator">=</span> nullPointer;</span><br><span class="line">    <span class="keyword">while</span> ((thisPtr != nullPointer) &amp;&amp; (!data.equalsIgnoreCase(list[thisPtr].data))) &#123;</span><br><span class="line">        previousPtr = thisPtr;</span><br><span class="line">        thisPtr = list[thisPtr].pointer;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (thisPtr == nullPointer)</span><br><span class="line">        System.out.println(<span class="string">&quot;data is not present&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (thisPtr == startpointer)<span class="comment">//删除startPointer存的元素</span></span><br><span class="line">            startpointer = list[startpointer].pointer;<span class="comment">//把startPointer设置为下一个linked的元素</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            list[previousPtr].pointer = list[thisPtr].pointer;<span class="comment">//若是删除链表中的元素，把previousPtr的元素link的要删除元素的下一个元素上</span></span><br><span class="line">    	list[thisPtr].pointer = freepointer;<span class="comment">//把删除的元素设置为free</span></span><br><span class="line">    	freepointer = thisPtr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">PROCEDURE delete(item: STRING)</span><br><span class="line">	DECLARE prevPointer, thisPointer:INTEGER</span><br><span class="line">	prevPointer&lt;-nullPointer</span><br><span class="line">	thisPointer&lt;-startPointer</span><br><span class="line">	WHILE list[thisPointer]&lt;&gt;null &amp;&amp; list[thisPointer].data&lt;&gt;item</span><br><span class="line">		prevPointer&lt;-thisPointer</span><br><span class="line">		thisPointer&lt;-list[thisPointer].nextPointer</span><br><span class="line">	ENDWHILE</span><br><span class="line">	IF thisPointer&lt;&gt;nullPointer</span><br><span class="line">		THEN</span><br><span class="line">			IF thisPointer=startPointer</span><br><span class="line">				THEN</span><br><span class="line">					startPointer&lt;-list[startPointer].nextPointer</span><br><span class="line">				ELSE</span><br><span class="line">					list[prevPointer].nextPointer&lt;-list[thisPointer].nextPointer</span><br><span class="line">			ENDIF</span><br><span class="line">			list[thisPointer].nextPointer&lt;-freePointer</span><br><span class="line">			freePointer&lt;-thisPointer</span><br><span class="line">		ELSE</span><br><span class="line">			OUTPUT &quot;not found the item to be deleted&quot;</span><br><span class="line">	ENDIF</span><br><span class="line">ENDPROCEDURE</span><br></pre></td></tr></table></figure>
+
+<h4 id="Find"><a href="#Find" class="headerlink" title="Find"></a>Find</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="type">int</span> <span class="title function_">findNode</span><span class="params">(String data)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">currentNode</span> <span class="operator">=</span> startpointer;</span><br><span class="line">    <span class="keyword">while</span> (currentNode != nullPointer) &#123;</span><br><span class="line">        <span class="keyword">if</span> (data.equalsIgnoreCase(list[currentNode].data)) &#123;</span><br><span class="line">            <span class="keyword">return</span> currentNode;</span><br><span class="line">        &#125;</span><br><span class="line">        currentNode = list[currentNode].pointer;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> currentNode;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<details>
+    <summary>完整代码</summary>
+<pre><code>public class Main &#123;
+    static class ListNode &#123;
+        String data;
+        int pointer;
+        public ListNode() &#123;
+            data = "";
+            pointer = nullPointer;
+        &#125;
+    &#125;
+    static final int nullPointer = -1;
+    static int startpointer, freepointer;
+    static Scanner input = new Scanner(System.in);
+    static ListNode[] list = new ListNode[8];
+    static void initializeList() &#123;
+        startpointer = nullPointer;
+        freepointer = 0;
+        for (int i = 0; i < 7; i++) &#123;
+            list[i] = new ListNode(); // set all nodes as free nodes;
+            list[i].pointer = i + 1;
+        &#125;
+        list[7] = new ListNode();
+        list[7].pointer = -1; // last node is intilized as -1;
+    &#125;
+    static int menu() &#123;
+        System.out.println("1. insert an item");
+        System.out.println("2. delete an item");
+        System.out.println("3. search an item");
+        System.out.println("4. display an item");
+        System.out.println("Enter your choice 1/2/3/4");
+        int ch = input.nextInt();
+        return ch;
+    &#125;
+    static void insert(String value) &#123;//根据大小插入 这里对比的是String的字典序
+        if (freepointer != nullPointer) &#123;
+            int newNodePtr = freepointer;
+            list[newNodePtr].data = value;
+            freepointer = list[freepointer].pointer;
+            int previousPtr = nullPointer;
+            int thisPtr = startpointer;
+            while((thisPtr != nullPointer) && (value.compareTo(list[thisPtr].data) > 0))&#123;//如果value比thisptr的data大
+                previousPtr = thisPtr;
+                thisPtr = list[thisPtr].pointer;
+            &#125;
+            //最终 value会比previousptr的大，比thisptr的小
+            if (previousPtr == nullPointer) &#123; // insert at the start of the node
+                list[newNodePtr].pointer = startpointer;
+                startpointer = newNodePtr;
+            &#125; else &#123;
+                list[newNodePtr].pointer = list[previousPtr].pointer;
+                list[previousPtr].pointer = newNodePtr;
+            &#125;
+        &#125; else &#123;
+            System.out.println("no space");
+        &#125;
+    &#125;
+    static void insertAtend(String value)&#123;
+        if(freepointer!=nullPointer)&#123;
+            int newNodeptr=freepointer;
+            list[newNodeptr].data=value;
+            freepointer=list[freepointer].pointer;
+            int prevPointer=nullPointer;
+            int thisptr=startpointer;
+            while(thisptr!=nullPointer)&#123;
+                prevPointer=thisptr;
+                thisptr=list[thisptr].pointer;
+            &#125;
+            if(prevPointer==nullPointer)&#123;
+                startpointer=newNodeptr;
+            &#125;
+            else&#123;
+                list[prevPointer].pointer=newNodeptr;
+            &#125;
+            list[newNodeptr].pointer=nullPointer;
+        &#125;
+    &#125;
+    static void display()&#123;
+        int currentNode = startpointer;
+        if (startpointer == nullPointer)
+            System.out.println("no data in list");
+        while (currentNode != nullPointer) &#123;
+            System.out.print(list[currentNode].data + "  ");
+            currentNode = list[currentNode].pointer;
+        &#125;
+    &#125;
+    static int findNode(String data) &#123;
+        int currentNode = startpointer;
+        while (currentNode != nullPointer) &#123;
+            if (data.equalsIgnoreCase(list[currentNode].data)) &#123;
+                return currentNode;
+            &#125;
+            currentNode = list[currentNode].pointer;
+        &#125;
+        return currentNode;
+    &#125;
+    static void deleteNode(String data)&#123;
+        int thisPtr = startpointer;
+        int previousPtr = nullPointer;
+        while ((thisPtr != nullPointer) && (!data.equalsIgnoreCase(list[thisPtr].data))) &#123;
+            previousPtr = thisPtr;
+            thisPtr = list[thisPtr].pointer;
+        &#125;
+        if (thisPtr == nullPointer)
+            System.out.println("data is not present");
+        else &#123;
+            if (thisPtr == startpointer)//删除startPointer存的元素
+                startpointer = list[startpointer].pointer;//把startPointer设置为下一个linked的元素
+            else
+                list[previousPtr].pointer = list[thisPtr].pointer;//若是删除链表中的元素，把previousPtr的元素link的要删除元素的下一个元素上
+        &#125;
+        list[thisPtr].pointer = freepointer;//把删除的元素设置为free
+        freepointer = thisPtr;
+    &#125;
+    public static void main(String[] args) &#123;
+        initializeList();
+        String Data, Choice = "";
+        do &#123;
+            System.out.println("enter your choice");
+            int ch = menu();
+            switch (ch) &#123;
+                case 1:
+                    System.out.println("Enter the value");
+                    Data = input.next();
+                    insert(Data);
+                    display();
+                    break;
+                case 2:
+                    System.out.println("Enter the value");
+                    Data = input.next();
+                    deleteNode(Data);
+                    display();
+                    break;
+                case 3:
+                    System.out.println("Enter the value");
+                    Data = input.next();
+                    int find = findNode(Data);
+                    System.out.println(" item found " + find);
+                    if (find == nullPointer)
+                        System.out.println("data not found");
+                    display();
+                    break;
+                case 4:
+                    System.out.println("Print complete list");
+                    display();
+            &#125;
+            System.out.println("do you want to continue enter Y /y ");
+            Choice = input.next();
+        &#125; while (Choice.equalsIgnoreCase("Y"));
+    &#125;
+&#125;
+</code></pre>
+</details>
+
+<h3 id="Binary-tree"><a href="#Binary-tree" class="headerlink" title="Binary tree"></a>Binary tree</h3><p><u>State the purpose of the free pointer:</u></p>
+<ul>
+<li><font color=#4a69bd>To point to the start&#x2F; first of the empty node&#x2F;nodes</font></li>
+</ul>
+<h4 id="Initialization-1"><a href="#Initialization-1" class="headerlink" title="Initialization"></a>Initialization</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">TYPE node</span><br><span class="line">	DECLARE leftPointer: INTEGER</span><br><span class="line">	DECLARE rightPointer : INTEGER</span><br><span class="line">	DECLARE data : STRING</span><br><span class="line">ENDTYPE</span><br><span class="line">DECLARE N : INTEGER</span><br><span class="line">DECLARE freePointer,rootPointer, nullPointer : INTEGER</span><br><span class="line">DECLARE tree : ARRAY [0:N] OF node</span><br><span class="line">PROCEDURE initialization </span><br><span class="line">	freePointer &lt;- 0</span><br><span class="line">	nullPointer &lt;- -1</span><br><span class="line">	rootPointer &lt;- nullPointer</span><br><span class="line">	FOR i &lt;- 0 TO N-1</span><br><span class="line">		tree[i].leftPointer &lt;- i+1</span><br><span class="line">	NEXT i</span><br><span class="line">	tree[N].leftPointer &lt;- -1</span><br><span class="line">ENDPROCEDURE</span><br></pre></td></tr></table></figure>
+
+<h4 id="Insert-1"><a href="#Insert-1" class="headerlink" title="Insert"></a>Insert</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">AddNode</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">Scanner</span> <span class="variable">sca</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">    System.out.println(<span class="string">&quot;input the data to be Added&quot;</span>);</span><br><span class="line">    <span class="type">int</span> <span class="variable">data</span> <span class="operator">=</span> sca.nextInt();</span><br><span class="line">    <span class="keyword">if</span>(FreeNode&lt;=<span class="number">19</span>)&#123;<span class="comment">//如果Binary tree没用满</span></span><br><span class="line">        <span class="type">int</span> newPtr=FreeNode;</span><br><span class="line">        ArrayNodes[newPtr]=<span class="keyword">new</span> <span class="title class_">node</span>(-<span class="number">1</span>,data,-<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span>(RootPointer==-<span class="number">1</span>)&#123;<span class="comment">//如果当前为空</span></span><br><span class="line">            RootPointer=newPtr;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            Boolean placed=<span class="literal">false</span>;</span><br><span class="line">            <span class="type">int</span> CurrentNode=RootPointer;</span><br><span class="line">            <span class="keyword">while</span>(placed==<span class="literal">false</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(data&lt;ArrayNodes[CurrentNode].data)&#123;<span class="comment">//如果插入数值比当前数值小，则看左边</span></span><br><span class="line">                    <span class="keyword">if</span>(ArrayNodes[CurrentNode].leftPointer==-<span class="number">1</span>)&#123;<span class="comment">//如果左节点为空 则放到左节点</span></span><br><span class="line">                        ArrayNodes[CurrentNode].leftPointer=newPtr;</span><br><span class="line">                        placed=<span class="literal">true</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span>&#123;<span class="comment">//如果不为空 则继续往下搜空的地方插入</span></span><br><span class="line">                        CurrentNode=ArrayNodes[CurrentNode].leftPointer;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;<span class="comment">//如果插入数值比当前数值大，则看右边</span></span><br><span class="line">                    <span class="keyword">if</span>(ArrayNodes[CurrentNode].rightPointer==-<span class="number">1</span>)&#123;</span><br><span class="line">                        ArrayNodes[CurrentNode].rightPointer=newPtr;</span><br><span class="line">                        placed=<span class="literal">true</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span>&#123;</span><br><span class="line">                        CurrentNode=ArrayNodes[CurrentNode].rightPointer;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        FreeNode=FreeNode+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Tree is full&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">PROCEDURE insert</span><br><span class="line">	DECLARE newPointer,thisPointer,prevPointer:INTEGER</span><br><span class="line">	DECLARE turnedLeft : BOOLEAN</span><br><span class="line">	IF freePointer&lt;&gt;-1</span><br><span class="line">		THEN </span><br><span class="line">			newPointer&lt;-freePointer</span><br><span class="line">			freePointer&lt;-tree[freePointer].leftPointer</span><br><span class="line">			INPUT data</span><br><span class="line">			tree[newPointer].data &lt;- data</span><br><span class="line">			tree[newPointer].leftPointer&lt;- nullPointer</span><br><span class="line">			tree[newPointer].rightPointer &lt;- nullPointer</span><br><span class="line">			IF rootPointer = nullPointer</span><br><span class="line">				THEN</span><br><span class="line">					rootPointer&lt;- newPointer</span><br><span class="line">				ELSE</span><br><span class="line">					thisPointer&lt;-rootPointer</span><br><span class="line">					prevPointer&lt;-nullPointer</span><br><span class="line">					WHILE thisPointer&lt;&gt;-1</span><br><span class="line">						prevPointer&lt;-thisPointer</span><br><span class="line">						IF tree[thisPointer].data &lt; data</span><br><span class="line">							THEN</span><br><span class="line">								turnedLeft&lt;-FALSE</span><br><span class="line">								thisPointer&lt;-tree[thisPointer].rightPointer</span><br><span class="line">							ELSE</span><br><span class="line">								turnedLeft&lt;-TRUE</span><br><span class="line">								thisPointer&lt;-tree[thisPointer].leftPointer</span><br><span class="line">						ENDIF</span><br><span class="line">					ENDWHILE</span><br><span class="line">					IF turnedLeft</span><br><span class="line">						THEN</span><br><span class="line">							tree[prevPointer].leftPointer&lt;-newPointer</span><br><span class="line">						ELSE</span><br><span class="line">							tree[prevPointer].rightPointer&lt;-newPointer</span><br><span class="line">					ENDIF</span><br><span class="line">			ENDIF</span><br><span class="line">	ENDIF</span><br><span class="line">ENDPROCEDURE</span><br><span class="line"></span><br><span class="line">				</span><br></pre></td></tr></table></figure>
+
+<h4 id="Search-mag"><a href="#Search-mag" class="headerlink" title="Search:mag:"></a>Search:mag:</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">search</span><span class="params">(<span class="type">int</span> element)</span>&#123;</span><br><span class="line">    <span class="type">int</span> nownode=RootPointer;</span><br><span class="line">    <span class="keyword">while</span>(nownode!=-<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(ArrayNodes[nownode].data==element)&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;found, the position is:&quot;</span>+ nownode);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(ArrayNodes[nownode].data&gt;element)&#123;</span><br><span class="line">            nownode=ArrayNodes[nownode].leftPointer;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            nownode=ArrayNodes[nownode].rightPointer;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(<span class="string">&quot;not found&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">FUNCTION search(item : STRING) RETURNS INTEGER</span><br><span class="line">	DECLARE thisPointer : INTEGER</span><br><span class="line">	thisPointer&lt;-rootPointer</span><br><span class="line">	WHILE thisPointer&lt;&gt;nullPointer</span><br><span class="line">		IF tree[thisPointer].data=item</span><br><span class="line">			THEN</span><br><span class="line">				RETURN thisPointer</span><br><span class="line">			ELSE</span><br><span class="line">				IF tree[thisPointer].data&gt;item</span><br><span class="line">					THEN</span><br><span class="line">						thisPointer&lt;-tree[thisPointer].leftPointer</span><br><span class="line">					ELSE</span><br><span class="line">						thisPointer&lt;-tree[thisPointer].rightPointer</span><br><span class="line">				ENDIF</span><br><span class="line">		ENDIF</span><br><span class="line">	ENDWHILE</span><br><span class="line">ENDFUNCTION</span><br></pre></td></tr></table></figure>
+
+<h4 id="Traversal"><a href="#Traversal" class="headerlink" title="Traversal"></a>Traversal</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">inorderTraverse</span><span class="params">(<span class="type">int</span> ptr)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(ptr==-<span class="number">1</span>) <span class="keyword">return</span>;</span><br><span class="line">    inorderTraverse(ArrayNodes[ptr].leftPointer);</span><br><span class="line">    System.out.println(ArrayNodes[ptr].data);</span><br><span class="line">    inorderTraverse(ArrayNodes[ptr].rightPointer);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<details>
+    <summary>完整代码</summary>
+<pre><code>class Main&#123;
+    static node[] ArrayNodes = new node[20];
+    static int RootPointer=-1;
+    static int FreeNode=0;
+    public static void main(String[] args)&#123;
+        //Adding: 23 5 8 100 9 88
+        System.out.println("Adding Nodes");
+        AddNode();
+        AddNode();
+        AddNode();
+        AddNode();
+        AddNode();
+        AddNode();
+        System.out.println("Printing Tree Content");
+        printContent();
+        System.out.println("Inorder Traverse");
+        inorderTraverse(0);
+        search(5);
+    &#125;
+    public static void AddNode()&#123;
+        Scanner sca = new Scanner(System.in);
+        System.out.println("input the data to be Added");
+        int data = sca.nextInt();
+        if(FreeNode<=19)&#123;//如果
+            int newPtr=FreeNode;
+            ArrayNodes[newPtr]=new node(-1,data,-1);
+            if(RootPointer==-1)&#123;//如果当前为空
+                RootPointer=newPtr;
+            &#125;
+            else&#123;
+                Boolean placed=false;
+                int CurrentNode=RootPointer;
+                while(placed==false)&#123;
+                    if(data<ArrayNodes[CurrentNode].data)&#123;//如果插入数值比当前数值小，则看左边
+                        if(ArrayNodes[CurrentNode].leftPointer==-1)&#123;//如果左节点为空 则放到左节点
+                            ArrayNodes[CurrentNode].leftPointer=newPtr;
+                            placed=true;
+                        &#125;
+                        else&#123;//如果不为空 则继续往下搜空的地方插入
+                            CurrentNode=ArrayNodes[CurrentNode].leftPointer;
+                        &#125;
+                    &#125;
+                    else&#123;//如果插入数值比当前数值大，则看右边
+                        if(ArrayNodes[CurrentNode].rightPointer==-1)&#123;
+                            ArrayNodes[CurrentNode].rightPointer=newPtr;
+                            placed=true;
+                        &#125;
+                        else&#123;
+                            CurrentNode=ArrayNodes[CurrentNode].rightPointer;
+                        &#125;
+                    &#125;
+                &#125;
+            &#125;
+            FreeNode=FreeNode+1;
+        &#125;
+        else&#123;
+            System.out.println("Tree is full");
+        &#125;
+    &#125;
+    public static void printContent()&#123;
+        for(int i=0;i<FreeNode;++i)&#123;
+            System.out.println(ArrayNodes[i].leftPointer+" "+ArrayNodes[i].data+" "+ArrayNodes[i].rightPointer);
+        &#125;
+    &#125;
+    public static void inorderTraverse(int ptr)&#123;
+        if(ptr==-1) return;
+        inorderTraverse(ArrayNodes[ptr].leftPointer);
+        System.out.println(ArrayNodes[ptr].data);
+        inorderTraverse(ArrayNodes[ptr].rightPointer);
+    &#125;
+    public static void search(int element)&#123;
+        int nownode=RootPointer;
+        while(nownode!=-1)&#123;
+            if(ArrayNodes[nownode].data==element)&#123;
+                System.out.println("found, the position is:"+ nownode);
+                return;
+            &#125;
+            else if(ArrayNodes[nownode].data>element)&#123;
+                nownode=ArrayNodes[nownode].leftPointer;
+            &#125;
+            else&#123;
+                nownode=ArrayNodes[nownode].rightPointer;
+            &#125;
+        &#125;
+        System.out.println("not found");
+    &#125;
+    static class node&#123;
+        int leftPointer;
+        int data;
+        int rightPointer;
+        public node(int lp,int da, int rp)&#123;
+            this.leftPointer=lp;
+            this.rightPointer=rp;
+            this.data=da;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+</details>
+
+
+<h2 id="Past-paper-questions"><a href="#Past-paper-questions" class="headerlink" title="Past paper questions"></a>Past paper questions</h2><p><u>Describe ways in which a queue differs from a stack</u>:</p>
+<ul>
+<li>In a stack the last item in is the first out&#x2F;LIFO and in a queue the first item in is the first out&#x2F;FIFO</li>
+<li>Queue can be circular, but a stack is linear</li>
+<li>Stack only needs a pointer to the top (and can have a base pointer, and a queue needs a pointer to the front and the rear</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Haoran Jie
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://haoran-jie.github.io/Notes/ALCS/Chapter19.1_Algorithms/" title="Chapter 19.1: Algorithms">https://haoran-jie.github.io/Notes/ALCS/Chapter19.1_Algorithms/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Algorithms/" rel="tag"><i class="fa fa-tag"></i> Algorithms</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Notes/ALCS/Chapter14_CommunicationAndInternetTechnologies/" rel="prev" title="Chapter 14: Communication and Internet technologies">
+                  <i class="fa fa-chevron-left"></i> Chapter 14: Communication and Internet technologies
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Notes/ALCS/practical/" rel="next" title="Paper4:Practical Notes">
+                  Paper4:Practical Notes <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="comment-button-group">
+          <a class="btn comment-button disqus">disqus</a>
+          <a class="btn comment-button gitalk">gitalk</a>
+      </div>
+        <div class="comment-position disqus">
+          
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+        </div>
+        <div class="comment-position gitalk">
+          <div class="comments gitalk-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa-solid fa-terminal"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Haoran Jie</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.3.0/mermaid.min.js","integrity":"sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://haoran-jie.github.io/Notes/ALCS/Chapter19.1_Algorithms/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"samuels-blog-5","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Haoran-Jie","repo":"GItalkComments","client_id":"a78520e4a91db64c6ead","client_secret":"80a445f6a6f80fcd44fea523269b55c10ba59002","admin_user":"Haoran-Jie","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"1646c9511cdc197eac541153638a1d54"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

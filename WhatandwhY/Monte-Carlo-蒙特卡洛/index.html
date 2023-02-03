@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#2c3e50" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#2c3e50">
+  <meta name="google-site-verification" content="ONgpvg7NlakSEl6IcZ4-nCCQleKums7GuOYvOS4zXCQ">
+  <meta name="msvalidate.01" content="5331505606E7903BD6FA7D5C7D0FE6DB">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"haoran-jie.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":30,"offset":15},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#546de5","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":true,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+
+
+<link rel="canonical" href="https://haoran-jie.github.io/WhatandwhY/Monte-Carlo-%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://haoran-jie.github.io/WhatandwhY/Monte-Carlo-%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B/","path":"WhatandwhY/Monte-Carlo-蒙特卡洛/","title":"Monte Carlo simulation| 蒙特卡洛模拟"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Monte Carlo simulation| 蒙特卡洛模拟 | Samuel's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V501S4L4ZZ"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-V501S4L4ZZ","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+  <script async src="//assets.growingio.com/2.1/gio.js"></script>
+  <script class="next-config" data-name="growingio_analytics" type="application/json">"b544ba838d823365"</script>
+  <script src="/js/third-party/analytics/growingio.js"></script>
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Samuel's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Snippets of life of a programmer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">16</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">12</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">30</span></a></li><li class="menu-item menu-item-notes"><a href="/Notes/" rel="section"><i class="fa fa-book fa-fw"></i>Notes</a></li><li class="menu-item menu-item--what&why系列文章"><a href="/WhatandwhY/" rel="section"><i class="fa-solid fa-clipboard-question fa-fw"></i> What&whY系列文章</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#A-lil-bit-of-history-1"><span class="nav-number">2.</span> <span class="nav-text">A lil bit of history[^1]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B5%8C%E5%BE%92%E8%B0%AC%E8%AF%AF-VS-%E8%B6%8B%E5%9D%87%E6%95%B0%E5%9B%9E%E5%BD%92-1"><span class="nav-number">3.</span> <span class="nav-text">赌徒谬误 VS. 趋均数回归[^1]</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Haoran Jie"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Haoran Jie</p>
+  <div class="site-description" itemprop="description">18</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Haoran-Jie" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Haoran-Jie" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:samueljie1@gmail.com" title="E-Mail → mailto:samueljie1@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/samueljieee/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;samueljieee&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://haoran-jie.github.io/WhatandwhY/Monte-Carlo-%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Haoran Jie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Samuel's Blog">
+      <meta itemprop="description" content="18">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Monte Carlo simulation| 蒙特卡洛模拟 | Samuel's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Monte Carlo simulation| 蒙特卡洛模拟
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-07-07 10:26:59" itemprop="dateCreated datePublished" datetime="2022-07-07T10:26:59+01:00">2022-07-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-07-24 13:56:54" itemprop="dateModified" datetime="2022-07-24T13:56:54+01:00">2022-07-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/WhatandwhY/" itemprop="url" rel="index"><span itemprop="name">WhatandwhY</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/WhatandwhY/Monte-Carlo-%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="WhatandwhY/Monte-Carlo-蒙特卡洛/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <div class="note info no-icon"><h4 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h4><blockquote>
+<p>翻译自 《The New Turing Omnimbus》Chapter 4 Paragraph 1</p>
+</blockquote>
+<p>为了了解组成现代世界的许多系统，我们越来越多转向计算机模拟。系统，无论是非人为的或者人工的，总是有许多部分有着复杂的行为，使得唯一可行的的模拟这种行为的方法为假设它是<code>随机的</code>. 显而易见的是，咱们可以利用更简单的，符合统计学定律的部分替代这些系统中复杂的部分。</p>
+<p>举个例子，如果我们想要模拟一场两边实力平均的排球比赛，我们可以通过抛硬币的方法来建立一个简单的模型：如果一个队伍正在发球，抛硬币的结果属于是不利于他们的那一面，则另一个队伍加一分且轮到他们发球；否则，这个发球队伍加一分并且继续发球。这个抛硬币的过程让我们想起了一个简单的打赌方式 ——<mark class="label primary">蒙特卡洛</mark></p>
+</div>
+
+<span id="more"></span>
+
+<h4 id="A-lil-bit-of-history-1"><a href="#A-lil-bit-of-history-1" class="headerlink" title="A lil bit of history[^1]"></a>A lil bit of history[^1]</h4><p>故事从一个波兰犹太裔数学家 斯塔尼斯拉夫·烏拉姆(Stanislaw Ulam) 开始讲起。有一次他生病，身体不适时，一个人喜欢宅在家里玩纸牌接龙游戏（solitaire)。作为一个数学家，他一个自然的想法就是思考有没有办法计算出他赢得一盘游戏的概率，利用组合数学以及概率。虽然他是一个伟大的数学家，但他最后失败了，这个组合情况实在是太复杂了。后来他想到一个比较简单担又不太简单的办法：不断一次又一次的玩这个游戏 最终通过 $\frac{\text{胜利次数}}{总场次}$ 的方法来计算除这个概率，只要是总场次够多，这个概率就会越来越接近真实概率。</p>
+<p>问题出现了：他的实力是在不怎么样，使得他玩到想出这个想法的时候其实一局都没赢过。这样来看的话，如果想要足够准确 他可能要天天玩这个纸牌游戏 持续好几年:cry:  他很快想出了个解决办法：“寻求电脑的帮助呀”! 虽然他本身不是个懂电脑的人（在那个世界上只有几台计算机的时代），他和冯诺依曼认识呀！那个被称为计算机科学的叔叔的大人物（图灵被称为计算机之父，巴贝奇被称为计算机之爷爷）。冯诺依曼说，我可以帮你这个忙！我用ENIAC几个小时就可以模拟完了！（现在的电脑可能几微秒就跑完了） </p>
+<p>自此 <code>蒙特卡洛模拟</code> 就此诞生 他们在后续研究氢弹的时候甚至还用到了 这足以证明这它的作用并不仅限于卡牌 </p>
+<h4 id="赌徒谬误-VS-趋均数回归-1"><a href="#赌徒谬误-VS-趋均数回归-1" class="headerlink" title="赌徒谬误 VS. 趋均数回归[^1]"></a>赌徒谬误 VS. 趋均数回归[^1]</h4><blockquote>
+<p>又是抛硬币：这个经典的例子足以区分这两个经常让人混淆的概念。</p>
+</blockquote>
+<p><strong>让我们先重申一些抛硬币的特性</strong><del>（可能大部分人都知道了）</del></p>
+<ul>
+<li>抛出正反面的概率都是$\frac{1}{2}$ ;   $P(正)&#x3D;P(反)&#x3D;\frac{1}{2}&#x3D;0.5$</li>
+<li>每一次抛硬币这个事件都是互相独立的(independent events)</li>
+</ul>
+<p><strong>想要理解赌徒谬论，自然而然的 让我们从一个赌徒的角度看世界！</strong></p>
+<p>这个游戏非常简单，就是抛硬币然后猜是正面还是反面；猜对了的人会均分所有猜错了的人的赌注。现在非常神奇的事情发生了，这个硬币已经连续十次抛到正面了！一堆赌徒们听到消息蜂拥而至，他们心想太好了太好了我终于要猜对下一次了，然后他们猜第十一次为反面。他们为什么这么猜呢？原因有两个:</p>
+<ol>
+<li>运气守恒定律！这就和我今天倒霉了所以明天运气会更好一样的道理</li>
+<li>连续十一次是正面的概率是 $\frac{1}{2}^{11}&#x3D;\frac{1}{2048}$ ! 所以这么小的概率 我一定要选反面</li>
+</ol>
+<p>那他们是正确的吗？其实不是的: 因为抛硬币的第二个特性 – 每次抛硬币的事件都是互相独立的。所以说下一次抛到正面的概率是1&#x2F;2，抛到反面的概率也是1&#x2F;2. 那(连续十一次是正面的概率是 $\frac{1}{2}^{11}&#x3D;\frac{1}{2048}$ )难道是错的吗？其实也没错。但是我们所经历的 并不是<code>P(连续11次正面)</code>这个概率 而是 <code>P(连续十次正面，那么第十一次是正面)</code> 这个概率。前者为$\frac{1}{2048}$，后者为 $\frac{1}{2}$.</p>
+<p>这就是赌徒谬论：也就是为什么有那么多人沉迷赌博的原因之一：他们做出了虚假的判断，并相信有运气守恒 : <u>只要再来一局我一定能赢</u></p>
+<p>诶那难道世界上没有<strong>运气守恒</strong>这个东西了吗? 其实是有的，而那就是<strong>趋均数回归</strong></p>
+<p><strong>趋均数回归</strong>的故事，还是和之前一样，非常神奇的事情发生了！硬币连续十次抛到正面了！但是现在猜的并不是第十一次，而是在抛硬币第11-20次这十次中，会有多少个正面。</p>
+<p>用人话来讲 去均属回归是这样的一个定理：<em>如果一个离谱的事情发生了 下一个事情大概率不会有这么离谱 会更趋向于这件事情的平均（在这个例子的情况下是5）</em>  </p>
+<p>回归到抛硬币的例子里，在抛第1-10个硬币这件事情上，全都是正面 – 这比较离谱。趋均数回归告诉我们，在抛第11-20个硬币的时候，大概率不会有十个全是正面这种情况了。可能是九个，八个，七个这么离谱的情况，但大概率会比之前不离谱一点 会离5更近一点。</p>
+<p>那很多人可能会搞糊涂 很奇怪呀 为什么你说赌徒谬论告诉我们没有运气守恒 趋均数回归告诉我们有运气守恒了。我只能说他俩对运气守恒的定义不太一样。如果是赌徒谬论 它所讲的运气守恒 在接下来这十个硬币的情况下 判断出来的是什么呢：因为我前面全是正面 那我后面肯定大部分都是反面！因为要守恒嘛 按理说正面和反面要一样多的 所以他们的判断可能说 接下来有八个反面 或者接下来有七个反面。而趋均数回归告诉我们的是：接下来的正面数量我觉得会离5更近一点 相比于之前的这么离谱的正面数量&#x3D;10的情况。它没有说我接下来会有少于五个正面，只是说接下来的正面数量会比起之前的正面数量来 离平均更近一点。</p>
+<p>[^1]: MIT 6.0002 Introduction to Computational Thinking and Data Science, Fall 2016; <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=OgO1gpXSUzU">https://www.youtube.com/watch?v=OgO1gpXSUzU</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Haoran Jie
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://haoran-jie.github.io/WhatandwhY/Monte-Carlo-%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B/" title="Monte Carlo simulation| 蒙特卡洛模拟">https://haoran-jie.github.io/WhatandwhY/Monte-Carlo-蒙特卡洛/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Statistics/" rel="tag"><i class="fa fa-tag"></i> Statistics</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Mathematics/tools/LaTeX-Personal-CheatSheet/" rel="prev" title="LaTeX Personal CheatSheet">
+                  <i class="fa fa-chevron-left"></i> LaTeX Personal CheatSheet
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/uncategorized/Deep-Learning-Recipe/" rel="next" title="Deep Learning Recipe">
+                  Deep Learning Recipe <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="comment-button-group">
+          <a class="btn comment-button disqus">disqus</a>
+          <a class="btn comment-button gitalk">gitalk</a>
+      </div>
+        <div class="comment-position disqus">
+          
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+        </div>
+        <div class="comment-position gitalk">
+          <div class="comments gitalk-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa-solid fa-terminal"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Haoran Jie</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.3.0/mermaid.min.js","integrity":"sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://haoran-jie.github.io/WhatandwhY/Monte-Carlo-%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"samuels-blog-5","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Haoran-Jie","repo":"GItalkComments","client_id":"a78520e4a91db64c6ead","client_secret":"80a445f6a6f80fcd44fea523269b55c10ba59002","admin_user":"Haoran-Jie","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"fecdc169bad2b733ca04fe29d5829d4c"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

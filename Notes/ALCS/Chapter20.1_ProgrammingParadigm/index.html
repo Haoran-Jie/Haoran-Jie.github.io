@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#2c3e50" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#2c3e50">
+  <meta name="google-site-verification" content="ONgpvg7NlakSEl6IcZ4-nCCQleKums7GuOYvOS4zXCQ">
+  <meta name="msvalidate.01" content="5331505606E7903BD6FA7D5C7D0FE6DB">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"haoran-jie.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":30,"offset":15},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#546de5","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":true,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+
+
+<link rel="canonical" href="https://haoran-jie.github.io/Notes/ALCS/Chapter20.1_ProgrammingParadigm/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://haoran-jie.github.io/Notes/ALCS/Chapter20.1_ProgrammingParadigm/","path":"Notes/ALCS/Chapter20.1_ProgrammingParadigm/","title":"Chapter20.1: Programming Paradigms"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Chapter20.1: Programming Paradigms | Samuel's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V501S4L4ZZ"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-V501S4L4ZZ","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+  <script async src="//assets.growingio.com/2.1/gio.js"></script>
+  <script class="next-config" data-name="growingio_analytics" type="application/json">"b544ba838d823365"</script>
+  <script src="/js/third-party/analytics/growingio.js"></script>
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Samuel's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Snippets of life of a programmer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">16</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">12</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">30</span></a></li><li class="menu-item menu-item-notes"><a href="/Notes/" rel="section"><i class="fa fa-book fa-fw"></i>Notes</a></li><li class="menu-item menu-item--what&why系列文章"><a href="/WhatandwhY/" rel="section"><i class="fa-solid fa-clipboard-question fa-fw"></i> What&whY系列文章</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Low-level"><span class="nav-number">1.</span> <span class="nav-text">Low-level</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Imperative"><span class="nav-number">2.</span> <span class="nav-text">Imperative</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-Oriented-Programming"><span class="nav-number">3.</span> <span class="nav-text">Object Oriented Programming</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Objects"><span class="nav-number">3.0.1.</span> <span class="nav-text">Objects:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Properties"><span class="nav-number">3.0.2.</span> <span class="nav-text">Properties</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Methods"><span class="nav-number">3.0.3.</span> <span class="nav-text">Methods</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Classes"><span class="nav-number">3.0.4.</span> <span class="nav-text">Classes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Inheritance"><span class="nav-number">3.0.5.</span> <span class="nav-text">Inheritance</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Polymorphism"><span class="nav-number">3.0.6.</span> <span class="nav-text">Polymorphism</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Containment-aggregation"><span class="nav-number">3.0.7.</span> <span class="nav-text">Containment(aggregation)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Encapsulation"><span class="nav-number">3.0.8.</span> <span class="nav-text">Encapsulation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Getter"><span class="nav-number">3.0.9.</span> <span class="nav-text">Getter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Setters"><span class="nav-number">3.0.10.</span> <span class="nav-text">Setters</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Instances"><span class="nav-number">3.0.11.</span> <span class="nav-text">Instances</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Declarative"><span class="nav-number">4.</span> <span class="nav-text">Declarative</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Haoran Jie"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Haoran Jie</p>
+  <div class="site-description" itemprop="description">18</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Haoran-Jie" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Haoran-Jie" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:samueljie1@gmail.com" title="E-Mail → mailto:samueljie1@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/samueljieee/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;samueljieee&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://haoran-jie.github.io/Notes/ALCS/Chapter20.1_ProgrammingParadigm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Haoran Jie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Samuel's Blog">
+      <meta itemprop="description" content="18">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Chapter20.1: Programming Paradigms | Samuel's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Chapter20.1: Programming Paradigms
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-05-06 13:10:58" itemprop="dateCreated datePublished" datetime="2022-05-06T13:10:58+01:00">2022-05-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-06-04 08:30:49" itemprop="dateModified" datetime="2022-06-04T08:30:49+01:00">2022-06-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/ALCS/" itemprop="url" rel="index"><span itemprop="name">ALCS</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/Notes/ALCS/Chapter20.1_ProgrammingParadigm/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Notes/ALCS/Chapter20.1_ProgrammingParadigm/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img src="/./Chapter20.1_ProgrammingParadigm/syllabus20.1.png"></p>
+<span id="more"></span>
+
+<hr>
+<blockquote>
+<p><strong>Programming paradigms</strong>: <font color=#4a69bd>A programming style&#x2F;classification &#x2F;&#x2F; characteristics&#x2F;features that programming language has&#x2F;uses</font></p>
+</blockquote>
+<h2 id="Low-level"><a href="#Low-level" class="headerlink" title="Low-level"></a>Low-level</h2><table>
+<thead>
+<tr>
+<th>Modes of addressing</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Immediate</td>
+<td>The operand is the data being used</td>
+</tr>
+<tr>
+<td>Direct</td>
+<td>The operand is the address of the data being used</td>
+</tr>
+<tr>
+<td>Indirect</td>
+<td>The content stored in the content of the operand is the data being used</td>
+</tr>
+<tr>
+<td>Relative</td>
+<td>The address of data being used is the current address add to the operand</td>
+</tr>
+<tr>
+<td>Indexed</td>
+<td>The address of the data being used is the content of the operand added to the content of index register</td>
+</tr>
+</tbody></table>
+<p><img src="/./Chapter20.1_ProgrammingParadigm/assembly.png"></p>
+<hr>
+<h2 id="Imperative"><a href="#Imperative" class="headerlink" title="Imperative"></a>Imperative</h2><p><u>Describe what is meant by imperative programming paradigm</u></p>
+<ul>
+<li><font color=#4a69bd>A sequence of steps that changes the state of the program</font></li>
+<li><font color=#4a69bd>The steps are in the order they should be carried out</font></li>
+<li><font color=#4a69bd>e.g. procedural programming&#x2F;language</font></li>
+<li><font color=#4a69bd>Groups code into self-contained blocks &#x2F;&#x2F; spilt the program into modules</font></li>
+<li><font color=#4a69bd>… which are subroutines</font></li>
+<li><code>--</code></li>
+<li><font color=#4a69bd>Imperative languages use variables</font></li>
+<li><font color=#4a69bd>… which are changed using assignment statement</font></li>
+<li><font color=#4a69bd>… they rely on a method of repetition&#x2F;iteration</font></li>
+<li><font color=#4a69bd>Statement provide a sequence of commands for the computer to perform</font></li>
+<li><font color=#4a69bd>… in the order written</font></li>
+<li><font color=#4a69bd>… each line of code changes something in the program run</font></li>
+</ul>
+<h2 id="Object-Oriented-Programming"><a href="#Object-Oriented-Programming" class="headerlink" title="Object Oriented Programming"></a>Object Oriented Programming</h2><blockquote>
+<p><font color=#4a69bd>A programming methodology that uses self-contained objects, which contain programming statements(methods) and data, and which communicate with each other</font></p>
+</blockquote>
+<p><u>Explain what is meant by Object Oriented programming</u></p>
+<ul>
+<li><font color=#4a69bd>Create classes</font></li>
+<li><font color=#4a69bd>… as a blueprint for an object &#x2F;&#x2F; objects are instances of classes</font></li>
+<li><font color=#4a69bd>… that have properties&#x2F;attributes and methods</font></li>
+<li><font color=#4a69bd>… that can be private to the class &#x2F;&#x2F; properties that can be only accessed by the class’s methods &#x2F;&#x2F; encapsulation</font></li>
+<li><font color=#4a69bd>Subclass can inherit from superclass (child and parent)</font></li>
+<li><font color=#4a69bd>A subclass can inherit the methods and properties from the superclass</font></li>
+<li><font color=#4a69bd>A subclass can change the methods from the superclass &#x2F;&#x2F; subclass can use polymorphism</font></li>
+<li><font color=#4a69bd>Objects can interact with each other</font></li>
+</ul>
+<p><u>Explain the difference between a class and an object</u>[^1]</p>
+<ul>
+<li><font color=#4a69bd>A class is the blueprint&#x2F;design&#x2F;template (from which the object are later created)</font></li>
+<li><font color=#4a69bd>A class consists of properties&#x2F;attributes and methods&#x2F;procedures&#x2F;functions</font></li>
+<li><font color=#4a69bd>An object is an instance of a class</font></li>
+<li><font color=#4a69bd>An object must be based on a class definition</font></li>
+<li><font color=#4a69bd>Many objects can exists for the same class</font></li>
+</ul>
+<h4 id="Objects"><a href="#Objects" class="headerlink" title="Objects:"></a>Objects:</h4><blockquote>
+<p>An instance of a class that is self-contained and includes data and methods</p>
+<ul>
+<li>Many instances can exists for the same class</li>
+<li>Must be based on the class definition</li>
+</ul>
+</blockquote>
+<h4 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h4><blockquote>
+<p>Data and methods within an object that perform a named action</p>
+</blockquote>
+<h4 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h4><blockquote>
+<p>A programmed procedure that is defined as part of a class</p>
+</blockquote>
+<h4 id="Classes"><a href="#Classes" class="headerlink" title="Classes"></a>Classes</h4><blockquote>
+<p>A template&#x2F;blueprint defining the methods and data of a certain type of object </p>
+</blockquote>
+<h4 id="Inheritance"><a href="#Inheritance" class="headerlink" title="Inheritance"></a>Inheritance</h4><blockquote>
+<p>Process in which the methods and data from one class, a superclass or base class is copied to another class, a derived class&#x2F;subclass </p>
+</blockquote>
+<h4 id="Polymorphism"><a href="#Polymorphism" class="headerlink" title="Polymorphism"></a>Polymorphism</h4><blockquote>
+<p>Feature of OOP that allows a method to be defined more than once in a class, so it can be used in different situations</p>
+</blockquote>
+<h4 id="Containment-aggregation"><a href="#Containment-aggregation" class="headerlink" title="Containment(aggregation)"></a>Containment(aggregation)</h4><blockquote>
+<p>Defines a <code>one-way</code> relationship &#x2F; <code>has-a</code> relationship between two classes. In aggregation, the objects can exists independently with each other. <a target="_blank" rel="noopener" href="https://isaaccomputerscience.org/concepts/prog_oop_aggregation_composition">^2</a></p>
+</blockquote>
+<h4 id="Encapsulation"><a href="#Encapsulation" class="headerlink" title="Encapsulation"></a>Encapsulation</h4><blockquote>
+<p>Process of putting data and methods together as a single unit, a class</p>
+</blockquote>
+<h4 id="Getter"><a href="#Getter" class="headerlink" title="Getter"></a>Getter</h4><blockquote>
+<p>A method that gets the value of a property</p>
+</blockquote>
+<h4 id="Setters"><a href="#Setters" class="headerlink" title="Setters"></a>Setters</h4><blockquote>
+<p>A method used to control changes to a variable</p>
+</blockquote>
+<h4 id="Instances"><a href="#Instances" class="headerlink" title="Instances"></a>Instances</h4><blockquote>
+<p>An occurrence of an object during the execution of a program</p>
+</blockquote>
+<h2 id="Declarative"><a href="#Declarative" class="headerlink" title="Declarative"></a>Declarative</h2><blockquote>
+<p>Program that specify the desired result rather than how to get it</p>
+</blockquote>
+<ul>
+<li><font color=#4a69bd>Instruct a program of what is needed to done instead of how to do it</font></li>
+<li><font color=#4a69bd>… using facts and rules</font></li>
+<li><font color=#4a69bd>… using queries to satisfy goals</font></li>
+<li><font color=#4a69bd>Can be logical or functional</font></li>
+<li><font color=#4a69bd>Logical - states a program as a set of logical relations</font></li>
+<li><font color=#4a69bd>Functional - constructed by applying functions to arguments &#x2F; uses a mathematical style</font></li>
+</ul>
+<hr>
+<p><img src="/./Chapter20.1_ProgrammingParadigm/drawline.png"></p>
+<p>[^1]: 9691 w13 32 q4</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Haoran Jie
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://haoran-jie.github.io/Notes/ALCS/Chapter20.1_ProgrammingParadigm/" title="Chapter20.1: Programming Paradigms">https://haoran-jie.github.io/Notes/ALCS/Chapter20.1_ProgrammingParadigm/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Notes/ALCS/Chapter19.2_Recursion/" rel="prev" title="Chapter19.2: Recursion">
+                  <i class="fa fa-chevron-left"></i> Chapter19.2: Recursion
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Mathematics/tools/LaTeX-Personal-CheatSheet/" rel="next" title="LaTeX Personal CheatSheet">
+                  LaTeX Personal CheatSheet <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="comment-button-group">
+          <a class="btn comment-button disqus">disqus</a>
+          <a class="btn comment-button gitalk">gitalk</a>
+      </div>
+        <div class="comment-position disqus">
+          
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+        </div>
+        <div class="comment-position gitalk">
+          <div class="comments gitalk-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa-solid fa-terminal"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Haoran Jie</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.3.0/mermaid.min.js","integrity":"sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://haoran-jie.github.io/Notes/ALCS/Chapter20.1_ProgrammingParadigm/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"samuels-blog-5","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Haoran-Jie","repo":"GItalkComments","client_id":"a78520e4a91db64c6ead","client_secret":"80a445f6a6f80fcd44fea523269b55c10ba59002","admin_user":"Haoran-Jie","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"29f721368b8eea688e3a1de93c658d55"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

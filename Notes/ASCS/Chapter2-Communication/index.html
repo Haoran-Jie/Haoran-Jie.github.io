@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#2c3e50" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#2c3e50">
+  <meta name="google-site-verification" content="ONgpvg7NlakSEl6IcZ4-nCCQleKums7GuOYvOS4zXCQ">
+  <meta name="msvalidate.01" content="5331505606E7903BD6FA7D5C7D0FE6DB">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"haoran-jie.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":30,"offset":15},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#546de5","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":true,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+
+
+<link rel="canonical" href="https://haoran-jie.github.io/Notes/ASCS/Chapter2-Communication/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://haoran-jie.github.io/Notes/ASCS/Chapter2-Communication/","path":"Notes/ASCS/Chapter2-Communication/","title":"Chapter2_Communication"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Chapter2_Communication | Samuel's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V501S4L4ZZ"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-V501S4L4ZZ","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+  <script async src="//assets.growingio.com/2.1/gio.js"></script>
+  <script class="next-config" data-name="growingio_analytics" type="application/json">"b544ba838d823365"</script>
+  <script src="/js/third-party/analytics/growingio.js"></script>
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Samuel's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Snippets of life of a programmer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">16</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">12</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">30</span></a></li><li class="menu-item menu-item-notes"><a href="/Notes/" rel="section"><i class="fa fa-book fa-fw"></i>Notes</a></li><li class="menu-item menu-item--what&why系列文章"><a href="/WhatandwhY/" rel="section"><i class="fa-solid fa-clipboard-question fa-fw"></i> What&whY系列文章</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Networking-Devices"><span class="nav-number">1.</span> <span class="nav-text">Networking Devices</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LAN-amp-WAN"><span class="nav-number">2.</span> <span class="nav-text">LAN &amp; WAN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Models"><span class="nav-number">3.</span> <span class="nav-text">Models</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thin-amp-Thick-Clients"><span class="nav-number">4.</span> <span class="nav-text">Thin&amp;Thick Clients</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Topologies"><span class="nav-number">5.</span> <span class="nav-text">Topologies</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Star-star2"><span class="nav-number">5.1.</span> <span class="nav-text">Star:star2:</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Pros"><span class="nav-number">5.1.1.</span> <span class="nav-text">Pros</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Cons"><span class="nav-number">5.1.2.</span> <span class="nav-text">Cons</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Bus-bus"><span class="nav-number">5.2.</span> <span class="nav-text">Bus :bus:</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Pros-1"><span class="nav-number">5.2.1.</span> <span class="nav-text">Pros</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Cons-1"><span class="nav-number">5.2.2.</span> <span class="nav-text">Cons</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mesh"><span class="nav-number">5.3.</span> <span class="nav-text">Mesh</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Pros-2"><span class="nav-number">5.3.1.</span> <span class="nav-text">Pros</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Cons-2"><span class="nav-number">5.3.2.</span> <span class="nav-text">Cons</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hybrid"><span class="nav-number">5.4.</span> <span class="nav-text">Hybrid</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Pro"><span class="nav-number">5.4.1.</span> <span class="nav-text">Pro</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Cons-3"><span class="nav-number">5.4.2.</span> <span class="nav-text">Cons</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cloud"><span class="nav-number">6.</span> <span class="nav-text">Cloud</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Wired-and-Wireless-networking"><span class="nav-number">7.</span> <span class="nav-text">Wired and Wireless networking</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Wired"><span class="nav-number">7.1.</span> <span class="nav-text">Wired</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Wireless"><span class="nav-number">7.2.</span> <span class="nav-text">Wireless</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Twisted-pair"><span class="nav-number">7.3.</span> <span class="nav-text">Twisted pair</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fibre-optic"><span class="nav-number">7.4.</span> <span class="nav-text">Fibre optic:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Copper-cable-use-of-existing-telephone-network"><span class="nav-number">7.5.</span> <span class="nav-text">Copper cable: use of existing telephone network</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Radio-waves"><span class="nav-number">7.6.</span> <span class="nav-text">Radio waves</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Satellite"><span class="nav-number">7.7.</span> <span class="nav-text">Satellite</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hardware-for-LAN"><span class="nav-number">8.</span> <span class="nav-text">Hardware for LAN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ethernet"><span class="nav-number">9.</span> <span class="nav-text">Ethernet</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CSMA-x2F-CD"><span class="nav-number">9.1.</span> <span class="nav-text">CSMA&#x2F;CD</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bit-streaming"><span class="nav-number">10.</span> <span class="nav-text">Bit streaming</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#On-demand-bit-streaming"><span class="nav-number">10.1.</span> <span class="nav-text">On-demand bit streaming</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Real-time-bit-streaming"><span class="nav-number">10.2.</span> <span class="nav-text">Real-time bit streaming</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Benefits"><span class="nav-number">10.3.</span> <span class="nav-text">Benefits</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Problems"><span class="nav-number">10.4.</span> <span class="nav-text">Problems</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Difference-between-WWW-and-internet"><span class="nav-number">11.</span> <span class="nav-text">Difference between WWW and internet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hardware-for-the-internet"><span class="nav-number">12.</span> <span class="nav-text">Hardware for the internet</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Modem"><span class="nav-number">12.1.</span> <span class="nav-text">Modem</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Public-switched-telephone-network-PSTN"><span class="nav-number">12.2.</span> <span class="nav-text">Public switched telephone network(PSTN)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dedicated-Lines"><span class="nav-number">12.3.</span> <span class="nav-text">Dedicated Lines</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Benefits-1"><span class="nav-number">12.3.1.</span> <span class="nav-text">Benefits</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Drawbacks"><span class="nav-number">12.3.2.</span> <span class="nav-text">Drawbacks</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cell-phone-network"><span class="nav-number">12.4.</span> <span class="nav-text">Cell phone network</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Satellite-1"><span class="nav-number">12.5.</span> <span class="nav-text">Satellite</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP"><span class="nav-number">13.</span> <span class="nav-text">IP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#IP-address"><span class="nav-number">13.1.</span> <span class="nav-text">IP address:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IP-format"><span class="nav-number">13.2.</span> <span class="nav-text">IP format:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS"><span class="nav-number">14.</span> <span class="nav-text">DNS</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Haoran Jie"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Haoran Jie</p>
+  <div class="site-description" itemprop="description">18</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Haoran-Jie" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Haoran-Jie" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:samueljie1@gmail.com" title="E-Mail → mailto:samueljie1@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/samueljieee/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;samueljieee&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://haoran-jie.github.io/Notes/ASCS/Chapter2-Communication/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Haoran Jie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Samuel's Blog">
+      <meta itemprop="description" content="18">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Chapter2_Communication | Samuel's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Chapter2_Communication
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-08-01 13:01:58" itemprop="dateCreated datePublished" datetime="2022-08-01T13:01:58+01:00">2022-08-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-08-06 07:21:28" itemprop="dateModified" datetime="2022-08-06T07:21:28+01:00">2022-08-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/ASCS/" itemprop="url" rel="index"><span itemprop="name">ASCS</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/Notes/ASCS/Chapter2-Communication/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Notes/ASCS/Chapter2-Communication/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img src="/./Chapter2-Communication/syllabus-1.png" alt="Networks Including the Internet"></p>
+<span id="more"></span>
+
+<img src="./Chapter2-Communication/syllabus-2.png" style="zoom: 67%;" />
+
+<h3 id="Networking-Devices"><a href="#Networking-Devices" class="headerlink" title="Networking Devices"></a>Networking Devices</h3><p><u>Benefits of networking devices:</u></p>
+<ul>
+<li>Devices, such as printers, can be shared.</li>
+<li>Licences to run software on networks are often far cheaper than buying licences for an equivalent number of stand-alone computers.</li>
+<li>Users can share files and data</li>
+<li>Data and files can be backed up centrally at the end of each day</li>
+<li>User can communicate using email and instant messaging</li>
+<li>A network manager can oversee the network and, for example, apply access rights to certain files, or restrict access to external networks, such as the internet.</li>
+<li><font color=#4a69bd>The employee’s computers are the clients</font></li>
+<li><font color=#4a69bd>The server hosts the (shared) files</font></li>
+<li><font color=#4a69bd>An employee can request a file from the server from any of the client computers</font></li>
+<li><font color=#4a69bd>Several employee can access the same file at the same time. </font></li>
+</ul>
+<h3 id="LAN-amp-WAN"><a href="#LAN-amp-WAN" class="headerlink" title="LAN &amp; WAN"></a>LAN &amp; WAN</h3><p><strong>LAN</strong>(Local area network): network limited to one building or site. </p>
+<ul>
+<li><font color=#4a69bd>Device connected over a small geographical area</font></li>
+<li><font color=#4a69bd>Uses a dedicated infrastructure&#x2F;&#x2F; company-owned infrastructure</font></li>
+</ul>
+<p><strong>WAN</strong>(Wide area network): covers a wider distance.</p>
+<ul>
+<li>A number of LANs are joined together using a modem or router.</li>
+<li>Eg: ATMs</li>
+<li>Make use of public communication networks: telephone lines, satellite.</li>
+</ul>
+<h3 id="Models"><a href="#Models" class="headerlink" title="Models"></a>Models</h3><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Client-server</strong></th>
+<th><strong>P2P</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Properties:</strong></td>
+<td>· At least one computer used to be the “server”<br>· The other computers are the client<br/>· Server provides services<br/>    · Which may be requested by clients<br/>· <strong>Examples</strong>: Email server, print server, File server, Web server, Proxy server</td>
+<td>· Each nodes provides and receive service<br/>· “look up computer”<br/>· Peers to participate as equals</td>
+</tr>
+<tr>
+<td><strong>Benefits:</strong></td>
+<td>1. Different servers provide different services<br>2. Central storage of all files<br/>3. Administration of critical info is centralized, more secure Internet monitoring<br/>4. Intranet capability<br/>5. Clients can be less powerful machine and less expensive to buy<br/>6. Saving resources on server<br/>7. reduces the burden on clients<br/>8. Creation of security<br/>9. Users need user name and password to access network.</td>
+<td>1. No server required<br/>2. Additional computer can join easily(no requirement for authenticate user) <br/>3. Each computer can provide and receive resources</td>
+</tr>
+<tr>
+<td><strong>Drawbacks:</strong></td>
+<td>1. Set-up cost <br/>2. Require specific OS<br/>3. All user depend on server</td>
+<td>1. De-centralized, hard to administrator<br/>2. Easily attacked</td>
+</tr>
+<tr>
+<td><strong>Reasons:</strong></td>
+<td>1. Large user-base <br/>2. Access to network resource needs to be properly controlled<br/>3. Need for network security<br/>4. Data needs to be backed up</td>
+<td>1. The network of user is fairly small<br/>2. No need for robust security<br/>3. Workstation-based application rather than server-based</td>
+</tr>
+</tbody></table>
+<h3 id="Thin-amp-Thick-Clients"><a href="#Thin-amp-Thick-Clients" class="headerlink" title="Thin&amp;Thick Clients"></a>Thin&amp;Thick Clients</h3><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Thin-client</strong></th>
+<th><strong>Thick-client</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Benefits:</strong></td>
+<td>1. Require few local resources<br>2. Server can offer protection<br/>3. Easy to expand</td>
+<td>1. Job can also be done without connection<br/>2. Works under slow network<br/>3. More customization<br/>4. Store data on local resources such as HDD or SSD<br/>5. More robust<br/>6. Client have more control</td>
+</tr>
+<tr>
+<td><strong>Drawbacks:</strong></td>
+<td>1. Highly rely on server<br/>2. Highly rely on good network<br/>3. Start-up cost</td>
+<td>1. Rely on local resources<br/>2. Easily attacked<br/>3. Synchronization<br/>4. Data integrity issues<br/>5. Need to update data and software individually<br/>6. Less secure</td>
+</tr>
+<tr>
+<td><strong>Differences:</strong></td>
+<td>· Relies on a connection to a remote server or computer for it to work<br>· Requires very few local resources<br>· Relies on good, stable, and fast network connection for it to work<br> · Data is stored on a remote     server</td>
+<td>· Can run some of the features of the software even when not connected to the server<br>· Relies heavily on local resources (SSD, HDD, RAM, processing time)<br>· More tolerant of a slow network connection<br>·Data is stored on local resources such as HDD and SSD.</td>
+</tr>
+</tbody></table>
+<h3 id="Topologies"><a href="#Topologies" class="headerlink" title="Topologies"></a>Topologies</h3><h4 id="Star-star2"><a href="#Star-star2" class="headerlink" title="Star:star2:"></a>Star:star2:</h4><blockquote>
+<p>uses a central hub&#x2F;switch and each computer&#x2F;devices in connected to the hub&#x2F;switch.</p>
+</blockquote>
+<blockquote>
+<p><strong>Hub</strong>: Packets will be send to every device<br><strong>Switch</strong>: Packets will only be send to the node where the recipient address matches.</p>
+</blockquote>
+<ul>
+<li>Packets has address of the recipient</li>
+<li>Sender transmits packets directly to the server</li>
+<li>Server reads the address and identifies where recipient is</li>
+<li>Server transmit packets directly to the recipient</li>
+<li>Server transmit packets only to the recipient</li>
+</ul>
+<h5 id="Pros"><a href="#Pros" class="headerlink" title="Pros"></a>Pros</h5><ol>
+<li>Less data collision</li>
+<li>More secure</li>
+<li>Node doesn’t effect others</li>
+</ol>
+<h5 id="Cons"><a href="#Cons" class="headerlink" title="Cons"></a>Cons</h5><ol>
+<li>Set-up cost</li>
+<li>Central hub effects all</li>
+</ol>
+<h4 id="Bus-bus"><a href="#Bus-bus" class="headerlink" title="Bus :bus:"></a>Bus :bus:</h4><blockquote>
+<p>uses a sigle central cable to which all computers and devices are connected. </p>
+</blockquote>
+<ul>
+<li>Packets pass through every node</li>
+<li>Each node looks at each packet and determines whether or not the address of recipient in the package match the node address</li>
+<li>If so, the node accept the package.</li>
+<li>If not, the package is ignored.</li>
+</ul>
+<p>Suitable for a small company or an office environment. (light traffic occurring)</p>
+<h5 id="Pros-1"><a href="#Pros-1" class="headerlink" title="Pros"></a>Pros</h5><ol>
+<li>Node doesn’t effect others</li>
+<li>Easy to connect new nodes</li>
+</ol>
+<h5 id="Cons-1"><a href="#Cons-1" class="headerlink" title="Cons"></a>Cons</h5><ol>
+<li>Less secure</li>
+<li>Heavy traffic</li>
+<li>Main cable effects all</li>
+</ol>
+<h4 id="Mesh"><a href="#Mesh" class="headerlink" title="Mesh"></a>Mesh</h4><ul>
+<li><p><strong>Routing</strong>: by giving the nodes routing logic, so that data&#x2F;packets is directed to its destination by the shortest route.</p>
+</li>
+<li><p><strong>Flooding</strong>: simple send to all the nodes</p>
+</li>
+</ul>
+<h5 id="Pros-2"><a href="#Pros-2" class="headerlink" title="Pros"></a>Pros</h5><ul>
+<li>Failed link doesn’t affect other parts</li>
+<li>Secure</li>
+</ul>
+<h5 id="Cons-2"><a href="#Cons-2" class="headerlink" title="Cons"></a>Cons</h5><ol>
+<li>Hard to maintain</li>
+<li>Need lots of cable</li>
+</ol>
+<h4 id="Hybrid"><a href="#Hybrid" class="headerlink" title="Hybrid"></a>Hybrid</h4><h5 id="Pro"><a href="#Pro" class="headerlink" title="Pro"></a>Pro</h5><ul>
+<li>Could have all the pros above</li>
+</ul>
+<h5 id="Cons-3"><a href="#Cons-3" class="headerlink" title="Cons"></a>Cons</h5><ul>
+<li>Try to minimize the cost above</li>
+</ul>
+<h3 id="Cloud"><a href="#Cloud" class="headerlink" title="Cloud"></a>Cloud</h3><blockquote>
+<p>a method of data storage where data is stored on offsite servers - the physical storage covers hundreds of servers in many locations. </p>
+</blockquote>
+<blockquote>
+<p><strong>Public cloud</strong>: a storage environment where the customer&#x2F;client and cloud storage provider are different companies</p>
+<p><strong>Private cloud</strong>: a storage provided by a dedicated environment behind a company firewall. Customer&#x2F;client and cloud storage provider are integrated and operate as a single entity.</p>
+</blockquote>
+<p><u><strong>Pros:</strong></u></p>
+<ol>
+<li>No need to carry an external storage device</li>
+<li>Recovers data when hard disk failure happens</li>
+<li>Almost unlimited storage capacity</li>
+<li>Access data any time and place with internet connection</li>
+</ol>
+<p><u><strong>Cons:</strong></u></p>
+<ol>
+<li>Accessing problem under slow or unstable internet connection</li>
+<li>Costs can be high</li>
+<li>Limits with internet service provider (ISP)</li>
+<li>Potential failure of the cloud storage company</li>
+</ol>
+<h3 id="Wired-and-Wireless-networking"><a href="#Wired-and-Wireless-networking" class="headerlink" title="Wired and Wireless networking"></a>Wired and Wireless networking</h3><ul>
+<li><p>Wireless: Wi-Fi and Bluetooth.</p>
+</li>
+<li><ul>
+<li>Spread spectrum frequency hopping: If a channel is already being used, it randomly picks another      channel. </li>
+<li>Wi-Fi offers much faster data transfer rates, better range and better security.</li>
+</ul>
+</li>
+<li><p>Use of <strong>satellite</strong>: the curvature of the earth prevents the use of microwaves&#x2F;radio waves transmitting data globally. To overcome this problem, we need to adopt satellite technology.</p>
+</li>
+</ul>
+<h4 id="Wired"><a href="#Wired" class="headerlink" title="Wired"></a>Wired</h4><ul>
+<li>More reliable and stable network</li>
+<li>Data transfer rate tend to be faster</li>
+<li>Tends to be cheaper overall</li>
+<li>Devices are not mobile</li>
+<li>Lots of wires can lead to tripping hazards.</li>
+</ul>
+<h4 id="Wireless"><a href="#Wireless" class="headerlink" title="Wireless"></a>Wireless</h4><ul>
+<li>It is easier to expand networks and is not necessary to connect devices using cables</li>
+<li>Devices have increased mobility</li>
+<li>Increased chance of interference from external sources</li>
+<li>Data is less secure than with wired systems</li>
+<li>Data transmission rate is slower than wired networks</li>
+<li>Signals can be stopped by thick walls.</li>
+<li>Different types of device can be connected at the same time</li>
+</ul>
+<h4 id="Twisted-pair"><a href="#Twisted-pair" class="headerlink" title="Twisted pair"></a>Twisted pair</h4><ul>
+<li>Usage: Telephone, LANs</li>
+<li>Capacity: Lower bandwidth than fibre optic </li>
+<li>Larger and heavier cables than FO for similar data capacity</li>
+</ul>
+<h4 id="Fibre-optic"><a href="#Fibre-optic" class="headerlink" title="Fibre optic:"></a>Fibre optic:</h4><blockquote>
+<p>Transmits data as light; uses a glass&#x2F;plastic thread to transmit data.</p>
+</blockquote>
+<ul>
+<li><p>High-speed network Asynchronous Transfer mode (ATM) and long cable runs.</p>
+</li>
+<li><p>Faster data transmission</p>
+</li>
+<li><p>More stable</p>
+</li>
+<li><p>Greater bandwidth</p>
+</li>
+<li><p>Need less signal boosting&#x2F; can travel over longer distances</p>
+</li>
+<li><p>Greater security &#x2F; more difficult to hack</p>
+</li>
+<li><p>Lighter in weight</p>
+</li>
+<li><p>Less interference in signal</p>
+</li>
+<li><p>Trained personnel needed to install</p>
+</li>
+<li><p>Expensive</p>
+</li>
+<li><p>Difficult to terminate</p>
+</li>
+<li><p>Break when bent</p>
+</li>
+<li><p>Only transmits data in one direction</p>
+</li>
+<li><p>If a fibre-optic cable connection fails, more services can be affected.</p>
+</li>
+</ul>
+<h4 id="Copper-cable-use-of-existing-telephone-network"><a href="#Copper-cable-use-of-existing-telephone-network" class="headerlink" title="Copper cable: use of existing telephone network"></a>Copper cable: use of existing telephone network</h4><p>Carries data as electrical signals and can consist of a twisted pair. </p>
+<ul>
+<li>Less expensive overall</li>
+<li>Easier to install because it is more flexible</li>
+<li>Easier to make terminations using copper cabling </li>
+<li>The expertise in use of copper cabling is more extensive</li>
+</ul>
+<h4 id="Radio-waves"><a href="#Radio-waves" class="headerlink" title="Radio waves"></a>Radio waves</h4><ul>
+<li>Carries data wirelessly, often known as Wi-Fi.</li>
+<li>Carries data in the form of electromagnetic wave</li>
+</ul>
+<h4 id="Satellite"><a href="#Satellite" class="headerlink" title="Satellite"></a>Satellite</h4><ul>
+<li>A communication device in Earth’s orbit that receives and transmits data.</li>
+<li>Due to curvature of the earth. </li>
+<li>Antenna to Satellite </li>
+<li>Signal boosted by the satellite</li>
+</ul>
+<h3 id="Hardware-for-LAN"><a href="#Hardware-for-LAN" class="headerlink" title="Hardware for LAN"></a>Hardware for LAN</h3><blockquote>
+<p><strong>Network interface card(NIC):</strong></p>
+<ul>
+<li>Unique physical address –  MAC address</li>
+<li>Needed to allow a device to connect to a network</li>
+</ul>
+<p><strong>Wireless Access points(WAPs)</strong></p>
+<ul>
+<li>Allows a device to access LAN without a wired connection</li>
+<li>Forms WLAN</li>
+<li>Allows Wi-Fi devices to connect to a wired network</li>
+</ul>
+<p><strong>Wireless network interface card</strong></p>
+<ul>
+<li>Allowing devices to connect to the LAN via radio communication</li>
+<li>… instead of using cable</li>
+<li>… easy to move a device to different location</li>
+</ul>
+<p><strong>Hubs:</strong></p>
+<ul>
+<li>Centre of a star topology</li>
+<li>Broadcast to all</li>
+<li>One hub connected to another hub</li>
+<li>Built in broad band modem - connection to the internet</li>
+</ul>
+<p><strong>Switch:</strong></p>
+<ul>
+<li>Function as a hub</li>
+<li>Connect a number of devices together to form an LAN</li>
+<li>MAC address</li>
+<li>More intelligent - store addresses of connected devices</li>
+<li>Unicast</li>
+<li>Reduces network traffic</li>
+</ul>
+<p><strong>Gateway</strong></p>
+<ul>
+<li><p>Capable of connecting two dissimilar networks. Connect a LAN to a WAN.</p>
+</li>
+<li><p>A device used between two dissimilar LANs. The device is required to convert data packets from one protocol to another</p>
+</li>
+<li><p>Can connect two networks with different protocols</p>
+</li>
+<li><p>Gateway can also act as firewall or server.</p>
+</li>
+</ul>
+<p><strong>Router</strong></p>
+<ul>
+<li>Most Intelligent - takes decision to forward the received transmission</li>
+<li>May function as a gateway or NAT box.</li>
+<li>Forward packets of data from one network to another; routers read each incoming packet of data and decide where to forward the packet.</li>
+<li>Can route traffic from one network to another network</li>
+<li>Can be used to join LANs to form a WAN and also connect a number of LANs to the internet</li>
+<li>Offer additional features such as dynamic routing.</li>
+<li>Connects two networks with the same protocol.</li>
+<li>Transmit data between the servers and the internet</li>
+<li>Connect devices&#x2F;servers to the internet</li>
+</ul>
+<p><strong>Modem</strong></p>
+<ul>
+<li>Converts between digital data and analogue data</li>
+<li>To connect the servers to the internet over a telephone line</li>
+</ul>
+<p><strong>Repeater</strong>: boost the signal so it can travel greater distance.</p>
+<p><strong>Bridge</strong>: connect one LAN to another LAN that uses the same protocol. </p>
+<p><strong>Server</strong>: a device or software that provides a specific function for computers using a network. The most common examples handle printing, file storage, and the delivery of web pages.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Router</th>
+<th>Gateway</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Differences</td>
+<td>· Forward packets of data from one network to another; read each incoming packets of data and decide (using IP address)<br>· Route traffic from one network to another network<br>· Can be used to join LANs together to form a WAN; connect a number of LANs to the internet<br>· Offers additional features     such as dynamic routing<br/>· Connects two or more networks<br/>· Assign private IP address<br/>· Can be used to segment a network</td>
+<td>· Convert one protocol to another protocol used in a different network<br/>· Convert data packets from one protocol to another <br/>· Translate from one protocol to another<br/>· Do not support dynamic routing<br/>· Can connect a network to WAN &#x2F;&#x2F; act as single access point<br/>· Assigns private IP address</td>
+</tr>
+<tr>
+<td>Similarities</td>
+<td>Both regulate network traffic between two network</td>
+<td>Both receives packets from one network and forward it to another.</td>
+</tr>
+</tbody></table>
+<h3 id="Ethernet"><a href="#Ethernet" class="headerlink" title="Ethernet"></a>Ethernet</h3><ul>
+<li>A protocol used by many wired LANs. </li>
+<li>Adopted by IEEE</li>
+<li>Made up of:<ul>
+<li>A node</li>
+<li>A medium</li>
+<li>Frame</li>
+</ul>
+</li>
+<li>Collisions<ul>
+<li>Two messages using the same data channel could be sent at the same time, leading to a collision.</li>
+<li>Carrier sense multiple access with collision detection (CSMA&#x2F;CD): define the random time period  for a device to wait before trying again.</li>
+</ul>
+</li>
+</ul>
+<p>When a frame is sent it causes a voltage change on the Ethernet cable. When a collision is detected, a node stops transmitting a frame and transmits a ‘jam’ signal and then waits for a random time interval before trying to resend the frame.</p>
+<h4 id="CSMA-x2F-CD"><a href="#CSMA-x2F-CD" class="headerlink" title="CSMA&#x2F;CD"></a>CSMA&#x2F;CD</h4><ul>
+<li><p>Workstations listen to the communication channel</p>
+</li>
+<li><p>If no data is being transmitted, the computer can send its data</p>
+</li>
+<li><p>Collision caused when 2 devices transmit at the same time</p>
+</li>
+<li><p>If collision occurs, each workstation waits a random time</p>
+</li>
+<li><p>… before retransmitting</p>
+</li>
+<li><p>Each time a collision occurs, random time is increased.</p>
+</li>
+<li><p><code>--</code></p>
+</li>
+<li><p>Carrier sense multiple access with collision detection</p>
+</li>
+<li><p>Before transmitting a device checks if the channel is busy</p>
+</li>
+<li><p>If it is busy the device waits &#x2F;&#x2F; if channel is free data is sent</p>
+</li>
+<li><p>When transmission begins the device listens for other devices also beginning transmission</p>
+</li>
+<li><p>If there’s a collision, transmission is aborted</p>
+</li>
+<li><p>Both devices wait a random time, then try again</p>
+</li>
+</ul>
+<h3 id="Bit-streaming"><a href="#Bit-streaming" class="headerlink" title="Bit streaming"></a>Bit streaming</h3><ul>
+<li><p><font color=#4a69bd>Sequence of digital signals</font></p>
+</li>
+<li><p><font color=#4a69bd>Over a communication path &#x2F; internet</font></p>
+</li>
+<li><p><font color=#4a69bd>Transfer data at high speed</font></p>
+</li>
+<li><p><font color=#4a69bd>Requires fast broadband connection</font></p>
+</li>
+<li><p><font color=#4a69bd>Requires some form of buffering</font></p>
+</li>
+<li><p><font color=#4a69bd>Bits arrive in the same order as sent</font></p>
+</li>
+<li><p><code>--</code></p>
+</li>
+<li><p><font color=#4a69bd>The data is compressed before transmission </font></p>
+</li>
+<li><p><font color=#4a69bd>Data is transmitted continuously as a series of bits</font></p>
+</li>
+<li><p><font color=#4a69bd>Video hosted on a media server</font></p>
+</li>
+<li><p><font color=#4a69bd>On download, the server sends data to the buffer on the client computer</font></p>
+</li>
+<li><p><font color=#4a69bd>The recipient receives bit streams from the buffer. </font></p>
+</li>
+</ul>
+<h4 id="On-demand-bit-streaming"><a href="#On-demand-bit-streaming" class="headerlink" title="On-demand bit streaming"></a><u>On-demand bit streaming</u></h4><ul>
+<li><font color=#4a69bd>Digital video tape&#x2F; digital files are converted to bit streaming format for broadcast on the net; this is known as encoding, these encoded streaming video files are then uploaded to a dedicated server.</font></li>
+<li><font color=#4a69bd>A link for the encoded video is placed on the website</font></li>
+<li><font color=#4a69bd>A user clicks on the link to download the encoded streaming video</font></li>
+<li><font color=#4a69bd>Then broadcast to the user when they require it</font></li>
+<li><font color=#4a69bd>Can be paused&#x2F; go back and rewatch&#x2F; fast-forward.</font></li>
+</ul>
+<p><u>How is it possible for on-demand to not pause?</u></p>
+<ul>
+<li><font color=#4a69bd>User needs high speed broadband</font></li>
+<li><font color=#4a69bd>Data is streamed to a buffer</font></li>
+<li><font color=#4a69bd>Buffering stops video pausing as bits streamed</font></li>
+<li><font color=#4a69bd>As buffer is emptied, it fills up again so that viewing is continuous</font></li>
+</ul>
+<h4 id="Real-time-bit-streaming"><a href="#Real-time-bit-streaming" class="headerlink" title="Real-time bit streaming"></a>Real-time bit streaming</h4><ul>
+<li>An event is captured live with a video camera</li>
+<li>The video camera is connected to a computer </li>
+<li>The video signal is converted to streaming media files on the computer </li>
+<li>Encoded feed is then uploaded from the computer to a dedicated streaming server. </li>
+<li>The server sends the encoded live videos to all users requesting it as real-time video.</li>
+<li>Cannot be paused.</li>
+</ul>
+<p><strong>Issue:</strong></p>
+<ol>
+<li>Bandwidth</li>
+<li>Security</li>
+<li>Copyright</li>
+</ol>
+<h4 id="Benefits"><a href="#Benefits" class="headerlink" title="Benefits"></a>Benefits</h4><ul>
+<li>No need to wait for the whole film to be downloaded</li>
+<li>No need to store large files on user’s computer</li>
+<li>Allows on demand play back</li>
+<li>No specialist software is required for playback</li>
+</ul>
+<h4 id="Problems"><a href="#Problems" class="headerlink" title="Problems"></a>Problems</h4><ul>
+<li>Video stop if very slow internet</li>
+<li>Video stop if inadequate buffering capacity</li>
+<li>Loss of internet means can’t access films</li>
+<li>May require specific software to run the films</li>
+<li>Viruses can be downloaded from the website</li>
+</ul>
+<p><u>Bit streaming to send video:</u></p>
+<ul>
+<li><font color=#4a69bd>The data is compressed before transmitting.</font></li>
+<li><font color=#4a69bd>The video is transmitted continuously as a series of bits.</font></li>
+<li><font color=#4a69bd>The video is hosted on a media server.</font></li>
+<li><font color=#4a69bd>The server sends the data to a buffer on the client computers.</font></li>
+<li><font color=#4a69bd>The user’s software receives the bit stream from the buffer. </font></li>
+</ul>
+<h3 id="Difference-between-WWW-and-internet"><a href="#Difference-between-WWW-and-internet" class="headerlink" title="Difference between WWW and internet"></a>Difference between WWW and internet</h3><table>
+<thead>
+<tr>
+<th><strong>Internet</strong></th>
+<th><strong>World wide web</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>· A massive network of networks<br>· Interconnected network    <br>· Makes use of transmission control protocol(TCP)&#x2F; internet protocol(IP)</td>
+<td>· Collection of multimedia web pages and other documents<br>    ·  … which are stored on websites   <br>· Https protocols are written using HTML(hypertext mark-up language)<br>· Uniform Resource Locators(URLs) specify the location of all web pages <br>· Web resources are accessed by web browsers<br>· The WWW uses the internet to access information from servers and other computers.</td>
+</tr>
+</tbody></table>
+<h3 id="Hardware-for-the-internet"><a href="#Hardware-for-the-internet" class="headerlink" title="Hardware for the internet"></a>Hardware for the internet</h3><h4 id="Modem"><a href="#Modem" class="headerlink" title="Modem"></a>Modem</h4><ul>
+<li>A device that converts digital data to analogue data; </li>
+<li>Converts analogue data to digital data</li>
+</ul>
+<h4 id="Public-switched-telephone-network-PSTN"><a href="#Public-switched-telephone-network-PSTN" class="headerlink" title="Public switched telephone network(PSTN)"></a>Public switched telephone network(PSTN)</h4><ul>
+<li>Consists of many different communication lines. </li>
+<li>Data is transmitted at both direction at the same time</li>
+<li>The communication passes through different switching centres</li>
+<li>Connect computers&#x2F;devices and LANs between towns and cities.</li>
+</ul>
+<h4 id="Dedicated-Lines"><a href="#Dedicated-Lines" class="headerlink" title="Dedicated Lines"></a>Dedicated Lines</h4><ul>
+<li>Connection that is only use for that business&#x2F;organization</li>
+</ul>
+<h5 id="Benefits-1"><a href="#Benefits-1" class="headerlink" title="Benefits"></a><u>Benefits</u></h5><ul>
+<li>Faster data transmission</li>
+<li>Improved security</li>
+<li>Consistent transmission speed</li>
+</ul>
+<h5 id="Drawbacks"><a href="#Drawbacks" class="headerlink" title="Drawbacks"></a><u>Drawbacks</u></h5><ul>
+<li>Expensive set up</li>
+<li>Disruption to the dedicated lines would leave no alternative</li>
+</ul>
+<h4 id="Cell-phone-network"><a href="#Cell-phone-network" class="headerlink" title="Cell phone network"></a>Cell phone network</h4><ul>
+<li>Send data to cell towers over mobile connection</li>
+</ul>
+<h4 id="Satellite-1"><a href="#Satellite-1" class="headerlink" title="Satellite"></a>Satellite</h4><ul>
+<li>Send data to satellites in orbit</li>
+</ul>
+<h3 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h3><h4 id="IP-address"><a href="#IP-address" class="headerlink" title="IP address:"></a>IP address:</h4><ul>
+<li>Gives each device on a network an identifier &#x2F;&#x2F; used to locate a device on a network</li>
+<li>Each address is unique within the network</li>
+<li>Allows a device&#x2F;gateway&#x2F;node to send data to the correct destination</li>
+</ul>
+<h4 id="IP-format"><a href="#IP-format" class="headerlink" title="IP format:"></a>IP format:</h4><ul>
+<li>Composed of four integers</li>
+<li>Each in the range 0-255</li>
+<li>Each stored in 8 bits; 32 bits in total</li>
+<li>Separated into network ID and host ID.</li>
+</ul>
+<p><strong>IPV4:</strong></p>
+<ul>
+<li>Four numbers separated with <code>.</code></li>
+<li>Each number range from 0 to 255</li>
+<li>32 bits long</li>
+</ul>
+<p><u>Why the router has both a private and public IP address:</u></p>
+<ul>
+<li>The router needs a public IP address so it can be identified on the internet.</li>
+<li>The router needs a private IP address so that it can be identified on the home network</li>
+<li>The router has a public IP and a private IP address so that it can route data between the two networks.</li>
+</ul>
+<p><u>Why no public IP address:</u></p>
+<ul>
+<li>Improved security because the IP address is not visible&#x2F;accessible outside the     network.</li>
+<li>An internet presence is not required for each employee computer.</li>
+<li>Only the router needs a public Ip address.</li>
+<li>Reduces the number of public IP address needed.</li>
+<li>All data from the internet must be transmitted via the router.</li>
+</ul>
+<p><u>Why do laptop has IP address:</u></p>
+<ul>
+<li>To identify the laptop on the home network.</li>
+<li>To allow the router to send data to the laptop from the internet or other devices on the home network.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Public IP address</th>
+<th>Private IP address</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>the ones allocated by a user’s ISP to identify the location of their device</td>
+<td>are reserved for internal use behind a router or other NAT device</td>
+</tr>
+<tr>
+<td></td>
+<td><img src="/./Chapter2-Communication/IPformat.png" alt="Private IP range"></td>
+</tr>
+<tr>
+<td>· Public address can be reached across the internet<br>· Public addresses are provided by ISP(internet service provider&#x2F; assigned by interNIC)<br>· Public addresses are unique (to the internet)</td>
+<td>· Private address can only be reached internally through the LAN&#x2F;intranet<br>· NAT(network address translation) is necessary for a private IP address to access the internet directly. <br>· A private address is more secure than a public IP address <br>· A private address is assigned by the router of the network connected<br>· Private addresses are only unique within their network, can be duplicated within other networks.</td>
+</tr>
+<tr>
+<td><strong>Static IP address:</strong></td>
+<td><strong>Dynamic IP address:</strong></td>
+</tr>
+<tr>
+<td>· When a computer disconnects and re-joins a network<br>·     … the address does not change<br>· Assigned by ISP<br>· The DNS does not need updating<br>· Which might be delayed causing ‘address not found’ errors. <br>· The web server may be accessed directly just using IP address.</td>
+<td>· Each time the computer re-joins a network<br>       · … the address changes<br>· Address is assigned by the network OS</td>
+</tr>
+</tbody></table>
+<img src="F:\hexocode\source\_posts\Chapter2-Communication\IPQues.png" alt="Past paper question" style="zoom:67%;" />
+
+<h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h3><p><strong>DNS(Domain Name System):</strong> - DNS is a hierarchical distributed database installed on domain name servers that is responsible for mapping a domain name to an IP address.</p>
+<p><strong>Domain</strong> - This is a section of the internet operated by an authority.</p>
+<p><strong>Uniform Resources Locator (URL):</strong> or website address is an address to reference resources on the Internet. </p>
+<p><strong>HTTP(Hypertext Transfer Protocol):</strong> - protocol for data communication of the web. It determines how message are formatted , transmitted, and the actions web servers and browsers should take in response to commands. </p>
+<ol>
+<li>The browser requests the web page</li>
+<li>The server access the web page</li>
+<li>The server processes&#x2F;executes the code</li>
+<li>The server produce an html</li>
+<li>The server returns the html to the client</li>
+<li>The browser display the webpage.</li>
+</ol>
+<p><img src="/./Chapter2-Communication/seq.png"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Haoran Jie
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://haoran-jie.github.io/Notes/ASCS/Chapter2-Communication/" title="Chapter2_Communication">https://haoran-jie.github.io/Notes/ASCS/Chapter2-Communication/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Mathematics/tools/Mathematical-Terminology-Explained/" rel="prev" title="Mathematical Terminology Explained">
+                  <i class="fa fa-chevron-left"></i> Mathematical Terminology Explained
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="comment-button-group">
+          <a class="btn comment-button disqus">disqus</a>
+          <a class="btn comment-button gitalk">gitalk</a>
+      </div>
+        <div class="comment-position disqus">
+          
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+        </div>
+        <div class="comment-position gitalk">
+          <div class="comments gitalk-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa-solid fa-terminal"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Haoran Jie</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.3.0/mermaid.min.js","integrity":"sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://haoran-jie.github.io/Notes/ASCS/Chapter2-Communication/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"samuels-blog-5","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Haoran-Jie","repo":"GItalkComments","client_id":"a78520e4a91db64c6ead","client_secret":"80a445f6a6f80fcd44fea523269b55c10ba59002","admin_user":"Haoran-Jie","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"f5905e6874e3ad090fad42ac53eaabd6"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

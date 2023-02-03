@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#2c3e50" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#2c3e50">
+  <meta name="google-site-verification" content="ONgpvg7NlakSEl6IcZ4-nCCQleKums7GuOYvOS4zXCQ">
+  <meta name="msvalidate.01" content="5331505606E7903BD6FA7D5C7D0FE6DB">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"haoran-jie.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":30,"offset":15},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#546de5","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":true,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+
+
+<link rel="canonical" href="https://haoran-jie.github.io/Notes/ASCS/Chapter1-InformationRepresentation/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://haoran-jie.github.io/Notes/ASCS/Chapter1-InformationRepresentation/","path":"Notes/ASCS/Chapter1-InformationRepresentation/","title":"Chapter1_InformationRepresentation"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Chapter1_InformationRepresentation | Samuel's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V501S4L4ZZ"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-V501S4L4ZZ","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+  <script async src="//assets.growingio.com/2.1/gio.js"></script>
+  <script class="next-config" data-name="growingio_analytics" type="application/json">"b544ba838d823365"</script>
+  <script src="/js/third-party/analytics/growingio.js"></script>
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Samuel's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Snippets of life of a programmer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">16</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">12</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">30</span></a></li><li class="menu-item menu-item-notes"><a href="/Notes/" rel="section"><i class="fa fa-book fa-fw"></i>Notes</a></li><li class="menu-item menu-item--what&why系列文章"><a href="/WhatandwhY/" rel="section"><i class="fa-solid fa-clipboard-question fa-fw"></i> What&whY系列文章</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Representation"><span class="nav-number">1.</span> <span class="nav-text">Data Representation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Prefixes"><span class="nav-number">1.1.</span> <span class="nav-text">Prefixes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Applications"><span class="nav-number">1.2.</span> <span class="nav-text">Applications</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Character-sets"><span class="nav-number">1.3.</span> <span class="nav-text">Character sets</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multimedia"><span class="nav-number">2.</span> <span class="nav-text">Multimedia</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Graphics"><span class="nav-number">2.1.</span> <span class="nav-text">Graphics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sound"><span class="nav-number">2.2.</span> <span class="nav-text">Sound</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compression"><span class="nav-number">3.</span> <span class="nav-text">Compression</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#link-Recommended-article-s"><span class="nav-number">3.1.</span> <span class="nav-text">:link:Recommended article(s)</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Haoran Jie"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Haoran Jie</p>
+  <div class="site-description" itemprop="description">18</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Haoran-Jie" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Haoran-Jie" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:samueljie1@gmail.com" title="E-Mail → mailto:samueljie1@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/samueljieee/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;samueljieee&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://haoran-jie.github.io/Notes/ASCS/Chapter1-InformationRepresentation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Haoran Jie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Samuel's Blog">
+      <meta itemprop="description" content="18">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Chapter1_InformationRepresentation | Samuel's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Chapter1_InformationRepresentation
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-07-30 15:07:10 / Modified: 14:21:02" itemprop="dateCreated datePublished" datetime="2022-07-30T15:07:10+01:00">2022-07-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/ASCS/" itemprop="url" rel="index"><span itemprop="name">ASCS</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/Notes/ASCS/Chapter1-InformationRepresentation/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Notes/ASCS/Chapter1-InformationRepresentation/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <img src="./Chapter1-InformationRepresentation/syllabus-1.png" alt="DataRepresentation" style="zoom: 67%;" />
+
+<span id="more"></span>
+
+<h2 id="Data-Representation"><a href="#Data-Representation" class="headerlink" title="Data Representation"></a>Data Representation</h2><h3 id="Prefixes"><a href="#Prefixes" class="headerlink" title="Prefixes"></a>Prefixes</h3><table>
+<thead>
+<tr>
+<th>Binary prefix name</th>
+<th>symbol</th>
+<th>value</th>
+<th>Decimal prefix name</th>
+<th>symbol</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Kibi</td>
+<td>Ki</td>
+<td>$2^{10}$</td>
+<td>Kilo</td>
+<td>k</td>
+<td>$10^3$</td>
+</tr>
+<tr>
+<td>Mebi</td>
+<td>Mi</td>
+<td>$2^{20}$</td>
+<td>Mega</td>
+<td>M</td>
+<td>$10^6$</td>
+</tr>
+<tr>
+<td>Gibi</td>
+<td>Gi</td>
+<td>$2^{30}$</td>
+<td>Giga</td>
+<td>G</td>
+<td>$10^9$</td>
+</tr>
+<tr>
+<td>Tebi</td>
+<td>Ti</td>
+<td>$2^{40}$</td>
+<td>Tera</td>
+<td>T</td>
+<td>$10^{12}$</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>Overflow</strong>: the result of carrying out a calculation which produces a value too large for the computer’s allocated word size </p>
+</blockquote>
+<h3 id="Applications"><a href="#Applications" class="headerlink" title="Applications"></a>Applications</h3><p><u>Application of hexadecimal system</u></p>
+<ul>
+<li><font color=#4a69bd>Memory dumps</font><ul>
+<li><font color=#4a69bd>Memory contents are output to printer or monitor</font></li>
+</ul>
+</li>
+<li><font color=#4a69bd>MAC address</font></li>
+<li><font color=#4a69bd>Error message </font></li>
+<li><font color=#4a69bd>IP address </font></li>
+<li><font color=#4a69bd>Unicode</font></li>
+<li><font color=#4a69bd>Colour in HTML</font></li>
+</ul>
+<p><u>Application of Binary Coded Decimal (BCD)</u></p>
+<ul>
+<li><font color=#4a69bd>Calculator</font></li>
+<li><font color=#4a69bd>Clock</font></li>
+</ul>
+<h3 id="Character-sets"><a href="#Character-sets" class="headerlink" title="Character sets"></a>Character sets</h3><p><strong><u>Character set:</u></strong></p>
+<ul>
+<li><font color=#4a69bd>The symbols that computer uses</font></li>
+<li><font color=#4a69bd>A list of characters recognized by computer software and hardware</font></li>
+<li><font color=#4a69bd>Each character has a character code</font></li>
+<li><font color=#4a69bd>The binary code for each character in the string is stored in sequence</font></li>
+</ul>
+<p><strong><u>Disadvantage of ASCII:</u></strong></p>
+<ul>
+<li><font color=#4a69bd>Only 256 characters can be represented</font></li>
+<li><font color=#4a69bd>Uses values 0 to 127&#x2F;256</font></li>
+<li><font color=#4a69bd>Many characters in other languages cannot be represented</font></li>
+<li><font color=#4a69bd>The extended ASCII the characters from 128 to 255 may be coded differently in different system. </font></li>
+</ul>
+<p><strong><u>UNICODE</u></strong>:</p>
+<ul>
+<li><font color=#4a69bd>UNICODE has greater range of characters than ASCII</font></li>
+<li><font color=#4a69bd>UNICODE represents most written language in the world, while ASCII does not; used for English only</font></li>
+<li><font color=#4a69bd>ASCII uses 7-8 bits per character, whereas UNICODE uses up to 4 bytes per character</font></li>
+<li><font color=#4a69bd>UNICODE is standardized while ASCII is not</font></li>
+</ul>
+<hr>
+<p><img src="/./Chapter1-InformationRepresentation/Syllabus-2" alt="Multimedia"></p>
+<h2 id="Multimedia"><a href="#Multimedia" class="headerlink" title="Multimedia"></a>Multimedia</h2><h3 id="Graphics"><a href="#Graphics" class="headerlink" title="Graphics"></a>Graphics</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>Bitmap</th>
+<th>Vector  graphic</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Definitions</strong></td>
+<td>· Made up of pixels (picture elements) <br>· Stored in a two-dimensional matrix of pixels <br>· Each pixel has a colour<br>· Stored as binary number<br>· The number of bits used to represent a pixel is called colour depth</td>
+<td>· A series of geometric shapes<br>· Drawing object<br>· Exact dimension is not stored Stored coordinates<br>· Contains a drawing list<br>· Commands&#x2F;formulae for creating each individual object<br>· Property for that object Eg: colour, thickness</td>
+</tr>
+<tr>
+<td><strong>Properties</strong></td>
+<td>· Takes up more memory<br>· Enlarging the bitmap can means that the image is pixelated<br>· Can be compressed with significant reduction in file size<br>· Suitable for photographs&#x2F;scanned image<br>· Uses less processing power<br>· Individual elements of a bitmap cannot be grouped<br>· It is possible to change&#x2F;edit each pixel to change the design</td>
+<td>· Made up of geometric shapes which require definition&#x2F;attributes<br>· Stores a set of instructions about how to draw the shape<br>· Takes up less memory<br>· Vector graphic image can be enlarged without being pixelated<br>· Do not compress well<br>· Suitable for geometric shape<br>· Individual elements of a vector graphic can be grouped<br>· Vector graphics need to be ‘rasterised’ in order to display or print.<br>· Image is redrawn with small adjustment<br>· It is necessary to change each of the geometric shape to alter the design</td>
+</tr>
+<tr>
+<td><strong>Available formats</strong></td>
+<td><code>.jpeg</code>, <code>.bmp</code>, <code>.png</code></td>
+<td><code>.svg</code> , <code>.cgm</code>, <code>.odg</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Defined in XML text files which, therefore, allows them to be compressed.</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>Pixel</strong>: smallest picture element which can be drawn</p>
+<p><strong>Screen resolution</strong>: the number of pixels which can be view horizontally and vertically</p>
+<p><strong>Image resolution</strong>: the number of pixels that make up an image</p>
+<p><strong>Resolution</strong>: the number of pixels per column and per row</p>
+<p><strong>Pixel density</strong>: number of pixels per square centimetre. </p>
+</blockquote>
+<h3 id="Sound"><a href="#Sound" class="headerlink" title="Sound"></a>Sound</h3><p><u>Sampling analogue sound:</u></p>
+<ul>
+<li><font color=#4a69bd>Amplitude measured</font></li>
+<li><font color=#4a69bd>At regular time interval</font></li>
+<li><font color=#4a69bd>The value of sample is recorded as binary number. </font></li>
+</ul>
+<p><u>Increasing sampling resolution:</u></p>
+<ul>
+<li><font color=#4a69bd>More bits used to represent one sample</font></li>
+<li><font color=#4a69bd>Larger file size</font><ul>
+<li><font color=#4a69bd>Takes longer to transmit&#x2F;download the file</font></li>
+<li><font color=#4a69bd>Requires greater processing power </font></li>
+</ul>
+</li>
+<li><font color=#4a69bd>More accurate representation of sound</font><ul>
+<li><font color=#4a69bd>Less sound distortion</font></li>
+<li><font color=#4a69bd>Larger dynamic range </font></li>
+<li><font color=#4a69bd>Better sound quality</font></li>
+</ul>
+</li>
+</ul>
+<p><u>Decrease sample rate:</u></p>
+<ul>
+<li><font color=#4a69bd>Fewer samples per unit time</font></li>
+<li><font color=#4a69bd>File size will reduce</font></li>
+<li><font color=#4a69bd>Larger gaps&#x2F; space between samples &#x2F;&#x2F; greater quantization errors</font></li>
+<li><font color=#4a69bd>Sound accuracy will reduce. </font></li>
+</ul>
+<blockquote>
+<p> <strong><u>Sampling:</u></strong></p>
+<ul>
+<li><font color=#4a69bd>amplitude of sound wave taken at different points in time.</font></li>
+<li><font color=#4a69bd>Measurement the value of the analogue signal at regular time interval.</font></li>
+</ul>
+<p> <strong><u>Sampling rate:</u></strong></p>
+<ul>
+<li><font color=#4a69bd>Number of time that the amplitude of (analogue) sound wave is taken</font></li>
+<li><font color=#4a69bd>Per unit time</font></li>
+<li><font color=#4a69bd>Higher sampling rate results in more accurate digital representation.</font></li>
+</ul>
+<p> <u><strong>Sampling resolution:</strong></u></p>
+<ul>
+<li><font color=#4a69bd>Resolution is the number of distinct value able to encode&#x2F;represent each sample</font></li>
+<li><font color=#4a69bd>Specified the number of bits used to store each sample</font></li>
+<li><font color=#4a69bd>Also called bit depth</font></li>
+<li><font color=#4a69bd>The higher the sampling resolution, the lower the quantization error</font></li>
+<li><font color=#4a69bd>The higher the sampling, the less sound distortion.</font></li>
+<li><font color=#4a69bd>Usually 8 bits, 16 bits, 24 bits or 32 bits. </font></li>
+<li><strong>Benefits:</strong><ul>
+<li><font color=#4a69bd>Allows for larger dynamic ranges</font></li>
+<li><font color=#4a69bd>More accurate representation&#x2F; sound quality</font></li>
+</ul>
+</li>
+<li><strong>Drawbacks:</strong><ul>
+<li><font color=#4a69bd>Bigger files &#x2F; larger memory</font></li>
+<li><font color=#4a69bd>Takes longer to transmit&#x2F;download</font></li>
+<li><font color=#4a69bd>Greater processing power needed</font></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><u>Sound editing software:</u></p>
+<ul>
+<li><font color=#4a69bd>Edit start time, stop time and duration of any sound&#x2F;time</font></li>
+<li><font color=#4a69bd>Extract&#x2F;delete&#x2F;save part of a clip</font></li>
+<li><font color=#4a69bd>Frequency, amplitude, pitch alteration</font></li>
+<li><font color=#4a69bd>Conversion between different audio file formats</font></li>
+<li><font color=#4a69bd>Use of filters</font></li>
+<li><font color=#4a69bd>Mix&#x2F;merge multiple sound sources</font></li>
+</ul>
+<p><u>Sound edit:</u></p>
+<ul>
+<li><font color=#4a69bd>Fading</font><ul>
+<li><font color=#4a69bd>Change a volume of a section of sound for it to get louder.</font></li>
+</ul>
+</li>
+<li><font color=#4a69bd>Removing sound element</font><ul>
+<li><font color=#4a69bd>Delete sections of the sound wave.</font></li>
+</ul>
+</li>
+<li><font color=#4a69bd>Copy</font><ul>
+<li><font color=#4a69bd>Repeat elements of the sound wave.</font></li>
+</ul>
+</li>
+</ul>
+<p><u>Sound:</u></p>
+<ul>
+<li><font color=#4a69bd>Analogue value</font></li>
+<li><font color=#4a69bd>Use ADC (analogue digital converter)</font></li>
+<li><font color=#4a69bd>To convert to digital value</font></li>
+</ul>
+<p><img src="/./Chapter1-InformationRepresentation/sylllabus3" alt="Compression"></p>
+<hr>
+<h2 id="Compression"><a href="#Compression" class="headerlink" title="Compression"></a>Compression</h2><p><u><strong>Lossy data compression:</strong></u></p>
+<ul>
+<li><font color=#4a69bd>Lossy may result in lost of detail compared to the original file</font></li>
+<li><font color=#4a69bd>Lossy compression make decision about what parts of the file are important and not important. </font></li>
+<li><font color=#4a69bd>Certain parts of the music can be eliminated without significantly degrading the listener’s     experience.</font></li>
+<li><font color=#4a69bd>Discards softer sounds if two sounds played together.</font></li>
+<li><font color=#4a69bd>Perceptual music shaping: only keeps sound that human ear can hear</font></li>
+<li><font color=#4a69bd>Reduce to about 10% </font></li>
+<li><font color=#4a69bd>E.g: mp3, jpeg</font></li>
+</ul>
+<p><u>Method1: Reduce the colour depth</u></p>
+<ul>
+<li><font color=#4a69bd>Reduce the number of bits per colour</font></li>
+<li><font color=#4a69bd>Each pixel has fewer bits</font></li>
+</ul>
+<p><u>Method2: Reduce the resolution</u></p>
+<ul>
+<li><font color=#4a69bd>Fewer pixels per unit measurement</font></li>
+<li><font color=#4a69bd>Fewer pixels are stored.</font></li>
+</ul>
+<p><u>Lossless data compression:</u></p>
+<ul>
+<li><font color=#4a69bd>Lose none of the original detail</font></li>
+<li><font color=#4a69bd>Based on some form of replacement: Run line Encoding</font></li>
+<li><font color=#4a69bd>Maximum compression to about 50%.</font></li>
+</ul>
+<p><u>RLE(Run line encoding):</u></p>
+<ul>
+<li><font color=#4a69bd>Lossless method of compression</font></li>
+<li><font color=#4a69bd>Reduces the size of a string of adjacent, identical characters</font></li>
+<li><font color=#4a69bd>The repeating string is encoded into two values</font></li>
+<li><font color=#4a69bd>One value represent the number of characters in the run</font></li>
+<li><font color=#4a69bd>The other value is the code of the character in the run</font></li>
+<li><font color=#4a69bd>The run value and run count combination may be preceded by a control character</font></li>
+</ul>
+<h3 id="link-Recommended-article-s"><a href="#link-Recommended-article-s" class="headerlink" title=":link:Recommended article(s)"></a>:link:Recommended article(s)</h3><p><a target="_blank" rel="noopener" href="https://siipo.la/blog/whats-the-best-lossless-image-format-comparing-png-webp-avif-and-jpeg-xl">What’s the best lossless image format? Comparing PNG, WebP, AVIF, and JPEG XL</a></p>
+<blockquote>
+<p>The author first introduced concepts of lossy and lossless compression. Then explained the different image type supported for lossless compression. Finally, the article compares between the effectiveness between different image types’ lossless compression. The article gives quite a deep understanding and is interesting to read. </p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Haoran Jie
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://haoran-jie.github.io/Notes/ASCS/Chapter1-InformationRepresentation/" title="Chapter1_InformationRepresentation">https://haoran-jie.github.io/Notes/ASCS/Chapter1-InformationRepresentation/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/uncategorized/Deep-Learning-Recipe/" rel="prev" title="Deep Learning Recipe">
+                  <i class="fa fa-chevron-left"></i> Deep Learning Recipe
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Mathematics/tools/Mathematical-Terminology-Explained/" rel="next" title="Mathematical Terminology Explained">
+                  Mathematical Terminology Explained <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="comment-button-group">
+          <a class="btn comment-button disqus">disqus</a>
+          <a class="btn comment-button gitalk">gitalk</a>
+      </div>
+        <div class="comment-position disqus">
+          
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+        </div>
+        <div class="comment-position gitalk">
+          <div class="comments gitalk-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa-solid fa-terminal"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Haoran Jie</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.3.0/mermaid.min.js","integrity":"sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://haoran-jie.github.io/Notes/ASCS/Chapter1-InformationRepresentation/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"samuels-blog-5","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Haoran-Jie","repo":"GItalkComments","client_id":"a78520e4a91db64c6ead","client_secret":"80a445f6a6f80fcd44fea523269b55c10ba59002","admin_user":"Haoran-Jie","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"b0c46399894d5d39161d72816ece374d"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

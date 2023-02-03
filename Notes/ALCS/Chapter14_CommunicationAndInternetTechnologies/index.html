@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#2c3e50" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#2c3e50">
+  <meta name="google-site-verification" content="ONgpvg7NlakSEl6IcZ4-nCCQleKums7GuOYvOS4zXCQ">
+  <meta name="msvalidate.01" content="5331505606E7903BD6FA7D5C7D0FE6DB">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"haoran-jie.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":30,"offset":15},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#546de5","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":true,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+
+
+<link rel="canonical" href="https://haoran-jie.github.io/Notes/ALCS/Chapter14_CommunicationAndInternetTechnologies/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://haoran-jie.github.io/Notes/ALCS/Chapter14_CommunicationAndInternetTechnologies/","path":"Notes/ALCS/Chapter14_CommunicationAndInternetTechnologies/","title":"Chapter 14: Communication and Internet technologies"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Chapter 14: Communication and Internet technologies | Samuel's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V501S4L4ZZ"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-V501S4L4ZZ","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+  <script async src="//assets.growingio.com/2.1/gio.js"></script>
+  <script class="next-config" data-name="growingio_analytics" type="application/json">"b544ba838d823365"</script>
+  <script src="/js/third-party/analytics/growingio.js"></script>
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Samuel's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Snippets of life of a programmer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">16</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">12</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">30</span></a></li><li class="menu-item menu-item-notes"><a href="/Notes/" rel="section"><i class="fa fa-book fa-fw"></i>Notes</a></li><li class="menu-item menu-item--what&why系列文章"><a href="/WhatandwhY/" rel="section"><i class="fa-solid fa-clipboard-question fa-fw"></i> What&whY系列文章</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Protocols"><span class="nav-number">1.</span> <span class="nav-text">Protocols</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Protocol-implementation-explanation"><span class="nav-number">1.1.</span> <span class="nav-text">Protocol implementation[^explanation]</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Protocol-stack"><span class="nav-number">1.1.1.</span> <span class="nav-text">Protocol stack</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-x2F-IP-protocol-suite"><span class="nav-number">1.2.</span> <span class="nav-text">TCP&#x2F;IP protocol suite</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Protocols-1"><span class="nav-number">1.3.</span> <span class="nav-text">Protocols</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#BitTorrent-Protocol"><span class="nav-number">1.3.1.</span> <span class="nav-text">BitTorrent Protocol</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Circuit-switching-amp-Packet-switching"><span class="nav-number">2.</span> <span class="nav-text">Circuit switching &amp; Packet switching</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Packet-header"><span class="nav-number">2.1.</span> <span class="nav-text">Packet header</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Router"><span class="nav-number">2.2.</span> <span class="nav-text">Router</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Haoran Jie"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Haoran Jie</p>
+  <div class="site-description" itemprop="description">18</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Haoran-Jie" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Haoran-Jie" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:samueljie1@gmail.com" title="E-Mail → mailto:samueljie1@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/samueljieee/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;samueljieee&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://haoran-jie.github.io/Notes/ALCS/Chapter14_CommunicationAndInternetTechnologies/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Haoran Jie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Samuel's Blog">
+      <meta itemprop="description" content="18">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Chapter 14: Communication and Internet technologies | Samuel's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Chapter 14: Communication and Internet technologies
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-04-13 21:24:22" itemprop="dateCreated datePublished" datetime="2022-04-13T21:24:22+01:00">2022-04-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-06-04 08:30:03" itemprop="dateModified" datetime="2022-06-04T08:30:03+01:00">2022-06-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/ALCS/" itemprop="url" rel="index"><span itemprop="name">ALCS</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/Notes/ALCS/Chapter14_CommunicationAndInternetTechnologies/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Notes/ALCS/Chapter14_CommunicationAndInternetTechnologies/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img src="/./Chapter14_CommunicationAndInternetTechnologies/commu.png"></p>
+<hr>
+<span id="more"></span>
+
+<h2 id="Protocols"><a href="#Protocols" class="headerlink" title="Protocols"></a>Protocols</h2><blockquote>
+<p><font color=#4a69bd>A set of rules governing communication across a network - the rules agreed by both the sender and the recipient</font></p>
+</blockquote>
+<p><u>Communication protocol <strong>definition</strong>:</u></p>
+<ul>
+<li><font color=#4a69bd>Sets of rules</font></li>
+<li><font color=#4a69bd>for successful transmission and receipt of data</font></li>
+</ul>
+<p><u>Why communication protocol is necessary:</u></p>
+<ul>
+<li><font color=#4a69bd>All data is sent and received using the same <strong>rules</strong> and <strong>format</strong></font></li>
+<li><font color=#4a69bd>Allows communication between devices operating on <strong>different platforms</strong></font></li>
+<li><font color=#4a69bd>The communication is independent of the <strong>software</strong> and <strong>hardware</strong> used</font></li>
+<li><code>--</code></li>
+<li><font color=#4a69bd>Provide a set of standards for transmission of data</font></li>
+<li><font color=#4a69bd>… that gives a known&#x2F;accepted set of rules for transmitting and receiving of data</font></li>
+<li><font color=#4a69bd>This enables communication&#x2F;compatibility between devices from different manufacturer&#x2F;platform</font></li>
+</ul>
+<h3 id="Protocol-implementation-explanation"><a href="#Protocol-implementation-explanation" class="headerlink" title="Protocol implementation[^explanation]"></a>Protocol implementation[^explanation]</h3><table>
+<thead>
+<tr>
+<th align="center">Application layer</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>Transport layer</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>Internet layer</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>Network (access) layer</strong></td>
+</tr>
+</tbody></table>
+<p>[^explanation]: There are lots of different names for each layer, but this is from 2022 specimen paper, making it more authentic.</p>
+<h4 id="Protocol-stack"><a href="#Protocol-stack" class="headerlink" title="Protocol stack"></a>Protocol stack</h4><blockquote>
+<p>For a protocol suite the protocols can be viewed as layers within a protocol stack. There are a number of aspects relating to this concept.</p>
+</blockquote>
+<ul>
+<li>Each layer can only accept input from the next higher layer or the next lower layer</li>
+<li>There is a defined interface between adjacent layers which constitutes the only interaction allowed between layers.</li>
+<li>A layer is serviced by the actions of lower layers.</li>
+<li>With the possible exception of the lowest layer the function of a layer is created by installed software</li>
+<li>A layer may comprise sub-layers.</li>
+<li>Any user interaction will take place using protocols associated with the highest level layer in the stack.</li>
+<li>Any direct access to hardware is confined to the lowest layer in the stack.</li>
+</ul>
+<p><u>State how each layer of stack is implemented</u></p>
+<ul>
+<li><font color=#4a69bd>Software&#x2F;module&#x2F;program&#x2F;code</font></li>
+</ul>
+<h3 id="TCP-x2F-IP-protocol-suite"><a href="#TCP-x2F-IP-protocol-suite" class="headerlink" title="TCP&#x2F;IP protocol suite"></a>TCP&#x2F;IP protocol suite</h3><p><u>Describe the TCP&#x2F;IP protocol suite:</u></p>
+<ul>
+<li><font color=#4a69bd>A layered model with four layers</font></li>
+<li><font color=#4a69bd>Uses a set of protocols for transmission of data</font></li>
+<li><font color=#4a69bd>Transport control protocol with Internet protocol</font></li>
+<li><font color=#4a69bd>Application layer, transport layer, internet layer, network (access) layer</font></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><u>Layer</u>:</th>
+<th><u>Description</u>:</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Application layer</strong></td>
+<td><font color=#4a69bd>Handles access to services <br> Define protocol used <br> Manage data exchange</font><br></td>
+</tr>
+<tr>
+<td><strong>Transport layer</strong></td>
+<td><font color=#4a69bd>Handles the forwarding of packets</font><br> Where TCP takes place <br>Regulate the network connection<br>Data broken up into packets, then sent to internet layer</td>
+</tr>
+<tr>
+<td><strong>Internet layer</strong></td>
+<td><font color=#4a69bd>Handles the transmission of data<br>Routing<br> IP addressing<br><code>--</code><br>Routes the packets around the network<br>Adds to the IP header a source&#x2F;destination address for each header<br>Encapsulates data into datagram<br>Passes datagram to network access layer<br>Defines the addressing mode: <a target="_blank" rel="noopener" href="https://www.cloudflare.com/en-gb/learning/network-layer/what-is-a-subnet/">subnetting</a>, NAT</font></td>
+</tr>
+<tr>
+<td><strong>Network (access) layer</strong></td>
+<td><font color=#4a69bd>Handles how data is physically sent</font><br/>Encapsulates IP packets into frames for transmission<br>Ensure correct protocol is followed</td>
+</tr>
+</tbody></table>
+<h3 id="Protocols-1"><a href="#Protocols-1" class="headerlink" title="Protocols"></a>Protocols</h3><table>
+<thead>
+<tr>
+<th><u>Protocol</u></th>
+<th><u>Purpose &amp; Use</u></th>
+<th><u>Description</u></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>HTTP</strong>(Hyper text transfer protocol)</td>
+<td><font color=#4a69bd><code>Purpose</code>:Transfer webpages &#x2F; hypertext from server to client<br><code>Use</code>: Browsing website</font></td>
+<td><font color=#4a69bd>This is the protocol responsible for correct transfer of files that makes up web pages on the world wide web</font><br>Client&#x2F;server protocol<br>Define the format of messages sent and received</td>
+</tr>
+<tr>
+<td><strong>SMTP</strong>(Simple mail transfer protocol)</td>
+<td><font color=#4a69bd><code>purpose</code>: Protocol for sending email<br><code>Use</code>: Used by mail servers to forward email messages to another mail sever <br>Email client sends email to email server</font></td>
+<td>Text-based: if contain image, video, music – then use multipurpose internet mail extension(MIME) protocol<br>Email is transferred from one server to another server<br>Email client sends email to email server</td>
+</tr>
+<tr>
+<td><strong>POP3&#x2F;4</strong>(Post office protocol)</td>
+<td><font color=#4a69bd><code>purpose</code>: Mail is held for you by a remote server until you download it &#x2F;&#x2F; download email<br><code>Use</code>: To receive email</font></td>
+<td>Pull protocols<br>Does not keep the server and client in synchronization; when emails are downloaded by the client, they are then deleted from the server which means it is not further updated.</td>
+</tr>
+<tr>
+<td><strong>IMAP</strong>(internet message access protocol)</td>
+<td><font color=#4a69bd><code>Purpose</code>: downloading email &#x2F;&#x2F; storing&#x2F;organising emails on a remote server<br><code>Use</code>: To receive email</font></td>
+<td>More recent than POP3&#x2F;4<br>Keeps the server and client in synchronization; only a copy of the email is downloaded with the original remaining on the server until the client mutually deletes it</td>
+</tr>
+<tr>
+<td><strong>FTP</strong>(file transfer protocol)</td>
+<td><font color=#4a69bd><code>Purpose</code>: Used for interactive file transfer; <br>To directly transfer data between two computers over the internet<br><code>Use</code>: Upload and download files over the internet</font></td>
+<td><font color=#4a69bd><u>Anonymous ftp</u>: <br>Allow user to access files<br>User does not need to identify themselves to the server<br><u>ftp commands</u><br>User can send instructions<br>That are carried out on the server<br><u>ftp server</u><br>Central computer<br>Stores files that are to be downloaded</font></td>
+</tr>
+</tbody></table>
+<h4 id="BitTorrent-Protocol"><a href="#BitTorrent-Protocol" class="headerlink" title="BitTorrent Protocol"></a>BitTorrent Protocol</h4><p><u><code>Purpose</code></u>: <font color=#4a69bd>Protocol for peer-to-peer file sharing</font></p>
+<p><u><code>Use</code></u>: <font color=#4a69bd>Decentralized distribution of data</font></p>
+<p><u>Properties:</u></p>
+<ul>
+<li><font color=#4a69bd>Based on peer-to-peer networking concept</font></li>
+<li><font color=#4a69bd>Allow fast sharing of files between computers</font></li>
+<li><font color=#4a69bd>Allow many computers to share files</font></li>
+</ul>
+<p><u>Description:</u></p>
+<ol>
+<li><font color=#4a69bd>Bit torrent software made available</font></li>
+<li><font color=#4a69bd>A computer joins a swarm by using this to load a torrent descriptor file</font></li>
+<li><font color=#4a69bd>A server called tracker keeps record of all the computer in the swarm</font><br><font color=#4a69bd>… and shares their IP addresses allow them to be connected</font></li>
+<li><font color=#4a69bd>One computer of the swarm must have full copy of the file to be downloaded</font></li>
+<li><font color=#4a69bd>Torrent is split into small files</font></li>
+<li><font color=#4a69bd>Pieces of torrent are both downloaded and uploaded</font></li>
+<li><font color=#4a69bd>Rare pieces are given priority in download</font></li>
+<li><font color=#4a69bd>Once a computer have downloaded a full copy it becomes a seed</font></li>
+<li><font color=#4a69bd>Leech downloads more than they uploads</font></li>
+</ol>
+<p><code>—</code></p>
+<ol>
+<li>Create small file called torrent: contains meta data about the file to be stored</li>
+<li>The actual file is broken up into equal segments known as pieces</li>
+<li>Others first obtains the torrent, then connect to the tracker (A central server that contains data about all computers connected to it)</li>
+<li>As each peer receives a piece of file, they then become the source for that piece of file. Other peers connected to the tracker will therefore know where to find the file they need</li>
+<li>Once the peer has downloaded the file completely and make the file available to the swarm, they become a seed. The more seeds in the swarm, the faster the download process.</li>
+</ol>
+<p><u>Terms:</u></p>
+<ul>
+<li><u>Swarm:</u> <font color=#4a69bd>A group of peers connected together</font><ul>
+<li><font color=#4a69bd>All the connected shared computers</font></li>
+<li><font color=#4a69bd>That have all or other parts of the file to be downloaded</font></li>
+<li><font color=#4a69bd>Share a torrent</font></li>
+</ul>
+</li>
+<li><u>Seed</u>: <font color=#4a69bd>A peer has downloaded a file and has then made it available to others in the swarm</font><ul>
+<li><font color=#4a69bd>Peer computer that has 100% of the file</font></li>
+<li><font color=#4a69bd>It uploading the downloaded content</font></li>
+</ul>
+</li>
+<li><u>Tracker</u>:<ul>
+<li><font color=#4a69bd>This is the central server that stores details about other computers that make up the swarm</font></li>
+<li><font color=#4a69bd>It will store details about all the peers uploading&#x2F;downloading the file</font></li>
+<li><font color=#4a69bd>Allowing the peers to locate each other using the stored IP address</font></li>
+<li><font color="#BDC581">It will share information on request from members in the swarm</font></li>
+<li><font color="#BDC581">It will provide information on which members in the swarm have copies of which files or which part of files</font></li>
+</ul>
+</li>
+<li>Leech - A peer that has negative impact on the swarm by having a poor sharing ratio</li>
+<li>Lurker - A peer that downloads many files but does not make available any new content for the community as a whole</li>
+</ul>
+<h2 id="Circuit-switching-amp-Packet-switching"><a href="#Circuit-switching-amp-Packet-switching" class="headerlink" title="Circuit switching &amp; Packet switching"></a>Circuit switching &amp; Packet switching</h2><table>
+<thead>
+<tr>
+<th></th>
+<th align="left">Circuit switching</th>
+<th>Packet Switching</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Features</strong></td>
+<td align="left"><font color=#4a69bd>1. A dedicated circuit is established at the start of the communication<br>2. Between the sender and the receiver<br>3. All data are transmitted along the same route<br>4. This lasts for the duration of the call<br>5. Then the circuit is removed<br><code>—</code><br>1. Set up for the duration of conversation<br>2. Set up before communication starts <br>3. Maintained throughout the communication<br>4. All data travel down the same route<br>5. Dropped at the end of the conversation<br>6. Complete bandwidth used</font></td>
+<td><font color=#4a69bd>- A circuit does not has to be established at the start of the communication<br>- Data to be sent are divided into packets <br>- That can travel along different routes<br>- From node to node <br>- The packets are reassembled at the correct order at the receiver’s end<br>- Must wait until last packet is received to put data back together<br><code>—</code><br>- A large message is divided up into a group of smaller chunks of same size<br>- The packet has a header and a payload<br>- The header contains a source IP address, destination IP address, and sequence number<br>- Each packet is dispatched independently<br>- And may travel along different routes<br>- The packets may arrive out of order<br>- And are reassembled into the original message at the destination<br>- If packets are missing, a retransmission request is sent</font></td>
+</tr>
+<tr>
+<td><strong>Pros</strong></td>
+<td align="left"><font color=#4a69bd>- Reduced latency<br>- There are little delay in sending and receiving data once the circuit is established<br>- … because error checking is not required<br>- Circuit made available is dedicated to this communication stream<br><code>—</code><br>- Two way real-time conversation<br>- Better synchronization<br>- Full bandwidth available<br><br></font><u>Explain why company uses circuit switching to make voice calls</u><br><font color=#4a69bd>- A dedicated circuit is established<br>- Can use the whole bandwidth<br>- Two way real-time conversation<br>- No delay as no switching<br>- Data arrive in the order sent</font></td>
+<td><font color=#4a69bd>- Accuracy: allow accurate deliver of messages<br>- Completeness: the missing packets can be easily detected and resend request sent so message arrive complete<br>- Resilience: if the network changes, the the router can detect this and send data another way to ensure it arrives<br>- Paths are also available to others; allow simultaneous use of channel; doesn’t use the whole bandwidth<br>- Better security as packets hashed and sent along different routes<br>- Packets can take the least congested route<br><code>—</code><br>- Packets can be rerouted if there are problems<br>- Packets can take the least congested route<br>- Transmission errors can be detected<br>- Missing&#x2F;corrupt packets can be resent<br></font><br><u>Explain why company uses packet switching to send and receive other types of data</u><br><font color=#4a69bd>- Asynchronous communication<br>- Allows for error checking<br>- Real time transmission is not required<br>- Smaller amount of data is sent, so able to share bandwidth<br>- Doesn’t matter if data arrives out of order</font></td>
+</tr>
+<tr>
+<td><strong>Cons</strong></td>
+<td align="left"><font color=#4a69bd>- Bandwidth not available to others<br>- Need extra time before communication to set up the circuit<br>- Alternative route not available without restarting the conversation<br>- Less secure, as easy to intercept data (only one route)<br>- Failure of single route means failure of transmission</font><br>- Not very flexible<br>- Nobody else can use the circuit&#x2F;channel even when it is idle <br>- The circuit is always there whether or not it is used<br>- If there’s a fault, no alternative<br>- Dedicated channel require greater bandwidth<br>- Time to establish a link can be long</td>
+<td><font color=#4a69bd>- Time delay to correct errors &#x2F; network problems may introduce errors in packets<br>- Require complex protocol<br>- Unsuitable for real-time transmission application</font><br>- <code>--</code><br>- <font color=#4a69bd>packets can be dropped&#x2F;delayed<br></font>- The protocols for packets switching can be more complex than those for circuit switching if a packet is lost<br>- The sender must resend the packet, waste time<br>- Do not work well with real time data stream<br>- The circuit&#x2F;channel has to share its bandwidth with other packets<br>- There is a delay at the destination while packets are reassembled<br>- Needs large amount of RAM to handle the large amount of data.<br><br><u>State problems that could arise if video conferencing were to use packet switching</u><br><font color=#4a69bd>- Picture and sound not synchronized<br>- Interruptions&#x2F;video not continuous<br>- Can be degraded by other computing traffic</font></td>
+</tr>
+<tr>
+<td><strong>Applications</strong></td>
+<td align="left">- Public telephone networks<br>- Private telephone networks<br>- Private data networks<br>- <font color=#4a69bd>Video conferencing &#x2F; live stream</font></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Questions</strong></td>
+<td align="left"></td>
+<td><u>The TCP&#x2F;IP protocol is used to send an email message from one node on a LAN to a node on different LAN. State the steps that take place when the email message is sent and received.</u><br><font color=#4a69bd>- Message is split into packets<br>- Each packet is a fixed size<br>- Each packet is given a header<br>- … including the destination IP address, sequence number<br>- Packets are forwarded from one LAN to another LAN<br>- Packets may take different routes<br>- Missing packets are requested to be resent<br>- Packets are reassembled in order at the destination</font></td>
+</tr>
+</tbody></table>
+<h3 id="Packet-header"><a href="#Packet-header" class="headerlink" title="Packet header"></a>Packet header</h3><p><u>Purpose:</u></p>
+<ul>
+<li><font color=#4a69bd>To store data about the header</font></li>
+<li><font color=#4a69bd>and its routing &#x2F;&#x2F; to ensure it reaches the correct destination</font></li>
+<li><font color=#4a69bd>to ensure the packet can be correctly constructed</font></li>
+</ul>
+<p><u>Examples:</u></p>
+<ul>
+<li><font color=#4a69bd>IP address of the sender&#x2F; receiver</font></li>
+<li><font color=#4a69bd>ID of the packet</font></li>
+<li><font color=#4a69bd>Packet length</font></li>
+<li><font color=#4a69bd>Checksum</font></li>
+<li><font color=#4a69bd>Protocol used</font></li>
+<li><font color=#4a69bd>Synchronization data</font></li>
+<li><font color=#4a69bd>Number of packets the message consists of </font></li>
+<li><font color=#4a69bd>Type of service</font></li>
+<li><font color=#4a69bd>IP version number</font></li>
+<li><font color=#4a69bd>Fragmentation flags</font></li>
+<li><font color=#4a69bd>Fragmentation offsets</font></li>
+</ul>
+<h3 id="Router"><a href="#Router" class="headerlink" title="Router"></a>Router</h3><p><u>Function of router in packet switching:</u></p>
+<ul>
+<li><font color=#4a69bd>The router examines the packet header</font></li>
+<li><font color=#4a69bd>It reads the IP address of the destination</font></li>
+<li><font color=#4a69bd>A router has access to a routing table</font><ul>
+<li><font color=#4a69bd>Containing information about: eg: available hops&#x2F;netmask&#x2F;gateway used</font></li>
+<li><font color=#4a69bd>And the status of the routes along the route</font></li>
+<li><font color=#4a69bd>The router decides the next hop&#x2F;next route</font></li>
+<li><font color=#4a69bd>And sends the packets to the next hop</font></li>
+</ul>
+</li>
+</ul>
+<p><u>Routing table:</u></p>
+<ul>
+<li><font color=#4a69bd>Network ID &#x2F;&#x2F; network destination</font></li>
+<li><font color=#4a69bd>Routing data to decide best route</font></li>
+<li><font color=#4a69bd>IP address of next hop&#x2F;gateway</font></li>
+<li><font color=#4a69bd>Interface</font></li>
+</ul>
+<p><u>Explain the role of routers in sending an email from one email server to another</u></p>
+<ul>
+<li><font color="#BDC581">A router is a node in the Internet </font></li>
+<li><font color="#BDC581">A router will receive a packet that is in the process of transmission</font></li>
+<li><font color="#BDC581">A router has data stored regarding the routers that are within its vicinity</font></li>
+<li><font color="#BDC581">A router can access this data to make a choice of which router to send the packet to next</font></li>
+<li><font color="#BDC581">The destination IP address in the packet also guides this choice</font></li>
+<li><font color="#BDC581">Some of the data stored relates to the amount of traffic using a particular network link</font></li>
+<li><font color="#BDC581">Different packets heading to the same destination will not necessarily be directed along the same link  from the router.</font></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Haoran Jie
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://haoran-jie.github.io/Notes/ALCS/Chapter14_CommunicationAndInternetTechnologies/" title="Chapter 14: Communication and Internet technologies">https://haoran-jie.github.io/Notes/ALCS/Chapter14_CommunicationAndInternetTechnologies/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Communication/" rel="tag"><i class="fa fa-tag"></i> Communication</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Notes/ASAL-CompSci-Note/" rel="prev" title="IG/AS/AL CompSci-Note">
+                  <i class="fa fa-chevron-left"></i> IG/AS/AL CompSci-Note
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Notes/ALCS/Chapter19.1_Algorithms/" rel="next" title="Chapter 19.1: Algorithms">
+                  Chapter 19.1: Algorithms <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="comment-button-group">
+          <a class="btn comment-button disqus">disqus</a>
+          <a class="btn comment-button gitalk">gitalk</a>
+      </div>
+        <div class="comment-position disqus">
+          
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+        </div>
+        <div class="comment-position gitalk">
+          <div class="comments gitalk-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa-solid fa-terminal"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Haoran Jie</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.3.0/mermaid.min.js","integrity":"sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://haoran-jie.github.io/Notes/ALCS/Chapter14_CommunicationAndInternetTechnologies/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"samuels-blog-5","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Haoran-Jie","repo":"GItalkComments","client_id":"a78520e4a91db64c6ead","client_secret":"80a445f6a6f80fcd44fea523269b55c10ba59002","admin_user":"Haoran-Jie","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"1b86401b2a5e3fc885048ad590841d6e"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

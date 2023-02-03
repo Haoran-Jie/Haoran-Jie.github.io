@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#2c3e50" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#2c3e50">
+  <meta name="google-site-verification" content="ONgpvg7NlakSEl6IcZ4-nCCQleKums7GuOYvOS4zXCQ">
+  <meta name="msvalidate.01" content="5331505606E7903BD6FA7D5C7D0FE6DB">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"haoran-jie.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":30,"offset":15},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#546de5","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":true,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+
+
+<link rel="canonical" href="https://haoran-jie.github.io/Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://haoran-jie.github.io/Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/","path":"Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/","title":"Chapter 20.2: File processing and Exception Handling"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Chapter 20.2: File processing and Exception Handling | Samuel's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V501S4L4ZZ"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-V501S4L4ZZ","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+  <script async src="//assets.growingio.com/2.1/gio.js"></script>
+  <script class="next-config" data-name="growingio_analytics" type="application/json">"b544ba838d823365"</script>
+  <script src="/js/third-party/analytics/growingio.js"></script>
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Samuel's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Snippets of life of a programmer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">16</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">12</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">30</span></a></li><li class="menu-item menu-item-notes"><a href="/Notes/" rel="section"><i class="fa fa-book fa-fw"></i>Notes</a></li><li class="menu-item menu-item--what&why系列文章"><a href="/WhatandwhY/" rel="section"><i class="fa-solid fa-clipboard-question fa-fw"></i> What&whY系列文章</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#File-Processing"><span class="nav-number">1.</span> <span class="nav-text">File Processing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pseudocode"><span class="nav-number">1.1.</span> <span class="nav-text">Pseudocode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Program-code"><span class="nav-number">1.2.</span> <span class="nav-text">Program code</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Scanner"><span class="nav-number">1.2.1.</span> <span class="nav-text">Scanner</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FileReader"><span class="nav-number">1.2.2.</span> <span class="nav-text">FileReader</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BufferedReader"><span class="nav-number">1.2.3.</span> <span class="nav-text">BufferedReader</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RandomAccessFile"><span class="nav-number">1.2.4.</span> <span class="nav-text">RandomAccessFile</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Useful-resources"><span class="nav-number">1.2.5.</span> <span class="nav-text">Useful resources</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exception-Handling"><span class="nav-number">2.</span> <span class="nav-text">Exception Handling</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Exception-hierarchy-1"><span class="nav-number">2.1.</span> <span class="nav-text">Exception hierarchy^1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Capture-the-exception-try-catch"><span class="nav-number">2.2.</span> <span class="nav-text">Capture the exception: try...catch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Single-catch"><span class="nav-number">2.3.</span> <span class="nav-text">Single catch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multiple-catch"><span class="nav-number">2.4.</span> <span class="nav-text">Multiple catch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Finally"><span class="nav-number">2.5.</span> <span class="nav-text">Finally</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Useful-resources-1"><span class="nav-number">2.6.</span> <span class="nav-text">Useful resources</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Haoran Jie"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Haoran Jie</p>
+  <div class="site-description" itemprop="description">18</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Haoran-Jie" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Haoran-Jie" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:samueljie1@gmail.com" title="E-Mail → mailto:samueljie1@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/samueljieee/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;samueljieee&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://haoran-jie.github.io/Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Haoran Jie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Samuel's Blog">
+      <meta itemprop="description" content="18">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Chapter 20.2: File processing and Exception Handling | Samuel's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Chapter 20.2: File processing and Exception Handling
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-04-17 21:12:00" itemprop="dateCreated datePublished" datetime="2022-04-17T21:12:00+01:00">2022-04-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-06-15 15:28:28" itemprop="dateModified" datetime="2022-06-15T15:28:28+01:00">2022-06-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/ALCS/" itemprop="url" rel="index"><span itemprop="name">ALCS</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img src="/./Chapter20.2_FileProcessingAndExceptionHandling/syllabus.png"></p>
+<hr>
+<span id="more"></span> 
+
+<h2 id="File-Processing"><a href="#File-Processing" class="headerlink" title="File Processing"></a>File Processing</h2><h3 id="Pseudocode"><a href="#Pseudocode" class="headerlink" title="Pseudocode"></a>Pseudocode</h3><h3 id="Program-code"><a href="#Program-code" class="headerlink" title="Program code"></a>Program code</h3><hr>
+<h4 id="Scanner"><a href="#Scanner" class="headerlink" title="Scanner"></a><code>Scanner</code></h4><blockquote>
+<p>API: <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html">https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html</a></p>
+</blockquote>
+<p><code>Scanner</code>和其他读入的一个不同点就是他是存在于<code>java.util</code>包下面的 而其他大多数是在<code>java.io</code>包下面。</p>
+<p>有一个好处就是<code>scanner.hasNext</code>可以用来检查文件是否读完</p>
+<p><strong>Declaration&#x2F;construction</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Scanner</span> <span class="variable">sca1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);<span class="comment">//从console输入</span></span><br><span class="line"><span class="type">Scanner</span> <span class="variable">sca2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(<span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;SamuelJie.txt&quot;</span>));<span class="comment">//can be used to read a file</span></span><br><span class="line"><span class="type">Scanner</span> <span class="variable">sca3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(<span class="string">&quot;Samuel is a hardworking boy&quot;</span>);<span class="comment">//can read a string</span></span><br><span class="line"><span class="comment">//then you can carry out other operations</span></span><br><span class="line"><span class="type">int</span> <span class="variable">number</span> <span class="operator">=</span> sca1.nextInt();</span><br></pre></td></tr></table></figure>
+
+<p><strong>Methods:</strong></p>
+<p>A <code>Scanner</code> breaks its input into tokens using a delimiter pattern, which by default matches whitespace. The resulting tokens may then be converted into values of different types using the various <code>next</code> methods.</p>
+<p>简单来说 被空格、换行符所分割的 每一个部分 都算一个<code>token</code> 比如<code>&quot;1 2 3  Samuel&quot;</code> 中 <code>1</code>，<code>2</code>，<code>3</code>，<code>&quot;Samuel&quot;</code>都算<code>token</code>. <code>1</code> 可以用<code>nextInt()</code> 来读取, <code>&quot;Samuel&quot;</code>可以用 <code>next()</code>来读取。</p>
+<ul>
+<li><code>hasNext()</code><ul>
+<li>Returns true if this scanner has another token in its input.</li>
+</ul>
+</li>
+<li><code>next()</code><ul>
+<li>Finds and returns the next complete token from this scanner.</li>
+</ul>
+</li>
+<li><code>nextLine()</code><ul>
+<li>Advances this scanner past the current line and returns the input that was skipped.</li>
+</ul>
+</li>
+<li><code>nextInt()</code><ul>
+<li>Scans the next token of the input as an <code>int</code>.</li>
+</ul>
+</li>
+</ul>
+<p>:warning: <a target="_blank" rel="noopener" href="https://www.cnblogs.com/alterwl/p/java-problem-scanner-nosuchelementexception.html">使用scanner中遇到的nosuchfileException</a></p>
+<p>:warning: <a target="_blank" rel="noopener" href="https://blog.csdn.net/guanghuichenshao/article/details/81545450">nextLine和next的区别</a></p>
+<p>:warning:<a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/why-is-scanner-skipping-nextline-after-use-of-other-next-functions/">next– 与nextline连用时出现读取空白的问题</a></p>
+<hr>
+<h4 id="FileReader"><a href="#FileReader" class="headerlink" title="FileReader"></a><code>FileReader</code></h4><blockquote>
+<p>API: <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/java/io/FileReader.html">https://docs.oracle.com/javase/8/docs/api/java/io/FileReader.html</a></p>
+</blockquote>
+<p>通常在考试中FileReader都是作为创建BufferedReader的一个前置来使用。</p>
+<p><strong>Declaration&#x2F;construction</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FileReader(File file);<span class="comment">//can construct with a file</span></span><br><span class="line">FileReader(String Filename);<span class="comment">//can construct with the filename</span></span><br><span class="line"><span class="comment">//for example</span></span><br><span class="line">String fileName=<span class="string">&quot;input.txt&quot;</span>;</span><br><span class="line"><span class="type">FileReader</span> <span class="variable">fr</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileReader</span>(filename);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="BufferedReader"><a href="#BufferedReader" class="headerlink" title="BufferedReader"></a><code>BufferedReader</code></h4><blockquote>
+<p>API: <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html">https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html</a></p>
+</blockquote>
+<p>Buffered Reader 相对于 传统Reader的好处就是 当读入一个文件的时候 能够先把文件的内容存在Buffer(缓存)里面 然后每次从Buffer里面读取，这样比传统Reader直接从文件里读取更加高效</p>
+<p><strong>Declaration&#x2F;construction</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">File</span> <span class="variable">fi</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(fileName);</span><br><span class="line"><span class="type">FileReader</span> <span class="variable">fr</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileReader</span>(fi);</span><br><span class="line"><span class="type">BufferedReader</span> <span class="variable">bfr</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(fr);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Methods(考试会用到的):</strong></p>
+<p><code>readLine()</code>: Reads a line of text. A line is considered to be terminated by any one of a line feed (‘\n’), a carriage return (‘\r’), or a carriage return followed immediately by a linefeed.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> String <span class="title function_">readLine</span><span class="params">()</span></span><br><span class="line"><span class="comment">//Usage</span></span><br><span class="line"><span class="type">String</span> <span class="variable">dataRead</span> <span class="operator">=</span> bfr.readLine();<span class="comment">//bfr is the BufferedReader declared previously</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="RandomAccessFile"><a href="#RandomAccessFile" class="headerlink" title="RandomAccessFile"></a><code>RandomAccessFile</code></h4><blockquote>
+<p>API: <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/java/io/RandomAccessFile.html">https://docs.oracle.com/javase/8/docs/api/java/io/RandomAccessFile.html</a></p>
+</blockquote>
+<p>Instances of this class support both reading and writing to a random access file. A random access file behaves like a large array of bytes stored in the file system. There is a kind of cursor, or index into the implied array, called the <code>file pointer</code>; input operations read bytes starting at the file pointer and advance the file pointer past the bytes read. If the random access file is created in read&#x2F;write mode, then output operations are also available; output operations write bytes starting at the file pointer and advance the file pointer past the bytes written. Output operations that write past the current end of the implied array cause the array to be extended. The file pointer can be read by the <code>getFilePointer</code> method and set by the <code>seek</code> method.</p>
+<table>
+<thead>
+<tr>
+<th>Data type</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>byte</code></td>
+<td>1 byte</td>
+</tr>
+<tr>
+<td><code>short</code></td>
+<td>2 bytes</td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td>4 bytes</td>
+</tr>
+<tr>
+<td><code>long</code></td>
+<td>8 bytes</td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td>4 bytes</td>
+</tr>
+<tr>
+<td><code>double</code></td>
+<td>8 bytes</td>
+</tr>
+<tr>
+<td><code>boolean</code></td>
+<td>1 <strong>bit</strong></td>
+</tr>
+<tr>
+<td><code>char</code></td>
+<td>2 bytes</td>
+</tr>
+</tbody></table>
+<p><strong>Declaration&#x2F;construction</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RandomAccessFile(File file, String mode);</span><br><span class="line">RandomAccessFile(String fileName, String mode);</span><br></pre></td></tr></table></figure>
+
+<p><strong><code>mode</code></strong></p>
+<p><code>mode</code>本质上就是读写模式，像是pseudocode 中 OPENFILE <code>&lt;file Name&gt;</code> FOR <code>&lt;File mode&gt;</code>中的 <code>&lt;File mode&gt;</code>一样。</p>
+<ul>
+<li><code>&quot;r&quot;</code> open for read only.</li>
+<li><code>&quot;rw&quot;</code>open for read and write</li>
+</ul>
+<p><strong>Methods(考试会用到的)</strong></p>
+<ul>
+<li><code>read()</code><ul>
+<li>Reads a byte of data from this file.</li>
+</ul>
+</li>
+<li><code>readBoolean()</code><ul>
+<li>Reads a <code>boolean</code> from this file.</li>
+</ul>
+</li>
+<li><code>readByte()</code><ul>
+<li>Reads a signed eight-bit value from this file.</li>
+</ul>
+</li>
+<li><code>readChar()</code><ul>
+<li>Reads a character from this file.</li>
+</ul>
+</li>
+<li><code>readDouble()</code><ul>
+<li>Reads a <code>double</code> from this file.</li>
+</ul>
+</li>
+<li><code>readInt()</code></li>
+<li><code>readUTF()</code></li>
+<li><code>seek(long pos)</code><ul>
+<li>Sets the file-pointer offset, measured from the beginning of this file, at which the next read or write occurs.</li>
+<li>Inputs the number, representing the position that you want the <code>file pointer</code> to be.</li>
+</ul>
+</li>
+<li><code>writeInt(int num)</code></li>
+<li><code>writeChars(String str)</code><ul>
+<li>Writes a string to the file as a sequence of characters.</li>
+</ul>
+</li>
+<li><code>writeDouble(String str)</code><ul>
+<li>Writes a string to the file using <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/java/io/DataInput.html#modified-utf-8">modified UTF-8</a> encoding in a machine-independent manner.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example code(from Kamana)</strong>:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RandomFileDemo</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span><span class="keyword">throws</span> Exception &#123;</span><br><span class="line">		RandomAccessFile raf=<span class="keyword">new</span> <span class="title class_">RandomAccessFile</span>(<span class="string">&quot;file.dat&quot;</span>, <span class="string">&quot;rw&quot;</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;b&#x27;</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;c&#x27;</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;d&#x27;</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;e&#x27;</span>);</span><br><span class="line">		raf.writeUTF(<span class="string">&quot;kamna&quot;</span>);</span><br><span class="line">		raf.writeInt(<span class="number">50</span>);</span><br><span class="line">		raf.writeDouble(<span class="number">50.555</span>);</span><br><span class="line">		raf.writeChar(<span class="string">&#x27;f&#x27;</span>);</span><br><span class="line">		raf.close();</span><br><span class="line">		</span><br><span class="line">		RandomAccessFile r=<span class="keyword">new</span> <span class="title class_">RandomAccessFile</span>(<span class="string">&quot;file.dat&quot;</span>, <span class="string">&quot;r&quot;</span>);</span><br><span class="line">		r.seek(<span class="number">29</span>);</span><br><span class="line">		<span class="comment">//System.out.println(r.readChar());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readChar());</span></span><br><span class="line">		<span class="comment">//r.seek(6);</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readChar());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readChar());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readChar());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readUTF());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readInt());</span></span><br><span class="line">		<span class="comment">//System.out.println(r.readDouble());</span></span><br><span class="line">		System.out.println(r.readChar());</span><br><span class="line">		r.close();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">randomFileusingArray</span> &#123;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">		<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">		</span><br><span class="line">			<span class="comment">//write the alphabet to a random access file</span></span><br><span class="line">			<span class="type">char</span>[] alphabet = &#123;<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="string">&#x27;G&#x27;</span>, <span class="string">&#x27;H&#x27;</span>, <span class="string">&#x27;I&#x27;</span>, <span class="string">&#x27;J&#x27;</span>,</span><br><span class="line">							   <span class="string">&#x27;K&#x27;</span>, <span class="string">&#x27;L&#x27;</span>, <span class="string">&#x27;M&#x27;</span>, <span class="string">&#x27;N&#x27;</span>, <span class="string">&#x27;O&#x27;</span>, <span class="string">&#x27;P&#x27;</span>, <span class="string">&#x27;Q&#x27;</span>, <span class="string">&#x27;R&#x27;</span>, <span class="string">&#x27;S&#x27;</span>, <span class="string">&#x27;T&#x27;</span>,</span><br><span class="line">							   <span class="string">&#x27;U&#x27;</span>, <span class="string">&#x27;V&#x27;</span>, <span class="string">&#x27;W&#x27;</span>, <span class="string">&#x27;X&#x27;</span>, <span class="string">&#x27;Y&#x27;</span>, <span class="string">&#x27;Z&#x27;</span>&#125;;</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			<span class="type">RandomAccessFile</span> <span class="variable">random</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">RandomAccessFile</span>(<span class="string">&quot;RandomTest.dat&quot;</span>, <span class="string">&quot;rw&quot;</span>);</span><br><span class="line">			</span><br><span class="line">			System.out.println(<span class="string">&quot;Writing alphabet to the file!&quot;</span>);</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; alphabet.length; i++)</span><br><span class="line">				random.writeChar(alphabet[i]);</span><br><span class="line">			</span><br><span class="line">			System.out.println(<span class="string">&quot;Finished writing!&quot;</span>);</span><br><span class="line">			</span><br><span class="line">			random.close();</span><br><span class="line">	</span><br><span class="line">			<span class="comment">//reading characters from the alphabet off the file</span></span><br><span class="line">			<span class="type">RandomAccessFile</span> <span class="variable">rand0m</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">RandomAccessFile</span>(<span class="string">&quot;RandomTest.dat&quot;</span>, <span class="string">&quot;r&quot;</span>);</span><br><span class="line">			</span><br><span class="line">			System.out.println(<span class="string">&quot;Beginning to read!&quot;</span>);</span><br><span class="line">			</span><br><span class="line">			rand0m.seek(<span class="number">8</span>); <span class="comment">// 5th character (E)</span></span><br><span class="line">			System.out.println(rand0m.readChar());</span><br><span class="line">			rand0m.seek(<span class="number">24</span>); <span class="comment">//13th character (M)</span></span><br><span class="line">			System.out.println(rand0m.readChar());</span><br><span class="line">			rand0m.seek(<span class="number">40</span>); <span class="comment">//21st character (U)</span></span><br><span class="line">			System.out.println(rand0m.readChar());</span><br><span class="line">			rand0m.seek(<span class="number">19</span>); <span class="comment">//won&#x27;t read correctly!</span></span><br><span class="line">			System.out.println(rand0m.readChar());</span><br><span class="line">			System.out.println(<span class="string">&quot;Done reading!&quot;</span>);			</span><br><span class="line">			rand0m.close();		</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="Useful-resources"><a href="#Useful-resources" class="headerlink" title="Useful resources"></a>Useful resources</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://www.jb51.net/article/226835.htm">Scanner和BufferedReader的对比</a></li>
+</ul>
+<h2 id="Exception-Handling"><a href="#Exception-Handling" class="headerlink" title="Exception Handling"></a>Exception Handling</h2><blockquote>
+<p>All exceptions are <code>class</code> that are derived from the <code>Throwable class</code></p>
+</blockquote>
+<h3 id="Exception-hierarchy-1"><a href="#Exception-hierarchy-1" class="headerlink" title="Exception hierarchy^1"></a>Exception hierarchy<a target="_blank" rel="noopener" href="https://www.runoob.com/java/java-exceptions.html">^1</a></h3><p><img src="/./Chapter20.2_FileProcessingAndExceptionHandling/exception-hierarchy.png" alt="file categories"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">Exception</span><br><span class="line">│</span><br><span class="line">├─ RuntimeException</span><br><span class="line">│  │</span><br><span class="line">│  ├─ NullPointerException</span><br><span class="line">│  │</span><br><span class="line">│  ├─ IndexOutOfBoundsException</span><br><span class="line">│  │</span><br><span class="line">│  ├─ SecurityException</span><br><span class="line">│  │</span><br><span class="line">│  └─ IllegalArgumentException</span><br><span class="line">│     │</span><br><span class="line">│     └─ NumberFormatException</span><br><span class="line">│</span><br><span class="line">├─ IOException</span><br><span class="line">│  │</span><br><span class="line">│  ├─ UnsupportedCharsetException</span><br><span class="line">│  │</span><br><span class="line">│  ├─ FileNotFoundException</span><br><span class="line">│  │</span><br><span class="line">│  └─ SocketException</span><br><span class="line">│</span><br><span class="line">├─ ParseException</span><br><span class="line">│</span><br><span class="line">├─ GeneralSecurityException</span><br><span class="line">│</span><br><span class="line">├─ SQLException</span><br><span class="line">│</span><br><span class="line">└─ TimeoutException</span><br><span class="line"></span><br><span class="line">Source: https://www.liaoxuefeng.com/wiki/1252599548343744/1264737765214592</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>Throwable</code> is a derived class of <code>object</code>. <code>Throwable</code> has two subcategories: <code>Error</code> and <code>Exception</code></p>
+<p><code>Error</code>: severe problems occurred that cannot be solved</p>
+<p><code>Exception</code>:  problems that occur when the program is running. It can be captured by <code>try...catch</code> </p>
+<ul>
+<li><code>RuntimeException</code> as well as its subclasses</li>
+<li>Other Exceptions &#x2F; Non-RuntimeException Exceptions</li>
+</ul>
+<div class="note info"><ul>
+<li>Exceptions other than RuntimeException <strong>must be</strong> <code>try...catch</code>; else the compiler would report and halt</li>
+<li><code>Errors</code> and <code>RuntimeException</code> as well as its derived classes are not forced to be <code>try...catch</code></li>
+</ul>
+</div>
+
+<h3 id="Capture-the-exception-try-catch"><a href="#Capture-the-exception-try-catch" class="headerlink" title="Capture the exception: try...catch"></a>Capture the exception: <code>try...catch</code></h3><h3 id="Single-catch"><a href="#Single-catch" class="headerlink" title="Single catch"></a>Single catch</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="comment">//Program</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(ExceptionName e)&#123;</span><br><span class="line">    <span class="comment">//What to perform when Exception is detected in the try program</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Multiple-catch"><a href="#Multiple-catch" class="headerlink" title="Multiple catch"></a>Multiple catch</h3><p>It is possible to have multiple catch, so that different program could be run when different exceptions are encountered. </p>
+<div class="note warning"><p><strong>Be aware that only <mark class="label warning">one</mark> catch will be executed:</strong></p>
+<ul>
+<li><p>When the <code>try</code> program is run, it halts and jumps to the <code>catch</code> section when an exception occur</p>
+</li>
+<li><p>The compiler reads the catch one by another in sequence. If the exception coincides, the corresponding program is executed. </p>
+</li>
+<li><p>And then it ends</p>
+</li>
+</ul>
+<blockquote>
+<p>Hence, it is important to note that Exception1 should be the subclass of Exception2, and Exception2 should be the subclass of Exception3. Else it is impossible to execute the second and third catch</p>
+</blockquote>
+</div>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">   <span class="comment">//Program</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(ExceptionName1 e1)&#123;</span><br><span class="line">  <span class="comment">//Program</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(ExceptionName2 e2)&#123;</span><br><span class="line">  <span class="comment">//Program</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(ExceptionName3 e3)&#123;</span><br><span class="line">  <span class="comment">//Program</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Finally"><a href="#Finally" class="headerlink" title="Finally"></a>Finally</h3><blockquote>
+<p>The statement that will be executed anyway no matter whether the Exception occur in the try processes </p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    process1();</span><br><span class="line">    process2();</span><br><span class="line">&#125;<span class="keyword">catch</span>(IOException e)&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;IO excpetion detected&quot;</span>);</span><br><span class="line">&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;END&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//This is equivalent to:</span></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    process1();</span><br><span class="line">    process2();</span><br><span class="line">    System.out.println(<span class="string">&quot;END&quot;</span>);</span><br><span class="line">&#125;<span class="keyword">catch</span>(IOException e)&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;IO excpetion detected&quot;</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;END&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Useful-resources-1"><a href="#Useful-resources-1" class="headerlink" title="Useful resources"></a>Useful resources</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1252599548343744/1255943543190176">https://www.liaoxuefeng.com/wiki/1252599548343744/1255943543190176</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Haoran Jie
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://haoran-jie.github.io/Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/" title="Chapter 20.2: File processing and Exception Handling">https://haoran-jie.github.io/Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Notes/ALCS/practical/" rel="prev" title="Paper4:Practical Notes">
+                  <i class="fa fa-chevron-left"></i> Paper4:Practical Notes
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Notes/ALCS/Chapter13.1_User-definedDataTypes/" rel="next" title="Chapter 13.1: User-defined Data Types">
+                  Chapter 13.1: User-defined Data Types <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="comment-button-group">
+          <a class="btn comment-button disqus">disqus</a>
+          <a class="btn comment-button gitalk">gitalk</a>
+      </div>
+        <div class="comment-position disqus">
+          
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+        </div>
+        <div class="comment-position gitalk">
+          <div class="comments gitalk-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa-solid fa-terminal"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Haoran Jie</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.3.0/mermaid.min.js","integrity":"sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://haoran-jie.github.io/Notes/ALCS/Chapter20.2_FileProcessingAndExceptionHandling/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"samuels-blog-5","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Haoran-Jie","repo":"GItalkComments","client_id":"a78520e4a91db64c6ead","client_secret":"80a445f6a6f80fcd44fea523269b55c10ba59002","admin_user":"Haoran-Jie","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"169e75758b06ee26fef47754db6d1ea8"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

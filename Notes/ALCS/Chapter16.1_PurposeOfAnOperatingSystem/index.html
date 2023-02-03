@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#2c3e50" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#2c3e50">
+  <meta name="google-site-verification" content="ONgpvg7NlakSEl6IcZ4-nCCQleKums7GuOYvOS4zXCQ">
+  <meta name="msvalidate.01" content="5331505606E7903BD6FA7D5C7D0FE6DB">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"haoran-jie.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":30,"offset":15},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#546de5","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":true,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+
+
+<link rel="canonical" href="https://haoran-jie.github.io/Notes/ALCS/Chapter16.1_PurposeOfAnOperatingSystem/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://haoran-jie.github.io/Notes/ALCS/Chapter16.1_PurposeOfAnOperatingSystem/","path":"Notes/ALCS/Chapter16.1_PurposeOfAnOperatingSystem/","title":"Chapter 16.1: Purpose of an operating system"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Chapter 16.1: Purpose of an operating system | Samuel's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V501S4L4ZZ"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-V501S4L4ZZ","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+  <script async src="//assets.growingio.com/2.1/gio.js"></script>
+  <script class="next-config" data-name="growingio_analytics" type="application/json">"b544ba838d823365"</script>
+  <script src="/js/third-party/analytics/growingio.js"></script>
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Samuel's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Snippets of life of a programmer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">16</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">12</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">30</span></a></li><li class="menu-item menu-item-notes"><a href="/Notes/" rel="section"><i class="fa fa-book fa-fw"></i>Notes</a></li><li class="menu-item menu-item--what&why系列文章"><a href="/WhatandwhY/" rel="section"><i class="fa-solid fa-clipboard-question fa-fw"></i> What&whY系列文章</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Operating-system-resource-optimization"><span class="nav-number">1.</span> <span class="nav-text">Operating system resource optimization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hide-the-complexity-of-the-hardware"><span class="nav-number">2.</span> <span class="nav-text">Hide the complexity of the hardware</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Process-management"><span class="nav-number">3.</span> <span class="nav-text">Process management</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Process-states"><span class="nav-number">3.1.</span> <span class="nav-text">Process states</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Description"><span class="nav-number">3.1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Transition-between-states-conditions"><span class="nav-number">3.1.2.</span> <span class="nav-text">Transition between states: conditions</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Process-scheduling"><span class="nav-number">3.2.</span> <span class="nav-text">Process scheduling</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-Robin"><span class="nav-number">3.2.1.</span> <span class="nav-text">Round Robin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Shortest-job-first"><span class="nav-number">3.2.2.</span> <span class="nav-text">Shortest job first</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#First-come-first-serve"><span class="nav-number">3.2.3.</span> <span class="nav-text">First come first serve</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Shortest-remaining-time"><span class="nav-number">3.2.4.</span> <span class="nav-text">Shortest remaining time</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Kernel"><span class="nav-number">3.3.</span> <span class="nav-text">Kernel</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Interrupt-handling-amp-OS-kernel"><span class="nav-number">3.3.1.</span> <span class="nav-text">Interrupt handling &amp; OS kernel</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Memory-management"><span class="nav-number">4.</span> <span class="nav-text">Memory management</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Paging"><span class="nav-number">4.1.</span> <span class="nav-text">Paging:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Segmentation"><span class="nav-number">4.2.</span> <span class="nav-text">Segmentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Differences-between-paging-and-segmentation"><span class="nav-number">4.3.</span> <span class="nav-text">Differences between paging and segmentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Virtual-memory"><span class="nav-number">4.4.</span> <span class="nav-text">Virtual memory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Disk-thrashing"><span class="nav-number">4.5.</span> <span class="nav-text">Disk thrashing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Page-replacement"><span class="nav-number">4.6.</span> <span class="nav-text">Page replacement</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Page-replacement-algorithms"><span class="nav-number">4.6.1.</span> <span class="nav-text">Page replacement algorithms:</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Haoran Jie"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Haoran Jie</p>
+  <div class="site-description" itemprop="description">18</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Haoran-Jie" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Haoran-Jie" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:samueljie1@gmail.com" title="E-Mail → mailto:samueljie1@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/samueljieee/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;samueljieee&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://haoran-jie.github.io/Notes/ALCS/Chapter16.1_PurposeOfAnOperatingSystem/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Haoran Jie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Samuel's Blog">
+      <meta itemprop="description" content="18">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Chapter 16.1: Purpose of an operating system | Samuel's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Chapter 16.1: Purpose of an operating system
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-05-03 22:41:54" itemprop="dateCreated datePublished" datetime="2022-05-03T22:41:54+01:00">2022-05-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-06-04 08:30:22" itemprop="dateModified" datetime="2022-06-04T08:30:22+01:00">2022-06-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/ALCS/" itemprop="url" rel="index"><span itemprop="name">ALCS</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/Notes/ALCS/Chapter16.1_PurposeOfAnOperatingSystem/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Notes/ALCS/Chapter16.1_PurposeOfAnOperatingSystem/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img src="/./Chapter16.1_PurposeOfAnOperatingSystem/Syllabus16.1.png"></p>
+<hr>
+<span id="more"></span>
+
+<h2 id="Operating-system-resource-optimization"><a href="#Operating-system-resource-optimization" class="headerlink" title="Operating system resource optimization"></a>Operating system resource optimization</h2><p><u>How an operating system can maximize the use of resources:</u></p>
+<ul>
+<li><p><u>Primary memory</u></p>
+<ul>
+<li><font color=#4a69bd>Moving frequently accessed instructions to cache</font></li>
+<li><font color=#4a69bd>… for faster recall</font></li>
+<li><font color=#4a69bd>… as SRAM is used rather than DRAM for cache</font></li>
+<li><font color=#4a69bd>Making use of virtual memory</font></li>
+<li><font color=#4a69bd>… with paging or segmentation</font></li>
+<li><font color=#4a69bd>… to swap memory to and from disk</font></li>
+<li><font color=#4a69bd>Partition memory</font></li>
+<li><font color=#4a69bd>…  dividing main memory into static partitions</font></li>
+<li><font color=#4a69bd>… to allow more than one task to be available</font></li>
+<li><font color=#4a69bd>Removing unused item&#x2F;tasks from RAM</font></li>
+<li><font color=#4a69bd>… by marking a partition as available</font></li>
+<li>.<font color=#4a69bd>.. as soon as the process using it has terminated</font></li>
+</ul>
+</li>
+<li><p><u>Disk</u></p>
+<ul>
+<li><font color=#4a69bd>Disk cache</font></li>
+<li><font color=#4a69bd>… a disk cache holds data that is frequently transferred to&#x2F;from the disk</font></li>
+<li><font color=#4a69bd>… the cache can be held in disk or RAM</font></li>
+<li><font color=#4a69bd>Compression utility</font></li>
+<li><font color=#4a69bd>… decreasing the size of file stored on the disk</font></li>
+<li><font color=#4a69bd>… in order to fit larger files on the disk</font></li>
+<li><font color=#4a69bd>Defragmentation utility</font></li>
+<li><font color=#4a69bd>… files are rearranged to occupy contiguous disk space</font></li>
+<li><font color=#4a69bd>… this reduces the time taken to access files&#x2F;decrease latency</font></li>
+</ul>
+</li>
+<li><p>CPU</p>
+<ul>
+<li>Scheduling</li>
+<li>… Better utilization of CPU time and resources</li>
+</ul>
+</li>
+<li><p>Input&#x2F;Output system</p>
+<ul>
+<li><p>IO operation initiated by the computer user</p>
+</li>
+<li><p>IO operation which occurs while software is being run and resources such as printers and disk drives are requested </p>
+</li>
+<li><p><strong>Direct memory access(DMA)</strong> controller is needed to allow hardware to access the main memory independently of the CPU.</p>
+<ul>
+<li>DMA initiates the data transfer</li>
+<li>CPU carries out other tasks while this data transfer operation take place</li>
+<li>Once the data transfer is complete, an interrupt signal is sent from the DMA to CPU.</li>
+</ul>
+</li>
+<li><img src="./Chapter16.1_PurposeOfAnOperatingSystem/DMA.jpg" style="zoom: 33%;" /></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="Hide-the-complexity-of-the-hardware"><a href="#Hide-the-complexity-of-the-hardware" class="headerlink" title="Hide the complexity of the hardware"></a>Hide the complexity of the hardware</h2><ul>
+<li>Using graphical interface rather than command line interface</li>
+<li>Using device drivers (simplifies the complexity of the hardware interface)</li>
+<li>Simplifying the saving and retrieving of data from memory and storage device</li>
+<li>Carrying out background utilities, such as virus scanner which the user can “leave it to its own device”</li>
+</ul>
+<h2 id="Process-management"><a href="#Process-management" class="headerlink" title="Process management"></a>Process management</h2><blockquote>
+<p><font color=#4a69bd>Program: the written code (static)</font></p>
+<p><font color=#4a69bd>Process: a program that has started to be executed (dynamic)</font></p>
+<ul>
+<li>A program which has been placed in the memory</li>
+<li>with a process control block created</li>
+<li>or has at least once entered a running state</li>
+</ul>
+<p><strong>Process control block(PCB)</strong>: a data structure which contains all of the data needed for a process to run; this can be created in memory when data needs to be received during execution time. The PCB will store</p>
+<ul>
+<li>current process state (ready, running, or blocked)</li>
+<li>process privileges(such as which resources is allowed to access)</li>
+<li>register values (PC, MAR, MDR, and ACC)</li>
+<li>process priority and any scheduling information</li>
+<li>the amount of CPU time the process will need to complete</li>
+<li>a process ID which allows it to be uniquely identified</li>
+</ul>
+<p><strong>Multitasking</strong>: allow computers to carry out more than one task(process) at a time. Each of these processes will share common hardware resources. To ensure multitasking operates correctly, scheduling is used to decide which process is carried out first.</p>
+</blockquote>
+<h3 id="Process-states"><a href="#Process-states" class="headerlink" title="Process states"></a><u>Process states</u></h3><h4 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h4><ul>
+<li><font color=#4a69bd>Ready: program waiting for CPU time</font><ul>
+<li><font color=#4a69bd>The process is not being executed</font></li>
+<li><font color=#4a69bd>The process is in the queue</font></li>
+<li><font color=#4a69bd>… waiting for the processor’s attention&#x2F;time slice&#x2F;CPU time</font></li>
+</ul>
+</li>
+<li><font color=#4a69bd>Blocked: program waiting for an event or Input&#x2F;Output operation</font><ul>
+<li><font color=#4a69bd>The process is waiting for an event</font></li>
+<li><font color=#4a69bd>So it cannot be executed by the moment</font></li>
+<li><font color=#4a69bd>e.g. Input&#x2F;Output</font></li>
+</ul>
+</li>
+<li><font color=#4a69bd>Running: program running on a CPU</font><ul>
+<li><font color=#4a69bd>Process is being executed by the CPU</font></li>
+<li><font color=#4a69bd>Process is currently using its allocated time slice</font></li>
+</ul>
+</li>
+</ul>
+<h4 id="Transition-between-states-conditions"><a href="#Transition-between-states-conditions" class="headerlink" title="Transition between states: conditions"></a>Transition between states: conditions</h4><ul>
+<li><u>Ready -&gt; Running</u></li>
+<li><font color=#4a69bd>Current process no longer running &#x2F;&#x2F; processor is available</font><ul>
+<li><font color=#4a69bd>Process was at the head of the ready queue &#x2F;&#x2F; process has the highest priority</font></li>
+</ul>
+</li>
+<li><u>Blocked -&gt; Ready</u></li>
+<li><font color=#4a69bd>The only required resource become available &#x2F;&#x2F; resource&#x2F;event&#x2F;IO operation is complete</font></li>
+<li><u>Running -&gt; Ready</u><ul>
+<li><font color=#4a69bd>When process is executing it is allocated a time slice </font></li>
+<li><font color=#4a69bd>When the time slice is completed, the process can no longer use the processor even if it is capable of further processing</font></li>
+</ul>
+</li>
+<li><u>Running -&gt; Blocked</u> </li>
+<li><font color=#4a69bd>Process is executed when it needs to perform IO operation</font><ul>
+<li><font color=#4a69bd>Placed in blocked state until the IO operation is complete</font></li>
+</ul>
+</li>
+</ul>
+<img src="./Chapter16.1_PurposeOfAnOperatingSystem/ProcessStates.jpg" style="zoom:50%;" />
+
+<p>The transition between the states shown in Figure 20.05 can be described as follows</p>
+<ul>
+<li>A new process arrives in memory and a PCB is created; it changes to the ready state.</li>
+<li>A process in the ready state is given access to the CPU by the dispatcher; it changes to the running state</li>
+<li>A process in the running state is halted by an interrupt; it returns to the ready state</li>
+<li>A process in the running state cannot progress until some event has occurred(IO perhaps); it changes to the waiting&#x2F;blocked state.</li>
+<li>A process in the waiting state is notified that an event is complete; it returns to the ready state.</li>
+<li>A process in the running state completes execution; it changes to the terminated state</li>
+</ul>
+<hr>
+<p><u>Explain how the processes are affected when the following event takes place</u></p>
+<ul>
+<li>The running process needs to read a file from a disk<ul>
+<li><font color=#4a69bd>Running process is halted</font></li>
+<li><font color=#4a69bd>Process moved to blocked state</font></li>
+</ul>
+</li>
+<li>The running process using up its time slice<ul>
+<li><font color=#4a69bd>Running process is halted &#x2F;&#x2F; another process has the use of the processor</font></li>
+<li><font color=#4a69bd>Process moves to ready state</font></li>
+<li><font color=#4a69bd>… until next time slice is allocated</font></li>
+</ul>
+</li>
+</ul>
+<p><u>Explain why a process cannot be moved from the blocked state to the running state</u></p>
+<ul>
+<li><font color=#4a69bd>When IO operation is completed for the process in blocked state</font></li>
+<li><font color=#4a69bd>Process put into ready queue</font></li>
+<li><font color=#4a69bd>OS determine which process get next use of the processor from the ready queue</font></li>
+</ul>
+<p><u>Explain why a process cannot be moved from the ready state to the blocked state</u></p>
+<ul>
+<li><font color=#4a69bd>To be in blocked state process must initiate some IO operation</font></li>
+<li><font color=#4a69bd>To initiate operation, process must be executing</font></li>
+<li><font color=#4a69bd>If process in ready state, cannot be executing; hence must in running state</font></li>
+</ul>
+<h3 id="Process-scheduling"><a href="#Process-scheduling" class="headerlink" title="Process scheduling"></a>Process scheduling</h3><blockquote>
+<p><strong>High-level scheduler</strong> controls the selection of a program stored on disk to be moved into main memory.</p>
+<ul>
+<li>Decides which processes are loaded from backing store</li>
+<li>Into memory&#x2F;ready queue</li>
+</ul>
+<p><strong>Low-level scheduler</strong> controls when the program installed in the memory has access to the CPU</p>
+<ul>
+<li>Decide which process should next get the use of CPU time</li>
+<li>Based on position&#x2F;priority</li>
+<li>Invoked after interrupt&#x2F;OS call</li>
+<li><u>Purpose</u>: <font color=#4a69bd>ensure response time is acceptable and the system remains stable at all times.</font></li>
+</ul>
+</blockquote>
+<p>Although the high-level and low-level scheduler will have decisions to make when choosing which program should be loaded into memory, we concentrate here on the options for the <strong>low-level scheduler</strong>.</p>
+<h4 id="Round-Robin"><a href="#Round-Robin" class="headerlink" title="Round Robin"></a>Round Robin</h4><h4 id="Shortest-job-first"><a href="#Shortest-job-first" class="headerlink" title="Shortest job first"></a>Shortest job first</h4><h4 id="First-come-first-serve"><a href="#First-come-first-serve" class="headerlink" title="First come first serve"></a>First come first serve</h4><h4 id="Shortest-remaining-time"><a href="#Shortest-remaining-time" class="headerlink" title="Shortest remaining time"></a>Shortest remaining time</h4><hr>
+<p><u>Explain why the operating system needs to use scheduling algorithm</u></p>
+<ul>
+<li><font color=#4a69bd>To allow multitasking to take place</font></li>
+<li><font color=#4a69bd>To ensure fair usage of the processor, peripheral, and memory</font></li>
+<li><font color=#4a69bd>To ensure high priority tasks are executed sooner</font></li>
+<li><font color=#4a69bd>To ensure all processes have the opportunity to finish</font></li>
+<li><font color=#4a69bd>To keep CPU busy all the time</font></li>
+<li><font color=#4a69bd>To service largest amount of job in a given amount of time</font></li>
+<li><font color=#4a69bd>To minimize the time user must wait for their result </font></li>
+</ul>
+<hr>
+<h3 id="Kernel"><a href="#Kernel" class="headerlink" title="Kernel"></a>Kernel</h3><blockquote>
+<p>Central component responsible for communication between hardware, software, and memory</p>
+<p>Responsible for:</p>
+<ul>
+<li>Process management</li>
+<li>Device management</li>
+<li>Memory management</li>
+<li>Interrupt handling</li>
+<li>Input&#x2F;output file communication</li>
+</ul>
+</blockquote>
+<h4 id="Interrupt-handling-amp-OS-kernel"><a href="#Interrupt-handling-amp-OS-kernel" class="headerlink" title="Interrupt handling &amp; OS kernel"></a>Interrupt handling &amp; OS kernel</h4><blockquote>
+<p>Interrupt: signal from a hardware or software device, seeking the attention of the processor</p>
+</blockquote>
+<ol>
+<li>The CPU will check for interrupt signals. The system will enter the kernel mode if any of the following type of interrupt signals are sent<ul>
+<li>Device interrupt (printer out of paper, device not present)</li>
+<li>Exceptions (instruction faults: division by zero, unidentified opcode, stack faults)</li>
+<li>Traps&#x2F;software interrupt (process requesting a resource such as disk drive)</li>
+</ul>
+</li>
+<li>Kernel will consult the interrupt dispatch table(IDT) - links a device description with the proper interrupt routine</li>
+<li>IDT will supply the address of the low-level routine to handle the interrupt event occurred</li>
+<li>The kernel will save the state of the interrupt process on the kernel stack</li>
+<li>The process state will be restored once the interrupting task is services.</li>
+</ol>
+<img src="./Chapter16.1_PurposeOfAnOperatingSystem/interrupt.jpg" style="zoom: 67%;" /> 
+
+<p><u>Describe the sequence of steps which would be carried out by the interrupt handler software when an interrupt is received and serviced</u></p>
+<ul>
+<li><font color=#4a69bd>Identify the source of interrupt</font></li>
+<li><font color=#4a69bd>Disable all interrupts of low priority</font></li>
+<li><font color=#4a69bd>Save the content of the PC</font></li>
+<li><font color=#4a69bd>Save the content of other registers on the kernel stack</font></li>
+<li><font color=#4a69bd>Load and run the appropriate interrupt service routine(ISR)</font></li>
+<li><font color=#4a69bd>Restore registers from the stack</font></li>
+<li><font color=#4a69bd>Enable all interrupts </font></li>
+<li><font color=#4a69bd>Continue execution of the interrupts</font></li>
+</ul>
+<h2 id="Memory-management"><a href="#Memory-management" class="headerlink" title="Memory management"></a>Memory management</h2><h3 id="Paging"><a href="#Paging" class="headerlink" title="Paging:"></a><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/paging-in-operating-system/">Paging</a>:</h3><ul>
+<li><p>Memory is split up into partitions of blocks of fixed size</p>
+</li>
+<li><p>Physical memory blocks are known as frames</p>
+</li>
+<li><p>Fixed-sized logical memory blocks are known as pages</p>
+</li>
+<li><p>A program is allocated a number of pages that is usually just larger than what was actually needed</p>
+</li>
+<li><p>The logical address stores the page number in the first part of address and the page offset in the remaining part of the address.</p>
+<ul>
+<li>Page number: number of bits required to represent the pages in Logical address space.</li>
+<li>Page offset: Number of bits required to represent a particular <code>word</code> in page.<blockquote>
+<p>如果一共有16个<code>pages</code>，每个page的大小是1024<code>words</code> 那么则需要address的前四个bits来表示page number, 后 10个bits 来表示page offset. 这样的话 通过address可以精准定位到某一个<code>page</code>的某一个<code>word</code>. e.g: 01010000000001代表第5个<code>page</code>的第2个<code>word</code>.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p><code>--</code></p>
+</li>
+<li><p><font color=#4a69bd>Page table: the page map table shows the mapping to pages to page frames</font></p>
+</li>
+<li><p><font color=#4a69bd>Page: virtual memory divided into blocks of fixed size</font></p>
+</li>
+<li><p><font color=#4a69bd>Page frame: the main memory is divided into page frames of same size as page</font></p>
+</li>
+</ul>
+<p><u>How paging is used to handle virtual memory:</u></p>
+<ul>
+<li><font color=#4a69bd>Divide main memory&#x2F;RAM into frames</font></li>
+<li><font color=#4a69bd>Divide virtual memory into blocks of same size called pages</font></li>
+<li><font color=#4a69bd>Frame&#x2F;pages are a fixed size</font></li>
+<li><font color=#4a69bd>Set up a page (map) table that translates logical to physical address</font></li>
+<li><font color=#4a69bd>Keeps track of all free frames</font></li>
+<li><font color=#4a69bd>Swap pages in memory with new pages from disk when needed</font></li>
+</ul>
+<p><u>The page frame’s address entry is 245, state what the values of 245 could represent</u></p>
+<ul>
+<li><font color=#4a69bd>The 245th page frame from the start of memory</font></li>
+</ul>
+<p><u>Process X executes until the next instruction is the first instruction in page4. Page 4 is not current main memory</u></p>
+<p><u>State a hardware device that could be storing this page</u></p>
+<ul>
+<li><font color=#4a69bd>Flash memory &#x2F;&#x2F; magnetic disk &#x2F;&#x2F; hard drive</font></li>
+</ul>
+<h3 id="Segmentation"><a href="#Segmentation" class="headerlink" title="Segmentation"></a>Segmentation</h3><ul>
+<li>Logical address space is broken up into variable-size memory blocks called segments</li>
+<li>Segment can be of varying size</li>
+<li>Each segment has name and size</li>
+<li>During execution<ul>
+<li>Segments from the logical memory are loaded into physical memory</li>
+<li>Address &#x3D; segment number + offset value; found in segment map table</li>
+<li>Offset value decides the size of the segment</li>
+</ul>
+</li>
+</ul>
+<img src="./Chapter16.1_PurposeOfAnOperatingSystem/segmentation.jpg" style="zoom:50%;" />
+
+<h3 id="Differences-between-paging-and-segmentation"><a href="#Differences-between-paging-and-segmentation" class="headerlink" title="Differences between paging and segmentation"></a>Differences between paging and segmentation</h3><table>
+<thead>
+<tr>
+<th>Paging</th>
+<th>Segmentation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A page is a fixed-size block of memory</td>
+<td>A segment is a variable-size block of memory</td>
+</tr>
+<tr>
+<td>Since the block size is fixed, it is possible that call blocks may not be fully used - this can lead to internal fragmentation</td>
+<td>Because memory blocks are a variable size, this reduces risk of internal fragmentation but increase the risk of external fragmentation.</td>
+</tr>
+<tr>
+<td>The user provide a single value - this means that the hardware decides the actual page size</td>
+<td>The user will supply the address in two values</td>
+</tr>
+<tr>
+<td>A page table maps logical address to physical addresses(this contains the base address of each page stored in frame in physical memory space)</td>
+<td>Segmentation uses a segment map table containing segment number + offset(segment size); it maps logical addresses to physical addresses</td>
+</tr>
+<tr>
+<td>The process of paging is essentially invisible to the user&#x2F;programmer</td>
+<td>Segmentation is essentially a visible process to user&#x2F;programmer</td>
+</tr>
+<tr>
+<td>Procedures and any associated data cannot be separated when using paging</td>
+<td>Procedures and any associated data can be separated when using segmentation</td>
+</tr>
+<tr>
+<td>Paging consists of static link and dynamic loading</td>
+<td>Segmentation consists of dynamic linking and dynamic loading</td>
+</tr>
+<tr>
+<td>Pages are usually smaller than segments</td>
+<td>Segments are usually larger than pages</td>
+</tr>
+</tbody></table>
+<h3 id="Virtual-memory"><a href="#Virtual-memory" class="headerlink" title="Virtual memory"></a>Virtual memory</h3><ul>
+<li>If the available RAM is exceeded due to multiple processes running, it is possible to corrupt the data used in some of the program being run</li>
+<li>This can be solved by separately mapping each program’s virtual memory space to RAM and utilizing the hard disk drive&#x2F;solid state drive if we need more memory. This is the basis behind virtual memory.</li>
+<li>RAM is the physical memory and virtual memory is RAM+swap space on the hard disk</li>
+<li>Virtual memory is usually implemented using ‘in demand paging’</li>
+</ul>
+<p><u>State what is meant by virtual memory</u></p>
+<ul>
+<li><font color=#4a69bd>Disk&#x2F;Secondary storage is used to extend the RAM&#x2F;memory available</font></li>
+<li><font color=#4a69bd>… so CPU can access more memory space than available RAM</font></li>
+<li><font color=#4a69bd>Only part of the program&#x2F;data in use needs to be in RAM</font></li>
+<li><font color=#4a69bd>Data is swapped between RAM and disk</font></li>
+</ul>
+<p><u>Advantages of using virtual memory</u></p>
+<ul>
+<li>Not all pages needs to be in memory at one time</li>
+<li>More than one processes can be in ready state</li>
+<li>… because memory addresses can be mapped </li>
+<li>A process can have an address space larger than that of physical memory</li>
+</ul>
+<h3 id="Disk-thrashing"><a href="#Disk-thrashing" class="headerlink" title="Disk thrashing"></a>Disk thrashing</h3><p>The main drawback of using HDD in virtual memory is that as main memory fills, more and more data&#x2F;pages need to be swapped in and out of virtual memory. This leads to high rate of hard disk read&#x2F;write head movement. if <strong>more time is spent on moving pages in and out of memory than actually doing any processing</strong>, then the processing speed of the computer will be reduced. A point can be reached when the execution of a process comes to a halt since the system is so busy paging and in and out of memory; this is known as the thrash point.</p>
+<ul>
+<li><font color=#4a69bd>Pages are requested back into RAM as soon as they are moved to the disk</font></li>
+<li><font color=#4a69bd>There is continuous swapping (of the same page)</font></li>
+<li><font color=#4a69bd>No useful processing happens (deadlock)</font><ul>
+<li><font color=#4a69bd>Pages that are in RAM and disk are interdependent</font></li>
+<li><font color=#4a69bd>All processing times are used for swapping pages</font></li>
+</ul>
+</li>
+</ul>
+<h3 id="Page-replacement"><a href="#Page-replacement" class="headerlink" title="Page replacement"></a>Page replacement</h3><ul>
+<li>Page replacement occurs when a requested page is not in memory. When paging in&#x2F;out from memory, it is necessary to consider how the computer can decide which page to replace to allow the requested page to be loaded. </li>
+<li>When a new page is requested but is not in memory, a page fault occurs and the OS replaces one of the existing pages with the new page. How to decide which page to replace is done in a number of different ways, but all methods have the same goal of minimizing the number of page faults. </li>
+<li>A page fault is a type of interrupt raised by hardware. When a running program accesses a page that is mapped into virtual memory address space, but not yet loaded into physical memory, then the hardware needs to raise this page fault     interrupt.</li>
+</ul>
+<h4 id="Page-replacement-algorithms"><a href="#Page-replacement-algorithms" class="headerlink" title="Page replacement algorithms:"></a>Page replacement algorithms:</h4><ul>
+<li><p><strong>First in first out (FIFO)</strong></p>
+<ul>
+<li>The OS keeps track of all the pages in memory using a queue structure</li>
+<li>The oldest page is at the front of the queue and is the first to be removed when a new page needs to be added</li>
+</ul>
+</li>
+<li><p>FIFO algorithms don’t consider page usage when replacing pages; a page may be replaced simply because it arrived earlier than another page</p>
+</li>
+<li><p>It suffers from, what is known as, Belady’s Anomaly where it is possible to have more page faults when increasing the number of page frames.</p>
+</li>
+<li><p><u>Additional data required:</u> <font color=#4a69bd>time of entry</font></p>
+</li>
+<li><p><u>Drawbacks:</u> </p>
+<ul>
+<li><font color=#4a69bd>Page in for lengthy period of time may be often accessed</font></li>
+<li><font color=#4a69bd>… so not a good candidate to be removed</font></li>
+</ul>
+</li>
+<li><p><strong>Optimal page replacement(OPR)</strong></p>
+<ul>
+<li>Optimal page replacement looks forward in time to see which frame it can replace in the event of a page fault. <ul>
+<li>The algorithm is actually impossible to implement; at the time of a page fault, the OS has no way of knowing when each of the pages will be replaced next. </li>
+<li>It tends to get used for comparison studies but has the advantage that it is free of Belady’s Anomaly and also has the fewest page faults.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Least recently used page replacement (LRU)</strong></p>
+<ul>
+<li>With least recently used page replacement (LRU), the page which has not been used for the longest time is replaced. </li>
+<li>To implement this method, it is necessary to maintain a linked list of all pages in memory with the most recently used page at the front and the least recently used page at the rear.</li>
+</ul>
+</li>
+<li><p><strong>Least used page replacement</strong></p>
+<ul>
+<li><u>Additional data required</u>: <font color=#4a69bd>Number of times the page has been accessed</font></li>
+<li><u>Drawbacks</u>:<ul>
+<li><font color=#4a69bd>A page just entered has a low least-used value</font></li>
+<li><font color=#4a69bd>… so likely to be a candidate for immediately being swapped out</font></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Clock page replacement&#x2F;second-change page replacement</strong></p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Haoran Jie
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://haoran-jie.github.io/Notes/ALCS/Chapter16.1_PurposeOfAnOperatingSystem/" title="Chapter 16.1: Purpose of an operating system">https://haoran-jie.github.io/Notes/ALCS/Chapter16.1_PurposeOfAnOperatingSystem/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/" rel="prev" title="Chapter15.2: Boolean Algebra And Logic Circuits">
+                  <i class="fa fa-chevron-left"></i> Chapter15.2: Boolean Algebra And Logic Circuits
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Notes/ALCS/Chapter16.2_TranslationSoftware/" rel="next" title="Chapter 16.2: Translation Software">
+                  Chapter 16.2: Translation Software <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="comment-button-group">
+          <a class="btn comment-button disqus">disqus</a>
+          <a class="btn comment-button gitalk">gitalk</a>
+      </div>
+        <div class="comment-position disqus">
+          
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+        </div>
+        <div class="comment-position gitalk">
+          <div class="comments gitalk-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa-solid fa-terminal"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Haoran Jie</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.3.0/mermaid.min.js","integrity":"sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://haoran-jie.github.io/Notes/ALCS/Chapter16.1_PurposeOfAnOperatingSystem/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"samuels-blog-5","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Haoran-Jie","repo":"GItalkComments","client_id":"a78520e4a91db64c6ead","client_secret":"80a445f6a6f80fcd44fea523269b55c10ba59002","admin_user":"Haoran-Jie","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"7b9f539872038c9827d8416f0db3813a"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#2c3e50" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#2c3e50">
+  <meta name="google-site-verification" content="ONgpvg7NlakSEl6IcZ4-nCCQleKums7GuOYvOS4zXCQ">
+  <meta name="msvalidate.01" content="5331505606E7903BD6FA7D5C7D0FE6DB">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"haoran-jie.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":30,"offset":15},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#546de5","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":true,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+
+
+<link rel="canonical" href="https://haoran-jie.github.io/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://haoran-jie.github.io/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/","path":"Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/","title":"Chapter 15.1: Processors, Parallel Processing and Virtual Machines"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Chapter 15.1: Processors, Parallel Processing and Virtual Machines | Samuel's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V501S4L4ZZ"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-V501S4L4ZZ","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+  <script async src="//assets.growingio.com/2.1/gio.js"></script>
+  <script class="next-config" data-name="growingio_analytics" type="application/json">"b544ba838d823365"</script>
+  <script src="/js/third-party/analytics/growingio.js"></script>
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Samuel's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Snippets of life of a programmer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">16</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">12</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">30</span></a></li><li class="menu-item menu-item-notes"><a href="/Notes/" rel="section"><i class="fa fa-book fa-fw"></i>Notes</a></li><li class="menu-item menu-item--what&why系列文章"><a href="/WhatandwhY/" rel="section"><i class="fa-solid fa-clipboard-question fa-fw"></i> What&whY系列文章</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#RISC-amp-CISC"><span class="nav-number">1.</span> <span class="nav-text">RISC &amp; CISC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Differences-between-RISC-and-CISC"><span class="nav-number">1.1.</span> <span class="nav-text">Differences between RISC and CISC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Interrupt-handling-in-pipelining"><span class="nav-number">1.2.</span> <span class="nav-text">Interrupt handling in pipelining</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions"><span class="nav-number">1.3.</span> <span class="nav-text">Past-paper questions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pipelining-amp-Registers"><span class="nav-number">2.</span> <span class="nav-text">Pipelining &amp; Registers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-computer-architectures"><span class="nav-number">3.</span> <span class="nav-text">Basic computer architectures</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SISD"><span class="nav-number">3.1.</span> <span class="nav-text">SISD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SIMD"><span class="nav-number">3.2.</span> <span class="nav-text">SIMD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MISD"><span class="nav-number">3.3.</span> <span class="nav-text">MISD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MIMD"><span class="nav-number">3.4.</span> <span class="nav-text">MIMD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions-1"><span class="nav-number">3.5.</span> <span class="nav-text">Past-paper questions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Massively-parallel-computers"><span class="nav-number">4.</span> <span class="nav-text">Massively parallel computers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Properties"><span class="nav-number">4.1.</span> <span class="nav-text">Properties</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-Questions"><span class="nav-number">4.2.</span> <span class="nav-text">Past-paper Questions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Virtual-machine"><span class="nav-number">5.</span> <span class="nav-text">Virtual machine</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Host-OS"><span class="nav-number">5.1.</span> <span class="nav-text">Host OS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Guest-OS"><span class="nav-number">5.2.</span> <span class="nav-text">Guest OS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hypervisor"><span class="nav-number">5.3.</span> <span class="nav-text">Hypervisor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Benefits"><span class="nav-number">5.4.</span> <span class="nav-text">Benefits</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Limitations"><span class="nav-number">5.5.</span> <span class="nav-text">Limitations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Role-of-virtual-machine-software"><span class="nav-number">5.6.</span> <span class="nav-text">Role of virtual machine software</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions-2"><span class="nav-number">5.7.</span> <span class="nav-text">Past-paper questions</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Haoran Jie"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Haoran Jie</p>
+  <div class="site-description" itemprop="description">18</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Haoran-Jie" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Haoran-Jie" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:samueljie1@gmail.com" title="E-Mail → mailto:samueljie1@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/samueljieee/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;samueljieee&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://haoran-jie.github.io/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Haoran Jie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Samuel's Blog">
+      <meta itemprop="description" content="18">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Chapter 15.1: Processors, Parallel Processing and Virtual Machines | Samuel's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Chapter 15.1: Processors, Parallel Processing and Virtual Machines
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-05-02 12:17:24" itemprop="dateCreated datePublished" datetime="2022-05-02T12:17:24+01:00">2022-05-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-06-04 08:30:08" itemprop="dateModified" datetime="2022-06-04T08:30:08+01:00">2022-06-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/ALCS/" itemprop="url" rel="index"><span itemprop="name">ALCS</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img src="/./Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/Syllabus15.1.png"></p>
+<span id="more"></span> 
+
+<h2 id="RISC-amp-CISC"><a href="#RISC-amp-CISC" class="headerlink" title="RISC &amp; CISC"></a>RISC &amp; CISC</h2><blockquote>
+<p><strong>RISC</strong> - reduced instruction set computer</p>
+<p><strong>CISC</strong> - complex instruction set computer</p>
+</blockquote>
+<h3 id="Differences-between-RISC-and-CISC"><a href="#Differences-between-RISC-and-CISC" class="headerlink" title="Differences between RISC and CISC"></a>Differences between RISC and CISC</h3><table>
+<thead>
+<tr>
+<th align="center">RISC</th>
+<th align="center">CISC</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Many instruction formats are possible</td>
+<td align="center">Uses fewer instruction formats</td>
+</tr>
+<tr>
+<td align="center">There are more addressing modes</td>
+<td align="center">Uses fewer addressing modes</td>
+</tr>
+<tr>
+<td align="center">Makes use of multi-cycle instructions</td>
+<td align="center">Makes use of single-cycle instructions</td>
+</tr>
+<tr>
+<td align="center">Instructions can be of a variable length</td>
+<td align="center">Instructions are of a fixed length</td>
+</tr>
+<tr>
+<td align="center">Longer execution time for instructions</td>
+<td align="center">Shorter execution time for instructions</td>
+</tr>
+<tr>
+<td align="center">Multiple register sets</td>
+<td align="center">Makes use of general multipurpose registers &#x2F;&#x2F; fewer registers</td>
+</tr>
+<tr>
+<td align="center">It is more difficult to make pipelining work</td>
+<td align="center">Easier to make pipelining function correctly</td>
+</tr>
+<tr>
+<td align="center">The design emphasis is on the hardware</td>
+<td align="center">The design emphasis is one the software</td>
+</tr>
+<tr>
+<td align="center">Uses the memory unit to allow complex instructions to be carried out</td>
+<td align="center">Processor chips require fewer transistors</td>
+</tr>
+<tr>
+<td align="center">Has a programmable control unit</td>
+<td align="center">Has hard-wired control unit</td>
+</tr>
+<tr>
+<td align="center">Make more use of cache and less use of RAM</td>
+<td align="center">Make more use of RAM</td>
+</tr>
+</tbody></table>
+<h3 id="Interrupt-handling-in-pipelining"><a href="#Interrupt-handling-in-pipelining" class="headerlink" title="Interrupt handling in pipelining"></a>Interrupt handling in pipelining</h3><ul>
+<li>Once the processor detects the existence of an interrupt</li>
+<li>To discard all instructions in the pipelining except for the last instruction in the writeback stage</li>
+</ul>
+<h3 id="Past-paper-questions"><a href="#Past-paper-questions" class="headerlink" title="Past-paper questions"></a>Past-paper questions</h3><hr>
+<img src="./Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq1.png" style="zoom: 50%;" />
+
+<hr>
+<img src="./Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq2.png" style="zoom: 67%;" />
+
+<hr>
+<h2 id="Pipelining-amp-Registers"><a href="#Pipelining-amp-Registers" class="headerlink" title="Pipelining &amp; Registers"></a>Pipelining &amp; Registers</h2><blockquote>
+<p>Allow several instructions to be processed simultaneously without having to wait for the previous instructions to be completed</p>
+</blockquote>
+<ol>
+<li>Instruction Fetch cycle (IF)</li>
+<li>Instruction Decode cycle (ID)</li>
+<li>Operand Fetch cycle (OF)</li>
+<li>Instruction Execution cycle (IE)</li>
+<li>Writeback Result process (WB)</li>
+</ol>
+<p><u>Explain what is meant by pipelining:</u></p>
+<ul>
+<li><font color=#4a69bd>Pipelining is instruction level parallelism</font></li>
+<li><font color=#4a69bd>Execution of an instruction is split into a number of stages</font></li>
+<li><font color=#4a69bd>When the first stage for an instruction is completed, the first page of next instruction can start executing</font></li>
+<li><font color=#4a69bd>Another instruction can start executing before the previous one is finished</font></li>
+<li><font color=#4a69bd>Processing a number of instructions can be concurrent&#x2F;simultaneous</font></li>
+</ul>
+<img src="./Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/pipeLining.jpg" style="zoom:67%;" />
+
+<hr>
+<h2 id="Basic-computer-architectures"><a href="#Basic-computer-architectures" class="headerlink" title="Basic computer architectures"></a>Basic computer architectures</h2><h3 id="SISD"><a href="#SISD" class="headerlink" title="SISD"></a>SISD</h3><ul>
+<li>There is only one processor</li>
+<li>The processor executes one sets of instructions on one sets of data</li>
+</ul>
+<h3 id="SIMD"><a href="#SIMD" class="headerlink" title="SIMD"></a>SIMD</h3><ul>
+<li>The processor has several ALUs &#x2F;&#x2F; several processors </li>
+<li>Each ALU executes the same set of instructions on different sets of data at the same time</li>
+</ul>
+<h3 id="MISD"><a href="#MISD" class="headerlink" title="MISD"></a>MISD</h3><ul>
+<li>There are several processors</li>
+<li>Each processor executes different set of instruction on the same set of data at the same time</li>
+</ul>
+<h3 id="MIMD"><a href="#MIMD" class="headerlink" title="MIMD"></a>MIMD</h3><ul>
+<li>There are several processors </li>
+<li>Each processor execute different set of instruction</li>
+<li>Each processor operate on different set of data</li>
+</ul>
+<h3 id="Past-paper-questions-1"><a href="#Past-paper-questions-1" class="headerlink" title="Past-paper questions"></a>Past-paper questions</h3><img src="./Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq3.png" style="zoom: 50%;" />
+
+<hr>
+<img src="./Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq4.png" style="zoom: 67%;" />
+
+<h2 id="Massively-parallel-computers"><a href="#Massively-parallel-computers" class="headerlink" title="Massively parallel computers"></a>Massively parallel computers</h2><p><u>Describe what is meant by a massively paralleled computer</u></p>
+<ul>
+<li><font color=#4a69bd>Large number of processors</font></li>
+<li><font color=#4a69bd>… Working collaboratively on the same program</font></li>
+<li><font color=#4a69bd>… Working together simultaneously on the same program</font></li>
+<li><font color=#4a69bd>… Communicating via a message interface</font></li>
+</ul>
+<h3 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h3><ul>
+<li><font color=#4a69bd>A large number of processors</font></li>
+<li><font color=#4a69bd>Collaborative processing &#x2F;&#x2F; coordinated simultaneous processing</font></li>
+<li><font color=#4a69bd>Network infrastructure</font></li>
+<li><font color=#4a69bd>Communicating using message interface</font></li>
+<li>It is a much faster way to handle large volumes of independent data</li>
+<li>The data used sometimes relies on result of previous operation, therefore such data cannot be handled in parallel</li>
+<li>Datasets require the same processing for it to work</li>
+<li>It overcomes the Von Neumann bottleneck and therefore greatly improves CPU performance</li>
+<li>Parallel processing requires more expensive hardware</li>
+</ul>
+<h3 id="Past-paper-Questions"><a href="#Past-paper-Questions" class="headerlink" title="Past-paper Questions"></a>Past-paper Questions</h3><p><u>Changes needed for codes in order to run on massively paralleled computer</u></p>
+<ul>
+<li><font color=#4a69bd>Split into blocks of code</font></li>
+<li><font color=#4a69bd>… that can be processed simultaneously</font></li>
+<li><font color=#4a69bd>… instead of sequentially</font></li>
+<li><font color=#4a69bd>Each block is processed by a different processor</font></li>
+<li><font color=#4a69bd>Which allows each of many processors to process the different blocks of code independently</font></li>
+<li><font color=#4a69bd>Requires both parallelism and coordination</font></li>
+</ul>
+<p><u>Explain one of the hardware issues that will be overcome if a massively parallel computer is to function correctly</u></p>
+<ul>
+<li><font color=#4a69bd>Communication between processors is the issue</font></li>
+<li><font color=#4a69bd>Each processor needs a link to other processors</font></li>
+<li><font color=#4a69bd>Many processors require many of these links</font></li>
+<li><font color=#4a69bd>Challenging topology</font></li>
+</ul>
+<p><em>A computer has a single processor that contains four processing units.</em><br><u>Explain why this is not an example of a massively paralleled computer</u>:</p>
+<ul>
+<li><font color=#4a69bd>Only one separate processor</font></li>
+<li><font color=#4a69bd>Quad core computer system &#x2F;&#x2F; processing unit shares the same bus</font></li>
+</ul>
+<p><u>Identify different types of parallelism</u></p>
+<ul>
+<li>Instruction</li>
+<li>Processor</li>
+<li>Memory usage</li>
+<li>Computer System</li>
+</ul>
+<h2 id="Virtual-machine"><a href="#Virtual-machine" class="headerlink" title="Virtual machine"></a>Virtual machine</h2><blockquote>
+<p><font color=#4a69bd>An emulation of an existing computer&#x2F;program&#x2F;operating system. A computer OS running with another computer’s OS.</font></p>
+<p>Using a software to implement a hardware setup</p>
+</blockquote>
+<h3 id="Host-OS"><a href="#Host-OS" class="headerlink" title="Host OS"></a>Host OS</h3><ul>
+<li><font color=#4a69bd>The operating system that is actually controlling the physical hardware</font></li>
+<li><font color=#4a69bd>The operating system for the physical hardware</font></li>
+<li><font color=#4a69bd>Guest OS is running under the host OS</font></li>
+</ul>
+<h3 id="Guest-OS"><a href="#Guest-OS" class="headerlink" title="Guest OS"></a>Guest OS</h3><ul>
+<li><font color=#4a69bd>An operating system running in the virtual machine</font></li>
+<li><font color=#4a69bd>Controls virtual hardware</font></li>
+<li><font color=#4a69bd>OS being emulated</font></li>
+</ul>
+<h3 id="Hypervisor"><a href="#Hypervisor" class="headerlink" title="Hypervisor"></a>Hypervisor</h3><blockquote>
+<p><font color=#4a69bd>Virtual machine software that creates and runs virtual machine</font></p>
+</blockquote>
+<ul>
+<li>Software, not hardware</li>
+<li>Creates&#x2F;deletes&#x2F;manages virtual machine</li>
+<li>Translates the instruction used by the guest operating system to that required by the host operating system</li>
+<li>Hardware emulation</li>
+<li>Protects each virtual machine<ul>
+<li>So instances can be tested together</li>
+</ul>
+</li>
+</ul>
+<h3 id="Benefits"><a href="#Benefits" class="headerlink" title="Benefits"></a>Benefits</h3><ul>
+<li><font color=#4a69bd>Multiple operating systems can exist simultaneously</font></li>
+<li><font color=#4a69bd>… allow for testing using the same hardware</font></li>
+<li><font color=#4a69bd>Only one set of hardware required</font></li>
+<li><font color=#4a69bd>… reduces cost of producing the app</font></li>
+<li><font color=#4a69bd>No need to set up more than one computer</font></li>
+<li><code>--</code></li>
+<li><font color=#4a69bd>Software can be tried on different OS using the same hardware</font></li>
+<li><font color=#4a69bd>No need to purchase all sorts of different software</font></li>
+<li><font color=#4a69bd>Easier to recover if the system issue causes the system to crash</font></li>
+<li><font color=#4a69bd>VM provides protection to other software</font></li>
+<li><code>--</code></li>
+<li><font color=#4a69bd>No need to acquire client hardware for testing</font></li>
+<li><font color=#4a69bd>Reduce set-up time for test system</font></li>
+<li><font color=#4a69bd>Common development system for all developers</font></li>
+<li><code>--</code></li>
+<li>They allow modern systems to use programs that run on obsolete or unsupported platform<a target="_blank" rel="noopener" href="https://img1.wsimg.com/blobby/go/9a8687c5-eecd-45f3-821d-7cdfe880b594/downloads/15.1%20Virtual%20Machine%20(MT-L).pdf">^1</a></li>
+<li>They allow platform independent program to run on multiple platforms</li>
+<li>They allow one computer to behave as several computers simultaneously</li>
+<li>They can be easily backed up, copied, and reinstalled.</li>
+</ul>
+<h3 id="Limitations"><a href="#Limitations" class="headerlink" title="Limitations"></a>Limitations</h3><ul>
+<li><font color=#4a69bd>Time and effort required for implementation</font></li>
+<li><font color=#4a69bd>Implementation would not offer the same level of performance that would be obtained in a normal system</font></li>
+<li><font color=#4a69bd>Expensive, complex to manage and maintain</font></li>
+<li><font color=#4a69bd>Execution of extra code, processing time increased</font><ul>
+<li><font color=#4a69bd>So cannot accurately test speed for real performance</font></li>
+<li><font color=#4a69bd>Performance is degraded</font></li>
+</ul>
+</li>
+<li><font color=#4a69bd>May not be able to emulate some hardware</font><ul>
+<li><font color=#4a69bd>So that the hardware cannot be tested using virtual machine</font></li>
+</ul>
+</li>
+<li><code>--</code></li>
+<li><font color=#4a69bd>Virtual machine may not be able to emulate some hardware</font></li>
+<li><font color=#4a69bd>Virtual machine cannot directly access some hardware</font></li>
+<li><font color=#4a69bd>Using virtual machine means execution of extra code &#x2F;&#x2F; processing time increased</font></li>
+<li><font color=#4a69bd>A virtual machine might not be as efficient &#x2F;&#x2F; performance degraded</font></li>
+<li><font color=#4a69bd>Using a virtual machine increases the maintenance overheads </font></li>
+</ul>
+<h3 id="Role-of-virtual-machine-software"><a href="#Role-of-virtual-machine-software" class="headerlink" title="Role of virtual machine software"></a>Role of virtual machine software</h3><ol>
+<li><font color=#4a69bd>Create&#x2F;delete virtual machines</font></li>
+<li><font color=#4a69bd>translate instruction used by the guest operating system to that required by the host operating system</font></li>
+<li><font color=#4a69bd>Existing hardware made available to guest OS &#x2F;&#x2F;  hardware emulation</font></li>
+<li><font color=#4a69bd>Ensure each virtual machine is protected from actions from other virtual machines </font></li>
+</ol>
+<p><img src="/./Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/virtualMachine.jpg"></p>
+<h3 id="Past-paper-questions-2"><a href="#Past-paper-questions-2" class="headerlink" title="Past-paper questions"></a>Past-paper questions</h3><p>A virtual machine is a <font color=#4a69bd><u>software&#x2F;program</u></font> that emulate a <font color=#4a69bd><u>physical&#x2F;different</u></font> computer system; A virtual machine allow multiple <font color=#4a69bd><u>guest</u></font> operating system to run on one computer using <font color=#4a69bd><u>host</u></font> operating system</p>
+<p><u>Describe what happens after the guest operating system has received the data request from the application</u>:</p>
+<ul>
+<li><font color=#4a69bd>Guest OS handles the request as if it were running on its own physical machine</font></li>
+<li><font color=#4a69bd>Guest OS handles the request as usual </font></li>
+<li><font color=#4a69bd>I&#x2F;O requests are translated by the virtual machine software</font></li>
+<li><font color=#4a69bd>Into instruction executable by the host OS</font></li>
+<li><font color=#4a69bd>Host OS retrieves the data from the file</font></li>
+<li><font color=#4a69bd>Host OS passes the data into virtual machine software</font></li>
+<li><font color=#4a69bd>The virtual machine passes the data to the guest OS</font></li>
+<li><font color=#4a69bd>Guest OS passes the data to the application </font></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Haoran Jie
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://haoran-jie.github.io/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/" title="Chapter 15.1: Processors, Parallel Processing and Virtual Machines">https://haoran-jie.github.io/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Notes/ALCS/Chapter13.3_Floating-pointNumbersRepresentation/" rel="prev" title="Chapter13.3: Floating-point numbers,Representation and Manipulation">
+                  <i class="fa fa-chevron-left"></i> Chapter13.3: Floating-point numbers,Representation and Manipulation
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/" rel="next" title="Chapter15.2: Boolean Algebra And Logic Circuits">
+                  Chapter15.2: Boolean Algebra And Logic Circuits <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="comment-button-group">
+          <a class="btn comment-button disqus">disqus</a>
+          <a class="btn comment-button gitalk">gitalk</a>
+      </div>
+        <div class="comment-position disqus">
+          
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+        </div>
+        <div class="comment-position gitalk">
+          <div class="comments gitalk-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa-solid fa-terminal"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Haoran Jie</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.3.0/mermaid.min.js","integrity":"sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://haoran-jie.github.io/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"samuels-blog-5","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Haoran-Jie","repo":"GItalkComments","client_id":"a78520e4a91db64c6ead","client_secret":"80a445f6a6f80fcd44fea523269b55c10ba59002","admin_user":"Haoran-Jie","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"2dafbf1b1f2bd6a91da7cef687cb83fd"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
