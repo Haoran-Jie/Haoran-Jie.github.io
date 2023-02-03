@@ -50,6 +50,8 @@
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -302,31 +304,31 @@
 <ul>
 <li><p><u>Primary memory</u></p>
 <ul>
-<li><font color=#4a69bd>Moving frequently accessed instructions to cache</font></li>
-<li><font color=#4a69bd>… for faster recall</font></li>
-<li><font color=#4a69bd>… as SRAM is used rather than DRAM for cache</font></li>
-<li><font color=#4a69bd>Making use of virtual memory</font></li>
-<li><font color=#4a69bd>… with paging or segmentation</font></li>
-<li><font color=#4a69bd>… to swap memory to and from disk</font></li>
-<li><font color=#4a69bd>Partition memory</font></li>
-<li><font color=#4a69bd>…  dividing main memory into static partitions</font></li>
-<li><font color=#4a69bd>… to allow more than one task to be available</font></li>
-<li><font color=#4a69bd>Removing unused item&#x2F;tasks from RAM</font></li>
-<li><font color=#4a69bd>… by marking a partition as available</font></li>
-<li>.<font color=#4a69bd>.. as soon as the process using it has terminated</font></li>
+<li><font color="#4a69bd">Moving frequently accessed instructions to cache</font></li>
+<li><font color="#4a69bd">… for faster recall</font></li>
+<li><font color="#4a69bd">… as SRAM is used rather than DRAM for cache</font></li>
+<li><font color="#4a69bd">Making use of virtual memory</font></li>
+<li><font color="#4a69bd">… with paging or segmentation</font></li>
+<li><font color="#4a69bd">… to swap memory to and from disk</font></li>
+<li><font color="#4a69bd">Partition memory</font></li>
+<li><font color="#4a69bd">…  dividing main memory into static partitions</font></li>
+<li><font color="#4a69bd">… to allow more than one task to be available</font></li>
+<li><font color="#4a69bd">Removing unused item/tasks from RAM</font></li>
+<li><font color="#4a69bd">… by marking a partition as available</font></li>
+<li>.<font color="#4a69bd">.. as soon as the process using it has terminated</font></li>
 </ul>
 </li>
 <li><p><u>Disk</u></p>
 <ul>
-<li><font color=#4a69bd>Disk cache</font></li>
-<li><font color=#4a69bd>… a disk cache holds data that is frequently transferred to&#x2F;from the disk</font></li>
-<li><font color=#4a69bd>… the cache can be held in disk or RAM</font></li>
-<li><font color=#4a69bd>Compression utility</font></li>
-<li><font color=#4a69bd>… decreasing the size of file stored on the disk</font></li>
-<li><font color=#4a69bd>… in order to fit larger files on the disk</font></li>
-<li><font color=#4a69bd>Defragmentation utility</font></li>
-<li><font color=#4a69bd>… files are rearranged to occupy contiguous disk space</font></li>
-<li><font color=#4a69bd>… this reduces the time taken to access files&#x2F;decrease latency</font></li>
+<li><font color="#4a69bd">Disk cache</font></li>
+<li><font color="#4a69bd">… a disk cache holds data that is frequently transferred to/from the disk</font></li>
+<li><font color="#4a69bd">… the cache can be held in disk or RAM</font></li>
+<li><font color="#4a69bd">Compression utility</font></li>
+<li><font color="#4a69bd">… decreasing the size of file stored on the disk</font></li>
+<li><font color="#4a69bd">… in order to fit larger files on the disk</font></li>
+<li><font color="#4a69bd">Defragmentation utility</font></li>
+<li><font color="#4a69bd">… files are rearranged to occupy contiguous disk space</font></li>
+<li><font color="#4a69bd">… this reduces the time taken to access files/decrease latency</font></li>
 </ul>
 </li>
 <li><p>CPU</p>
@@ -335,7 +337,7 @@
 <li>… Better utilization of CPU time and resources</li>
 </ul>
 </li>
-<li><p>Input&#x2F;Output system</p>
+<li><p>Input/Output system</p>
 <ul>
 <li><p>IO operation initiated by the computer user</p>
 </li>
@@ -348,7 +350,7 @@
 <li>Once the data transfer is complete, an interrupt signal is sent from the DMA to CPU.</li>
 </ul>
 </li>
-<li><img src="./Chapter16.1_PurposeOfAnOperatingSystem/DMA.jpg" style="zoom: 33%;" /></li>
+<li><img src="./Chapter16.1_PurposeOfAnOperatingSystem/DMA.jpg" style="zoom: 33%;"></li>
 </ul>
 </li>
 </ul>
@@ -360,8 +362,8 @@
 <li>Carrying out background utilities, such as virus scanner which the user can “leave it to its own device”</li>
 </ul>
 <h2 id="Process-management"><a href="#Process-management" class="headerlink" title="Process management"></a>Process management</h2><blockquote>
-<p><font color=#4a69bd>Program: the written code (static)</font></p>
-<p><font color=#4a69bd>Process: a program that has started to be executed (dynamic)</font></p>
+<p><font color="#4a69bd">Program: the written code (static)</font></p>
+<p><font color="#4a69bd">Process: a program that has started to be executed (dynamic)</font></p>
 <ul>
 <li>A program which has been placed in the memory</li>
 <li>with a process control block created</li>
@@ -379,51 +381,51 @@
 <p><strong>Multitasking</strong>: allow computers to carry out more than one task(process) at a time. Each of these processes will share common hardware resources. To ensure multitasking operates correctly, scheduling is used to decide which process is carried out first.</p>
 </blockquote>
 <h3 id="Process-states"><a href="#Process-states" class="headerlink" title="Process states"></a><u>Process states</u></h3><h4 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h4><ul>
-<li><font color=#4a69bd>Ready: program waiting for CPU time</font><ul>
-<li><font color=#4a69bd>The process is not being executed</font></li>
-<li><font color=#4a69bd>The process is in the queue</font></li>
-<li><font color=#4a69bd>… waiting for the processor’s attention&#x2F;time slice&#x2F;CPU time</font></li>
+<li><font color="#4a69bd">Ready: program waiting for CPU time</font><ul>
+<li><font color="#4a69bd">The process is not being executed</font></li>
+<li><font color="#4a69bd">The process is in the queue</font></li>
+<li><font color="#4a69bd">… waiting for the processor’s attention/time slice/CPU time</font></li>
 </ul>
 </li>
-<li><font color=#4a69bd>Blocked: program waiting for an event or Input&#x2F;Output operation</font><ul>
-<li><font color=#4a69bd>The process is waiting for an event</font></li>
-<li><font color=#4a69bd>So it cannot be executed by the moment</font></li>
-<li><font color=#4a69bd>e.g. Input&#x2F;Output</font></li>
+<li><font color="#4a69bd">Blocked: program waiting for an event or Input/Output operation</font><ul>
+<li><font color="#4a69bd">The process is waiting for an event</font></li>
+<li><font color="#4a69bd">So it cannot be executed by the moment</font></li>
+<li><font color="#4a69bd">e.g. Input/Output</font></li>
 </ul>
 </li>
-<li><font color=#4a69bd>Running: program running on a CPU</font><ul>
-<li><font color=#4a69bd>Process is being executed by the CPU</font></li>
-<li><font color=#4a69bd>Process is currently using its allocated time slice</font></li>
+<li><font color="#4a69bd">Running: program running on a CPU</font><ul>
+<li><font color="#4a69bd">Process is being executed by the CPU</font></li>
+<li><font color="#4a69bd">Process is currently using its allocated time slice</font></li>
 </ul>
 </li>
 </ul>
 <h4 id="Transition-between-states-conditions"><a href="#Transition-between-states-conditions" class="headerlink" title="Transition between states: conditions"></a>Transition between states: conditions</h4><ul>
 <li><u>Ready -&gt; Running</u></li>
-<li><font color=#4a69bd>Current process no longer running &#x2F;&#x2F; processor is available</font><ul>
-<li><font color=#4a69bd>Process was at the head of the ready queue &#x2F;&#x2F; process has the highest priority</font></li>
+<li><font color="#4a69bd">Current process no longer running // processor is available</font><ul>
+<li><font color="#4a69bd">Process was at the head of the ready queue // process has the highest priority</font></li>
 </ul>
 </li>
 <li><u>Blocked -&gt; Ready</u></li>
-<li><font color=#4a69bd>The only required resource become available &#x2F;&#x2F; resource&#x2F;event&#x2F;IO operation is complete</font></li>
+<li><font color="#4a69bd">The only required resource become available // resource/event/IO operation is complete</font></li>
 <li><u>Running -&gt; Ready</u><ul>
-<li><font color=#4a69bd>When process is executing it is allocated a time slice </font></li>
-<li><font color=#4a69bd>When the time slice is completed, the process can no longer use the processor even if it is capable of further processing</font></li>
+<li><font color="#4a69bd">When process is executing it is allocated a time slice </font></li>
+<li><font color="#4a69bd">When the time slice is completed, the process can no longer use the processor even if it is capable of further processing</font></li>
 </ul>
 </li>
 <li><u>Running -&gt; Blocked</u> </li>
-<li><font color=#4a69bd>Process is executed when it needs to perform IO operation</font><ul>
-<li><font color=#4a69bd>Placed in blocked state until the IO operation is complete</font></li>
+<li><font color="#4a69bd">Process is executed when it needs to perform IO operation</font><ul>
+<li><font color="#4a69bd">Placed in blocked state until the IO operation is complete</font></li>
 </ul>
 </li>
 </ul>
-<img src="./Chapter16.1_PurposeOfAnOperatingSystem/ProcessStates.jpg" style="zoom:50%;" />
+<img src="./Chapter16.1_PurposeOfAnOperatingSystem/ProcessStates.jpg" style="zoom:50%;">
 
 <p>The transition between the states shown in Figure 20.05 can be described as follows</p>
 <ul>
 <li>A new process arrives in memory and a PCB is created; it changes to the ready state.</li>
 <li>A process in the ready state is given access to the CPU by the dispatcher; it changes to the running state</li>
 <li>A process in the running state is halted by an interrupt; it returns to the ready state</li>
-<li>A process in the running state cannot progress until some event has occurred(IO perhaps); it changes to the waiting&#x2F;blocked state.</li>
+<li>A process in the running state cannot progress until some event has occurred(IO perhaps); it changes to the waiting/blocked state.</li>
 <li>A process in the waiting state is notified that an event is complete; it returns to the ready state.</li>
 <li>A process in the running state completes execution; it changes to the terminated state</li>
 </ul>
@@ -431,54 +433,54 @@
 <p><u>Explain how the processes are affected when the following event takes place</u></p>
 <ul>
 <li>The running process needs to read a file from a disk<ul>
-<li><font color=#4a69bd>Running process is halted</font></li>
-<li><font color=#4a69bd>Process moved to blocked state</font></li>
+<li><font color="#4a69bd">Running process is halted</font></li>
+<li><font color="#4a69bd">Process moved to blocked state</font></li>
 </ul>
 </li>
 <li>The running process using up its time slice<ul>
-<li><font color=#4a69bd>Running process is halted &#x2F;&#x2F; another process has the use of the processor</font></li>
-<li><font color=#4a69bd>Process moves to ready state</font></li>
-<li><font color=#4a69bd>… until next time slice is allocated</font></li>
+<li><font color="#4a69bd">Running process is halted // another process has the use of the processor</font></li>
+<li><font color="#4a69bd">Process moves to ready state</font></li>
+<li><font color="#4a69bd">… until next time slice is allocated</font></li>
 </ul>
 </li>
 </ul>
 <p><u>Explain why a process cannot be moved from the blocked state to the running state</u></p>
 <ul>
-<li><font color=#4a69bd>When IO operation is completed for the process in blocked state</font></li>
-<li><font color=#4a69bd>Process put into ready queue</font></li>
-<li><font color=#4a69bd>OS determine which process get next use of the processor from the ready queue</font></li>
+<li><font color="#4a69bd">When IO operation is completed for the process in blocked state</font></li>
+<li><font color="#4a69bd">Process put into ready queue</font></li>
+<li><font color="#4a69bd">OS determine which process get next use of the processor from the ready queue</font></li>
 </ul>
 <p><u>Explain why a process cannot be moved from the ready state to the blocked state</u></p>
 <ul>
-<li><font color=#4a69bd>To be in blocked state process must initiate some IO operation</font></li>
-<li><font color=#4a69bd>To initiate operation, process must be executing</font></li>
-<li><font color=#4a69bd>If process in ready state, cannot be executing; hence must in running state</font></li>
+<li><font color="#4a69bd">To be in blocked state process must initiate some IO operation</font></li>
+<li><font color="#4a69bd">To initiate operation, process must be executing</font></li>
+<li><font color="#4a69bd">If process in ready state, cannot be executing; hence must in running state</font></li>
 </ul>
 <h3 id="Process-scheduling"><a href="#Process-scheduling" class="headerlink" title="Process scheduling"></a>Process scheduling</h3><blockquote>
 <p><strong>High-level scheduler</strong> controls the selection of a program stored on disk to be moved into main memory.</p>
 <ul>
 <li>Decides which processes are loaded from backing store</li>
-<li>Into memory&#x2F;ready queue</li>
+<li>Into memory/ready queue</li>
 </ul>
 <p><strong>Low-level scheduler</strong> controls when the program installed in the memory has access to the CPU</p>
 <ul>
 <li>Decide which process should next get the use of CPU time</li>
-<li>Based on position&#x2F;priority</li>
-<li>Invoked after interrupt&#x2F;OS call</li>
-<li><u>Purpose</u>: <font color=#4a69bd>ensure response time is acceptable and the system remains stable at all times.</font></li>
+<li>Based on position/priority</li>
+<li>Invoked after interrupt/OS call</li>
+<li><u>Purpose</u>: <font color="#4a69bd">ensure response time is acceptable and the system remains stable at all times.</font></li>
 </ul>
 </blockquote>
 <p>Although the high-level and low-level scheduler will have decisions to make when choosing which program should be loaded into memory, we concentrate here on the options for the <strong>low-level scheduler</strong>.</p>
 <h4 id="Round-Robin"><a href="#Round-Robin" class="headerlink" title="Round Robin"></a>Round Robin</h4><h4 id="Shortest-job-first"><a href="#Shortest-job-first" class="headerlink" title="Shortest job first"></a>Shortest job first</h4><h4 id="First-come-first-serve"><a href="#First-come-first-serve" class="headerlink" title="First come first serve"></a>First come first serve</h4><h4 id="Shortest-remaining-time"><a href="#Shortest-remaining-time" class="headerlink" title="Shortest remaining time"></a>Shortest remaining time</h4><hr>
 <p><u>Explain why the operating system needs to use scheduling algorithm</u></p>
 <ul>
-<li><font color=#4a69bd>To allow multitasking to take place</font></li>
-<li><font color=#4a69bd>To ensure fair usage of the processor, peripheral, and memory</font></li>
-<li><font color=#4a69bd>To ensure high priority tasks are executed sooner</font></li>
-<li><font color=#4a69bd>To ensure all processes have the opportunity to finish</font></li>
-<li><font color=#4a69bd>To keep CPU busy all the time</font></li>
-<li><font color=#4a69bd>To service largest amount of job in a given amount of time</font></li>
-<li><font color=#4a69bd>To minimize the time user must wait for their result </font></li>
+<li><font color="#4a69bd">To allow multitasking to take place</font></li>
+<li><font color="#4a69bd">To ensure fair usage of the processor, peripheral, and memory</font></li>
+<li><font color="#4a69bd">To ensure high priority tasks are executed sooner</font></li>
+<li><font color="#4a69bd">To ensure all processes have the opportunity to finish</font></li>
+<li><font color="#4a69bd">To keep CPU busy all the time</font></li>
+<li><font color="#4a69bd">To service largest amount of job in a given amount of time</font></li>
+<li><font color="#4a69bd">To minimize the time user must wait for their result </font></li>
 </ul>
 <hr>
 <h3 id="Kernel"><a href="#Kernel" class="headerlink" title="Kernel"></a>Kernel</h3><blockquote>
@@ -489,7 +491,7 @@
 <li>Device management</li>
 <li>Memory management</li>
 <li>Interrupt handling</li>
-<li>Input&#x2F;output file communication</li>
+<li>Input/output file communication</li>
 </ul>
 </blockquote>
 <h4 id="Interrupt-handling-amp-OS-kernel"><a href="#Interrupt-handling-amp-OS-kernel" class="headerlink" title="Interrupt handling &amp; OS kernel"></a>Interrupt handling &amp; OS kernel</h4><blockquote>
@@ -499,7 +501,7 @@
 <li>The CPU will check for interrupt signals. The system will enter the kernel mode if any of the following type of interrupt signals are sent<ul>
 <li>Device interrupt (printer out of paper, device not present)</li>
 <li>Exceptions (instruction faults: division by zero, unidentified opcode, stack faults)</li>
-<li>Traps&#x2F;software interrupt (process requesting a resource such as disk drive)</li>
+<li>Traps/software interrupt (process requesting a resource such as disk drive)</li>
 </ul>
 </li>
 <li>Kernel will consult the interrupt dispatch table(IDT) - links a device description with the proper interrupt routine</li>
@@ -507,18 +509,18 @@
 <li>The kernel will save the state of the interrupt process on the kernel stack</li>
 <li>The process state will be restored once the interrupting task is services.</li>
 </ol>
-<img src="./Chapter16.1_PurposeOfAnOperatingSystem/interrupt.jpg" style="zoom: 67%;" /> 
+<img src="./Chapter16.1_PurposeOfAnOperatingSystem/interrupt.jpg" style="zoom: 67%;"> 
 
 <p><u>Describe the sequence of steps which would be carried out by the interrupt handler software when an interrupt is received and serviced</u></p>
 <ul>
-<li><font color=#4a69bd>Identify the source of interrupt</font></li>
-<li><font color=#4a69bd>Disable all interrupts of low priority</font></li>
-<li><font color=#4a69bd>Save the content of the PC</font></li>
-<li><font color=#4a69bd>Save the content of other registers on the kernel stack</font></li>
-<li><font color=#4a69bd>Load and run the appropriate interrupt service routine(ISR)</font></li>
-<li><font color=#4a69bd>Restore registers from the stack</font></li>
-<li><font color=#4a69bd>Enable all interrupts </font></li>
-<li><font color=#4a69bd>Continue execution of the interrupts</font></li>
+<li><font color="#4a69bd">Identify the source of interrupt</font></li>
+<li><font color="#4a69bd">Disable all interrupts of low priority</font></li>
+<li><font color="#4a69bd">Save the content of the PC</font></li>
+<li><font color="#4a69bd">Save the content of other registers on the kernel stack</font></li>
+<li><font color="#4a69bd">Load and run the appropriate interrupt service routine(ISR)</font></li>
+<li><font color="#4a69bd">Restore registers from the stack</font></li>
+<li><font color="#4a69bd">Enable all interrupts </font></li>
+<li><font color="#4a69bd">Continue execution of the interrupts</font></li>
 </ul>
 <h2 id="Memory-management"><a href="#Memory-management" class="headerlink" title="Memory management"></a>Memory management</h2><h3 id="Paging"><a href="#Paging" class="headerlink" title="Paging:"></a><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/paging-in-operating-system/">Paging</a>:</h3><ul>
 <li><p>Memory is split up into partitions of blocks of fixed size</p>
@@ -540,30 +542,30 @@
 </li>
 <li><p><code>--</code></p>
 </li>
-<li><p><font color=#4a69bd>Page table: the page map table shows the mapping to pages to page frames</font></p>
+<li><p><font color="#4a69bd">Page table: the page map table shows the mapping to pages to page frames</font></p>
 </li>
-<li><p><font color=#4a69bd>Page: virtual memory divided into blocks of fixed size</font></p>
+<li><p><font color="#4a69bd">Page: virtual memory divided into blocks of fixed size</font></p>
 </li>
-<li><p><font color=#4a69bd>Page frame: the main memory is divided into page frames of same size as page</font></p>
+<li><p><font color="#4a69bd">Page frame: the main memory is divided into page frames of same size as page</font></p>
 </li>
 </ul>
 <p><u>How paging is used to handle virtual memory:</u></p>
 <ul>
-<li><font color=#4a69bd>Divide main memory&#x2F;RAM into frames</font></li>
-<li><font color=#4a69bd>Divide virtual memory into blocks of same size called pages</font></li>
-<li><font color=#4a69bd>Frame&#x2F;pages are a fixed size</font></li>
-<li><font color=#4a69bd>Set up a page (map) table that translates logical to physical address</font></li>
-<li><font color=#4a69bd>Keeps track of all free frames</font></li>
-<li><font color=#4a69bd>Swap pages in memory with new pages from disk when needed</font></li>
+<li><font color="#4a69bd">Divide main memory/RAM into frames</font></li>
+<li><font color="#4a69bd">Divide virtual memory into blocks of same size called pages</font></li>
+<li><font color="#4a69bd">Frame/pages are a fixed size</font></li>
+<li><font color="#4a69bd">Set up a page (map) table that translates logical to physical address</font></li>
+<li><font color="#4a69bd">Keeps track of all free frames</font></li>
+<li><font color="#4a69bd">Swap pages in memory with new pages from disk when needed</font></li>
 </ul>
 <p><u>The page frame’s address entry is 245, state what the values of 245 could represent</u></p>
 <ul>
-<li><font color=#4a69bd>The 245th page frame from the start of memory</font></li>
+<li><font color="#4a69bd">The 245th page frame from the start of memory</font></li>
 </ul>
 <p><u>Process X executes until the next instruction is the first instruction in page4. Page 4 is not current main memory</u></p>
 <p><u>State a hardware device that could be storing this page</u></p>
 <ul>
-<li><font color=#4a69bd>Flash memory &#x2F;&#x2F; magnetic disk &#x2F;&#x2F; hard drive</font></li>
+<li><font color="#4a69bd">Flash memory // magnetic disk // hard drive</font></li>
 </ul>
 <h3 id="Segmentation"><a href="#Segmentation" class="headerlink" title="Segmentation"></a>Segmentation</h3><ul>
 <li>Logical address space is broken up into variable-size memory blocks called segments</li>
@@ -571,12 +573,12 @@
 <li>Each segment has name and size</li>
 <li>During execution<ul>
 <li>Segments from the logical memory are loaded into physical memory</li>
-<li>Address &#x3D; segment number + offset value; found in segment map table</li>
+<li>Address = segment number + offset value; found in segment map table</li>
 <li>Offset value decides the size of the segment</li>
 </ul>
 </li>
 </ul>
-<img src="./Chapter16.1_PurposeOfAnOperatingSystem/segmentation.jpg" style="zoom:50%;" />
+<img src="./Chapter16.1_PurposeOfAnOperatingSystem/segmentation.jpg" style="zoom:50%;">
 
 <h3 id="Differences-between-paging-and-segmentation"><a href="#Differences-between-paging-and-segmentation" class="headerlink" title="Differences between paging and segmentation"></a>Differences between paging and segmentation</h3><table>
 <thead>
@@ -602,8 +604,8 @@
 <td>Segmentation uses a segment map table containing segment number + offset(segment size); it maps logical addresses to physical addresses</td>
 </tr>
 <tr>
-<td>The process of paging is essentially invisible to the user&#x2F;programmer</td>
-<td>Segmentation is essentially a visible process to user&#x2F;programmer</td>
+<td>The process of paging is essentially invisible to the user/programmer</td>
+<td>Segmentation is essentially a visible process to user/programmer</td>
 </tr>
 <tr>
 <td>Procedures and any associated data cannot be separated when using paging</td>
@@ -620,16 +622,16 @@
 </tbody></table>
 <h3 id="Virtual-memory"><a href="#Virtual-memory" class="headerlink" title="Virtual memory"></a>Virtual memory</h3><ul>
 <li>If the available RAM is exceeded due to multiple processes running, it is possible to corrupt the data used in some of the program being run</li>
-<li>This can be solved by separately mapping each program’s virtual memory space to RAM and utilizing the hard disk drive&#x2F;solid state drive if we need more memory. This is the basis behind virtual memory.</li>
+<li>This can be solved by separately mapping each program’s virtual memory space to RAM and utilizing the hard disk drive/solid state drive if we need more memory. This is the basis behind virtual memory.</li>
 <li>RAM is the physical memory and virtual memory is RAM+swap space on the hard disk</li>
 <li>Virtual memory is usually implemented using ‘in demand paging’</li>
 </ul>
 <p><u>State what is meant by virtual memory</u></p>
 <ul>
-<li><font color=#4a69bd>Disk&#x2F;Secondary storage is used to extend the RAM&#x2F;memory available</font></li>
-<li><font color=#4a69bd>… so CPU can access more memory space than available RAM</font></li>
-<li><font color=#4a69bd>Only part of the program&#x2F;data in use needs to be in RAM</font></li>
-<li><font color=#4a69bd>Data is swapped between RAM and disk</font></li>
+<li><font color="#4a69bd">Disk/Secondary storage is used to extend the RAM/memory available</font></li>
+<li><font color="#4a69bd">… so CPU can access more memory space than available RAM</font></li>
+<li><font color="#4a69bd">Only part of the program/data in use needs to be in RAM</font></li>
+<li><font color="#4a69bd">Data is swapped between RAM and disk</font></li>
 </ul>
 <p><u>Advantages of using virtual memory</u></p>
 <ul>
@@ -638,18 +640,18 @@
 <li>… because memory addresses can be mapped </li>
 <li>A process can have an address space larger than that of physical memory</li>
 </ul>
-<h3 id="Disk-thrashing"><a href="#Disk-thrashing" class="headerlink" title="Disk thrashing"></a>Disk thrashing</h3><p>The main drawback of using HDD in virtual memory is that as main memory fills, more and more data&#x2F;pages need to be swapped in and out of virtual memory. This leads to high rate of hard disk read&#x2F;write head movement. if <strong>more time is spent on moving pages in and out of memory than actually doing any processing</strong>, then the processing speed of the computer will be reduced. A point can be reached when the execution of a process comes to a halt since the system is so busy paging and in and out of memory; this is known as the thrash point.</p>
+<h3 id="Disk-thrashing"><a href="#Disk-thrashing" class="headerlink" title="Disk thrashing"></a>Disk thrashing</h3><p>The main drawback of using HDD in virtual memory is that as main memory fills, more and more data/pages need to be swapped in and out of virtual memory. This leads to high rate of hard disk read/write head movement. if <strong>more time is spent on moving pages in and out of memory than actually doing any processing</strong>, then the processing speed of the computer will be reduced. A point can be reached when the execution of a process comes to a halt since the system is so busy paging and in and out of memory; this is known as the thrash point.</p>
 <ul>
-<li><font color=#4a69bd>Pages are requested back into RAM as soon as they are moved to the disk</font></li>
-<li><font color=#4a69bd>There is continuous swapping (of the same page)</font></li>
-<li><font color=#4a69bd>No useful processing happens (deadlock)</font><ul>
-<li><font color=#4a69bd>Pages that are in RAM and disk are interdependent</font></li>
-<li><font color=#4a69bd>All processing times are used for swapping pages</font></li>
+<li><font color="#4a69bd">Pages are requested back into RAM as soon as they are moved to the disk</font></li>
+<li><font color="#4a69bd">There is continuous swapping (of the same page)</font></li>
+<li><font color="#4a69bd">No useful processing happens (deadlock)</font><ul>
+<li><font color="#4a69bd">Pages that are in RAM and disk are interdependent</font></li>
+<li><font color="#4a69bd">All processing times are used for swapping pages</font></li>
 </ul>
 </li>
 </ul>
 <h3 id="Page-replacement"><a href="#Page-replacement" class="headerlink" title="Page replacement"></a>Page replacement</h3><ul>
-<li>Page replacement occurs when a requested page is not in memory. When paging in&#x2F;out from memory, it is necessary to consider how the computer can decide which page to replace to allow the requested page to be loaded. </li>
+<li>Page replacement occurs when a requested page is not in memory. When paging in/out from memory, it is necessary to consider how the computer can decide which page to replace to allow the requested page to be loaded. </li>
 <li>When a new page is requested but is not in memory, a page fault occurs and the OS replaces one of the existing pages with the new page. How to decide which page to replace is done in a number of different ways, but all methods have the same goal of minimizing the number of page faults. </li>
 <li>A page fault is a type of interrupt raised by hardware. When a running program accesses a page that is mapped into virtual memory address space, but not yet loaded into physical memory, then the hardware needs to raise this page fault     interrupt.</li>
 </ul>
@@ -664,12 +666,12 @@
 </li>
 <li><p>It suffers from, what is known as, Belady’s Anomaly where it is possible to have more page faults when increasing the number of page frames.</p>
 </li>
-<li><p><u>Additional data required:</u> <font color=#4a69bd>time of entry</font></p>
+<li><p><u>Additional data required:</u> <font color="#4a69bd">time of entry</font></p>
 </li>
 <li><p><u>Drawbacks:</u> </p>
 <ul>
-<li><font color=#4a69bd>Page in for lengthy period of time may be often accessed</font></li>
-<li><font color=#4a69bd>… so not a good candidate to be removed</font></li>
+<li><font color="#4a69bd">Page in for lengthy period of time may be often accessed</font></li>
+<li><font color="#4a69bd">… so not a good candidate to be removed</font></li>
 </ul>
 </li>
 <li><p><strong>Optimal page replacement(OPR)</strong></p>
@@ -689,15 +691,15 @@
 </li>
 <li><p><strong>Least used page replacement</strong></p>
 <ul>
-<li><u>Additional data required</u>: <font color=#4a69bd>Number of times the page has been accessed</font></li>
+<li><u>Additional data required</u>: <font color="#4a69bd">Number of times the page has been accessed</font></li>
 <li><u>Drawbacks</u>:<ul>
-<li><font color=#4a69bd>A page just entered has a low least-used value</font></li>
-<li><font color=#4a69bd>… so likely to be a candidate for immediately being swapped out</font></li>
+<li><font color="#4a69bd">A page just entered has a low least-used value</font></li>
+<li><font color="#4a69bd">… so likely to be a candidate for immediately being swapped out</font></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><strong>Clock page replacement&#x2F;second-change page replacement</strong></p>
+<li><p><strong>Clock page replacement/second-change page replacement</strong></p>
 </li>
 </ul>
 

@@ -50,6 +50,8 @@
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -300,12 +302,12 @@
 
 <h2 id="Format"><a href="#Format" class="headerlink" title="Format"></a>Format</h2><p><u>What are the effect of decreasing the number of bits allocated to Mantissa and increasing the exponent</u></p>
 <ol>
-<li><font color=#4a69bd>Reduction in precision</font><ul>
-<li><font color=#4a69bd>As the number of bits in mantissa has decreased.</font></li>
+<li><font color="#4a69bd">Reduction in precision</font><ul>
+<li><font color="#4a69bd">As the number of bits in mantissa has decreased.</font></li>
 </ul>
 </li>
-<li><font color=#4a69bd>Increasing in range</font><ul>
-<li><font color=#4a69bd>As the number of bits in exponent has increased.</font></li>
+<li><font color="#4a69bd">Increasing in range</font><ul>
+<li><font color="#4a69bd">As the number of bits in exponent has increased.</font></li>
 </ul>
 </li>
 </ol>
@@ -314,82 +316,82 @@
 <p>The denary number <strong>513</strong> cannot be stored accurately as normalised floating-point number in this computer system: (10 bits for mantissa, 6 bits for exponent)</p>
 <p><u>Explain reasons for this:</u></p>
 <ul>
-<li><font color=#4a69bd>Require more than 10 bits&#x2F;11bits to store; the maximum number that can be stored is 511</font></li>
-<li><font color=#4a69bd>The denary 513 in binary is 1000000001 &#x2F;&#x2F; Normalised: 0.1000000001</font></li>
-<li><font color=#4a69bd>Results in <strong>overflow</strong></font></li>
+<li><font color="#4a69bd">Require more than 10 bits/11bits to store; the maximum number that can be stored is 511</font></li>
+<li><font color="#4a69bd">The denary 513 in binary is 1000000001 // Normalised: 0.1000000001</font></li>
+<li><font color="#4a69bd">Results in <strong>overflow</strong></font></li>
 </ul>
 <p><u>Describe an alteration to the way floating-point numbers are stored to enable this number to be stored accurately with the same total number of bits</u>:</p>
 <ul>
-<li><font color=#4a69bd>The number of bits for mantissa must be increased</font></li>
-<li><font color=#4a69bd>11 bits for mantissa and 5 bits for exponent</font></li>
+<li><font color="#4a69bd">The number of bits for mantissa must be increased</font></li>
+<li><font color="#4a69bd">11 bits for mantissa and 5 bits for exponent</font></li>
 </ul>
 <hr>
-<img src="./Chapter13.3_Floating-pointNumbersRepresentation/que1pic.png" style="zoom: 50%;" />
+<img src="./Chapter13.3_Floating-pointNumbersRepresentation/que1pic.png" style="zoom: 50%;">
 
 <ul>
-<li><font color=#4a69bd>Exponent too large to fit 4 bits as two’s complement number</font></li>
-<li><font color=#4a69bd>Exponent will turn negative</font></li>
-<li><font color=#4a69bd>… therefore the binary point moves the wrong way</font></li>
-<li><font color=#4a69bd>Value will be approximately +0.029(296875)</font></li>
+<li><font color="#4a69bd">Exponent too large to fit 4 bits as two’s complement number</font></li>
+<li><font color="#4a69bd">Exponent will turn negative</font></li>
+<li><font color="#4a69bd">… therefore the binary point moves the wrong way</font></li>
+<li><font color="#4a69bd">Value will be approximately +0.029(296875)</font></li>
 </ul>
 <p><u>Explain the trade-off between either using a large number of bits for the mantissa, or a large number of bits for the exponent</u></p>
 <ul>
-<li><font color=#4a69bd>The trade-off is between range and precision</font></li>
-<li><font color=#4a69bd>Any increase in the number of bits for the mantissa means fewer number of bits for the exponent</font></li>
-<li><font color=#4a69bd>More bits used in mantissa would result in better precision</font></li>
-<li><font color=#4a69bd>More bits used in exponent would result in larger range</font></li>
+<li><font color="#4a69bd">The trade-off is between range and precision</font></li>
+<li><font color="#4a69bd">Any increase in the number of bits for the mantissa means fewer number of bits for the exponent</font></li>
+<li><font color="#4a69bd">More bits used in mantissa would result in better precision</font></li>
+<li><font color="#4a69bd">More bits used in exponent would result in larger range</font></li>
 </ul>
 <h2 id="Conversion"><a href="#Conversion" class="headerlink" title="Conversion"></a>Conversion</h2><p><u>Calculate the normalised binary number for <strong>-3.75</strong>. Show your working</u></p>
 <ul>
-<li><font color=#4a69bd>-3.75 &#x3D; 100.01000 &#x2F;&#x2F; -4 + 1&#x2F;4 &#x2F;&#x2F; -4 + 0.25</font></li>
-<li><font color=#4a69bd>100.01000 becomes 1.0001000 Exponent&#x3D;+2</font></li>
-<li><font color=#4a69bd>Answer: Mantissa&#x3D;1.0001000 Exponent&#x3D;0010</font></li>
+<li><font color="#4a69bd">-3.75 = 100.01000 // -4 + 1/4 // -4 + 0.25</font></li>
+<li><font color="#4a69bd">100.01000 becomes 1.0001000 Exponent=+2</font></li>
+<li><font color="#4a69bd">Answer: Mantissa=1.0001000 Exponent=0010</font></li>
 </ul>
 <p><u>Calculate the normalised floating-point representation of <strong>+1.5625</strong> in this system (<strong>12bit-mantissa, 4bit-exponent</strong>). Show your working</u></p>
 <ul>
-<li><font color=#4a69bd>Correct conversion to binary: 01.1001</font></li>
-<li><font color=#4a69bd>Correct calculation of the exponent: 1</font></li>
-<li><font color=#4a69bd>Answer: Mantissa&#x3D;0110 0100 0000 | Exponent&#x3D; 0001</font></li>
+<li><font color="#4a69bd">Correct conversion to binary: 01.1001</font></li>
+<li><font color="#4a69bd">Correct calculation of the exponent: 1</font></li>
+<li><font color="#4a69bd">Answer: Mantissa=0110 0100 0000 | Exponent= 0001</font></li>
 </ul>
-<h2 id="Normalisation"><a href="#Normalisation" class="headerlink" title="Normalisation"></a>Normalisation</h2><p><u>Why binary&#x2F;floating-point numbers are stored in normalized form</u></p>
+<h2 id="Normalisation"><a href="#Normalisation" class="headerlink" title="Normalisation"></a>Normalisation</h2><p><u>Why binary/floating-point numbers are stored in normalized form</u></p>
 <ul>
-<li><font color=#4a69bd>To store the maximum range of numbers in the minimum number of bits</font></li>
-<li><font color=#4a69bd>Normalisation minimizes the number of leading zeros&#x2F;ones represented</font></li>
-<li><font color=#4a69bd>Maximizing the number of significant bits &#x2F;&#x2F; maximizing the number of precision&#x2F;accuracy with given number of bits</font></li>
-<li><font color=#4a69bd>Enable large&#x2F;small numbers to be stored with accuracy</font></li>
-<li><font color=#4a69bd>Avoids the possibility that many numbers have multiple representation</font></li>
+<li><font color="#4a69bd">To store the maximum range of numbers in the minimum number of bits</font></li>
+<li><font color="#4a69bd">Normalisation minimizes the number of leading zeros/ones represented</font></li>
+<li><font color="#4a69bd">Maximizing the number of significant bits // maximizing the number of precision/accuracy with given number of bits</font></li>
+<li><font color="#4a69bd">Enable large/small numbers to be stored with accuracy</font></li>
+<li><font color="#4a69bd">Avoids the possibility that many numbers have multiple representation</font></li>
 <li><code>--</code></li>
-<li><font color=#4a69bd>There will be a unique representation for a number</font></li>
-<li><font color=#4a69bd>The format will ensure it will be represented with greatest possible accuracy</font></li>
-<li><font color=#4a69bd>Multiplication is performed more accurately</font></li>
+<li><font color="#4a69bd">There will be a unique representation for a number</font></li>
+<li><font color="#4a69bd">The format will ensure it will be represented with greatest possible accuracy</font></li>
+<li><font color="#4a69bd">Multiplication is performed more accurately</font></li>
 </ul>
 <p><u>Problems that can occur when a floating-pointer number is not normalised</u></p>
 <ul>
-<li><font color=#4a69bd>Lost of precision</font></li>
-<li><font color=#4a69bd>Redundant leading zeros in the mantissa</font></li>
-<li><font color=#4a69bd>Lost of the least-significant bits (bits on the right-hand end)</font></li>
-<li><font color=#4a69bd>Multiple representation of a single number</font></li>
+<li><font color="#4a69bd">Lost of precision</font></li>
+<li><font color="#4a69bd">Redundant leading zeros in the mantissa</font></li>
+<li><font color="#4a69bd">Lost of the least-significant bits (bits on the right-hand end)</font></li>
+<li><font color="#4a69bd">Multiple representation of a single number</font></li>
 </ul>
 <h2 id="Approximation-amp-Rounding-errors"><a href="#Approximation-amp-Rounding-errors" class="headerlink" title="Approximation &amp; Rounding errors"></a>Approximation &amp; Rounding errors</h2><p><u>State why some binary representation can lead to rounding errors</u></p>
 <ul>
-<li><font color=#4a69bd>There’s no exact binary conversion for some numbers</font></li>
-<li><font color=#4a69bd>More bits are needed to store the number</font></li>
+<li><font color="#4a69bd">There’s no exact binary conversion for some numbers</font></li>
+<li><font color="#4a69bd">More bits are needed to store the number</font></li>
 </ul>
 <hr>
-<img src="./Chapter13.3_Floating-pointNumbersRepresentation/quepic2.png" style="zoom:80%;" />
+<img src="./Chapter13.3_Floating-pointNumbersRepresentation/quepic2.png" style="zoom:80%;">
 
 <hr>
-<img src="./Chapter13.3_Floating-pointNumbersRepresentation/que3pic.png" style="zoom:50%;" />
+<img src="./Chapter13.3_Floating-pointNumbersRepresentation/que3pic.png" style="zoom:50%;">
 
 <ul>
-<li><font color=#4a69bd>0.2 and 0.4 cannot be represented exactly in binary, there is a rounding error</font></li>
-<li><font color=#4a69bd>0.2 has been represented by a number just greater than 0.2</font></li>
+<li><font color="#4a69bd">0.2 and 0.4 cannot be represented exactly in binary, there is a rounding error</font></li>
+<li><font color="#4a69bd">0.2 has been represented by a number just greater than 0.2</font></li>
 <li>This is similar for 0.4</li>
-<li><font color=#4a69bd>Therefore, multiplying these two representations together increases the difference</font></li>
-<li><font color=#4a69bd>Difference after calculation is significant enough to be seen</font></li>
+<li><font color="#4a69bd">Therefore, multiplying these two representations together increases the difference</font></li>
+<li><font color="#4a69bd">Difference after calculation is significant enough to be seen</font></li>
 </ul>
 <hr>
-<img src="./Chapter13.3_Floating-pointNumbersRepresentation/que4pic.png" style="zoom:50%;" />
+<img src="./Chapter13.3_Floating-pointNumbersRepresentation/que4pic.png" style="zoom:50%;">
 
 <ul>
 <li>0.1 cannot be represented exactly in binary, there is a rounding error</li>

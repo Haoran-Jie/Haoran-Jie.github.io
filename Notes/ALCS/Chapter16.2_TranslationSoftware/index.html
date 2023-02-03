@@ -50,6 +50,8 @@
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -298,73 +300,73 @@
 <hr>
 <span id="more"></span>
 
-<h2 id="Interpreter"><a href="#Interpreter" class="headerlink" title="Interpreter"></a>Interpreter</h2><img src="./Chapter16.2_TranslationSoftware/interpreter.jpg" style="zoom:50%;" />
+<h2 id="Interpreter"><a href="#Interpreter" class="headerlink" title="Interpreter"></a>Interpreter</h2><img src="./Chapter16.2_TranslationSoftware/interpreter.jpg" style="zoom:50%;">
 
 <p><u>How an interpreter can executes the program without producing a complete translated version</u></p>
 <ul>
-<li><font color=#4a69bd>An interpreter examines source code one statement at a time</font></li>
-<li><font color=#4a69bd>Check each statement for errors</font></li>
-<li><font color=#4a69bd>If no error is found, the statement is executed</font></li>
-<li><font color=#4a69bd>If an error is found, this is reported and the interpreter halts</font></li>
-<li><font color=#4a69bd>Interpretation is repeated for every iteration in repeated section of code&#x2F; in loops</font></li>
-<li><font color=#4a69bd>Interpretation repeats every time the program runs</font></li>
+<li><font color="#4a69bd">An interpreter examines source code one statement at a time</font></li>
+<li><font color="#4a69bd">Check each statement for errors</font></li>
+<li><font color="#4a69bd">If no error is found, the statement is executed</font></li>
+<li><font color="#4a69bd">If an error is found, this is reported and the interpreter halts</font></li>
+<li><font color="#4a69bd">Interpretation is repeated for every iteration in repeated section of code/ in loops</font></li>
+<li><font color="#4a69bd">Interpretation repeats every time the program runs</font></li>
 </ul>
 <p><u>Why debug with interpreter</u></p>
 <ul>
-<li><font color=#4a69bd>Debugging is faster</font></li>
-<li><font color=#4a69bd>Can debug incomplete code</font></li>
-<li><font color=#4a69bd>Better diagnostics</font></li>
+<li><font color="#4a69bd">Debugging is faster</font></li>
+<li><font color="#4a69bd">Can debug incomplete code</font></li>
+<li><font color="#4a69bd">Better diagnostics</font></li>
 </ul>
-<h2 id="Compiler"><a href="#Compiler" class="headerlink" title="Compiler"></a>Compiler</h2><img src="./Chapter16.2_TranslationSoftware/compiler.jpg" style="zoom: 33%;" />
+<h2 id="Compiler"><a href="#Compiler" class="headerlink" title="Compiler"></a>Compiler</h2><img src="./Chapter16.2_TranslationSoftware/compiler.jpg" style="zoom: 33%;">
 
 <h3 id="Compilation-stages"><a href="#Compilation-stages" class="headerlink" title="Compilation stages"></a>Compilation stages</h3><h4 id="Lexical-analysis"><a href="#Lexical-analysis" class="headerlink" title="Lexical analysis"></a>Lexical analysis</h4><ul>
 <li><p>All necessary characters not required by the compiler, such as the white space and comments, are removed</p>
 </li>
-<li><p><font color=#4a69bd>The white space removed &#x2F;&#x2F; redundant characters are removed &#x2F;&#x2F; removal of comments &#x2F;&#x2F; identification of errors</font></p>
+<li><p><font color="#4a69bd">The white space removed // redundant characters are removed // removal of comments // identification of errors</font></p>
 </li>
 <li><p>Tokenization</p>
 <ul>
 <li>Using a keyword table that contains all the tokens for reserved keywords and symbols</li>
 <li>Convert the source program into tokens</li>
 <li><u>Keyword table</u><ul>
-<li><font color=#4a69bd>The reserved keyword used</font></li>
-<li><font color=#4a69bd>The operator used</font></li>
-<li><font color=#4a69bd>Their matching token</font><img src="./Chapter16.2_TranslationSoftware/keyword table.png" align="middle" style="zoom:50%;" /></li>
+<li><font color="#4a69bd">The reserved keyword used</font></li>
+<li><font color="#4a69bd">The operator used</font></li>
+<li><font color="#4a69bd">Their matching token</font><img src="./Chapter16.2_TranslationSoftware/keyword table.png" align="middle" style="zoom:50%;"></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>Variables, constants, and identifiers added to a symbol table, and are then converted into locations&#x2F;address</p>
+<li><p>Variables, constants, and identifiers added to a symbol table, and are then converted into locations/address</p>
 <ul>
 <li><u>Symbol table</u><ul>
-<li><font color=#4a69bd>Identifier name used </font></li>
-<li><font color=#4a69bd>The data type </font></li>
-<li><font color=#4a69bd>Role: e.g. Constant, array, procedure</font></li>
-<li><font color=#4a69bd>Location marker, value of constant</font></li>
+<li><font color="#4a69bd">Identifier name used </font></li>
+<li><font color="#4a69bd">The data type </font></li>
+<li><font color="#4a69bd">Role: e.g. Constant, array, procedure</font></li>
+<li><font color="#4a69bd">Location marker, value of constant</font></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<img src="./Chapter16.2_TranslationSoftware/symboltable.png" style="zoom:50%;" />
+<img src="./Chapter16.2_TranslationSoftware/symboltable.png" style="zoom:50%;">
 
 <p><u>Explain how the keyword table and symbol table are used to translate the source code program</u></p>
 <ul>
-<li><font color=#4a69bd>Keywords are looked up in the keyword table</font></li>
-<li><font color=#4a69bd>They are represented by tokens</font></li>
-<li><font color=#4a69bd>Identifiers are looked up in the symbol table</font></li>
-<li><font color=#4a69bd>They are converted into location&#x2F;address</font></li>
-<li><font color=#4a69bd>Used to create a sequence of tokens (for the program)</font></li>
+<li><font color="#4a69bd">Keywords are looked up in the keyword table</font></li>
+<li><font color="#4a69bd">They are represented by tokens</font></li>
+<li><font color="#4a69bd">Identifiers are looked up in the symbol table</font></li>
+<li><font color="#4a69bd">They are converted into location/address</font></li>
+<li><font color="#4a69bd">Used to create a sequence of tokens (for the program)</font></li>
 </ul>
 <h4 id="Syntax-analysis"><a href="#Syntax-analysis" class="headerlink" title="Syntax analysis"></a>Syntax analysis</h4><ul>
-<li>Output from the lexical analysis is checked for grammatical&#x2F;syntax errors - <code>parsing</code></li>
+<li>Output from the lexical analysis is checked for grammatical/syntax errors - <code>parsing</code></li>
 <li>The rules for <code>parsing</code> can be set out in Backus-Naur form(BNF) notation</li>
 <li>If errors are found: each statement and the associated error is outputted, but the next stage, code generation, will not be attempted</li>
 <li>If no error is found: passed to the next stage of compilation</li>
 <li><code>--</code></li>
-<li><font color=#4a69bd>Construction of a parse tree &#x2F; parsing</font></li>
-<li><font color=#4a69bd>Checking that the rules of grammar&#x2F;syntax have been obeyed</font></li>
-<li><font color=#4a69bd>Production of an error report</font></li>
+<li><font color="#4a69bd">Construction of a parse tree / parsing</font></li>
+<li><font color="#4a69bd">Checking that the rules of grammar/syntax have been obeyed</font></li>
+<li><font color="#4a69bd">Production of an error report</font></li>
 </ul>
 <h4 id="Code-generation"><a href="#Code-generation" class="headerlink" title="Code generation"></a>Code generation</h4><ul>
 <li>Produces an object program to perform the task defined in the source code</li>
@@ -376,54 +378,54 @@
 </ul>
 <h4 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h4><ul>
 <li>Performing the task using the <u>minimum amount of resources</u><ul>
-<li><font color=#4a69bd>Execution time, storage space, memory, and CPU use.</font></li>
+<li><font color="#4a69bd">Execution time, storage space, memory, and CPU use.</font></li>
 </ul>
 </li>
-<li><img src="./Chapter16.2_TranslationSoftware/optimization.jpg" style="zoom: 33%;"  /></li>
+<li><img src="./Chapter16.2_TranslationSoftware/optimization.jpg" style="zoom: 33%;"></li>
 </ul>
 <p><u>Why code is optimized:</u></p>
 <ul>
-<li><font color=#4a69bd>Redundant code removed</font></li>
-<li><font color=#4a69bd>Program requires less memory</font></li>
-<li><font color=#4a69bd>Code reorganized to make it more efficient</font></li>
-<li><font color=#4a69bd>Program will complete task in a shorter time</font></li>
+<li><font color="#4a69bd">Redundant code removed</font></li>
+<li><font color="#4a69bd">Program requires less memory</font></li>
+<li><font color="#4a69bd">Code reorganized to make it more efficient</font></li>
+<li><font color="#4a69bd">Program will complete task in a shorter time</font></li>
 </ul>
 <p><u>Why optimization is necessary</u></p>
 <ul>
-<li><font color=#4a69bd>Optimisation means the code would have fewer instructions</font></li>
-<li><font color=#4a69bd>Optimised code occupies less memory in space</font></li>
-<li><font color=#4a69bd>Fewer instructions reduce the execution time of the program</font></li>
+<li><font color="#4a69bd">Optimisation means the code would have fewer instructions</font></li>
+<li><font color="#4a69bd">Optimised code occupies less memory in space</font></li>
+<li><font color="#4a69bd">Fewer instructions reduce the execution time of the program</font></li>
 </ul>
 <p><u>Benefits</u></p>
 <ul>
-<li><font color=#4a69bd>Code has fewer instructions&#x2F;occupies less memory in space</font></li>
-<li><font color=#4a69bd>Shortens the execution time for the program &#x2F;&#x2F; time taken to execute whole program decreases</font></li>
+<li><font color="#4a69bd">Code has fewer instructions/occupies less memory in space</font></li>
+<li><font color="#4a69bd">Shortens the execution time for the program // time taken to execute whole program decreases</font></li>
 </ul>
-<h3 id="Past-paper-questions"><a href="#Past-paper-questions" class="headerlink" title="Past-paper questions"></a>Past-paper questions</h3><img src="./Chapter16.2_TranslationSoftware/ppq1.png" style="zoom: 67%;" />
+<h3 id="Past-paper-questions"><a href="#Past-paper-questions" class="headerlink" title="Past-paper questions"></a>Past-paper questions</h3><img src="./Chapter16.2_TranslationSoftware/ppq1.png" style="zoom: 67%;">
 
 <ul>
-<li><font color=#4a69bd>Remove the second instances of LDD 436 &#x2F;&#x2F; remove line 04</font></li>
-<li><font color=#4a69bd>Remove the second instance s of ADD 437 &#x2F;&#x2F; remove line 05</font></li>
-<li><font color=#4a69bd>The value required is already stored in the accumulator</font></li>
+<li><font color="#4a69bd">Remove the second instances of LDD 436 // remove line 04</font></li>
+<li><font color="#4a69bd">Remove the second instance s of ADD 437 // remove line 05</font></li>
+<li><font color="#4a69bd">The value required is already stored in the accumulator</font></li>
 </ul>
 <hr>
 <p><u>Why compiled version helps protect the security of the source code</u></p>
 <ul>
-<li><font color=#4a69bd>Compiler produces executable version - not readable</font></li>
-<li><font color=#4a69bd>Difficult for reverse engineering</font></li>
+<li><font color="#4a69bd">Compiler produces executable version - not readable</font></li>
+<li><font color="#4a69bd">Difficult for reverse engineering</font></li>
 </ul>
 <hr>
-<img src="./Chapter16.2_TranslationSoftware/drawline.png" style="zoom: 67%;" />
+<img src="./Chapter16.2_TranslationSoftware/drawline.png" style="zoom: 67%;">
 
 <hr>
 <h2 id="BNF-amp-Syntax-diagram"><a href="#BNF-amp-Syntax-diagram" class="headerlink" title="BNF &amp; Syntax diagram"></a>BNF &amp; Syntax diagram</h2><h3 id="Past-paper-questions-1"><a href="#Past-paper-questions-1" class="headerlink" title="Past-paper questions"></a>Past-paper questions</h3><p>1. </p>
-<img src="./Chapter16.2_TranslationSoftware/ppq2.1.png" style="zoom: 80%;" />
+<img src="./Chapter16.2_TranslationSoftware/ppq2.1.png" style="zoom: 80%;">
 
 <p><img src="/./Chapter16.2_TranslationSoftware/ppq2.2.png"></p>
 <hr>
 <p>2. </p>
 <p><img src="F:\hexocode\source_posts\Chapter16.2_TranslationSoftware\ppq3.1.png"></p>
-<img src="./Chapter16.2_TranslationSoftware\ppq3.2.png" style="zoom: 67%;" />
+<img src="./Chapter16.2_TranslationSoftware\ppq3.2.png" style="zoom: 67%;">
 
 <hr>
 <p>3. </p>
@@ -432,70 +434,70 @@
 <hr>
 <h2 id="Reverse-Polish-notation"><a href="#Reverse-Polish-notation" class="headerlink" title="Reverse Polish notation"></a>Reverse Polish notation</h2><blockquote>
 <p>Infix notation: operators are in between their operands</p>
-<p>Postfix notation &#x2F; Reverse Polish notation: Operators are written after operands</p>
-<p>Prefix notation &#x2F; Polish notation: operators are written before operands</p>
+<p>Postfix notation / Reverse Polish notation: Operators are written after operands</p>
+<p>Prefix notation / Polish notation: operators are written before operands</p>
 </blockquote>
-<p>:link::<a target="_blank" rel="noopener" href="https://www.cs.man.ac.uk/~pjj/cs212/fix.html">Understanding infix, postfix, and prefix - lecture note from university of manchester</a></p>
+<p><span class="github-emoji"><span>🔗</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f517.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>:<a target="_blank" rel="noopener" href="https://www.cs.man.ac.uk/~pjj/cs212/fix.html">Understanding infix, postfix, and prefix - lecture note from university of manchester</a></p>
 <hr>
 <p><u>Why RPN can be used to evaluate expressions:</u></p>
 <ul>
-<li><font color=#4a69bd>Reverse polish notation provides and unambiguous method of representing an expression</font></li>
-<li><font color=#4a69bd>Reading from left to right</font></li>
-<li><font color=#4a69bd>Without need to use bracket</font></li>
-<li><font color=#4a69bd>With no need for rules of precedence</font></li>
+<li><font color="#4a69bd">Reverse polish notation provides and unambiguous method of representing an expression</font></li>
+<li><font color="#4a69bd">Reading from left to right</font></li>
+<li><font color="#4a69bd">Without need to use bracket</font></li>
+<li><font color="#4a69bd">With no need for rules of precedence</font></li>
 </ul>
 <p><u>Explain how RPN is used by an interpreter to evaluate expression:</u></p>
 <ul>
-<li><font color=#4a69bd>Expressions are always evaluated from left to right</font></li>
-<li><font color=#4a69bd>Each operator uses two previous values on the stack</font></li>
-<li><font color=#4a69bd>Pushing and popping identifiers on a stack</font></li>
+<li><font color="#4a69bd">Expressions are always evaluated from left to right</font></li>
+<li><font color="#4a69bd">Each operator uses two previous values on the stack</font></li>
+<li><font color="#4a69bd">Pushing and popping identifiers on a stack</font></li>
 </ul>
 <p><u>Data structure to evaluate an expression in RPN</u></p>
 <ul>
-<li><font color=#4a69bd>Stack</font><ul>
-<li><font color=#4a69bd>The operands are popped from the stack in reverse order to how they were pushed</font></li>
+<li><font color="#4a69bd">Stack</font><ul>
+<li><font color="#4a69bd">The operands are popped from the stack in reverse order to how they were pushed</font></li>
 </ul>
 </li>
-<li><font color=#4a69bd>Binary tree</font><ul>
-<li><font color=#4a69bd>Allows both infix and postfix to be evaluated (tree traversal)</font></li>
+<li><font color="#4a69bd">Binary tree</font><ul>
+<li><font color="#4a69bd">Allows both infix and postfix to be evaluated (tree traversal)</font></li>
 </ul>
 </li>
 </ul>
 <p><u>Describe the main steps in the evaluation of a Reverse Polish Notation(RPN) expression using a stack</u></p>
 <ul>
-<li><font color=#4a69bd>Working from left to right in the expression</font></li>
-<li><font color=#4a69bd>If element is a number, push that number into stack</font></li>
-<li><font color=#4a69bd>If element is an operator, then pop the first two numbers on the stack</font></li>
-<li><font color=#4a69bd>… perform that operations on these two numbers</font></li>
-<li><font color=#4a69bd>PUSH result back into stack</font></li>
-<li><font color=#4a69bd>END once the last item in the expression has been dealt with</font></li>
+<li><font color="#4a69bd">Working from left to right in the expression</font></li>
+<li><font color="#4a69bd">If element is a number, push that number into stack</font></li>
+<li><font color="#4a69bd">If element is an operator, then pop the first two numbers on the stack</font></li>
+<li><font color="#4a69bd">… perform that operations on these two numbers</font></li>
+<li><font color="#4a69bd">PUSH result back into stack</font></li>
+<li><font color="#4a69bd">END once the last item in the expression has been dealt with</font></li>
 </ul>
 <p><u>One advantage of the use of RPN is that evaluation of expressions does not require rules of precedence; Explain this statement</u></p>
 <ul>
-<li><font color=#4a69bd>Rules of precedence means different operators have different priorities; for example multiplication is done before addition</font></li>
-<li><font color=#4a69bd>In RPN, evaluation of expression is from left to right &#x2F;&#x2F; operator are used in the sequence in which they were read</font></li>
-<li><font color=#4a69bd>No need for brackets &#x2F;&#x2F; infix may require brackets</font></li>
+<li><font color="#4a69bd">Rules of precedence means different operators have different priorities; for example multiplication is done before addition</font></li>
+<li><font color="#4a69bd">In RPN, evaluation of expression is from left to right // operator are used in the sequence in which they were read</font></li>
+<li><font color="#4a69bd">No need for brackets // infix may require brackets</font></li>
 </ul>
 <p><u>Write the Reverse Polish Notation for the following expressions</u></p>
 <ol>
 <li><p>(A+B)*(C-D)</p>
 <ul>
-<li><font color=#4a69bd>AB+</font></li>
-<li><font color=#4a69bd>CD-*</font></li>
+<li><font color="#4a69bd">AB+</font></li>
+<li><font color="#4a69bd">CD-*</font></li>
 </ul>
 <p>Full answer: AB+CD-*</p>
 </li>
-<li><p>((-A&#x2F;B)*4)&#x2F;(C-D)</p>
+<li><p>((-A/B)*4)/(C-D)</p>
 <ul>
-<li><font color=#4a69bd>A-</font></li>
-<li><font color=#4a69bd>B&#x2F;4*</font></li>
-<li><font color=#4a69bd>CD-&#x2F;</font></li>
+<li><font color="#4a69bd">A-</font></li>
+<li><font color="#4a69bd">B/4*</font></li>
+<li><font color="#4a69bd">CD-/</font></li>
 </ul>
-<p>Full answer: A-B&#x2F;4*CD-&#x2F;</p>
+<p>Full answer: A-B/4*CD-/</p>
 </li>
 </ol>
 <h3 id="Evaluation-of-RPN"><a href="#Evaluation-of-RPN" class="headerlink" title="Evaluation of RPN"></a>Evaluation of RPN</h3><p><img src="/./Chapter16.2_TranslationSoftware/rpneva.jpg"></p>
-<p>:link:<a target="_blank" rel="noopener" href="https://www.includehelp.com/c/infix-to-postfix-conversion-using-stack-with-c-program.aspx">Infix To Postfix Conversion Using Stack</a></p>
+<p><span class="github-emoji"><span>🔗</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f517.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><a target="_blank" rel="noopener" href="https://www.includehelp.com/c/infix-to-postfix-conversion-using-stack-with-c-program.aspx">Infix To Postfix Conversion Using Stack</a></p>
 
     </div>
 

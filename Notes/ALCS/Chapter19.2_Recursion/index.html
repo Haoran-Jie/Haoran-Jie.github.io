@@ -50,6 +50,8 @@
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -298,31 +300,31 @@
 <span id="more"></span>
 
 <h3 id="Essential-features-of-recursion"><a href="#Essential-features-of-recursion" class="headerlink" title="Essential features of recursion:"></a><u>Essential features of recursion:</u></h3><ul>
-<li><font color=#4a69bd>It is defined in terms of itself &#x2F;&#x2F; it calls itself</font></li>
-<li><font color=#4a69bd>It has a stopping condition</font></li>
-<li><font color=#4a69bd>It has self-contained subroutine</font></li>
-<li><font color=#4a69bd>It can return data to its previous call</font></li>
+<li><font color="#4a69bd">It is defined in terms of itself // it calls itself</font></li>
+<li><font color="#4a69bd">It has a stopping condition</font></li>
+<li><font color="#4a69bd">It has self-contained subroutine</font></li>
+<li><font color="#4a69bd">It can return data to its previous call</font></li>
 <li><code>--</code></li>
-<li><font color=#4a69bd>Must have a base case&#x2F; stopping condition</font></li>
-<li><font color=#4a69bd>Must have a general case</font></li>
-<li><font color=#4a69bd>… which calls itself recursively &#x2F;&#x2F; defined in terms of itself</font></li>
-<li><font color=#4a69bd>… which changes its state and moves towards the base case</font></li>
-<li><font color=#4a69bd>Unwinding occurs once the base case is reached</font></li>
+<li><font color="#4a69bd">Must have a base case/ stopping condition</font></li>
+<li><font color="#4a69bd">Must have a general case</font></li>
+<li><font color="#4a69bd">… which calls itself recursively // defined in terms of itself</font></li>
+<li><font color="#4a69bd">… which changes its state and moves towards the base case</font></li>
+<li><font color="#4a69bd">Unwinding occurs once the base case is reached</font></li>
 </ul>
 <p><u>Explain a reason why a stack is a suitable abstract data type(ADT) to implement recursion:</u></p>
 <ul>
-<li><font color=#4a69bd>A stack is a LIFO(last in first out) data structure</font></li>
-<li><font color=#4a69bd>Each recursive call is pushed to the stack</font></li>
-<li><font color=#4a69bd>And is popped when the function ends</font></li>
-<li><font color=#4a69bd>Enable unwinding&#x2F;back tracking</font></li>
-<li><font color=#4a69bd>… to maintain the required order</font></li>
+<li><font color="#4a69bd">A stack is a LIFO(last in first out) data structure</font></li>
+<li><font color="#4a69bd">Each recursive call is pushed to the stack</font></li>
+<li><font color="#4a69bd">And is popped when the function ends</font></li>
+<li><font color="#4a69bd">Enable unwinding/back tracking</font></li>
+<li><font color="#4a69bd">… to maintain the required order</font></li>
 </ul>
 <h3 id="What-a-compiler-has-to-do-to-translate-recursive-programming-code"><a href="#What-a-compiler-has-to-do-to-translate-recursive-programming-code" class="headerlink" title="What a compiler has to do to translate recursive programming code"></a><u>What a compiler has to do to translate recursive programming code</u></h3><ul>
-<li><font color=#4a69bd>When the recursive call is made, all values&#x2F;data are put on</font></li>
-<li><font color=#4a69bd>… the stack</font></li>
-<li><font color=#4a69bd>When the stopping condition&#x2F;base case is met</font></li>
-<li><font color=#4a69bd>… the algorithm unwinds</font></li>
-<li><font color=#4a69bd>… the last sets of values are taken off the stack (in reverse order)</font></li>
+<li><font color="#4a69bd">When the recursive call is made, all values/data are put on</font></li>
+<li><font color="#4a69bd">… the stack</font></li>
+<li><font color="#4a69bd">When the stopping condition/base case is met</font></li>
+<li><font color="#4a69bd">… the algorithm unwinds</font></li>
+<li><font color="#4a69bd">… the last sets of values are taken off the stack (in reverse order)</font></li>
 </ul>
 
     </div>

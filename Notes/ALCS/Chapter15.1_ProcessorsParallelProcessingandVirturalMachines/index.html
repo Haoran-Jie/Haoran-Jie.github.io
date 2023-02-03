@@ -50,6 +50,8 @@
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -330,7 +332,7 @@
 </tr>
 <tr>
 <td align="center">Multiple register sets</td>
-<td align="center">Makes use of general multipurpose registers &#x2F;&#x2F; fewer registers</td>
+<td align="center">Makes use of general multipurpose registers // fewer registers</td>
 </tr>
 <tr>
 <td align="center">It is more difficult to make pipelining work</td>
@@ -358,10 +360,10 @@
 <li>To discard all instructions in the pipelining except for the last instruction in the writeback stage</li>
 </ul>
 <h3 id="Past-paper-questions"><a href="#Past-paper-questions" class="headerlink" title="Past-paper questions"></a>Past-paper questions</h3><hr>
-<img src="./Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq1.png" style="zoom: 50%;" />
+<img src="./Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq1.png" style="zoom: 50%;">
 
 <hr>
-<img src="./Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq2.png" style="zoom: 67%;" />
+<img src="./Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq2.png" style="zoom: 67%;">
 
 <hr>
 <h2 id="Pipelining-amp-Registers"><a href="#Pipelining-amp-Registers" class="headerlink" title="Pipelining &amp; Registers"></a>Pipelining &amp; Registers</h2><blockquote>
@@ -376,13 +378,13 @@
 </ol>
 <p><u>Explain what is meant by pipelining:</u></p>
 <ul>
-<li><font color=#4a69bd>Pipelining is instruction level parallelism</font></li>
-<li><font color=#4a69bd>Execution of an instruction is split into a number of stages</font></li>
-<li><font color=#4a69bd>When the first stage for an instruction is completed, the first page of next instruction can start executing</font></li>
-<li><font color=#4a69bd>Another instruction can start executing before the previous one is finished</font></li>
-<li><font color=#4a69bd>Processing a number of instructions can be concurrent&#x2F;simultaneous</font></li>
+<li><font color="#4a69bd">Pipelining is instruction level parallelism</font></li>
+<li><font color="#4a69bd">Execution of an instruction is split into a number of stages</font></li>
+<li><font color="#4a69bd">When the first stage for an instruction is completed, the first page of next instruction can start executing</font></li>
+<li><font color="#4a69bd">Another instruction can start executing before the previous one is finished</font></li>
+<li><font color="#4a69bd">Processing a number of instructions can be concurrent/simultaneous</font></li>
 </ul>
-<img src="./Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/pipeLining.jpg" style="zoom:67%;" />
+<img src="./Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/pipeLining.jpg" style="zoom:67%;">
 
 <hr>
 <h2 id="Basic-computer-architectures"><a href="#Basic-computer-architectures" class="headerlink" title="Basic computer architectures"></a>Basic computer architectures</h2><h3 id="SISD"><a href="#SISD" class="headerlink" title="SISD"></a>SISD</h3><ul>
@@ -390,7 +392,7 @@
 <li>The processor executes one sets of instructions on one sets of data</li>
 </ul>
 <h3 id="SIMD"><a href="#SIMD" class="headerlink" title="SIMD"></a>SIMD</h3><ul>
-<li>The processor has several ALUs &#x2F;&#x2F; several processors </li>
+<li>The processor has several ALUs // several processors </li>
 <li>Each ALU executes the same set of instructions on different sets of data at the same time</li>
 </ul>
 <h3 id="MISD"><a href="#MISD" class="headerlink" title="MISD"></a>MISD</h3><ul>
@@ -402,23 +404,23 @@
 <li>Each processor execute different set of instruction</li>
 <li>Each processor operate on different set of data</li>
 </ul>
-<h3 id="Past-paper-questions-1"><a href="#Past-paper-questions-1" class="headerlink" title="Past-paper questions"></a>Past-paper questions</h3><img src="./Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq3.png" style="zoom: 50%;" />
+<h3 id="Past-paper-questions-1"><a href="#Past-paper-questions-1" class="headerlink" title="Past-paper questions"></a>Past-paper questions</h3><img src="./Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq3.png" style="zoom: 50%;">
 
 <hr>
-<img src="./Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq4.png" style="zoom: 67%;" />
+<img src="./Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/ppq4.png" style="zoom: 67%;">
 
 <h2 id="Massively-parallel-computers"><a href="#Massively-parallel-computers" class="headerlink" title="Massively parallel computers"></a>Massively parallel computers</h2><p><u>Describe what is meant by a massively paralleled computer</u></p>
 <ul>
-<li><font color=#4a69bd>Large number of processors</font></li>
-<li><font color=#4a69bd>… Working collaboratively on the same program</font></li>
-<li><font color=#4a69bd>… Working together simultaneously on the same program</font></li>
-<li><font color=#4a69bd>… Communicating via a message interface</font></li>
+<li><font color="#4a69bd">Large number of processors</font></li>
+<li><font color="#4a69bd">… Working collaboratively on the same program</font></li>
+<li><font color="#4a69bd">… Working together simultaneously on the same program</font></li>
+<li><font color="#4a69bd">… Communicating via a message interface</font></li>
 </ul>
 <h3 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h3><ul>
-<li><font color=#4a69bd>A large number of processors</font></li>
-<li><font color=#4a69bd>Collaborative processing &#x2F;&#x2F; coordinated simultaneous processing</font></li>
-<li><font color=#4a69bd>Network infrastructure</font></li>
-<li><font color=#4a69bd>Communicating using message interface</font></li>
+<li><font color="#4a69bd">A large number of processors</font></li>
+<li><font color="#4a69bd">Collaborative processing // coordinated simultaneous processing</font></li>
+<li><font color="#4a69bd">Network infrastructure</font></li>
+<li><font color="#4a69bd">Communicating using message interface</font></li>
 <li>It is a much faster way to handle large volumes of independent data</li>
 <li>The data used sometimes relies on result of previous operation, therefore such data cannot be handled in parallel</li>
 <li>Datasets require the same processing for it to work</li>
@@ -427,24 +429,24 @@
 </ul>
 <h3 id="Past-paper-Questions"><a href="#Past-paper-Questions" class="headerlink" title="Past-paper Questions"></a>Past-paper Questions</h3><p><u>Changes needed for codes in order to run on massively paralleled computer</u></p>
 <ul>
-<li><font color=#4a69bd>Split into blocks of code</font></li>
-<li><font color=#4a69bd>… that can be processed simultaneously</font></li>
-<li><font color=#4a69bd>… instead of sequentially</font></li>
-<li><font color=#4a69bd>Each block is processed by a different processor</font></li>
-<li><font color=#4a69bd>Which allows each of many processors to process the different blocks of code independently</font></li>
-<li><font color=#4a69bd>Requires both parallelism and coordination</font></li>
+<li><font color="#4a69bd">Split into blocks of code</font></li>
+<li><font color="#4a69bd">… that can be processed simultaneously</font></li>
+<li><font color="#4a69bd">… instead of sequentially</font></li>
+<li><font color="#4a69bd">Each block is processed by a different processor</font></li>
+<li><font color="#4a69bd">Which allows each of many processors to process the different blocks of code independently</font></li>
+<li><font color="#4a69bd">Requires both parallelism and coordination</font></li>
 </ul>
 <p><u>Explain one of the hardware issues that will be overcome if a massively parallel computer is to function correctly</u></p>
 <ul>
-<li><font color=#4a69bd>Communication between processors is the issue</font></li>
-<li><font color=#4a69bd>Each processor needs a link to other processors</font></li>
-<li><font color=#4a69bd>Many processors require many of these links</font></li>
-<li><font color=#4a69bd>Challenging topology</font></li>
+<li><font color="#4a69bd">Communication between processors is the issue</font></li>
+<li><font color="#4a69bd">Each processor needs a link to other processors</font></li>
+<li><font color="#4a69bd">Many processors require many of these links</font></li>
+<li><font color="#4a69bd">Challenging topology</font></li>
 </ul>
 <p><em>A computer has a single processor that contains four processing units.</em><br><u>Explain why this is not an example of a massively paralleled computer</u>:</p>
 <ul>
-<li><font color=#4a69bd>Only one separate processor</font></li>
-<li><font color=#4a69bd>Quad core computer system &#x2F;&#x2F; processing unit shares the same bus</font></li>
+<li><font color="#4a69bd">Only one separate processor</font></li>
+<li><font color="#4a69bd">Quad core computer system // processing unit shares the same bus</font></li>
 </ul>
 <p><u>Identify different types of parallelism</u></p>
 <ul>
@@ -454,25 +456,25 @@
 <li>Computer System</li>
 </ul>
 <h2 id="Virtual-machine"><a href="#Virtual-machine" class="headerlink" title="Virtual machine"></a>Virtual machine</h2><blockquote>
-<p><font color=#4a69bd>An emulation of an existing computer&#x2F;program&#x2F;operating system. A computer OS running with another computer’s OS.</font></p>
+<p><font color="#4a69bd">An emulation of an existing computer/program/operating system. A computer OS running with another computer’s OS.</font></p>
 <p>Using a software to implement a hardware setup</p>
 </blockquote>
 <h3 id="Host-OS"><a href="#Host-OS" class="headerlink" title="Host OS"></a>Host OS</h3><ul>
-<li><font color=#4a69bd>The operating system that is actually controlling the physical hardware</font></li>
-<li><font color=#4a69bd>The operating system for the physical hardware</font></li>
-<li><font color=#4a69bd>Guest OS is running under the host OS</font></li>
+<li><font color="#4a69bd">The operating system that is actually controlling the physical hardware</font></li>
+<li><font color="#4a69bd">The operating system for the physical hardware</font></li>
+<li><font color="#4a69bd">Guest OS is running under the host OS</font></li>
 </ul>
 <h3 id="Guest-OS"><a href="#Guest-OS" class="headerlink" title="Guest OS"></a>Guest OS</h3><ul>
-<li><font color=#4a69bd>An operating system running in the virtual machine</font></li>
-<li><font color=#4a69bd>Controls virtual hardware</font></li>
-<li><font color=#4a69bd>OS being emulated</font></li>
+<li><font color="#4a69bd">An operating system running in the virtual machine</font></li>
+<li><font color="#4a69bd">Controls virtual hardware</font></li>
+<li><font color="#4a69bd">OS being emulated</font></li>
 </ul>
 <h3 id="Hypervisor"><a href="#Hypervisor" class="headerlink" title="Hypervisor"></a>Hypervisor</h3><blockquote>
-<p><font color=#4a69bd>Virtual machine software that creates and runs virtual machine</font></p>
+<p><font color="#4a69bd">Virtual machine software that creates and runs virtual machine</font></p>
 </blockquote>
 <ul>
 <li>Software, not hardware</li>
-<li>Creates&#x2F;deletes&#x2F;manages virtual machine</li>
+<li>Creates/deletes/manages virtual machine</li>
 <li>Translates the instruction used by the guest operating system to that required by the host operating system</li>
 <li>Hardware emulation</li>
 <li>Protects each virtual machine<ul>
@@ -481,20 +483,20 @@
 </li>
 </ul>
 <h3 id="Benefits"><a href="#Benefits" class="headerlink" title="Benefits"></a>Benefits</h3><ul>
-<li><font color=#4a69bd>Multiple operating systems can exist simultaneously</font></li>
-<li><font color=#4a69bd>… allow for testing using the same hardware</font></li>
-<li><font color=#4a69bd>Only one set of hardware required</font></li>
-<li><font color=#4a69bd>… reduces cost of producing the app</font></li>
-<li><font color=#4a69bd>No need to set up more than one computer</font></li>
+<li><font color="#4a69bd">Multiple operating systems can exist simultaneously</font></li>
+<li><font color="#4a69bd">… allow for testing using the same hardware</font></li>
+<li><font color="#4a69bd">Only one set of hardware required</font></li>
+<li><font color="#4a69bd">… reduces cost of producing the app</font></li>
+<li><font color="#4a69bd">No need to set up more than one computer</font></li>
 <li><code>--</code></li>
-<li><font color=#4a69bd>Software can be tried on different OS using the same hardware</font></li>
-<li><font color=#4a69bd>No need to purchase all sorts of different software</font></li>
-<li><font color=#4a69bd>Easier to recover if the system issue causes the system to crash</font></li>
-<li><font color=#4a69bd>VM provides protection to other software</font></li>
+<li><font color="#4a69bd">Software can be tried on different OS using the same hardware</font></li>
+<li><font color="#4a69bd">No need to purchase all sorts of different software</font></li>
+<li><font color="#4a69bd">Easier to recover if the system issue causes the system to crash</font></li>
+<li><font color="#4a69bd">VM provides protection to other software</font></li>
 <li><code>--</code></li>
-<li><font color=#4a69bd>No need to acquire client hardware for testing</font></li>
-<li><font color=#4a69bd>Reduce set-up time for test system</font></li>
-<li><font color=#4a69bd>Common development system for all developers</font></li>
+<li><font color="#4a69bd">No need to acquire client hardware for testing</font></li>
+<li><font color="#4a69bd">Reduce set-up time for test system</font></li>
+<li><font color="#4a69bd">Common development system for all developers</font></li>
 <li><code>--</code></li>
 <li>They allow modern systems to use programs that run on obsolete or unsupported platform<a target="_blank" rel="noopener" href="https://img1.wsimg.com/blobby/go/9a8687c5-eecd-45f3-821d-7cdfe880b594/downloads/15.1%20Virtual%20Machine%20(MT-L).pdf">^1</a></li>
 <li>They allow platform independent program to run on multiple platforms</li>
@@ -502,43 +504,43 @@
 <li>They can be easily backed up, copied, and reinstalled.</li>
 </ul>
 <h3 id="Limitations"><a href="#Limitations" class="headerlink" title="Limitations"></a>Limitations</h3><ul>
-<li><font color=#4a69bd>Time and effort required for implementation</font></li>
-<li><font color=#4a69bd>Implementation would not offer the same level of performance that would be obtained in a normal system</font></li>
-<li><font color=#4a69bd>Expensive, complex to manage and maintain</font></li>
-<li><font color=#4a69bd>Execution of extra code, processing time increased</font><ul>
-<li><font color=#4a69bd>So cannot accurately test speed for real performance</font></li>
-<li><font color=#4a69bd>Performance is degraded</font></li>
+<li><font color="#4a69bd">Time and effort required for implementation</font></li>
+<li><font color="#4a69bd">Implementation would not offer the same level of performance that would be obtained in a normal system</font></li>
+<li><font color="#4a69bd">Expensive, complex to manage and maintain</font></li>
+<li><font color="#4a69bd">Execution of extra code, processing time increased</font><ul>
+<li><font color="#4a69bd">So cannot accurately test speed for real performance</font></li>
+<li><font color="#4a69bd">Performance is degraded</font></li>
 </ul>
 </li>
-<li><font color=#4a69bd>May not be able to emulate some hardware</font><ul>
-<li><font color=#4a69bd>So that the hardware cannot be tested using virtual machine</font></li>
+<li><font color="#4a69bd">May not be able to emulate some hardware</font><ul>
+<li><font color="#4a69bd">So that the hardware cannot be tested using virtual machine</font></li>
 </ul>
 </li>
 <li><code>--</code></li>
-<li><font color=#4a69bd>Virtual machine may not be able to emulate some hardware</font></li>
-<li><font color=#4a69bd>Virtual machine cannot directly access some hardware</font></li>
-<li><font color=#4a69bd>Using virtual machine means execution of extra code &#x2F;&#x2F; processing time increased</font></li>
-<li><font color=#4a69bd>A virtual machine might not be as efficient &#x2F;&#x2F; performance degraded</font></li>
-<li><font color=#4a69bd>Using a virtual machine increases the maintenance overheads </font></li>
+<li><font color="#4a69bd">Virtual machine may not be able to emulate some hardware</font></li>
+<li><font color="#4a69bd">Virtual machine cannot directly access some hardware</font></li>
+<li><font color="#4a69bd">Using virtual machine means execution of extra code // processing time increased</font></li>
+<li><font color="#4a69bd">A virtual machine might not be as efficient // performance degraded</font></li>
+<li><font color="#4a69bd">Using a virtual machine increases the maintenance overheads </font></li>
 </ul>
 <h3 id="Role-of-virtual-machine-software"><a href="#Role-of-virtual-machine-software" class="headerlink" title="Role of virtual machine software"></a>Role of virtual machine software</h3><ol>
-<li><font color=#4a69bd>Create&#x2F;delete virtual machines</font></li>
-<li><font color=#4a69bd>translate instruction used by the guest operating system to that required by the host operating system</font></li>
-<li><font color=#4a69bd>Existing hardware made available to guest OS &#x2F;&#x2F;  hardware emulation</font></li>
-<li><font color=#4a69bd>Ensure each virtual machine is protected from actions from other virtual machines </font></li>
+<li><font color="#4a69bd">Create/delete virtual machines</font></li>
+<li><font color="#4a69bd">translate instruction used by the guest operating system to that required by the host operating system</font></li>
+<li><font color="#4a69bd">Existing hardware made available to guest OS //  hardware emulation</font></li>
+<li><font color="#4a69bd">Ensure each virtual machine is protected from actions from other virtual machines </font></li>
 </ol>
 <p><img src="/./Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/virtualMachine.jpg"></p>
-<h3 id="Past-paper-questions-2"><a href="#Past-paper-questions-2" class="headerlink" title="Past-paper questions"></a>Past-paper questions</h3><p>A virtual machine is a <font color=#4a69bd><u>software&#x2F;program</u></font> that emulate a <font color=#4a69bd><u>physical&#x2F;different</u></font> computer system; A virtual machine allow multiple <font color=#4a69bd><u>guest</u></font> operating system to run on one computer using <font color=#4a69bd><u>host</u></font> operating system</p>
+<h3 id="Past-paper-questions-2"><a href="#Past-paper-questions-2" class="headerlink" title="Past-paper questions"></a>Past-paper questions</h3><p>A virtual machine is a <font color="#4a69bd"><u>software/program</u></font> that emulate a <font color="#4a69bd"><u>physical/different</u></font> computer system; A virtual machine allow multiple <font color="#4a69bd"><u>guest</u></font> operating system to run on one computer using <font color="#4a69bd"><u>host</u></font> operating system</p>
 <p><u>Describe what happens after the guest operating system has received the data request from the application</u>:</p>
 <ul>
-<li><font color=#4a69bd>Guest OS handles the request as if it were running on its own physical machine</font></li>
-<li><font color=#4a69bd>Guest OS handles the request as usual </font></li>
-<li><font color=#4a69bd>I&#x2F;O requests are translated by the virtual machine software</font></li>
-<li><font color=#4a69bd>Into instruction executable by the host OS</font></li>
-<li><font color=#4a69bd>Host OS retrieves the data from the file</font></li>
-<li><font color=#4a69bd>Host OS passes the data into virtual machine software</font></li>
-<li><font color=#4a69bd>The virtual machine passes the data to the guest OS</font></li>
-<li><font color=#4a69bd>Guest OS passes the data to the application </font></li>
+<li><font color="#4a69bd">Guest OS handles the request as if it were running on its own physical machine</font></li>
+<li><font color="#4a69bd">Guest OS handles the request as usual </font></li>
+<li><font color="#4a69bd">I/O requests are translated by the virtual machine software</font></li>
+<li><font color="#4a69bd">Into instruction executable by the host OS</font></li>
+<li><font color="#4a69bd">Host OS retrieves the data from the file</font></li>
+<li><font color="#4a69bd">Host OS passes the data into virtual machine software</font></li>
+<li><font color="#4a69bd">The virtual machine passes the data to the guest OS</font></li>
+<li><font color="#4a69bd">Guest OS passes the data to the application </font></li>
 </ul>
 
     </div>

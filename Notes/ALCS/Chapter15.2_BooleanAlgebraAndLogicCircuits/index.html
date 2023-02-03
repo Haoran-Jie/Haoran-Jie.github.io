@@ -50,6 +50,8 @@
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -137,7 +139,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Adders-heavy-plus-sign"><span class="nav-number">1.</span> <span class="nav-text">Adders:heavy_plus_sign:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Half-adder"><span class="nav-number">1.1.</span> <span class="nav-text">Half adder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Full-adder"><span class="nav-number">1.2.</span> <span class="nav-text">Full adder</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Flip-flop"><span class="nav-number">2.</span> <span class="nav-text">Flip-flop</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SR-Flip-flop"><span class="nav-number">2.1.</span> <span class="nav-text">SR Flip-flop</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#NOR-gates-implementation"><span class="nav-number">2.1.1.</span> <span class="nav-text">NOR gates implementation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NAND-gate-implementation"><span class="nav-number">2.1.2.</span> <span class="nav-text">NAND gate implementation</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JK-Flip-flop"><span class="nav-number">2.2.</span> <span class="nav-text">JK Flip-flop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions"><span class="nav-number">2.3.</span> <span class="nav-text">Past-paper questions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Boolean-Algebra"><span class="nav-number">3.</span> <span class="nav-text">Boolean Algebra</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#K-map"><span class="nav-number">4.</span> <span class="nav-text">K-map</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Grey-code"><span class="nav-number">4.1.</span> <span class="nav-text">Grey code</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Adders-heavy-plus-sign"><span class="nav-number">1.</span> <span class="nav-text">Adders➕</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Half-adder"><span class="nav-number">1.1.</span> <span class="nav-text">Half adder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Full-adder"><span class="nav-number">1.2.</span> <span class="nav-text">Full adder</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Flip-flop"><span class="nav-number">2.</span> <span class="nav-text">Flip-flop</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SR-Flip-flop"><span class="nav-number">2.1.</span> <span class="nav-text">SR Flip-flop</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#NOR-gates-implementation"><span class="nav-number">2.1.1.</span> <span class="nav-text">NOR gates implementation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NAND-gate-implementation"><span class="nav-number">2.1.2.</span> <span class="nav-text">NAND gate implementation</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JK-Flip-flop"><span class="nav-number">2.2.</span> <span class="nav-text">JK Flip-flop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-paper-questions"><span class="nav-number">2.3.</span> <span class="nav-text">Past-paper questions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Boolean-Algebra"><span class="nav-number">3.</span> <span class="nav-text">Boolean Algebra</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#K-map"><span class="nav-number">4.</span> <span class="nav-text">K-map</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Grey-code"><span class="nav-number">4.1.</span> <span class="nav-text">Grey code</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -298,7 +300,7 @@
 <hr>
 <span id="more"></span>
 
-<h2 id="Adders-heavy-plus-sign"><a href="#Adders-heavy-plus-sign" class="headerlink" title="Adders:heavy_plus_sign:"></a>Adders:heavy_plus_sign:</h2><h3 id="Half-adder"><a href="#Half-adder" class="headerlink" title="Half adder"></a>Half adder</h3><blockquote>
+<h2 id="Adders-heavy-plus-sign"><a href="#Adders-heavy-plus-sign" class="headerlink" title="Adders:heavy_plus_sign:"></a>Adders<span class="github-emoji"><span>➕</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2795.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></h2><h3 id="Half-adder"><a href="#Half-adder" class="headerlink" title="Half adder"></a>Half adder</h3><blockquote>
 <p>Carries out binary addition on 2 bits generating two outputs</p>
 </blockquote>
 <ul>
@@ -432,76 +434,76 @@
 <p>The SR flip-flop or <code>latch</code> is a simple example of a sequential circuit. It can be constructed with two NAND gates or two NOR gates.</p>
 </blockquote>
 <p>The properties of SR flip-flop explained why it can be used as a storage device for 1 bit and therefore could be used as a component in RAM because a value is stored but can be altered. </p>
-<p>The alternative NAND gate circuit for the SR flip-flop has a similar structure but the labelling is different. The important difference is that setting is achieved when S&#x3D;0 &amp; R&#x3D;1 and resetting with R&#x3D;0 and S&#x3D;1. </p>
-<h4 id="NOR-gates-implementation"><a href="#NOR-gates-implementation" class="headerlink" title="NOR gates implementation"></a>NOR gates implementation</h4><img src="./Chapter15.2_BooleanAlgebraAndLogicCircuits/SRflipflop.jpg" style="zoom: 25%;" />
+<p>The alternative NAND gate circuit for the SR flip-flop has a similar structure but the labelling is different. The important difference is that setting is achieved when S=0 &amp; R=1 and resetting with R=0 and S=1. </p>
+<h4 id="NOR-gates-implementation"><a href="#NOR-gates-implementation" class="headerlink" title="NOR gates implementation"></a>NOR gates implementation</h4><img src="./Chapter15.2_BooleanAlgebraAndLogicCircuits/SRflipflop.jpg" style="zoom: 25%;">
 
-<img src="./Chapter15.2_BooleanAlgebraAndLogicCircuits/truthTableSR.jpg" style="zoom: 25%;" />
+<img src="./Chapter15.2_BooleanAlgebraAndLogicCircuits/truthTableSR.jpg" style="zoom: 25%;">
 
-<img src="./Chapter15.2_BooleanAlgebraAndLogicCircuits/truthTableSR2.jpg" style="zoom: 50%;" />
+<img src="./Chapter15.2_BooleanAlgebraAndLogicCircuits/truthTableSR2.jpg" style="zoom: 50%;">
 
 <hr>
-<h4 id="NAND-gate-implementation"><a href="#NAND-gate-implementation" class="headerlink" title="NAND gate implementation"></a>NAND gate implementation</h4><img src="./Chapter15.2_BooleanAlgebraAndLogicCircuits/SRnand.png" style="zoom: 67%;" />
+<h4 id="NAND-gate-implementation"><a href="#NAND-gate-implementation" class="headerlink" title="NAND gate implementation"></a>NAND gate implementation</h4><img src="./Chapter15.2_BooleanAlgebraAndLogicCircuits/SRnand.png" style="zoom: 67%;">
 
-<img src="./Chapter15.2_BooleanAlgebraAndLogicCircuits/SRnandtruth.png" style="zoom:50%;" />
+<img src="./Chapter15.2_BooleanAlgebraAndLogicCircuits/SRnandtruth.png" style="zoom:50%;">
 
 <p><u>Why is the final row a problem?</u></p>
 <ul>
-<li><font color=#4a69bd>Q and not Q have the same value</font></li>
-<li><font color=#4a69bd>Q and not Q should be the complement to each other</font></li>
-<li><font color=#4a69bd>Flip-flop becomes unstable</font></li>
+<li><font color="#4a69bd">Q and not Q have the same value</font></li>
+<li><font color="#4a69bd">Q and not Q should be the complement to each other</font></li>
+<li><font color="#4a69bd">Flip-flop becomes unstable</font></li>
 </ul>
 <hr>
 <h3 id="JK-Flip-flop"><a href="#JK-Flip-flop" class="headerlink" title="JK Flip-flop"></a>JK Flip-flop</h3><blockquote>
 <p>In addition to the possibility of entering an invalid state there is also the potential for a circuit to arrive in an uncertain state if inputs do not arrive quite at the same time. In order to prevent this, a circuit may include a clock pulse input to give a better chance of synchronising inputs. The JK flip-flop is an example.</p>
 </blockquote>
-<img src="./Chapter15.2_BooleanAlgebraAndLogicCircuits/JKflipflop.jpg" style="zoom: 30%;" />
+<img src="./Chapter15.2_BooleanAlgebraAndLogicCircuits/JKflipflop.jpg" style="zoom: 30%;">
 
 
 
-<img src="./Chapter15.2_BooleanAlgebraAndLogicCircuits/JKflipfloptruthtable.jpg" style="zoom: 40%;"/>
+<img src="./Chapter15.2_BooleanAlgebraAndLogicCircuits/JKflipfloptruthtable.jpg" style="zoom: 40%;">
 
 <hr>
 <h3 id="Past-paper-questions"><a href="#Past-paper-questions" class="headerlink" title="Past-paper questions"></a>Past-paper questions</h3><p><u>Why JK flip-flop is an improvement to the SR flip-flop</u></p>
 <ul>
-<li><font color=#4a69bd>The SR flip-flop has an invalid combination of SR which allows Q and not Q to have the same value</font></li>
-<li><font color=#4a69bd>The JK flip-flop does not allow Q and not Q to have the same value</font></li>
+<li><font color="#4a69bd">The SR flip-flop has an invalid combination of SR which allows Q and not Q to have the same value</font></li>
+<li><font color="#4a69bd">The JK flip-flop does not allow Q and not Q to have the same value</font></li>
 </ul>
 <p><u>Advantages of JK flip-flop</u></p>
 <ul>
-<li><font color=#4a69bd>All four possibilities are valid</font></li>
-<li><font color=#4a69bd>The 1-1 combination changes to output to logical complement</font></li>
-<li><font color=#4a69bd>Unstable state avoided</font></li>
-<li><font color=#4a69bd>Invalid state cannot occur</font></li>
+<li><font color="#4a69bd">All four possibilities are valid</font></li>
+<li><font color="#4a69bd">The 1-1 combination changes to output to logical complement</font></li>
+<li><font color="#4a69bd">Unstable state avoided</font></li>
+<li><font color="#4a69bd">Invalid state cannot occur</font></li>
 </ul>
 <p><u>Explain the role of flip-flop in a computer</u></p>
 <ul>
-<li><font color=#4a69bd>A flip flop can be stored either a 1 or 0</font></li>
-<li><font color=#4a69bd>Computers use bits to store data</font></li>
-<li><font color=#4a69bd>Flip flop can therefore be used to store bits</font></li>
-<li><font color=#4a69bd>Memory can be created from flip-flop</font></li>
+<li><font color="#4a69bd">A flip flop can be stored either a 1 or 0</font></li>
+<li><font color="#4a69bd">Computers use bits to store data</font></li>
+<li><font color="#4a69bd">Flip flop can therefore be used to store bits</font></li>
+<li><font color="#4a69bd">Memory can be created from flip-flop</font></li>
 </ul>
 <p><u>Describe the role of flip-flop in a computer</u>:</p>
 <ul>
-<li><font color=#4a69bd>Circuit &#x2F; electrical components(construction)</font></li>
-<li><font color=#4a69bd>With two states</font></li>
-<li><font color=#4a69bd>Used for data storage elements &#x2F;&#x2F; memory</font></li>
-<li><font color=#4a69bd>… to store 1 bit of data</font></li>
+<li><font color="#4a69bd">Circuit / electrical components(construction)</font></li>
+<li><font color="#4a69bd">With two states</font></li>
+<li><font color="#4a69bd">Used for data storage elements // memory</font></li>
+<li><font color="#4a69bd">… to store 1 bit of data</font></li>
 </ul>
 <p><u>Difference between SR flip-flop and JK flip-flop</u></p>
 <ul>
-<li><font color=#4a69bd>SR flip-flop has a undefined&#x2F;invalid&#x2F;intermediate state &#x2F;&#x2F; JK flip-flop is stable</font><ul>
-<li><font color=#4a69bd>for a SR flip-flop constructed using two NOR gates, when S&#x3D;1 and R&#x3D;1. The Q and not Q will be both 0. This is invalid since Q and not Q should be the logical complement to each other.</font></li>
+<li><font color="#4a69bd">SR flip-flop has a undefined/invalid/intermediate state // JK flip-flop is stable</font><ul>
+<li><font color="#4a69bd">for a SR flip-flop constructed using two NOR gates, when S=1 and R=1. The Q and not Q will be both 0. This is invalid since Q and not Q should be the logical complement to each other.</font></li>
 </ul>
 </li>
-<li><font color=#4a69bd>JK flip-flop has a clock pulse to synchronize input</font></li>
+<li><font color="#4a69bd">JK flip-flop has a clock pulse to synchronize input</font></li>
 </ul>
 <p><img src="/./Chapter15.2_BooleanAlgebraAndLogicCircuits/fillblank.png"></p>
 <hr>
-<h2 id="Boolean-Algebra"><a href="#Boolean-Algebra" class="headerlink" title="Boolean Algebra"></a>Boolean Algebra</h2><img src="./Chapter15.2_BooleanAlgebraAndLogicCircuits/booleanAlgebra.jpg" style="zoom:70%;" />
+<h2 id="Boolean-Algebra"><a href="#Boolean-Algebra" class="headerlink" title="Boolean Algebra"></a>Boolean Algebra</h2><img src="./Chapter15.2_BooleanAlgebraAndLogicCircuits/booleanAlgebra.jpg" style="zoom:70%;">
 
-<h2 id="K-map"><a href="#K-map" class="headerlink" title="K-map"></a>K-map</h2><h3 id="Grey-code"><a href="#Grey-code" class="headerlink" title="Grey code"></a>Grey code</h3><img src="./Chapter15.2_BooleanAlgebraAndLogicCircuits/greycode.png" style="zoom:150%;" />
+<h2 id="K-map"><a href="#K-map" class="headerlink" title="K-map"></a>K-map</h2><h3 id="Grey-code"><a href="#Grey-code" class="headerlink" title="Grey code"></a>Grey code</h3><img src="./Chapter15.2_BooleanAlgebraAndLogicCircuits/greycode.png" style="zoom:150%;">
 
-<p>:link:<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Gray_code">https://en.wikipedia.org/wiki/Gray_code</a></p>
+<p><span class="github-emoji"><span>🔗</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f517.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Gray_code">https://en.wikipedia.org/wiki/Gray_code</a></p>
 
     </div>
 
