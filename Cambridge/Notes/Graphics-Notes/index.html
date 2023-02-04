@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#2c3e50" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#2c3e50">
+  <meta name="google-site-verification" content="ONgpvg7NlakSEl6IcZ4-nCCQleKums7GuOYvOS4zXCQ">
+  <meta name="msvalidate.01" content="5331505606E7903BD6FA7D5C7D0FE6DB">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"haoran-jie.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":30,"offset":15},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#546de5","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":true,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+
+
+<link rel="canonical" href="https://haoran-jie.github.io/Cambridge/Notes/Graphics-Notes/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://haoran-jie.github.io/Cambridge/Notes/Graphics-Notes/","path":"Cambridge/Notes/Graphics-Notes/","title":"Graphics_Notes"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Graphics_Notes | Samuel's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V501S4L4ZZ"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-V501S4L4ZZ","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+  <script async src="//assets.growingio.com/2.1/gio.js"></script>
+  <script class="next-config" data-name="growingio_analytics" type="application/json">"b544ba838d823365"</script>
+  <script src="/js/third-party/analytics/growingio.js"></script>
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Samuel's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Snippets of life of a programmer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">17</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">14</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">31</span></a></li><li class="menu-item menu-item-notes"><a href="/Notes/" rel="section"><i class="fa fa-book fa-fw"></i>Notes</a></li><li class="menu-item menu-item--what&why系列文章"><a href="/WhatandwhY/" rel="section"><i class="fa-solid fa-clipboard-question fa-fw"></i> What&whY系列文章</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Rendering"><span class="nav-number">1.</span> <span class="nav-text">Rendering</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Shading"><span class="nav-number">1.1.</span> <span class="nav-text">Shading</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Ambient-illumination"><span class="nav-number">1.1.1.</span> <span class="nav-text">Ambient illumination</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Diffuse-shading"><span class="nav-number">1.1.2.</span> <span class="nav-text">Diffuse shading</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Imperfect-specular-reflection"><span class="nav-number">1.1.3.</span> <span class="nav-text">Imperfect specular reflection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Simulation"><span class="nav-number">1.1.4.</span> <span class="nav-text">Simulation</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Anti-aliasing"><span class="nav-number">1.2.</span> <span class="nav-text">Anti-aliasing</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Aliasing"><span class="nav-number">1.2.1.</span> <span class="nav-text">Aliasing</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Spatial-aliasing"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">Spatial aliasing</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Temporal-aliasing"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">Temporal aliasing</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sampling"><span class="nav-number">1.2.2.</span> <span class="nav-text">Sampling</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Super-sampling"><span class="nav-number">1.2.3.</span> <span class="nav-text">Super-sampling</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Regular-grid"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">Regular grid</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Random"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">Random</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Jittered"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">Jittered</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Poisson-disc"><span class="nav-number">1.2.3.4.</span> <span class="nav-text">Poisson disc</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Adaptive-super-sampling"><span class="nav-number">1.2.4.</span> <span class="nav-text">Adaptive super-sampling</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Distributed-ray-tracing"><span class="nav-number">1.3.</span> <span class="nav-text">Distributed ray tracing</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Distribute-the-rays-going-to-a-light-source-over-some-area"><span class="nav-number">1.3.1.</span> <span class="nav-text">Distribute the rays going to a light source over some area</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Distribute-the-camera-position-over-some-area"><span class="nav-number">1.3.2.</span> <span class="nav-text">Distribute the camera position over some area</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Distribute-the-samples-in-time"><span class="nav-number">1.3.3.</span> <span class="nav-text">Distribute the samples in time</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Graphics-pipelining"><span class="nav-number">2.</span> <span class="nav-text">Graphics pipelining</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Transformations"><span class="nav-number">2.1.</span> <span class="nav-text">Transformations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2D-coordinates"><span class="nav-number">2.1.1.</span> <span class="nav-text">2D coordinates</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Homogeneous-2D-coordinates"><span class="nav-number">2.1.2.</span> <span class="nav-text">Homogeneous 2D coordinates</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Translation-by-matrix-algebra"><span class="nav-number">2.1.3.</span> <span class="nav-text">Translation by matrix algebra</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3D"><span class="nav-number">2.1.4.</span> <span class="nav-text">3D</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Projection-Matrix-Operation"><span class="nav-number">2.1.5.</span> <span class="nav-text">Projection - Matrix Operation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Order"><span class="nav-number">2.1.6.</span> <span class="nav-text">Order</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rasterization"><span class="nav-number">3.</span> <span class="nav-text">Rasterization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Homogenous-barycentric-coordinates"><span class="nav-number">3.1.</span> <span class="nav-text">Homogenous barycentric coordinates</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Triangle-rasterization"><span class="nav-number">3.2.</span> <span class="nav-text">Triangle rasterization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Z-Buffer-Algorithm"><span class="nav-number">3.3.</span> <span class="nav-text">Z-Buffer Algorithm</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Graphics-Hardware-and-modern-OpenGL"><span class="nav-number">4.</span> <span class="nav-text">Graphics Hardware and modern OpenGL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#OpenGL-Rendering-Pipeline"><span class="nav-number">4.1.</span> <span class="nav-text">OpenGL Rendering Pipeline</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Vertex-shader"><span class="nav-number">4.1.1.</span> <span class="nav-text">Vertex shader</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tessellation-control-shader-evaluation-shader"><span class="nav-number">4.1.2.</span> <span class="nav-text">Tessellation control shader + evaluation shader</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Geometry-shader"><span class="nav-number">4.1.3.</span> <span class="nav-text">Geometry shader</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Primitive-assembly"><span class="nav-number">4.1.4.</span> <span class="nav-text">Primitive assembly</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Clipping"><span class="nav-number">4.1.5.</span> <span class="nav-text">Clipping</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rasterization-1"><span class="nav-number">4.1.6.</span> <span class="nav-text">Rasterization</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fragment-shader"><span class="nav-number">4.1.7.</span> <span class="nav-text">Fragment shader</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shaders"><span class="nav-number">4.2.</span> <span class="nav-text">Shaders</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OpenGL-Application-flow"><span class="nav-number">4.3.</span> <span class="nav-text">OpenGL Application flow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Textures"><span class="nav-number">4.4.</span> <span class="nav-text">Textures</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Up-Sampling"><span class="nav-number">4.4.1.</span> <span class="nav-text">Up Sampling</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Nearest-neighbour"><span class="nav-number">4.4.1.1.</span> <span class="nav-text">Nearest-neighbour</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-linear-interpolation"><span class="nav-number">4.4.1.2.</span> <span class="nav-text">Bi-linear interpolation</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Down-Sampling"><span class="nav-number">4.4.2.</span> <span class="nav-text">Down Sampling</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Bump-normal-mapping"><span class="nav-number">4.4.3.</span> <span class="nav-text">Bump (normal) mapping</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Displacement-mapping"><span class="nav-number">4.4.4.</span> <span class="nav-text">Displacement mapping</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Environment-mapping"><span class="nav-number">4.4.5.</span> <span class="nav-text">Environment mapping</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Environment-cube"><span class="nav-number">4.4.5.1.</span> <span class="nav-text">Environment cube</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Raster-buffers-colour-depth-stencil"><span class="nav-number">4.5.</span> <span class="nav-text">Raster buffers (colour, depth, stencil)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Stencil-Buffers"><span class="nav-number">4.5.1.</span> <span class="nav-text">Stencil Buffers</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Double-buffering"><span class="nav-number">4.5.2.</span> <span class="nav-text">Double buffering</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Triple-buffering"><span class="nav-number">4.5.3.</span> <span class="nav-text">Triple buffering</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vertical-Synchronization-V-Sync"><span class="nav-number">4.6.</span> <span class="nav-text">Vertical Synchronization: V-Sync</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Solution-V-Sync"><span class="nav-number">4.6.1.</span> <span class="nav-text">Solution: V-Sync</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FreeSync-AMD-amp-G-Sync-Nvidia"><span class="nav-number">4.7.</span> <span class="nav-text">FreeSync (AMD) &amp; G-Sync (Nvidia)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Adaptive-Sync"><span class="nav-number">4.7.1.</span> <span class="nav-text">Adaptive Sync</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Human-vision-colour-and-tone-mapping"><span class="nav-number">5.</span> <span class="nav-text">Human vision, colour, and tone mapping</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Structure-of-Human-Eye"><span class="nav-number">5.1.</span> <span class="nav-text">Structure of Human Eye</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Colour"><span class="nav-number">5.2.</span> <span class="nav-text">Colour</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#You-are-given-spectra-of-two-colours-c1-%CE%BB-c2-%CE%BB-and-cone-response-functions-l-%CE%BB-m-%CE%BB-s-%CE%BB-How-would-you-test-whether-the-colours-c1-and-c2-are-metamers-Write-down-the-equations-for-such-a-test"><span class="nav-number">5.2.0.1.</span> <span class="nav-text">You are given spectra of two colours: c1(λ), c2(λ) and cone response functions l(λ), m(λ), s(λ). How would you test whether the colours c1 and c2 are metamers? Write down the equations for such a test</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tristimulus-Colour-Representation"><span class="nav-number">5.3.</span> <span class="nav-text">Tristimulus Colour Representation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Observation"><span class="nav-number">5.3.1.</span> <span class="nav-text">Observation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Standard-Colour-Space-CIE-XYZ"><span class="nav-number">5.3.2.</span> <span class="nav-text">Standard Colour Space CIE XYZ</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CIE-chromaticity-diagram"><span class="nav-number">5.3.3.</span> <span class="nav-text">CIE chromaticity diagram</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Achromatic-x2F-chromatic-vision-mechanism"><span class="nav-number">5.4.</span> <span class="nav-text">Achromatic&#x2F;chromatic vision mechanism</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Visible-x2F-displayable-colour"><span class="nav-number">5.5.</span> <span class="nav-text">Visible&#x2F;displayable colour</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#From-rendering-to-display"><span class="nav-number">5.6.</span> <span class="nav-text">From rendering to display</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Representing-colour"><span class="nav-number">5.7.</span> <span class="nav-text">Representing colour</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tone-Mapping-amp-Display-Encoding"><span class="nav-number">5.8.</span> <span class="nav-text">Tone Mapping &amp; Display Encoding</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Explain-how-simulating-glare-that-happens-in-the-eyes-or-in-a-camera-can-enhance-the-appearance-of-rendered-scenes"><span class="nav-number">5.8.0.1.</span> <span class="nav-text">Explain how simulating glare that happens in the eyes or in a camera can enhance the appearance of rendered scenes.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Why-is-glare-typically-simulated-only-for-the-values-that-exceed-the-maximum-displayable-value"><span class="nav-number">5.8.0.2.</span> <span class="nav-text">Why is glare typically simulated only for the values that exceed the maximum displayable value?</span></a></li></ol></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Haoran Jie"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Haoran Jie</p>
+  <div class="site-description" itemprop="description">18</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Haoran-Jie" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Haoran-Jie" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:samueljie1@gmail.com" title="E-Mail → mailto:samueljie1@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/samueljieee/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;samueljieee&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://haoran-jie.github.io/Cambridge/Notes/Graphics-Notes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Haoran Jie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Samuel's Blog">
+      <meta itemprop="description" content="18">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Graphics_Notes | Samuel's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Graphics_Notes
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-02-04 01:42:29 / Modified: 02:24:22" itemprop="dateCreated datePublished" datetime="2023-02-04T01:42:29+00:00">2023-02-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Cambridge/" itemprop="url" rel="index"><span itemprop="name">Cambridge</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Cambridge/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/Cambridge/Notes/Graphics-Notes/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Cambridge/Notes/Graphics-Notes/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="Rendering"><a href="#Rendering" class="headerlink" title="Rendering"></a>Rendering</h2><h3 id="Shading"><a href="#Shading" class="headerlink" title="Shading"></a>Shading</h3><p>$$<br>I = I_ak_a + \sum_i I_ik_d(L_i \cdot N) + \sum_iI_ik_s(R_i\cdot V)^n<br>$$</p>
+<h4 id="Ambient-illumination"><a href="#Ambient-illumination" class="headerlink" title="Ambient illumination"></a>Ambient illumination</h4><p>In computer graphics, ambient illumination is a lighting model that simulates the way light is reflected off of objects and fills a scene. It is called “ambient” because it is meant to represent the indirect light in a scene that comes from all directions, rather than from a specific light source.</p>
+<p>In other words, ambient illumination is the base level of lighting in a scene that fills in the shadows and gives objects a sense of overall brightness. It is typically implemented as a low-intensity, uniform light that is applied to all objects in a scene.</p>
+<p><font color="CornflowerBlue">The ambient terms models indirect illumination; the light coming from other surfaces rather than directly from the light sources. The parameter $k_a$ controls what portion of ambient light the surface reflects and the $I_a$ in the global intensity of the ambient light</font></p>
+<h4 id="Diffuse-shading"><a href="#Diffuse-shading" class="headerlink" title="Diffuse shading"></a>Diffuse shading</h4><p>In computer graphics, diffuse shading is a technique used to simulate the way light is scattered and absorbed by an object’s surface. It is based on the idea that light is absorbed and scattered in all directions by a rough surface, such as a matte paint finish.</p>
+<p>Diffuse shading is typically implemented using the Phong lighting model, which calculates the intensity of the diffuse reflection for each pixel on an object’s surface based on the angle between the surface normal (a vector perpendicular to the surface) and the light source.</p>
+<p><font color="CornflowerBlue">The diffuse term models Lambertian reflection where the incoming light in reflected uniformly in all directions. The paramter $k_d$&nbsp;controls the amount of light that is reflected in a diffuse manner. Scalar $I_i$&nbsp;describes the intensity of the incoming light</font></p>
+<h4 id="Imperfect-specular-reflection"><a href="#Imperfect-specular-reflection" class="headerlink" title="Imperfect specular reflection"></a>Imperfect specular reflection</h4><p>In computer graphics, imperfect specular reflection is a technique used to simulate the way light is reflected off of an object’s surface in a more realistic manner. It is based on the idea that the reflection of light off of an object’s surface is not always perfect and that there are often small imperfections or irregularities that can affect the reflection.</p>
+<p><font color="CornflowerBlue">The specular term models imperfect mirror-like reflection, in which the reflected light is distributed around the direction of reflection $R_i$. The paramter $K_s$&nbsp;controls the amount of light that is reflected in a specular manner. The paramter $n$&nbsp;models the shape of that distribution; high $n$&nbsp;will result in tighter distribution and the behaviour that is closer to a perfect mirror light reflection. Scalar $I_i$&nbsp;describes the intensity of the incoming light</font></p>
+<span id="more"></span>
+
+<img src="https://s2.loli.net/2023/02/04/SXTmqjWy6PI4BKh.png" alt="image-20230111224836005" style="zoom:50%;">
+
+<h4 id="Simulation"><a href="#Simulation" class="headerlink" title="Simulation"></a>Simulation</h4><img src="https://s2.loli.net/2023/02/04/aXR8DC7mZwcNYA5.png" alt="image-20230111225224352" style="zoom:50%;">
+
+<h3 id="Anti-aliasing"><a href="#Anti-aliasing" class="headerlink" title="Anti-aliasing"></a>Anti-aliasing</h3><h4 id="Aliasing"><a href="#Aliasing" class="headerlink" title="Aliasing"></a>Aliasing</h4><blockquote>
+<p>Aliasing encompasses any effects attributable to discrete sampling</p>
+</blockquote>
+<h5 id="Spatial-aliasing"><a href="#Spatial-aliasing" class="headerlink" title="Spatial aliasing"></a>Spatial aliasing</h5><ul>
+<li>Jagged edge</li>
+<li>Missing small objects</li>
+<li>Broken thin objects</li>
+</ul>
+<h5 id="Temporal-aliasing"><a href="#Temporal-aliasing" class="headerlink" title="Temporal aliasing"></a>Temporal aliasing</h5><ul>
+<li>Counter-rotating discs</li>
+<li>Multiple images (when 25Hz updates are projected at 75 Hz)</li>
+</ul>
+<h4 id="Sampling"><a href="#Sampling" class="headerlink" title="Sampling"></a>Sampling</h4><p><strong>Assumed that each ray passes through the centre of a pixel</strong></p>
+<p>Leads to:</p>
+<ul>
+<li>stair step (jagged) edges to objects</li>
+<li>small objects being missed completely</li>
+<li>thin objects being missed completely or split into small pieces</li>
+</ul>
+<h4 id="Super-sampling"><a href="#Super-sampling" class="headerlink" title="Super-sampling"></a>Super-sampling</h4><blockquote>
+<p>Shoot multiple rays through a pixel and average the result</p>
+</blockquote>
+<h5 id="Regular-grid"><a href="#Regular-grid" class="headerlink" title="Regular grid"></a>Regular grid</h5><ul>
+<li>Divide the pixel into a number of sub-pixels and shoot a ray through the centre of each</li>
+<li>Problem: can still lead to noticeable aliasing unless a very high resolution sub-pixel grid is used</li>
+</ul>
+<h5 id="Random"><a href="#Random" class="headerlink" title="Random"></a>Random</h5><ul>
+<li>Shoot N rays at random points in the pixel</li>
+<li>Replaces aliasing artefacts with noise artefacts<ul>
+<li>The eye is far less sensitive to noise than to aliasing</li>
+</ul>
+</li>
+</ul>
+<h5 id="Jittered"><a href="#Jittered" class="headerlink" title="Jittered"></a>Jittered</h5><ul>
+<li>Divide the pixel into N sub-pixels and shoot one ray at a random point in each sub-pixel</li>
+<li>An approximation to Poisson disc sampling</li>
+<li>For N rays it is better than pure random sampling</li>
+<li>Easy to implement</li>
+</ul>
+<h5 id="Poisson-disc"><a href="#Poisson-disc" class="headerlink" title="Poisson disc"></a>Poisson disc</h5><ul>
+<li>Shoot N rays at random points in the pixel with proviso that no two rays shall pass through the pixel closer than $\varepsilon$ to one another</li>
+<li>For N rays this produces a better looking image than pure random sampling</li>
+<li>Very hard to implement properly</li>
+</ul>
+<h4 id="Adaptive-super-sampling"><a href="#Adaptive-super-sampling" class="headerlink" title="Adaptive super-sampling"></a>Adaptive super-sampling</h4><ul>
+<li>Shoot a few rays through the pixel, check the variance of the resulting values, if similar enough stop, otherwise shoot some more rays</li>
+</ul>
+<h3 id="Distributed-ray-tracing"><a href="#Distributed-ray-tracing" class="headerlink" title="Distributed ray tracing"></a>Distributed ray tracing</h3><blockquote>
+<p><font color="CornflowerBlue">Distributed ray tracing involves calculating multiple rays for each pixel with the sampling distributed over a range of parameter values</font></p>
+</blockquote>
+<h4 id="Distribute-the-rays-going-to-a-light-source-over-some-area"><a href="#Distribute-the-rays-going-to-a-light-source-over-some-area" class="headerlink" title="Distribute the rays going to a light source over some area"></a>Distribute the rays going to a light source over some area</h4><ul>
+<li>Allows <strong>area light sources</strong> in addition to point and directional light sources</li>
+<li>Produces <strong>soft shadows</strong> with penumbrae</li>
+</ul>
+<h4 id="Distribute-the-camera-position-over-some-area"><a href="#Distribute-the-camera-position-over-some-area" class="headerlink" title="Distribute the camera position over some area"></a>Distribute the camera position over some area</h4><ul>
+<li>Allows simulation of a camera with a finite aperture lens</li>
+<li>Produces depth of field effects</li>
+</ul>
+<h4 id="Distribute-the-samples-in-time"><a href="#Distribute-the-samples-in-time" class="headerlink" title="Distribute the samples in time"></a>Distribute the samples in time</h4><ul>
+<li>Produces motion blur effects on any moving objects </li>
+<li>Temporal anti-aliasing</li>
+</ul>
+<h2 id="Graphics-pipelining"><a href="#Graphics-pipelining" class="headerlink" title="Graphics pipelining"></a>Graphics pipelining</h2><h3 id="Transformations"><a href="#Transformations" class="headerlink" title="Transformations"></a>Transformations</h3><h4 id="2D-coordinates"><a href="#2D-coordinates" class="headerlink" title="2D coordinates"></a>2D coordinates</h4><img src="https://s2.loli.net/2023/02/04/or3v1xbsK8T6S9O.png" alt="image-20230111195831895" style="zoom:50%;">
+
+<h4 id="Homogeneous-2D-coordinates"><a href="#Homogeneous-2D-coordinates" class="headerlink" title="Homogeneous 2D coordinates"></a>Homogeneous 2D coordinates</h4><img src="https://s2.loli.net/2023/02/04/2rw7fvQDyKUuHBc.png" alt="image-20230111195911738" style="zoom:50%;">
+
+<h4 id="Translation-by-matrix-algebra"><a href="#Translation-by-matrix-algebra" class="headerlink" title="Translation by matrix algebra"></a>Translation by matrix algebra</h4><img src="https://s2.loli.net/2023/02/04/5XRnw7kOKAFcIUN.png" alt="image-20230111200010071" style="zoom:50%;">
+
+<h4 id="3D"><a href="#3D" class="headerlink" title="3D"></a>3D</h4><img src="https://s2.loli.net/2023/02/04/Uao7jp9isAbcMDv.png" alt="image-20230111201103228" style="zoom:50%;">
+
+<h4 id="Projection-Matrix-Operation"><a href="#Projection-Matrix-Operation" class="headerlink" title="Projection - Matrix Operation"></a>Projection - Matrix Operation</h4><img src="https://s2.loli.net/2023/02/04/gX8F2jh9eBitV6Y.png" alt="image-20230115173504125" style="zoom: 33%;">
+
+<h4 id="Order"><a href="#Order" class="headerlink" title="Order"></a>Order</h4><ol>
+<li>Scale</li>
+<li>Rotate</li>
+<li>Translate</li>
+</ol>
+<h2 id="Rasterization"><a href="#Rasterization" class="headerlink" title="Rasterization"></a>Rasterization</h2><ul>
+<li>Model surfaces as polyhedra – meshes of polygons</li>
+<li>Use composition to build scenes</li>
+<li>Apply perspective transformation and project into plane of screen</li>
+<li>Work out which surface is closest</li>
+<li>Fill pixels with colour of nearest visible polygon</li>
+</ul>
+<h3 id="Homogenous-barycentric-coordinates"><a href="#Homogenous-barycentric-coordinates" class="headerlink" title="Homogenous barycentric coordinates"></a>Homogenous barycentric coordinates</h3><blockquote>
+<p>Used to interpolate colours, normals, texture coordinates, and other attributes inside the triangle</p>
+</blockquote>
+<img src="https://s2.loli.net/2023/02/04/568PpidyIJUHtRF.png" alt="image-20230111202753464" style="zoom:50%;">
+
+<h3 id="Triangle-rasterization"><a href="#Triangle-rasterization" class="headerlink" title="Triangle rasterization"></a>Triangle rasterization</h3><img src="https://s2.loli.net/2023/02/04/C6GODjVidP8Xzwc.png" alt="image-20230111203215567" style="zoom:50%;">
+
+<h3 id="Z-Buffer-Algorithm"><a href="#Z-Buffer-Algorithm" class="headerlink" title="Z-Buffer Algorithm"></a>Z-Buffer Algorithm</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">For every triangle in the scene do</span><br><span class="line">	For every fragment(x,y) in this triangle do</span><br><span class="line">		Calculate z for current (x,y)</span><br><span class="line">		if (z&lt;depth(x,y)) and (z&gt;z_min) then</span><br><span class="line">			depth(x,y)=z</span><br><span class="line">			colour(x,y) = fragment_colour(x,y)</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>Z-buffer must store depth with sufficient precision</strong></p>
+<ul>
+<li>24 or 32 bit</li>
+<li>Integer or float</li>
+<li>Often 1/z instead of z</li>
+</ul>
+<h2 id="Graphics-Hardware-and-modern-OpenGL"><a href="#Graphics-Hardware-and-modern-OpenGL" class="headerlink" title="Graphics Hardware and modern OpenGL"></a>Graphics Hardware and modern OpenGL</h2><h3 id="OpenGL-Rendering-Pipeline"><a href="#OpenGL-Rendering-Pipeline" class="headerlink" title="OpenGL Rendering Pipeline"></a>OpenGL Rendering Pipeline</h3><img src="https://s2.loli.net/2023/02/04/GhLYSazuXdBCDvm.png" alt="image-20230115200128415" style="zoom:50%;">
+
+<h4 id="Vertex-shader"><a href="#Vertex-shader" class="headerlink" title="Vertex shader"></a>Vertex shader</h4><p>Processing of vertices, normals, uv texture coordinates</p>
+<h4 id="Tessellation-control-shader-evaluation-shader"><a href="#Tessellation-control-shader-evaluation-shader" class="headerlink" title="Tessellation control shader + evaluation shader"></a>Tessellation control shader + evaluation shader</h4><p>[Optional] Create new primitives by tessellating existing primitives (patches).</p>
+<h4 id="Geometry-shader"><a href="#Geometry-shader" class="headerlink" title="Geometry shader"></a>Geometry shader</h4><p>[Optional] Operate on tessellated geometry. Can create new primitives. </p>
+<h4 id="Primitive-assembly"><a href="#Primitive-assembly" class="headerlink" title="Primitive assembly"></a>Primitive assembly</h4><p>Organizes vertices into primitives and prepared them for rendering</p>
+<h4 id="Clipping"><a href="#Clipping" class="headerlink" title="Clipping"></a>Clipping</h4><p>Remove or modify vertices so that they all lie within the viewport (view frustum)</p>
+<h4 id="Rasterization-1"><a href="#Rasterization-1" class="headerlink" title="Rasterization"></a>Rasterization</h4><p>Generates fragments(pixels) to be drawn for each primitive. Interpolated vertex attributes</p>
+<h4 id="Fragment-shader"><a href="#Fragment-shader" class="headerlink" title="Fragment shader"></a>Fragment shader</h4><p>Computes colour per each fragment. Can lookup colour in the texture. Can modify pixels’ depth value.</p>
+<p>Also used for tone mapping</p>
+<h3 id="Shaders"><a href="#Shaders" class="headerlink" title="Shaders"></a>Shaders</h3><p>Shaders are small programs executed on a GPU</p>
+<ul>
+<li>Executed for each vertex, each pixel (fragment), etc.</li>
+</ul>
+<h3 id="OpenGL-Application-flow"><a href="#OpenGL-Application-flow" class="headerlink" title="OpenGL Application flow"></a>OpenGL Application flow</h3><img src="https://s2.loli.net/2023/02/04/gJpnIe3SkPEuadc.png" alt="image-20230115195754192" style="zoom: 33%;">
+
+<h3 id="Textures"><a href="#Textures" class="headerlink" title="Textures"></a>Textures</h3><h4 id="Up-Sampling"><a href="#Up-Sampling" class="headerlink" title="Up Sampling"></a>Up Sampling</h4><p>When the texture resolution is insufficient for the rendered object, the values between texels needs to be interpolated. This operation is known as upsampling. OpenGL offers two interpolation filters:</p>
+<h5 id="Nearest-neighbour"><a href="#Nearest-neighbour" class="headerlink" title="Nearest-neighbour"></a>Nearest-neighbour</h5><p>Set interpolated values to the value of the nearest texel</p>
+<h5 id="Bi-linear-interpolation"><a href="#Bi-linear-interpolation" class="headerlink" title="Bi-linear interpolation"></a>Bi-linear interpolation</h5><p>Interpolate values in a piece-wise linear manner for both horizontal and vertical dimensions</p>
+<h4 id="Down-Sampling"><a href="#Down-Sampling" class="headerlink" title="Down Sampling"></a>Down Sampling</h4><p>When multiple texels are mapped to a single pixel, the values of these texels need to be averaged to avoid aliasing artefacts. The image processing operation of averaging and reducing resolution is known as <strong>downsampling</strong>. Because averaging texels for each drawn pixel could be very time-consuming, OpenGL often uses a pre-averaged values stored in a data structure called <strong>mip-map</strong>. A mip-map is a pyramid of textures, in which the resolution of each higher level is halved.</p>
+<h4 id="Bump-normal-mapping"><a href="#Bump-normal-mapping" class="headerlink" title="Bump (normal) mapping"></a>Bump (normal) mapping</h4><ul>
+<li>Special kind of texture that modifies surface normal</li>
+<li>The surface is still flat but the shading appears as on an uneven surface</li>
+<li>Easily done in <strong>fragment shader</strong></li>
+</ul>
+<h4 id="Displacement-mapping"><a href="#Displacement-mapping" class="headerlink" title="Displacement mapping"></a>Displacement mapping</h4><ul>
+<li>Texture that modifies surface</li>
+<li>Better results than bump mapping since the surface is not flat</li>
+<li>Requires <strong>geometry shader</strong></li>
+</ul>
+<h4 id="Environment-mapping"><a href="#Environment-mapping" class="headerlink" title="Environment mapping"></a>Environment mapping</h4><ul>
+<li>To show environment reflected by the object</li>
+</ul>
+<h5 id="Environment-cube"><a href="#Environment-cube" class="headerlink" title="Environment cube"></a>Environment cube</h5><ul>
+<li>Each face captures environment in that direction</li>
+</ul>
+<h3 id="Raster-buffers-colour-depth-stencil"><a href="#Raster-buffers-colour-depth-stencil" class="headerlink" title="Raster buffers (colour, depth, stencil)"></a>Raster buffers (colour, depth, stencil)</h3><h4 id="Stencil-Buffers"><a href="#Stencil-Buffers" class="headerlink" title="Stencil Buffers"></a>Stencil Buffers</h4><p>To block rendering selected pixels</p>
+<h4 id="Double-buffering"><a href="#Double-buffering" class="headerlink" title="Double buffering"></a>Double buffering</h4><ul>
+<li>To avoid flicker, tearing</li>
+<li>Use two buffers (raster)<ul>
+<li>Front buffer - what is shown on the screen</li>
+<li>Back buffer - not shown, GPU draws into that buffer</li>
+</ul>
+</li>
+</ul>
+<img src="https://s2.loli.net/2023/02/04/b2CuoAcIU8dwm7D.png" alt="image-20230115201444829" style="zoom:15%;">
+
+<h4 id="Triple-buffering"><a href="#Triple-buffering" class="headerlink" title="Triple buffering"></a>Triple buffering</h4><ul>
+<li>Do not wait for swapping to start drawing the next frame</li>
+<li>More memory needed</li>
+<li>Higher delay between drawing and displaying a frame</li>
+</ul>
+<img src="https://s2.loli.net/2023/02/04/RgZaGc6dEftPpm3.png" alt="image-20230115201416196" style="zoom: 15%;">
+
+<h3 id="Vertical-Synchronization-V-Sync"><a href="#Vertical-Synchronization-V-Sync" class="headerlink" title="Vertical Synchronization: V-Sync"></a>Vertical Synchronization: V-Sync</h3><ul>
+<li>Pixels are copied from colour buffer to monitor row-by-row</li>
+<li>If front &amp; back buffer are swapped during thsi process<ul>
+<li>Upper part of the screen contains previous frame</li>
+<li>Lower part of the screen contains current frame</li>
+<li>Result: tearing artefact</li>
+</ul>
+</li>
+</ul>
+<h4 id="Solution-V-Sync"><a href="#Solution-V-Sync" class="headerlink" title="Solution: V-Sync"></a>Solution: V-Sync</h4><p>waits until the last row of pixels is copied to the display</p>
+<img src="https://s2.loli.net/2023/02/04/6p5wKCjxtHJVy2q.png" alt="image-20230115201723828" style="zoom: 33%;">
+
+<h3 id="FreeSync-AMD-amp-G-Sync-Nvidia"><a href="#FreeSync-AMD-amp-G-Sync-Nvidia" class="headerlink" title="FreeSync (AMD) &amp; G-Sync (Nvidia)"></a>FreeSync (AMD) &amp; G-Sync (Nvidia)</h3><h4 id="Adaptive-Sync"><a href="#Adaptive-Sync" class="headerlink" title="Adaptive Sync"></a>Adaptive Sync</h4><ul>
+<li>Graphics card controls timing of the frames on the display</li>
+<li>Can save power for 30fps video of when the screen is static</li>
+<li>Can reduce lag for real-time graphics</li>
+</ul>
+<h2 id="Human-vision-colour-and-tone-mapping"><a href="#Human-vision-colour-and-tone-mapping" class="headerlink" title="Human vision, colour, and tone mapping"></a>Human vision, colour, and tone mapping</h2><h3 id="Structure-of-Human-Eye"><a href="#Structure-of-Human-Eye" class="headerlink" title="Structure of Human Eye"></a>Structure of Human Eye</h3><ul>
+<li><strong>Retina:</strong> an array of light detection cells</li>
+<li><strong>Fovea:</strong> the high resolution area of retina</li>
+<li>Photoreceptors:<ul>
+<li><p><strong>Cones:</strong>  responsible for day-light vision and colour perception</p>
+<ul>
+<li>Three types of cones: sensitive to <strong>short(S)</strong>, <strong>medium(M)</strong>, and <strong>long(L)</strong> wavelengths</li>
+</ul>
+</li>
+<li><p><strong>Rods:</strong> responsible for night-light vision</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Colour"><a href="#Colour" class="headerlink" title="Colour"></a>Colour</h3><ul>
+<li><p>There is no physical definition of colour - colour is the result of our perception</p>
+<ul>
+<li><p>For emissive displays/objects:</p>
+<ul>
+<li>Colour = Perception(spectral emission)</li>
+</ul>
+</li>
+<li><p>For reflective displays/objects:</p>
+<ul>
+<li>Colour = Perception(illumination * reflectance)</li>
+</ul>
+</li>
+<li><p>$L(\lambda)=I(\lambda)R(\lambda)$</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Sensitivity Curves</strong> - Probability that a photon of that wavelengths will be absorbed by a photoreceptor. </p>
+<img src="https://s2.loli.net/2023/02/04/u7LjFWfKgBVs2DZ.png" alt="image-20230108150255115" style="zoom:50%;"></li>
+</ul>
+<blockquote>
+<p>The light spectra that appear to have the same colour are called <strong>metamers</strong> </p>
+</blockquote>
+<blockquote>
+<p><strong>Noun:</strong> Metamerism</p>
+</blockquote>
+<h5 id="You-are-given-spectra-of-two-colours-c1-λ-c2-λ-and-cone-response-functions-l-λ-m-λ-s-λ-How-would-you-test-whether-the-colours-c1-and-c2-are-metamers-Write-down-the-equations-for-such-a-test"><a href="#You-are-given-spectra-of-two-colours-c1-λ-c2-λ-and-cone-response-functions-l-λ-m-λ-s-λ-How-would-you-test-whether-the-colours-c1-and-c2-are-metamers-Write-down-the-equations-for-such-a-test" class="headerlink" title="You are given spectra of two colours: c1(λ), c2(λ) and cone response functions l(λ), m(λ), s(λ). How would you test whether the colours c1 and c2 are metamers? Write down the equations for such a test"></a><u>You are given spectra of two colours: c1(λ), c2(λ) and cone response functions l(λ), m(λ), s(λ). How would you test whether the colours c1 and c2 are metamers? Write down the equations for such a test</u></h5><p><img src="https://s2.loli.net/2023/02/04/nXG7gouWjmBbUp4.png" alt="image-20230108150437696"></p>
+<h3 id="Tristimulus-Colour-Representation"><a href="#Tristimulus-Colour-Representation" class="headerlink" title="Tristimulus Colour Representation"></a>Tristimulus Colour Representation</h3><h4 id="Observation"><a href="#Observation" class="headerlink" title="Observation"></a>Observation</h4><ul>
+<li>Any colour can be matched using three linear independent reference colours </li>
+<li>May require “negative” contribution to test colour</li>
+</ul>
+<h4 id="Standard-Colour-Space-CIE-XYZ"><a href="#Standard-Colour-Space-CIE-XYZ" class="headerlink" title="Standard Colour Space CIE XYZ"></a>Standard Colour Space CIE XYZ</h4><ul>
+<li>1931 Colour matching experiments</li>
+<li>Could match all physically realisable colour stimuli</li>
+<li>Cone sensitivity curve can be obtained by a linear transformation of CIE XYZ</li>
+<li>Y is roughly equivalent to luminance</li>
+<li><img src="https://s2.loli.net/2023/02/04/Grydvbk1OacEH3B.png" alt="image-20230108150915829" style="zoom:67%;"></li>
+</ul>
+<h4 id="CIE-chromaticity-diagram"><a href="#CIE-chromaticity-diagram" class="headerlink" title="CIE chromaticity diagram"></a>CIE chromaticity diagram</h4><ul>
+<li><p>$x = X/(X+Y+Z),y= Y/(X+Y+Z),z= Z/(X+Y+Z)$</p>
+<img src="https://s2.loli.net/2023/02/04/25rVwUvPWH9TbhJ.png" alt="image-20230108151250894" style="zoom:50%;">
+</li>
+<li><h3 id="Achromatic-x2F-chromatic-vision-mechanism"><a href="#Achromatic-x2F-chromatic-vision-mechanism" class="headerlink" title="Achromatic/chromatic vision mechanism"></a>Achromatic/chromatic vision mechanism</h3><img src="https://s2.loli.net/2023/02/04/j8CBdLlyVOHgtiF.png" alt="image-20230108151412096" style="zoom:50%;">
+</li>
+<li><ul>
+<li>M+L - Luminance achromatic (without colour) </li>
+<li>M+L - Green-red chromatic</li>
+<li>S+M+L - Blue-Yellow chromatic</li>
+</ul>
+</li>
+</ul>
+<h3 id="Visible-x2F-displayable-colour"><a href="#Visible-x2F-displayable-colour" class="headerlink" title="Visible/displayable colour"></a>Visible/displayable colour</h3><ul>
+<li>All physically possible and visible colour form a solid in XYZ space<ul>
+<li><p>Each displayable device can produce a subspace of that solid</p>
+</li>
+<li><p>A chromaticity diagram is a slice taken from the 3D solid in XYZ space</p>
+</li>
+<li><p>Colour Gamut - the solid in a colour space</p>
+</li>
+<li><p>Usually defined in XYZ to be device-independent</p>
+</li>
+</ul>
+</li>
+<li><img src="https://s2.loli.net/2023/02/04/oJ4DICzjqfTkmx5.png" alt="image-20230108151612241" style="zoom:50%;"></li>
+</ul>
+<h3 id="From-rendering-to-display"><a href="#From-rendering-to-display" class="headerlink" title="From rendering to display"></a>From rendering to display</h3><img src="https://s2.loli.net/2023/02/04/WM4CZcsHeQDuyir.png" alt="image-20230111210025906" style="zoom:50%;">
+
+<ol>
+<li><p>HDR / Physical rendering</p>
+<ul>
+<li>Scene-referred colours</li>
+</ul>
+</li>
+<li><p>Tone mapping</p>
+<ul>
+<li>Display-referred colours </li>
+<li>Floating-point values</li>
+</ul>
+</li>
+<li><p>Display encoding;EOTF(Electro-Optical transfer function) / Inverse display model</p>
+<ul>
+<li><p>Gamma-corrected colour space </p>
+<ul>
+<li><img src="https://s2.loli.net/2023/02/04/Sklh3E4z1GncMZF.png" alt="image-20230108151728857" style="zoom: 25%;">
+</li>
+<li><p>Gamma encoding of images is used to optimize the usage of bits when encoding an image, or bandwidth used to transport an image, by taking advantage of the non-linear manner in which humans perceive light and colour.</p>
+</li>
+<li><p>Gamma-corrected pixel values give a scale of brightness levels that is more perceptually uniform.</p>
+</li>
+<li><p><font color="CornflowerBlue">One of the main reasons for using gamma correction is to preserve the overall contrast of an image when it is displayed on different devices. Without gamma correction, an image that looks correct on one device may appear too dark or too light on another device, due to differences in the way the devices handle the brightness values of the pixels.</font></p>
+</li>
+<li><p><font color="CornflowerBlue">Gamma correction is also used to compensate for the fact that the human eye is more sensitive to light at certain wavelengths than at others. By encoding the brightness values in a way that takes this into account, the overall contrast and perceived brightness of an image can be more accurately reproduced on different devices.</font></p>
+</li>
+<li><p>8-12 bits integer encoded for efficiency</p>
+<ul>
+<li>8-10bits for SDR</li>
+<li>10-12bits for HDR</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<img src="https://s2.loli.net/2023/02/04/5mcZbW26wruANlD.png" alt="image-20230108151948639" style="zoom: 50%;">
+
+<p><u>What is the purpose of mapping from scene-referred to display-referred colours</u>:</p>
+<p><font color="CornflowerBlue">The rendered scene-referred colours may exceed the dynamic range and colour gamut of the display. The mapping is performed to map the rendered colours to the gamut that can be reproduced on the target display</font></p>
+<p><u>How does display encoding differ between standard and high-dynamic-range displays</u></p>
+<p><font color="CornflowerBlue">Display encoding for SDR and HDR displays differ in the used colour spaces and transfer functions (display coding function). The colour space for HDR displays spans a larger colour gamut. The transfer function for HDR displays can encode a much larger range of colour values. Images that are display-encoded for HDR display have higher bit-depth(10-12bits) than those encoded for SDR displays (8-10 bits)</font></p>
+<img src="C:\Users\Samuel\AppData\Roaming\Typora\typora-user-images\image-20230111231319900.png" alt="image-20230111231319900" style="zoom:50%;">
+
+<h3 id="Representing-colour"><a href="#Representing-colour" class="headerlink" title="Representing colour"></a>Representing colour</h3><table>
+<thead>
+<tr>
+<th><strong>Colour spaces</strong></th>
+<th>Linear and gamma corrected RGB, sRGB</th>
+<th>HSV(Hue saturation value), HLS(Hue lightness saturation)</th>
+<th>CIE Lab, CIE Luv</th>
+<th>CMY Space</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Features:</td>
+<td>Can be quantised to small number of bits <br>Can be linear(RGB) or display encoded (R’G’B’) <br>Can be scene-referred(HDR) or display-referred(SDR)</td>
+<td>A set of numbers that are easy to interpret<img src="https://s2.loli.net/2023/02/04/Kq3zc9nog2JDp1Q.png" alt="image-20230108152254253"><img src="https://s2.loli.net/2023/02/04/fswrihK69WOkaJj.png" alt="image-20230108152306406"></td>
+<td>Perceptually uniform         colour difference corresponded by the distance in the colour space</td>
+<td>The important difference between CMY and RGB: Lights emit light, inks absorb light CMY is, at its simplest, the inverse of RGB</td>
+</tr>
+<tr>
+<td>Applications:</td>
+<td>Televisions, CRT monitors, LCD screens <br>RGB is usually used to represent colours of emissive display devices.</td>
+<td>Colour pickers in the user-interface</td>
+<td>Useful for computing colour differences or performing image processing operations</td>
+<td>Printers: In real printing, CMYK (K refers to key, black)         Because inks are not perfect absorbers     Mixing CMY does not give us black     Lots of text is printed in black</td>
+</tr>
+<tr>
+<td>Colour Gamut</td>
+<td>A cube</td>
+<td>Complex</td>
+<td>Complex</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="Tone-Mapping-amp-Display-Encoding"><a href="#Tone-Mapping-amp-Display-Encoding" class="headerlink" title="Tone Mapping &amp; Display Encoding"></a>Tone Mapping &amp; Display Encoding</h3><p>Why tone mapping?</p>
+<ul>
+<li>Reduce dynamic range<ul>
+<li>Customize the look (colour grading)</li>
+<li>To simulate human vision</li>
+<li>To simulate a camera </li>
+<li>To adapt a displayed images to a display and viewing conditions</li>
+<li>Make the rendered image more realistic</li>
+<li><strong>To map from scene to display-referred colour</strong> <strong>(primary purpose)</strong></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://s2.loli.net/2023/02/04/8tKYkvGlbFm5iBO.png" alt="image-20230108152952764"></p>
+<ul>
+<li><h5 id="Explain-how-simulating-glare-that-happens-in-the-eyes-or-in-a-camera-can-enhance-the-appearance-of-rendered-scenes"><a href="#Explain-how-simulating-glare-that-happens-in-the-eyes-or-in-a-camera-can-enhance-the-appearance-of-rendered-scenes" class="headerlink" title="Explain how simulating glare that happens in the eyes or in a camera can enhance the appearance of rendered scenes."></a>Explain how simulating glare that happens in the eyes or in a camera can enhance the appearance of rendered scenes.</h5><ul>
+<li>Rendered glare (or blooming) introduces the visual illusion that makes the sources of glare appear brighter than the maximum brightness of the display. It also makes the rendered scenes look more natural — closer to the look of perceived or camera-captured images.</li>
+</ul>
+</li>
+<li><h5 id="Why-is-glare-typically-simulated-only-for-the-values-that-exceed-the-maximum-displayable-value"><a href="#Why-is-glare-typically-simulated-only-for-the-values-that-exceed-the-maximum-displayable-value" class="headerlink" title="Why is glare typically simulated only for the values that exceed the maximum displayable value?"></a>Why is glare typically simulated only for the values that exceed the maximum displayable value?</h5><ul>
+<li>Glare is typically simulated only for the clipped/saturated values to avoid blurring of the rendered image. It is also done because the values reproduced on the display also cause glare in the eye and there is no need to simulate additional glare for those values.</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Haoran Jie
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://haoran-jie.github.io/Cambridge/Notes/Graphics-Notes/" title="Graphics_Notes">https://haoran-jie.github.io/Cambridge/Notes/Graphics-Notes/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Graphics/" rel="tag"><i class="fa fa-tag"></i> Graphics</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Notes/ASCS/Chapter2-Communication/" rel="prev" title="Chapter2_Communication">
+                  <i class="fa fa-chevron-left"></i> Chapter2_Communication
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="comment-button-group">
+          <a class="btn comment-button gitalk">gitalk</a>
+          <a class="btn comment-button disqus">disqus</a>
+      </div>
+        <div class="comment-position gitalk">
+          <div class="comments gitalk-container"></div>
+        </div>
+        <div class="comment-position disqus">
+          
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+        </div><script data-pjax src="/js/comments-buttons.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa-solid fa-terminal"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Haoran Jie</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.3.0/mermaid.min.js","integrity":"sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://haoran-jie.github.io/Cambridge/Notes/Graphics-Notes/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Haoran-Jie","repo":"GItalkComments","client_id":"a78520e4a91db64c6ead","client_secret":"80a445f6a6f80fcd44fea523269b55c10ba59002","admin_user":"Haoran-Jie","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"86de523e1dee5dff064db04b30079211"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"samuels-blog-5","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
