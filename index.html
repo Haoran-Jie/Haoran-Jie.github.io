@@ -88,7 +88,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">17</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">14</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">31</span></a></li><li class="menu-item menu-item-notes"><a href="/Notes/" rel="section"><i class="fa fa-book fa-fw"></i>Notes</a></li><li class="menu-item menu-item--what&why系列文章"><a href="/WhatandwhY/" rel="section"><i class="fa-solid fa-clipboard-question fa-fw"></i> What&whY系列文章</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">17</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">14</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">32</span></a></li><li class="menu-item menu-item-notes"><a href="/Notes/" rel="section"><i class="fa fa-book fa-fw"></i>Notes</a></li><li class="menu-item menu-item--what&why系列文章"><a href="/WhatandwhY/" rel="section"><i class="fa-solid fa-clipboard-question fa-fw"></i> What&whY系列文章</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -153,7 +153,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -297,6 +297,143 @@
             </div>
           <!--/noindex-->
         
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://haoran-jie.github.io/Cambridge/Notes/Abstract-Data-Types-Notes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Haoran Jie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Samuel's Blog">
+      <meta itemprop="description" content="18">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Samuel's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Cambridge/Notes/Abstract-Data-Types-Notes/" class="post-title-link" itemprop="url">Abstract Data Types Notes</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-02-06 20:03:48 / Modified: 20:58:58" itemprop="dateCreated datePublished" datetime="2023-02-06T20:03:48+00:00">2023-02-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Cambridge/" itemprop="url" rel="index"><span itemprop="name">Cambridge</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Cambridge/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/Cambridge/Notes/Abstract-Data-Types-Notes/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Cambridge/Notes/Abstract-Data-Types-Notes/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><blockquote>
+<p>Lists provide one natural implementation of stacks, and are the data structure of choice in many places where flexible representation of variable amount of data is wanted.</p>
+</blockquote>
+<h3 id="Doubly-linked-list"><a href="#Doubly-linked-list" class="headerlink" title="Doubly-linked list"></a>Doubly-linked list</h3><p>A feature of lists is that, from one item, you can progress along the list in one direction very easily; but once you have taken the <code>next</code> of a list, there is no way of returning. To make it possible to traverse a list in both directions one might define a new type called <code>Doubly Linked List</code> in which each wagon had both a <code>next</code> and a <code>previous</code> pointer.<br>$$<br>w.next.previous == w<br>$$<br>Equation (1) would hold for every wagon inside the <code>DLL</code> except for the last<br>$$<br>w.previous.next == w<br>$$<br>Euqation (2) would hold for every wagon inside the <code>DLL</code> except for the first.</p>
+<h3 id="Graph-representation-using-List"><a href="#Graph-representation-using-List" class="headerlink" title="Graph representation (using List)"></a>Graph representation (using List)</h3><p>Represent each vertex by an integer, and having a vector such that element $i$ in the vector holds the head of a list of all the vertices connected directly to edges radiating from vertex $i$. </p>
+<h3 id="ADT-List"><a href="#ADT-List" class="headerlink" title="ADT List"></a>ADT List</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">ADT List {</span><br><span class="line">	boolean isEmpty();</span><br><span class="line">	// BEHAVIOUR: Return true iff the structure is empty</span><br><span class="line">	item head();</span><br><span class="line">	// PRECONDITION: isEmpty()==false</span><br><span class="line">	// BEHAVIOR: return the first elemnet of the list (without removing it)</span><br><span class="line">	void prepend(ite x);</span><br><span class="line">	// BEHAVIOUR: add element &lt;x&gt; to the beginning of the list.</span><br><span class="line">	// POSTCONDITION: isEmpty()==false</span><br><span class="line">	// BAHAVIOUR: head() == x</span><br><span class="line">	List tail();</span><br><span class="line">	// PRECONDITION: isEmpty()==false</span><br><span class="line">	// BEHAVIOUR: return the list of all the elements except the first (without removing it).</span><br><span class="line">	</span><br><span class="line">	void setTail(List newTail);</span><br><span class="line">	// PRECONDITION: isEmpty()==false</span><br><span class="line">	// BEHAVIOUR: replace the tail of this list with &lt;newTail&gt;.</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h2><ul>
+<li>LIFO (last in first out)</li>
+</ul>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ADT Stack {</span><br><span class="line">	boolean isEmpty();</span><br><span class="line">	// BEHAVIOUR: return true iff the structure is empty</span><br><span class="line">	void push(item x);</span><br><span class="line">	// BEHAVIOUR: add element &lt;x&gt; to the top of the stack</span><br><span class="line">	// POSTCONDITION: isEmpty()==false.</span><br><span class="line">	// POSTCONDITION: top()==x</span><br><span class="line">	item pop();</span><br><span class="line">	// PRECONDITION: isEmpty()==false</span><br><span class="line">	// BEHAVIOUR: return the element on the top of the stack</span><br><span class="line">	// As a side effect, remove it from the stack.</span><br><span class="line">	item top();</span><br><span class="line">	// PRECONDITION: isEmpty()==false</span><br><span class="line">	// BEHAVIOUR: Return the element on top of the stack (without removing it).</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Implementations"><a href="#Implementations" class="headerlink" title="Implementations"></a>Implementations</h3><ol>
+<li>Combination of an array and an index (pointing to the “top of stack”)<ul>
+<li>The <code>push</code> operation writes a value into the array and increments the index</li>
+<li>The <code>pop</code> operation delets a value from the array and decrements the index</li>
+</ul>
+</li>
+<li>Linked lists<ul>
+<li>Pushing an item adds an extra cell to the front of a list</li>
+<li>Popping removes the cell at the front of the list</li>
+</ul>
+</li>
+</ol>
+<h3 id="Use-cases"><a href="#Use-cases" class="headerlink" title="Use cases"></a>Use cases</h3><ul>
+<li>Reverse Polish Notation (e.g. <code>3 12 add 4 mul 2 sub</code> -&gt; <code>(3 x 12) x 4 - 2</code>)</li>
+</ul>
+<h2 id="Queue-and-Deque"><a href="#Queue-and-Deque" class="headerlink" title="Queue and Deque"></a>Queue and Deque</h2><ul>
+<li>FIFO (first in first out)</li>
+</ul>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ADT Queue{</span><br><span class="line">	boolean isEmpty();</span><br><span class="line">	// BEHAVIOUR: return true iff the structure is empty.</span><br><span class="line">	void put(item x);</span><br><span class="line">	// BEHAVIOUR: insert element &lt;x&gt; at the end of the queue.</span><br><span class="line">  // POSTCONDITION: isEmpty()==false</span><br><span class="line">  item get();</span><br><span class="line">  // PRECONDITION: isEmpty()==false</span><br><span class="line">  // BEHAVIOUR: return the first elemnt of the queue, and removing it from the queue</span><br><span class="line">  item first();</span><br><span class="line">  // PRECONDITION: isEmpty()==false</span><br><span class="line">  // BEHAVIOUR: return the first element of the queue without removing it</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">ADT Queue{</span><br><span class="line">	boolean isEmpty();</span><br><span class="line">	// BEHAVIOUR: return true iff the structure is empty.</span><br><span class="line">	void putFront(item x);</span><br><span class="line">	// BEHAVIOUR: insert element &lt;x&gt; at the front of the queue.</span><br><span class="line">  // POSTCONDITION: isEmpty()==false</span><br><span class="line">  void putRear(item x);</span><br><span class="line">  // BEHAVIOUR: insert element &lt;x&gt; at the back of the queue.</span><br><span class="line">  // POSTCONDITION: isEmpty()==false</span><br><span class="line">  item getFront();</span><br><span class="line">  // PRECONDITION: isEmpty()==false</span><br><span class="line">  // BEHAVIOUR: return the first elemnt of the queue</span><br><span class="line">  item getRear();</span><br><span class="line">  // PRECONDITION: isEmpty()==false</span><br><span class="line">  // BEHAVIOUR: return the last element of the queue </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Dictionary"><a href="#Dictionary" class="headerlink" title="Dictionary"></a>Dictionary</h2><ul>
+<li>Also known as Maps, Tables, Associative arrays, or Symbol tables</li>
+</ul>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">ADT Dictionary {</span><br><span class="line">	void set(Key k, Value v);</span><br><span class="line"> 	// BEHAVIOUR: store the given (&lt;k&gt;, &lt;v&gt;) pair in the dictionary.</span><br><span class="line">	// If a pair with the same &lt;k&gt; had already been stored, the old</span><br><span class="line">	// value is overwritten and lost.</span><br><span class="line">	// POSTCONDITION: get(k) == v</span><br><span class="line"></span><br><span class="line">	Value get(Key k);</span><br><span class="line">	// PRECONDITION: a pair with the sought key &lt;k&gt; is in the dictionary.</span><br><span class="line">	// BEHAVIOUR: return the value associated with the supplied &lt;k&gt;,</span><br><span class="line">  // without removing it from the dictionary.</span><br><span class="line">	</span><br><span class="line">	 void delete(Key k);</span><br><span class="line">	 // PRECONDITION: a pair with the given key &lt;k&gt; has already been inserted.</span><br><span class="line">	 // BEHAVIOUR: remove from the dictionary the key-value pair indexed by</span><br><span class="line">	 // the given &lt;k&gt;.</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+
       
     </div>
 
@@ -1212,116 +1349,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/Notes/ALCS/Chapter20.1_ProgrammingParadigm/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://haoran-jie.github.io/Notes/ALCS/Chapter19.2_Recursion/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Haoran Jie">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Samuel's Blog">
-      <meta itemprop="description" content="18">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Samuel's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Notes/ALCS/Chapter19.2_Recursion/" class="post-title-link" itemprop="url">Chapter19.2: Recursion</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-05-05 15:09:16" itemprop="dateCreated datePublished" datetime="2022-05-05T15:09:16+01:00">2022-05-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-02-04 01:26:26" itemprop="dateModified" datetime="2023-02-04T01:26:26+00:00">2023-02-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Notes/ALCS/" itemprop="url" rel="index"><span itemprop="name">ALCS</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/Notes/ALCS/Chapter19.2_Recursion/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Notes/ALCS/Chapter19.2_Recursion/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><img src="https://s2.loli.net/2023/02/04/xUEV71zGkKSO9uP.png"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Notes/ALCS/Chapter19.2_Recursion/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>

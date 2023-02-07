@@ -24,14 +24,14 @@
 
 
 
-<link rel="canonical" href="https://haoran-jie.github.io/WhatandwhY/Monte-Carlo-%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B/">
+<link rel="canonical" href="https://haoran-jie.github.io/Cambridge/Notes/Abstract-Data-Types-Notes/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://haoran-jie.github.io/WhatandwhY/Monte-Carlo-%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B/","path":"WhatandwhY/Monte-Carlo-蒙特卡洛/","title":"Monte Carlo simulation| 蒙特卡洛模拟"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://haoran-jie.github.io/Cambridge/Notes/Abstract-Data-Types-Notes/","path":"Cambridge/Notes/Abstract-Data-Types-Notes/","title":"Abstract Data Types Notes"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Monte Carlo simulation| 蒙特卡洛模拟 | Samuel's Blog</title>
+<title>Abstract Data Types Notes | Samuel's Blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V501S4L4ZZ"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-V501S4L4ZZ","only_pageview":false}</script>
@@ -139,7 +139,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#A-lil-bit-of-history-1"><span class="nav-number">2.</span> <span class="nav-text">A lil bit of history[^1]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B5%8C%E5%BE%92%E8%B0%AC%E8%AF%AF-VS-%E8%B6%8B%E5%9D%87%E6%95%B0%E5%9B%9E%E5%BD%92-1"><span class="nav-number">3.</span> <span class="nav-text">赌徒谬误 VS. 趋均数回归[^1]</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#List"><span class="nav-number">1.</span> <span class="nav-text">List</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Doubly-linked-list"><span class="nav-number">1.1.</span> <span class="nav-text">Doubly-linked list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Graph-representation-using-List"><span class="nav-number">1.2.</span> <span class="nav-text">Graph representation (using List)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ADT-List"><span class="nav-number">1.3.</span> <span class="nav-text">ADT List</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stack"><span class="nav-number">2.</span> <span class="nav-text">Stack</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Implementations"><span class="nav-number">2.1.</span> <span class="nav-text">Implementations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Use-cases"><span class="nav-number">2.2.</span> <span class="nav-text">Use cases</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Queue-and-Deque"><span class="nav-number">3.</span> <span class="nav-text">Queue and Deque</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dictionary"><span class="nav-number">4.</span> <span class="nav-text">Dictionary</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -213,7 +213,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://haoran-jie.github.io/WhatandwhY/Monte-Carlo-%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B/">
+    <link itemprop="mainEntityOfPage" href="https://haoran-jie.github.io/Cambridge/Notes/Abstract-Data-Types-Notes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -226,12 +226,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Monte Carlo simulation| 蒙特卡洛模拟 | Samuel's Blog">
+      <meta itemprop="name" content="Abstract Data Types Notes | Samuel's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Monte Carlo simulation| 蒙特卡洛模拟
+          Abstract Data Types Notes
         </h1>
 
         <div class="post-meta-container">
@@ -241,15 +241,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2022-07-07 10:26:59" itemprop="dateCreated datePublished" datetime="2022-07-07T10:26:59+01:00">2022-07-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-07-24 13:56:54" itemprop="dateModified" datetime="2022-07-24T13:56:54+01:00">2022-07-24</time>
+      <time title="Created: 2023-02-06 20:03:48 / Modified: 20:58:58" itemprop="dateCreated datePublished" datetime="2023-02-06T20:03:48+00:00">2023-02-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -257,7 +251,11 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/WhatandwhY/" itemprop="url" rel="index"><span itemprop="name">WhatandwhY</span></a>
+          <a href="/categories/Cambridge/" itemprop="url" rel="index"><span itemprop="name">Cambridge</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Cambridge/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
         </span>
     </span>
 
@@ -277,8 +275,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/WhatandwhY/Monte-Carlo-%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="WhatandwhY/Monte-Carlo-蒙特卡洛/" itemprop="commentCount"></span>
+    <a title="disqus" href="/Cambridge/Notes/Abstract-Data-Types-Notes/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Cambridge/Notes/Abstract-Data-Types-Notes/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -292,40 +290,47 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <div class="note info no-icon"><h4 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h4><blockquote>
-<p>翻译自 《The New Turing Omnimbus》Chapter 4 Paragraph 1</p>
+        <h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><blockquote>
+<p>Lists provide one natural implementation of stacks, and are the data structure of choice in many places where flexible representation of variable amount of data is wanted.</p>
 </blockquote>
-<p>为了了解组成现代世界的许多系统，我们越来越多转向计算机模拟。系统，无论是非人为的或者人工的，总是有许多部分有着复杂的行为，使得唯一可行的的模拟这种行为的方法为假设它是<code>随机的</code>. 显而易见的是，咱们可以利用更简单的，符合统计学定律的部分替代这些系统中复杂的部分。</p>
-<p>举个例子，如果我们想要模拟一场两边实力平均的排球比赛，我们可以通过抛硬币的方法来建立一个简单的模型：如果一个队伍正在发球，抛硬币的结果属于是不利于他们的那一面，则另一个队伍加一分且轮到他们发球；否则，这个发球队伍加一分并且继续发球。这个抛硬币的过程让我们想起了一个简单的打赌方式 ——<mark class="label primary">蒙特卡洛</mark></p>
-</div>
+<h3 id="Doubly-linked-list"><a href="#Doubly-linked-list" class="headerlink" title="Doubly-linked list"></a>Doubly-linked list</h3><p>A feature of lists is that, from one item, you can progress along the list in one direction very easily; but once you have taken the <code>next</code> of a list, there is no way of returning. To make it possible to traverse a list in both directions one might define a new type called <code>Doubly Linked List</code> in which each wagon had both a <code>next</code> and a <code>previous</code> pointer.<br>$$<br>w.next.previous == w<br>$$<br>Equation (1) would hold for every wagon inside the <code>DLL</code> except for the last<br>$$<br>w.previous.next == w<br>$$<br>Euqation (2) would hold for every wagon inside the <code>DLL</code> except for the first.</p>
+<h3 id="Graph-representation-using-List"><a href="#Graph-representation-using-List" class="headerlink" title="Graph representation (using List)"></a>Graph representation (using List)</h3><p>Represent each vertex by an integer, and having a vector such that element $i$ in the vector holds the head of a list of all the vertices connected directly to edges radiating from vertex $i$. </p>
+<h3 id="ADT-List"><a href="#ADT-List" class="headerlink" title="ADT List"></a>ADT List</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">ADT List {</span><br><span class="line">	boolean isEmpty();</span><br><span class="line">	// BEHAVIOUR: Return true iff the structure is empty</span><br><span class="line">	item head();</span><br><span class="line">	// PRECONDITION: isEmpty()==false</span><br><span class="line">	// BEHAVIOR: return the first elemnet of the list (without removing it)</span><br><span class="line">	void prepend(ite x);</span><br><span class="line">	// BEHAVIOUR: add element &lt;x&gt; to the beginning of the list.</span><br><span class="line">	// POSTCONDITION: isEmpty()==false</span><br><span class="line">	// BAHAVIOUR: head() == x</span><br><span class="line">	List tail();</span><br><span class="line">	// PRECONDITION: isEmpty()==false</span><br><span class="line">	// BEHAVIOUR: return the list of all the elements except the first (without removing it).</span><br><span class="line">	</span><br><span class="line">	void setTail(List newTail);</span><br><span class="line">	// PRECONDITION: isEmpty()==false</span><br><span class="line">	// BEHAVIOUR: replace the tail of this list with &lt;newTail&gt;.</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 
-<span id="more"></span>
 
-<h4 id="A-lil-bit-of-history-1"><a href="#A-lil-bit-of-history-1" class="headerlink" title="A lil bit of history[^1]"></a>A lil bit of history[^1]</h4><p>故事从一个波兰犹太裔数学家 斯塔尼斯拉夫·烏拉姆(Stanislaw Ulam) 开始讲起。有一次他生病，身体不适时，一个人喜欢宅在家里玩纸牌接龙游戏（solitaire)。作为一个数学家，他一个自然的想法就是思考有没有办法计算出他赢得一盘游戏的概率，利用组合数学以及概率。虽然他是一个伟大的数学家，但他最后失败了，这个组合情况实在是太复杂了。后来他想到一个比较简单担又不太简单的办法：不断一次又一次的玩这个游戏 最终通过 $\frac{\text{胜利次数}}{总场次}$ 的方法来计算除这个概率，只要是总场次够多，这个概率就会越来越接近真实概率。</p>
-<p>问题出现了：他的实力是在不怎么样，使得他玩到想出这个想法的时候其实一局都没赢过。这样来看的话，如果想要足够准确 他可能要天天玩这个纸牌游戏 持续好几年<span class="github-emoji"><span>😢</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f622.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>  他很快想出了个解决办法：“寻求电脑的帮助呀”! 虽然他本身不是个懂电脑的人（在那个世界上只有几台计算机的时代），他和冯诺依曼认识呀！那个被称为计算机科学的叔叔的大人物（图灵被称为计算机之父，巴贝奇被称为计算机之爷爷）。冯诺依曼说，我可以帮你这个忙！我用ENIAC几个小时就可以模拟完了！（现在的电脑可能几微秒就跑完了） </p>
-<p>自此 <code>蒙特卡洛模拟</code> 就此诞生 他们在后续研究氢弹的时候甚至还用到了 这足以证明这它的作用并不仅限于卡牌 </p>
-<h4 id="赌徒谬误-VS-趋均数回归-1"><a href="#赌徒谬误-VS-趋均数回归-1" class="headerlink" title="赌徒谬误 VS. 趋均数回归[^1]"></a>赌徒谬误 VS. 趋均数回归[^1]</h4><blockquote>
-<p>又是抛硬币：这个经典的例子足以区分这两个经常让人混淆的概念。</p>
-</blockquote>
-<p><strong>让我们先重申一些抛硬币的特性</strong><del>（可能大部分人都知道了）</del></p>
-<ul>
-<li>抛出正反面的概率都是$\frac{1}{2}$ ;   $P(正)=P(反)=\frac{1}{2}=0.5$</li>
-<li>每一次抛硬币这个事件都是互相独立的(independent events)</li>
+
+<h2 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h2><ul>
+<li>LIFO (last in first out)</li>
 </ul>
-<p><strong>想要理解赌徒谬论，自然而然的 让我们从一个赌徒的角度看世界！</strong></p>
-<p>这个游戏非常简单，就是抛硬币然后猜是正面还是反面；猜对了的人会均分所有猜错了的人的赌注。现在非常神奇的事情发生了，这个硬币已经连续十次抛到正面了！一堆赌徒们听到消息蜂拥而至，他们心想太好了太好了我终于要猜对下一次了，然后他们猜第十一次为反面。他们为什么这么猜呢？原因有两个:</p>
-<ol>
-<li>运气守恒定律！这就和我今天倒霉了所以明天运气会更好一样的道理</li>
-<li>连续十一次是正面的概率是 $\frac{1}{2}^{11}=\frac{1}{2048}$ ! 所以这么小的概率 我一定要选反面</li>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ADT Stack {</span><br><span class="line">	boolean isEmpty();</span><br><span class="line">	// BEHAVIOUR: return true iff the structure is empty</span><br><span class="line">	void push(item x);</span><br><span class="line">	// BEHAVIOUR: add element &lt;x&gt; to the top of the stack</span><br><span class="line">	// POSTCONDITION: isEmpty()==false.</span><br><span class="line">	// POSTCONDITION: top()==x</span><br><span class="line">	item pop();</span><br><span class="line">	// PRECONDITION: isEmpty()==false</span><br><span class="line">	// BEHAVIOUR: return the element on the top of the stack</span><br><span class="line">	// As a side effect, remove it from the stack.</span><br><span class="line">	item top();</span><br><span class="line">	// PRECONDITION: isEmpty()==false</span><br><span class="line">	// BEHAVIOUR: Return the element on top of the stack (without removing it).</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Implementations"><a href="#Implementations" class="headerlink" title="Implementations"></a>Implementations</h3><ol>
+<li>Combination of an array and an index (pointing to the “top of stack”)<ul>
+<li>The <code>push</code> operation writes a value into the array and increments the index</li>
+<li>The <code>pop</code> operation delets a value from the array and decrements the index</li>
+</ul>
+</li>
+<li>Linked lists<ul>
+<li>Pushing an item adds an extra cell to the front of a list</li>
+<li>Popping removes the cell at the front of the list</li>
+</ul>
+</li>
 </ol>
-<p>那他们是正确的吗？其实不是的: 因为抛硬币的第二个特性 – 每次抛硬币的事件都是互相独立的。所以说下一次抛到正面的概率是1/2，抛到反面的概率也是1/2. 那(连续十一次是正面的概率是 $\frac{1}{2}^{11}=\frac{1}{2048}$ )难道是错的吗？其实也没错。但是我们所经历的 并不是<code>P(连续11次正面)</code>这个概率 而是 <code>P(连续十次正面，那么第十一次是正面)</code> 这个概率。前者为$\frac{1}{2048}$，后者为 $\frac{1}{2}$.</p>
-<p>这就是赌徒谬论：也就是为什么有那么多人沉迷赌博的原因之一：他们做出了虚假的判断，并相信有运气守恒 : <u>只要再来一局我一定能赢</u></p>
-<p>诶那难道世界上没有<strong>运气守恒</strong>这个东西了吗? 其实是有的，而那就是<strong>趋均数回归</strong></p>
-<p><strong>趋均数回归</strong>的故事，还是和之前一样，非常神奇的事情发生了！硬币连续十次抛到正面了！但是现在猜的并不是第十一次，而是在抛硬币第11-20次这十次中，会有多少个正面。</p>
-<p>用人话来讲 去均属回归是这样的一个定理：<em>如果一个离谱的事情发生了 下一个事情大概率不会有这么离谱 会更趋向于这件事情的平均（在这个例子的情况下是5）</em>  </p>
-<p>回归到抛硬币的例子里，在抛第1-10个硬币这件事情上，全都是正面 – 这比较离谱。趋均数回归告诉我们，在抛第11-20个硬币的时候，大概率不会有十个全是正面这种情况了。可能是九个，八个，七个这么离谱的情况，但大概率会比之前不离谱一点 会离5更近一点。</p>
-<p>那很多人可能会搞糊涂 很奇怪呀 为什么你说赌徒谬论告诉我们没有运气守恒 趋均数回归告诉我们有运气守恒了。我只能说他俩对运气守恒的定义不太一样。如果是赌徒谬论 它所讲的运气守恒 在接下来这十个硬币的情况下 判断出来的是什么呢：因为我前面全是正面 那我后面肯定大部分都是反面！因为要守恒嘛 按理说正面和反面要一样多的 所以他们的判断可能说 接下来有八个反面 或者接下来有七个反面。而趋均数回归告诉我们的是：接下来的正面数量我觉得会离5更近一点 相比于之前的这么离谱的正面数量=10的情况。它没有说我接下来会有少于五个正面，只是说接下来的正面数量会比起之前的正面数量来 离平均更近一点。</p>
-<p>[^1]: MIT 6.0002 Introduction to Computational Thinking and Data Science, Fall 2016; <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=OgO1gpXSUzU">https://www.youtube.com/watch?v=OgO1gpXSUzU</a></p>
+<h3 id="Use-cases"><a href="#Use-cases" class="headerlink" title="Use cases"></a>Use cases</h3><ul>
+<li>Reverse Polish Notation (e.g. <code>3 12 add 4 mul 2 sub</code> -&gt; <code>(3 x 12) x 4 - 2</code>)</li>
+</ul>
+<h2 id="Queue-and-Deque"><a href="#Queue-and-Deque" class="headerlink" title="Queue and Deque"></a>Queue and Deque</h2><ul>
+<li>FIFO (first in first out)</li>
+</ul>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ADT Queue{</span><br><span class="line">	boolean isEmpty();</span><br><span class="line">	// BEHAVIOUR: return true iff the structure is empty.</span><br><span class="line">	void put(item x);</span><br><span class="line">	// BEHAVIOUR: insert element &lt;x&gt; at the end of the queue.</span><br><span class="line">  // POSTCONDITION: isEmpty()==false</span><br><span class="line">  item get();</span><br><span class="line">  // PRECONDITION: isEmpty()==false</span><br><span class="line">  // BEHAVIOUR: return the first elemnt of the queue, and removing it from the queue</span><br><span class="line">  item first();</span><br><span class="line">  // PRECONDITION: isEmpty()==false</span><br><span class="line">  // BEHAVIOUR: return the first element of the queue without removing it</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">ADT Queue{</span><br><span class="line">	boolean isEmpty();</span><br><span class="line">	// BEHAVIOUR: return true iff the structure is empty.</span><br><span class="line">	void putFront(item x);</span><br><span class="line">	// BEHAVIOUR: insert element &lt;x&gt; at the front of the queue.</span><br><span class="line">  // POSTCONDITION: isEmpty()==false</span><br><span class="line">  void putRear(item x);</span><br><span class="line">  // BEHAVIOUR: insert element &lt;x&gt; at the back of the queue.</span><br><span class="line">  // POSTCONDITION: isEmpty()==false</span><br><span class="line">  item getFront();</span><br><span class="line">  // PRECONDITION: isEmpty()==false</span><br><span class="line">  // BEHAVIOUR: return the first elemnt of the queue</span><br><span class="line">  item getRear();</span><br><span class="line">  // PRECONDITION: isEmpty()==false</span><br><span class="line">  // BEHAVIOUR: return the last element of the queue </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Dictionary"><a href="#Dictionary" class="headerlink" title="Dictionary"></a>Dictionary</h2><ul>
+<li>Also known as Maps, Tables, Associative arrays, or Symbol tables</li>
+</ul>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">ADT Dictionary {</span><br><span class="line">	void set(Key k, Value v);</span><br><span class="line"> 	// BEHAVIOUR: store the given (&lt;k&gt;, &lt;v&gt;) pair in the dictionary.</span><br><span class="line">	// If a pair with the same &lt;k&gt; had already been stored, the old</span><br><span class="line">	// value is overwritten and lost.</span><br><span class="line">	// POSTCONDITION: get(k) == v</span><br><span class="line"></span><br><span class="line">	Value get(Key k);</span><br><span class="line">	// PRECONDITION: a pair with the sought key &lt;k&gt; is in the dictionary.</span><br><span class="line">	// BEHAVIOUR: return the value associated with the supplied &lt;k&gt;,</span><br><span class="line">  // without removing it from the dictionary.</span><br><span class="line">	</span><br><span class="line">	 void delete(Key k);</span><br><span class="line">	 // PRECONDITION: a pair with the given key &lt;k&gt; has already been inserted.</span><br><span class="line">	 // BEHAVIOUR: remove from the dictionary the key-value pair indexed by</span><br><span class="line">	 // the given &lt;k&gt;.</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
 
     </div>
 
@@ -343,7 +348,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>Post link: </strong>
-      <a href="https://haoran-jie.github.io/WhatandwhY/Monte-Carlo-%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B/" title="Monte Carlo simulation| 蒙特卡洛模拟">https://haoran-jie.github.io/WhatandwhY/Monte-Carlo-蒙特卡洛/</a>
+      <a href="https://haoran-jie.github.io/Cambridge/Notes/Abstract-Data-Types-Notes/" title="Abstract Data Types Notes">https://haoran-jie.github.io/Cambridge/Notes/Abstract-Data-Types-Notes/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -352,21 +357,18 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/Statistics/" rel="tag"><i class="fa fa-tag"></i> Statistics</a>
+              <a href="/tags/Algorithms/" rel="tag"><i class="fa fa-tag"></i> Algorithms</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/Mathematics/tools/LaTeX-Personal-CheatSheet/" rel="prev" title="LaTeX Personal CheatSheet">
-                  <i class="fa fa-chevron-left"></i> LaTeX Personal CheatSheet
+                <a href="/Cambridge/Notes/Graphics-Notes/" rel="prev" title="Graphics_Notes">
+                  <i class="fa fa-chevron-left"></i> Graphics_Notes
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/uncategorized/Deep-Learning-Recipe/" rel="next" title="Deep Learning Recipe">
-                  Deep Learning Recipe <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -468,13 +470,13 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://haoran-jie.github.io/WhatandwhY/Monte-Carlo-%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://haoran-jie.github.io/Cambridge/Notes/Abstract-Data-Types-Notes/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"samuels-blog-5","count":true,"i18n":{"disqus":"disqus"}}</script>
 <script src="/js/third-party/comments/disqus.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Haoran-Jie","repo":"GItalkComments","client_id":"a78520e4a91db64c6ead","client_secret":"80a445f6a6f80fcd44fea523269b55c10ba59002","admin_user":"Haoran-Jie","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"fecdc169bad2b733ca04fe29d5829d4c"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Haoran-Jie","repo":"GItalkComments","client_id":"a78520e4a91db64c6ead","client_secret":"80a445f6a6f80fcd44fea523269b55c10ba59002","admin_user":"Haoran-Jie","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"c33154e0df186a82b4107b26bcbaeb4c"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
