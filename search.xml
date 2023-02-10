@@ -4953,4 +4953,1530 @@ E --&gt;|Y| G(Use more data)</code></pre>
         <tag>Algorithms</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Chapter3_Hardware</title>
+    <url>/Notes/ASCS/Chapter3-Hardware/</url>
+    <content><![CDATA[<h2 id="Computers-and-their-components"><a href="#Computers-and-their-components" class="headerlink" title="Computers and their components"></a>Computers and their components</h2><ul>
+<li><p>IO</p>
+<ul>
+<li><p>Input</p>
+<p>Accepts information from human operations, electromechanical devices, other computers, etc.</p>
+</li>
+<li><p>Output</p>
+<p>Sends results of processing</p>
+</li>
+</ul>
+</li>
+<li><p>Storage</p>
+<ul>
+<li>Primary storage<ul>
+<li>Primary storage can be accessed directly from the CPU</li>
+<li>Contains ROM (random access memory) and RAM (read-only memory)</li>
+</ul>
+</li>
+<li>Secondary storage<ul>
+<li>Storage devices that are not directly accessible by the CPU</li>
+<li>Non-volatile devices</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Embedded systems</p>
+<ul>
+<li>Microprocessor within a larger system (e.g. washing machine, cooker, refrigerator…)</li>
+<li>Microprocessor that perform one specific task (e.g. connect to a web so the system can be turned on or off by a program on smartphone)</li>
+</ul>
+</li>
+<li><p>Principal operations</p>
+<ul>
+<li>Laser printer<ul>
+<li>The revolving drum is initially given an electrical charge</li>
+<li>A laser beam scans back and forth across the drum</li>
+<li>… discharging certain points (which matches with the shape of texts and images to be printed)</li>
+<li>The drum is coated with oppositely charged toner</li>
+<li>The drum rolls over electro-statically charged paper</li>
+<li>The “pattern” on the drum is transferred to the paper</li>
+<li>The paper is passed through the fuser to seal the image</li>
+<li>The electrical charge is removed from the drum using discharging bulb</li>
+</ul>
+</li>
+<li>3D printer<ul>
+<li>Produces solid, 3D objects/prototypes</li>
+<li>Used in CAD/CAM</li>
+<li>Make use of tomography/slices of an object</li>
+</ul>
+</li>
+<li>Microphone<ul>
+<li>The microphone has a diaphragm</li>
+<li>The incoming sound waves cause vibrations of the diaphragm</li>
+<li>… causing a coil to move past a magnet</li>
+<li>A electrical signal is produced</li>
+</ul>
+</li>
+<li>Speakers<ul>
+<li>Takes an electrical signal and translates it into physical vibrations to create sound waves</li>
+<li>An electric current in the coil creates an electro-magnetic field</li>
+<li>Changes in the audio signal causes the direction of the electric current to change</li>
+<li>The direction of the current determines the polarity of the electromagnet</li>
+<li>The electro-magnet is repelled by or attracted to the permanent magnet</li>
+<li>Causing the coil to vibrate</li>
+<li>The movement of the coil causes the cone/diaphragm to vibrate</li>
+<li>That vibration is transmitted to the air in front of the cone</li>
+<li>The amount of movement will determine the frequency and amplitude of the sound wave produced</li>
+</ul>
+</li>
+<li>Magnetic hard disk<ul>
+<li>The hard disk has one or more platters made of aluminum or glass</li>
+<li>Each surface of the platter is capable of being magnetized</li>
+<li>The disks are mounted on a central spindle</li>
+<li>The disks are rotated at high speed</li>
+<li>Each surface of the disk has a read/write head mounted on an arm positioned just above the surface</li>
+<li>Electronic circuits control the movement of the arm and hence the heads</li>
+<li>The surface of the disk is divided into concentric tracks and sectors</li>
+<li>One track in one sector is the basic unit of storage called a block</li>
+<li>The data is encoded as magnetic pattern for each block</li>
+<li>When writing to disk, a variation in the current in the head produced a variation in magnetic field on the disk</li>
+<li>When reading, variation in the magnetic field produced a variation in current through the head</li>
+</ul>
+</li>
+<li>Solid state memory<ul>
+<li>No moving parts</li>
+<li>Solid stats memory is non-volatile</li>
+<li>Makes use of NAND gates (transistors)</li>
+<li>SSD controller manages the components</li>
+<li>Uses a grid of columns and rows that has two transistors at each intersection</li>
+<li>One transistor is called a floating gate</li>
+<li>The second transistor is called the control gate</li>
+<li>Memory cells store voltages which can represent either a 0 or a 1</li>
+<li>Essentially the movement of electrons is controlled to read/write</li>
+<li>The old data needs to be erased in order to write the new data in the same location</li>
+</ul>
+</li>
+<li>Optical disc reader/writer<ul>
+<li>Drive motor is used to spin the disc</li>
+<li>Tracking mechanism moves the laser assembly</li>
+<li>A lens focuses the laser onto the disc</li>
+<li>Laser beam is shone onto disc to read/write</li>
+<li>Surface of disc has a reflective metal layer</li>
+<li>Tracks on the disc have sequence of pits and lands</li>
+<li>Reflected light is then encoded as a bit pattern</li>
+</ul>
+</li>
+<li>Touchscreen<ul>
+<li>Resistive touchscreen<ul>
+<li>Consists of two charged plates</li>
+<li>Upper layer made if plastic and bottom layer made of glass</li>
+<li>Gap between the layers</li>
+<li>Pressure causes the plates to touch</li>
+<li>Top layer moves to touch the bottom layer</li>
+<li>The circuit is completed when 2 layers touch</li>
+<li>The point of contact is registered</li>
+<li>The position is calculated using coordinates</li>
+</ul>
+</li>
+<li>Capacitive touchscreen<ul>
+<li>Made from materials that store electric charge</li>
+<li>Acts like capacitors</li>
+<li>When touched, the charge is transferred to the finger</li>
+<li>There is a change in the electrostatic field</li>
+<li>Sensors at the screen corners detect the change</li>
+<li>One board microprocessor</li>
+<li>Point of contact is registered</li>
+<li>Coordinates is used to calculate the position</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Virtual reality headset<ul>
+<li>Video is sent from a computer to the headset</li>
+<li>Two feeds are sent to an LCD/OLED display</li>
+<li>Lenses placed between the eyes and the screen allow for focusing and reshaping the image for each eye, thus giving a 3D effect</li>
+<li>Most headsets use 110 field of view, which is enough to give a pseudo 360 surround image</li>
+<li>A frame rate of 60 to 120 images per second</li>
+<li>As user moves their head, a series of sensors measure this movement, which allows the image/video on the screen to react to the user’s head movements</li>
+<li>Headsets also use binaural sound</li>
+<li>Infra-red sensors to monitor eye movement</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Buffers</p>
+</li>
+<li><p>RAM vs ROM</p>
+<ul>
+<li>RAM (Random Access Memory)<ul>
+<li>Stores the runtime data (e.g. data read from sensors)</li>
+<li>Memory location can be accessed independent of which memory location was last used</li>
+<li>Can be written to or read from, and the data stored can be changed by the user or by the computer</li>
+<li>Used to store data, files, part of an application or part of the operating system currently in use</li>
+<li>Volatile (memory contents are lost on powering off the computer)</li>
+<li>Memory sizer is often larger than ROM</li>
+<li>Can be increased in size to improve the operational speed of computer</li>
+</ul>
+</li>
+<li>ROM (Read Only Memory)<ul>
+<li>Store the start-up instructions</li>
+<li>It cannot be written to or changed</li>
+<li>Permanent memory device</li>
+<li>Non-volatile memory device</li>
+<li>Data stored cannot be altered</li>
+<li>Sometimes used to store BIOS and other data needed at start up</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>SRAM vs DRAM</p>
+<ul>
+<li>SRAM is much faster than DRAM when it comes to data access</li>
+<li>DRAM is the most common type of RAM used in computers</li>
+</ul>
+</li>
+<li><p>PROM vs EPROM vs EEPROM</p>
+<ul>
+<li>PROM (Programmable Read-Only Memory)<ul>
+<li>Can be altered once</li>
+<li>Made up of a matrix of fuses</li>
+</ul>
+</li>
+<li>EPROM (Erasable Programmable Read-Only Memory)<ul>
+<li>Use floating gate transistors and capacitors</li>
+<li>Reusable</li>
+<li>Using UV light to erase</li>
+<li>ROM (primary)</li>
+</ul>
+</li>
+<li>EEPROM (Electronically Erasable PROM)<ul>
+<li>Used in solid state storage device</li>
+<li>Faster but more expensive than flash drive</li>
+<li>Using pulsed voltage to erase</li>
+<li>SSD (secondary)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Monitoring and control system</p>
+<ul>
+<li>Monitoring system<ul>
+<li>If the new data is outside the acceptable range, a warning message is sent to a screen or an alarm is activated</li>
+<li>The microprocessor or computer has no effect on what is being monitored - it is simply “watching” the process</li>
+<li>Examples<ul>
+<li>Monitoring a patient in a hospital for vital signs such as heart rate, temperature, etc.</li>
+<li>Checking for intruders in a burglar alarm system</li>
+<li>Checking the temperature level in a car engine</li>
+<li>Monitoring the pollution level in a river</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Control system<ul>
+<li>If the new data is outside the acceptable range, the microprocessor or computer sends signals to control valves, motors, etc.</li>
+<li>The output from the system affects the next set of inputs from the sensors</li>
+<li>Examples<ul>
+<li>Turning street lights on at night and turn them off again during daylight</li>
+<li>Controlling the temperature in a central heating/air conditioning system</li>
+<li>Controlling the traffic lights at a road conjunction</li>
+<li>Controlling the environment in a green house</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Logic-gates-and-logic-circuits"><a href="#Logic-gates-and-logic-circuits" class="headerlink" title="Logic gates and logic circuits"></a>Logic gates and logic circuits</h2><ul>
+<li><p>Logic gates</p>
+<p><img src="https://s2.loli.net/2023/02/10/AGujoKXmshtUPrS.jpg" alt="IMG_AF736B9BC6FF-1.jpeg"></p>
+</li>
+<li><p>Truth tables</p>
+<ul>
+<li><p>NOT</p>
+<table>
+<thead>
+<tr>
+<th>$A$</th>
+<th>$X$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$0$</td>
+<td>$1$</td>
+</tr>
+<tr>
+<td>$1$</td>
+<td>$0$</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>AND</p>
+<table>
+<thead>
+<tr>
+<th>$A$</th>
+<th>$B$</th>
+<th>$X$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$0$</td>
+<td>$0$</td>
+<td>$0$</td>
+</tr>
+<tr>
+<td>$0$</td>
+<td>$1$</td>
+<td>$0$</td>
+</tr>
+<tr>
+<td>$1$</td>
+<td>$0$</td>
+<td>$0$</td>
+</tr>
+<tr>
+<td>$1$</td>
+<td>$1$</td>
+<td>$1$</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>OR</p>
+<table>
+<thead>
+<tr>
+<th>$A$</th>
+<th>$B$</th>
+<th>$X$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$0$</td>
+<td>$0$</td>
+<td>$0$</td>
+</tr>
+<tr>
+<td>$0$</td>
+<td>$1$</td>
+<td>$1$</td>
+</tr>
+<tr>
+<td>$1$</td>
+<td>$0$</td>
+<td>$1$</td>
+</tr>
+<tr>
+<td>$1$</td>
+<td>$1$</td>
+<td>$1$</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>NAND</p>
+<table>
+<thead>
+<tr>
+<th>$A$</th>
+<th>$B$</th>
+<th>$X$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$0$</td>
+<td>$0$</td>
+<td>$1$</td>
+</tr>
+<tr>
+<td>$0$</td>
+<td>$1$</td>
+<td>$1$</td>
+</tr>
+<tr>
+<td>$1$</td>
+<td>$0$</td>
+<td>$1$</td>
+</tr>
+<tr>
+<td>$1$</td>
+<td>$1$</td>
+<td>$0$</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>NOR</p>
+<table>
+<thead>
+<tr>
+<th>$A$</th>
+<th>$B$</th>
+<th>$X$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$0$</td>
+<td>$0$</td>
+<td>$1$</td>
+</tr>
+<tr>
+<td>$0$</td>
+<td>$1$</td>
+<td>$0$</td>
+</tr>
+<tr>
+<td>$1$</td>
+<td>$0$</td>
+<td>$0$</td>
+</tr>
+<tr>
+<td>$1$</td>
+<td>$1$</td>
+<td>$0$</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>XOR</p>
+<table>
+<thead>
+<tr>
+<th>$A$</th>
+<th>$B$</th>
+<th>$X$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$0$</td>
+<td>$0$</td>
+<td>$0$</td>
+</tr>
+<tr>
+<td>$0$</td>
+<td>$1$</td>
+<td>$1$</td>
+</tr>
+<tr>
+<td>$1$</td>
+<td>$0$</td>
+<td>$1$</td>
+</tr>
+<tr>
+<td>$1$</td>
+<td>$1$</td>
+<td>$0$</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1>]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>ASCS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Chapter4_ProcessorFundamentals</title>
+    <url>/Notes/ASCS/Chapter4-ProcessorFundamentals/</url>
+    <content><![CDATA[<h2 id="Central-Processing-Unit-CPU-Architecture"><a href="#Central-Processing-Unit-CPU-Architecture" class="headerlink" title="Central Processing Unit (CPU) Architecture"></a>Central Processing Unit (CPU) Architecture</h2><ul>
+<li><p>Von Neumann model</p>
+<ul>
+<li>Single processor</li>
+<li>Program consists of a sequence of stored instructions</li>
+<li>Instructions and data are indistinguishable</li>
+<li>… are stored in a contiguous block of main memory</li>
+<li>Instructions are fetched and executed in sequence</li>
+</ul>
+</li>
+<li><p>Stored-program concept</p>
+<ul>
+<li>Program must be resident in main memory to be executed</li>
+<li>Program consists of a sequence of instructions</li>
+<li>Which occupy a contiguous block of main memory</li>
+<li>Instructions and data are indistinguishable</li>
+<li>Each instruction is fetched, decoded, then executed</li>
+<li>Instruction fetch and data operation cannot occur at the same time</li>
+</ul>
+</li>
+<li><p>Registers</p>
+<ul>
+<li><p>General purpose registers</p>
+<ul>
+<li>Hold data that is frequently used by the CPU</li>
+<li>Can be used by the programmer when addressing the CPU</li>
+<li>e.g. accumulator</li>
+</ul>
+</li>
+<li><p>Special purpose registers</p>
+<ul>
+<li><p>Have a specific function within the CPU</p>
+</li>
+<li><p>Hold the program state</p>
+</li>
+<li><p>PC (Program Counter)</p>
+<ul>
+<li>Stores the address of the next instruction to be fetched</li>
+</ul>
+</li>
+<li><p>MDR (Memory Data Register)</p>
+<ul>
+<li>Stores the data in transit between memory and other registers</li>
+<li>Holds the instruction before it is passed to the CIR</li>
+<li>The location accessed is what is stored in MAR</li>
+</ul>
+</li>
+<li><p>MAR (Memory Address Register)</p>
+<ul>
+<li>Stores the address of the memory location which is about to be accessed</li>
+</ul>
+</li>
+<li><p>ACC (Accumulator)</p>
+<ul>
+<li>Stores the value of calculation by ALU</li>
+</ul>
+</li>
+<li><p>IX (Index Register)</p>
+<ul>
+<li>Used to carry index addressing operation</li>
+</ul>
+</li>
+<li><p>CIR (Current Instruction Register)</p>
+<p>Stores the current instruction being executed and decoded</p>
+</li>
+<li><p>Status Register</p>
+<ul>
+<li>Independent bits/flag</li>
+<li>Each flag is set depending on an event</li>
+<li>e.g. overflow, zero, negative, carry flag</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>ALU (Arithmetic and Logic Unit)</p>
+<ul>
+<li>Carries out arithmetic calculations</li>
+<li>Carries out logic operations</li>
+<li>Holds the result in ACC</li>
+</ul>
+</li>
+<li><p>CU (Control Unit)</p>
+<ul>
+<li>Sends and receives signals</li>
+<li>Synchronizes operations</li>
+<li>Control the execution of operations</li>
+<li>e.g. input/output</li>
+</ul>
+</li>
+<li><p>System clock</p>
+<ul>
+<li>Sends out a number of pulses in a given time interval</li>
+<li>Each processor operation takes several cycles to execute</li>
+<li>The higher the clock frequency, the shorter the execution time and the better the performance</li>
+</ul>
+</li>
+<li><p>IAS (Immediate Access Store)</p>
+<ul>
+<li>Holds all the data and programs that the processor/CPU needs to access</li>
+</ul>
+</li>
+<li><p>Bus</p>
+<ul>
+<li>Address bus<ul>
+<li>Transfer address of memory and input/output position</li>
+<li>Uni-directional</li>
+</ul>
+</li>
+<li>Data bus<ul>
+<li>Carries data between processor and memory</li>
+<li>Bi-directional</li>
+</ul>
+</li>
+<li>Control bus<ul>
+<li>Transmit signals between the control unit</li>
+<li>Dedicated bus since all timing signals are generated according to control signal</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Performance factors</p>
+<ul>
+<li>Number of cores<ul>
+<li>Each cores processes one instruction per clock pulse</li>
+<li>Multiple cores means that sequence of instructions can be split between them</li>
+<li>… and so more than one instruction is executed per clock pulse</li>
+<li>More cores decreases the time taken to complete task</li>
+</ul>
+</li>
+<li>Bus width<ul>
+<li>Bus width determines the number of bits that can be simultaneously transferred</li>
+<li>Increasing bus width increases the number of bits that can be moved at one time</li>
+<li>… hence improving processing speed as fewer transfers are needed</li>
+<li>e.g. double the width of the data bus moves 2x data per clock pulse</li>
+</ul>
+</li>
+<li>Clock speed<ul>
+<li>Each instruction is executed on a clock pulse</li>
+<li>… so the clock clock speed determines the number of instructions that can be run per second</li>
+<li>The faster the clock speed the more instructions can be run per second</li>
+</ul>
+</li>
+<li>Cache memory<ul>
+<li>Cache memory uses SRAM while main memory uses DRAM</li>
+<li>… so cache memory is faster than main memory</li>
+<li>Cache memory stores frequently used instructions and data</li>
+<li>When CPU reads memory, it first checks out cache and then moves on to main memory if the required data is not in cache memory</li>
+<li>So this improve processor performance</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Ports</p>
+<ul>
+<li>USB (Universal Serial Bus)<ul>
+<li>An asynchronous serial data transmission method</li>
+<li>The computer automatically detects that a device is present (due to a small change in the voltage level)</li>
+<li>The device is automatically recognized, and the appropriate device driver is loaded up</li>
+<li>If a new device is detected, the computer will look for the device driver which matches the device. If this is not available, the user is prompted to download the appropriate software</li>
+</ul>
+</li>
+<li>HDMI (High Definition Multimedia Interface)<ul>
+<li>The computer automatically detects that a device is present (due to a small change in the voltage level)</li>
+<li>Handshake between the display and the computer</li>
+<li>The display sends meta data about itself (resolution, color depth, etc.)</li>
+</ul>
+</li>
+<li>VGA (Video Graphics Array)<ul>
+<li>The computer automatically detects that a device is present (due to a small change in the voltage level)</li>
+<li>Handshake between the display and the computer</li>
+<li>The display sends meta data about itself (resolution, color depth, etc.)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>F-E (Fetch-Execute) cycle</p>
+<ul>
+<li>Fetch<ul>
+<li>The next instruction is fetched from the memory address in PC</li>
+<li>This instruction in stored in CIR</li>
+<li>The PC is incremented by 1</li>
+<li>The instruction is decoded</li>
+</ul>
+</li>
+<li>Execute<ul>
+<li>The processor passes the decoded instruction as a set of control signals to the appropriate components within the computer system</li>
+</ul>
+</li>
+</ul>
+<p>In register transfer notation:</p>
+<ol>
+<li>$\text{MAR} ← [\text{PC}]$  contents of PC copied into MAR</li>
+<li>$\text{PC} ← [\text{PC}] + 1$  PC is incremented by 1</li>
+<li>$\text{MDR} ← [[\text{MAR}]]$ data stored at address shown in MAR is copied into MDR</li>
+<li>$\text{CIR} ← [\text{MDR}]$ contents of MDR copied into CIR</li>
+</ol>
+</li>
+<li><p>Interrupts</p>
+<ul>
+<li>At the start oof each F-E cycle the processor checks for interrupts</li>
+<li>Check if an interrupt flag is set in status register</li>
+<li>Processor identifies source of interrupt</li>
+<li>Processor checks priority of interrupt</li>
+<li>If interrupt priority is high enough</li>
+<li>Processor saves current contents of registers</li>
+<li>Processor calls ISR (Interrupt Service Routine)</li>
+<li>Address of ISR is loaded into PC</li>
+<li>When servicing of interrupt complete, processor restores registers</li>
+<li>Processor continues with next F-E cycle</li>
+</ul>
+</li>
+</ul>
+<h2 id="Assembly-Language"><a href="#Assembly-Language" class="headerlink" title="Assembly Language"></a>Assembly Language</h2><ul>
+<li><p>Two-pass assembler</p>
+<ul>
+<li>Pass 1<ul>
+<li>Read the assembly language program one line at a time</li>
+<li>Ignore anything not required, such as comments</li>
+<li>Allocate a memory address for the line of code</li>
+<li>Check the opcode is in the instruction set</li>
+<li>Add any new labels to the symbol table with the address, if known</li>
+<li>Place address of labelled instruction in the symbol table</li>
+</ul>
+</li>
+<li>Pass 2<ul>
+<li>Read the assembly language program one line at a time</li>
+<li>Generate object code, including opcode and operand , from the symbol table generated in Pass 1</li>
+<li>Save or execute the program</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Groups of instructions</p>
+<ul>
+<li><p>Data movement</p>
+<ul>
+<li>Allow data stored at one location to be copied into the accumulator</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Opcode</th>
+<th>Operand</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>LDM</td>
+<td>#n</td>
+<td>Immediate addressing. Load the number to ACC</td>
+</tr>
+<tr>
+<td>LDD</td>
+<td><address></address></td>
+<td>Direct addressing. Load the contents of the location at the given address to ACC</td>
+</tr>
+<tr>
+<td>LDI</td>
+<td><address></address></td>
+<td>Indirect addressing. The address to be used is at the given address. Load the contents of this second address to ACC</td>
+</tr>
+<tr>
+<td>LDX</td>
+<td><address></address></td>
+<td>Indexed addressing. Form the address from <address> + the contents of the index register. Copy the contents of this calculated address to ACC</address></td>
+</tr>
+<tr>
+<td>LDR</td>
+<td>#n</td>
+<td>Immediate addressing. Load the number n to IX</td>
+</tr>
+<tr>
+<td>MOV</td>
+<td><register></register></td>
+<td>Move the contents of the accumulator to the given register</td>
+</tr>
+<tr>
+<td>STO</td>
+<td><address></address></td>
+<td>Store the contents of ACC at the given address</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Input and output of data</p>
+<ul>
+<li>These instructions allow data to be read from the keyboard or output to the screen</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Opcode</th>
+<th>Operand</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IN</td>
+<td></td>
+<td>Key in a character and store its ASCII value in ACC</td>
+</tr>
+<tr>
+<td>OUT</td>
+<td></td>
+<td>Output to the screen the character whose ASCII value is stored in ACC</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Arithmetic operations</p>
+<ul>
+<li>These instructions perform simple calculations on data stored in the accumulator and store the answer in the accumulator, overwriting the original data</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Opcode</th>
+<th>Operand</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ADD</td>
+<td><address></address></td>
+<td>Add the contents of the given address to the ACC</td>
+</tr>
+<tr>
+<td>ADD</td>
+<td>#n / Bn / &amp;n</td>
+<td>Add the number n to the ACC</td>
+</tr>
+<tr>
+<td>SUB</td>
+<td><address></address></td>
+<td>Subtract the contents of the given address from the ACC</td>
+</tr>
+<tr>
+<td>SUB</td>
+<td>#n / Bn / &amp;n</td>
+<td>Subtract the number n from the ACC</td>
+</tr>
+<tr>
+<td>INC</td>
+<td><register></register></td>
+<td>Add 1 to the contents of the register (ACC or IX)</td>
+</tr>
+<tr>
+<td>DEC</td>
+<td><register></register></td>
+<td>Subtract 1 from the contents of the register (ACC or IX)</td>
+</tr>
+</tbody></table>
+<p>PS: #n means that n is in denary, Bn means that n is in binary, &amp;n means that n is in hexadecimal</p>
+</li>
+<li><p>Unconditional and conditional instructions</p>
+<table>
+<thead>
+<tr>
+<th>Opcode</th>
+<th>Operand</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>JMP</td>
+<td><address></address></td>
+<td>Jump to the given address</td>
+</tr>
+<tr>
+<td>JPE</td>
+<td><address></address></td>
+<td>Following a compare instruction, jump to <address> if the compare was True</address></td>
+</tr>
+<tr>
+<td>JPN</td>
+<td><address></address></td>
+<td>Following a compare instruction, jump to <address> if the compare was False</address></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Compare instructions</p>
+<table>
+<thead>
+<tr>
+<th>Opcode</th>
+<th>Operand</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CMP</td>
+<td><address></address></td>
+<td>Compare the contents of ACC with the contents of <address></address></td>
+</tr>
+<tr>
+<td>CMP</td>
+<td>#n</td>
+<td>Compare the contents of ACC with number n</td>
+</tr>
+<tr>
+<td>CMI</td>
+<td><address></address></td>
+<td>Indirect addressing. The address to be used is at the given address. Compare the contents of ACC with the contents of this second address</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p>Addressing modes</p>
+<ul>
+<li><p>Immediate addressing</p>
+<p>The value of the operand is used</p>
+</li>
+<li><p>Direct addressing</p>
+<p>The contents of the location in the given address is used</p>
+</li>
+<li><p>Indirect addressing</p>
+<p>The address is the content of the given address</p>
+</li>
+<li><p>Indexed addressing</p>
+<p>The address is formed by adding the given address by the contents in the Index Register</p>
+</li>
+<li><p>Relative addressing</p>
+<p>The address is formed by adding the current address by the operand</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Bit-manipulation"><a href="#Bit-manipulation" class="headerlink" title="Bit manipulation"></a>Bit manipulation</h2><ul>
+<li><p>Binary shifts</p>
+<ul>
+<li><p>Logical shift</p>
+<p>Left shift:</p>
+<p><img src="https://s2.loli.net/2023/02/10/PHaMEUoGNuVCIBD.png" alt="2560px-Rotate_left_logically.svg.png"></p>
+<p>Right shift:</p>
+<p><img src="https://s2.loli.net/2023/02/10/C4vtrW2pnQU3mEY.png" alt="2560px-Rotate_right_logically.svg.png"></p>
+</li>
+<li><p>Arithmetic shift</p>
+<p>Left shift:</p>
+<p><img src="https://s2.loli.net/2023/02/10/XDQNJMCIRZUwS23.png" alt="600px-Rotate_left_logically.svg.png"></p>
+<p>Right shift: (The empty position in the most significant bit is filled with a copy of the original MSB)</p>
+<p><img src="https://s2.loli.net/2023/02/10/9ZRvlcM64m8sHKN.png" alt="600px-Rotate_right_arithmetically.svg.png"></p>
+</li>
+<li><p>Cyclic shift</p>
+<p>Left shift:</p>
+<p><img src="https://s2.loli.net/2023/02/10/oC38UO2DmSPYGcw.png" alt="Untitled"></p>
+<p>Right shift:</p>
+<p><img src="https://s2.loli.net/2023/02/10/k67L9WfGuZwAPs8.png" alt="Untitled"></p>
+</li>
+</ul>
+</li>
+<li><p>How bit manipulation is used to monitor/control a device</p>
+<ul>
+<li>Each bit in a register or memory location can be used as a flag and would need to be tested, set or cleared separately (bit masking)</li>
+<li>AND is used to check if the bit has been set</li>
+<li>OR is used to set the bit</li>
+<li>XOR is used to clear a bit that has been set</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>ASCS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Chapter5_SystemSoftware</title>
+    <url>/Notes/ASCS/Chapter5-SystemSoftware/</url>
+    <content><![CDATA[<h2 id="Operating-system"><a href="#Operating-system" class="headerlink" title="Operating system"></a>Operating system</h2><ul>
+<li>The need for an Operating System (OS)<ul>
+<li>Communicate with hardware</li>
+<li>Provides an interface between software/hardware and users</li>
+<li>Platform to run codes/program</li>
+</ul>
+</li>
+<li>Management tasks<ul>
+<li>Memory management<ul>
+<li>Allocate RAM to programs/tasks/processes (Organization)</li>
+<li>Keeps track of allocated and free memory locations (Optimization)</li>
+<li>Swaps data to and from the hard drive</li>
+<li>Handles virtual memory (when there is insufficient RAM)</li>
+<li>Paging/segmentations</li>
+<li>Ensure fair usage of memory</li>
+<li>Memory protection (ensure that 2 applications cannot use the same memory location at the same time)</li>
+<li>Release memory when a process stops</li>
+</ul>
+</li>
+<li>File management<ul>
+<li>Storage space is divided into file allocation units</li>
+<li>Space is allocated to particular files</li>
+<li>Maintains a file directory</li>
+<li>Provides file naming conventions</li>
+<li>Implement access rights</li>
+<li>Specifies tasks that can be performed on a file (e.g. open, close, delete, copy, create, move etc.)</li>
+</ul>
+</li>
+<li>Security management<ul>
+<li>Sets up user account</li>
+<li>Check username and password</li>
+<li>Implement access rights</li>
+<li>Automatic backup</li>
+<li>System restore / roll back</li>
+<li>Prevent unauthorized access</li>
+<li>Ensure privacy of data</li>
+<li>Provision for recovery when data is lost</li>
+<li>Firewall</li>
+<li>Anti-virus software</li>
+<li>Carrying out operating system update</li>
+</ul>
+</li>
+<li>Hardware management<ul>
+<li>Installation of appropriate driver software</li>
+<li>Manage interrupts</li>
+<li>Sending control signals to the device</li>
+<li>Control of buffers</li>
+<li>Management of queues</li>
+<li>Control access to data being sent to/from hardware</li>
+<li>Control access to hardware/peripherals</li>
+<li>Manages communication between devices / hardware and software</li>
+</ul>
+</li>
+<li>Process management<ul>
+<li>Allocation of processor time</li>
+<li>Scheduling of processes or tasks</li>
+<li>Ensure fair access</li>
+<li>Handles priority</li>
+<li>Allow multitasking</li>
+<li>Resolution of conflict when two or more processes require the same resource</li>
+<li>Manages the resources the processes need</li>
+<li>Enables processes to share information</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Utility softwares<ul>
+<li>Disk formatter<ul>
+<li>Make existing data inaccessible</li>
+<li>Partitions the disk into logical drives</li>
+<li>Sets up the file system</li>
+<li>Prepares the disk for initial use</li>
+<li>To configure the disc for use</li>
+<li>To initialize a file system</li>
+<li>To install a boot sector</li>
+<li>To check for all the sectors and mark bad sectors</li>
+</ul>
+</li>
+<li>Virus checker<ul>
+<li>Scans files stored on a computer system for malicious code</li>
+<li>Scans files when they enter the system / memory stick inserted</li>
+<li>Compare possible virus against a database of known virus</li>
+<li>Carries out heuristic checking</li>
+<li>Sets up schedule for virus-checking</li>
+<li>Isolates/quarantine/deletes viruses</li>
+</ul>
+</li>
+<li>Defragmentation software<ul>
+<li>Reorganizes the disk contents</li>
+<li>Moves split files so they are contiguous</li>
+<li>Creates a larger area of free space</li>
+<li>To reduce head movement</li>
+</ul>
+</li>
+<li>Disk repair software<ul>
+<li>Check for any errors on the disk</li>
+<li>Resolves any errors on the disk</li>
+<li>Retrieves data from a damages disk / recovers disk when the data corrupt</li>
+<li>Marks bad sectors on the disk as unusable</li>
+</ul>
+</li>
+<li>File compression<ul>
+<li>Compresses data before writing it to the hard disk</li>
+<li>Decompresses it again when reading this data</li>
+<li>Increase the capacity</li>
+</ul>
+</li>
+<li>Back-up software<ul>
+<li>Creates a copy of the contents of a disk. Can be set up to automatically backup</li>
+<li>Allows the user to decide what is backed up</li>
+<li>Allows the user to set up an off-site backup</li>
+<li>May encrypt the backup files</li>
+<li>restores the data if necessary</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Program libraries<ul>
+<li>Pre-compiled</li>
+<li>Collection of functions/routines</li>
+<li>Each function/routine performs a specific task/purpose</li>
+<li>The program library can be referenced/imported</li>
+<li>The functions/routines can be called in the original program</li>
+<li>Use Dynamic Link Library (DLL) files</li>
+<li>Benefits<ul>
+<li>Code is already tested, so it is more likely to work</li>
+<li>Saves programming time, because codes do not have to be rewritten from scratch</li>
+<li>Can be written in a different programming language, so special features of that language can be used</li>
+<li>The programmer can use functions that they may not know how to code</li>
+<li>If there’s an improvement in the library routine, the program updates automatically</li>
+<li>Simplifies the program, since just the name of the function is included in the source code</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Language-translators"><a href="#Language-translators" class="headerlink" title="Language translators"></a>Language translators</h2><ul>
+<li>Assembler<ul>
+<li>Translates assembly program into machine code</li>
+<li>Either store the translated program directly in main memory for execution</li>
+<li>Or store the translated program on a storage medium to be used later</li>
+<li>Every different type of computer/chip has its own machine code and assembly language</li>
+</ul>
+</li>
+<li>Compiler<ul>
+<li>Used when development complete (ready for distribution)</li>
+<li>Reads the source code and reports all errors</li>
+<li>Run/test the program multiple times without recompilation</li>
+<li>The compiled file executed faster</li>
+<li>Produce an executable file (which is no longer compiler dependent)</li>
+<li>Cross-compilation, the program can be compiled to run on different platforms</li>
+<li>Executable file runs faster than interpreter</li>
+</ul>
+</li>
+<li>Interpreter<ul>
+<li>Used during development</li>
+<li>Test/run incomplete program</li>
+<li>Debugging is easier</li>
+<li>Because errors are reported and can be corrected as they are found</li>
+<li>Can run partially complete program</li>
+<li>Change the program and see the effect in real-time</li>
+<li>Translates an statement and executes it immediately</li>
+<li>Parts of the program is tested, without all the program code available</li>
+</ul>
+</li>
+</ul>
+<p><strong>High level language may be partially compiled and partially interpreted, such as java</strong></p>
+<ul>
+<li>IDE<ul>
+<li>Coding<ul>
+<li>Context-sensitive prompts</li>
+</ul>
+</li>
+<li>Initial error detection<ul>
+<li>Dynamic syntax checks</li>
+</ul>
+</li>
+<li>Presentation<ul>
+<li>Pretty-print</li>
+<li>Expand and collapse code blocks</li>
+</ul>
+</li>
+<li>Debugging<ul>
+<li>Single stepping</li>
+<li>Breakpoints</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>ASCS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Chapter6_SecurityPrivactAndDataIntegrity</title>
+    <url>/Notes/ASCS/Chapter6-SecurityPrivactAndDataIntegrity/</url>
+    <content><![CDATA[<h2 id="Data-security"><a href="#Data-security" class="headerlink" title="Data security"></a>Data security</h2><ul>
+<li>Security vs privacy vs integrity<ul>
+<li>Security<ul>
+<li>Security is keeping data safe from accidental damage</li>
+<li>Security is the prevention of data loss</li>
+</ul>
+</li>
+<li>Privacy<ul>
+<li>Privacy is the need to restrict access to personal data/keep data confidential</li>
+<li>To avoid being seen by unauthorized people</li>
+</ul>
+</li>
+<li>Integrity<ul>
+<li>Integrity is making sure the data is correct / valid / accurate / consistent / up-to-date</li>
+<li>Integrity ensures that the data received is the same as the data sent</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Security measure<ul>
+<li>User accounts and password</li>
+<li>Digital signatures</li>
+<li>Firewall<ul>
+<li>Examine the traffic between the computer and the internet</li>
+<li>Check whether incoming or outgoing data meets a given set of criteria</li>
+<li>Block the traffic if the data fails to meet the criteria, and giving the user a warning</li>
+<li>Log all incoming and outgoing traffic to allow later interrogation</li>
+<li>Prevent access to certain undesirable sites</li>
+<li>Helps to prevent viruses or hackers</li>
+<li>Sent warning if some software is trying to access an external data source</li>
+</ul>
+</li>
+<li>Anti-virus software<ul>
+<li>Check software before they run on a computer</li>
+<li>Compare possible virus against a database of known viruses</li>
+<li>Carry out heuristic checking</li>
+<li>Quarantine files which are possibly infected</li>
+</ul>
+</li>
+<li>Anti-spyware</li>
+<li>Encryption<ul>
+<li>Data are scrambled so they cannot be understand unless a decryption key is given</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Security threats<ul>
+<li>Malware (virus, spyware)<ul>
+<li>Virus<ul>
+<li>Malicious program</li>
+<li>Replicates itself</li>
+<li>Can cause loss of data</li>
+<li>Can cause computer to crash</li>
+<li>Can fill up hard disk with data</li>
+</ul>
+</li>
+<li>Spyware<ul>
+<li>Gathers information by monitoring key presses on user’s keyboard</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Hacker<ul>
+<li>Illegal access to a computer system without the user’s permission. Intentional delete, alter or corrupt user’s files, or to gain personal information</li>
+</ul>
+</li>
+<li>Phishing<ul>
+<li>Legitimate-looking emails containing links or attachments which, when clicked, take the user to fake website, or they may trick the user into responding with personal data</li>
+</ul>
+</li>
+<li>Pharming<ul>
+<li>Malicious code installed on a user’s computer or web server, redirects to a fake website without their knowledge and gain personal information</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Security methods<ul>
+<li>Encryption</li>
+<li>Access rights</li>
+</ul>
+</li>
+</ul>
+<h2 id="Data-integrity"><a href="#Data-integrity" class="headerlink" title="Data integrity"></a>Data integrity</h2><ul>
+<li><p>Validation</p>
+<ul>
+<li><p>Check if the data entered is sensible, reasonable, acceptable</p>
+</li>
+<li><p>Does not check if the data is correct</p>
+</li>
+<li><p>Range check</p>
+<p>Checks whether data entered is between a lower and an upper limit</p>
+</li>
+<li><p>Format check</p>
+<p>Checks whether data has been entered in the agreed format</p>
+</li>
+<li><p>Length check</p>
+<p>Checks whether data has the required number of characters or numbers</p>
+</li>
+<li><p>Presence check</p>
+<p>Checks to make sure a field is not left empty when it should contain data</p>
+</li>
+<li><p>Existence check</p>
+<p>Checks if data in a file or file name actually exists</p>
+</li>
+<li><p>Limit check</p>
+<p>Checks only one of the limits (such as the upper limit OR the lower limit)</p>
+</li>
+<li><p>Check digit</p>
+<p>An additional digit, which is calculated from the existing number, added to the number to check integrity</p>
+</li>
+</ul>
+</li>
+<li><p>Verification</p>
+<ul>
+<li>Check if the entered data exactly matches the original data</li>
+<li>Does not check if data is sensible/acceptable</li>
+<li>Visual check<ul>
+<li>Compare entered data and original data manually</li>
+<li>By 2 different people</li>
+</ul>
+</li>
+<li>Double entry<ul>
+<li>The data is entered twice by different people</li>
+<li>The computer automatically compare 2 versions of data</li>
+</ul>
+</li>
+<li>Parity check<ul>
+<li>Uses even or odd parity which is decided before the data sent</li>
+<li>Each byte has a parity bit</li>
+<li>Parity bit is set to 0 or 1 to make parity for byte correct</li>
+<li>After transmission, parity of each byte is rechecked</li>
+<li>If it is not consistent, an error is flagged</li>
+<li>Parity blocks could be used to precisely locate the error</li>
+</ul>
+</li>
+<li>Checksum<ul>
+<li>A calculation if carried out on the data to be sent</li>
+<li>The result is sent, along with data to recipient</li>
+<li>Checksum us re-calculated at receiving end</li>
+<li>If both sums are the same, no error has occurred</li>
+<li>If the sums are different, the data has been corrupted during transmission</li>
+<li>Request is sent to re-send the data</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>ASCS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Chapter7_EthicsAndOwnership</title>
+    <url>/Notes/ASCS/Chapter7-EthicsAndOwnership/</url>
+    <content><![CDATA[<h2 id="Ethics-and-ownership"><a href="#Ethics-and-ownership" class="headerlink" title="Ethics and ownership"></a>Ethics and ownership</h2><ul>
+<li>Why ethics are important<ul>
+<li>Help stop the misuse of computers</li>
+<li>The use of computer needs to be governed</li>
+<li>Help keep users safe when using computers</li>
+<li>Provides rules for using computers</li>
+<li>Help stop intellectual property theft</li>
+<li>Reference to laws</li>
+<li>Reference to security issues</li>
+</ul>
+</li>
+<li>Importance of joining a professional ethical body<ul>
+<li>Has ethical guidelines to follow<ul>
+<li>so clients and other staff know the standards being applied</li>
+<li>so he does not have to decide what is ethical it’s written down</li>
+</ul>
+</li>
+<li>Clients and staff know he is reputable<ul>
+<li>Recognition of his skills / knowledge</li>
+<li>There may be a test / requirement for entry</li>
+</ul>
+</li>
+<li>They provide help and support<ul>
+<li>For example if he needs legal service</li>
+</ul>
+</li>
+<li>They run training courses<ul>
+<li>to keep his skills up-to-date</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Professional ethical body<ul>
+<li>BCS (British Computer Society)</li>
+<li>IEEE (Institute of Electrical and Electronic Engineers)</li>
+</ul>
+</li>
+<li>Copyright<ul>
+<li>Formal and legal rights to ownership</li>
+<li>Protect intellectual property</li>
+<li>Protects against unauthorized reproduction of work</li>
+<li>Provides for legal right of redress</li>
+</ul>
+</li>
+<li>Free Software Foundation<ul>
+<li>Source code comes with the software</li>
+<li>No charge</li>
+<li>If the software is modifies, the edited source code must be released under the same license</li>
+<li>Can still be copyrighted</li>
+<li>Set restrictions on what the user can do</li>
+</ul>
+</li>
+<li>Open Source Initiative<ul>
+<li>Run the software for any legal purpose as they wish</li>
+<li>The source code comes with the software</li>
+<li>Study the program source code and modify it where necessary to meet their needs</li>
+<li>Redistribute copies of the software to friends and family</li>
+</ul>
+</li>
+<li>Shareware<ul>
+<li>The software is free for a trial period (may be limited in feature)</li>
+<li>Do not have access to the source code</li>
+<li>After the trial a fee is requested</li>
+<li>If the user wants to continue to use the software they need to pay</li>
+</ul>
+</li>
+<li>Commercial software<ul>
+<li>The software can be legally used only after a fee has been paid</li>
+<li>Source code not provided</li>
+<li>The software is purchased</li>
+<li>With a license restricts the number of users</li>
+<li>The program code for the software cannot be edited</li>
+<li>Restricted use</li>
+<li>Limited number of installation allowed</li>
+</ul>
+</li>
+<li>How AI can help<ul>
+<li>Machines can learn from past problems/mistakes<ul>
+<li>They can adapt to stop the same problem occurring again</li>
+<li>They can learn to predict what might happen and raise an alert</li>
+</ul>
+</li>
+<li>Machines can learn how to work more efficiently<ul>
+<li>When an action slows the system down, it can prevent this happening again</li>
+<li>When an action increases the speed of the system, it can repeat this when necessary to improve the efficiency</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Impact of AI<ul>
+<li>Job lost</li>
+<li>More efficient production</li>
+<li>More leisure time</li>
+<li>Help us to conserve natural resource</li>
+<li>Detection of pollution</li>
+<li>Renewable energy</li>
+</ul>
+</li>
+<li>Applications of AI<ul>
+<li>Transport: autonomous vehicles delivery drones</li>
+<li>Criminal justice system: facial recognition</li>
+<li>Advertising and use of data: purchasing assistant</li>
+<li>Healthcare: artificial limb technology, medical procedures require extreme precision</li>
+<li>Military: drones used to carry out dangerous tasks, attacking drone, auto-defense system</li>
+<li>Environmental protection: climate change prediction, energy usage regulation</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>ASCS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Chapter8_Databases</title>
+    <url>/Notes/ASCS/Chapter8-Databases/</url>
+    <content><![CDATA[<h2 id="Database-Concepts"><a href="#Database-Concepts" class="headerlink" title="Database Concepts"></a>Database Concepts</h2><ul>
+<li><p>Limitations of a file-based approach</p>
+<ul>
+<li>Data redundancy - the same data is  stored many times</li>
+<li>Program-data dependence - the program that access the data has to be re-written if any changes are made to the structure of the files</li>
+<li>Data dependency - changes to data means changes to programs accessing the data</li>
+<li>Data inconsistency - when data is updated in one place, it is not updated everywhere</li>
+<li>Hard to perform complex queries - a new program has to be written each time</li>
+<li>Lack of data privacy - user views cannot easily be implemented</li>
+</ul>
+</li>
+<li><p>Features of a relational database</p>
+<ul>
+<li>Multiple tables are linked together<ul>
+<li>reduces redundancy</li>
+<li>increases integrity</li>
+<li>data only needs to be updated once</li>
+<li>associated data will be automatically updated</li>
+</ul>
+</li>
+<li>Program-data independence<ul>
+<li>the structure of the data can change and does not affect program</li>
+<li>the structure of programs can change and does not affect data</li>
+<li>the data can be accessed by any appropriate program</li>
+</ul>
+</li>
+<li>Allows concurrent access to data<ul>
+<li>by the use of record locking</li>
+<li>by restricting over-writing changes</li>
+</ul>
+</li>
+<li>Different user can be given different access rights<ul>
+<li>which improves security</li>
+</ul>
+</li>
+<li>Different users can be given different views of the data<ul>
+<li>so data privacy is maintained</li>
+</ul>
+</li>
+<li>More complex searches and queries can be executed</li>
+</ul>
+</li>
+<li><p>Entity</p>
+<p>Anything that can have data stored about it (e.g. a person, a place)</p>
+</li>
+<li><p>Table</p>
+<p>A group of similar data, in a database, with rows for each instance of an entity and columns for each attribute</p>
+</li>
+<li><p>Record</p>
+<p>A row in a table in a database</p>
+</li>
+<li><p>Field</p>
+<p>A column in a table in a database</p>
+</li>
+<li><p>Tuple</p>
+<p>One instance of an entity, which is represented by a row in a table</p>
+</li>
+<li><p>Attribute</p>
+<p>A column in a table = field</p>
+</li>
+<li><p>Primary key</p>
+<p>Unique identifier (an attribute) for a table, a special case of candidate keys</p>
+</li>
+<li><p>Candidate key</p>
+<p>An attribute of smallest set of attributes in a table where no tuple has the same value</p>
+</li>
+<li><p>Secondary key</p>
+<p>A candidate key that is an alternative to the primary key</p>
+</li>
+<li><p>Foreign key</p>
+<p>A set of attributes in one table that refers to the primary key in another table</p>
+</li>
+<li><p>Relationship</p>
+<p>Situation in which one table in a database has a foreign key that refers to a primary key in another table in the database</p>
+</li>
+<li><p>Referential integrity</p>
+<p>Property of a database that does not contain any values of a foreign key that are not matched to the corresponding primary key</p>
+</li>
+<li><p>Indexing</p>
+<ul>
+<li>Data structure built from one or more columns in a database table</li>
+<li>Helps to efficiently retrieve records from database files</li>
+</ul>
+</li>
+<li><p>Normalization</p>
+<ul>
+<li>First Normal Form (1NF)<ul>
+<li>No repeated groups of attributes</li>
+<li>All attributes should be atomic (single value, non-divisible)</li>
+<li>No duplicate rows</li>
+</ul>
+</li>
+<li>Second Normal Form (2NF)<ul>
+<li>No partial dependencies (some attribute only depends on part of a composite key)</li>
+</ul>
+</li>
+<li>Third Normal Form (3NF)<ul>
+<li>No non-key dependencies</li>
+<li>No transitive dependencies</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Database-Management-System-DBMS"><a href="#Database-Management-System-DBMS" class="headerlink" title="Database Management System (DBMS)"></a>Database Management System (DBMS)</h2><ul>
+<li><p>Features of DBMS</p>
+<ul>
+<li><p>Data dictionary</p>
+<ul>
+<li>A set of data that contains metadata for a data base</li>
+<li>Table/entity names</li>
+<li>Field/attribute names</li>
+<li>Datatypes</li>
+<li>Validation</li>
+<li>Primary keys</li>
+<li>Used by managers of the database</li>
+<li>Maps logical database to physical storage</li>
+</ul>
+</li>
+<li><p>Data modeling</p>
+<p>The analysis and definition of the data structure required in a database to produce a data model</p>
+</li>
+<li><p>Logical schema</p>
+<p>Schema refers to a data model for a specific database that is independent of the DBMS used</p>
+<p>Logical:</p>
+<ul>
+<li>Describes how the relationships will be implemented in the logical structure</li>
+<li>Defines all the logical constraints that need to be applied on the data stored</li>
+<li>Defines tables, views, and integrity constraints</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Tools in DBMS</p>
+<ul>
+<li>Developer interface<ul>
+<li>Set up forms for the input of student data</li>
+<li>Add objects to a form to make data input easier</li>
+<li>Design a report for the output of student marks</li>
+<li>Add a menu to select options for different actions</li>
+<li>To create user friendly features</li>
+<li>To create interactive features</li>
+<li>To create outputs</li>
+<li>Create table</li>
+<li>Create form</li>
+<li>Set up query</li>
+<li>Set up relationships between table</li>
+</ul>
+</li>
+<li>Query processor<ul>
+<li>To create SQL queries</li>
+<li>To search for data that meets the set criteria</li>
+<li>To perform calculation on extracted data</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="DDL-and-DML"><a href="#DDL-and-DML" class="headerlink" title="DDL and DML"></a>DDL and DML</h2>]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>ASCS</category>
+      </categories>
+  </entry>
 </search>

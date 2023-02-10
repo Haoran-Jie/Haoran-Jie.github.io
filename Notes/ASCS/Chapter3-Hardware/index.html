@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#2c3e50" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#2c3e50">
+  <meta name="google-site-verification" content="ONgpvg7NlakSEl6IcZ4-nCCQleKums7GuOYvOS4zXCQ">
+  <meta name="msvalidate.01" content="5331505606E7903BD6FA7D5C7D0FE6DB">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"haoran-jie.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":30,"offset":15},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#546de5","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":true,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
+
+
+
+<link rel="canonical" href="https://haoran-jie.github.io/Notes/ASCS/Chapter3-Hardware/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://haoran-jie.github.io/Notes/ASCS/Chapter3-Hardware/","path":"Notes/ASCS/Chapter3-Hardware/","title":"Chapter3_Hardware"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Chapter3_Hardware | Samuel's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V501S4L4ZZ"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-V501S4L4ZZ","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+  <script async src="//assets.growingio.com/2.1/gio.js"></script>
+  <script class="next-config" data-name="growingio_analytics" type="application/json">"b544ba838d823365"</script>
+  <script src="/js/third-party/analytics/growingio.js"></script>
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Samuel's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Snippets of life of a programmer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">17</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">14</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">38</span></a></li><li class="menu-item menu-item-notes"><a href="/Notes/" rel="section"><i class="fa fa-book fa-fw"></i>Notes</a></li><li class="menu-item menu-item--what&why系列文章"><a href="/WhatandwhY/" rel="section"><i class="fa-solid fa-clipboard-question fa-fw"></i> What&whY系列文章</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Computers-and-their-components"><span class="nav-number">1.</span> <span class="nav-text">Computers and their components</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Logic-gates-and-logic-circuits"><span class="nav-number">2.</span> <span class="nav-text">Logic gates and logic circuits</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number"></span> <span class="nav-text"></span></a></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Haoran Jie"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Haoran Jie</p>
+  <div class="site-description" itemprop="description">18</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Haoran-Jie" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Haoran-Jie" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:samueljie1@gmail.com" title="E-Mail → mailto:samueljie1@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/samueljieee/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;samueljieee&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://haoran-jie.github.io/Notes/ASCS/Chapter3-Hardware/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Haoran Jie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Samuel's Blog">
+      <meta itemprop="description" content="18">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Chapter3_Hardware | Samuel's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Chapter3_Hardware
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-02-10 11:52:46 / Modified: 11:57:11" itemprop="dateCreated datePublished" datetime="2023-02-10T11:52:46+00:00">2023-02-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/ASCS/" itemprop="url" rel="index"><span itemprop="name">ASCS</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/Notes/ASCS/Chapter3-Hardware/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Notes/ASCS/Chapter3-Hardware/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="Computers-and-their-components"><a href="#Computers-and-their-components" class="headerlink" title="Computers and their components"></a>Computers and their components</h2><ul>
+<li><p>IO</p>
+<ul>
+<li><p>Input</p>
+<p>Accepts information from human operations, electromechanical devices, other computers, etc.</p>
+</li>
+<li><p>Output</p>
+<p>Sends results of processing</p>
+</li>
+</ul>
+</li>
+<li><p>Storage</p>
+<ul>
+<li>Primary storage<ul>
+<li>Primary storage can be accessed directly from the CPU</li>
+<li>Contains ROM (random access memory) and RAM (read-only memory)</li>
+</ul>
+</li>
+<li>Secondary storage<ul>
+<li>Storage devices that are not directly accessible by the CPU</li>
+<li>Non-volatile devices</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Embedded systems</p>
+<ul>
+<li>Microprocessor within a larger system (e.g. washing machine, cooker, refrigerator…)</li>
+<li>Microprocessor that perform one specific task (e.g. connect to a web so the system can be turned on or off by a program on smartphone)</li>
+</ul>
+</li>
+<li><p>Principal operations</p>
+<ul>
+<li>Laser printer<ul>
+<li>The revolving drum is initially given an electrical charge</li>
+<li>A laser beam scans back and forth across the drum</li>
+<li>… discharging certain points (which matches with the shape of texts and images to be printed)</li>
+<li>The drum is coated with oppositely charged toner</li>
+<li>The drum rolls over electro-statically charged paper</li>
+<li>The “pattern” on the drum is transferred to the paper</li>
+<li>The paper is passed through the fuser to seal the image</li>
+<li>The electrical charge is removed from the drum using discharging bulb</li>
+</ul>
+</li>
+<li>3D printer<ul>
+<li>Produces solid, 3D objects/prototypes</li>
+<li>Used in CAD/CAM</li>
+<li>Make use of tomography/slices of an object</li>
+</ul>
+</li>
+<li>Microphone<ul>
+<li>The microphone has a diaphragm</li>
+<li>The incoming sound waves cause vibrations of the diaphragm</li>
+<li>… causing a coil to move past a magnet</li>
+<li>A electrical signal is produced</li>
+</ul>
+</li>
+<li>Speakers<ul>
+<li>Takes an electrical signal and translates it into physical vibrations to create sound waves</li>
+<li>An electric current in the coil creates an electro-magnetic field</li>
+<li>Changes in the audio signal causes the direction of the electric current to change</li>
+<li>The direction of the current determines the polarity of the electromagnet</li>
+<li>The electro-magnet is repelled by or attracted to the permanent magnet</li>
+<li>Causing the coil to vibrate</li>
+<li>The movement of the coil causes the cone/diaphragm to vibrate</li>
+<li>That vibration is transmitted to the air in front of the cone</li>
+<li>The amount of movement will determine the frequency and amplitude of the sound wave produced</li>
+</ul>
+</li>
+<li>Magnetic hard disk<ul>
+<li>The hard disk has one or more platters made of aluminum or glass</li>
+<li>Each surface of the platter is capable of being magnetized</li>
+<li>The disks are mounted on a central spindle</li>
+<li>The disks are rotated at high speed</li>
+<li>Each surface of the disk has a read/write head mounted on an arm positioned just above the surface</li>
+<li>Electronic circuits control the movement of the arm and hence the heads</li>
+<li>The surface of the disk is divided into concentric tracks and sectors</li>
+<li>One track in one sector is the basic unit of storage called a block</li>
+<li>The data is encoded as magnetic pattern for each block</li>
+<li>When writing to disk, a variation in the current in the head produced a variation in magnetic field on the disk</li>
+<li>When reading, variation in the magnetic field produced a variation in current through the head</li>
+</ul>
+</li>
+<li>Solid state memory<ul>
+<li>No moving parts</li>
+<li>Solid stats memory is non-volatile</li>
+<li>Makes use of NAND gates (transistors)</li>
+<li>SSD controller manages the components</li>
+<li>Uses a grid of columns and rows that has two transistors at each intersection</li>
+<li>One transistor is called a floating gate</li>
+<li>The second transistor is called the control gate</li>
+<li>Memory cells store voltages which can represent either a 0 or a 1</li>
+<li>Essentially the movement of electrons is controlled to read/write</li>
+<li>The old data needs to be erased in order to write the new data in the same location</li>
+</ul>
+</li>
+<li>Optical disc reader/writer<ul>
+<li>Drive motor is used to spin the disc</li>
+<li>Tracking mechanism moves the laser assembly</li>
+<li>A lens focuses the laser onto the disc</li>
+<li>Laser beam is shone onto disc to read/write</li>
+<li>Surface of disc has a reflective metal layer</li>
+<li>Tracks on the disc have sequence of pits and lands</li>
+<li>Reflected light is then encoded as a bit pattern</li>
+</ul>
+</li>
+<li>Touchscreen<ul>
+<li>Resistive touchscreen<ul>
+<li>Consists of two charged plates</li>
+<li>Upper layer made if plastic and bottom layer made of glass</li>
+<li>Gap between the layers</li>
+<li>Pressure causes the plates to touch</li>
+<li>Top layer moves to touch the bottom layer</li>
+<li>The circuit is completed when 2 layers touch</li>
+<li>The point of contact is registered</li>
+<li>The position is calculated using coordinates</li>
+</ul>
+</li>
+<li>Capacitive touchscreen<ul>
+<li>Made from materials that store electric charge</li>
+<li>Acts like capacitors</li>
+<li>When touched, the charge is transferred to the finger</li>
+<li>There is a change in the electrostatic field</li>
+<li>Sensors at the screen corners detect the change</li>
+<li>One board microprocessor</li>
+<li>Point of contact is registered</li>
+<li>Coordinates is used to calculate the position</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Virtual reality headset<ul>
+<li>Video is sent from a computer to the headset</li>
+<li>Two feeds are sent to an LCD/OLED display</li>
+<li>Lenses placed between the eyes and the screen allow for focusing and reshaping the image for each eye, thus giving a 3D effect</li>
+<li>Most headsets use 110 field of view, which is enough to give a pseudo 360 surround image</li>
+<li>A frame rate of 60 to 120 images per second</li>
+<li>As user moves their head, a series of sensors measure this movement, which allows the image/video on the screen to react to the user’s head movements</li>
+<li>Headsets also use binaural sound</li>
+<li>Infra-red sensors to monitor eye movement</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Buffers</p>
+</li>
+<li><p>RAM vs ROM</p>
+<ul>
+<li>RAM (Random Access Memory)<ul>
+<li>Stores the runtime data (e.g. data read from sensors)</li>
+<li>Memory location can be accessed independent of which memory location was last used</li>
+<li>Can be written to or read from, and the data stored can be changed by the user or by the computer</li>
+<li>Used to store data, files, part of an application or part of the operating system currently in use</li>
+<li>Volatile (memory contents are lost on powering off the computer)</li>
+<li>Memory sizer is often larger than ROM</li>
+<li>Can be increased in size to improve the operational speed of computer</li>
+</ul>
+</li>
+<li>ROM (Read Only Memory)<ul>
+<li>Store the start-up instructions</li>
+<li>It cannot be written to or changed</li>
+<li>Permanent memory device</li>
+<li>Non-volatile memory device</li>
+<li>Data stored cannot be altered</li>
+<li>Sometimes used to store BIOS and other data needed at start up</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>SRAM vs DRAM</p>
+<ul>
+<li>SRAM is much faster than DRAM when it comes to data access</li>
+<li>DRAM is the most common type of RAM used in computers</li>
+</ul>
+</li>
+<li><p>PROM vs EPROM vs EEPROM</p>
+<ul>
+<li>PROM (Programmable Read-Only Memory)<ul>
+<li>Can be altered once</li>
+<li>Made up of a matrix of fuses</li>
+</ul>
+</li>
+<li>EPROM (Erasable Programmable Read-Only Memory)<ul>
+<li>Use floating gate transistors and capacitors</li>
+<li>Reusable</li>
+<li>Using UV light to erase</li>
+<li>ROM (primary)</li>
+</ul>
+</li>
+<li>EEPROM (Electronically Erasable PROM)<ul>
+<li>Used in solid state storage device</li>
+<li>Faster but more expensive than flash drive</li>
+<li>Using pulsed voltage to erase</li>
+<li>SSD (secondary)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Monitoring and control system</p>
+<ul>
+<li>Monitoring system<ul>
+<li>If the new data is outside the acceptable range, a warning message is sent to a screen or an alarm is activated</li>
+<li>The microprocessor or computer has no effect on what is being monitored - it is simply “watching” the process</li>
+<li>Examples<ul>
+<li>Monitoring a patient in a hospital for vital signs such as heart rate, temperature, etc.</li>
+<li>Checking for intruders in a burglar alarm system</li>
+<li>Checking the temperature level in a car engine</li>
+<li>Monitoring the pollution level in a river</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Control system<ul>
+<li>If the new data is outside the acceptable range, the microprocessor or computer sends signals to control valves, motors, etc.</li>
+<li>The output from the system affects the next set of inputs from the sensors</li>
+<li>Examples<ul>
+<li>Turning street lights on at night and turn them off again during daylight</li>
+<li>Controlling the temperature in a central heating/air conditioning system</li>
+<li>Controlling the traffic lights at a road conjunction</li>
+<li>Controlling the environment in a green house</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Logic-gates-and-logic-circuits"><a href="#Logic-gates-and-logic-circuits" class="headerlink" title="Logic gates and logic circuits"></a>Logic gates and logic circuits</h2><ul>
+<li><p>Logic gates</p>
+<p><img src="https://s2.loli.net/2023/02/10/AGujoKXmshtUPrS.jpg" alt="IMG_AF736B9BC6FF-1.jpeg"></p>
+</li>
+<li><p>Truth tables</p>
+<ul>
+<li><p>NOT</p>
+<table>
+<thead>
+<tr>
+<th>$A$</th>
+<th>$X$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$0$</td>
+<td>$1$</td>
+</tr>
+<tr>
+<td>$1$</td>
+<td>$0$</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>AND</p>
+<table>
+<thead>
+<tr>
+<th>$A$</th>
+<th>$B$</th>
+<th>$X$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$0$</td>
+<td>$0$</td>
+<td>$0$</td>
+</tr>
+<tr>
+<td>$0$</td>
+<td>$1$</td>
+<td>$0$</td>
+</tr>
+<tr>
+<td>$1$</td>
+<td>$0$</td>
+<td>$0$</td>
+</tr>
+<tr>
+<td>$1$</td>
+<td>$1$</td>
+<td>$1$</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>OR</p>
+<table>
+<thead>
+<tr>
+<th>$A$</th>
+<th>$B$</th>
+<th>$X$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$0$</td>
+<td>$0$</td>
+<td>$0$</td>
+</tr>
+<tr>
+<td>$0$</td>
+<td>$1$</td>
+<td>$1$</td>
+</tr>
+<tr>
+<td>$1$</td>
+<td>$0$</td>
+<td>$1$</td>
+</tr>
+<tr>
+<td>$1$</td>
+<td>$1$</td>
+<td>$1$</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>NAND</p>
+<table>
+<thead>
+<tr>
+<th>$A$</th>
+<th>$B$</th>
+<th>$X$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$0$</td>
+<td>$0$</td>
+<td>$1$</td>
+</tr>
+<tr>
+<td>$0$</td>
+<td>$1$</td>
+<td>$1$</td>
+</tr>
+<tr>
+<td>$1$</td>
+<td>$0$</td>
+<td>$1$</td>
+</tr>
+<tr>
+<td>$1$</td>
+<td>$1$</td>
+<td>$0$</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>NOR</p>
+<table>
+<thead>
+<tr>
+<th>$A$</th>
+<th>$B$</th>
+<th>$X$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$0$</td>
+<td>$0$</td>
+<td>$1$</td>
+</tr>
+<tr>
+<td>$0$</td>
+<td>$1$</td>
+<td>$0$</td>
+</tr>
+<tr>
+<td>$1$</td>
+<td>$0$</td>
+<td>$0$</td>
+</tr>
+<tr>
+<td>$1$</td>
+<td>$1$</td>
+<td>$0$</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>XOR</p>
+<table>
+<thead>
+<tr>
+<th>$A$</th>
+<th>$B$</th>
+<th>$X$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$0$</td>
+<td>$0$</td>
+<td>$0$</td>
+</tr>
+<tr>
+<td>$0$</td>
+<td>$1$</td>
+<td>$1$</td>
+</tr>
+<tr>
+<td>$1$</td>
+<td>$0$</td>
+<td>$1$</td>
+</tr>
+<tr>
+<td>$1$</td>
+<td>$1$</td>
+<td>$0$</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Haoran Jie
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://haoran-jie.github.io/Notes/ASCS/Chapter3-Hardware/" title="Chapter3_Hardware">https://haoran-jie.github.io/Notes/ASCS/Chapter3-Hardware/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Cambridge/Notes/Abstract-Data-Types-Notes/" rel="prev" title="Abstract Data Types Notes">
+                  <i class="fa fa-chevron-left"></i> Abstract Data Types Notes
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Notes/ASCS/Chapter4-ProcessorFundamentals/" rel="next" title="Chapter4_ProcessorFundamentals">
+                  Chapter4_ProcessorFundamentals <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="comment-button-group">
+          <a class="btn comment-button disqus">disqus</a>
+          <a class="btn comment-button gitalk">gitalk</a>
+      </div>
+        <div class="comment-position disqus">
+          
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+        </div>
+        <div class="comment-position gitalk">
+          <div class="comments gitalk-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa-solid fa-terminal"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Haoran Jie</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.3.0/mermaid.min.js","integrity":"sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://haoran-jie.github.io/Notes/ASCS/Chapter3-Hardware/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"samuels-blog-5","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Haoran-Jie","repo":"GItalkComments","client_id":"a78520e4a91db64c6ead","client_secret":"80a445f6a6f80fcd44fea523269b55c10ba59002","admin_user":"Haoran-Jie","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"cc81d15b1158570274b2031e03a8d024"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

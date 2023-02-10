@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#2c3e50" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#2c3e50">
+  <meta name="google-site-verification" content="ONgpvg7NlakSEl6IcZ4-nCCQleKums7GuOYvOS4zXCQ">
+  <meta name="msvalidate.01" content="5331505606E7903BD6FA7D5C7D0FE6DB">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"haoran-jie.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":30,"offset":15},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#546de5","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":true,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
+
+
+
+<link rel="canonical" href="https://haoran-jie.github.io/Notes/ASCS/Chapter4-ProcessorFundamentals/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://haoran-jie.github.io/Notes/ASCS/Chapter4-ProcessorFundamentals/","path":"Notes/ASCS/Chapter4-ProcessorFundamentals/","title":"Chapter4_ProcessorFundamentals"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Chapter4_ProcessorFundamentals | Samuel's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V501S4L4ZZ"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-V501S4L4ZZ","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+  <script async src="//assets.growingio.com/2.1/gio.js"></script>
+  <script class="next-config" data-name="growingio_analytics" type="application/json">"b544ba838d823365"</script>
+  <script src="/js/third-party/analytics/growingio.js"></script>
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Samuel's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Snippets of life of a programmer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">17</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">14</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">38</span></a></li><li class="menu-item menu-item-notes"><a href="/Notes/" rel="section"><i class="fa fa-book fa-fw"></i>Notes</a></li><li class="menu-item menu-item--what&why系列文章"><a href="/WhatandwhY/" rel="section"><i class="fa-solid fa-clipboard-question fa-fw"></i> What&whY系列文章</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Central-Processing-Unit-CPU-Architecture"><span class="nav-number">1.</span> <span class="nav-text">Central Processing Unit (CPU) Architecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Assembly-Language"><span class="nav-number">2.</span> <span class="nav-text">Assembly Language</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bit-manipulation"><span class="nav-number">3.</span> <span class="nav-text">Bit manipulation</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Haoran Jie"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Haoran Jie</p>
+  <div class="site-description" itemprop="description">18</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Haoran-Jie" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Haoran-Jie" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:samueljie1@gmail.com" title="E-Mail → mailto:samueljie1@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/samueljieee/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;samueljieee&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://haoran-jie.github.io/Notes/ASCS/Chapter4-ProcessorFundamentals/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Haoran Jie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Samuel's Blog">
+      <meta itemprop="description" content="18">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Chapter4_ProcessorFundamentals | Samuel's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Chapter4_ProcessorFundamentals
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-02-10 11:53:12 / Modified: 11:58:07" itemprop="dateCreated datePublished" datetime="2023-02-10T11:53:12+00:00">2023-02-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/ASCS/" itemprop="url" rel="index"><span itemprop="name">ASCS</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/Notes/ASCS/Chapter4-ProcessorFundamentals/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Notes/ASCS/Chapter4-ProcessorFundamentals/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="Central-Processing-Unit-CPU-Architecture"><a href="#Central-Processing-Unit-CPU-Architecture" class="headerlink" title="Central Processing Unit (CPU) Architecture"></a>Central Processing Unit (CPU) Architecture</h2><ul>
+<li><p>Von Neumann model</p>
+<ul>
+<li>Single processor</li>
+<li>Program consists of a sequence of stored instructions</li>
+<li>Instructions and data are indistinguishable</li>
+<li>… are stored in a contiguous block of main memory</li>
+<li>Instructions are fetched and executed in sequence</li>
+</ul>
+</li>
+<li><p>Stored-program concept</p>
+<ul>
+<li>Program must be resident in main memory to be executed</li>
+<li>Program consists of a sequence of instructions</li>
+<li>Which occupy a contiguous block of main memory</li>
+<li>Instructions and data are indistinguishable</li>
+<li>Each instruction is fetched, decoded, then executed</li>
+<li>Instruction fetch and data operation cannot occur at the same time</li>
+</ul>
+</li>
+<li><p>Registers</p>
+<ul>
+<li><p>General purpose registers</p>
+<ul>
+<li>Hold data that is frequently used by the CPU</li>
+<li>Can be used by the programmer when addressing the CPU</li>
+<li>e.g. accumulator</li>
+</ul>
+</li>
+<li><p>Special purpose registers</p>
+<ul>
+<li><p>Have a specific function within the CPU</p>
+</li>
+<li><p>Hold the program state</p>
+</li>
+<li><p>PC (Program Counter)</p>
+<ul>
+<li>Stores the address of the next instruction to be fetched</li>
+</ul>
+</li>
+<li><p>MDR (Memory Data Register)</p>
+<ul>
+<li>Stores the data in transit between memory and other registers</li>
+<li>Holds the instruction before it is passed to the CIR</li>
+<li>The location accessed is what is stored in MAR</li>
+</ul>
+</li>
+<li><p>MAR (Memory Address Register)</p>
+<ul>
+<li>Stores the address of the memory location which is about to be accessed</li>
+</ul>
+</li>
+<li><p>ACC (Accumulator)</p>
+<ul>
+<li>Stores the value of calculation by ALU</li>
+</ul>
+</li>
+<li><p>IX (Index Register)</p>
+<ul>
+<li>Used to carry index addressing operation</li>
+</ul>
+</li>
+<li><p>CIR (Current Instruction Register)</p>
+<p>Stores the current instruction being executed and decoded</p>
+</li>
+<li><p>Status Register</p>
+<ul>
+<li>Independent bits/flag</li>
+<li>Each flag is set depending on an event</li>
+<li>e.g. overflow, zero, negative, carry flag</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>ALU (Arithmetic and Logic Unit)</p>
+<ul>
+<li>Carries out arithmetic calculations</li>
+<li>Carries out logic operations</li>
+<li>Holds the result in ACC</li>
+</ul>
+</li>
+<li><p>CU (Control Unit)</p>
+<ul>
+<li>Sends and receives signals</li>
+<li>Synchronizes operations</li>
+<li>Control the execution of operations</li>
+<li>e.g. input/output</li>
+</ul>
+</li>
+<li><p>System clock</p>
+<ul>
+<li>Sends out a number of pulses in a given time interval</li>
+<li>Each processor operation takes several cycles to execute</li>
+<li>The higher the clock frequency, the shorter the execution time and the better the performance</li>
+</ul>
+</li>
+<li><p>IAS (Immediate Access Store)</p>
+<ul>
+<li>Holds all the data and programs that the processor/CPU needs to access</li>
+</ul>
+</li>
+<li><p>Bus</p>
+<ul>
+<li>Address bus<ul>
+<li>Transfer address of memory and input/output position</li>
+<li>Uni-directional</li>
+</ul>
+</li>
+<li>Data bus<ul>
+<li>Carries data between processor and memory</li>
+<li>Bi-directional</li>
+</ul>
+</li>
+<li>Control bus<ul>
+<li>Transmit signals between the control unit</li>
+<li>Dedicated bus since all timing signals are generated according to control signal</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Performance factors</p>
+<ul>
+<li>Number of cores<ul>
+<li>Each cores processes one instruction per clock pulse</li>
+<li>Multiple cores means that sequence of instructions can be split between them</li>
+<li>… and so more than one instruction is executed per clock pulse</li>
+<li>More cores decreases the time taken to complete task</li>
+</ul>
+</li>
+<li>Bus width<ul>
+<li>Bus width determines the number of bits that can be simultaneously transferred</li>
+<li>Increasing bus width increases the number of bits that can be moved at one time</li>
+<li>… hence improving processing speed as fewer transfers are needed</li>
+<li>e.g. double the width of the data bus moves 2x data per clock pulse</li>
+</ul>
+</li>
+<li>Clock speed<ul>
+<li>Each instruction is executed on a clock pulse</li>
+<li>… so the clock clock speed determines the number of instructions that can be run per second</li>
+<li>The faster the clock speed the more instructions can be run per second</li>
+</ul>
+</li>
+<li>Cache memory<ul>
+<li>Cache memory uses SRAM while main memory uses DRAM</li>
+<li>… so cache memory is faster than main memory</li>
+<li>Cache memory stores frequently used instructions and data</li>
+<li>When CPU reads memory, it first checks out cache and then moves on to main memory if the required data is not in cache memory</li>
+<li>So this improve processor performance</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Ports</p>
+<ul>
+<li>USB (Universal Serial Bus)<ul>
+<li>An asynchronous serial data transmission method</li>
+<li>The computer automatically detects that a device is present (due to a small change in the voltage level)</li>
+<li>The device is automatically recognized, and the appropriate device driver is loaded up</li>
+<li>If a new device is detected, the computer will look for the device driver which matches the device. If this is not available, the user is prompted to download the appropriate software</li>
+</ul>
+</li>
+<li>HDMI (High Definition Multimedia Interface)<ul>
+<li>The computer automatically detects that a device is present (due to a small change in the voltage level)</li>
+<li>Handshake between the display and the computer</li>
+<li>The display sends meta data about itself (resolution, color depth, etc.)</li>
+</ul>
+</li>
+<li>VGA (Video Graphics Array)<ul>
+<li>The computer automatically detects that a device is present (due to a small change in the voltage level)</li>
+<li>Handshake between the display and the computer</li>
+<li>The display sends meta data about itself (resolution, color depth, etc.)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>F-E (Fetch-Execute) cycle</p>
+<ul>
+<li>Fetch<ul>
+<li>The next instruction is fetched from the memory address in PC</li>
+<li>This instruction in stored in CIR</li>
+<li>The PC is incremented by 1</li>
+<li>The instruction is decoded</li>
+</ul>
+</li>
+<li>Execute<ul>
+<li>The processor passes the decoded instruction as a set of control signals to the appropriate components within the computer system</li>
+</ul>
+</li>
+</ul>
+<p>In register transfer notation:</p>
+<ol>
+<li>$\text{MAR} ← [\text{PC}]$  contents of PC copied into MAR</li>
+<li>$\text{PC} ← [\text{PC}] + 1$  PC is incremented by 1</li>
+<li>$\text{MDR} ← [[\text{MAR}]]$ data stored at address shown in MAR is copied into MDR</li>
+<li>$\text{CIR} ← [\text{MDR}]$ contents of MDR copied into CIR</li>
+</ol>
+</li>
+<li><p>Interrupts</p>
+<ul>
+<li>At the start oof each F-E cycle the processor checks for interrupts</li>
+<li>Check if an interrupt flag is set in status register</li>
+<li>Processor identifies source of interrupt</li>
+<li>Processor checks priority of interrupt</li>
+<li>If interrupt priority is high enough</li>
+<li>Processor saves current contents of registers</li>
+<li>Processor calls ISR (Interrupt Service Routine)</li>
+<li>Address of ISR is loaded into PC</li>
+<li>When servicing of interrupt complete, processor restores registers</li>
+<li>Processor continues with next F-E cycle</li>
+</ul>
+</li>
+</ul>
+<h2 id="Assembly-Language"><a href="#Assembly-Language" class="headerlink" title="Assembly Language"></a>Assembly Language</h2><ul>
+<li><p>Two-pass assembler</p>
+<ul>
+<li>Pass 1<ul>
+<li>Read the assembly language program one line at a time</li>
+<li>Ignore anything not required, such as comments</li>
+<li>Allocate a memory address for the line of code</li>
+<li>Check the opcode is in the instruction set</li>
+<li>Add any new labels to the symbol table with the address, if known</li>
+<li>Place address of labelled instruction in the symbol table</li>
+</ul>
+</li>
+<li>Pass 2<ul>
+<li>Read the assembly language program one line at a time</li>
+<li>Generate object code, including opcode and operand , from the symbol table generated in Pass 1</li>
+<li>Save or execute the program</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Groups of instructions</p>
+<ul>
+<li><p>Data movement</p>
+<ul>
+<li>Allow data stored at one location to be copied into the accumulator</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Opcode</th>
+<th>Operand</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>LDM</td>
+<td>#n</td>
+<td>Immediate addressing. Load the number to ACC</td>
+</tr>
+<tr>
+<td>LDD</td>
+<td><address></address></td>
+<td>Direct addressing. Load the contents of the location at the given address to ACC</td>
+</tr>
+<tr>
+<td>LDI</td>
+<td><address></address></td>
+<td>Indirect addressing. The address to be used is at the given address. Load the contents of this second address to ACC</td>
+</tr>
+<tr>
+<td>LDX</td>
+<td><address></address></td>
+<td>Indexed addressing. Form the address from <address> + the contents of the index register. Copy the contents of this calculated address to ACC</address></td>
+</tr>
+<tr>
+<td>LDR</td>
+<td>#n</td>
+<td>Immediate addressing. Load the number n to IX</td>
+</tr>
+<tr>
+<td>MOV</td>
+<td><register></register></td>
+<td>Move the contents of the accumulator to the given register</td>
+</tr>
+<tr>
+<td>STO</td>
+<td><address></address></td>
+<td>Store the contents of ACC at the given address</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Input and output of data</p>
+<ul>
+<li>These instructions allow data to be read from the keyboard or output to the screen</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Opcode</th>
+<th>Operand</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IN</td>
+<td></td>
+<td>Key in a character and store its ASCII value in ACC</td>
+</tr>
+<tr>
+<td>OUT</td>
+<td></td>
+<td>Output to the screen the character whose ASCII value is stored in ACC</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Arithmetic operations</p>
+<ul>
+<li>These instructions perform simple calculations on data stored in the accumulator and store the answer in the accumulator, overwriting the original data</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Opcode</th>
+<th>Operand</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ADD</td>
+<td><address></address></td>
+<td>Add the contents of the given address to the ACC</td>
+</tr>
+<tr>
+<td>ADD</td>
+<td>#n / Bn / &amp;n</td>
+<td>Add the number n to the ACC</td>
+</tr>
+<tr>
+<td>SUB</td>
+<td><address></address></td>
+<td>Subtract the contents of the given address from the ACC</td>
+</tr>
+<tr>
+<td>SUB</td>
+<td>#n / Bn / &amp;n</td>
+<td>Subtract the number n from the ACC</td>
+</tr>
+<tr>
+<td>INC</td>
+<td><register></register></td>
+<td>Add 1 to the contents of the register (ACC or IX)</td>
+</tr>
+<tr>
+<td>DEC</td>
+<td><register></register></td>
+<td>Subtract 1 from the contents of the register (ACC or IX)</td>
+</tr>
+</tbody></table>
+<p>PS: #n means that n is in denary, Bn means that n is in binary, &amp;n means that n is in hexadecimal</p>
+</li>
+<li><p>Unconditional and conditional instructions</p>
+<table>
+<thead>
+<tr>
+<th>Opcode</th>
+<th>Operand</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>JMP</td>
+<td><address></address></td>
+<td>Jump to the given address</td>
+</tr>
+<tr>
+<td>JPE</td>
+<td><address></address></td>
+<td>Following a compare instruction, jump to <address> if the compare was True</address></td>
+</tr>
+<tr>
+<td>JPN</td>
+<td><address></address></td>
+<td>Following a compare instruction, jump to <address> if the compare was False</address></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Compare instructions</p>
+<table>
+<thead>
+<tr>
+<th>Opcode</th>
+<th>Operand</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CMP</td>
+<td><address></address></td>
+<td>Compare the contents of ACC with the contents of <address></address></td>
+</tr>
+<tr>
+<td>CMP</td>
+<td>#n</td>
+<td>Compare the contents of ACC with number n</td>
+</tr>
+<tr>
+<td>CMI</td>
+<td><address></address></td>
+<td>Indirect addressing. The address to be used is at the given address. Compare the contents of ACC with the contents of this second address</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p>Addressing modes</p>
+<ul>
+<li><p>Immediate addressing</p>
+<p>The value of the operand is used</p>
+</li>
+<li><p>Direct addressing</p>
+<p>The contents of the location in the given address is used</p>
+</li>
+<li><p>Indirect addressing</p>
+<p>The address is the content of the given address</p>
+</li>
+<li><p>Indexed addressing</p>
+<p>The address is formed by adding the given address by the contents in the Index Register</p>
+</li>
+<li><p>Relative addressing</p>
+<p>The address is formed by adding the current address by the operand</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Bit-manipulation"><a href="#Bit-manipulation" class="headerlink" title="Bit manipulation"></a>Bit manipulation</h2><ul>
+<li><p>Binary shifts</p>
+<ul>
+<li><p>Logical shift</p>
+<p>Left shift:</p>
+<p><img src="https://s2.loli.net/2023/02/10/PHaMEUoGNuVCIBD.png" alt="2560px-Rotate_left_logically.svg.png"></p>
+<p>Right shift:</p>
+<p><img src="https://s2.loli.net/2023/02/10/C4vtrW2pnQU3mEY.png" alt="2560px-Rotate_right_logically.svg.png"></p>
+</li>
+<li><p>Arithmetic shift</p>
+<p>Left shift:</p>
+<p><img src="https://s2.loli.net/2023/02/10/XDQNJMCIRZUwS23.png" alt="600px-Rotate_left_logically.svg.png"></p>
+<p>Right shift: (The empty position in the most significant bit is filled with a copy of the original MSB)</p>
+<p><img src="https://s2.loli.net/2023/02/10/9ZRvlcM64m8sHKN.png" alt="600px-Rotate_right_arithmetically.svg.png"></p>
+</li>
+<li><p>Cyclic shift</p>
+<p>Left shift:</p>
+<p><img src="https://s2.loli.net/2023/02/10/oC38UO2DmSPYGcw.png" alt="Untitled"></p>
+<p>Right shift:</p>
+<p><img src="https://s2.loli.net/2023/02/10/k67L9WfGuZwAPs8.png" alt="Untitled"></p>
+</li>
+</ul>
+</li>
+<li><p>How bit manipulation is used to monitor/control a device</p>
+<ul>
+<li>Each bit in a register or memory location can be used as a flag and would need to be tested, set or cleared separately (bit masking)</li>
+<li>AND is used to check if the bit has been set</li>
+<li>OR is used to set the bit</li>
+<li>XOR is used to clear a bit that has been set</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Haoran Jie
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://haoran-jie.github.io/Notes/ASCS/Chapter4-ProcessorFundamentals/" title="Chapter4_ProcessorFundamentals">https://haoran-jie.github.io/Notes/ASCS/Chapter4-ProcessorFundamentals/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Notes/ASCS/Chapter3-Hardware/" rel="prev" title="Chapter3_Hardware">
+                  <i class="fa fa-chevron-left"></i> Chapter3_Hardware
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Notes/ASCS/Chapter5-SystemSoftware/" rel="next" title="Chapter5_SystemSoftware">
+                  Chapter5_SystemSoftware <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="comment-button-group">
+          <a class="btn comment-button disqus">disqus</a>
+          <a class="btn comment-button gitalk">gitalk</a>
+      </div>
+        <div class="comment-position disqus">
+          
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+        </div>
+        <div class="comment-position gitalk">
+          <div class="comments gitalk-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa-solid fa-terminal"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Haoran Jie</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.3.0/mermaid.min.js","integrity":"sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://haoran-jie.github.io/Notes/ASCS/Chapter4-ProcessorFundamentals/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"samuels-blog-5","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Haoran-Jie","repo":"GItalkComments","client_id":"a78520e4a91db64c6ead","client_secret":"80a445f6a6f80fcd44fea523269b55c10ba59002","admin_user":"Haoran-Jie","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"45f2b7889e1358080585190436732b77"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
