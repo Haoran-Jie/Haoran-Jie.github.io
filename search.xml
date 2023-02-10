@@ -74,9 +74,7 @@
 <object class="link-grid-image" data="/images/K.png"></object>
 <p>Katrina Liu</p><p>Economist</p>
 <a href="https://haoran-jie.github.io/uncategorized/Contributors/"></a>
-</div></div>
-
-<div class="link-grid"><div class="link-grid-container">
+</div><div class="link-grid-container">
 <object class="link-grid-image" data="/images/Ryan.jpeg"></object>
 <p>Ryan</p><p>Mathematician</p>
 <a href="https://haoran-jie.github.io/uncategorized/Contributors/"></a>
@@ -5471,9 +5469,10 @@ E --&gt;|Y| G(Use more data)</code></pre>
 </ul>
 </div>
 
-<h2 id="Ryan-Hu"><a href="#Ryan-Hu" class="headerlink" title="Ryan Hu"></a>Ryan Hu</h2><div class="note info"><p><strong>Contributed to</strong>:</p>
+<h2 id="Ryan-Hu"><a href="#Ryan-Hu" class="headerlink" title="Ryan Hu"></a>Ryan Hu</h2><p><span class="github-emoji"><span>🔗</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f517.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> <a href="https://www.xiaohongshu.com/user/profile/5de318f50000000001007a99">Ryan’s xhs</a></p>
+<div class="note info"><p><strong>Contributed to</strong>:</p>
 <ul>
-<li>The whole AS Part</li>
+<li><del>almost</del> the whole AS Part (A huge thanks)!</li>
 </ul>
 </div>
 ]]></content>
