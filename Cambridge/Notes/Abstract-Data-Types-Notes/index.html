@@ -241,9 +241,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2023-02-06 20:03:48 / Modified: 20:58:58" itemprop="dateCreated datePublished" datetime="2023-02-06T20:03:48+00:00">2023-02-06</time>
+      <time title="Created: 2023-02-06 20:03:48" itemprop="dateCreated datePublished" datetime="2023-02-06T20:03:48+00:00">2023-02-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-02-10 15:27:34" itemprop="dateModified" datetime="2023-02-10T15:27:34+00:00">2023-02-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -293,6 +299,8 @@
         <h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><blockquote>
 <p>Lists provide one natural implementation of stacks, and are the data structure of choice in many places where flexible representation of variable amount of data is wanted.</p>
 </blockquote>
+<span id="more"></span> 
+
 <h3 id="Doubly-linked-list"><a href="#Doubly-linked-list" class="headerlink" title="Doubly-linked list"></a>Doubly-linked list</h3><p>A feature of lists is that, from one item, you can progress along the list in one direction very easily; but once you have taken the <code>next</code> of a list, there is no way of returning. To make it possible to traverse a list in both directions one might define a new type called <code>Doubly Linked List</code> in which each wagon had both a <code>next</code> and a <code>previous</code> pointer.<br>$$<br>w.next.previous == w<br>$$<br>Equation (1) would hold for every wagon inside the <code>DLL</code> except for the last<br>$$<br>w.previous.next == w<br>$$<br>Euqation (2) would hold for every wagon inside the <code>DLL</code> except for the first.</p>
 <h3 id="Graph-representation-using-List"><a href="#Graph-representation-using-List" class="headerlink" title="Graph representation (using List)"></a>Graph representation (using List)</h3><p>Represent each vertex by an integer, and having a vector such that element $i$ in the vector holds the head of a list of all the vertices connected directly to edges radiating from vertex $i$. </p>
 <h3 id="ADT-List"><a href="#ADT-List" class="headerlink" title="ADT List"></a>ADT List</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">ADT List {</span><br><span class="line">	boolean isEmpty();</span><br><span class="line">	// BEHAVIOUR: Return true iff the structure is empty</span><br><span class="line">	item head();</span><br><span class="line">	// PRECONDITION: isEmpty()==false</span><br><span class="line">	// BEHAVIOR: return the first elemnet of the list (without removing it)</span><br><span class="line">	void prepend(ite x);</span><br><span class="line">	// BEHAVIOUR: add element &lt;x&gt; to the beginning of the list.</span><br><span class="line">	// POSTCONDITION: isEmpty()==false</span><br><span class="line">	// BAHAVIOUR: head() == x</span><br><span class="line">	List tail();</span><br><span class="line">	// PRECONDITION: isEmpty()==false</span><br><span class="line">	// BEHAVIOUR: return the list of all the elements except the first (without removing it).</span><br><span class="line">	</span><br><span class="line">	void setTail(List newTail);</span><br><span class="line">	// PRECONDITION: isEmpty()==false</span><br><span class="line">	// BEHAVIOUR: replace the tail of this list with &lt;newTail&gt;.</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
@@ -384,18 +392,18 @@
 
 
       <div class="comment-button-group">
-          <a class="btn comment-button disqus">disqus</a>
           <a class="btn comment-button gitalk">gitalk</a>
+          <a class="btn comment-button disqus">disqus</a>
       </div>
+        <div class="comment-position gitalk">
+          <div class="comments gitalk-container"></div>
+        </div>
         <div class="comment-position disqus">
           
   <div class="comments" id="disqus_thread">
     <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-        </div>
-        <div class="comment-position gitalk">
-          <div class="comments gitalk-container"></div>
         </div><script data-pjax src="/js/comments-buttons.js"></script>
 </div>
   </main>
@@ -475,12 +483,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
   <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://haoran-jie.github.io/Cambridge/Notes/Abstract-Data-Types-Notes/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
-<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"samuels-blog-5","count":true,"i18n":{"disqus":"disqus"}}</script>
-<script src="/js/third-party/comments/disqus.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
 <script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Haoran-Jie","repo":"GItalkComments","client_id":"a78520e4a91db64c6ead","client_secret":"80a445f6a6f80fcd44fea523269b55c10ba59002","admin_user":"Haoran-Jie","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"c33154e0df186a82b4107b26bcbaeb4c"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"samuels-blog-5","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
 
 </body>
 </html>

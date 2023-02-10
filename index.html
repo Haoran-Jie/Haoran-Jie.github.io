@@ -732,7 +732,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2023-02-10 11:53:24 / Modified: 15:17:12" itemprop="dateCreated datePublished" datetime="2023-02-10T11:53:24+00:00">2023-02-10</time>
+      <time title="Created: 2023-02-10 11:53:24 / Modified: 15:26:52" itemprop="dateCreated datePublished" datetime="2023-02-10T11:53:24+00:00">2023-02-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -772,7 +772,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img src="https://s2.loli.net/2023/02/10/6Lye9nUXTAcPK3H.png" alt="Screenshot 2023-02-10 at 15.16.29"></p>
+          <p><img src="https://s2.loli.net/2023/02/10/6Lye9nUXTAcPK3H.png" alt="Syllabus"></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/Notes/ASCS/Chapter5-SystemSoftware/#more" rel="contents">
@@ -1042,9 +1042,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2023-02-06 20:03:48 / Modified: 20:58:58" itemprop="dateCreated datePublished" datetime="2023-02-06T20:03:48+00:00">2023-02-06</time>
+      <time title="Created: 2023-02-06 20:03:48" itemprop="dateCreated datePublished" datetime="2023-02-06T20:03:48+00:00">2023-02-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-02-10 15:27:34" itemprop="dateModified" datetime="2023-02-10T15:27:34+00:00">2023-02-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1087,45 +1093,14 @@
           <h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><blockquote>
 <p>Lists provide one natural implementation of stacks, and are the data structure of choice in many places where flexible representation of variable amount of data is wanted.</p>
 </blockquote>
-<h3 id="Doubly-linked-list"><a href="#Doubly-linked-list" class="headerlink" title="Doubly-linked list"></a>Doubly-linked list</h3><p>A feature of lists is that, from one item, you can progress along the list in one direction very easily; but once you have taken the <code>next</code> of a list, there is no way of returning. To make it possible to traverse a list in both directions one might define a new type called <code>Doubly Linked List</code> in which each wagon had both a <code>next</code> and a <code>previous</code> pointer.<br>$$<br>w.next.previous == w<br>$$<br>Equation (1) would hold for every wagon inside the <code>DLL</code> except for the last<br>$$<br>w.previous.next == w<br>$$<br>Euqation (2) would hold for every wagon inside the <code>DLL</code> except for the first.</p>
-<h3 id="Graph-representation-using-List"><a href="#Graph-representation-using-List" class="headerlink" title="Graph representation (using List)"></a>Graph representation (using List)</h3><p>Represent each vertex by an integer, and having a vector such that element $i$ in the vector holds the head of a list of all the vertices connected directly to edges radiating from vertex $i$. </p>
-<h3 id="ADT-List"><a href="#ADT-List" class="headerlink" title="ADT List"></a>ADT List</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">ADT List {</span><br><span class="line">	boolean isEmpty();</span><br><span class="line">	// BEHAVIOUR: Return true iff the structure is empty</span><br><span class="line">	item head();</span><br><span class="line">	// PRECONDITION: isEmpty()==false</span><br><span class="line">	// BEHAVIOR: return the first elemnet of the list (without removing it)</span><br><span class="line">	void prepend(ite x);</span><br><span class="line">	// BEHAVIOUR: add element &lt;x&gt; to the beginning of the list.</span><br><span class="line">	// POSTCONDITION: isEmpty()==false</span><br><span class="line">	// BAHAVIOUR: head() == x</span><br><span class="line">	List tail();</span><br><span class="line">	// PRECONDITION: isEmpty()==false</span><br><span class="line">	// BEHAVIOUR: return the list of all the elements except the first (without removing it).</span><br><span class="line">	</span><br><span class="line">	void setTail(List newTail);</span><br><span class="line">	// PRECONDITION: isEmpty()==false</span><br><span class="line">	// BEHAVIOUR: replace the tail of this list with &lt;newTail&gt;.</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-
-
-<h2 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h2><ul>
-<li>LIFO (last in first out)</li>
-</ul>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ADT Stack {</span><br><span class="line">	boolean isEmpty();</span><br><span class="line">	// BEHAVIOUR: return true iff the structure is empty</span><br><span class="line">	void push(item x);</span><br><span class="line">	// BEHAVIOUR: add element &lt;x&gt; to the top of the stack</span><br><span class="line">	// POSTCONDITION: isEmpty()==false.</span><br><span class="line">	// POSTCONDITION: top()==x</span><br><span class="line">	item pop();</span><br><span class="line">	// PRECONDITION: isEmpty()==false</span><br><span class="line">	// BEHAVIOUR: return the element on the top of the stack</span><br><span class="line">	// As a side effect, remove it from the stack.</span><br><span class="line">	item top();</span><br><span class="line">	// PRECONDITION: isEmpty()==false</span><br><span class="line">	// BEHAVIOUR: Return the element on top of the stack (without removing it).</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Implementations"><a href="#Implementations" class="headerlink" title="Implementations"></a>Implementations</h3><ol>
-<li>Combination of an array and an index (pointing to the “top of stack”)<ul>
-<li>The <code>push</code> operation writes a value into the array and increments the index</li>
-<li>The <code>pop</code> operation delets a value from the array and decrements the index</li>
-</ul>
-</li>
-<li>Linked lists<ul>
-<li>Pushing an item adds an extra cell to the front of a list</li>
-<li>Popping removes the cell at the front of the list</li>
-</ul>
-</li>
-</ol>
-<h3 id="Use-cases"><a href="#Use-cases" class="headerlink" title="Use cases"></a>Use cases</h3><ul>
-<li>Reverse Polish Notation (e.g. <code>3 12 add 4 mul 2 sub</code> -&gt; <code>(3 x 12) x 4 - 2</code>)</li>
-</ul>
-<h2 id="Queue-and-Deque"><a href="#Queue-and-Deque" class="headerlink" title="Queue and Deque"></a>Queue and Deque</h2><ul>
-<li>FIFO (first in first out)</li>
-</ul>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ADT Queue{</span><br><span class="line">	boolean isEmpty();</span><br><span class="line">	// BEHAVIOUR: return true iff the structure is empty.</span><br><span class="line">	void put(item x);</span><br><span class="line">	// BEHAVIOUR: insert element &lt;x&gt; at the end of the queue.</span><br><span class="line">  // POSTCONDITION: isEmpty()==false</span><br><span class="line">  item get();</span><br><span class="line">  // PRECONDITION: isEmpty()==false</span><br><span class="line">  // BEHAVIOUR: return the first elemnt of the queue, and removing it from the queue</span><br><span class="line">  item first();</span><br><span class="line">  // PRECONDITION: isEmpty()==false</span><br><span class="line">  // BEHAVIOUR: return the first element of the queue without removing it</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">ADT Queue{</span><br><span class="line">	boolean isEmpty();</span><br><span class="line">	// BEHAVIOUR: return true iff the structure is empty.</span><br><span class="line">	void putFront(item x);</span><br><span class="line">	// BEHAVIOUR: insert element &lt;x&gt; at the front of the queue.</span><br><span class="line">  // POSTCONDITION: isEmpty()==false</span><br><span class="line">  void putRear(item x);</span><br><span class="line">  // BEHAVIOUR: insert element &lt;x&gt; at the back of the queue.</span><br><span class="line">  // POSTCONDITION: isEmpty()==false</span><br><span class="line">  item getFront();</span><br><span class="line">  // PRECONDITION: isEmpty()==false</span><br><span class="line">  // BEHAVIOUR: return the first elemnt of the queue</span><br><span class="line">  item getRear();</span><br><span class="line">  // PRECONDITION: isEmpty()==false</span><br><span class="line">  // BEHAVIOUR: return the last element of the queue </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="Dictionary"><a href="#Dictionary" class="headerlink" title="Dictionary"></a>Dictionary</h2><ul>
-<li>Also known as Maps, Tables, Associative arrays, or Symbol tables</li>
-</ul>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">ADT Dictionary {</span><br><span class="line">	void set(Key k, Value v);</span><br><span class="line"> 	// BEHAVIOUR: store the given (&lt;k&gt;, &lt;v&gt;) pair in the dictionary.</span><br><span class="line">	// If a pair with the same &lt;k&gt; had already been stored, the old</span><br><span class="line">	// value is overwritten and lost.</span><br><span class="line">	// POSTCONDITION: get(k) == v</span><br><span class="line"></span><br><span class="line">	Value get(Key k);</span><br><span class="line">	// PRECONDITION: a pair with the sought key &lt;k&gt; is in the dictionary.</span><br><span class="line">	// BEHAVIOUR: return the value associated with the supplied &lt;k&gt;,</span><br><span class="line">  // without removing it from the dictionary.</span><br><span class="line">	</span><br><span class="line">	 void delete(Key k);</span><br><span class="line">	 // PRECONDITION: a pair with the given key &lt;k&gt; has already been inserted.</span><br><span class="line">	 // BEHAVIOUR: remove from the dictionary the key-value pair indexed by</span><br><span class="line">	 // the given &lt;k&gt;.</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Cambridge/Notes/Abstract-Data-Types-Notes/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1447,12 +1422,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
   <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://haoran-jie.github.io/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
-<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"samuels-blog-5","count":true,"i18n":{"disqus":"disqus"}}</script>
-<script src="/js/third-party/comments/disqus.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
 <script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Haoran-Jie","repo":"GItalkComments","client_id":"a78520e4a91db64c6ead","client_secret":"80a445f6a6f80fcd44fea523269b55c10ba59002","admin_user":"Haoran-Jie","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"d1546d731a9f30cc80127d57142a482b"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"samuels-blog-5","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
 
 </body>
 </html>
