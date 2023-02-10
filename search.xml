@@ -4956,7 +4956,9 @@ E --&gt;|Y| G(Use more data)</code></pre>
   <entry>
     <title>Chapter3_Hardware</title>
     <url>/Notes/ASCS/Chapter3-Hardware/</url>
-    <content><![CDATA[<h2 id="Computers-and-their-components"><a href="#Computers-and-their-components" class="headerlink" title="Computers and their components"></a>Computers and their components</h2><ul>
+    <content><![CDATA[<span id="more"></span>
+
+<h2 id="Computers-and-their-components"><a href="#Computers-and-their-components" class="headerlink" title="Computers and their components"></a>Computers and their components</h2><ul>
 <li><p>IO</p>
 <ul>
 <li><p>Input</p>
@@ -5374,7 +5376,9 @@ E --&gt;|Y| G(Use more data)</code></pre>
   <entry>
     <title>Chapter4_ProcessorFundamentals</title>
     <url>/Notes/ASCS/Chapter4-ProcessorFundamentals/</url>
-    <content><![CDATA[<h2 id="Central-Processing-Unit-CPU-Architecture"><a href="#Central-Processing-Unit-CPU-Architecture" class="headerlink" title="Central Processing Unit (CPU) Architecture"></a>Central Processing Unit (CPU) Architecture</h2><ul>
+    <content><![CDATA[<span id="more"></span>
+
+<h2 id="Central-Processing-Unit-CPU-Architecture"><a href="#Central-Processing-Unit-CPU-Architecture" class="headerlink" title="Central Processing Unit (CPU) Architecture"></a>Central Processing Unit (CPU) Architecture</h2><ul>
 <li><p>Von Neumann model</p>
 <ul>
 <li>Single processor</li>
@@ -5843,7 +5847,9 @@ E --&gt;|Y| G(Use more data)</code></pre>
   <entry>
     <title>Chapter5_SystemSoftware</title>
     <url>/Notes/ASCS/Chapter5-SystemSoftware/</url>
-    <content><![CDATA[<h2 id="Operating-system"><a href="#Operating-system" class="headerlink" title="Operating system"></a>Operating system</h2><ul>
+    <content><![CDATA[<span id="more"></span>
+
+<h2 id="Operating-system"><a href="#Operating-system" class="headerlink" title="Operating system"></a>Operating system</h2><ul>
 <li>The need for an Operating System (OS)<ul>
 <li>Communicate with hardware</li>
 <li>Provides an interface between software/hardware and users</li>
@@ -6042,7 +6048,9 @@ E --&gt;|Y| G(Use more data)</code></pre>
   <entry>
     <title>Chapter6_SecurityPrivactAndDataIntegrity</title>
     <url>/Notes/ASCS/Chapter6-SecurityPrivactAndDataIntegrity/</url>
-    <content><![CDATA[<h2 id="Data-security"><a href="#Data-security" class="headerlink" title="Data security"></a>Data security</h2><ul>
+    <content><![CDATA[<span id="more"></span>
+
+<h2 id="Data-security"><a href="#Data-security" class="headerlink" title="Data security"></a>Data security</h2><ul>
 <li>Security vs privacy vs integrity<ul>
 <li>Security<ul>
 <li>Security is keeping data safe from accidental damage</li>
@@ -6198,7 +6206,9 @@ E --&gt;|Y| G(Use more data)</code></pre>
   <entry>
     <title>Chapter7_EthicsAndOwnership</title>
     <url>/Notes/ASCS/Chapter7-EthicsAndOwnership/</url>
-    <content><![CDATA[<h2 id="Ethics-and-ownership"><a href="#Ethics-and-ownership" class="headerlink" title="Ethics and ownership"></a>Ethics and ownership</h2><ul>
+    <content><![CDATA[<span id="more"></span>
+
+<h2 id="Ethics-and-ownership"><a href="#Ethics-and-ownership" class="headerlink" title="Ethics and ownership"></a>Ethics and ownership</h2><ul>
 <li>Why ethics are important<ul>
 <li>Help stop the misuse of computers</li>
 <li>The use of computer needs to be governed</li>
@@ -6315,7 +6325,9 @@ E --&gt;|Y| G(Use more data)</code></pre>
   <entry>
     <title>Chapter8_Databases</title>
     <url>/Notes/ASCS/Chapter8-Databases/</url>
-    <content><![CDATA[<h2 id="Database-Concepts"><a href="#Database-Concepts" class="headerlink" title="Database Concepts"></a>Database Concepts</h2><ul>
+    <content><![CDATA[<span id="more"></span>
+
+<h2 id="Database-Concepts"><a href="#Database-Concepts" class="headerlink" title="Database Concepts"></a>Database Concepts</h2><ul>
 <li><p>Limitations of a file-based approach</p>
 <ul>
 <li>Data redundancy - the same data is  stored many times</li>
