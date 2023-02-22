@@ -1605,32 +1605,45 @@
 </ul>
 <p><strong>Process control block(PCB)</strong>: a data structure which contains all of the data needed for a process to run; this can be created in memory when data needs to be received during execution time. The PCB will store</p>
 <ul>
-<li>current process state (ready, running, or blocked)</li>
+<li><strong>current process state</strong> (ready, running, or blocked)</li>
 <li>process privileges(such as which resources is allowed to access)</li>
 <li>register values (PC, MAR, MDR, and ACC)</li>
-<li>process priority and any scheduling information</li>
+<li>process priority and any <strong>scheduling information</strong></li>
 <li>the amount of CPU time the process will need to complete</li>
-<li>a process ID which allows it to be uniquely identified</li>
+<li>a <strong>process ID</strong> which allows it to be uniquely identified</li>
+<li><strong>I/O status information</strong> - I/O devices allocated to process, list of open files</li>
+</ul>
+<p><strong>Process context</strong> - the machine environment while the process is running</p>
+<ul>
+<li><strong>Program counter</strong>, location of instruction to next execute</li>
+<li><strong>CPU registers</strong>, contents of all process-centric registers</li>
 </ul>
 <p><strong>Multitasking</strong>: allow computers to carry out more than one task(process) at a time. Each of these processes will share common hardware resources. To ensure multitasking operates correctly, scheduling is used to decide which process is carried out first.</p>
 </blockquote>
 <h3 id="Process-states"><a href="#Process-states" class="headerlink" title="Process states"></a><u>Process states</u></h3><h4 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h4><ul>
-<li><font color="#4a69bd">Ready: program waiting for CPU time</font><ul>
+<li><p>New: process is being created</p>
+</li>
+<li><p><font color="#4a69bd">Ready: program waiting for CPU time</font></p>
+<ul>
 <li><font color="#4a69bd">The process is not being executed</font></li>
 <li><font color="#4a69bd">The process is in the queue</font></li>
 <li><font color="#4a69bd">… waiting for the processor’s attention/time slice/CPU time</font></li>
 </ul>
 </li>
-<li><font color="#4a69bd">Blocked: program waiting for an event or Input/Output operation</font><ul>
+<li><p>Waiting/<font color="#4a69bd">Blocked: program waiting for an event or Input/Output operation</font></p>
+<ul>
 <li><font color="#4a69bd">The process is waiting for an event</font></li>
 <li><font color="#4a69bd">So it cannot be executed by the moment</font></li>
 <li><font color="#4a69bd">e.g. Input/Output</font></li>
 </ul>
 </li>
-<li><font color="#4a69bd">Running: program running on a CPU</font><ul>
+<li><p><font color="#4a69bd">Running: program running on a CPU</font></p>
+<ul>
 <li><font color="#4a69bd">Process is being executed by the CPU</font></li>
 <li><font color="#4a69bd">Process is currently using its allocated time slice</font></li>
 </ul>
+</li>
+<li><p>Terminated(Exit): process has finished executing</p>
 </li>
 </ul>
 <h4 id="Transition-between-states-conditions"><a href="#Transition-between-states-conditions" class="headerlink" title="Transition between states: conditions"></a>Transition between states: conditions</h4><ul>
