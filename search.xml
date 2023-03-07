@@ -1142,7 +1142,7 @@
 <ul>
 <li><font color="#4a69bd">Pipelining is instruction level parallelism</font></li>
 <li><font color="#4a69bd">Execution of an instruction is split into a number of stages</font></li>
-<li><font color="#4a69bd">When the first stage for an instruction is completed, the first page of next instruction can start executing</font></li>
+<li><font color="#4a69bd">When the first stage for an instruction is completed, the first stage of next instruction can start executing</font></li>
 <li><font color="#4a69bd">Another instruction can start executing before the previous one is finished</font></li>
 <li><font color="#4a69bd">Processing a number of instructions can be concurrent/simultaneous</font></li>
 </ul>
@@ -5119,6 +5119,17 @@
 <div class="note info"><p><strong>Contributed to</strong>:</p>
 <ul>
 <li><del>almost</del> the whole AS Part (A huge thanks)!</li>
+</ul>
+</div>
+
+<h2 id="dolphin-Alisa-Wu"><a href="#dolphin-Alisa-Wu" class="headerlink" title=":dolphin: Alisa Wu"></a><span class="github-emoji"><span>🐬</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f42c.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Alisa Wu</h2><p><span class="github-emoji"><span>🔗</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f517.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> <a href="https://www.xiaohongshu.com/user/profile/5dbbfef100000000010025ff?xhsshare=CopyLink&amp;appuid=5dbbfef100000000010025ff&amp;apptime=1678231358">Alisa’s xhs</a></p>
+<div class="note info"><p><strong>Contributed to</strong>:</p>
+<ul>
+<li>Identifing typos:<ul>
+<li>Here: <a href="https://haoran-jie.github.io/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/#Differences-between-RISC-and-CISC">RISC and CISC</a></li>
+<li>Here: <a href="https://haoran-jie.github.io/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/#Pipelining-amp-Registers">Pipelining</a></li>
+</ul>
+</li>
 </ul>
 </div>
 ]]></content>
