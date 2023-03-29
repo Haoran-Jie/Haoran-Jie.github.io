@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Samuel&#39;s Blog</title>
+  <icon>https://haoran-jie.github.io/icon.png</icon>
+  <subtitle>Snippets of life of a programmer</subtitle>
+  <link href="https://haoran-jie.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://haoran-jie.github.io/"/>
+  <updated>2023-02-10T15:21:29.451Z</updated>
+  <id>https://haoran-jie.github.io/</id>
+  
+  <author>
+    <name>Haoran Jie</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Chapter8_Databases</title>
+    <link href="https://haoran-jie.github.io/Notes/ASCS/Chapter8-Databases/"/>
+    <id>https://haoran-jie.github.io/Notes/ASCS/Chapter8-Databases/</id>
+    <published>2023-02-10T11:54:41.000Z</published>
+    <updated>2023-02-10T15:21:29.451Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2023/02/10/Pe8dh3Wmk4Jn6Sg.png&quot; alt=&quot;Syllabus&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
+    
+    <category term="ASCS" scheme="https://haoran-jie.github.io/categories/Notes/ASCS/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Chapter7_EthicsAndOwnership</title>
+    <link href="https://haoran-jie.github.io/Notes/ASCS/Chapter7-EthicsAndOwnership/"/>
+    <id>https://haoran-jie.github.io/Notes/ASCS/Chapter7-EthicsAndOwnership/</id>
+    <published>2023-02-10T11:54:26.000Z</published>
+    <updated>2023-02-10T15:19:54.639Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2023/02/10/SzDj73yYuanWVIe.png&quot; alt=&quot;Syllabus&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
+    
+    <category term="ASCS" scheme="https://haoran-jie.github.io/categories/Notes/ASCS/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Chapter6_SecurityPrivactAndDataIntegrity</title>
+    <link href="https://haoran-jie.github.io/Notes/ASCS/Chapter6-SecurityPrivactAndDataIntegrity/"/>
+    <id>https://haoran-jie.github.io/Notes/ASCS/Chapter6-SecurityPrivactAndDataIntegrity/</id>
+    <published>2023-02-10T11:53:47.000Z</published>
+    <updated>2023-02-10T15:19:21.562Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2023/02/10/tn4yPKwR6cfokzB.png&quot; alt=&quot;Syllabus&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
+    
+    <category term="ASCS" scheme="https://haoran-jie.github.io/categories/Notes/ASCS/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Chapter5_SystemSoftware</title>
+    <link href="https://haoran-jie.github.io/Notes/ASCS/Chapter5-SystemSoftware/"/>
+    <id>https://haoran-jie.github.io/Notes/ASCS/Chapter5-SystemSoftware/</id>
+    <published>2023-02-10T11:53:24.000Z</published>
+    <updated>2023-02-10T15:26:52.156Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2023/02/10/6Lye9nUXTAcPK3H.png&quot; alt=&quot;Syllabus&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
+    
+    <category term="ASCS" scheme="https://haoran-jie.github.io/categories/Notes/ASCS/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Chapter4_ProcessorFundamentals</title>
+    <link href="https://haoran-jie.github.io/Notes/ASCS/Chapter4-ProcessorFundamentals/"/>
+    <id>https://haoran-jie.github.io/Notes/ASCS/Chapter4-ProcessorFundamentals/</id>
+    <published>2023-02-10T11:53:12.000Z</published>
+    <updated>2023-02-10T15:16:13.656Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2023/02/10/3bSpT1CFjPYX8ON.png&quot; alt=&quot;Syllabus4&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
+    
+    <category term="ASCS" scheme="https://haoran-jie.github.io/categories/Notes/ASCS/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Chapter3_Hardware</title>
+    <link href="https://haoran-jie.github.io/Notes/ASCS/Chapter3-Hardware/"/>
+    <id>https://haoran-jie.github.io/Notes/ASCS/Chapter3-Hardware/</id>
+    <published>2023-02-10T11:52:46.000Z</published>
+    <updated>2023-02-10T15:13:20.128Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2023/02/10/LixMgfy8bzwVYoQ.png&quot; alt=&quot;Syllabus&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
+    
+    <category term="ASCS" scheme="https://haoran-jie.github.io/categories/Notes/ASCS/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Abstract Data Types Notes</title>
+    <link href="https://haoran-jie.github.io/Cambridge/Notes/Abstract-Data-Types-Notes/"/>
+    <id>https://haoran-jie.github.io/Cambridge/Notes/Abstract-Data-Types-Notes/</id>
+    <published>2023-02-06T20:03:48.000Z</published>
+    <updated>2023-02-10T15:27:34.980Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;List&quot;&gt;&lt;a href=&quot;#List&quot; class=&quot;headerlink&quot; title=&quot;List&quot;&gt;&lt;/a&gt;List&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;Lists provide one natural implementation of stacks, and are the data structure of choice in many places where flexible representation of variable amount of data is wanted.&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="Cambridge" scheme="https://haoran-jie.github.io/categories/Cambridge/"/>
+    
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Cambridge/Notes/"/>
+    
+    
+    <category term="Algorithms" scheme="https://haoran-jie.github.io/tags/Algorithms/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Graphics_Notes</title>
+    <link href="https://haoran-jie.github.io/Cambridge/Notes/Graphics-Notes/"/>
+    <id>https://haoran-jie.github.io/Cambridge/Notes/Graphics-Notes/</id>
+    <published>2023-02-04T01:42:29.000Z</published>
+    <updated>2023-02-04T02:24:22.462Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;Rendering&quot;&gt;&lt;a href=&quot;#Rendering&quot; class=&quot;headerlink&quot; title=&quot;Rendering&quot;&gt;&lt;/a&gt;Rendering&lt;/h2&gt;&lt;h3 id=&quot;Shading&quot;&gt;&lt;a href=&quot;#Shading&quot; class=&quot;headerlink&quot; title=&quot;Shading&quot;&gt;&lt;/a&gt;Shading&lt;/h3&gt;&lt;p&gt;$$&lt;br&gt;I = I_ak_a + \sum_i I_ik_d(L_i \cdot N) + \sum_iI_ik_s(R_i\cdot V)^n&lt;br&gt;$$&lt;/p&gt;
+&lt;h4 id=&quot;Ambient-illumination&quot;&gt;&lt;a href=&quot;#Ambient-illumination&quot; class=&quot;headerlink&quot; title=&quot;Ambient illumination&quot;&gt;&lt;/a&gt;Ambient illumination&lt;/h4&gt;&lt;p&gt;In computer graphics, ambient illumination is a lighting model that simulates the way light is reflected off of objects and fills a scene. It is called “ambient” because it is meant to represent the indirect light in a scene that comes from all directions, rather than from a specific light source.&lt;/p&gt;
+&lt;p&gt;In other words, ambient illumination is the base level of lighting in a scene that fills in the shadows and gives objects a sense of overall brightness. It is typically implemented as a low-intensity, uniform light that is applied to all objects in a scene.&lt;/p&gt;
+&lt;p&gt;&lt;font color=&quot;CornflowerBlue&quot;&gt;The ambient terms models indirect illumination; the light coming from other surfaces rather than directly from the light sources. The parameter $k_a$ controls what portion of ambient light the surface reflects and the $I_a$ in the global intensity of the ambient light&lt;/font&gt;&lt;/p&gt;
+&lt;h4 id=&quot;Diffuse-shading&quot;&gt;&lt;a href=&quot;#Diffuse-shading&quot; class=&quot;headerlink&quot; title=&quot;Diffuse shading&quot;&gt;&lt;/a&gt;Diffuse shading&lt;/h4&gt;&lt;p&gt;In computer graphics, diffuse shading is a technique used to simulate the way light is scattered and absorbed by an object’s surface. It is based on the idea that light is absorbed and scattered in all directions by a rough surface, such as a matte paint finish.&lt;/p&gt;
+&lt;p&gt;Diffuse shading is typically implemented using the Phong lighting model, which calculates the intensity of the diffuse reflection for each pixel on an object’s surface based on the angle between the surface normal (a vector perpendicular to the surface) and the light source.&lt;/p&gt;
+&lt;p&gt;&lt;font color=&quot;CornflowerBlue&quot;&gt;The diffuse term models Lambertian reflection where the incoming light in reflected uniformly in all directions. The paramter $k_d$&amp;nbsp;controls the amount of light that is reflected in a diffuse manner. Scalar $I_i$&amp;nbsp;describes the intensity of the incoming light&lt;/font&gt;&lt;/p&gt;
+&lt;h4 id=&quot;Imperfect-specular-reflection&quot;&gt;&lt;a href=&quot;#Imperfect-specular-reflection&quot; class=&quot;headerlink&quot; title=&quot;Imperfect specular reflection&quot;&gt;&lt;/a&gt;Imperfect specular reflection&lt;/h4&gt;&lt;p&gt;In computer graphics, imperfect specular reflection is a technique used to simulate the way light is reflected off of an object’s surface in a more realistic manner. It is based on the idea that the reflection of light off of an object’s surface is not always perfect and that there are often small imperfections or irregularities that can affect the reflection.&lt;/p&gt;
+&lt;p&gt;&lt;font color=&quot;CornflowerBlue&quot;&gt;The specular term models imperfect mirror-like reflection, in which the reflected light is distributed around the direction of reflection $R_i$. The paramter $K_s$&amp;nbsp;controls the amount of light that is reflected in a specular manner. The paramter $n$&amp;nbsp;models the shape of that distribution; high $n$&amp;nbsp;will result in tighter distribution and the behaviour that is closer to a perfect mirror light reflection. Scalar $I_i$&amp;nbsp;describes the intensity of the incoming light&lt;/font&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Cambridge" scheme="https://haoran-jie.github.io/categories/Cambridge/"/>
+    
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Cambridge/Notes/"/>
+    
+    
+    <category term="Graphics" scheme="https://haoran-jie.github.io/tags/Graphics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Chapter2_Communication</title>
+    <link href="https://haoran-jie.github.io/Notes/ASCS/Chapter2-Communication/"/>
+    <id>https://haoran-jie.github.io/Notes/ASCS/Chapter2-Communication/</id>
+    <published>2022-08-01T12:01:58.000Z</published>
+    <updated>2023-02-04T01:33:54.644Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2023/02/04/u783haFtjUzSJLD.png&quot; alt=&quot;Networks Including the Internet&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
+    
+    <category term="ASCS" scheme="https://haoran-jie.github.io/categories/Notes/ASCS/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Mathematical Terminology Explained</title>
+    <link href="https://haoran-jie.github.io/Mathematics/tools/Mathematical-Terminology-Explained/"/>
+    <id>https://haoran-jie.github.io/Mathematics/tools/Mathematical-Terminology-Explained/</id>
+    <published>2022-07-31T10:48:19.000Z</published>
+    <updated>2022-07-31T04:03:46.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;note success no-icon&quot;&gt;&lt;h3 id=&quot;Axiom&quot;&gt;&lt;a href=&quot;#Axiom&quot; class=&quot;headerlink&quot; title=&quot;Axiom&quot;&gt;&lt;/a&gt;Axiom&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;An</summary>
+        
+      
+    
+    
+    
+    <category term="Mathematics" scheme="https://haoran-jie.github.io/categories/Mathematics/"/>
+    
+    <category term="tools" scheme="https://haoran-jie.github.io/categories/Mathematics/tools/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Chapter1_InformationRepresentation</title>
+    <link href="https://haoran-jie.github.io/Notes/ASCS/Chapter1-InformationRepresentation/"/>
+    <id>https://haoran-jie.github.io/Notes/ASCS/Chapter1-InformationRepresentation/</id>
+    <published>2022-07-30T14:07:10.000Z</published>
+    <updated>2023-02-04T01:35:04.215Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;https://s2.loli.net/2023/02/04/4MZfO62Jb5hriEg.png&quot; alt=&quot;DataRepresentation&quot; style=&quot;zoom: 67%;&quot;&gt;</summary>
+    
+    
+    
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
+    
+    <category term="ASCS" scheme="https://haoran-jie.github.io/categories/Notes/ASCS/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Deep Learning Recipe</title>
+    <link href="https://haoran-jie.github.io/uncategorized/Deep-Learning-Recipe/"/>
+    <id>https://haoran-jie.github.io/uncategorized/Deep-Learning-Recipe/</id>
+    <published>2022-07-27T18:12:31.000Z</published>
+    <updated>2022-07-27T11:23:24.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;High-bias-and-Variance&quot;&gt;&lt;a href=&quot;#High-bias-and-Variance&quot; class=&quot;headerlink&quot; title=&quot;High bias and Variance&quot;&gt;&lt;/a&gt;High bias and Variance&lt;/h2&gt;&lt;h3 id=&quot;High-Bias&quot;&gt;&lt;a href=&quot;#High-Bias&quot; class=&quot;headerlink&quot; title=&quot;High Bias&quot;&gt;&lt;/a&gt;High Bias&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Underfitting the training set&lt;/li&gt;
+&lt;li&gt;Training set performance similar to development set performance&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;High-variance&quot;&gt;&lt;a href=&quot;#High-variance&quot; class=&quot;headerlink&quot; title=&quot;High variance&quot;&gt;&lt;/a&gt;High variance&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Overfitting the training set&lt;/li&gt;
+&lt;li&gt;Training set performance superior than development set performance&lt;/li&gt;&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="Machine Learning" scheme="https://haoran-jie.github.io/tags/Machine-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Monte Carlo simulation| 蒙特卡洛模拟</title>
+    <link href="https://haoran-jie.github.io/WhatandwhY/Monte-Carlo-%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B/"/>
+    <id>https://haoran-jie.github.io/WhatandwhY/Monte-Carlo-%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B/</id>
+    <published>2022-07-07T09:26:59.000Z</published>
+    <updated>2022-07-24T12:56:54.000Z</updated>
+    
+    
+    <summary type="html">&lt;div class=&quot;note info no-icon&quot;&gt;&lt;h4 id=&quot;引言&quot;&gt;&lt;a href=&quot;#引言&quot; class=&quot;headerlink&quot; title=&quot;引言&quot;&gt;&lt;/a&gt;引言&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;翻译自 《The New Turing Omnimbus》Chapter 4 Paragraph 1&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;为了了解组成现代世界的许多系统，我们越来越多转向计算机模拟。系统，无论是非人为的或者人工的，总是有许多部分有着复杂的行为，使得唯一可行的的模拟这种行为的方法为假设它是&lt;code&gt;随机的&lt;/code&gt;. 显而易见的是，咱们可以利用更简单的，符合统计学定律的部分替代这些系统中复杂的部分。&lt;/p&gt;
+&lt;p&gt;举个例子，如果我们想要模拟一场两边实力平均的排球比赛，我们可以通过抛硬币的方法来建立一个简单的模型：如果一个队伍正在发球，抛硬币的结果属于是不利于他们的那一面，则另一个队伍加一分且轮到他们发球；否则，这个发球队伍加一分并且继续发球。这个抛硬币的过程让我们想起了一个简单的打赌方式 ——&lt;mark class=&quot;label primary&quot;&gt;蒙特卡洛&lt;/mark&gt;&lt;/p&gt;
+&lt;/div&gt;</summary>
+    
+    
+    
+    <category term="WhatandwhY" scheme="https://haoran-jie.github.io/categories/WhatandwhY/"/>
+    
+    
+    <category term="Statistics" scheme="https://haoran-jie.github.io/tags/Statistics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LaTeX Personal CheatSheet</title>
+    <link href="https://haoran-jie.github.io/Mathematics/tools/LaTeX-Personal-CheatSheet/"/>
+    <id>https://haoran-jie.github.io/Mathematics/tools/LaTeX-Personal-CheatSheet/</id>
+    <published>2022-06-14T13:53:20.000Z</published>
+    <updated>2022-07-21T13:21:10.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Key formulae&lt;/th&gt;
+&lt;th&gt;Explanation&lt;/th&gt;
+&lt;th&gt;Example</summary>
+        
+      
+    
+    
+    
+    <category term="Mathematics" scheme="https://haoran-jie.github.io/categories/Mathematics/"/>
+    
+    <category term="tools" scheme="https://haoran-jie.github.io/categories/Mathematics/tools/"/>
+    
+    
+    <category term="LaTeX" scheme="https://haoran-jie.github.io/tags/LaTeX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Chapter20.1: Programming Paradigms</title>
+    <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter20.1_ProgrammingParadigm/"/>
+    <id>https://haoran-jie.github.io/Notes/ALCS/Chapter20.1_ProgrammingParadigm/</id>
+    <published>2022-05-06T12:10:58.000Z</published>
+    <updated>2023-02-04T01:26:47.695Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2023/02/04/Eg9j2Jk4t3vRN7e.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
+    
+    <category term="ALCS" scheme="https://haoran-jie.github.io/categories/Notes/ALCS/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Chapter19.2: Recursion</title>
+    <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter19.2_Recursion/"/>
+    <id>https://haoran-jie.github.io/Notes/ALCS/Chapter19.2_Recursion/</id>
+    <published>2022-05-05T14:09:16.000Z</published>
+    <updated>2023-02-04T01:26:26.633Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2023/02/04/xUEV71zGkKSO9uP.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
+    
+    <category term="ALCS" scheme="https://haoran-jie.github.io/categories/Notes/ALCS/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Chapter 16.2: Translation Software</title>
+    <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter16.2_TranslationSoftware/"/>
+    <id>https://haoran-jie.github.io/Notes/ALCS/Chapter16.2_TranslationSoftware/</id>
+    <published>2022-05-05T10:14:19.000Z</published>
+    <updated>2023-02-09T16:20:16.574Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2023/02/04/pWFCrNxiEGA7o58.png&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;</summary>
+    
+    
+    
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
+    
+    <category term="ALCS" scheme="https://haoran-jie.github.io/categories/Notes/ALCS/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Chapter 16.1: Purpose of an operating system</title>
+    <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter16.1_PurposeOfAnOperatingSystem/"/>
+    <id>https://haoran-jie.github.io/Notes/ALCS/Chapter16.1_PurposeOfAnOperatingSystem/</id>
+    <published>2022-05-03T21:41:54.000Z</published>
+    <updated>2023-02-22T11:53:39.566Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2023/02/04/aUVi1RcIQDbl84W.png&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;</summary>
+    
+    
+    
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
+    
+    <category term="ALCS" scheme="https://haoran-jie.github.io/categories/Notes/ALCS/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Chapter15.2: Boolean Algebra And Logic Circuits</title>
+    <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/"/>
+    <id>https://haoran-jie.github.io/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/</id>
+    <published>2022-05-02T20:57:05.000Z</published>
+    <updated>2023-02-04T01:20:37.923Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2023/02/04/ReWvZK5L9cPHjAF.png&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;</summary>
+    
+    
+    
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
+    
+    <category term="ALCS" scheme="https://haoran-jie.github.io/categories/Notes/ALCS/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Chapter 15.1: Processors, Parallel Processing and Virtual Machines</title>
+    <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/"/>
+    <id>https://haoran-jie.github.io/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/</id>
+    <published>2022-05-02T11:17:24.000Z</published>
+    <updated>2023-03-07T23:34:01.943Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2023/02/04/E5NamJYZA2WkfFV.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
+    
+    <category term="ALCS" scheme="https://haoran-jie.github.io/categories/Notes/ALCS/"/>
+    
+    
+  </entry>
+  
+</feed>
