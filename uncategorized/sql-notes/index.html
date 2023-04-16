@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#2c3e50" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#2c3e50">
+  <meta name="google-site-verification" content="ONgpvg7NlakSEl6IcZ4-nCCQleKums7GuOYvOS4zXCQ">
+  <meta name="msvalidate.01" content="5331505606E7903BD6FA7D5C7D0FE6DB">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"haoran-jie.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":30,"offset":15},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#546de5","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":true,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
+
+
+
+<link rel="canonical" href="https://haoran-jie.github.io/uncategorized/sql-notes/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://haoran-jie.github.io/uncategorized/sql-notes/","path":"uncategorized/sql-notes/","title":"sql_notes"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>sql_notes | Samuel's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V501S4L4ZZ"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-V501S4L4ZZ","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+  <script async src="//assets.growingio.com/2.1/gio.js"></script>
+  <script class="next-config" data-name="growingio_analytics" type="application/json">"b544ba838d823365"</script>
+  <script src="/js/third-party/analytics/growingio.js"></script>
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Samuel's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Samuel's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Snippets of life of a programmer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">18</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">14</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">40</span></a></li><li class="menu-item menu-item-notes"><a href="/Notes/" rel="section"><i class="fa fa-book fa-fw"></i>Notes</a></li><li class="menu-item menu-item--what&why系列文章"><a href="/WhatandwhY/" rel="section"><i class="fa-solid fa-clipboard-question fa-fw"></i> What&whY系列文章</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Like-operator-and-Wildcards"><span class="nav-number">1.</span> <span class="nav-text">Like operator and Wildcards</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Group-by-operator"><span class="nav-number">2.</span> <span class="nav-text">Group by operator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Order-by-operator"><span class="nav-number">3.</span> <span class="nav-text">Order by operator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Joins"><span class="nav-number">4.</span> <span class="nav-text">Joins</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nested-query"><span class="nav-number">5.</span> <span class="nav-text">Nested query</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Views"><span class="nav-number">6.</span> <span class="nav-text">Views</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Null"><span class="nav-number">7.</span> <span class="nav-text">Null</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Common-Table-Expressions"><span class="nav-number">8.</span> <span class="nav-text">Common Table Expressions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Union-Intersect-and-Except-operator"><span class="nav-number">9.</span> <span class="nav-text">Union, Intersect, and Except operator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Index"><span class="nav-number">10.</span> <span class="nav-text">Index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Examples"><span class="nav-number">11.</span> <span class="nav-text">Examples</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Arithmetic-in-expression"><span class="nav-number">11.1.</span> <span class="nav-text">Arithmetic in expression</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Haoran Jie"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Haoran Jie</p>
+  <div class="site-description" itemprop="description">18</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Haoran-Jie" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Haoran-Jie" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:samueljie1@gmail.com" title="E-Mail → mailto:samueljie1@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/samueljieee/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;samueljieee&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://haoran-jie.github.io/uncategorized/sql-notes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Haoran Jie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Samuel's Blog">
+      <meta itemprop="description" content="18">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="sql_notes | Samuel's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          sql_notes
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-04-16 19:07:24 / Modified: 19:17:06" itemprop="dateCreated datePublished" datetime="2023-04-16T19:07:24+01:00">2023-04-16</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/uncategorized/sql-notes/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="uncategorized/sql-notes/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="Like-operator-and-Wildcards"><a href="#Like-operator-and-Wildcards" class="headerlink" title="Like operator and Wildcards"></a>Like operator and Wildcards</h2><ul>
+<li><p><code>%</code>: This wildcard matches any number of characters (including zero characters).</p>
+</li>
+<li><p><code>_</code>: This wildcard matches any single character.</p>
+</li>
+<li><p><code>[character_list]</code>:  This wildcard matches any single character in the list. For example, [abc] would match any     of the characters ‘a’, ‘b’, or ‘c’.</p>
+</li>
+<li><p><code>[^character_list]</code>: This wildcard matches any single character that is not in the list. For example,<code>[^abc]</code> would match any character that is not ‘a’, ‘b’, or ‘c’.</p>
+</li>
+</ul>
+<span id="more"></span> 
+
+<h2 id="Group-by-operator"><a href="#Group-by-operator" class="headerlink" title="Group by operator"></a>Group by operator</h2><p>The GROUP BY operator is used in a SELECT statement to group rows that have the same values into summary rows. The GROUP BY clause is used with aggregate functions (such as <strong>MIN, MAX, AVG, SUM, COUNT</strong>) to group the result-set by one or more columns.</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">as</span> num_orders, customer_id, product_id</span><br><span class="line"><span class="keyword">FROM</span> orders</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> customer_id, product_id;</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">as</span> num_orders, customer_id</span><br><span class="line"><span class="keyword">FROM</span> orders</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> customer_id</span><br><span class="line"><span class="keyword">HAVING</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="operator">&gt;</span> <span class="number">5</span>;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>The WHERE and HAVING clauses are used to filter rows from a result-set in different ways. The WHERE clause is used to filter rows before the group by clause is applied, while the HAVING clause is used to filter rows after the group by clause is applied.</p>
+<p>Here is an example to illustrate the difference between the WHERE and HAVING clauses:</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">as</span> num_orders, customer_id</span><br><span class="line"><span class="keyword">FROM</span> orders</span><br><span class="line"><span class="keyword">WHERE</span> status <span class="operator">=</span> <span class="string">'shipped'</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> customer_id</span><br><span class="line"><span class="keyword">HAVING</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="operator">&gt;</span> <span class="number">5</span>;</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Order-by-operator"><a href="#Order-by-operator" class="headerlink" title="Order by operator"></a>Order by operator</h2><p>The ORDER BY operator is used in a SELECT statement to sort the result-set by one or more columns. The ORDER BY clause has the following syntax:</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2, ...</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">condition</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> column1, column2, ... <span class="keyword">ASC</span><span class="operator">|</span><span class="keyword">DESC</span>;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>The ORDER BY clause sorts the result-set by the specified columns in ascending (ASC) or descending (DESC) order. By default, the ORDER BY clause sorts the result-set in ascending order.</p>
+<h2 id="Joins"><a href="#Joins" class="headerlink" title="Joins"></a>Joins</h2><p>In SQL, a join is used to combine rows from two or more tables based on a related column between them. There are several types of joins that you can use in SQL:</p>
+<ol>
+<li>INNER JOIN: An INNER JOIN returns rows from both tables that satisfy the join condition. If a row in the first table has no matching rows in the second table, it is not included in the result-set.</li>
+<li>OUTER JOIN: An OUTER JOIN returns all rows from both tables, regardless of whether there is a match in the other table. There are three types of outer joins:</li>
+</ol>
+<ul>
+<li>LEFT JOIN: A LEFT JOIN returns all rows from the left table, and any matching rows from the right table. If there is no match, NULL values are returned for the right table.</li>
+<li>RIGHT JOIN: A RIGHT JOIN returns all rows from the right table, and any matching rows from the left table. If there is no match, NULL values are returned for the left table.</li>
+<li>FULL JOIN: A FULL JOIN returns all rows from both tables, and NULL values are returned for any columns where there is no match.</li>
+</ul>
+<ol start="3">
+<li>CROSS JOIN: A CROSS JOIN returns the Cartesian product of the two tables. In other words, it returns every possible combination of rows from the two tables.</li>
+</ol>
+<h2 id="Nested-query"><a href="#Nested-query" class="headerlink" title="Nested query"></a>Nested query</h2><p>A nested query is a SELECT statement that is used within another SELECT statement. It is also called a subquery.</p>
+<p>A nested query can be used to return data that is used in the main query as a condition or as a parameter. The nested query is executed first, and its results are used by the main query.</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">WHERE</span> column3 <span class="keyword">in</span> (<span class="keyword">SELECT</span> column4</span><br><span class="line">                <span class="keyword">FROM</span> table2</span><br><span class="line">                <span class="keyword">WHERE</span> <span class="keyword">condition</span>);</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> m1.title, m1.year, g.genre, m1.rating, m1.votes</span><br><span class="line"><span class="keyword">from</span> movies <span class="keyword">as</span> m1</span><br><span class="line"><span class="keyword">join</span> has_genre <span class="keyword">as</span> hg <span class="keyword">on</span> hg.movie_id <span class="operator">=</span> m1.movie_id</span><br><span class="line"><span class="keyword">join</span> genres <span class="keyword">as</span> g <span class="keyword">on</span> g.genre_id <span class="operator">=</span> hg.genre_id</span><br><span class="line"><span class="keyword">where</span> m1.votes <span class="operator">&gt;</span> <span class="number">100000</span> <span class="keyword">and</span> (<span class="keyword">not</span> (g.genre <span class="operator">=</span> <span class="string">'Romance'</span> <span class="keyword">or</span> g.genre <span class="operator">=</span> <span class="string">'Comedy'</span>))</span><br><span class="line">      <span class="keyword">and</span> m1.movie_id <span class="keyword">in</span></span><br><span class="line">         (<span class="keyword">select</span> m2.movie_id</span><br><span class="line">         <span class="keyword">from</span> movies <span class="keyword">as</span> m2</span><br><span class="line">         <span class="keyword">join</span> has_genre <span class="keyword">as</span> hg1 <span class="keyword">on</span> hg1.movie_id <span class="operator">=</span> m2.movie_id</span><br><span class="line">         <span class="keyword">join</span> has_genre <span class="keyword">as</span> hg2 <span class="keyword">on</span> hg2.movie_id <span class="operator">=</span> m2.movie_id</span><br><span class="line">         <span class="keyword">join</span> genres <span class="keyword">as</span> g1 <span class="keyword">on</span> g1.genre_id <span class="operator">=</span> hg1.genre_id</span><br><span class="line">         <span class="keyword">join</span> genres <span class="keyword">as</span> g2 <span class="keyword">on</span> g2.genre_id <span class="operator">=</span> hg2.genre_id</span><br><span class="line">         <span class="keyword">where</span> g1.genre <span class="operator">=</span> <span class="string">'Romance'</span> <span class="keyword">and</span> g2.genre <span class="operator">=</span> <span class="string">'Comedy'</span>)</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> m1.votes <span class="keyword">desc</span></span><br><span class="line">limit <span class="number">10</span>;</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Views"><a href="#Views" class="headerlink" title="Views"></a>Views</h2><p>In SQL, a view is a virtual table that is created based on a SELECT statement. A view does not store data itself, but rather displays data from one or more underlying tables.</p>
+<p>Views are often used to provide a specific perspective on the data in a database, or to simplify complex queries by breaking them down into smaller, more manageable pieces.</p>
+<p>To create a view in SQL, you can use the following syntax:</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> view_name <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> column1, column2, ...</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">condition</span>;</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Null"><a href="#Null" class="headerlink" title="Null"></a><code>Null</code></h2><p>In SQL, NULL is a special value that represents the absence of a value or a null value. It is not the same as an empty string ‘’ or a zero value 0.</p>
+<p>A column with a NULL value is a column that has been left blank during an INSERT or UPDATE operation.</p>
+<p>You can test for NULL values using the <code>IS NULL</code> and <code>IS NOT NULL</code> operators. For example:</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> table_name <span class="keyword">WHERE</span> column_name <span class="keyword">IS</span> <span class="keyword">NULL</span>;</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Common-Table-Expressions"><a href="#Common-Table-Expressions" class="headerlink" title="Common Table Expressions"></a>Common Table Expressions</h2><p>I did dislike CREATE VIEW. There are actually a fair few alternatives, but the simplest (a drop-in replacement) is to use what are called Common Table Expressions (CTEs), using the WITH keyword.</p>
+<p>Say you had a students table that looked like students(crsid, firstname, lastname, college, course) and wanted to count the number of Robinson students. Ignore the fact that in this simple example you could just do it in one go!</p>
+<p>One way is with a VIEW:</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> robinson_students <span class="keyword">AS</span> (<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">WHERE</span> college<span class="operator">=</span><span class="string">'Robinson'</span>);</span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> robinson_students;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>But this leaves that view around, and imagine if you had one per college and one per course and maybe one per course-college pair, it’d get out of hand pretty quickly. Note that this is two statements, something many database interaction libraries won’t let you do in a single database query (because sneaking a second query into what should be one query is how almost all SQL injection works, and so allowing only one statement per query helps defend from this security risk!).</p>
+<p>Instead, you can use CTEs which use the WITH statement:</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">WITH</span> robinson_students <span class="keyword">AS</span> (<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">WHERE</span> college<span class="operator">=</span><span class="string">'Robinson'</span>) <span class="keyword">SELECT</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> robinson_students;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>See how this is just one statement? You could put a newline just before the SELECT for clarity, but it is all one thing. It doesn’t leave anything lying around afterwards and it’s no less efficient than the VIEW.</p>
+<p>It’s really only a few characters different in the end, so very simple to use.</p>
+<p>You can have multiple tables in the WITH clause, for more complicated things:</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">WITH</span></span><br><span class="line">  robinson_students <span class="keyword">AS</span> (<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">WHERE</span> college<span class="operator">=</span><span class="string">'Robinson'</span>),</span><br><span class="line">  robinson_compscis <span class="keyword">AS</span> (<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">from</span> robinson_students <span class="keyword">WHERE</span> course<span class="operator">=</span><span class="string">'Computer Science'</span>)</span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> robinson_students <span class="keyword">WHERE</span> crsid <span class="keyword">NOT</span> <span class="keyword">IN</span> (<span class="keyword">SELECT</span> crsid <span class="keyword">FROM</span> robinson_compscis);</span><br></pre></td></tr></tbody></table></figure>
+
+<p>You just separate them with a comma, and the last one has no comma. (This query counts the non-compsci students at Robinson, for example, though there are better ways than this).</p>
+<p>Of course, you can also just inline WITH clause expressions if you only need them once: </p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">from</span> students <span class="keyword">WHERE</span> college<span class="operator">=</span><span class="string">'Robinson'</span>) <span class="keyword">AS</span> robinson_students;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>But it’s really handy to use WITH clauses if you want to use the result multiple times, as in the more complicated example before where I used robinson_students twice (once in the robinson_compscis bit and once in the main query).</p>
+<p>And yes, for this very simple example you can just do it without any subqueries, of course:</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">from</span> students <span class="keyword">WHERE</span> college<span class="operator">=</span><span class="string">'Robinson'</span>;</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Union-Intersect-and-Except-operator"><a href="#Union-Intersect-and-Except-operator" class="headerlink" title="Union, Intersect, and Except operator"></a>Union, Intersect, and Except operator</h2><p>In SQL, the <code>UNION</code> operator is used to combine the result sets of two or more SELECT statements into a single result set. The <code>INTERSECT</code> operator is used to return only the rows that are present in the results of both SELECT statements. The <code>EXCEPT</code> operator is used to return only the rows that are present in the first SELECT statement and not in the second SELECT statement.</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2 <span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> column1, column2 <span class="keyword">FROM</span> table2</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> column1, column2 <span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">INTERSECT</span></span><br><span class="line"><span class="keyword">SELECT</span> column1, column2 <span class="keyword">FROM</span> table2</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> column1, column2 <span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">EXCEPT</span></span><br><span class="line"><span class="keyword">SELECT</span> column1, column2 <span class="keyword">FROM</span> table2</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Index"><a href="#Index" class="headerlink" title="Index"></a>Index</h2><p>In SQL, an index is a data structure that allows efficient retrieval of rows from a table. Indexes can be created on one or more columns of a table, and can be used to improve the performance of SELECT, INSERT, UPDATE, and DELETE statements.</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> INDEX index_name</span><br><span class="line"><span class="keyword">ON</span> table_name (column_name);</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> INDEX index_name</span><br><span class="line"><span class="keyword">ON</span> table_name (column_name1, column_name2);</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><h3 id="Arithmetic-in-expression"><a href="#Arithmetic-in-expression" class="headerlink" title="Arithmetic in expression"></a>Arithmetic in expression</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">sum</span>(minutes)<span class="operator">/</span><span class="number">1440</span> <span class="keyword">as</span> days, <span class="built_in">sum</span>(votes)<span class="operator">/</span><span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">as</span> average, <span class="number">17</span> <span class="operator">*</span> (<span class="built_in">max</span>(votes) <span class="operator">-</span> <span class="built_in">min</span>(votes)) <span class="keyword">as</span> nonsense</span><br><span class="line"><span class="keyword">from</span> movies</span><br><span class="line"><span class="keyword">where</span> type <span class="operator">=</span> <span class="string">'movie'</span>;</span><br></pre></td></tr></tbody></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Haoran Jie
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://haoran-jie.github.io/uncategorized/sql-notes/" title="sql_notes">https://haoran-jie.github.io/uncategorized/sql-notes/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/sql/" rel="tag"><i class="fa fa-tag"></i> sql</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/uncategorized/post/" rel="prev" title="post">
+                  <i class="fa fa-chevron-left"></i> post
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="comment-button-group">
+          <a class="btn comment-button disqus">disqus</a>
+          <a class="btn comment-button gitalk">gitalk</a>
+      </div>
+        <div class="comment-position disqus">
+          
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+        </div>
+        <div class="comment-position gitalk">
+          <div class="comments gitalk-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa-solid fa-terminal"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Haoran Jie</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.3.0/mermaid.min.js","integrity":"sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://haoran-jie.github.io/uncategorized/sql-notes/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"samuels-blog-5","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Haoran-Jie","repo":"GItalkComments","client_id":"a78520e4a91db64c6ead","client_secret":"80a445f6a6f80fcd44fea523269b55c10ba59002","admin_user":"Haoran-Jie","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"142e2da23d2503acba1cd89862a48e5b"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

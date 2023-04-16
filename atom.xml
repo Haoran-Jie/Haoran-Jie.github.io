@@ -6,7 +6,7 @@
   <link href="https://haoran-jie.github.io/atom.xml" rel="self"/>
   
   <link href="https://haoran-jie.github.io/"/>
-  <updated>2023-02-10T15:21:29.451Z</updated>
+  <updated>2023-04-16T18:17:06.094Z</updated>
   <id>https://haoran-jie.github.io/</id>
   
   <author>
@@ -15,6 +15,45 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>sql_notes</title>
+    <link href="https://haoran-jie.github.io/uncategorized/sql-notes/"/>
+    <id>https://haoran-jie.github.io/uncategorized/sql-notes/</id>
+    <published>2023-04-16T18:07:24.000Z</published>
+    <updated>2023-04-16T18:17:06.094Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;Like-operator-and-Wildcards&quot;&gt;&lt;a href=&quot;#Like-operator-and-Wildcards&quot; class=&quot;headerlink&quot; title=&quot;Like operator and Wildcards&quot;&gt;&lt;/a&gt;Like operator and Wildcards&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;%&lt;/code&gt;: This wildcard matches any number of characters (including zero characters).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;_&lt;/code&gt;: This wildcard matches any single character.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;[character_list]&lt;/code&gt;:  This wildcard matches any single character in the list. For example, [abc] would match any     of the characters ‘a’, ‘b’, or ‘c’.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;[^character_list]&lt;/code&gt;: This wildcard matches any single character that is not in the list. For example,&lt;code&gt;[^abc]&lt;/code&gt; would match any character that is not ‘a’, ‘b’, or ‘c’.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="sql" scheme="https://haoran-jie.github.io/tags/sql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>post</title>
+    <link href="https://haoran-jie.github.io/uncategorized/post/"/>
+    <id>https://haoran-jie.github.io/uncategorized/post/</id>
+    <published>2023-04-16T18:07:10.000Z</published>
+    <updated>2023-04-16T18:07:10.751Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Chapter8_Databases</title>
@@ -393,45 +432,6 @@
     
     <summary type="html">&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2023/02/04/aUVi1RcIQDbl84W.png&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;</summary>
-    
-    
-    
-    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
-    
-    <category term="ALCS" scheme="https://haoran-jie.github.io/categories/Notes/ALCS/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Chapter15.2: Boolean Algebra And Logic Circuits</title>
-    <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/"/>
-    <id>https://haoran-jie.github.io/Notes/ALCS/Chapter15.2_BooleanAlgebraAndLogicCircuits/</id>
-    <published>2022-05-02T20:57:05.000Z</published>
-    <updated>2023-02-04T01:20:37.923Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2023/02/04/ReWvZK5L9cPHjAF.png&quot;&gt;&lt;/p&gt;
-&lt;hr&gt;</summary>
-    
-    
-    
-    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
-    
-    <category term="ALCS" scheme="https://haoran-jie.github.io/categories/Notes/ALCS/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Chapter 15.1: Processors, Parallel Processing and Virtual Machines</title>
-    <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/"/>
-    <id>https://haoran-jie.github.io/Notes/ALCS/Chapter15.1_ProcessorsParallelProcessingandVirturalMachines/</id>
-    <published>2022-05-02T11:17:24.000Z</published>
-    <updated>2023-03-07T23:34:01.943Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2023/02/04/E5NamJYZA2WkfFV.png&quot;&gt;&lt;/p&gt;</summary>
     
     
     
