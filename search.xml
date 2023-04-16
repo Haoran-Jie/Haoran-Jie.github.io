@@ -6556,7 +6556,7 @@ E --&gt;|Y| G(Use more data)</code></pre>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>sql_notes</title>
+    <title>SQL_notes</title>
     <url>/uncategorized/sql-notes/</url>
     <content><![CDATA[<h2 id="Like-operator-and-Wildcards"><a href="#Like-operator-and-Wildcards" class="headerlink" title="Like operator and Wildcards"></a>Like operator and Wildcards</h2><ul>
 <li><p><code>%</code>: This wildcard matches any number of characters (including zero characters).</p>
