@@ -6,7 +6,7 @@
   <link href="https://haoran-jie.github.io/atom.xml" rel="self"/>
   
   <link href="https://haoran-jie.github.io/"/>
-  <updated>2023-04-16T19:14:16.602Z</updated>
+  <updated>2023-05-23T20:36:00.273Z</updated>
   <id>https://haoran-jie.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Algorithm_1And2</title>
+    <link href="https://haoran-jie.github.io/Notes/CambridgeIA/Algo_Note/"/>
+    <id>https://haoran-jie.github.io/Notes/CambridgeIA/Algo_Note/</id>
+    <published>2023-05-23T14:07:10.000Z</published>
+    <updated>2023-05-23T20:36:00.273Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;Big-O-Θ-and-Ω-notations&quot;&gt;&lt;a href=&quot;#Big-O-Θ-and-Ω-notations&quot; class=&quot;headerlink&quot; title=&quot;Big-O, Θ and Ω notations&quot;&gt;&lt;/a&gt;Big-O, Θ and Ω notations&lt;/h2&gt;&lt;img src=&quot;https://s2.loli.net/2023/04/15/4GFWV6lzaxiR3dX.png&quot; alt=&quot;image-20230415160745530&quot; style=&quot;zoom: 50%;&quot;&gt;
+
+&lt;img src=&quot;https://s2.loli.net/2023/04/15/8OmscUCvhVWxu74.png&quot; alt=&quot;image-20230415160800307&quot; style=&quot;zoom:50%;&quot;&gt;
+
+&lt;img src=&quot;https://s2.loli.net/2023/04/15/dQu5mTgkKp78Ejh.png&quot; alt=&quot;image-20230415160914191&quot; style=&quot;zoom:50%;&quot;&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2023/04/15/2tNkLCfca9hdTzg.png&quot; alt=&quot;image-20230415160924676&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
+    
+    <category term="CambridgeIA" scheme="https://haoran-jie.github.io/categories/Notes/CambridgeIA/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>SQL_notes</title>
@@ -411,26 +436,6 @@
     
     
     <summary type="html">&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2023/02/04/pWFCrNxiEGA7o58.png&quot;&gt;&lt;/p&gt;
-&lt;hr&gt;</summary>
-    
-    
-    
-    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
-    
-    <category term="ALCS" scheme="https://haoran-jie.github.io/categories/Notes/ALCS/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Chapter 16.1: Purpose of an operating system</title>
-    <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter16.1_PurposeOfAnOperatingSystem/"/>
-    <id>https://haoran-jie.github.io/Notes/ALCS/Chapter16.1_PurposeOfAnOperatingSystem/</id>
-    <published>2022-05-03T21:41:54.000Z</published>
-    <updated>2023-02-22T11:53:39.566Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2023/02/04/aUVi1RcIQDbl84W.png&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;</summary>
     
     

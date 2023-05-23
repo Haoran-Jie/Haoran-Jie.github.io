@@ -6649,4 +6649,556 @@ E --&gt;|Y| G(Use more data)</code></pre>
         <tag>sql</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Algorithm_1And2</title>
+    <url>/Notes/CambridgeIA/Algo_Note/</url>
+    <content><![CDATA[<h2 id="Big-O-Θ-and-Ω-notations"><a href="#Big-O-Θ-and-Ω-notations" class="headerlink" title="Big-O, Θ and Ω notations"></a>Big-O, Θ and Ω notations</h2><img src="https://s2.loli.net/2023/04/15/4GFWV6lzaxiR3dX.png" alt="image-20230415160745530" style="zoom: 50%;">
+
+<img src="https://s2.loli.net/2023/04/15/8OmscUCvhVWxu74.png" alt="image-20230415160800307" style="zoom:50%;">
+
+<img src="https://s2.loli.net/2023/04/15/dQu5mTgkKp78Ejh.png" alt="image-20230415160914191" style="zoom:50%;">
+
+<p><img src="https://s2.loli.net/2023/04/15/2tNkLCfca9hdTzg.png" alt="image-20230415160924676"></p>
+<span id="more"></span>
+
+<h2 id="Strategies"><a href="#Strategies" class="headerlink" title="Strategies"></a>Strategies</h2><h3 id="Translation-strategy"><a href="#Translation-strategy" class="headerlink" title="Translation strategy"></a>Translation strategy</h3><p>Translate the problem we want to solve into a different setting, use a standard algorithm in the different setting, then translate the answer back to the original setting. In this case, the translated setting is ‘graphs with different edge weights’. Of course we’ll need to argue why these translated answers solve the original problem.</p>
+<h3 id="Amortized-analysis"><a href="#Amortized-analysis" class="headerlink" title="Amortized analysis"></a>Amortized analysis</h3><p>Amortized analysis is a method for calculating <strong>computational complexity</strong>, in which for any <strong>sequence of operations</strong> we ascribe an <em>amortized cost</em> to every operation, in such a way that the <strong>total amortized cost</strong> of a sequence of operations provides an <strong>upper bound</strong> on the actual total cost, and this upper bound is usually <strong>more representative</strong> of the actual computational cost when <strong>averaged</strong> over a large number of operations. This allows us to gain a more accurate understanding of the average performance of an algorithm over time, rather than focusing solely on the worst-case or best-case scenarios for individual operations.</p>
+<p>Here is the <strong>formal definition</strong>. Let there be a sequence of m operations, applied to an <strong>initially-empty</strong> data structure, whose true costs are $c_1, c_2, . . . , c_m$. Suppose someone invents $c_1’,c_2’,…,c_m’$ such that (we call these <em>amortized costs</em>)<br>$$<br>c_1+…+c_j \le c_1’ + … c_j’ ~~~~~for ~all ~j \le m<br>\<br>\text{aggregate true cost of a sequence of operations} \le \text{ aggregate amortized cost of those operations}<br>$$</p>
+<p>This is the <strong>fundamental inequality of amortized analysis</strong></p>
+<p>For example, we might ascribe some of the true cost of one operation A to another operation B, if A involves cleaning up some mess produced by B.</p>
+<hr>
+<p><em><strong>The potential method</strong></em> is a systematic way to choose amortized costs, as follows. We define a function $\Phi(S)$ where $S$ is a possible state of the data structure and $\Phi(S)\ge 0$, and let the amortized cost of each operation be the true cost plus the change in potential $\Delta \Phi$. </p>
+<img src="https://s2.loli.net/2023/04/16/h4F5rJnNv6sk3mz.png" alt="image-20230416141242333" style="zoom:50%;">
+
+<h4 id="Proof-of-the-Potential-Theorem"><a href="#Proof-of-the-Potential-Theorem" class="headerlink" title="Proof of the Potential Theorem"></a>Proof of the <code>Potential Theorem</code></h4><img src="https://s2.loli.net/2023/04/16/h4F5rJnNv6sk3mz.png" alt="image-20230416141540040" style="zoom:50%;">
+
+<h4 id="Past-papers"><a href="#Past-papers" class="headerlink" title="Past papers"></a>Past papers</h4><p><u>Define amoritized cost:</u></p>
+<p>If we have a sequence of k operations whose true costs are $c_1,c_2,…c_k$, and if we devise costs $c_1’,c_2’,…,c_k’$ such that<br>$$<br>c_1+c_2+…+c_i \le c_1’ + c_2’ + … + c_i’ \text{ for all } 0\le i \le k<br>$$<br>then the $c’$ are called amortized costs</p>
+<h5 id="2014-p01-q09"><a href="#2014-p01-q09" class="headerlink" title="2014-p01-q09"></a>2014-p01-q09</h5><p><u>Explain the terms amortized analysis, aggregate analysis and potential method.</u></p>
+<p><font color="CornflowerBlue">In amortized analysis we consider <strong>a sequence of n data structure operations</strong> and show that the <strong>average cost</strong> of an operation is <strong>small</strong>, even though a <strong>single operation</strong> within the sequence might be very <strong>expensive</strong>. </font></p>
+<p><font color="CornflowerBlue"><strong>Aggregate analysis</strong> and <strong>potential method</strong> are two techniques for performing amortized analysis. In aggregate analysis, we consider an arbitrary sequence of n operations and show an upper bound on the total cost T(n). <strong>Every operation is charged the same amortized cost, that is, the average cost T(n)/n</strong>, even though in reality some operations are cheaper or more expensive. </font></p>
+<p><font color="CornflowerBlue">In the <strong>potential method</strong>, every operation may have a <strong>different</strong> amortized cost. The method <strong>overcharges cheap operations</strong> early in the sequence, storing some <strong>prepaid credit</strong> to <strong>compensate</strong> for <strong>future costly operations</strong>. The credit can be also seen as the “potential energy” stored within a data structure.</font></p>
+<hr>
+<img src="https://s2.loli.net/2023/05/10/YdnOi4eqpthGmu3.png" style="zoom:50%;">
+
+<h3 id="Designing-Advanced-Data-Structures"><a href="#Designing-Advanced-Data-Structures" class="headerlink" title="Designing Advanced Data Structures"></a>Designing Advanced Data Structures</h3><img src="https://s2.loli.net/2023/04/16/G6OyY7IMbQgs3PE.png" alt="image-20230416145827079" style="zoom:50%;">
+
+<h2 id="Algorithms"><a href="#Algorithms" class="headerlink" title="Algorithms"></a>Algorithms</h2><h3 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a>Complexity</h3><table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Complexity</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Dijkstra</td>
+<td>$O(E + VlogV) \text{ if all weights } \ge 0$<br>$=O(V ) + O(V ) × cost_{popmin} +O(E) × cost_{push/dec.key}$</td>
+</tr>
+<tr>
+<td>Bellman-Ford</td>
+<td>$O(VE)$</td>
+</tr>
+<tr>
+<td>Prim’s algorithm</td>
+<td>$O(E + VlogV)$</td>
+</tr>
+<tr>
+<td>Kruskal’s algorithm</td>
+<td>$O(ElogE + E+V)=O(ElogE)=O(ElogV)$</td>
+</tr>
+<tr>
+<td>Bubble Sort</td>
+<td>$O(N^2)$</td>
+</tr>
+<tr>
+<td>Heap Sort</td>
+<td>$O(NlogN)$</td>
+</tr>
+<tr>
+<td>Quicksort</td>
+<td>$O(NlogN)$</td>
+</tr>
+<tr>
+<td>Dfs_recurse_all / Dfs</td>
+<td>$O(V+E)$</td>
+</tr>
+<tr>
+<td>Bfs</td>
+<td>$O(V + E)$</td>
+</tr>
+<tr>
+<td>Ford Fulkerson</td>
+<td>$O(Ef^*)$</td>
+</tr>
+<tr>
+<td>Topological sort</td>
+<td>$O(V+E)$</td>
+</tr>
+</tbody></table>
+<h3 id="Sorting"><a href="#Sorting" class="headerlink" title="Sorting"></a>Sorting</h3><h4 id="Minimum-cost-of-sorting"><a href="#Minimum-cost-of-sorting" class="headerlink" title="Minimum cost of sorting"></a>Minimum cost of sorting</h4><p><strong>Assertion 1 (lower bound on exchanges):</strong> If there are n items in an array, then <strong>$Θ(n)$ exchanges</strong> always suffice to put the items in order. In the worst case, $Θ(n)$ exchanges are actually needed.</p>
+<p><strong>Proof:</strong> Identify the smallest item present: if it is not already in the right place, one exchange moves it to the start of the array. A second exchange moves the next smallest item to place, and so on. After at worst n − 1 exchanges, the items are all in order. The bound is n − 1 rather than n because at the very last stage the biggest item has to be in its right place without need for a swap—but that level of detail is unimportant to Θ notation.</p>
+<p><strong>Assertion 2 (lower bound on comparisons).</strong> Sorting by pairwise comparison, assuming that all possible arrangements of the data might actually occur as input, necessarily costs at least <strong>Ω(n lg n) comparisons.</strong></p>
+<p><strong>Proof:</strong> you saw in Foundations of Computer Science, there are n! permutations of n items and, in sorting, we in effect identify one of these. To discriminate between that many cases we need at least ⌈$log_2(n!)$⌉ binary tests. <strong>Stirling’s formula</strong> tells us that $n!$ is roughly $n^n$, and hence that $lg(n! )$ is about $n lg n$.</p>
+<h4 id="InsertSort"><a href="#InsertSort" class="headerlink" title="InsertSort"></a>InsertSort</h4><img src="https://s2.loli.net/2023/05/15/FVxmWRMZztDK6Ai.png" alt="image-20230514221714743" style="zoom: 40%;">
+
+<h4 id="Select-Sort"><a href="#Select-Sort" class="headerlink" title="Select Sort"></a>Select Sort</h4><img src="https://s2.loli.net/2023/04/15/BDPNVWrAkeciYn7.png" alt="image-20230415161954760" style="zoom:50%;">
+
+<h4 id="Bubble-sort"><a href="#Bubble-sort" class="headerlink" title="Bubble sort"></a>Bubble sort</h4><img src="https://s2.loli.net/2023/04/15/zcSyv1BJRiwK4eU.png" alt="image-20230415162238398" style="zoom:50%;">
+
+<h4 id="Mergesort"><a href="#Mergesort" class="headerlink" title="Mergesort"></a>Mergesort</h4><img src="https://s2.loli.net/2023/05/15/JsvW3tZM1mRAdeN.png" alt="image-20230514214845332" style="zoom: 25%;">
+
+<img src="https://s2.loli.net/2023/05/15/tTKcnXhfD6FiBM2.png" alt="image-20230514214909537" style="zoom: 58%;">
+
+<h5 id="Complexity-1"><a href="#Complexity-1" class="headerlink" title="Complexity"></a>Complexity</h5><p>$$<br>f(n) = 2f(n/2)+kn \<br>substitution: n=2^m \<br>\begin{align*}<br>f(n)&amp;=f(2^m)\<br>&amp;=2f(2^m/2)+k2^m \<br>&amp;=2f(2^{m-1})+k2^m \<br>&amp;=2(2f(2^{m-2})+k2^{m-1})+k2^m \<br>&amp;= 2^2f(2^{m-2})+k2^m+k2^m \<br>&amp;= 2^2f(2^{m-2})+2k2^m \<br>&amp;=2^3f(2^{m-3})+3k2^m \<br>&amp;=  … \<br>&amp;= 2^mf(2^{m-m})+mk2^m\<br>&amp;=f(1)\times 2^m + km2^m \<br>&amp;=k_0\times 2^m + k\times m2^m \<br>&amp;=k_0n + kn lgn \<br>&amp;= O(nlgn)<br>\end{align*}<br>$$</p>
+<h4 id="Heapsort"><a href="#Heapsort" class="headerlink" title="Heapsort"></a>Heapsort</h4><img src="https://s2.loli.net/2023/04/15/5ylHfZUpNMBP384.png" alt="image-20230415163513819" style="zoom:50%;">
+
+<img src="https://s2.loli.net/2023/04/15/3BfaCpwSyJ5KjGR.png" alt="image-20230415163533096" style="zoom:50%;">
+
+<p>The first phase of the main heapsort function (lines 9–11) starts from the bottom of the tree (rightmost end of the array) and walks up towards the root, considering each node as the root of a potential sub- heap and rearranging it to be a heap. In fact, nodes with no children can’t possibly violate the heap property and therefore are automatically heaps; so we don’t even need to process them—that’s why we start from the midpoint floor(END/2) rather than from the end. By proceeding right-to-left we guarantee that any children of the node we are currently examining are already roots of properly formed heaps, thereby matching the precondition of heapify, which we may therefore use. It is then trivial to put an <strong>O(nlgn)</strong> bound on this phase—although, as we shall see, it is not tight.</p>
+<ul>
+<li><img src="https://s2.loli.net/2023/04/15/YHzOTfcru4en7K3.png" alt="image-20230415164320394" style="zoom:50%;"></li>
+<li><img src="https://s2.loli.net/2023/04/15/cwkb4MJIQhG2R97.png" alt="image-20230415164340037" style="zoom:50%;"></li>
+<li><img src="https://s2.loli.net/2023/04/15/5qZYvygebXlmxk2.png" alt="image-20230415164629046" style="zoom:50%;"></li>
+</ul>
+<p>In the second phase (lines 13–19), the array is split into two distinct parts: a[0:k] is a heap, while a[k:END] is the “tail” portion of the sorted array. The rightmost part starts empty and grows by one element at each pass until it occupies the whole array. During each pass of the loop in lines 13–19 we extract the maximum element from the root of the heap, a[0], reform the heap and then place the extracted maximum in the empty space left by the last element, a[k], which conveniently is just where it should go20. To retransform a[0:k - 1] into a heap after placing a[k - 1] in position a[0] we may call heapify, since the two subtrees of the root a[0] must still be heaps given that all that changed was the root and we started from a proper heap. For this second phase, too, it is trivial to establish an $O(nlgn)$ bound.</p>
+<p>Heapsort therefore offers at least two significant advantages over other sorting algorithms: </p>
+<ol>
+<li>it offers an asymptotically optimal worst-case com- plexity of O(nlgn) and it sorts the array in place. </li>
+<li>Despite this, on non-pathological data it is still usually beaten by the amazing quicksort.</li>
+</ol>
+<h4 id="Quicksort"><a href="#Quicksort" class="headerlink" title="Quicksort"></a>Quicksort</h4><img src="https://s2.loli.net/2023/04/15/xLAn8Rdm5XGyN9S.png" alt="image-20230415165110799" style="zoom:50%;">
+
+<img src="https://s2.loli.net/2023/04/15/uhypKD6grTQi5me.png" alt="image-20230415165135638" style="zoom:50%;">
+
+<h5 id="Average-case-performance"><a href="#Average-case-performance" class="headerlink" title="Average case performance"></a>Average case performance</h5><img src="https://s2.loli.net/2023/04/15/saJbhKUOQReTiDM.png" alt="image-20230415165359829" style="zoom:50%;">
+
+<p><u>Some implementations of the Quicksort algorithm select the pivot at random, rather than taking the last entry in the input array.</u></p>
+<ul>
+<li><u>Discuss the advantages and disadvantages of such a choice.</u><ul>
+<li><font color="CornflowerBlue">Quicksort has a <strong>quadratic worst case</strong>, which occurs when the result of the partioning step is maximally unbalanced in most of the recursive calls. The worst case is quite rare if the input is random but it occurs in plausible siatuation such as when the input is <strong>sorted</strong> or <strong>almost sorted</strong>. Selecting the pivot at random costs an invocation of the random number generator at every recursive call, but it makes it unlikely that the quadratic worst case will occur “naturally” with an input made of distinct values. </font></li>
+</ul>
+</li>
+<li><u>How would you construct an input to trigger quadratic running time for this randomised Quicksort, without having access to the state of the random number generator?</u><ul>
+<li><font color="CornflowerBlue">Make an array where <strong>all cells have the same value</strong>. Then, whatever cell is chosen as the pivot, the partition phase will put them all in the “≤” part while the “&gt;” part will be empty, every time, leading to pessimal (quadratic) running time.</font></li>
+</ul>
+</li>
+</ul>
+<h4 id="Stability-of-sorting-methods"><a href="#Stability-of-sorting-methods" class="headerlink" title="Stability of sorting methods"></a>Stability of sorting methods</h4><blockquote>
+<p>Data to be sorted often consists of records made of key and payload; the key is what the ordering is based upon, while the payload is some additional data that is just logically carried around in the rearranging process. In some applications one can have keys that should be considered equal, and then a simple specification of sorting might not indicate the order in which the corresponding records should end up in the output list. “Stable” sorting demands that, in such cases, the order of items in the input be preserved in the output. Some otherwise desirable sorting algorithms are not stable, and this can weigh against them.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Sorting Algorithm</th>
+<th>Stable/Unstable</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Bubble Sort</td>
+<td>Stable</td>
+</tr>
+<tr>
+<td>Insertion Sort</td>
+<td>Stable</td>
+</tr>
+<tr>
+<td>Selection Sort</td>
+<td>Unstable</td>
+</tr>
+<tr>
+<td>Quick Sort</td>
+<td>Unstable</td>
+</tr>
+<tr>
+<td>Merge Sort</td>
+<td>Stable</td>
+</tr>
+<tr>
+<td>Heap Sort</td>
+<td>Unstable</td>
+</tr>
+<tr>
+<td>Counting Sort</td>
+<td>Stable</td>
+</tr>
+<tr>
+<td>Radix Sort</td>
+<td>Stable</td>
+</tr>
+<tr>
+<td>Bucket Sort</td>
+<td>Stable (if implemented properly)</td>
+</tr>
+</tbody></table>
+<h4 id="Counting-sort"><a href="#Counting-sort" class="headerlink" title="Counting sort"></a>Counting sort</h4><p>Assume that the keys to be sorted are integers that live in a known range, and that the range is fixed regardless of the number of values to be processed. If the number of input items grows beyond the cardinality of the range, there will necessarily be duplicates in the input. If no data is involved at all beyond the integers, one can set up an array whose size is determined by the range of integers that can appear (not by the amount of data to be sorted) and initialize it to all 0s. Then, for each item in the input data, w say, the value at position w in the array is incremented. At the end, the array contains information about how many instancesof each value were present in the input, and it is easy to create a sorted output list with the correct values in it. The costs are obviously linear.</p>
+<h4 id="Bucket-sort"><a href="#Bucket-sort" class="headerlink" title="Bucket sort"></a>Bucket sort</h4><p>Assume the input data is guaranteed to be uniformly distributed over some known range (for instance it might be real numbers in the range 0.0 to 1.0). Then a numeric calculation on the key can predict with reasonable accuracy where a value must be placed in the output. If the output array is treated somewhat like a hash table (cfr. section 4.7), and this prediction is used to insert items in it, then, apart from some local clustering effects, that data has been sorted.</p>
+<p>To sort n keys uniformly distributed between 0.0 and 1.0, create an array of n linked lists and insert each key k to the list at position ⌊k · n⌋. This phase has linear cost. (We expect each list to be one key long on average, though some may be slightly longer and some may be empty.) In the next phase, for each entry in the array, sort the corresponding list with insertsort if it is longer than one element, then output it.</p>
+<h4 id="Radix-Sort"><a href="#Radix-Sort" class="headerlink" title="Radix Sort"></a>Radix Sort</h4><p>Historically, radix sort was first described in the context of sorting integers encoded on punched cards, where each column of a card represented a digit by having a hole punched in the corresponding row. A mechanical device could be set to examine a particular column and distribute the cards of a deck into bins, one per digit, according to the digit in that column. Radix sort used this “primitive” to sort the whole deck.</p>
+<p>The obvious way to proceed might seem to sort on the most significant digit, then recursively for each bin on the next significant digit, then on the next, all the way down to the least significant digit. But this would require a great deal of temporary “desk space” to hold the partial mini- decks still to be processed without mixing them up.</p>
+<p>Radix sort instead proceeds, counter-intuitively, from the least significant digit upwards. First, the deck is sorted into b = 10 bins based on the least significant digit. Then the contents of the bins are collected together, in order, to reform a full deck, and this is then sorted according to the next digit up. But the per-digit sorting method used is chosen to be stable, so that cards that have the same second digit still maintain their relative order, which was induced by the first (least significant) digit. The procedure is repeated going upwards towards the most significant digits. Before starting pass i, the digits in positions 0 to i − 1 have already been sorted. During pass i, the deck is sorted on the digit in position i, but all the cards with the same i digit remain in the relative order determined by the even less significant digits to their right. The result is that, once the deck has been sorted on the most significant digit, it is fully sorted. The number of passes is equal to the number of digits (d) in the numerals being sorted and the cost of each pass can be made linear by using counting sort.</p>
+<p><strong>The number of passes is equal to the number of digits (d) in the numerals being sorted and the cost of each pass can be made linear by using counting sort</strong></p>
+<p><u>Explain how radix sort works, to what inputs it can be applied and what its asymptotic complexity is.</u></p>
+<p><font color="CornflowerBlue">Radix sort was invented in the context of <strong>sorting punched cards</strong>. It is a <strong>linear-time</strong> algorithm for sorting an arbitrary number of strings of <strong>fixed</strong> (or, more precisely, bounded) length over a small alphabet. It uses as a <strong>subroutine</strong> a stable <strong>linear-time sorting algorithm</strong> for items consisting of a single character over the given alphabet, such as for example <strong>counting</strong> sort. </font></p>
+<p><font color="CornflowerBlue">Assume the strings have maximum length l and that shorter strings are <strong>right-padded with blanks or left-padded with zeros</strong> in case of strings of digits—whatever is appropriate for the desired sorting order. </font></p>
+<p><font color="CornflowerBlue">Consider the character positions <strong>from the least significant (rightmost, index 0) to the most significant (leftmost, index l − 1)</strong>. For each character position i, use a linear-time stable sort to sort all the strings based on the character at that position. </font></p>
+<p><font color="CornflowerBlue">The main loop runs <strong>l</strong> times. Each run is one invocation of a linear-time stable sort. Thus the whole algorithm takes <strong>O(nl)</strong> which, if l is taken as a constant, is <strong>O(n)</strong>.</font></p>
+<p><u>Explain why running radix sort does not proceed from most to least significant digit, as would at first seem more intuitive.</u></p>
+<p><font color="CornflowerBlue">It might feel more <strong>natural</strong> to <strong>sort first by most significant digit</strong> (or character position), because then each of the intermediate passes would bring the individual elements closer and closer to their intended position. However the <strong>subsequent passes</strong> would have to <strong>act separately</strong> on each of the “<strong>bins</strong>” of equal-value characters found in the previous pass, thus requiring <strong>additional storage space</strong> and possibly a <strong>recursive arrangement</strong>—both <strong>inconvenient</strong> in the context of sorting physical punched cards. </font></p>
+<p><font color="CornflowerBlue">By running in the <strong>opposite</strong> direction instead, i.e. from least to most significant character position, while it’s true that the intermediate passes may appear to “jumble up” the list of items as they go, each pass can run simply on the whole result of the previous one, without requiring recursion nor any additional space beyond that required by the stable sort used as a subroutine.</font></p>
+<h3 id="Dynamic-programming"><a href="#Dynamic-programming" class="headerlink" title="Dynamic programming"></a>Dynamic programming</h3><p><u>Explain the programming technique known as memoization, detailing the cases to which it applies</u></p>
+<p><font color="CornflowerBlue">Memoization is a <strong>time-space trade-off</strong> (1) technique in which <strong>previously computed results are remembered</strong> instead of being recomputed (1). A <strong>table</strong> that survives between invocations of the function is <strong>indexed by the tuple of arguments</strong> (1) that the function expects. Before computing a value, the function first <strong>checks</strong> whether a result for that tuple of input arguments is <strong>already present in the table.</strong> If so, the previously computed value is returned in constant time (1). This technique is particularly effective when applied to <strong>recursive functions</strong> that recompute the <strong>same partial results over and over again</strong> (1), as happens for example in <strong>top-down dynamic programming</strong> (1). (Earn marks as indicated, up to a maximum of 4.)</font></p>
+<p><u>Write a memoized recursive function to compute the ith Fibonacci number F(i)</u></p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">function fib(i):</span><br><span class="line">	global memo[]</span><br><span class="line">	if memo[i] not empty:</span><br><span class="line">		return memo[i]</span><br><span class="line">    else:</span><br><span class="line">    	if i&lt;=2:</span><br><span class="line">    		result = 1</span><br><span class="line">        else:</span><br><span class="line">        	result = fib(i-1)+fib(i-2)</span><br><span class="line">        memo[i] = result</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="Matrix-chain-multiplication"><a href="#Matrix-chain-multiplication" class="headerlink" title="Matrix chain multiplication"></a>Matrix chain multiplication</h4><img src="https://s2.loli.net/2023/04/16/gORCUDbAxWQizMl.png" alt="image-20230415210004985" style="zoom:50%;">
+
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">function matrix_chain_order(p)</span><br><span class="line">   // Input: An array p[] which represents the chain of matrices such that the ith matrix Ai is of dimension p[i-1] x p[i].</span><br><span class="line">   // Output: The minimum number of multiplications needed to multiply the chain.</span><br><span class="line"></span><br><span class="line">   // Step 1: Length of the array</span><br><span class="line">   n = p.length - 1</span><br><span class="line"></span><br><span class="line">   // Step 2: Create a table to store the cost of multiplication</span><br><span class="line">   m = new int[n+1][n+1]</span><br><span class="line"></span><br><span class="line">   // Step 3: Zeroing the diagonal, cost is zero when multiplying one matrix</span><br><span class="line">   for i = 1 to n</span><br><span class="line">       m[i][i] = 0</span><br><span class="line"></span><br><span class="line">   // Step 4: Apply dynamic programming in bottom-up manner</span><br><span class="line">   for len = 2 to n     // len is the chain length</span><br><span class="line">       for i = 1 to n-len+1</span><br><span class="line">           j = i + len - 1</span><br><span class="line">           m[i][j] = Infinity</span><br><span class="line">           for k = i to j-1</span><br><span class="line">               cost = m[i][k] + m[k+1][j] + p[i-1]*p[k]*p[j]</span><br><span class="line">               if cost &lt; m[i][j]</span><br><span class="line">                   m[i][j] = cost</span><br><span class="line"></span><br><span class="line">   // Step 5: Return the minimum cost to multiply the matrices</span><br><span class="line">   return m[1][n]</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="Longest-common-subsequence"><a href="#Longest-common-subsequence" class="headerlink" title="Longest common subsequence"></a>Longest common subsequence</h4><img src="https://s2.loli.net/2023/04/16/fBN2itW38aGLwAd.png" alt="image-20230415210105438" style="zoom:50%;">
+
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">function LCS(X[1..m], Y[1..n])</span><br><span class="line">    // Input: Two sequences X and Y of lengths m and n respectively</span><br><span class="line">    // Output: Length of the longest common subsequence</span><br><span class="line"></span><br><span class="line">    // Step 1: Initialize a (m+1) x (n+1) matrix C</span><br><span class="line">    declare C[0..m, 0..n]</span><br><span class="line"></span><br><span class="line">    for i = 0 to m</span><br><span class="line">        C[i, 0] = 0</span><br><span class="line">    for j = 0 to n</span><br><span class="line">        C[0, j] = 0</span><br><span class="line"></span><br><span class="line">    // Step 2: Fill the matrix in a bottom-up manner</span><br><span class="line">    for i = 1 to m</span><br><span class="line">        for j = 1 to n</span><br><span class="line">            if X[i] == Y[j]</span><br><span class="line">                C[i, j] = C[i-1, j-1] + 1</span><br><span class="line">            else</span><br><span class="line">                C[i, j] = max(C[i, j-1], C[i-1, j])</span><br><span class="line"></span><br><span class="line">    // Step 3: Return the value in the bottom right corner</span><br><span class="line">    return C[m, n]</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Greedy-Algorithms"><a href="#Greedy-Algorithms" class="headerlink" title="Greedy Algorithms"></a>Greedy Algorithms</h3><p><u>Explain the greedy strategy in algorithm design. To what problems does it apply?</u></p>
+<p><font color="CornflowerBlue">The greedy strategy applies to problems made of <strong>overlapping subproblems</strong> with <strong>optimal substructure</strong>, like dynamic programming. The greedy strategy, however, does not at every stage compute the optimal solution for all possible choices of a parameter; instead, it selects the <strong>best-looking choice a priori</strong> and proceeds to find an optimal solution for the remaining subproblem.</font></p>
+<p><font color="CornflowerBlue">In order to ensure that the globally optimal solution will be found, it is necessary to <strong>prove that the “best-looking choice” is indeed part of an optimal solution</strong>. If this proof is missing, the answer given by the greedy algorithm may in fact be wrong</font></p>
+<p><u>If a problem can be solved with both dynamic programming and a greedy algorithm, what are the advantages of using one or the other?</u></p>
+<p><font color="CornflowerBlue">Almost all problems that can be solved by a greedy algorithm can also be solved by dynamic programming (though not vice versa). When both approaches work, the <strong>greedy one is usually more efficient</strong> and should be preferred. The dynamic programming solution however <strong>does not require developing a heuristic</strong> for finding the best choice, <strong>nor a proof</strong> (sometimes rather hard to develop) that the choice picked by the heuristic is actually part of a globally optimal solution.</font></p>
+<h4 id="Activity-Scheduling"><a href="#Activity-Scheduling" class="headerlink" title="Activity Scheduling"></a>Activity Scheduling</h4><h5 id="DP-version"><a href="#DP-version" class="headerlink" title="DP version"></a>DP version</h5><img src="https://s2.loli.net/2023/04/16/TlDX9CSVq8HEiFr.png" alt="image-20230415210200759" style="zoom:50%;">
+
+<h5 id="Greedy-version"><a href="#Greedy-version" class="headerlink" title="Greedy version"></a>Greedy version</h5><p>In this example the greedy strategy is to pick the activity that finishes first, based on the intuition that it’s the one that leaves most of the rest of the timeline free for the allocation of other activities. Now, to be able to use the greedy strategy safely on this problem, we must prove that this choice is indeed optimal; in other words, that the ai ∈ S with the smallest fi is included in an optimal solution for S. That activity would be the lowest-numbered ai in S, by the way, or a1 at the top level, since we conveniently stipulated that activities were numbered in order of increasing finishing time.</p>
+<p>Proof by contradiction. Assume there exists an optimal solution O ⊂ S that does not include a1. Let ax be the activity in O with the earliest finishing time. Since a1 had the smallest finishing time in all S, f1 ≤ fx. There are two cases: either f1 ≤ sx or f1 &gt; sx. In the first case, s1 &lt; f1 ≤ sx &lt; fx, we have that a1 and ax are disjoint and therefore compatible, so we could build a better solution than O by adding a1 to it; so this case cannot happen. We are left with the second case, in which there is overlap because a1 finishes after ax starts (but before ax finishes, by hypothesis that a1 is first to finish in S). Since ax is first to finish in O and no two activities in O overlap, then no activity in O occurs before ax, thus no activity in O (aside from ax) overlaps with a1. Thus we could build another equally good optimal solution by substituting a1 for ax in O. Therefore there will always exist an optimal solution that includes a1, QED.</p>
+<h4 id="Huffman-codes"><a href="#Huffman-codes" class="headerlink" title="Huffman codes"></a>Huffman codes</h4><img src="https://s2.loli.net/2023/04/16/hBdnzElRF5ckMO9.png" alt="image-20230416095346930" style="zoom:50%;">
+
+<img src="https://s2.loli.net/2023/04/16/hec9rqj7lULCzVs.png" alt="image-20230416095426523" style="zoom:50%;">
+
+<img src="https://s2.loli.net/2023/05/15/PYS9gdleF1AOotD.png" alt="image-20230514225028773" style="zoom: 67%;">
+
+<h2 id="Data-structures"><a href="#Data-structures" class="headerlink" title="Data structures"></a>Data structures</h2><h3 id="Complexities"><a href="#Complexities" class="headerlink" title="Complexities"></a>Complexities</h3><table>
+<thead>
+<tr>
+<th>Data Structure</th>
+<th>Insertion/Push</th>
+<th>Deletion</th>
+<th>Search</th>
+<th>Extract Minimum/Maximum</th>
+<th>Successor/Predecessor</th>
+<th>DecreaseKey</th>
+<th>Merge</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Fibonacci Heap</td>
+<td>$O(1)$</td>
+<td></td>
+<td></td>
+<td>$O(logN)$</td>
+<td></td>
+<td>O(1)</td>
+<td></td>
+</tr>
+<tr>
+<td>Linked list heap</td>
+<td>$O(1)$</td>
+<td></td>
+<td></td>
+<td>$O(logN)$</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Binary heap</td>
+<td>$O(logN)$</td>
+<td></td>
+<td></td>
+<td>$O(logN)$</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Binomial heap</td>
+<td>$O(logN)$</td>
+<td>$O(logN)$</td>
+<td></td>
+<td>$O(logN)$</td>
+<td></td>
+<td>$O(logN)$</td>
+<td>$O(logN)$</td>
+</tr>
+<tr>
+<td>Binary Search Tree</td>
+<td>$O(logN)$</td>
+<td></td>
+<td>$O(logN)$</td>
+<td>$O(logN)$</td>
+<td>$O(logN)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Red Black Tree</td>
+<td></td>
+<td></td>
+<td>$O(logN)$</td>
+<td>$O(logN)$</td>
+<td>$O(logN)$</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="Abstract-Data-Type"><a href="#Abstract-Data-Type" class="headerlink" title="Abstract Data Type"></a>Abstract Data Type</h3><h4 id="List"><a href="#List" class="headerlink" title="List"></a>List</h4><blockquote>
+<p>Lists provide one natural implementation of stacks, and are the data structure of choice in many places where flexible representation of variable amount of data is wanted.</p>
+</blockquote>
+<h5 id="Doubly-linked-list"><a href="#Doubly-linked-list" class="headerlink" title="Doubly-linked list"></a>Doubly-linked list</h5><p>A feature of lists is that, from one item, you can progress along the list in one direction very easily; but once you have taken the <code>next</code> of a list, there is no way of returning. To make it possible to traverse a list in both directions one might define a new type called <code>Doubly Linked List</code> in which each wagon had both a <code>next</code> and a <code>previous</code> pointer.<br>$$<br>w.next.previous == w<br>$$<br>Equation (1) would hold for every wagon inside the <code>DLL</code> except for the last<br>$$<br>w.previous.next == w<br>$$<br>Euqation (2) would hold for every wagon inside the <code>DLL</code> except for the first.</p>
+<h5 id="Graph-representation-using-List"><a href="#Graph-representation-using-List" class="headerlink" title="Graph representation (using List)"></a>Graph representation (using List)</h5><p>Represent each vertex by an integer, and having a vector such that element $i$ in the vector holds the head of a list of all the vertices connected directly to edges radiating from vertex $i$. </p>
+<h5 id="ADT-List"><a href="#ADT-List" class="headerlink" title="ADT List"></a>ADT List</h5><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">ADT List {</span><br><span class="line">	boolean isEmpty();</span><br><span class="line">	// BEHAVIOUR: Return true iff the structure is empty</span><br><span class="line">	item head();</span><br><span class="line">	// PRECONDITION: isEmpty()==false</span><br><span class="line">	// BEHAVIOR: return the first elemnet of the list (without removing it)</span><br><span class="line">	void prepend(ite x);</span><br><span class="line">	// BEHAVIOUR: add element &lt;x&gt; to the beginning of the list.</span><br><span class="line">	// POSTCONDITION: isEmpty()==false</span><br><span class="line">	// BAHAVIOUR: head() == x</span><br><span class="line">	List tail();</span><br><span class="line">	// PRECONDITION: isEmpty()==false</span><br><span class="line">	// BEHAVIOUR: return the list of all the elements except the first (without removing it).</span><br><span class="line">	</span><br><span class="line">	void setTail(List newTail);</span><br><span class="line">	// PRECONDITION: isEmpty()==false</span><br><span class="line">	// BEHAVIOUR: replace the tail of this list with &lt;newTail&gt;.</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h4><ul>
+<li>LIFO (last in first out)</li>
+</ul>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">ADT Stack {</span><br><span class="line">	boolean isEmpty();</span><br><span class="line">	// BEHAVIOUR: return true iff the structure is empty</span><br><span class="line">	void push(item x);</span><br><span class="line">	// BEHAVIOUR: add element &lt;x&gt; to the top of the stack</span><br><span class="line">	// POSTCONDITION: isEmpty()==false.</span><br><span class="line">	// POSTCONDITION: top()==x</span><br><span class="line">	item pop();</span><br><span class="line">	// PRECONDITION: isEmpty()==false</span><br><span class="line">	// BEHAVIOUR: return the element on the top of the stack</span><br><span class="line">	// As a side effect, remove it from the stack.</span><br><span class="line">	item top();</span><br><span class="line">	// PRECONDITION: isEmpty()==false</span><br><span class="line">	// BEHAVIOUR: Return the element on top of the stack (without removing it).</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h5 id="Implementations"><a href="#Implementations" class="headerlink" title="Implementations"></a>Implementations</h5><ol>
+<li>Combination of an array and an index (pointing to the “top of stack”)<ul>
+<li>The <code>push</code> operation writes a value into the array and increments the index</li>
+<li>The <code>pop</code> operation delets a value from the array and decrements the index</li>
+</ul>
+</li>
+<li>Linked lists<ul>
+<li>Pushing an item adds an extra cell to the front of a list</li>
+<li>Popping removes the cell at the front of the list</li>
+</ul>
+</li>
+</ol>
+<h5 id="Use-cases"><a href="#Use-cases" class="headerlink" title="Use cases"></a>Use cases</h5><ul>
+<li>Reverse Polish Notation (e.g. <code>3 12 add 4 mul 2 sub</code> -&gt; <code>(3 x 12) x 4 - 2</code>)</li>
+</ul>
+<h4 id="Queue-and-Deque"><a href="#Queue-and-Deque" class="headerlink" title="Queue and Deque"></a>Queue and Deque</h4><ul>
+<li>FIFO (first in first out)</li>
+</ul>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">ADT Queue{</span><br><span class="line">	boolean isEmpty();</span><br><span class="line">	// BEHAVIOUR: return true iff the structure is empty.</span><br><span class="line">	void put(item x);</span><br><span class="line">	// BEHAVIOUR: insert element &lt;x&gt; at the end of the queue.</span><br><span class="line">  // POSTCONDITION: isEmpty()==false</span><br><span class="line">  item get();</span><br><span class="line">  // PRECONDITION: isEmpty()==false</span><br><span class="line">  // BEHAVIOUR: return the first elemnt of the queue, and removing it from the queue</span><br><span class="line">  item first();</span><br><span class="line">  // PRECONDITION: isEmpty()==false</span><br><span class="line">  // BEHAVIOUR: return the first element of the queue without removing it</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">ADT Queue{</span><br><span class="line">	boolean isEmpty();</span><br><span class="line">	// BEHAVIOUR: return true iff the structure is empty.</span><br><span class="line">	void putFront(item x);</span><br><span class="line">	// BEHAVIOUR: insert element &lt;x&gt; at the front of the queue.</span><br><span class="line">  // POSTCONDITION: isEmpty()==false</span><br><span class="line">  void putRear(item x);</span><br><span class="line">  // BEHAVIOUR: insert element &lt;x&gt; at the back of the queue.</span><br><span class="line">  // POSTCONDITION: isEmpty()==false</span><br><span class="line">  item getFront();</span><br><span class="line">  // PRECONDITION: isEmpty()==false</span><br><span class="line">  // BEHAVIOUR: return the first elemnt of the queue</span><br><span class="line">  item getRear();</span><br><span class="line">  // PRECONDITION: isEmpty()==false</span><br><span class="line">  // BEHAVIOUR: return the last element of the queue </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="Dictionary"><a href="#Dictionary" class="headerlink" title="Dictionary"></a>Dictionary</h4><ul>
+<li>Also known as Maps, Tables, Associative arrays, or Symbol tables</li>
+</ul>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">ADT Dictionary {</span><br><span class="line">	void set(Key k, Value v);</span><br><span class="line"> 	// BEHAVIOUR: store the given (&lt;k&gt;, &lt;v&gt;) pair in the dictionary.</span><br><span class="line">	// If a pair with the same &lt;k&gt; had already been stored, the old</span><br><span class="line">	// value is overwritten and lost.</span><br><span class="line">	// POSTCONDITION: get(k) == v</span><br><span class="line"></span><br><span class="line">	Value get(Key k);</span><br><span class="line">	// PRECONDITION: a pair with the sought key &lt;k&gt; is in the dictionary.</span><br><span class="line">	// BEHAVIOUR: return the value associated with the supplied &lt;k&gt;,</span><br><span class="line">  // without removing it from the dictionary.</span><br><span class="line">	</span><br><span class="line">	 void delete(Key k);</span><br><span class="line">	 // PRECONDITION: a pair with the given key &lt;k&gt; has already been inserted.</span><br><span class="line">	 // BEHAVIOUR: remove from the dictionary the key-value pair indexed by</span><br><span class="line">	 // the given &lt;k&gt;.</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h4><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">boolean isEmpty();</span><br><span class="line">// BEHAVIOUR: return true iff the structure is empty</span><br><span class="line">boolean hasKey(Key x);</span><br><span class="line">// BEHAVIOUR: return true iff the set contains a pair keyed by &lt;x&gt;</span><br><span class="line">Key chooseAny();</span><br><span class="line">// PRECONDITION: isEmpty()==false</span><br><span class="line">// BEHAVIOUR: Return the key of an arbitrary item from the set</span><br><span class="line"></span><br><span class="line">Key min();</span><br><span class="line">// PRECONDITION: isEmpty()==false</span><br><span class="line">// BEHAVIOUR: Return the smallest key in the set</span><br><span class="line"></span><br><span class="line">Key max();</span><br><span class="line">// PRECONDITION: isEmpty()==false</span><br><span class="line">// BEHAVIOUR: Return the largest key in the set</span><br><span class="line"></span><br><span class="line">Key predecessor(Key k);</span><br><span class="line">// PRECONDITION: haskey(k) == true</span><br><span class="line">// PRECONDITION: min() != k</span><br><span class="line">// BEHAVIOUR: Return the largest key in the set that is smaller than &lt;k&gt;</span><br><span class="line"></span><br><span class="line">Key successor(Key k);</span><br><span class="line">// PRECONDITION: hasKey(k) == true</span><br><span class="line">// PRECONDITION: max() !=k</span><br><span class="line">// BEHAVIOUR: Return the smallest key in the set that is larger than &lt;k&gt;.</span><br><span class="line"></span><br><span class="line">Set unionWith(Set s);</span><br><span class="line">// BEHAVIOUR: Change this set to become the set obtained by </span><br><span class="line">// forming the union of the set and &lt;s&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Binary-Search-Tree"><a href="#Binary-Search-Tree" class="headerlink" title="Binary Search Tree"></a>Binary Search Tree</h3><p>To find the <strong>successor s</strong> of a node x whose key is kx, look in x’s right subtree: if that subtree exists, the successor node s must be in it—otherwise any node in that subtree would have a key between kx and ks, which contradicts the hypothesis that s is the successor. If the right subtree does not exist, the successor may be higher up in the tree. Go up to the parent, then grand-parent, then great-grandparent and so on until the link goes up-and-right rather than up-and-left, and you will find the successor. If you reach the root before having gone up-and-right, then the node has no successor: its key is the highest in the tree.</p>
+<h3 id="2-3-4-trees"><a href="#2-3-4-trees" class="headerlink" title="2-3-4 trees"></a>2-3-4 trees</h3><p>A 2-3-4 tree is a type of balanced search tree where every internal node can have either 2, 3, or 4 children, hence the name. More specifically:</p>
+<ol>
+<li><p>A 2-node has one data element, and if it is not a leaf, it has two children. The elements in the left subtree are less than the node’s element, and the elements in the right subtree are greater.</p>
+</li>
+<li><p>A 3-node has two data elements, and if it is not a leaf, it has three children. The elements in the left subtree are less than the first (smaller) element in the node, the elements in the middle subtree are between the node’s elements, and the elements in the right subtree are greater than the second (larger) element.</p>
+</li>
+<li><p>A 4-node has three data elements, and if it is not a leaf, it has four children. The elements in the first (leftmost) subtree are less than the first (smallest) element in the node, the elements in the second subtree are between the first and second elements in the node, the elements in the third subtree are between the second and third elements in the node, and the elements in the fourth (rightmost) subtree are greater than the third (largest) element.</p>
+</li>
+</ol>
+<p>The key property of a 2-3-4 tree is that all leaf nodes are at the same depth, which ensures the tree remains balanced and operations such as insertion, deletion, and search can be performed in logarithmic time.</p>
+<p>2-3-4 trees are commonly used in the implementation of databases and file systems. They are a type of B-tree, and in fact, the widely used B-tree and B+ tree structures are generalizations of 2-3-4 trees.</p>
+<img src="https://s2.loli.net/2023/04/16/BItxzCXesA2aR6c.png" alt="image-20230416101717670" style="zoom: 33%;">
+
+<h4 id="Inserting"><a href="#Inserting" class="headerlink" title="Inserting"></a>Inserting</h4><img src="https://s2.loli.net/2023/04/16/UaW8SCjq96FoVJe.png" alt="image-20230416101856017" style="zoom:33%;">
+
+<h4 id="Deletion"><a href="#Deletion" class="headerlink" title="Deletion"></a>Deletion</h4><img src="https://s2.loli.net/2023/05/15/9DzRKwclaZCehIj.png" alt="image-20230514231022304" style="zoom: 25%;">
+
+<h3 id="Red-black-trees"><a href="#Red-black-trees" class="headerlink" title="Red-black trees"></a>Red-black trees</h3><img src="https://s2.loli.net/2023/04/16/SvpnVqRT36Nedas.png" alt="image-20230416102127291" style="zoom:50%;">
+
+<h4 id="Rotations"><a href="#Rotations" class="headerlink" title="Rotations"></a>Rotations</h4><img src="https://s2.loli.net/2023/04/16/vtrbw852Ti4DEUl.png" alt="image-20230416102709215" style="zoom:50%;">
+
+<p><u>What is a BST rotation</u></p>
+<img src="https://s2.loli.net/2023/04/09/O2WYhD1TE7HjXk8.png" alt="image-20230409123605125" style="zoom: 33%;">
+
+<h5 id="2014-p01-q08"><a href="#2014-p01-q08" class="headerlink" title="2014-p01-q08"></a>2014-p01-q08</h5><img src="https://s2.loli.net/2023/05/09/Qys2T46wvLCKeNB.png" alt="image-20230508231551463" style="zoom:50%;">
+
+<h4 id="Insertion"><a href="#Insertion" class="headerlink" title="Insertion"></a>Insertion</h4><img src="https://s2.loli.net/2023/04/16/SOeCyDF7HodrkZM.png" alt="image-20230416103022162" style="zoom:33%;">
+
+<img src="https://s2.loli.net/2023/04/16/TfMOWw87d3VtkaN.png" alt="image-20230416103042821" style="zoom:33%;">
+
+<h3 id="B-Trees"><a href="#B-Trees" class="headerlink" title="B-Trees"></a>B-Trees</h3><h4 id="Rules"><a href="#Rules" class="headerlink" title="Rules"></a>Rules</h4><ol>
+<li>There are internal nodes (with keys and payloads and children) and leaf nodes (without keys or payloads or children).</li>
+<li>For each key in a node, the node also holds the associated payload.</li>
+<li>All leaf nodes are at the same distance from the root.</li>
+<li>All internal nodes have at most 2t children; all internal nodes except the root have at least t children.</li>
+<li>A node has c children iff it has c−1 keys.</li>
+</ol>
+<img src="https://s2.loli.net/2023/05/15/DLhxYpUcb4SGikX.png" alt="image-20230514232749249" style="zoom:33%;">
+
+<h4 id="Inserting-1"><a href="#Inserting-1" class="headerlink" title="Inserting"></a>Inserting</h4><p>To insert a new key (and payload) into a B-tree, look for the key in the B-tree in the usual way. If found, update the payload in place. If not found, you’ll be by then in the right place at the bottom level of the tree (the one where nodes have keyless leaves as children); on the way down, whenever you find a full node, split it in two on the median key and migrate the median key and resulting two children to the parent node (which by inductive hypothesis won’t be full). If the root is full when you start, split it into three nodes (yielding a new root with only one key and adding one level to the tree). Once you get to the appropriate bottom level node, which won’t be full or you would have split it on your way there, insert there.</p>
+<img src="https://s2.loli.net/2023/05/15/SsEirHRz2ZqjWXP.png" alt="image-20230514233218401" style="zoom:33%;">
+
+<h4 id="Deleting"><a href="#Deleting" class="headerlink" title="Deleting"></a>Deleting</h4><p>Deleting is a more elaborate affair because it involves numerous subcases. You can’t delete a key from anywhere other than a bottom node (i.e. one whose children are keyless leaves), otherwise you upset its left and right children that lose their separator. In addition, you can’t delete a key from a node that already has the minimum number of keys. So the general algorithm consists of creating the right conditions and then deleting (or, alternatively, deleting and then readjusting).<br>To move a key to a bottom node for the purpose of deleting it, swap it with its successor (which must be in a bottom node). The tree will have a temporary inversion, but that will disappear as soon as the unwanted key is deleted.</p>
+<h4 id="Refill"><a href="#Refill" class="headerlink" title="Refill"></a>Refill</h4><img src="https://s2.loli.net/2023/04/16/8h4vRpD1WlJtUSo.png" alt="image-20230416104351438" style="zoom:50%;">
+
+<hr>
+<img src="https://s2.loli.net/2023/04/16/lQHs39Pp7wD4VEi.png" alt="image-20230416104302865" style="zoom:50%;">
+
+<img src="https://s2.loli.net/2023/04/16/KFzwYngu3URZbQW.png" alt="image-20230416104318650" style="zoom:50%;">
+
+<h3 id="Hash-table"><a href="#Hash-table" class="headerlink" title="Hash table"></a>Hash table</h3><p><u>Briefly explain hash functions, hash tables, and collisions</u></p>
+<p><font color="CornflowerBlue">A <strong>hash function</strong> is a <strong>mapping</strong> from a <strong>key space</strong> (for example strings of characters) to an <strong>index space</strong> (for example the integers from 0 to m-1).</font></p>
+<p><font color="CornflowerBlue">A <strong>hash table</strong> is a data structure that stores <strong>(key,value) pairs</strong> indexed by unique key. It offers <strong>efficient (typically O(1)) access</strong> to the pair, given the key. The core idea is to store the pairs in an array of m elements, placing each pair in the array position given by the hash of the key.</font></p>
+<p><font color="CornflowerBlue">Since the <strong>key space</strong> is potentially much <strong>larger</strong> than the <strong>index space</strong>, the hash function will necessarily <strong>map several keys to the same slot</strong>. This is known as a <strong>collision</strong>. Some scheme must be adopted to resolve collisions, other wise the hash table can’t work. The two main strategies involving either storing the colliding pairs in a <strong>linked list</strong> external to the table (<strong>chaining</strong>) or storing colliding pairs within the table but at some other position.</font></p>
+<h4 id="Chaining"><a href="#Chaining" class="headerlink" title="Chaining"></a>Chaining</h4><blockquote>
+<p>We can arrange that the locations in the array hold little linear lists that collect all the keys that hash to that particular value. A good hash function will distribute keys fairly evenly over the array, so with luck this will lead to lists with average length ⌈n/m⌉ if n keys are in use. </p>
+</blockquote>
+<h4 id="Open-addressing"><a href="#Open-addressing" class="headerlink" title="Open addressing"></a>Open addressing</h4><blockquote>
+<p>The second way of using hashing is to use the hash value h(n) as just a first preference for where to store the given key in the array. On adding a new key, if that location is empty then well and good—it can be used; otherwise, a succession of other probes are made of the hash table according to some rule until either the key is found to be present or an empty slot for it is located. The simplest (but not the best) method of collision resolution is to try successive array locations on from the place of the first probe, wrapping round at the end of the array34. Note that, with the open addressing strategy, where all keys are kept in the array, the array may become full, and that its performance decreases significantly when it is nearly full; implementations will typically double the size of the array once occupancy goes above a certain threshold.</p>
+</blockquote>
+<img src="https://s2.loli.net/2023/04/16/Of7VXuRGl19yzpN.png" alt="image-20230416105202289" style="zoom:50%;">
+
+<h5 id="Linear-probing"><a href="#Linear-probing" class="headerlink" title="Linear probing"></a>Linear probing</h5><p>This easy probing function just returns $h(k) + j \mod m.$ In other words, at every new attempt, try the next cell in sequence. It is always a permutation. Linear probing is simple to understand and implement but it leads to <strong>primary clustering</strong>: <em>many failed attempts hit the same slot and spill over to the same follow-up slots</em>. The result is longer and longer runs of occupied slots, increasing search time.</p>
+<h5 id="Quadratic-probing"><a href="#Quadratic-probing" class="headerlink" title="Quadratic probing"></a>Quadratic probing</h5><p>With quadratic probing you return $h(k) + cj + dj^2 \mod m$ for some constants c and d. This works much better than linear probing, provided that c and d are chosen appropriately: when two distinct probing sequences hit the same slot, in subsequent probes they then hit different slots. However it still leads to <strong>secondary clustering</strong> because any two keys that hash to the same value will yield the same probing sequence.</p>
+<h5 id="Double-hashing"><a href="#Double-hashing" class="headerlink" title="Double hashing"></a>Double hashing</h5><p>With double hashing the probing sequence is $h1(k)+ j · h2(k) \mod m$, using two different hash functions h1 and h2. As a consequence, even keys that hash to the same value (under h1) are in fact assigned different probing sequences. It is the best of the three methods in terms of spreading the probes across all slots, but of course each access costs an extra hash function computation.</p>
+<p><u>Explain the <strong>open addressing strategy of collision resolution</strong> and the term <strong>probing sequence</strong> used in that context.</u></p>
+<p><font color="CornflowerBlue">The <em>open addressing</em> strategy resolves collisions by allowing several <strong>successive probes</strong> for the same key, with each probe generating a new position to be tried. The sequence of indices generated by a given key is called the <em>probing sequence</em> for that key. </font></p>
+<p><u>Explain <strong>quadratic probing</strong> and its advantages and disadvantages. [Hint: refer to primary and secondary clustering.</u></p>
+<p><font color="CornflowerBlue">In quadratic probing, the probing function is a <strong>quadratic polynomial</strong> of the probe number. This has the advantage of <strong>avoiding the primary clustering problem</strong> of the simpler <em>linear probing</em> strategy in which, whenever the probing sequence for a key $k_1$ contains the value of h($k_2$) for some other key $k_2$, the two probing sequences collide on every successive value from then onwards, causing a vicious circle of more and more collisions. With quadratic probing, the sequences may collide in that position, but will then diverage again for subsequent probes, However, quadratic probing still stuffers from <em><strong>secondary clustering:</strong></em> if two distinct keys hash to the same value, their probing sequences will be identical and will collide at every probe number. </font></p>
+<h2 id="Graphs-and-path-finding"><a href="#Graphs-and-path-finding" class="headerlink" title="Graphs and path finding"></a>Graphs and path finding</h2><h3 id="Notation-and-representation"><a href="#Notation-and-representation" class="headerlink" title="Notation and representation"></a>Notation and representation</h3><img src="https://s2.loli.net/2023/04/16/s9WBnTGPr5oX4HK.png" alt="image-20230416110628775" style="zoom:50%;">
+
+<img src="https://s2.loli.net/2023/04/16/GTmY6R1Viv5EakK.png" alt="image-20230416110701404" style="zoom:50%;">
+
+<img src="https://s2.loli.net/2023/04/16/xKo3j96XkHaD25z.png" alt="image-20230416110721826" style="zoom:50%;">
+
+<p><u>Consider the two standard representations of directed graphs: the adjacency-list representation and the adjacency-matrix representation. Find a problem that can be solved more efficiently in the adjacency-list representation than in the adjacency-matrix representation, and another problem that can be solved more efficiently in the adjacency-matrix representation than in the adjacency-list representation.</u></p>
+<p><font color="CornflowerBlue"><strong>Problem 1:</strong> Is there an edge from node u to v? In the adjacency-matrix representation, we can quickly test this by looking up the entry $a_{u,v}$ of the adjacency matrix, which takes $O(1)$ time. In the adjacency list representation, we may need to go through the whole list $Adj[u]$ which might take $\theta(V)$ time</font></p>
+<p><font color="CornflowerBlue"><strong>Problem 2:</strong> Is the node u a sink (i.e., are there any outgoing edges from u)? In the adjacency-list representation we can test in $O(1)$ time whether a node u is a sink by checking whether the list $Adj[u]$ is empty or not. In the adjacency-matrix representation, however, this requires $\theta(V)$ time</font></p>
+<h3 id="Depth-first-search"><a href="#Depth-first-search" class="headerlink" title="Depth-first search"></a>Depth-first search</h3><h4 id="Implementation-1-Recursion"><a href="#Implementation-1-Recursion" class="headerlink" title="Implementation 1: Recursion"></a>Implementation 1: Recursion</h4><img src="https://s2.loli.net/2023/04/16/XIgALdw3kBWmGyQ.png" alt="image-20230416110857331" style="zoom:50%;">
+
+<h4 id="Implementation-2-With-a-stack"><a href="#Implementation-2-With-a-stack" class="headerlink" title="Implementation 2: With a stack"></a>Implementation 2: With a stack</h4><img src="https://s2.loli.net/2023/04/16/w4rlKLBp9zF52YC.png" alt="image-20230416111001215" style="zoom:50%;">
+
+<h4 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h4><img src="https://s2.loli.net/2023/04/17/glbfpLIY5taKQmc.png" alt="image-20230416190235584" style="zoom:50%;">
+
+<img src="https://s2.loli.net/2023/05/15/SPOfYDuUF1JwNWG.png" alt="image-20230514235548209" style="zoom:33%;">
+
+<h3 id="Breadth-first-search"><a href="#Breadth-first-search" class="headerlink" title="Breadth-first search"></a>Breadth-first search</h3><h4 id="queue-implementation"><a href="#queue-implementation" class="headerlink" title="queue implementation"></a>queue implementation</h4><img src="https://s2.loli.net/2023/04/16/FUv9OLofY4CQnmX.png" alt="image-20230416111321754" style="zoom:50%;">
+
+<h4 id="bfs-path"><a href="#bfs-path" class="headerlink" title="bfs_path"></a>bfs_path</h4><img src="https://s2.loli.net/2023/04/16/HBwIysJW4mjOphR.png" alt="image-20230416111411376" style="zoom:50%;">
+
+<h3 id="Dijkstra"><a href="#Dijkstra" class="headerlink" title="Dijkstra"></a>Dijkstra</h3><h4 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h4><img src="https://s2.loli.net/2023/04/16/oJOaxYKmiMvt6cT.png" alt="image-20230416111505261" style="zoom:50%;">
+
+<h4 id="Analysis-1"><a href="#Analysis-1" class="headerlink" title="Analysis"></a>Analysis</h4><h5 id="Running-time"><a href="#Running-time" class="headerlink" title="Running time"></a>Running time</h5><p><img src="https://s2.loli.net/2023/04/16/7bp4TltLjNHA8P1.png" alt="image-20230416111712125"></p>
+<h5 id="Correctness"><a href="#Correctness" class="headerlink" title="Correctness"></a>Correctness</h5><img src="https://s2.loli.net/2023/04/16/azPbHx1NYGZOoge.png" alt="image-20230416112056270" style="zoom:50%;">
+
+<img src="https://s2.loli.net/2023/04/16/oLyvNwOKHsk64nm.png" alt="image-20230416112117987" style="zoom:50%;">
+
+<h3 id="Bellman-Ford"><a href="#Bellman-Ford" class="headerlink" title="Bellman-Ford"></a>Bellman-Ford</h3><img src="https://s2.loli.net/2023/04/16/MlA1LSiaonXR5Ye.png" alt="image-20230416112419602" style="zoom:50%;">
+
+<h4 id="Implementation-1"><a href="#Implementation-1" class="headerlink" title="Implementation"></a>Implementation</h4><img src="https://s2.loli.net/2023/04/16/B6MQLuGJw2mNAki.png" alt="image-20230416112452955" style="zoom:50%;">
+
+<h4 id="Analysis-2"><a href="#Analysis-2" class="headerlink" title="Analysis"></a>Analysis</h4><img src="https://s2.loli.net/2023/04/16/rFsdZWDRK1JOaxA.png" alt="image-20230416112704315" style="zoom:50%;">
+
+<p><u>What are the advantages and disadvantages of the Bellman-Ford Algorithm in comparison to Dijkstra’s Algorithm?</u></p>
+<p><font color="CornflowerBlue">Firstly, it can be applied to graphs with <strong>non-negative edges</strong>. Secondly, it can be also used to <strong>detect negative-weight cycles</strong>. The disadvantage of the Bellman-Ford Algorithm is the <strong>higher runtime</strong> which is O(VE), while Dijkstra’s Algorithm can be implemented in O(VlogV + E) time, which is much more efficient, especially if the given graph is <strong>sparse</strong>. </font></p>
+<h3 id="Johnson’s-algorithm"><a href="#Johnson’s-algorithm" class="headerlink" title="Johnson’s algorithm"></a>Johnson’s algorithm</h3><h4 id="Implementation-2"><a href="#Implementation-2" class="headerlink" title="Implementation"></a>Implementation</h4><img src="https://s2.loli.net/2023/04/16/EuNTmq4g8JGBFrY.png" alt="image-20230416113215327" style="zoom:50%;">
+
+<h3 id="All-pair-shortest-path"><a href="#All-pair-shortest-path" class="headerlink" title="All-pair shortest path"></a>All-pair shortest path</h3><p>All-pairs shortest path problem can be solved using the Floyd-Warshall algorithm or using repeated squaring in the adjacency matrix with modifications - which is a kind of a matrix multiplication.</p>
+<p>Floyd-Warshall algorithm uses a dynamic programming approach to solve the all-pairs shortest path problem. Here’s a brief pseudocode for the algorithm:</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">function FloydWarshall(graph)</span><br><span class="line">    // graph: adjacency matrix for the graph</span><br><span class="line">    </span><br><span class="line">    let dist = copy(graph)   // Create a copy of the adjacency matrix</span><br><span class="line">    </span><br><span class="line">    for k from 1 to n</span><br><span class="line">        for i from 1 to n</span><br><span class="line">            for j from 1 to n</span><br><span class="line">                dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])</span><br><span class="line"></span><br><span class="line">    return dist</span><br></pre></td></tr></tbody></table></figure>
+
+<p>In the above pseudocode, <code>graph</code> is the adjacency matrix of the graph, and <code>n</code> is the number of vertices. The algorithm iteratively updates the shortest path between every pair of vertices (i, j) considering vertex k as an intermediate vertex. The final matrix <code>dist</code> contains the shortest path distances between every pair of vertices.</p>
+<p>However, there is another method using repeated squaring of the adjacency matrix. If we multiply the adjacency matrix <code>A</code> by itself we get a new matrix <code>A^2</code>, where each element A^2[i][j] is the number of paths of length 2 from vertex i to vertex j. By taking higher powers of A, we can find the number of paths of any length. To find the shortest paths, we need to modify this slightly to keep track of the shortest path found so far. However, this method is more complex and generally not as efficient as Floyd-Warshall or Dijkstra’s algorithm for sparse graphs.</p>
+<h3 id="Past-papers-1"><a href="#Past-papers-1" class="headerlink" title="Past papers"></a>Past papers</h3><p><u>What are the advantages and disadvantages of the Bellman-Ford Algorithm in comparison to Dijkstra’s Algorithm?</u></p>
+<p><font color="CornflowerBlue">Firstly, it can be applied to graphs with non-negative edges [1 mark]. Secondly, it can be also used to detect negative-weight cycles [1 mark]. The disadvantage of the Bellman-Ford Algorithm is the higher runtime which is O(V · E), while Dijkstra’s Algorithm can be implemented in O(V log V + E) time, which is much more efficient, especially if the given graph is <strong>sparse</strong> </font></p>
+<h5 id="2014-p01-q10"><a href="#2014-p01-q10" class="headerlink" title="2014-p01-q10"></a>2014-p01-q10</h5><img src="https://s2.loli.net/2023/05/10/G52WFhugZsN7qrV.png" alt="image-20230510162852926" style="zoom: 50%;">
+
+<hr>
+<img src="https://s2.loli.net/2023/05/10/6JvQHPrEazSlW4s.png" alt="image-20230510163401328" style="zoom:50%;">
+
+<img src="https://s2.loli.net/2023/05/10/5I2zpyg9frEhjtP.png" alt="image-20230510163423895" style="zoom: 67%;">
+
+<h2 id="Graphs-and-subgraphs"><a href="#Graphs-and-subgraphs" class="headerlink" title="Graphs and subgraphs"></a>Graphs and subgraphs</h2><h3 id="Ford-Fulkerson-algorithm"><a href="#Ford-Fulkerson-algorithm" class="headerlink" title="Ford-Fulkerson algorithm"></a>Ford-Fulkerson algorithm</h3><h4 id="Flow"><a href="#Flow" class="headerlink" title="Flow"></a>Flow</h4><p>A flow is a set of edge labels $f(u\rarr v)$ such that<br>$$<br>0 \le f(u\rarr v)\le c(u\rarr v) \text{ on every edge}<br>$$</p>
+<p>$$<br>\text{value}(f) = \sum_{u:s\rarr u}f(s\rarr u)-\sum_{u:u\rarr s}f(u\rarr s)<br>$$</p>
+<h4 id="Flow-Conservation"><a href="#Flow-Conservation" class="headerlink" title="Flow Conservation"></a>Flow Conservation</h4><p>$$<br>\sum_{u:u\rarr v}f(u\rarr v)-\sum_{u:v\rarr u}f(v\rarr u)=0<br>$$</p>
+<h4 id="Implementation-3"><a href="#Implementation-3" class="headerlink" title="Implementation"></a>Implementation</h4><h5 id="The-residual-graph"><a href="#The-residual-graph" class="headerlink" title="The residual graph"></a>The residual graph</h5><img src="https://s2.loli.net/2023/04/16/82x9AbmOXHUPuch.png" alt="image-20230416114148455" style="zoom:50%;">
+
+<h5 id="Augmenting-paths"><a href="#Augmenting-paths" class="headerlink" title="Augmenting paths"></a>Augmenting paths</h5><img src="https://s2.loli.net/2023/04/16/n3hvSIi8Ofw1X4r.png" alt="image-20230416114238470" style="zoom:50%;">
+
+<img src="https://s2.loli.net/2023/04/16/SeQWG9Mjs1R2oFz.png" alt="image-20230416114354420" style="zoom:50%;">
+
+<img src="https://s2.loli.net/2023/04/16/aAngwK5cr4qo7Q1.png" alt="image-20230416114447173" style="zoom:50%;">
+
+<h4 id="Analysis-3"><a href="#Analysis-3" class="headerlink" title="Analysis"></a>Analysis</h4><h5 id="Running-time-1"><a href="#Running-time-1" class="headerlink" title="Running time"></a>Running time</h5><img src="https://s2.loli.net/2023/04/16/4YdUIJz7M8cDgF9.png" alt="image-20230416114556985" style="zoom:50%;">
+
+<h4 id="Correctness-1"><a href="#Correctness-1" class="headerlink" title="Correctness"></a>Correctness</h4><h5 id="Max-flow-min-cut-theorem"><a href="#Max-flow-min-cut-theorem" class="headerlink" title="Max-flow min-cut theorem"></a>Max-flow min-cut theorem</h5><img src="https://s2.loli.net/2023/04/16/zHcPlQF6XtML87Y.png" alt="image-20230416120010605" style="zoom:50%;">
+
+<p><u>State the Max-Flow Min-Cut Theorem</u></p>
+<p>For any flow network with source s and sink t, the value of maximum flow equals the minimum capacity of an (s,t) cut.</p>
+<img src="https://s2.loli.net/2023/04/16/NLBpmMDejudFTyX.png" alt="image-20230416120143609" style="zoom:50%;">
+
+<h4 id="Past-papers-2"><a href="#Past-papers-2" class="headerlink" title="Past papers"></a>Past papers</h4><img src="https://s2.loli.net/2023/05/10/Ytdk6QZ3IiwMnxC.png" alt="image-20230509232338837" style="zoom: 33%;">
+
+<h3 id="Matchings"><a href="#Matchings" class="headerlink" title="Matchings"></a>Matchings</h3><img src="https://s2.loli.net/2023/04/16/uapT5oZfiMtbryv.png" alt="image-20230416121218271" style="zoom:50%;">
+
+<img src="https://s2.loli.net/2023/04/16/38vonJBaLFPZzWb.png" alt="image-20230416121622044" style="zoom:50%;">
+
+<img src="https://s2.loli.net/2023/04/16/Z3HYjcenCmKX6QB.png" alt="image-20230416121238893" style="zoom:50%;">
+
+<h3 id="Prim’s-algorithm"><a href="#Prim’s-algorithm" class="headerlink" title="Prim’s algorithm"></a>Prim’s algorithm</h3><img src="https://s2.loli.net/2023/04/16/xFGIiqvEOCP3zrm.png" alt="image-20230416121722912" style="zoom:50%;">
+
+<h4 id="Implementation-4"><a href="#Implementation-4" class="headerlink" title="Implementation"></a>Implementation</h4><img src="https://s2.loli.net/2023/04/16/PTtpsXKuBFEwbzo.png" alt="image-20230416121805803" style="zoom:50%;">
+
+<h4 id="Analysis-4"><a href="#Analysis-4" class="headerlink" title="Analysis"></a>Analysis</h4><img src="https://s2.loli.net/2023/04/16/yCPs4tS7XuNlvKZ.png" alt="image-20230416155149403" style="zoom:50%;">
+
+<h3 id="Kruskal’s-algorithm"><a href="#Kruskal’s-algorithm" class="headerlink" title="Kruskal’s algorithm"></a>Kruskal’s algorithm</h3><img src="https://s2.loli.net/2023/04/16/hTmOjM5I9eayPJl.png" alt="image-20230416122241715" style="zoom:50%;">
+
+<h4 id="Implementation-5"><a href="#Implementation-5" class="headerlink" title="Implementation"></a>Implementation</h4><img src="https://s2.loli.net/2023/04/16/KydLV56ckpYNaAv.png" alt="image-20230416122322196" style="zoom:50%;">
+
+<img src="https://s2.loli.net/2023/04/16/4Z2LPGuk1CisA6H.png" alt="image-20230416122351869**" style="zoom:50%;">
+
+<h4 id="Analysis-5"><a href="#Analysis-5" class="headerlink" title="Analysis"></a>Analysis</h4><img src="https://s2.loli.net/2023/04/16/ktDj6bMRuZhJzr5.png" alt="image-20230416122447273" style="zoom:50%;">
+
+<h3 id="Topological-sort"><a href="#Topological-sort" class="headerlink" title="Topological sort"></a>Topological sort</h3><img src="https://s2.loli.net/2023/04/16/PiQqG6WfBuCKke3.png" alt="image-20230416122849911" style="zoom:50%;">
+
+<h4 id="Analysis-6"><a href="#Analysis-6" class="headerlink" title="Analysis"></a>Analysis</h4><img src="https://s2.loli.net/2023/04/16/TvRENFwkLYoM6Cn.png" alt="image-20230416123509390" style="zoom:50%;">
+
+<h2 id="Advanced-data-structures"><a href="#Advanced-data-structures" class="headerlink" title="Advanced data structures"></a>Advanced data structures</h2><h3 id="Priority-queue"><a href="#Priority-queue" class="headerlink" title="Priority queue"></a>Priority queue</h3><img src="https://s2.loli.net/2023/04/16/nlSwtPyNcQaf36k.png" alt="image-20230416141703497" style="zoom:50%;">
+
+<h4 id="Binary-heaps"><a href="#Binary-heaps" class="headerlink" title="Binary heaps"></a>Binary heaps</h4><img src="https://s2.loli.net/2023/04/16/qg1Gn3SIxblY8ep.png" alt="image-20230416105907642" style="zoom:50%;">
+
+<h4 id="Binomial-heaps"><a href="#Binomial-heaps" class="headerlink" title="Binomial heaps"></a>Binomial heaps</h4><img src="https://s2.loli.net/2023/04/16/cfUOSpTKo73ZvxM.png" alt="image-20230416105943386" style="zoom:50%;">
+
+<h5 id="first"><a href="#first" class="headerlink" title="first()"></a><code>first()</code></h5><p>To find the element with the smallest key in the whole binomial heap, scan the roots of all the binomial trees in the heap, at cost O(lg n) since there are that many trees.</p>
+<h5 id="extractMin"><a href="#extractMin" class="headerlink" title="extractMin()"></a><code>extractMin()</code></h5><p>To extract the element with the smallest key, which is necessarily a root, first find it, as above, at cost $O(lg n)$; then cut it out from its tree. Its children now form a forest of binomial trees of smaller orders, already sorted by decreasing size. Reverse this list of trees and you have another binomial heap. Merge this heap with what remains of the original one. Since the merge operation itself (q.v.) costs $O(lg n)$, this is also the total cost of extracting the minimum.</p>
+<h5 id="merge"><a href="#merge" class="headerlink" title="merge()"></a><code>merge()</code></h5><p>To merge two binomial heaps, examine their trees by increasing tree order and combine them following a procedure similar to the one used during binary addition with carry with a chain of full adders.</p>
+<h5 id="insert"><a href="#insert" class="headerlink" title="insert()"></a><code>insert()</code></h5><p>To insert a new element, consider it as a binomial heap with only one tree with only one node and merge it as above, at cost $O(lg n).$</p>
+<h5 id="decreaseKey"><a href="#decreaseKey" class="headerlink" title="decreaseKey()"></a><code>decreaseKey()</code></h5><p>To decrease the key of an item, proceed as in the case of a normal binary heap within the binomial tree to which the item belongs, at cost no greater than $O(lg n)$ which bounds the height of that tree.</p>
+<h4 id="Linked-List"><a href="#Linked-List" class="headerlink" title="Linked List"></a>Linked List</h4><img src="https://s2.loli.net/2023/04/16/ILced6tJCjbxSQl.png" alt="image-20230416141941809" style="zoom:50%;">
+
+<h4 id="Fibonacci-heap"><a href="#Fibonacci-heap" class="headerlink" title="Fibonacci heap"></a>Fibonacci heap</h4><img src="https://s2.loli.net/2023/04/16/jIXPCBsNM89Hp3S.png" alt="image-20230416142148290" style="zoom:50%;">
+
+<h5 id="push"><a href="#push" class="headerlink" title="push()"></a>push()</h5><img src="https://s2.loli.net/2023/04/16/EUt5Fjd3mKXQfS2.png" alt="image-20230416142417837" style="zoom:50%;">
+
+<h5 id="popmin"><a href="#popmin" class="headerlink" title="popmin()"></a>popmin()</h5><img src="https://s2.loli.net/2023/04/16/kBeN2KQq1xdzHJO.png" alt="image-20230416142443596" style="zoom:50%;">
+
+<h5 id="cleanup"><a href="#cleanup" class="headerlink" title="cleanup()"></a>cleanup()</h5><img src="https://s2.loli.net/2023/04/16/k1fYxvKQni8JhcD.png" alt="image-20230416142507945" style="zoom:50%;">
+
+<h5 id="decrease-key"><a href="#decrease-key" class="headerlink" title="decrease key()"></a>decrease key()</h5><img src="https://s2.loli.net/2023/04/16/jua2Tg6UYnxEH4N.png" alt="image-20230416142806095" style="zoom:50%;">
+
+<img src="https://s2.loli.net/2023/04/16/rt3qMQeEVZHUPgG.png" alt="image-20230416142917843" style="zoom:50%;">
+
+<h4 id="Analysis-7"><a href="#Analysis-7" class="headerlink" title="Analysis"></a>Analysis</h4><img src="https://s2.loli.net/2023/04/16/pOam8qKoRGuvyXD.png" alt="image-20230416143600275" style="zoom:50%;">
+
+<h4 id="Fibonacci-Shape-Theorem"><a href="#Fibonacci-Shape-Theorem" class="headerlink" title="Fibonacci Shape Theorem"></a>Fibonacci Shape Theorem</h4><img src="https://s2.loli.net/2023/04/16/myPO6voQ4WMhYbr.png" alt="image-20230416145153066" style="zoom:50%;">
+
+<h4 id="Past-papers-3"><a href="#Past-papers-3" class="headerlink" title="Past papers"></a>Past papers</h4><img src="https://s2.loli.net/2023/04/16/2AY6GJKXkiTnOwL.png" alt="image-20230416154721801" style="zoom:50%;">
+
+<h3 id="Disjoint-set"><a href="#Disjoint-set" class="headerlink" title="Disjoint set"></a>Disjoint set</h3><img src="https://s2.loli.net/2023/04/16/3byGRdTcafmQ2VB.png" alt="image-20230416145358031" style="zoom:50%;">
+
+<p>In a disjoint set, the <strong><u>weighted union heuristic</u></strong> says: keep track of the size of each set, and when you have to merge two sets then use the size information to decide which set to update, to reduce the amount of work. [Must include: keep track of the sizes.</p>
+<p>The <strong><u>path compression heuristic</u></strong> says: when you do a search, by following up a search tree to the root, then rewire the tree so that subsequent searches for the same element can be done quicker</p>
+<h4 id="Implementation1-Flat-Forest"><a href="#Implementation1-Flat-Forest" class="headerlink" title="Implementation1: Flat Forest"></a>Implementation1: Flat Forest</h4><img src="https://s2.loli.net/2023/04/16/p6fDkEx5QunBXjI.png" alt="image-20230416145521202" style="zoom:50%;">
+
+<h4 id="Implementation2-Deep-Forest"><a href="#Implementation2-Deep-Forest" class="headerlink" title="Implementation2: Deep Forest"></a>Implementation2: Deep Forest</h4><img src="https://s2.loli.net/2023/04/16/f7p2YwZBqeol4I3.png" alt="image-20230416145618029**" style="zoom:50%;">
+
+<h4 id="Implementation3-Lazy-Forest"><a href="#Implementation3-Lazy-Forest" class="headerlink" title="Implementation3: Lazy Forest"></a>Implementation3: Lazy Forest</h4><img src="https://s2.loli.net/2023/04/16/oIR7uvTp6QDbBjW.png" alt="image-20230416145743445" style="zoom:50%;">]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>CambridgeIA</category>
+      </categories>
+  </entry>
 </search>
