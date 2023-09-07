@@ -6,7 +6,7 @@
   <link href="https://haoran-jie.github.io/atom.xml" rel="self"/>
   
   <link href="https://haoran-jie.github.io/"/>
-  <updated>2023-05-23T20:36:00.273Z</updated>
+  <updated>2023-09-07T19:33:47.005Z</updated>
   <id>https://haoran-jie.github.io/</id>
   
   <author>
@@ -15,6 +15,68 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Machine Learning and Real World Data</title>
+    <link href="https://haoran-jie.github.io/Cambridge/Notes/Machine-Learning-and-Real-World-Data/"/>
+    <id>https://haoran-jie.github.io/Cambridge/Notes/Machine-Learning-and-Real-World-Data/</id>
+    <published>2023-09-07T19:18:33.000Z</published>
+    <updated>2023-09-07T19:33:47.005Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;Lecture1&quot;&gt;&lt;a href=&quot;#Lecture1&quot; class=&quot;headerlink&quot; title=&quot;Lecture1&quot;&gt;&lt;/a&gt;Lecture1&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Sentiment classification&lt;/strong&gt; — the task of automatically deciding whether a review is positive or negative, based on the text of the review&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Lexicon&lt;/strong&gt; – lexicon is a list of words with some associated information.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;u&gt;Suppose that a very large collection of documents describing the University of Cambridge has been collected. Your task is to build a classifier which assigns sentiment to each document, using the classes: positive, negative and neutral.&lt;/u&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;u&gt;Given the limited amount of annotated data, you decide to classify the documents using a standard sentiment lexicon. Explain how you would perform an experiment to do this.&lt;/u&gt;&lt;ul&gt;
+&lt;li&gt;&lt;font color=&quot;CornflowerBlue&quot;&gt;Note that the preliminary description is important - we are told there is a large collection of documents, but we’re not told they are all of one genre. Unlike the artificially balanced sentiment data which was used for the practical, it is extremely unlikely the collection will be balanced - we might expect that the majority of the documents will be neutral.&lt;/font&gt;&lt;ol&gt;
+&lt;li&gt;&lt;font color=&quot;CornflowerBlue&quot;&gt;Tokenize the documents (will probably also require ‘cleaning’ by removal of markup)&lt;/font&gt;&lt;/li&gt;
+&lt;li&gt;&lt;font color=&quot;CornflowerBlue&quot;&gt;Classify the documents by counting matches with words in the sentiment lexicon (explain assumptions about sentiment lexicon and give details)&lt;/font&gt;&lt;/li&gt;
+&lt;li&gt;&lt;font color=&quot;CornflowerBlue&quot;&gt;It is necessary to establish some sort of threshold for positive/negative decisions: development data should be used to do this.&lt;/font&gt;&lt;/li&gt;
+&lt;li&gt;&lt;font color=&quot;CornflowerBlue&quot;&gt;Treatment of ties should be discusses (there are several reasonable options here)&lt;/font&gt;&lt;/li&gt;
+&lt;li&gt;&lt;font color=&quot;CornflowerBlue&quot;&gt;Adjustment for sentiment strength should be discussed (there are several reasonable options here)&lt;/font&gt;&lt;/li&gt;
+&lt;li&gt;&lt;font color=&quot;CornflowerBlue&quot;&gt;Split annotated data 50:50 into development set and final evaluation set.&lt;/font&gt;&lt;/li&gt;
+&lt;li&gt;&lt;font color=&quot;CornflowerBlue&quot;&gt;Note that some form of &lt;strong&gt;normalization for document length&lt;/strong&gt; is required, but students are not expected to know this&lt;/font&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;u&gt;How would you evaluate the results of the system you have described in your answer to part (b) using the annotated data? Give details of the evaluation metrics you would use.&lt;/u&gt;&lt;ul&gt;
+&lt;li&gt;&lt;font color=&quot;CornflowerBlue&quot;&gt;A decision has to be made as to how to use the annotated data for evaluation. The simplest method is to use majority class to decide on the gold standard. It is unlikely there will be many cases where the annotators have each chosen a different class, but such documents could be counted as neural.&lt;/font&gt;&lt;/li&gt;
+&lt;li&gt;&lt;font color=&quot;CornflowerBlue&quot;&gt;One can evaluate using &lt;strong&gt;precision&lt;/strong&gt; and &lt;strong&gt;recall&lt;/strong&gt; for each class. Accuracy will not work well because we cannot expect the dataset to be balanced&lt;/font&gt;&lt;/li&gt;
+&lt;li&gt;&lt;font color=&quot;CornflowerBlue&quot;&gt;The alternative is to evaluate the system using &lt;strong&gt;kappa&lt;/strong&gt; in conjunction with the human annotated data &lt;/font&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;u&gt;If the primary objective were to identify the documents with &lt;strong&gt;negative sentiment&lt;/strong&gt;, how might your proposed evaluation change?&lt;/u&gt;&lt;ul&gt;
+&lt;li&gt;&lt;font color=&quot;CornflowerBlue&quot;&gt;In this case, the distinction between the positive and neutral classes is unimportant. &lt;strong&gt;Recall should possibly be prioritized over precision on the negative class.&lt;/strong&gt; &lt;/font&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;u&gt;It is suggested to you that the classes automatically assigned by the sentiment lexicon approach could be used to provide training data for a Naive Bayes classifier. Could such a classifier perform better than the sentiment lexicon classifier which provided the decisions it was trained on? Explain your answer&lt;/u&gt;&lt;ul&gt;
+&lt;li&gt;&lt;font color=&quot;CornflowerBlue&quot;&gt;The Naive Bayes classifier could improve over the sentiment lexicon classifier in the circumstance where the &lt;strong&gt;sentiment lexicon was missing one or more words&lt;/strong&gt; which were good cues for sentiment with this document set, assuming that such words did occur sufficiently often associated with words which were in the sentiment lexicon. &lt;/font&gt;&lt;/li&gt;
+&lt;li&gt;&lt;font color=&quot;CornflowerBlue&quot;&gt;To see this, consider a toy example where the sentiment lexicon contains only the words good and bad. The document collection contains 1000 documents with both good and world-leading, 500 documents with only world-leading, 100 documents with only bad and 400 documents with none of these words. The test data has similar proportions: the first two sets are all both annotated as positive, the third set as negative and the fourth as neutral. Under these circumstances, the sentiment lexicon approach will classify the documents in the second set incorrectly, but the trained Naive Bayes algorithm would classify them as positive. &lt;/font&gt;&lt;/li&gt;
+&lt;li&gt;&lt;font color=&quot;CornflowerBlue&quot;&gt;This amounts to using the &lt;strong&gt;sentiment lexicon&lt;/strong&gt; as seeds for a &lt;strong&gt;semi-supervised classifier&lt;/strong&gt;. There are more sophisticated approaches to this than simply using Naive Bayes on the automatically annotated data, but these have not been discussed in the course so it is not expected that the answer includes details of such an approach&lt;/font&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;Type-vs-Token&quot;&gt;&lt;a href=&quot;#Type-vs-Token&quot; class=&quot;headerlink&quot; title=&quot;Type vs. Token&quot;&gt;&lt;/a&gt;Type vs. Token&lt;/h4&gt;&lt;p&gt;In natural language processing (NLP), a &lt;code&gt;&quot;type&quot;&lt;/code&gt; refers to a &lt;strong&gt;distinct word&lt;/strong&gt; or symbol in a language, while a &lt;code&gt;&quot;token&quot;&lt;/code&gt; refers to a &lt;strong&gt;specific instance&lt;/strong&gt; of that word or symbol in a text. For example, in the sentence “the cat in the hat,” the word “the” is a type, but it appears twice as two different tokens in the sentence. This distinction is important because it allows for the calculation of various statistics in NLP, such as the type-token ratio.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Any unique word is a type. Any given instance of a type is a token.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;u&gt;Provide a sentence with exactly 4 types and 5 tokens. Explain any assumptions you make about the nature of tokens.&lt;/u&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=&quot;CornflowerBlue&quot;&gt;Any 5 word sentence that contains one word type twice: e.g. &lt;strong&gt;the cat likes the dog&lt;/strong&gt; In this example we assume that punctuation is removed and that all word tokens are lowercased. If this wasn’t the case we could have a sentence like A long long winding road. (1 mark for sentence, 1 mark for discussion of tokens)&lt;/font&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Cambridge" scheme="https://haoran-jie.github.io/categories/Cambridge/"/>
+    
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Cambridge/Notes/"/>
+    
+    
+    <category term="Machine Learning" scheme="https://haoran-jie.github.io/tags/Machine-Learning/"/>
+    
+  </entry>
   
   <entry>
     <title>Algorithm_1And2</title>
@@ -417,26 +479,6 @@
     
     
     <summary type="html">&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2023/02/04/xUEV71zGkKSO9uP.png&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
-    
-    <category term="ALCS" scheme="https://haoran-jie.github.io/categories/Notes/ALCS/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Chapter 16.2: Translation Software</title>
-    <link href="https://haoran-jie.github.io/Notes/ALCS/Chapter16.2_TranslationSoftware/"/>
-    <id>https://haoran-jie.github.io/Notes/ALCS/Chapter16.2_TranslationSoftware/</id>
-    <published>2022-05-05T10:14:19.000Z</published>
-    <updated>2023-02-09T16:20:16.574Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2023/02/04/pWFCrNxiEGA7o58.png&quot;&gt;&lt;/p&gt;
-&lt;hr&gt;</summary>
     
     
     

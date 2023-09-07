@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#2c3e50" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#2c3e50">
+  <meta name="google-site-verification" content="ONgpvg7NlakSEl6IcZ4-nCCQleKums7GuOYvOS4zXCQ">
+  <meta name="msvalidate.01" content="5331505606E7903BD6FA7D5C7D0FE6DB">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"haoran-jie.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":30,"offset":15},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#546de5","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":true,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
+
+
+
+<link rel="canonical" href="https://haoran-jie.github.io/Cambridge/Notes/Machine-Learning-and-Real-World-Data/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://haoran-jie.github.io/Cambridge/Notes/Machine-Learning-and-Real-World-Data/","path":"Cambridge/Notes/Machine-Learning-and-Real-World-Data/","title":"Machine Learning and Real World Data"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Machine Learning and Real World Data | Samuel's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V501S4L4ZZ"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-V501S4L4ZZ","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+  <script async src="//assets.growingio.com/2.1/gio.js"></script>
+  <script class="next-config" data-name="growingio_analytics" type="application/json">"b544ba838d823365"</script>
+  <script src="/js/third-party/analytics/growingio.js"></script>
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Samuel's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Samuel's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Snippets of life of a programmer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">18</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">15</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">42</span></a></li><li class="menu-item menu-item-notes"><a href="/Notes/" rel="section"><i class="fa fa-book fa-fw"></i>Notes</a></li><li class="menu-item menu-item--what&why系列文章"><a href="/WhatandwhY/" rel="section"><i class="fa-solid fa-clipboard-question fa-fw"></i> What&whY系列文章</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture1"><span class="nav-number">1.</span> <span class="nav-text">Lecture1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Type-vs-Token"><span class="nav-number">1.0.1.</span> <span class="nav-text">Type vs. Token</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture2-Naive-Bayes"><span class="nav-number">2.</span> <span class="nav-text">Lecture2: Naive Bayes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-machine-learning"><span class="nav-number">2.1.</span> <span class="nav-text">What is machine learning?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Terminology"><span class="nav-number">2.1.1.</span> <span class="nav-text">Terminology</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Probabilistic-classifiers-provide-a-distribution-over-classes"><span class="nav-number">2.2.</span> <span class="nav-text">Probabilistic classifiers provide a distribution over classes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#multinomial-Naive-Bayes-classifier"><span class="nav-number">2.3.</span> <span class="nav-text">(multinomial) Naïve Bayes classifier</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Bayes-Theorem"><span class="nav-number">2.3.1.</span> <span class="nav-text">Bayes Theorem</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Naive-Bayes-theorem"><span class="nav-number">2.3.2.</span> <span class="nav-text">Naive Bayes theorem</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Estimate-for-paramters-of-Naive-Bayes"><span class="nav-number">2.4.</span> <span class="nav-text">Estimate for paramters of Naive Bayes</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Laplace-smoothing"><span class="nav-number">2.4.1.</span> <span class="nav-text">Laplace smoothing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Calculations"><span class="nav-number">2.4.2.</span> <span class="nav-text">Calculations</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Full-algorithm"><span class="nav-number">2.5.</span> <span class="nav-text">Full algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2018-p03-q07"><span class="nav-number">2.5.0.1.</span> <span class="nav-text">2018-p03-q07</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Training-and-Testing"><span class="nav-number">2.6.</span> <span class="nav-text">Training and Testing</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#train-dev-test"><span class="nav-number">2.6.1.</span> <span class="nav-text">train:dev:test</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Unknown-words-ignore"><span class="nav-number">2.6.2.</span> <span class="nav-text">Unknown words (ignore!)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stop-words-ignore"><span class="nav-number">2.6.3.</span> <span class="nav-text">Stop words (ignore!)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Optimizing-for-Sentiment-Analysis"><span class="nav-number">2.7.</span> <span class="nav-text">Optimizing for Sentiment Analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Binary-multinomial-Naive-Bayes"><span class="nav-number">2.7.1.</span> <span class="nav-text">Binary multinomial Naive Bayes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Deal-with-negation"><span class="nav-number">2.7.2.</span> <span class="nav-text">Deal with negation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Lexicon-based-information"><span class="nav-number">2.7.3.</span> <span class="nav-text">Lexicon-based information</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Evaluation-precision-recall-F-measure"><span class="nav-number">2.8.</span> <span class="nav-text">Evaluation: precision, recall, F-measure</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2021-p03-q09"><span class="nav-number">2.8.0.1.</span> <span class="nav-text">2021-p03-q09</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#F-measure"><span class="nav-number">2.8.1.</span> <span class="nav-text">F-measure</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Evaluating-with-more-than-2-classes"><span class="nav-number">2.8.2.</span> <span class="nav-text">Evaluating with more than 2 classes</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cross-Validation"><span class="nav-number">2.9.</span> <span class="nav-text">Cross Validation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-papers"><span class="nav-number">2.10.</span> <span class="nav-text">Past papers</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2020-p03-q07"><span class="nav-number">2.10.0.1.</span> <span class="nav-text">2020-p03-q07</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2021-p03-q09-1"><span class="nav-number">2.10.0.2.</span> <span class="nav-text">2021-p03-q09</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture3-Zipf%E2%80%99s-Law-and-Heap%E2%80%99s-Law"><span class="nav-number">3.</span> <span class="nav-text">Lecture3: Zipf’s Law and Heap’s Law</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Zipf%E2%80%99s-law"><span class="nav-number">3.1.</span> <span class="nav-text">Zipf’s law</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Other-examples"><span class="nav-number">3.1.1.</span> <span class="nav-text">Other examples</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Zipf-curves-in-log-space"><span class="nav-number">3.1.2.</span> <span class="nav-text">Zipf curves in log-space</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Heap%E2%80%99s-law"><span class="nav-number">3.2.</span> <span class="nav-text">Heap’s law</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Zipf%E2%80%99s-law-and-Heaps%E2%80%99-law-affected-our-classifier"><span class="nav-number">3.3.</span> <span class="nav-text">Zipf’s law and Heaps’ law affected our classifier</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Smoothing-redistribute-the-probability-mass"><span class="nav-number">3.3.1.</span> <span class="nav-text">Smoothing redistribute the probability mass</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-4"><span class="nav-number">4.</span> <span class="nav-text">Lecture 4</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Specificity-and-Power-of-a-Test"><span class="nav-number">4.1.</span> <span class="nav-text">Specificity and Power of a Test</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Significance-Reporting-the-three-deadly-sins"><span class="nav-number">4.2.</span> <span class="nav-text">Significance Reporting - the three deadly sins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Significant-Digits"><span class="nav-number">4.3.</span> <span class="nav-text">Significant Digits</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Trouble-shooting"><span class="nav-number">4.4.</span> <span class="nav-text">Trouble shooting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Significance-testing"><span class="nav-number">4.5.</span> <span class="nav-text">Significance testing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Past-papers-1"><span class="nav-number">4.6.</span> <span class="nav-text">Past papers</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture5"><span class="nav-number">5.</span> <span class="nav-text">Lecture5</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ability-to-generalise"><span class="nav-number">5.1.</span> <span class="nav-text">Ability to generalise</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Overtraining-x2F-Overfitting-x2F-Type-III-errors"><span class="nav-number">5.1.1.</span> <span class="nav-text">Overtraining&#x2F;Overfitting&#x2F;Type III errors</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Overtraining-the-hidden-danger"><span class="nav-number">5.1.2.</span> <span class="nav-text">Overtraining, the hidden danger</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#N-Fold-cross-validation"><span class="nav-number">5.2.</span> <span class="nav-text">N-Fold cross-validation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Motivation"><span class="nav-number">5.2.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Variance-between-splits"><span class="nav-number">5.2.2.</span> <span class="nav-text">Variance between splits</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stratified-cross-validation"><span class="nav-number">5.2.3.</span> <span class="nav-text">Stratified cross-validation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cross-validation-doesn%E2%80%99t-solve-all-our-problems"><span class="nav-number">5.2.4.</span> <span class="nav-text">Cross-validation doesn’t solve all our problems</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Validation-Corpus"><span class="nav-number">5.3.</span> <span class="nav-text">Validation Corpus</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-6-Agreements"><span class="nav-number">6.</span> <span class="nav-text">Lecture 6 Agreements</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Human-agreement"><span class="nav-number">6.1.</span> <span class="nav-text">Human agreement</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Observed-Agreement"><span class="nav-number">6.2.</span> <span class="nav-text">Observed Agreement</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Chance-agreement"><span class="nav-number">6.3.</span> <span class="nav-text">Chance agreement</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reliability-of-agreement-Fleiss%E2%80%99-Kappa"><span class="nav-number">6.4.</span> <span class="nav-text">Reliability of agreement: Fleiss’ Kappa</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Interpretation-of-k-value"><span class="nav-number">6.4.1.</span> <span class="nav-text">Interpretation of $k$ value</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2021-p03-q09-2"><span class="nav-number">6.4.1.1.</span> <span class="nav-text">2021-p03-q09</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-8-Hidden-Markov-Models"><span class="nav-number">7.</span> <span class="nav-text">Lecture 8 (Hidden Markov Models)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Weather-prediction"><span class="nav-number">7.1.</span> <span class="nav-text">Weather prediction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Properties"><span class="nav-number">7.2.</span> <span class="nav-text">Properties</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Markov-Chains"><span class="nav-number">7.3.</span> <span class="nav-text">Markov Chains</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Start-and-End-states"><span class="nav-number">7.3.1.</span> <span class="nav-text">Start and End states</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2020-p03-q08"><span class="nav-number">7.3.1.1.</span> <span class="nav-text">2020-p03-q08</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#State-transition-probability"><span class="nav-number">7.4.</span> <span class="nav-text">State transition probability</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Emission-probabilities"><span class="nav-number">7.5.</span> <span class="nav-text">Emission probabilities</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2017-p02-q09"><span class="nav-number">7.5.0.1.</span> <span class="nav-text">2017-p02-q09</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Parameter-Estimation"><span class="nav-number">7.6.</span> <span class="nav-text">Parameter Estimation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Add-one-smoothed-version-of-these"><span class="nav-number">7.6.1.</span> <span class="nav-text">Add-one smoothed version of these</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2018-p03-q08"><span class="nav-number">7.6.1.1.</span> <span class="nav-text">2018-p03-q08</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2020-p03-q08-1"><span class="nav-number">7.6.1.2.</span> <span class="nav-text">2020-p03-q08</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fundamental-tasks-with-HMMs"><span class="nav-number">7.7.</span> <span class="nav-text">Fundamental tasks with HMMs</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-9-Viberti-Algorithm-for-HMM-decoding"><span class="nav-number">8.</span> <span class="nav-text">Lecture 9: Viberti Algorithm for HMM decoding</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Decoding"><span class="nav-number">8.1.</span> <span class="nav-text">Decoding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Verbiti"><span class="nav-number">8.2.</span> <span class="nav-text">Verbiti</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Intuition-Behind"><span class="nav-number">8.2.1.</span> <span class="nav-text">Intuition Behind</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2021-p03-q08"><span class="nav-number">8.2.1.1.</span> <span class="nav-text">2021-p03-q08</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Forward-Algorithm"><span class="nav-number">8.3.</span> <span class="nav-text">Forward Algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Precision-and-recall"><span class="nav-number">8.4.</span> <span class="nav-text">Precision and recall</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-12-Social-Networks"><span class="nav-number">9.</span> <span class="nav-text">Lecture 12 (Social Networks)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Definitions"><span class="nav-number">9.1.</span> <span class="nav-text">Definitions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Clustering"><span class="nav-number">9.2.</span> <span class="nav-text">Clustering</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Social-networks"><span class="nav-number">9.3.</span> <span class="nav-text">Social networks</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Examples"><span class="nav-number">9.3.1.</span> <span class="nav-text">Examples</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reasons-to-analyse-social-network"><span class="nav-number">9.3.2.</span> <span class="nav-text">Reasons to analyse social network</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Modelling"><span class="nav-number">9.3.3.</span> <span class="nav-text">Modelling</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Small-world-phenomenon"><span class="nav-number">9.3.4.</span> <span class="nav-text">Small world phenomenon</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2020-p03-q09"><span class="nav-number">9.3.4.1.</span> <span class="nav-text">2020-p03-q09</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Important-Concepts"><span class="nav-number">9.3.5.</span> <span class="nav-text">(Important) Concepts</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Erdos%E2%80%93Renyi-model"><span class="nav-number">9.4.</span> <span class="nav-text">Erdős–Rényi model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Watts-Strogatz-model"><span class="nav-number">9.5.</span> <span class="nav-text">Watts-Strogatz model</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-13"><span class="nav-number">10.</span> <span class="nav-text">Lecture 13</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Centrality-concepts"><span class="nav-number">10.1.</span> <span class="nav-text">Centrality concepts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Node-betweenness-centrality"><span class="nav-number">10.2.</span> <span class="nav-text">Node betweenness centrality</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Calculating-betweenness-with-Brandes"><span class="nav-number">10.3.</span> <span class="nav-text">Calculating betweenness with Brandes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pseudocode"><span class="nav-number">10.4.</span> <span class="nav-text">Pseudocode</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-14-Clique-Finding"><span class="nav-number">11.</span> <span class="nav-text">Lecture 14: Clique Finding</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Clustering-and-Classification"><span class="nav-number">11.1.</span> <span class="nav-text">Clustering and Classification</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Other-forms-of-clustering"><span class="nav-number">11.1.1.</span> <span class="nav-text">Other forms of clustering</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#x3D-x3D-Newman-Girvan-x3D-x3D-method"><span class="nav-number">11.2.</span> <span class="nav-text">&#x3D;&#x3D;Newman-Girvan&#x3D;&#x3D; method</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Edge-betweenness-centrality"><span class="nav-number">11.3.</span> <span class="nav-text">Edge betweenness centrality</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Haoran Jie"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Haoran Jie</p>
+  <div class="site-description" itemprop="description">18</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Haoran-Jie" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Haoran-Jie" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:samueljie1@gmail.com" title="E-Mail → mailto:samueljie1@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/samueljieee/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;samueljieee&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://haoran-jie.github.io/Cambridge/Notes/Machine-Learning-and-Real-World-Data/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Haoran Jie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Samuel's Blog">
+      <meta itemprop="description" content="18">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Machine Learning and Real World Data | Samuel's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Machine Learning and Real World Data
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-09-07 20:18:33 / Modified: 20:33:47" itemprop="dateCreated datePublished" datetime="2023-09-07T20:18:33+01:00">2023-09-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Cambridge/" itemprop="url" rel="index"><span itemprop="name">Cambridge</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Cambridge/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/Cambridge/Notes/Machine-Learning-and-Real-World-Data/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Cambridge/Notes/Machine-Learning-and-Real-World-Data/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="Lecture1"><a href="#Lecture1" class="headerlink" title="Lecture1"></a>Lecture1</h2><blockquote>
+<p><strong>Sentiment classification</strong> — the task of automatically deciding whether a review is positive or negative, based on the text of the review</p>
+<p><strong>Lexicon</strong> – lexicon is a list of words with some associated information.</p>
+</blockquote>
+<p><u>Suppose that a very large collection of documents describing the University of Cambridge has been collected. Your task is to build a classifier which assigns sentiment to each document, using the classes: positive, negative and neutral.</u></p>
+<ul>
+<li><u>Given the limited amount of annotated data, you decide to classify the documents using a standard sentiment lexicon. Explain how you would perform an experiment to do this.</u><ul>
+<li><font color="CornflowerBlue">Note that the preliminary description is important - we are told there is a large collection of documents, but we’re not told they are all of one genre. Unlike the artificially balanced sentiment data which was used for the practical, it is extremely unlikely the collection will be balanced - we might expect that the majority of the documents will be neutral.</font><ol>
+<li><font color="CornflowerBlue">Tokenize the documents (will probably also require ‘cleaning’ by removal of markup)</font></li>
+<li><font color="CornflowerBlue">Classify the documents by counting matches with words in the sentiment lexicon (explain assumptions about sentiment lexicon and give details)</font></li>
+<li><font color="CornflowerBlue">It is necessary to establish some sort of threshold for positive/negative decisions: development data should be used to do this.</font></li>
+<li><font color="CornflowerBlue">Treatment of ties should be discusses (there are several reasonable options here)</font></li>
+<li><font color="CornflowerBlue">Adjustment for sentiment strength should be discussed (there are several reasonable options here)</font></li>
+<li><font color="CornflowerBlue">Split annotated data 50:50 into development set and final evaluation set.</font></li>
+<li><font color="CornflowerBlue">Note that some form of <strong>normalization for document length</strong> is required, but students are not expected to know this</font></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><u>How would you evaluate the results of the system you have described in your answer to part (b) using the annotated data? Give details of the evaluation metrics you would use.</u><ul>
+<li><font color="CornflowerBlue">A decision has to be made as to how to use the annotated data for evaluation. The simplest method is to use majority class to decide on the gold standard. It is unlikely there will be many cases where the annotators have each chosen a different class, but such documents could be counted as neural.</font></li>
+<li><font color="CornflowerBlue">One can evaluate using <strong>precision</strong> and <strong>recall</strong> for each class. Accuracy will not work well because we cannot expect the dataset to be balanced</font></li>
+<li><font color="CornflowerBlue">The alternative is to evaluate the system using <strong>kappa</strong> in conjunction with the human annotated data </font></li>
+</ul>
+</li>
+<li><u>If the primary objective were to identify the documents with <strong>negative sentiment</strong>, how might your proposed evaluation change?</u><ul>
+<li><font color="CornflowerBlue">In this case, the distinction between the positive and neutral classes is unimportant. <strong>Recall should possibly be prioritized over precision on the negative class.</strong> </font></li>
+</ul>
+</li>
+<li><u>It is suggested to you that the classes automatically assigned by the sentiment lexicon approach could be used to provide training data for a Naive Bayes classifier. Could such a classifier perform better than the sentiment lexicon classifier which provided the decisions it was trained on? Explain your answer</u><ul>
+<li><font color="CornflowerBlue">The Naive Bayes classifier could improve over the sentiment lexicon classifier in the circumstance where the <strong>sentiment lexicon was missing one or more words</strong> which were good cues for sentiment with this document set, assuming that such words did occur sufficiently often associated with words which were in the sentiment lexicon. </font></li>
+<li><font color="CornflowerBlue">To see this, consider a toy example where the sentiment lexicon contains only the words good and bad. The document collection contains 1000 documents with both good and world-leading, 500 documents with only world-leading, 100 documents with only bad and 400 documents with none of these words. The test data has similar proportions: the first two sets are all both annotated as positive, the third set as negative and the fourth as neutral. Under these circumstances, the sentiment lexicon approach will classify the documents in the second set incorrectly, but the trained Naive Bayes algorithm would classify them as positive. </font></li>
+<li><font color="CornflowerBlue">This amounts to using the <strong>sentiment lexicon</strong> as seeds for a <strong>semi-supervised classifier</strong>. There are more sophisticated approaches to this than simply using Naive Bayes on the automatically annotated data, but these have not been discussed in the course so it is not expected that the answer includes details of such an approach</font></li>
+</ul>
+</li>
+</ul>
+<h4 id="Type-vs-Token"><a href="#Type-vs-Token" class="headerlink" title="Type vs. Token"></a>Type vs. Token</h4><p>In natural language processing (NLP), a <code>"type"</code> refers to a <strong>distinct word</strong> or symbol in a language, while a <code>"token"</code> refers to a <strong>specific instance</strong> of that word or symbol in a text. For example, in the sentence “the cat in the hat,” the word “the” is a type, but it appears twice as two different tokens in the sentence. This distinction is important because it allows for the calculation of various statistics in NLP, such as the type-token ratio.</p>
+<ul>
+<li>Any unique word is a type. Any given instance of a type is a token.</li>
+</ul>
+<p><u>Provide a sentence with exactly 4 types and 5 tokens. Explain any assumptions you make about the nature of tokens.</u></p>
+<p><font color="CornflowerBlue">Any 5 word sentence that contains one word type twice: e.g. <strong>the cat likes the dog</strong> In this example we assume that punctuation is removed and that all word tokens are lowercased. If this wasn’t the case we could have a sentence like A long long winding road. (1 mark for sentence, 1 mark for discussion of tokens)</font></p>
+<span id="more"></span>
+
+<h2 id="Lecture2-Naive-Bayes"><a href="#Lecture2-Naive-Bayes" class="headerlink" title="Lecture2: Naive Bayes"></a>Lecture2: Naive Bayes</h2><h3 id="What-is-machine-learning"><a href="#What-is-machine-learning" class="headerlink" title="What is machine learning?"></a>What is machine learning?</h3><ul>
+<li>A program that <strong>learns from data</strong> </li>
+<li>A program that adapts after having been exposed to new data.</li>
+<li>A program that learns implicitly from data.</li>
+<li>The ability to learn from data <strong>without explicit programming.</strong></li>
+</ul>
+<h4 id="Terminology"><a href="#Terminology" class="headerlink" title="Terminology"></a>Terminology</h4><blockquote>
+<p><strong>Features</strong> are easily observable (and not necessarily obviously meaningful) <strong>properties</strong> of the data.</p>
+<p><strong>Classes</strong> are the meaningful <strong>labels</strong> associated with the data.</p>
+<p><strong>Classification</strong> then is <strong>function</strong> that maps from features to a target class.</p>
+</blockquote>
+<h3 id="Probabilistic-classifiers-provide-a-distribution-over-classes"><a href="#Probabilistic-classifiers-provide-a-distribution-over-classes" class="headerlink" title="Probabilistic classifiers provide a distribution over classes"></a>Probabilistic classifiers provide a distribution over classes</h3><ul>
+<li>Given a set of input features, a probabilistic classifier returns the probability of each class.</li>
+<li>That is, for a set of observed features $O$ and classes $c_1, \ldots, c_n \in C$, it gives $P(c_i|O)$ for all $c_i \in C$.</li>
+<li>For us, $O$ is the set of all the words in a review ${w_1, w_2, \ldots, w_n}$ where $w_i$ is the $i$th word in a review, and $C = {\text{POS}, \text{NEG}}$</li>
+<li>We get: $P(\text{POS}|w_1, w_2, \ldots, w_n)$ and $P(\text{NEG}|w_1, w_2, \ldots, w_n)$.</li>
+<li>We can decide on a single class by choosing the one with the highest probability given the features:</li>
+</ul>
+<p>$$<br>\hat{c} = \arg\max_{c \in C} P(c|O)<br>$$</p>
+<h3 id="multinomial-Naive-Bayes-classifier"><a href="#multinomial-Naive-Bayes-classifier" class="headerlink" title="(multinomial) Naïve Bayes classifier"></a>(multinomial) Naïve Bayes classifier</h3><blockquote>
+<p><strong>Bag of words</strong>: an unordered set of words with their position ignored, keeping only their frequency in the document </p>
+</blockquote>
+<ul>
+<li>Naïve Bayes classifiers are simple probabilistic classifiers based on applying Bayes’ theorem.</li>
+</ul>
+<h4 id="Bayes-Theorem"><a href="#Bayes-Theorem" class="headerlink" title="Bayes Theorem"></a>Bayes Theorem</h4><img src="https://s2.loli.net/2023/02/13/gXKUjtxO27P1qdr.png" alt="image-20230123141327820" style="zoom:50%;">
+
+<ul>
+<li>We can remove P(O) because it will be constant during a given classification and not affect the result of argmax</li>
+<li>$P(c)$: <strong>prior probability</strong>; $P(O|c)$: <strong>likelihood</strong></li>
+<li>We call Naive Bayes a generative model because we can read the above equation as stating a kind of implicit assumption about how a document is generated: <ol>
+<li>A class is sampled from $P(c)$</li>
+<li>Words are generated by sampling from $P(O|c)$</li>
+</ol>
+</li>
+</ul>
+<h4 id="Naive-Bayes-theorem"><a href="#Naive-Bayes-theorem" class="headerlink" title="Naive Bayes theorem"></a>Naive Bayes theorem</h4><img src="https://s2.loli.net/2023/02/13/FBSypt2HPRDO43i.png" alt="image-20230123141500029" style="zoom:50%;">
+
+<ul>
+<li>The position of the words in ignored and we make use of frequency of each word</li>
+</ul>
+<h3 id="Estimate-for-paramters-of-Naive-Bayes"><a href="#Estimate-for-paramters-of-Naive-Bayes" class="headerlink" title="Estimate for paramters of Naive Bayes"></a>Estimate for paramters of Naive Bayes</h3><ul>
+<li>$P(C)$</li>
+</ul>
+<img src="https://s2.loli.net/2023/02/13/NXwtTyF6akZCs17.png" alt="image-20230202125644262" style="zoom:50%;">
+
+<ul>
+<li>$P(f_i|C)$</li>
+</ul>
+<img src="https://s2.loli.net/2023/02/13/rCGFBEXIcMRzL1b.png" alt="image-20230202125830382" style="zoom:50%;">
+
+<p>Here the <strong>vocabulary $V$</strong> consists of the <strong>union of all the word types</strong> in all classes, not just the words in one class $c$.</p>
+<h4 id="Laplace-smoothing"><a href="#Laplace-smoothing" class="headerlink" title="Laplace smoothing"></a>Laplace smoothing</h4><img src="https://s2.loli.net/2023/02/13/1AJ7qjgfZiQzSKI.png" alt="image-20230202125905062" style="zoom:50%;">
+
+<h4 id="Calculations"><a href="#Calculations" class="headerlink" title="Calculations"></a>Calculations</h4><img src="https://s2.loli.net/2023/02/13/7GbUwYXIAtSlHoO.png" alt="image-20230202125413363" style="zoom:50%;">
+
+<h3 id="Full-algorithm"><a href="#Full-algorithm" class="headerlink" title="Full algorithm"></a>Full algorithm</h3><img src="https://s2.loli.net/2023/02/13/kCwRgL4pHjvd5FW.png" alt="image-20230202130218349" style="zoom:50%;">
+
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function Train Naive Bayes(D,C) returns log P(c) <span class="keyword">and</span> log P(w|c)</span><br><span class="line">  <span class="keyword">for</span> each <span class="keyword">class</span> <span class="title class_">c</span> <span class="keyword">in</span> C: <span class="comment">#Calculate P(c) temrs</span></span><br><span class="line">    N_doc = number of documents <span class="keyword">in</span> D</span><br><span class="line">    N_c = number of documents <span class="keyword">from</span> D <span class="keyword">in</span> <span class="keyword">class</span> <span class="title class_">c</span></span><br><span class="line">    logprior[c] = log(N_c/N_doc)</span><br><span class="line">    V = vocabulary of D</span><br><span class="line">    bigdoc[c].append(d) <span class="keyword">for</span> d <span class="keyword">in</span> D <span class="keyword">with</span> <span class="keyword">class</span> <span class="title class_">c</span></span><br><span class="line">    <span class="keyword">for</span> each word <span class="keyword">in</span> V: <span class="comment">#calculate P(w|c) terms</span></span><br><span class="line">      count(w,c) = <span class="comment"># of occurance of w in bigdoc[c] </span></span><br><span class="line">      loglikelihood[w,c] = log((count(w,c)+<span class="number">1</span>)/<span class="built_in">sum</span>(count(w`,c)+<span class="number">1</span> <span class="keyword">for</span> w <span class="keyword">in</span> V))</span><br><span class="line">  <span class="keyword">return</span> logprior, loglikelihood, V</span><br><span class="line"></span><br><span class="line">function Test Naive Bayes(testdoc, logprior, loglikelihood, C, V) returns best c</span><br><span class="line">	<span class="keyword">for</span> each <span class="keyword">class</span> <span class="title class_">c</span> <span class="keyword">in</span> C:</span><br><span class="line">    <span class="built_in">sum</span>[c] = logprior[c]</span><br><span class="line">    <span class="keyword">for</span> each position i <span class="keyword">in</span> testdoc:</span><br><span class="line">      word = testdoc[i]</span><br><span class="line">      <span class="built_in">sum</span>[c] += loglikelihood[word,c]</span><br><span class="line">  <span class="keyword">return</span> argmax_c <span class="built_in">sum</span>[c]</span><br></pre></td></tr></tbody></table></figure>
+
+<h5 id="2018-p03-q07"><a href="#2018-p03-q07" class="headerlink" title="2018-p03-q07"></a>2018-p03-q07</h5><img src="https://s2.loli.net/2023/05/14/kNzGCbVwfcBO1Xi.png" alt="image-20230514115121176" style="zoom: 67%;">
+
+<p><u>How could you derive parameter estimates for use in the Naive Bayes classifiers from this type of data?</u></p>
+<p><font color="CornflowerBlue">We need to calculate the probabilities $P(g)$, $P(m)$, $P(w)$, which is relatively straightforward. </font></p>
+<p><font color="CornflowerBlue">Additionally, we need to calculate <strong>conditional probabilities</strong> such as</font></p>
+<p>$P(\text|g)$ or $P(\textNaN|g)$. </p>
+<p><font color="CornflowerBlue">In the first option, we count each species only once for each record. The probability is then calculated as the number of records for the category where the species appears, divided by the total number of records for the category:</font></p>
+<p>$$ P(\text|g) = \frac{\text{count(records with species in category g)}}{\text{count(all records in category g)}}$$</p>
+<p><font color="CornflowerBlue">For the second option, we calculate the number of individual trees of each species, divided by the total number of individual trees in that category:</font></p>
+<p>$$ P(\text{tree-of-species}|g) = \frac{\text{count(trees of species in category g)}}{\text{count(all trees in category g)}} $$</p>
+<p><font color="CornflowerBlue">Both probabilities need to be smoothed to avoid zero probabilities. In the practicals, we have used <strong>add-one smoothing</strong>, where 1 is added to every count, including the zero counts. Thus, the smoothed probabilities become:</font></p>
+<p>$$ P(\text{species}|g)_{\text{smoothed}} = \frac{\text{count(records with species in category g)} + 1}{\text{count(all records in category g)} + N} $$</p>
+<p>$$ P(\text{tree-of-species}|g)_{\text{smoothed}} = \frac{\text{count(trees of species in category g)} + 1}{\text{count(all trees in category g)} + N} $$</p>
+<p><font color="CornflowerBlue">where N is the number of distinct species (or tree-of-species, depending on context).</font></p>
+<p><u>How could you used the available data to <strong>train and test</strong> a Naive Bayes classifier?</u></p>
+<p><font color="CornflowerBlue">Given the <strong>limited number of data points</strong>, it is essential to use <strong>cross validation</strong>. i.e., the data should be split into <strong>folds</strong>, with a different fold held out for testing each time. Since the split between the categories is uneven, it would be reasonable to use <strong>stratified cross-validation</strong> (i.e., balance the categories in each fold). The amount of data is too small for 10-fold cross validation: 5-fold is more reasonable. The <strong>mean accuracy and variance across the folds</strong> should be reported. </font></p>
+<p><font color="CornflowerBlue">Although we have suggested that there should always be some completely unseen data for final evaluation, there really isn’t enough data to make this possible. </font></p>
+<p><font color="CornflowerBlue">The cross-validation experiment should ideally be <strong>repeated</strong> with different data splits. </font></p>
+<p><font color="CornflowerBlue"><strong>Accuracy</strong> alone is not fully informative. Ideally one wants to report the <strong>confusion matrix</strong>, although the practicals do not go into the details of methodology with multiple classes so this is a bonus point rather than part of the expected answer.</font></p>
+<p><u>You are now given a large catalogue of tree species with each species manually assigned to zero or more of the categories. Describe a modification to your previous experiment which makes use of this data.</u></p>
+<p><font color="CornflowerBlue">Given that there might be some data sparsity (which is likely due to the relatively small amount of data), the best way to utilize the additional data would probably be to <strong>enhance the smoothing</strong>. Assuming that we’ve previously described add-one smoothing, a simple approach would be to parameterize the smoothing based on whether the tree species was associated with the category in the list. </font></p>
+<p><font color="CornflowerBlue">For instance, if there are no cases of apple trees in meadows in the collected data, and the apple tree is not listed under meadow in the catalogue, the smoothing parameter might be set to 0.1. Conversely, if the tree species is associated with the category, a smoothing parameter of 1 could be used.</font></p>
+<p><font color="CornflowerBlue">An alternative approach would be to use the additional data to <strong>improve the classification in cases where the Naive Bayes (NB) classifier was not making a clear decision.</strong> The challenge with this approach is that the probability estimates from the NB classifier are unlikely to be very accurate.</font></p>
+<p><font color="CornflowerBlue">Regardless, this experiment would involve some parameters (like the 0.1 vs 1 for smoothing) that need to be tuned. The course notes have mentioned this process of tuning parameters.</font></p>
+<p><font color="CornflowerBlue">Demonstrating improvement would be challenging without additional data, unless the difference between methods is substantial. Conducting a proper <strong>significance test</strong> would essentially be <strong>impossible</strong> due to the lack of data.</font></p>
+<h3 id="Training-and-Testing"><a href="#Training-and-Testing" class="headerlink" title="Training and Testing"></a>Training and Testing</h3><blockquote>
+<p><strong>Training</strong>: the process of making observations about some known data set</p>
+</blockquote>
+<p>In supervised machine learning you use the classes that come with the data in the training phase</p>
+<blockquote>
+<p><strong>Testing</strong>: the process of applying the knowledge obtained in the training stage to some new, unseen data</p>
+</blockquote>
+<p>==We never test on data that we trained a system on==</p>
+<ul>
+<li>Make sure the <strong>ratio</strong> of the classes is the same for both, particular the case for unbalanced classes</li>
+<li>We shouldn’t test of the same data more than once</li>
+</ul>
+<h4 id="train-dev-test"><a href="#train-dev-test" class="headerlink" title="train:dev:test"></a><code>train:dev:test</code></h4><p>In the dev set, we allow ourselves to repeat on this set. (<strong>Used for hyper-parameter tuning</strong>)</p>
+<p>The problem is what we called <strong>overfitting</strong>: </p>
+<ul>
+<li>A machine learning model performing exceedingly <strong>well</strong> on the <strong>training data</strong> but failing to <strong>generalize</strong> accurately to <strong>unseen data</strong>.</li>
+</ul>
+<h4 id="Unknown-words-ignore"><a href="#Unknown-words-ignore" class="headerlink" title="Unknown words (ignore!)"></a>Unknown words (ignore!)</h4><img src="https://s2.loli.net/2023/02/13/exg56G1o4XQIvaz.png" alt="image-20230202130130781" style="zoom:50%;">
+
+<h4 id="Stop-words-ignore"><a href="#Stop-words-ignore" class="headerlink" title="Stop words (ignore!)"></a>Stop words (ignore!)</h4><img src="https://s2.loli.net/2023/02/13/c2pmnwzAjtfrKdv.png" alt="image-20230202130156025" style="zoom:50%;">
+
+<h3 id="Optimizing-for-Sentiment-Analysis"><a href="#Optimizing-for-Sentiment-Analysis" class="headerlink" title="Optimizing for Sentiment Analysis"></a>Optimizing for Sentiment Analysis</h3><h4 id="Binary-multinomial-Naive-Bayes"><a href="#Binary-multinomial-Naive-Bayes" class="headerlink" title="Binary multinomial Naive Bayes"></a><code>Binary multinomial</code> Naive Bayes</h4><ul>
+<li>For sentiment classification and a number of other text classification tasks, whether <strong>a word occurs or not seems to matter more than its frequency.</strong> Thus it often improves performance to <strong>clip the word counts in each document at 1.</strong></li>
+</ul>
+<h4 id="Deal-with-negation"><a href="#Deal-with-negation" class="headerlink" title="Deal with negation"></a>Deal with negation</h4><img src="https://s2.loli.net/2023/02/13/imHWA7YGUo3TQJn.png" alt="image-20230202130615643" style="zoom:50%;">
+
+<h4 id="Lexicon-based-information"><a href="#Lexicon-based-information" class="headerlink" title="Lexicon-based information"></a>Lexicon-based information</h4><p><u>How can you use lexicon-based information to make your classifier more robust towards languages change?</u></p>
+<p><font color="CornflowerBlue">The key to this question is that the NB classifier needs to be regularly <strong>retrained</strong>, and that we need a cheap way of finding new informative training material. The lexicon can help in this. We could run a <strong>lexicon-based approach on some new training data</strong> sourced from the incoming message stream.</font></p>
+<p><font color="CornflowerBlue">An alternative method is to use the <strong>labels predicted by the current NB system as training material for the next NB retraining</strong>. This might help if new words occur sufficiently often in a message together with those from the lexicon</font></p>
+<p><font color="CornflowerBlue">You could also go down an <strong>Active learning</strong> route by trying to find the training examples most likely to be <strong>informative</strong>, and have a <strong>human annotate</strong> those for retraining the NB classifier. </font></p>
+<p><font color="CornflowerBlue">Voting between classifiers.</font></p>
+<h3 id="Evaluation-precision-recall-F-measure"><a href="#Evaluation-precision-recall-F-measure" class="headerlink" title="Evaluation: precision, recall, F-measure"></a>Evaluation: precision, recall, F-measure</h3><img src="https://s2.loli.net/2023/02/13/eX4j5ONxGC6FdH2.png" alt="image-20230202152817693" style="zoom:50%;">
+
+<h5 id="2021-p03-q09"><a href="#2021-p03-q09" class="headerlink" title="2021-p03-q09"></a>2021-p03-q09</h5><img src="https://s2.loli.net/2023/05/19/Jo3jVYBiQ7OnNL5.png" alt="image-20230518215503039" style="zoom: 33%;">
+
+<h4 id="F-measure"><a href="#F-measure" class="headerlink" title="F-measure"></a>F-measure</h4><img src="https://s2.loli.net/2023/02/13/j15GDfLcFxUPAOC.png" alt="image-20230202153023805" style="zoom:50%;">
+
+<h4 id="Evaluating-with-more-than-2-classes"><a href="#Evaluating-with-more-than-2-classes" class="headerlink" title="Evaluating with more than 2 classes"></a>Evaluating with more than 2 classes</h4><img src="https://s2.loli.net/2023/02/13/GjTqzV1h7w3UOkv.png" alt="image-20230202153132477" style="zoom:50%;">
+
+<h3 id="Cross-Validation"><a href="#Cross-Validation" class="headerlink" title="Cross Validation"></a>Cross Validation</h3><img src="https://s2.loli.net/2023/02/13/4Le6TSmGfNXlwZR.png" alt="image-20230202153609552" style="zoom:50%;">
+
+<h3 id="Past-papers"><a href="#Past-papers" class="headerlink" title="Past papers"></a>Past papers</h3><h5 id="2020-p03-q07"><a href="#2020-p03-q07" class="headerlink" title="2020-p03-q07"></a>2020-p03-q07</h5><img src="https://s2.loli.net/2023/05/19/J7QbNr5qFghzLna.png" alt="image-20230518214732542" style="zoom: 50%;">
+
+<img src="https://s2.loli.net/2023/05/19/K9SH4LcikTVRtxg.png" alt="image-20230518214756477" style="zoom:50%;">
+
+<img src="https://s2.loli.net/2023/05/19/sYfR8ajUqy2mzOQ.png" alt="image-20230518214814329" style="zoom:50%;">
+
+<img src="https://s2.loli.net/2023/05/19/zrZXD9IJHcbpPfU.png" alt="image-20230518214825966" style="zoom:50%;">
+
+<img src="https://s2.loli.net/2023/05/19/Gk1cZUlODJ9WHEY.png" alt="image-20230518214837771" style="zoom:50%;">
+
+<h5 id="2021-p03-q09-1"><a href="#2021-p03-q09-1" class="headerlink" title="2021-p03-q09"></a>2021-p03-q09</h5><img src="https://s2.loli.net/2023/05/19/uFNJkqZpoY3W9VE.png" alt="image-20230518215328998" style="zoom: 33%;">
+
+<h2 id="Lecture3-Zipf’s-Law-and-Heap’s-Law"><a href="#Lecture3-Zipf’s-Law-and-Heap’s-Law" class="headerlink" title="Lecture3: Zipf’s Law and Heap’s Law"></a>Lecture3: Zipf’s Law and Heap’s Law</h2><h3 id="Zipf’s-law"><a href="#Zipf’s-law" class="headerlink" title="Zipf’s law"></a>Zipf’s law</h3><blockquote>
+<p>Word frequency distributions obey a power law</p>
+</blockquote>
+<ul>
+<li>There are a large number of high frequency words</li>
+<li>There are a small number of low frequency words</li>
+</ul>
+<p><strong>The nth most frequent word has a frequency proportional to 1/n</strong><br>$$<br>f_w \approx \frac{k}{r_w^a}<br>$$<br>$f_w$: frequency of word $w$</p>
+<p>$r_w$: frequency rank of word $w$</p>
+<p>$\alpha,k$: constants, which may vary with the language</p>
+<ul>
+<li>e.g. $\alpha$ is around 1 for English but 1.3 for German</li>
+</ul>
+<p><strong>Actually</strong><br>$$<br>f_w \approx \frac{k}{(r_w+\beta)^\alpha}<br>$$<br>$\beta$: <strong>a shift in the rank</strong></p>
+<img src="https://s2.loli.net/2023/05/14/zyLpx4HskDjhQWf.png" alt="image-20230514132128540">
+
+<h4 id="Other-examples"><a href="#Other-examples" class="headerlink" title="Other examples"></a>Other examples</h4><ul>
+<li>Sizes of settlements</li>
+<li>Frequency of access to web pages</li>
+<li>Size of earthquakes</li>
+<li>Word senses per word</li>
+<li>Notes in musical performance</li>
+<li>Machine instructions</li>
+</ul>
+<h4 id="Zipf-curves-in-log-space"><a href="#Zipf-curves-in-log-space" class="headerlink" title="Zipf curves in log-space"></a>Zipf curves in log-space</h4><img src="https://s2.loli.net/2023/05/14/EuY7coaglCUF6HP.png" alt="image-20230513220451428" style="zoom:50%;">
+
+<p>By fitting a simple line to the data in log-space we can estimate the language specific parameters α and k</p>
+<h3 id="Heap’s-law"><a href="#Heap’s-law" class="headerlink" title="Heap’s law"></a>Heap’s law</h3><ul>
+<li>We call any unique word a <strong>type</strong>: “the” is a word type</li>
+<li>We call an instance of a type a <strong>token</strong>: there are 13721 “the” token in Moby Dick</li>
+</ul>
+<blockquote>
+<p>Describes the relationship between the size of a vocabulary and the size of text that give rise to it</p>
+</blockquote>
+<p>$$<br>u_n = kn^\beta<br>$$</p>
+<p>where</p>
+<p>$u_n$: number of types (unique items) i.e. vocabulary size</p>
+<p>$n$: total number of tokens i.e. text size</p>
+<p>$\beta, k$: constants (language dependent)</p>
+<ul>
+<li>$\beta$ is around $\frac{1}{2}$</li>
+<li>$30 \le k \le 100$</li>
+</ul>
+<h3 id="Zipf’s-law-and-Heaps’-law-affected-our-classifier"><a href="#Zipf’s-law-and-Heaps’-law-affected-our-classifier" class="headerlink" title="Zipf’s law and Heaps’ law affected our classifier"></a>Zipf’s law and Heaps’ law affected our classifier</h3><img src="https://s2.loli.net/2023/05/14/NPh73jIFwSo9tY2.png" alt="image-20230513220918534" style="zoom: 33%;">
+
+<h4 id="Smoothing-redistribute-the-probability-mass"><a href="#Smoothing-redistribute-the-probability-mass" class="headerlink" title="Smoothing redistribute the probability mass"></a>Smoothing redistribute the probability mass</h4><img src="https://s2.loli.net/2023/05/14/RLxUWcBbkyNdu7h.png" alt="image-20230513221002698" style="zoom:50%;">
+
+<ul>
+<li>It takes some portion away from MLE estimation</li>
+<li>It <strong>redistribute</strong> this portion to <strong>unseen types</strong> </li>
+<li>Better estimate; still not perfect</li>
+</ul>
+<h2 id="Lecture-4"><a href="#Lecture-4" class="headerlink" title="Lecture 4"></a>Lecture 4</h2><h3 id="Specificity-and-Power-of-a-Test"><a href="#Specificity-and-Power-of-a-Test" class="headerlink" title="Specificity and Power of a Test"></a>Specificity and Power of a Test</h3><p>When performing a significance testing: there are two things we don’t want it to happen:</p>
+<ul>
+<li>That a test declares a difference when it doesn’t exist (<strong>Type 1 error</strong>)<ul>
+<li>$\alpha$ is the probability that this happens</li>
+<li>$1-\alpha$ is called the <u>specificity</u> of a test</li>
+<li><strong>Specificity issues</strong><ul>
+<li>This should never happen (problem of scientific ethics)</li>
+<li>Develop an intuition when numbers look “too good to be true”</li>
+<li>You probably used the wrong test (which has built in assumptions that won’t apply)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>That a test declares no difference when it does (<strong>Type 2 error</strong>)<ul>
+<li>$\beta$ is the probability that this happens</li>
+<li>$1-\beta$ is called the <u>power</u> of a test</li>
+<li><strong>Power issues</strong><ul>
+<li>This is quite common</li>
+<li>Use a more powerful test, for example permutation test rather than sign test</li>
+<li>Use more data</li>
+<li>Change your system so there’s a stronger effect</li>
+<li>Hopefully your $p$ will decrease and finally reach below $\alpha$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Significance-Reporting-the-three-deadly-sins"><a href="#Significance-Reporting-the-three-deadly-sins" class="headerlink" title="Significance Reporting - the three deadly sins"></a>Significance Reporting - the three deadly sins</h3><ul>
+<li><p><strong>Case 1</strong>: No significance test performed, statements of “better” and “outperform” and the like are used only based on raw comparisons of numbers → <strong>Methodological Unsoundness</strong></p>
+</li>
+<li><p><strong>Case 2</strong>: Significance test was performed, but statements of “better” etc are still made for all differences, even the insignificant ones → <strong>Scientific illiteracy</strong></p>
+</li>
+<li><p><strong>Case 3</strong>: No test are performed, statements of “better” etc are made just on basis of raw differences, and the keyword “<u>significant</u>“ is still used, often to refer to big effect sizes → <strong>Scientific fraud</strong></p>
+</li>
+</ul>
+<h3 id="Significant-Digits"><a href="#Significant-Digits" class="headerlink" title="Significant Digits"></a>Significant Digits</h3><ul>
+<li>For instance, when deciding whether you should report 0.34 or 0.344, you should only report three digits if the difference between 0.340 and 0.344 is likely to be significant on your dataset</li>
+</ul>
+<h3 id="Trouble-shooting"><a href="#Trouble-shooting" class="headerlink" title="Trouble shooting"></a>Trouble shooting</h3><ul>
+<li>Getting accuracies per each class can sometimes point out problems</li>
+</ul>
+<h3 id="Significance-testing"><a href="#Significance-testing" class="headerlink" title="Significance testing"></a>Significance testing</h3><img src="https://s2.loli.net/2023/06/07/FyHftbS4gT98ENK.png" alt="image-20230607150640050" style="zoom:50%;">
+
+<hr>
+<p><img src="https://s2.loli.net/2023/06/07/58c2DsklfMTe7BH.png" alt="image-20230607150540740"></p>
+<h3 id="Past-papers-1"><a href="#Past-papers-1" class="headerlink" title="Past papers"></a>Past papers</h3><p><u>A piece of writing has been discovered which both of our authors claim to design be theirs. Could the classifier be used to settle this authorship dispute? Explain your answer.</u></p>
+<p><font color="CornflowerBlue">Accuracy of the classifier may be measured on a test set that was not used during training or development of the classifier (1 mark). Accuracy is the number of correct decisions divided by total decisions (1 mark). Could test the significance of the result against a baseline system that selects between the 2 classes at random—null hypothesis being that your classifier is only as good as uniform chance (1 mark) The classifier could not prove authorship but can give a <strong>probability</strong> of the author given the training data (1 mark). </font></p>
+<h2 id="Lecture5"><a href="#Lecture5" class="headerlink" title="Lecture5"></a>Lecture5</h2><h3 id="Ability-to-generalise"><a href="#Ability-to-generalise" class="headerlink" title="Ability to generalise"></a>Ability to generalise</h3><ul>
+<li><p>We want a classifier that performs well on new, never-before seen data.</p>
+</li>
+<li><p>That is equivalent to saying we want our classifier to ==generalise== well.</p>
+</li>
+<li><p>We want it to:</p>
+<ul>
+<li><strong>Recognise only</strong> those characteristics of the data that are <strong>general</strong> enough to also apply to some <strong>unseen data</strong></li>
+</ul>
+<ul>
+<li><strong>Ignore</strong> the <strong>characteristics</strong> of the training data that are <strong>specific</strong> to the <strong>training data</strong></li>
+</ul>
+</li>
+</ul>
+<p>Because of this, we never test on our training data, but use separate test data. But <strong>overtraining</strong> can still happen even if we use separate test data. </p>
+<h4 id="Overtraining-x2F-Overfitting-x2F-Type-III-errors"><a href="#Overtraining-x2F-Overfitting-x2F-Type-III-errors" class="headerlink" title="Overtraining/Overfitting/Type III errors"></a>Overtraining/Overfitting/Type III errors</h4><ul>
+<li><p>Overtraining is when you think you are making improvements (because your performance on the test data goes up)</p>
+</li>
+<li><p>but in reality you are making your classifier worse because it generalises less well to data other than your test data.</p>
+</li>
+<li><p>You could make repeated improvements to your classifier, choose the one that performs best on the test data, and declare that as your final result.</p>
+</li>
+<li><p>By repeatedly using the test data, you have lost the effect of it being surprising, really unseen data.</p>
+</li>
+<li><p>The classifier has now indirectly also picked up accidental properties of the (small) test data.</p>
+</li>
+</ul>
+<h4 id="Overtraining-the-hidden-danger"><a href="#Overtraining-the-hidden-danger" class="headerlink" title="Overtraining, the hidden danger"></a>Overtraining, the hidden danger</h4><ul>
+<li>You have to actively work harder (be vigilant) in order to notice that it is happening</li>
+<li>But you may be tempted not to notice it</li>
+</ul>
+<h3 id="N-Fold-cross-validation"><a href="#N-Fold-cross-validation" class="headerlink" title="N-Fold cross-validation"></a>N-Fold cross-validation</h3><h4 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h4><ul>
+<li>We can’t afford getting new test data each time.</li>
+<li>We must never test on the training set.</li>
+<li>We also want to use as much training material as possible (because ML systems trained on more data are almost always better).</li>
+<li>We can achieve this by using every little bit of training data for testing – under the right kind of conditions.</li>
+<li>By cleverly iterating the test and training split around.</li>
+</ul>
+<img src="https://s2.loli.net/2023/02/13/Tw6W5myFOxsQhij.png" alt="image-20230203141923666" style="zoom:50%;">
+
+<p><font color="Red">仍然有分training, dev, 和 test. test最后用. 图中的test set是dev set的意思. </font></p>
+<h4 id="Variance-between-splits"><a href="#Variance-between-splits" class="headerlink" title="Variance between splits"></a>Variance between splits</h4><ul>
+<li>If all splits performed equally well, this is a good sign</li>
+</ul>
+<p>$$<br>var = \frac{1}{n}\sum\limits^n_i(x_i-\mu)^2<br>$$</p>
+<ul>
+<li>$x_i$: the score of the $i^{th}$ fold</li>
+<li>$\mu$: $avg(x_i)$: the average of the score</li>
+</ul>
+<h4 id="Stratified-cross-validation"><a href="#Stratified-cross-validation" class="headerlink" title="Stratified cross-validation"></a>Stratified cross-validation</h4><p>A special case of cross-validation where each split is done in such a way that it <strong>mirrors the distribution of classes observed in the overall data.</strong></p>
+<h4 id="Cross-validation-doesn’t-solve-all-our-problems"><a href="#Cross-validation-doesn’t-solve-all-our-problems" class="headerlink" title="Cross-validation doesn’t solve all our problems"></a>Cross-validation doesn’t solve all our problems</h4><ul>
+<li>Cross-validation gives us some safety from overtraining.</li>
+<li>Nevertheless, even with cross-validation, we still use data that is in some sense “seen.”</li>
+<li>So it is no good for incremental, small improvements reached via feature engineering.</li>
+<li>We also cannot use the cross-validation trick to set global parameters because we only want to accept parameters that are independent of any training.</li>
+<li>As always, the danger is learning accidental properties that don’t generalize.</li>
+<li>Enter the validation corpus.</li>
+</ul>
+<h3 id="Validation-Corpus"><a href="#Validation-Corpus" class="headerlink" title="Validation Corpus"></a>Validation Corpus</h3><ul>
+<li>The validation corpus is <strong>never</strong> used in training or testing.</li>
+<li>We can therefore use this corpus for two useful purposes:<ul>
+<li>We can use it to set any <strong>parameters</strong> in any algorithm before we start with training/testing.</li>
+<li>We can also use this corpus as a <strong>stopping criterion</strong> for feature engineering.<ul>
+<li>We can detect “improvements” that help in cross-validation over the train corpus but lead to performance losses on the validation corpus.</li>
+<li>We stop “fiddling” with the features when the result on the validation corpus starts decreasing (in comparison to the cross-validation results).</li>
+<li>Then, and only then, do we measure on the test corpus (once).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Lecture-6-Agreements"><a href="#Lecture-6-Agreements" class="headerlink" title="Lecture 6 Agreements"></a>Lecture 6 Agreements</h2><p>So far, your datasets have contained only the clearly positive or negative reviews </p>
+<ul>
+<li>Only reviews with extreme star-rating were used. </li>
+<li>This is a clear simplification of the real task. </li>
+<li>If we consider the middle range of star-ratings, things gets more uncertain.</li>
+</ul>
+<h3 id="Human-agreement"><a href="#Human-agreement" class="headerlink" title="Human agreement"></a>Human agreement</h3><blockquote>
+<p>Human agreement is the <strong>only</strong> empirically available source of truth in decisions which are influenced by subjective judgement.</p>
+</blockquote>
+<ul>
+<li>Something is <code>true</code> if several humans agree on their judgement, independently from each other</li>
+<li>The more they agree the more <code>true</code> it is</li>
+</ul>
+<h3 id="Observed-Agreement"><a href="#Observed-Agreement" class="headerlink" title="Observed Agreement"></a>Observed Agreement</h3><img src="https://s2.loli.net/2023/05/14/BSj2i9H4GulCdpg.png" alt="image-20230206213616150" style="zoom: 25%;">
+
+<img src="https://s2.loli.net/2023/05/14/dvfNVItiT1UmO5F.png" alt="Screenshot 2023-02-06 at 21.36.31" style="zoom: 25%;">
+
+<h3 id="Chance-agreement"><a href="#Chance-agreement" class="headerlink" title="Chance agreement"></a>Chance agreement</h3><img src="https://s2.loli.net/2023/05/14/fCOrAp8csR9TkGn.png" alt="Screenshot 2023-02-06 at 21.38.18" style="zoom:33%;">
+
+<img src="https://s2.loli.net/2023/05/14/tR9NaGomXIT24pj.png" alt="Screenshot 2023-02-06 at 21.37.50" style="zoom:33%;">
+
+<h3 id="Reliability-of-agreement-Fleiss’-Kappa"><a href="#Reliability-of-agreement-Fleiss’-Kappa" class="headerlink" title="Reliability of agreement: Fleiss’ Kappa"></a>Reliability of agreement: Fleiss’ Kappa</h3><ul>
+<li>Measures the reliability of agreement between a fixed number of raters when assigning categorical ratings</li>
+<li>Calculates the degree of agreement over that which would be expected by chance</li>
+</ul>
+<p>$$<br>k = \frac{\bar{P}_a-\bar{P}_e}{1-\bar{P}_e}<br>$$</p>
+<img src="https://s2.loli.net/2023/04/10/MOCQEYRW1vSgD6Z.png" alt="image-20230410101944878" style="zoom: 33%;">
+
+
+
+<p><img src="https://s2.loli.net/2023/04/10/XkFDLrvY1o5E7Jc.png" alt="image-20230410102800084"></p>
+<p>$N$: number of items</p>
+<p>$k$: number of judges</p>
+<p>$n$: number of categories</p>
+<p>$S_i$: ratio of observed to possible pairwise agreement</p>
+<p>$P(A)=\frac{1}{N}\sum\limits_{i-1}^NS_i$</p>
+<p>$P(E)=\frac{1}{N}\sum\limits^n_{j=1}(\frac{C_j}{2})^2$</p>
+<h4 id="Interpretation-of-k-value"><a href="#Interpretation-of-k-value" class="headerlink" title="Interpretation of $k$ value"></a>Interpretation of $k$ value</h4><img src="https://s2.loli.net/2023/04/10/deoqWn56pEbmY4R.png" alt="image-20230410103504643" style="zoom: 50%;">
+
+<p><u>Fleiss’ Kappa is 0.65 for this set. Explain what Kappa is and outline how it is calculated. You do not need to state the full formula for Kappa.</u></p>
+<p><font color="CornflowerBlue">Human annotators will not always agree on classifications. Raw agreement does not allow for the possibility that agreement might be simply a matter of chance, which is more likely in tasks with few classes. For instance, for a task with two equally balanced classes, agreement of 75% is quite low (random agreement would be 50%), while 75% agreement is quite high for a task with 10 classes. Kappa <strong>measures the agreement between annotators corrected for the possible of chance agreement</strong>. It can be calculated from a table give the classes that each annotator assigns. </font></p>
+<p>Kappa of 0.65 is rather low, but should be still be usable for evaluation.</p>
+<h5 id="2021-p03-q09-2"><a href="#2021-p03-q09-2" class="headerlink" title="2021-p03-q09"></a>2021-p03-q09</h5><p><u>Your colleague wants to hire two more human annotators to re-label your training data. Why might this be a good idea, how would you measure agreement in this task, and do you think this would improve your classifier in any way?</u></p>
+<p><font color="CornflowerBlue">What is perceived as a threat has a large <strong>subjective</strong> component. One person’s <strong>joke</strong> is another person’s <strong>threat</strong>. It would therefore be of <strong>service</strong> if we could measure how much two people agree. To measure agreement, we can use <strong>kappa</strong>. Kappa reports only <strong>agreement above the chance level</strong>. In general tasks of this kind, <strong>majority opinion</strong> is often used. Here, if we want a <strong>sensitive</strong> classifier that picks up even hidden threats, it might be better to count something as a threat if even just one annotator decided so. This is likely to <strong>improve</strong> the classifier’s REAL <strong>recall</strong> (make it more sensitive to cyberbullying), even if the measured numbers on test would go down slightly, because cyberbulling now appears to be more frequent compared to the one-annotator situation.</font></p>
+<h2 id="Lecture-8-Hidden-Markov-Models"><a href="#Lecture-8-Hidden-Markov-Models" class="headerlink" title="Lecture 8 (Hidden Markov Models)"></a>Lecture 8 (Hidden Markov Models)</h2><h3 id="Weather-prediction"><a href="#Weather-prediction" class="headerlink" title="Weather prediction"></a>Weather prediction</h3><ul>
+<li>Two types of weather: rainy and cloudy</li>
+<li>The weather doesn’t change within the day</li>
+<li>Can we guess what the weather will be like tomorrow?</li>
+<li>We can use a history of weather observations:</li>
+</ul>
+<p>$$<br>P(w_t=Rainy|w_{t-1}=Rainy,w_{t-2}=Cloudy,w_{t-3}=Cloudy,w_{t-4}=Rainy)<br>$$</p>
+<h3 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h3><ol>
+<li><font color="red"><strong>Markov Assumption(Limited Horizon):</strong></font> <font color="CornflowerBlue"><strong>Transition</strong> only depends on <strong>current</strong> state</font></li>
+</ol>
+<p>$$<br>P(X_t|X_{t-1},X_{t-2},X_{t-3},X_{t-4}…,X_{1}) \approx P(X_t|X_{t-1})<br>$$</p>
+<p>The joint probability of a <strong>sequence</strong> of observations/events can then be approximated as:<br>$$<br>P(X_1,X_2,…,X_t) \approx \prod^{n}<em>{t=1}P(X_t|X</em>{t-1})<br>$$</p>
+<ol start="2">
+<li><font color="red"><strong>Output independance</strong></font></li>
+</ol>
+<p><font color="CornflowerBlue">Probability of an <strong>output</strong> observation depends only on the <strong>current</strong> state and <strong>not</strong> on any other <strong>states</strong> or any other <strong>observations</strong>:</font><br>$$<br>P(O_t|X_1,…X_t,…,X_T,O_1,…O_t,…,O_T)\approx P(O_t|X_t)<br>$$</p>
+<h3 id="Markov-Chains"><a href="#Markov-Chains" class="headerlink" title="Markov Chains"></a>Markov Chains</h3><img src="https://s2.loli.net/2023/02/13/Jmc3vhqsao1jQ4y.png" alt="image-20230213145221875" style="zoom: 33%;">
+
+<ul>
+<li><p>Useful for modelling the probability of a sequence of events <strong>that can be unambiguously observed.</strong></p>
+<ul>
+<li>Valid <strong>phone sequences</strong> in speech recognition</li>
+<li>Sequences of speech acts in dialog systems (answering, ordering, opposing)</li>
+<li><strong>Predictive texting</strong></li>
+</ul>
+</li>
+<li><p>Underlying Markov Chain over hidden states</p>
+</li>
+<li><p>We only have access to the observations at each time step.</p>
+</li>
+<li><p>There is no 1:1 mapping between observations and hidden states.</p>
+</li>
+<li><p>A number of hidden states can be associated with a particular observation, but the association of states and observations is governed by probabilities.</p>
+</li>
+<li><p>We now have to <em><strong>infer</strong></em> the sequence of hidden states that corresponds to the sequence of observations.</p>
+</li>
+</ul>
+<img src="https://s2.loli.net/2023/04/10/n6VGy8EoegrCvxY.png" alt="image-20230410104357750" style="zoom:50%;">
+
+<img src="https://s2.loli.net/2023/04/10/e417pKiHXfz9SgP.png" alt="image-20230410104440632" style="zoom:50%;">
+
+<h4 id="Start-and-End-states"><a href="#Start-and-End-states" class="headerlink" title="Start and End states"></a>Start and End states</h4><p><img src="https://s2.loli.net/2023/05/14/CVvWwHyi82neYbt.png" alt="image-20230513225744471"></p>
+<ul>
+<li>Could use initial probability distribution over hidden states.</li>
+<li>Instead, for simplicity, we will also model this probability as a transition, and we will explicitly add a <strong>special start state</strong>.</li>
+<li>Similarly, we will add a <strong>special end state</strong> to explicitly model the end of the sequence.</li>
+<li>Special start and end states not associated with “<em>real</em>“ observations.</li>
+</ul>
+<h5 id="2020-p03-q08"><a href="#2020-p03-q08" class="headerlink" title="2020-p03-q08"></a>2020-p03-q08</h5><p><img src="https://s2.loli.net/2023/05/19/KhjwcpA5U4yFZYD.png" alt="image-20230518211539878"></p>
+<h3 id="State-transition-probability"><a href="#State-transition-probability" class="headerlink" title="State transition probability"></a>State transition probability</h3><img src="https://s2.loli.net/2023/04/10/KAU4JZQsjT8LdCv.png" alt="image-20230410104912187" style="zoom:50%;">
+
+<img src="https://s2.loli.net/2023/04/10/eIWOCLnaX1imtRZ.png" alt="image-20230410105031422" style="zoom:50%;">
+
+<h3 id="Emission-probabilities"><a href="#Emission-probabilities" class="headerlink" title="Emission probabilities"></a>Emission probabilities</h3><img src="https://s2.loli.net/2023/04/10/kUJz25H3gbNK7uq.png" alt="image-20230410105119016" style="zoom:50%;">
+
+<h5 id="2017-p02-q09"><a href="#2017-p02-q09" class="headerlink" title="2017-p02-q09"></a>2017-p02-q09</h5><p><img src="https://s2.loli.net/2023/05/14/ER9himna3xr8OAq.png" alt="image-20230514100017838"></p>
+<p><u>A comparable situation can arise when <strong>estimated emission probability is 0 and thus probability assigned to a series of observation and their interpretation being 0</strong> even when substantial amount of training data. Describe why this is a problem and indicate a solution to it</u></p>
+<ol>
+<li><font color="CornflowerBlue"><strong>Heap’s Law</strong> means that <strong>test data is likely to contain words unseen in the training data</strong>, no matter how much training data we have</font></li>
+<li><font color="CornflowerBlue">There will always be new names, and words we have seen previously will be used as names (this doesn’t follow from Heap’s law, but is a reasonable assumption). Any such case will be assigned probability 0 if we simply assign probability based on counts in the training data</font></li>
+<li><font color="CornflowerBlue">This is also true of other phenomena: <strong>sparse data is a general problem in machine learning</strong></font></li>
+<li><font color="CornflowerBlue">The solution is to smooth: <strong>adjust the MLE based on the counts via an unseen probability mass and hence avoid probabilities of 0</strong> </font></li>
+<li><font color="CornflowerBlue">The simplest technique is <strong>add-one / Laplace smoothing</strong>, which means that <strong>1 is added to all counts</strong> (it is helpful to give the formulae in the answer).</font></li>
+</ol>
+<p> relevant comments</p>
+<ul>
+<li><font color="CornflowerBlue">It is unlikely we will need to smooth the transition probabilities for this application</font></li>
+<li><font color="CornflowerBlue">the use of logs means we need to do something about 0 probabilities in calculation</font></li>
+<li><font color="CornflowerBlue">there are some phenomena where we may have genuine 0 probabilities, but it may be difficult to establish this</font></li>
+<li><font color="CornflowerBlue">for this application there are useful possible heuristics - e.g., capitalization</font></li>
+</ul>
+<h3 id="Parameter-Estimation"><a href="#Parameter-Estimation" class="headerlink" title="Parameter Estimation"></a>Parameter Estimation</h3><img src="https://s2.loli.net/2023/04/10/bCUsjqrKVRPS3GX.png" alt="image-20230410105204937" style="zoom:50%;">
+
+<h4 id="Add-one-smoothed-version-of-these"><a href="#Add-one-smoothed-version-of-these" class="headerlink" title="Add-one smoothed version of these"></a>Add-one smoothed version of these</h4><p>$$<br>a_{ij}=P(X_{t+1}=s_j|X_t=s_i)\sim \frac{count_{trans}(X_t=s_i,X_{t+1}=s_j)+1}{count_{trans}(X_t=s_i)+N}\<br>\text{N is the number of distinct hidden emission states}<br>\<br>b_i(k_j)=P(O_t=k_j|X_t=s_i)\sim \frac{count_{emission}(O_t=k_j,X_t=s_1)+1}{count_{emission}(X_t=S_i)+N} \<br>\text{N is the number of distinct obervations possible}<br>$$</p>
+<h5 id="2018-p03-q08"><a href="#2018-p03-q08" class="headerlink" title="2018-p03-q08"></a>2018-p03-q08</h5><p><img src="https://s2.loli.net/2023/05/14/UXhOGvwaC5ZRTYd.png" alt="image-20230514113101205"></p>
+<p><u>What aspect of the scenario described is <strong>not correctly covered</strong> by the HMM?</u></p>
+<p><font color="CornflowerBlue"> The HMM cannot model the <strong>fixed length of the season</strong> </font></p>
+<p><u>You are given a complete record of individual games, including a record of the opponents. The win/loss ratio varies depending on the opponent. Explain how you could use such information to derive the parameters of a <strong>more complex HMM</strong> (treating home and away as hidden states, as before).</u></p>
+<p><font color="CornflowerBlue">In a more complex setting where observations correspond to different events, such as winning or losing against different opponents, we need to consider these events separately. </font></p>
+<p><font color="CornflowerBlue"><strong>Transition probabilities</strong> for states (for instance, from ‘home’ to ‘away’) are calculated as follows:</font></p>
+<p>$$ P(\text{home} \rightarrow \text{away}) = \frac{\text{count(home} \rightarrow \text{away})}{\text{count(all transitions from home)}}$$</p>
+<p><font color="CornflowerBlue"><strong>Emission probabilities</strong>, for example, the probability of winning at home against opponent 1, are calculated by dividing the total number of home wins against opponent 1 by the total number of home games:</font></p>
+<p>$$P(\text{win against opponent 1}|\text{home}) = \frac{\text{count(home wins against opponent 1)}}{\text{count(all home games)}}$$</p>
+<p><font color="CornflowerBlue">However, with a small number of opponents and a long sequence of games, there might be cases where a particular observation (like winning or losing against a specific opponent) was never seen in the training data. </font></p>
+<p><font color="CornflowerBlue">In these cases, we would estimate its probability to be zero, which can be problematic. To avoid this, we can apply <strong>Laplace smoothing</strong> (also known as add-one smoothing), which adds a constant (usually 1) to each count:</font></p>
+<p>$$ P(\text{win against opponent 1}|\text{home}) = \frac{\text{count(home wins against opponent 1)} + 1}{\text{count(all home games)} + N} $$</p>
+<p><font color="CornflowerBlue">where N is the number of distinct observations possible. This ensures that every potential observation has a non-zero probability, even if it wasn’t seen in the training data.</font></p>
+<p><u>It is suggested that you could use an HMM to predict the results of <strong>next season’s games</strong>, since it is known <strong>who the opponent will be</strong> and <strong>whether the match will be at home or away</strong>. How might you do this? How successful do you think this would be, compared to predicting whether a sequence of matches were home or away based on a sequence of match results?</u></p>
+<p><font color="CornflowerBlue">Considering the course discussions, we can conceptualize this problem by revising our Hidden Markov Model (HMM) to have <strong>‘win’ and ‘lose’ as hidden states</strong>. The observations would be ‘<strong>home-against-opponent-1’,</strong> <strong>‘away-against-opponent-1</strong>‘, and so on. We can estimate the probabilities from the data, much like we did in the previous part. In this sense, it’s entirely possible to extract appropriate emission and transition probabilities from the given data.</font></p>
+<p><font color="CornflowerBlue">However, there’s a potential issue with this approach. Given the scenario described, there might be <strong>relatively little information</strong> in the sequences of wins and losses. Wins and losses might tend to alternate, but this could primarily be a <strong>secondary effect of the scheduling</strong>. In such a case, there’s no point in modeling this as an HMM. We might just as well model the data as distinct events, ignoring the sequence.</font></p>
+<p><font color="CornflowerBlue">To illustrate this, consider a situation where home and away matches always alternate, and the probability of winning at home is only slightly greater than the probability of winning away. In this situation, given a long sequence of matches, we can still reliably determine the home-away alternation. There are only two possibilities for the overall sequence, and the difference in winning probabilities will allow us to determine which sequence is most likely, even if the difference is very small. However, the number of sequences in terms of match results is $2^n$, where $n$ is the number of matches.</font></p>
+<h5 id="2020-p03-q08-1"><a href="#2020-p03-q08-1" class="headerlink" title="2020-p03-q08"></a>2020-p03-q08</h5><img src="https://s2.loli.net/2023/05/19/YgA98dl6Kq3TW4j.png" alt="image-20230518213106552" style="zoom:50%;">
+
+<h3 id="Fundamental-tasks-with-HMMs"><a href="#Fundamental-tasks-with-HMMs" class="headerlink" title="Fundamental tasks with HMMs"></a>Fundamental tasks with HMMs</h3><p><strong>Problem 1 (Labelled Learning)</strong><br>Given a parallel observation and state sequence O and X, learn the HMM parameters A and B </p>
+<p><strong>Problem 2 (Unlabelled Learning)</strong><br>Given an observation sequence $O$ (and only the set of emitting states $S_e$), learn the HMM parameters A and B</p>
+<p><strong>Problem 3 (Likelihood)</strong><br>Given an HMM μ = (A, B) and an observation sequence O, determine the likelihood $P(O|\mu)$</p>
+<p><strong>Problem 4 (Decoding)</strong><br>Given an observation sequence O and an HMM μ = (A, B), discover the best hidden state sequence X → Task 8</p>
+<h2 id="Lecture-9-Viberti-Algorithm-for-HMM-decoding"><a href="#Lecture-9-Viberti-Algorithm-for-HMM-decoding" class="headerlink" title="Lecture 9: Viberti Algorithm for HMM decoding"></a>Lecture 9: Viberti Algorithm for HMM decoding</h2><h3 id="Decoding"><a href="#Decoding" class="headerlink" title="Decoding"></a>Decoding</h3><img src="https://s2.loli.net/2023/04/10/FZ5Ow7CIrHU9lzA.png" alt="image-20230410105354448" style="zoom:50%;">
+
+<h3 id="Verbiti"><a href="#Verbiti" class="headerlink" title="Verbiti"></a>Verbiti</h3><h4 id="Intuition-Behind"><a href="#Intuition-Behind" class="headerlink" title="Intuition Behind"></a>Intuition Behind</h4><ul>
+<li>Here’s how we can save ourselves a lot of time.</li>
+<li>Because of the <strong>Limited Horizon</strong> of the HMM, we don’t need to keep a complete record of how we arrived at a certain state.</li>
+<li>For the <strong>first-order</strong> HMM, we only need to record one previous step.</li>
+<li>Just do the calculation of the probability of reaching each state once for each time step (variable $\delta$).</li>
+<li>Then memoize this probability in a <strong>Dynamic Programming table.</strong></li>
+<li>This reduces our effort to $O(N^2T)$.</li>
+<li>This is for the first-order HMM, which only has a memory of one previous state.</li>
+</ul>
+<img src="https://s2.loli.net/2023/04/10/PglAwv3TcEztefi.png" alt="image-20230410105539173" style="zoom: 40%;">
+
+<img src="https://s2.loli.net/2023/04/10/vPM7ezgjEJqHSUD.png" alt="image-20230410105850374" style="zoom:40%;">
+
+<h5 id="2021-p03-q08"><a href="#2021-p03-q08" class="headerlink" title="2021-p03-q08"></a>2021-p03-q08</h5><img src="https://s2.loli.net/2023/05/19/Vd91Cx5ABlaPJUO.png" alt="image-20230518222337013" style="zoom:50%;">
+
+<img src="https://s2.loli.net/2023/05/19/Nn6DekZhQvITfWP.png" alt="image-20230518222348274" style="zoom:50%;">
+
+<img src="https://s2.loli.net/2023/05/19/2EPYp9WmyCz3lHR.png" alt="image-20230518222400450" style="zoom:80%;">
+
+<h3 id="Forward-Algorithm"><a href="#Forward-Algorithm" class="headerlink" title="Forward Algorithm"></a>Forward Algorithm</h3><blockquote>
+<p>$O(N^2T)$ time complexity</p>
+</blockquote>
+<img src="https://s2.loli.net/2023/02/22/PDhlCOX8SRHrUG4.png" alt="Screenshot 2023-02-21 at 21.01.22" style="zoom: 33%;">
+
+<img src="https://s2.loli.net/2023/02/22/CQS5wDrcINKGeVg.png" alt="Screenshot 2023-02-21 at 21.09.15" style="zoom:50%;">
+
+<h3 id="Precision-and-recall"><a href="#Precision-and-recall" class="headerlink" title="Precision and recall"></a>Precision and recall</h3><p><img src="https://s2.loli.net/2023/04/10/KsdJYef86Xn1l7a.png" alt="image-20230410110036155"></p>
+<h2 id="Lecture-12-Social-Networks"><a href="#Lecture-12-Social-Networks" class="headerlink" title="Lecture 12 (Social Networks)"></a>Lecture 12 (Social Networks)</h2><h3 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h3><blockquote>
+<p><strong>Degree</strong>: <font color="CornflowerBlue">$D(v)$ = number of links of node v</font></p>
+<p><strong>Clustering coefficient</strong> = <font color="CornflowerBlue">number of edges between pairs of neighbours of node v, divided by number of pairs of neighbours of node v</font><br>$$<br>\frac{\text{number of edges between pairs of neighbours of node v}}{\text{number of pairs of neighbours of node v}}<br>$$<br><strong>Betweenness Centrality</strong> $C(v)=\sum_{s\ne t \ne v}\frac{\sigma_{st}(v)}{\sigma_{st}}$ <font color="CornflowerBlue">(proportion of shortest paths in graph that use v to all shortest paths in the graph), with $\sigma_{st}$ being the number of shortest path between two nodes $s,t$ and $\sigma_{st}(v)$ being the number of shortest paths between nodes $s$ and $t$ that contains $v$. </font></p>
+<p>Let V be the set of nodes in the graph, let $\sigma(a,b)$ be the number of shortest paths from a to b, let $\sigma(a,b|v)$ be the number of shortest path from a to b that goes through v. The betweenness centrality of a node v is:<br>$$<br>\sum_{a\ne b \ne v}\frac{\sigma(a,b|v)}{\sigma(a,b)}<br>$$<br><strong>Diameter</strong> <font color="CornflowerBlue">is the longest of the shortest paths between pairs of node. </font></p>
+<p><strong>Bridge</strong>: <font color="CornflowerBlue">A bridge is an edge that connects two nodes that would otherwise be in <strong>disconnected</strong> components of the graph</font></p>
+<p><strong>Local bridge</strong>: <font color="CornflowerBlue">A local bridge is an edge joining two nodes that have <strong>no other neighbours in common</strong>. Call the nodes connecting to the central node the <strong>gatekeeper</strong> nodes, the local bridges are the edges connecting these nodes to the central node. </font></p>
+<p><strong>Shortest path:</strong> <font color="CornflowerBlue">In the case of an unweighted graph, it is the paththat connects two nodes with the fewest edges</font></p>
+<p><strong>Strongly connected</strong>: <font color="CornflowerBlue">Directed graphs are called <strong>strongly connected</strong> if there exists a path from every node to every other node.</font></p>
+<p><strong>Closeness</strong>: <font color="CornflowerBlue"><strong>average</strong> of the <strong>distances</strong> from the node</font></p>
+</blockquote>
+<p><u>Which property of nodes in a network do <strong>clustering coefficient</strong> and <strong>betweenness centrality</strong> attempt to model? Give examples from naturally occurring networks.</u></p>
+<p><font color="CornflowerBlue"><strong>Clustering coefficient</strong> models the <strong>degree</strong> to which a node is a “<strong>hub</strong>” between <strong>unconnected neighbours</strong>, or <strong>centre of a tightly-knit network</strong>. In social networks, when <strong>your friends become friends of your friends</strong>, your <strong>clustering coefficient goes up</strong>.</font></p>
+<p><font color="CornflowerBlue"><strong>Betweenness centrality</strong> of a node models the <strong>bridge functionality</strong> of the node – the degree to which the <strong>node controls access relatively tighter-knit areas of the network</strong>. In a social network, nodes with high betweenness are the <strong>connectors between social circles</strong> who are not part of the social circles, but are the <strong>only ones that provide access</strong> to the circle.</font> </p>
+<h3 id="Clustering"><a href="#Clustering" class="headerlink" title="Clustering"></a>Clustering</h3><h3 id="Social-networks"><a href="#Social-networks" class="headerlink" title="Social networks"></a>Social networks</h3><h4 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h4><p>Facebook-style networks: </p>
+<ul>
+<li>Nodes: people; Links: “friend”, messages</li>
+</ul>
+<p>Twitter-style networks: </p>
+<ul>
+<li>Nodes: Entities/people Links: “follows”, “retweets” Also: research citations</li>
+</ul>
+<h4 id="Reasons-to-analyse-social-network"><a href="#Reasons-to-analyse-social-network" class="headerlink" title="Reasons to analyse social network"></a>Reasons to analyse social network</h4><ul>
+<li><p>Academic investigation of human behaviour (sociology, economics etc) </p>
+</li>
+<li><p>Disease transmission in epidemics. </p>
+</li>
+<li><p>Modelling information flow: e.g., who sees a picture, reads a piece of news (or fake news). </p>
+</li>
+<li><p>Identifying links between subcommunities, well-connected individuals: </p>
+<ul>
+<li><p>novelty </p>
+</li>
+<li><p>targeted advertising . . .</p>
+</li>
+</ul>
+</li>
+<li><p>Lots of applications in conjunction with other approaches: e.g., sentiment analysis of tweets plus network analysis.</p>
+</li>
+</ul>
+<h4 id="Modelling"><a href="#Modelling" class="headerlink" title="Modelling"></a>Modelling</h4><p>Networks are modelled as graphs: undirected and unweighted here. </p>
+<ul>
+<li><p><strong>distance</strong> is the length of shortest path between two nodes. </p>
+</li>
+<li><p><strong>diameter</strong> of a graph: maximum distance between any pair of nodes</p>
+</li>
+<li><p><strong>degree</strong> of a node: the number of neiboughers the node has in the graph</p>
+</li>
+</ul>
+<h4 id="Small-world-phenomenon"><a href="#Small-world-phenomenon" class="headerlink" title="Small world phenomenon"></a>Small world phenomenon</h4><img src="https://s2.loli.net/2023/04/10/XPBdeCowjE6fsIN.png" alt="image-20230410111851612" style="zoom: 50%;">
+
+<h5 id="2020-p03-q09"><a href="#2020-p03-q09" class="headerlink" title="2020-p03-q09"></a>2020-p03-q09</h5><img src="https://s2.loli.net/2023/05/19/QObuUyJ75VvR2Lz.png" alt="image-20230518210418805" style="zoom: 33%;">
+
+<h4 id="Important-Concepts"><a href="#Important-Concepts" class="headerlink" title="(Important) Concepts"></a>(Important) Concepts</h4><ul>
+<li><strong>giant component:</strong> a connected component containing most of the nodes in a graph. </li>
+<li><strong>weak ties:</strong> socially distant ties, infrequent interaction (acquaintances) vs. <strong>strong links</strong>: close friends and family. </li>
+<li>The links that keep giant components together are often only weak ties.</li>
+</ul>
+<img src="https://www.researchgate.net/publication/350486348/figure/fig1/AS:1006963647336453@1617090250861/Weak-Ties-and-Strong-Ties-in-a-Social-Network.png" alt="Weak Ties and Strong Ties in a Social Network | Download Scientific Diagram" style="zoom: 50%;">
+
+<ul>
+<li><strong>bridge</strong>: an edge that connects two components which would otherwise be unconnected. </li>
+<li><strong>local bridge</strong>: an edge joining two nodes that have no other neighbours in common. Cutting a local bridge increases the length of the shortest path between the nodes.</li>
+<li><strong>triadic closure:</strong> if A knows B and A knows C, relatively likely B and C will (get to) know each other. </li>
+<li>The <strong>global clustering coefficient</strong> is a measure of the amount of triadic closure in a network. <ul>
+<li>It is the number of closed triads over the total number of triads (both open and closed).</li>
+</ul>
+</li>
+<li><strong>Clustering coefficient</strong> of a node A is the probability that two randomly selected neighbours of A are also neighbours of each other.</li>
+</ul>
+<h3 id="Erdos–Renyi-model"><a href="#Erdos–Renyi-model" class="headerlink" title="Erdős–Rényi model"></a>Erdős–Rényi model</h3><p>The Erdős–Rényi model (1959) of random undirected graph generation is that $G_{n,p}=(V,E)$, where $n$ is the number of vertices $|V|$ and the probability of forming an edge $(u,v)∈E$ (where $u≠v$) is given by $p$.  (A variant is to generate all possible graphs with the given number of vertices and edges and select between them with uniform probability, but this variant is not now used much.)</p>
+<h3 id="Watts-Strogatz-model"><a href="#Watts-Strogatz-model" class="headerlink" title="Watts-Strogatz model"></a>Watts-Strogatz model</h3><p>The Watts-Strogatz model (1998) describes a graph $G_{n,k,p}=(V,E)$ where $n$ is the initial degree of a node (an even integer) and $p$ is a rewiring probability. It starts with a ring of nodes, with each node connected to its $k$ nearest neighbours with undirected edges (a ring lattice). Each of the starting edges $(u,v)$is visited in turn ($u&lt;v$, starting with a circuit of the edges to the nearest neighbours, then to the next nearest and so on) and replaced with a new edge $(u,v′)$ with probability $p$. $v′$ is chosen randomly, duplicate edges are forbidden, but original edges may end up being reinstated. If p is 0, there is no rewiring, if p is 1, every edge is rewired randomly (although slightly differently from Erdős–Rényi).</p>
+<p>Watts and Strogatz (1998) make the additional stipulation that $n≫k≫ln(n)≫1$ where $k≫ln(n)$guarantees that the graph will be connected.</p>
+<p>Note that Easley and Kleinberg’s informal description is unlike Watts-Strogatz in not starting from a ring lattice and in not removing edges. Easley and Kleinberg discuss a variant of Watts-Strogatz (due to Kleinberg, 2000) where the random links are generated with probability proportional to the inverse square of the distance between two nodes. There are many other additional models.</p>
+<h2 id="Lecture-13"><a href="#Lecture-13" class="headerlink" title="Lecture 13"></a>Lecture 13</h2><h3 id="Centrality-concepts"><a href="#Centrality-concepts" class="headerlink" title="Centrality concepts"></a>Centrality concepts</h3><img src="https://s2.loli.net/2023/05/14/2btPpN7u8dA4Twq.png" alt="image-20230513233435338" style="zoom: 33%;">
+
+<img src="https://s2.loli.net/2023/05/14/lfTSpcKRkgQAB7m.png" alt="image-20230513233617108" style="zoom: 33%;">
+
+<h3 id="Node-betweenness-centrality"><a href="#Node-betweenness-centrality" class="headerlink" title="Node betweenness centrality"></a>Node betweenness centrality</h3><blockquote>
+<p>The betweenness centrality of a node V is defined in terms of the proportion of shortest paths that go through V for each pair of nodes.</p>
+</blockquote>
+<img src="https://s2.loli.net/2023/05/14/KuqbWmXdUgYrGJI.png" alt="image-20230513233738183" style="zoom: 33%;">
+
+<img src="https://s2.loli.net/2023/05/14/hrXM2ik9jJHIDF8.png" alt="image-20230513233907848" style="zoom: 33%;">
+
+<img src="https://s2.loli.net/2023/05/14/TrBb8M3wEDdjFKR.png" alt="image-20230513234243765" style="zoom: 33%;">
+
+<hr>
+<p><img src="https://s2.loli.net/2023/05/14/swhpLim6MRzbyv1.png" alt="image-20230514102914120"></p>
+<p><u> In the network depicted above, do the <strong>betweenness centrality values</strong> you calculated correspond to your <strong>intuition</strong> about the function of nodes 1, 2, and 3? If not, which factors of the formula are responsible for the divergence?</u></p>
+<p><font color="CornflowerBlue">The value for node 1 is expected. In any network, nodes at the <strong>periphery</strong> of the graph will always receive low betweenness values (0 in the special case of degree = 1, as in that case there exists no other node that can use the current node to form a shortest path). (I have given here more detail than is required.) </font></p>
+<p><font color="CornflowerBlue">The values for nodes 2 and 3 are not expected, as nodes with high betweenness often have a low degree. Node 2 is on a  and thus intuitively seems to have more of a bridge function than node 3, but nodes towards the <strong>centre</strong> of the entire graph also have a higher chance of aquiring a high betweenness, all other things being equal. There is a relatively high traffic in the 3-4-5 cluster, which node 2 is excluded from, and of course paths that contain the node 2 itself are excluded from the calculation. These factors result in the relatively low betweenness of node 2. </font></p>
+<p><font color="CornflowerBlue">Normally, being part of a <strong>subcluster</strong> also means <strong>lower</strong> <strong>betweenness</strong>, but in the case of node 3, it is only <strong>marginally</strong> part of the cluster. Also, its more <strong>central location</strong> in the overall graph more than <strong>counteracts</strong> the <strong>disadvantage</strong> of begin part of a subcluster. The central location allows for a combinatorically growing number of paths whose end nodes lie on opposite sides of node 3</font></p>
+<p><u>Suppose the link between 3 and 4 is removed and a link between 2 and 4 is added. How does this affect the betweenness centrality of 2 and 3, and why?</u></p>
+<p><font color="CornflowerBlue">Betweenness centrality of node 2 increases to 3.5 (1–4; 1–5; 1–3; plus half of 3–4), but betweenness for node 3 drops to 1/2 + 1/2 = 1 (half of 1–5 and half of 2–5). </font></p>
+<p><font color="CornflowerBlue">In other words, node 3 has now lost its overall more <strong>central position</strong> in the graph to node 2, and has become a full part of the cluster 2-3-4-5. Both changes have affected its betweenness centrality negatively.</font></p>
+<p><u>Professor Miller claims that it is possible for a particular pair of nodes in a graph to be connected by a number of shortest paths which is <strong>exponential</strong> with respect to the number of nodes in the graph. Give an example where this is the case, or prove that it cannot be the case.</u></p>
+<p><font color="CornflowerBlue">Nodes A and B have $2^3$ shortest paths between them, in general $2^n$. This example can be extended infinitely. To increase $n$, add a new layer of two interleaved nodes to the graph.</font></p>
+<p><img src="https://s2.loli.net/2023/05/14/HYqVC4jWS7ms6lF.png" alt="image-20230514103854297"></p>
+<hr>
+<p><img src="https://s2.loli.net/2023/05/19/tnHSyw9IfCJp4Kk.png" alt="image-20230518222917420"></p>
+<h3 id="Calculating-betweenness-with-Brandes"><a href="#Calculating-betweenness-with-Brandes" class="headerlink" title="Calculating betweenness with Brandes"></a>Calculating betweenness with Brandes</h3><img src="https://s2.loli.net/2023/05/14/X5bQSoFPy2WprTM.png" alt="image-20230513235405032" style="zoom:33%;">
+
+<img src="https://s2.loli.net/2023/05/14/M3IP7vgoY4r8bl1.png" alt="image-20230513235430802" style="zoom: 33%;">
+
+<img src="https://s2.loli.net/2023/05/14/j4XELT1zhobOlut.png" alt="image-20230513235222853" style="zoom: 33%;">
+
+<img src="https://s2.loli.net/2023/05/14/dgIETQ5FlJpfNMb.png" style="zoom:50%;">
+
+<h3 id="Pseudocode"><a href="#Pseudocode" class="headerlink" title="Pseudocode"></a>Pseudocode</h3><img src="https://s2.loli.net/2023/03/13/iErKb9SqhQmxJle.png" alt="Screenshot 2023-03-13 at 15.48.46" style="zoom:50%;">
+
+<img src="https://s2.loli.net/2023/03/14/OMNHSv46eCcLZ1X.png" alt="Screenshot 2023-03-13 at 16.33.16" style="zoom:50%;">
+
+<img src="https://s2.loli.net/2023/03/14/C2oJSBn1hkLiqPg.png" alt="Screenshot 2023-03-13 at 16.53.42" style="zoom:50%;">
+
+<h2 id="Lecture-14-Clique-Finding"><a href="#Lecture-14-Clique-Finding" class="headerlink" title="Lecture 14: Clique Finding"></a>Lecture 14: Clique Finding</h2><h3 id="Clustering-and-Classification"><a href="#Clustering-and-Classification" class="headerlink" title="Clustering and Classification"></a>Clustering and Classification</h3><ul>
+<li><p><strong>Clustering</strong>: automatically grouping data according to some notion of closeness or similarity.</p>
+</li>
+<li><p><strong>Classification</strong> (e.g., sentiment classification): assigning data items to predefined classes.</p>
+</li>
+<li><p><strong>Clustering</strong>: groupings can emerge from data, <strong>unsupervised</strong>.</p>
+<ul>
+<li>Clustering for documents, images, etc.: anything where there’s a notion of similarity between items.</li>
+</ul>
+</li>
+<li><p>Most famous technique for hard clustering is <strong>k-means</strong>: very general (also variant for graphs).</p>
+</li>
+<li><p>Also soft clustering: clusters have graded membership.</p>
+</li>
+</ul>
+<h4 id="Other-forms-of-clustering"><a href="#Other-forms-of-clustering" class="headerlink" title="Other forms of clustering"></a>Other forms of clustering</h4><ul>
+<li><strong>Agglomerative</strong> clustering works bottom-up.</li>
+<li><strong>Divisive clustering</strong> works top-down, by splitting. </li>
+<li>Newman-Girvan method — a form of divisive clustering. </li>
+<li>Criterion for breaking links is edge betweenness centrality.</li>
+</ul>
+<h3 id="x3D-x3D-Newman-Girvan-x3D-x3D-method"><a href="#x3D-x3D-Newman-Girvan-x3D-x3D-method" class="headerlink" title="==Newman-Girvan== method"></a>==Newman-Girvan== method</h3><img src="https://s2.loli.net/2023/05/14/VUgEMe3JQi1j6Al.png" alt="image-20230514001212221" style="zoom:50%;">
+
+<h3 id="Edge-betweenness-centrality"><a href="#Edge-betweenness-centrality" class="headerlink" title="Edge betweenness centrality"></a>Edge betweenness centrality</h3><ul>
+<li>Previously: $\sigma(s, t|v)$ — the number of shortest paths between $s$ and $t$ going through node $v$.</li>
+<li>Now: $\sigma(s, t|e)$ — the number of shortest paths between $s$ and $t$ going through edge $e$.</li>
+<li>The algorithm only changes in the bottom-up (accumulation) phase:<ul>
+<li>$\delta(v)$ remains mostly the same.</li>
+<li>$cB[(v,w)]$ is now.</li>
+</ul>
+</li>
+</ul>
+<img src="https://s2.loli.net/2023/05/14/i8Q9LwE6cAKzWMl.png" alt="image-20230514001422095" style="zoom:50%;">
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Haoran Jie
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://haoran-jie.github.io/Cambridge/Notes/Machine-Learning-and-Real-World-Data/" title="Machine Learning and Real World Data">https://haoran-jie.github.io/Cambridge/Notes/Machine-Learning-and-Real-World-Data/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Machine-Learning/" rel="tag"><i class="fa fa-tag"></i> Machine Learning</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Notes/CambridgeIA/Algo_Note/" rel="prev" title="Algorithm_1And2">
+                  <i class="fa fa-chevron-left"></i> Algorithm_1And2
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="comment-button-group">
+          <a class="btn comment-button disqus">disqus</a>
+          <a class="btn comment-button gitalk">gitalk</a>
+      </div>
+        <div class="comment-position disqus">
+          
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+        </div>
+        <div class="comment-position gitalk">
+          <div class="comments gitalk-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa-solid fa-terminal"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Haoran Jie</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.3.0/mermaid.min.js","integrity":"sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://haoran-jie.github.io/Cambridge/Notes/Machine-Learning-and-Real-World-Data/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"samuels-blog-5","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Haoran-Jie","repo":"GItalkComments","client_id":"a78520e4a91db64c6ead","client_secret":"80a445f6a6f80fcd44fea523269b55c10ba59002","admin_user":"Haoran-Jie","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"c5d56727be3e24a35ee17323dec71bfe"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
