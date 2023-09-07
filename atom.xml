@@ -6,7 +6,7 @@
   <link href="https://haoran-jie.github.io/atom.xml" rel="self"/>
   
   <link href="https://haoran-jie.github.io/"/>
-  <updated>2023-09-07T19:33:47.005Z</updated>
+  <updated>2023-09-07T19:50:33.305Z</updated>
   <id>https://haoran-jie.github.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Machine Learning and Real World Data</title>
-    <link href="https://haoran-jie.github.io/Cambridge/Notes/Machine-Learning-and-Real-World-Data/"/>
-    <id>https://haoran-jie.github.io/Cambridge/Notes/Machine-Learning-and-Real-World-Data/</id>
+    <link href="https://haoran-jie.github.io/Notes/CambridgeIA/Machine-Learning-and-Real-World-Data/"/>
+    <id>https://haoran-jie.github.io/Notes/CambridgeIA/Machine-Learning-and-Real-World-Data/</id>
     <published>2023-09-07T19:18:33.000Z</published>
-    <updated>2023-09-07T19:33:47.005Z</updated>
+    <updated>2023-09-07T19:50:33.305Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;Lecture1&quot;&gt;&lt;a href=&quot;#Lecture1&quot; class=&quot;headerlink&quot; title=&quot;Lecture1&quot;&gt;&lt;/a&gt;Lecture1&lt;/h2&gt;&lt;blockquote&gt;
@@ -69,9 +69,9 @@
     
     
     
-    <category term="Cambridge" scheme="https://haoran-jie.github.io/categories/Cambridge/"/>
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
     
-    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Cambridge/Notes/"/>
+    <category term="CambridgeIA" scheme="https://haoran-jie.github.io/categories/Notes/CambridgeIA/"/>
     
     
     <category term="Machine Learning" scheme="https://haoran-jie.github.io/tags/Machine-Learning/"/>
@@ -258,10 +258,10 @@
   
   <entry>
     <title>Abstract Data Types Notes</title>
-    <link href="https://haoran-jie.github.io/Cambridge/Notes/Abstract-Data-Types-Notes/"/>
-    <id>https://haoran-jie.github.io/Cambridge/Notes/Abstract-Data-Types-Notes/</id>
+    <link href="https://haoran-jie.github.io/Notes/CambridgeIA/Abstract-Data-Types-Notes/"/>
+    <id>https://haoran-jie.github.io/Notes/CambridgeIA/Abstract-Data-Types-Notes/</id>
     <published>2023-02-06T20:03:48.000Z</published>
-    <updated>2023-02-10T15:27:34.980Z</updated>
+    <updated>2023-09-07T19:50:51.696Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;List&quot;&gt;&lt;a href=&quot;#List&quot; class=&quot;headerlink&quot; title=&quot;List&quot;&gt;&lt;/a&gt;List&lt;/h2&gt;&lt;blockquote&gt;
@@ -270,9 +270,9 @@
     
     
     
-    <category term="Cambridge" scheme="https://haoran-jie.github.io/categories/Cambridge/"/>
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
     
-    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Cambridge/Notes/"/>
+    <category term="CambridgeIA" scheme="https://haoran-jie.github.io/categories/Notes/CambridgeIA/"/>
     
     
     <category term="Algorithms" scheme="https://haoran-jie.github.io/tags/Algorithms/"/>
@@ -281,10 +281,10 @@
   
   <entry>
     <title>Graphics_Notes</title>
-    <link href="https://haoran-jie.github.io/Cambridge/Notes/Graphics-Notes/"/>
-    <id>https://haoran-jie.github.io/Cambridge/Notes/Graphics-Notes/</id>
+    <link href="https://haoran-jie.github.io/Notes/CambridgeIA/Graphics-Notes/"/>
+    <id>https://haoran-jie.github.io/Notes/CambridgeIA/Graphics-Notes/</id>
     <published>2023-02-04T01:42:29.000Z</published>
-    <updated>2023-02-04T02:24:22.462Z</updated>
+    <updated>2023-09-07T19:50:42.216Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;Rendering&quot;&gt;&lt;a href=&quot;#Rendering&quot; class=&quot;headerlink&quot; title=&quot;Rendering&quot;&gt;&lt;/a&gt;Rendering&lt;/h2&gt;&lt;h3 id=&quot;Shading&quot;&gt;&lt;a href=&quot;#Shading&quot; class=&quot;headerlink&quot; title=&quot;Shading&quot;&gt;&lt;/a&gt;Shading&lt;/h3&gt;&lt;p&gt;$$&lt;br&gt;I = I_ak_a + \sum_i I_ik_d(L_i \cdot N) + \sum_iI_ik_s(R_i\cdot V)^n&lt;br&gt;$$&lt;/p&gt;
@@ -299,9 +299,9 @@
     
     
     
-    <category term="Cambridge" scheme="https://haoran-jie.github.io/categories/Cambridge/"/>
+    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Notes/"/>
     
-    <category term="Notes" scheme="https://haoran-jie.github.io/categories/Cambridge/Notes/"/>
+    <category term="CambridgeIA" scheme="https://haoran-jie.github.io/categories/Notes/CambridgeIA/"/>
     
     
     <category term="Graphics" scheme="https://haoran-jie.github.io/tags/Graphics/"/>

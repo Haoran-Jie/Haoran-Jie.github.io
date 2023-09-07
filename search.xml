@@ -95,7 +95,7 @@
   </entry>
   <entry>
     <title>Abstract Data Types Notes</title>
-    <url>/Cambridge/Notes/Abstract-Data-Types-Notes/</url>
+    <url>/Notes/CambridgeIA/Abstract-Data-Types-Notes/</url>
     <content><![CDATA[<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><blockquote>
 <p>Lists provide one natural implementation of stacks, and are the data structure of choice in many places where flexible representation of variable amount of data is wanted.</p>
 </blockquote>
@@ -141,8 +141,8 @@
 
 ]]></content>
       <categories>
-        <category>Cambridge</category>
         <category>Notes</category>
+        <category>CambridgeIA</category>
       </categories>
       <tags>
         <tag>Algorithms</tag>
@@ -6066,7 +6066,7 @@ E --&gt;|Y| G(Use more data)</code></pre>
   </entry>
   <entry>
     <title>Graphics_Notes</title>
-    <url>/Cambridge/Notes/Graphics-Notes/</url>
+    <url>/Notes/CambridgeIA/Graphics-Notes/</url>
     <content><![CDATA[<h2 id="Rendering"><a href="#Rendering" class="headerlink" title="Rendering"></a>Rendering</h2><h3 id="Shading"><a href="#Shading" class="headerlink" title="Shading"></a>Shading</h3><p>$$<br>I = I_ak_a + \sum_i I_ik_d(L_i \cdot N) + \sum_iI_ik_s(R_i\cdot V)^n<br>$$</p>
 <h4 id="Ambient-illumination"><a href="#Ambient-illumination" class="headerlink" title="Ambient illumination"></a>Ambient illumination</h4><p>In computer graphics, ambient illumination is a lighting model that simulates the way light is reflected off of objects and fills a scene. It is called “ambient” because it is meant to represent the indirect light in a scene that comes from all directions, rather than from a specific light source.</p>
 <p>In other words, ambient illumination is the base level of lighting in a scene that fills in the shadows and gives objects a sense of overall brightness. It is typically implemented as a low-intensity, uniform light that is applied to all objects in a scene.</p>
@@ -6435,8 +6435,8 @@ E --&gt;|Y| G(Use more data)</code></pre>
 </ul>
 ]]></content>
       <categories>
-        <category>Cambridge</category>
         <category>Notes</category>
+        <category>CambridgeIA</category>
       </categories>
       <tags>
         <tag>Graphics</tag>
@@ -6514,7 +6514,7 @@ E --&gt;|Y| G(Use more data)</code></pre>
   </entry>
   <entry>
     <title>Machine Learning and Real World Data</title>
-    <url>/Cambridge/Notes/Machine-Learning-and-Real-World-Data/</url>
+    <url>/Notes/CambridgeIA/Machine-Learning-and-Real-World-Data/</url>
     <content><![CDATA[<h2 id="Lecture1"><a href="#Lecture1" class="headerlink" title="Lecture1"></a>Lecture1</h2><blockquote>
 <p><strong>Sentiment classification</strong> — the task of automatically deciding whether a review is positive or negative, based on the text of the review</p>
 <p><strong>Lexicon</strong> – lexicon is a list of words with some associated information.</p>
@@ -7186,8 +7186,8 @@ E --&gt;|Y| G(Use more data)</code></pre>
 <img src="https://s2.loli.net/2023/05/14/i8Q9LwE6cAKzWMl.png" alt="image-20230514001422095" style="zoom:50%;">
 ]]></content>
       <categories>
-        <category>Cambridge</category>
         <category>Notes</category>
+        <category>CambridgeIA</category>
       </categories>
       <tags>
         <tag>Machine Learning</tag>
